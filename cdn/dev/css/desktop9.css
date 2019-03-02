@@ -1,0 +1,81 @@
+/************************************
+ Desktop 9.0 CSS Body
+ ***********************************/
+
+.developer-half{
+	margin-top: 20px;
+}
+
+.button-dl9{
+	width: calc(50% - 92px);
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 10px 30px;
+	cursor: pointer;
+	float: left;
+	border-radius: 6px;
+	background: #91db51; /* Old browsers */
+	background: -moz-linear-gradient(top,  #91db51 0%, #71b700 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#91db51), color-stop(100%,#71b700)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #91db51 0%,#71b700 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #91db51 0%,#71b700 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #91db51 0%,#71b700 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #91db51 0%,#71b700 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91db51', endColorstr='#71b700',GradientType=0 ); /* IE6-9 */
+	border: solid 4px #fff;
+}
+
+.button-dl9:hover{
+	background: #91db51; /* Old browsers */
+	background: -moz-linear-gradient(top,  #71b700 0%, #609900 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#71b700), color-stop(100%,#609900)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #71b700 0%,#609900 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #71b700 0%,#609900 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #71b700 0%,#609900 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #71b700 0%,#609900 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#71b700', endColorstr='#609900',GradientType=0 ); /* IE6-9 */
+}
+
+#button-buy{
+	
+}
+
+#button-buy:hover{
+	
+}
+
+.button-dl9 a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #000;
+}
+
+#banner-buttons{
+	margin-left: calc(50% - 100px);
+	width: 200px;
+}
+
+#banner-buttons a{
+	color: #fff;
+	font-size: 18pt;
+}
+
+.banner-button{
+	margin-bottom: 10px;
+}
+
+.button-div{
+	margin-left: calc(50% - 240px);
+}
+
+@media all and (min-width: 10px) and (max-width: 600px){
+	#sect1-image{
+		max-width: 320px;
+	}
+	.button-div{
+		display: none;
+	}
+}

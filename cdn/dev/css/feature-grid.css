@@ -1,0 +1,51 @@
+table.feature-grid {
+	width: 80%;
+	margin-bottom: 20px;
+	margin-left: 10%;
+}
+
+table.feature-grid th{
+	background: #CCCCCC;
+	font-weight: bold;
+  vertical-align: middle;
+}
+
+table.feature-grid td{
+	background: #fff;
+  vertical-align: middle;
+}
+
+table.feature-grid, table.feature-grid td{
+	border: 1px solid #CCCCCC;
+	text-align: center;
+}
+
+table.feature-grid td, table.feature-grid th{
+	padding: 4px 6px;
+}
+
+table.feature-grid td:first-child{
+	text-align: left !important;
+	width: 60%;
+	line-height: 24px;
+	padding: 0px 6px 6px 6px;
+}
+
+table.feature-grid tr{
+	height: 37px !important;
+	line-height: 37px;
+}
+
+table.feature-grid td a{
+	text-decoration: none;
+	color: #000;
+}
+
+table.feature-grid td a:hover{
+	border-bottom: 1px blue dotted;
+	color: blue;
+}
+
+table.feature-grid .table-tick{
+	margin: 0px !important;
+}

@@ -1,0 +1,125 @@
+.dev-box{
+  float: left;
+  width: 100%;
+  margin: 10px 0px 30px 0px;
+}
+
+.dev-third{
+  width: 300px;
+  height: 280px;
+  background: #e2e2e2;
+  float: left;
+  margin: 10px 10px;
+}
+
+.dev-third h2{
+  text-align: center;
+  font-size: 14pt !important;
+  font-weight: 600;
+  color: #B92034;
+  padding-top: 20px !important;
+}
+
+.dev-third p{
+  font-size: 12pt !important;
+}
+
+pre.code {
+  font-family: Consolas, "Courier New", courier;
+  padding: 0px 10px 10px 30px;
+  overflow-x: auto;
+}
+
+table.basic-table {
+  margin: 0 0 0 30px;
+}
+
+table.basic-table td {
+  padding: 4px;
+}
+
+table#catalogue {
+
+}
+
+table#catalogue th {
+  background: #A4A8AB;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  border: solid 4px #F2F2F2;
+  vertical-align: middle;
+  padding: 2px 8px;
+}
+
+table#catalogue td {
+  border: solid 4px #F2F2F2;
+  font-size: 12px;
+  vertical-align: middle;
+  padding: 1px 4px;
+}
+
+.device-support-none,
+.device-support-basic,
+.device-support-optimised,
+.device-support-dictionary {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  width: 80px;
+  height: 24px;
+}
+
+.device-support-none {
+  background: #c44230 !important; 
+}
+
+.device-support-basic {
+  background: #C8CD04 !important; 
+}
+
+.device-support-optimised {
+  background: #39b54a !important;
+}
+
+.device-support-dictionary {
+  background: #39b54a !important;
+}
+
+table#catalogue tr.next-keyboard td:nth-child(1) a,
+table#catalogue tr.next-keyboard td:nth-child(2) a,
+table#catalogue tr.next-keyboard td:nth-child(3) {
+  color: transparent;
+}
+
+table#catalogue tr td a {
+  text-decoration: none;
+  color: black;
+}
+
+table#catalogue tr td a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+table#catalogue tr:hover td,
+table#catalogue tr:hover td a {
+  color: white !important;
+}
+
+table#catalogue tr:hover td {
+  background: #a4a8ab;
+}
+
+#catalogue-key span {
+  display: inline-block;
+  width: 80px;
+  height: 24px;
+  margin-left: 24px;
+}
+
+table#catalogue .keyboard-version, .keyboard-iso-code {
+  text-align: center;
+}
+

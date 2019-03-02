@@ -1,0 +1,15 @@
+<?xml version="1.0"?>  
+<!-- this file must be uploaded to the /site folder of the Azure web site, so cannot be pushed with Git: https://ppolyzos.com/2015/10/26/reverse-proxy-functionality-in-azure-web-sites/ -->
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">  
+    <system.webServer>
+        <proxy xdt:Transform="InsertIfMissing" enabled="true" preserveHostHeader="false" reverseRewriteHostInResponseHeaders="false" />
+        <rewrite>
+            <allowedServerVariables>
+                <add name="HTTP_X_ORIGINAL_HOST" xdt:Transform="Insert" />
+                <add name="HTTP_X_UNPROXIED_URL" xdt:Transform="Insert" />
+                <add name="HTTP_X_ORIGINAL_ACCEPT_ENCODING" xdt:Transform="Insert" />
+                <add name="HTTP_ACCEPT_ENCODING" xdt:Transform="Insert" />
+            </allowedServerVariables>
+        </rewrite>
+    </system.webServer>
+</configuration>  

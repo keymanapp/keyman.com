@@ -1,0 +1,184 @@
+/************************************
+ Desktop Template CSS Body
+ ***********************************/
+
+.info-left{
+	margin-top: 20px;
+	float: left;
+	width: 320px;
+	position: absolute;
+	top: 135px;
+	left: 50%;
+	margin-left: -490px;
+	background: #F2F2F2;
+	box-shadow: 1px 1px 2px gray;
+}
+
+.info-left.fixed-pos{
+	position: fixed !important;
+	top: 61px !important;
+}
+
+.info-left ul{
+	margin: 30px 0px;
+}
+
+.info-left ul li{
+	list-style: none !important;
+	font-size: 12pt;
+	padding: 4px 0px;
+	margin: 0px 10px;
+}
+
+.info-left ul li.active{
+	background: #CCCCCC;
+}
+
+.info-left ul li:first-child{
+	font-size: 14pt;
+}
+
+.info-left ul li:hover{
+	background: #CCCCCC;
+}
+
+.info-left ul li:first-child:hover{
+	background: none;
+}
+
+.info-left ul li:first-child.active{
+	background: none;
+}
+
+.info-left ul li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none !important;
+}
+
+.info-left ul li.selected{
+	background: #CCCCCC;
+}
+
+.info-right{
+	margin-top: 20px;
+	float: left;
+	width: 65%;
+	margin-left: 320px;
+}
+
+.info-right img{
+	max-width: 620px !important;
+}
+
+.info-right h2{
+	padding-top: 0px !important;
+}
+
+ol li{
+	list-style: none !important;
+	font-weight: normal;
+	font-size: 10pt;
+}
+
+.col{
+	float: left;
+	width: 25%;
+}
+
+.col h3{
+	text-align: center !important;
+	font-size: 14pt;
+}
+
+.col li ol{
+	margin-bottom: 20px;
+}
+
+.pro-only{
+	box-sizing: border-box;
+	padding: 5px 10px;
+	border: solid 1px #FFC1C1;
+	background: #FFE8E8;
+	margin: 10px 10px 18px 10px;
+	float: left;
+	border-radius: 4px;
+}
+
+.pro-only p{
+	padding: 0px !important;
+	font-size: 11pt !important;
+}
+
+.info-right p{
+	clear: left;
+}
+
+.info-right img{
+	max-width: 100%;
+	margin: 0px !important;
+}
+
+.button-dl9{
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 10px;
+	background: #79C3DA;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.button-dl9:hover{
+	background: #6BABBF;
+}
+
+#button-buy{
+	background: #0AB8A0;
+}
+
+#button-buy:hover{
+	background: #099E87;
+}
+
+.button-dl9 a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #000;
+}
+
+.section{
+	padding-top: 90px;
+	float: left;
+}
+
+.section:first-child{
+	padding-top: 0px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	.info-left{
+		top: 90px;
+		position: fixed;
+	}
+	.info-right{
+		margin-left: 35%;
+	}
+	.info-right img{
+		max-width: 300px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+	.info-left{
+		display: none;
+	}
+	.info-right{
+		margin-left: 0px;
+		width: 100%;
+	}
+}

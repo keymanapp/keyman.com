@@ -1,0 +1,291 @@
+/*
+ Search box
+*/
+
+#search-box {
+  padding: 10px;
+  
+}
+
+h2 a {
+  color: #B92034;
+  text-decoration: none;
+}
+
+#section2 h1,
+#section2 h2,
+#section2 h3,
+#section2 h4 {
+  text-align: left;
+}
+
+.deprecated {
+  display: block;
+  color: #220000;
+  text-decoration: none;
+  background: #ff8888;
+  padding: 16px;
+  /* border: solid 1px #880000; */
+  border-radius: 4px;
+  margin: 8px;
+  font-size: 18px;
+  box-shadow: 4px 4px 4px rgba(66,66,66,0.5);
+}
+
+.deprecated span {
+  font-weight: bold;
+}
+
+.deprecated:hover {
+  background: #ffaaaa;
+}
+
+#search-box {
+  background: white;
+  border-bottom: solid 1px #666666;
+  min-height: 36px;
+}
+
+#search-box #search-title {
+  float: left;
+  vertical-align: baseline;
+  height: 32px;
+  padding-top: 8px;
+  box-sizing: border-box;
+  padding-right: 8px;
+  font-weight: bold;
+}
+
+#search-title a {
+  text-decoration: none;
+  color: #B92034;
+}
+
+#search-box #search-q {
+  float: left;
+
+  width: 300px;
+  height: 28px;
+  border-radius: 0px;
+  border: solid 1px gray;
+  padding-left: 10px;
+}
+
+#search-box #search-f {
+  float: left;
+  position: relative;
+  left: -1px;
+}
+
+#search-results {
+  clear: both;
+  padding: 10px;
+}
+
+.searching#search-box #search-q {
+  background: url(/cdn/dev/img/spinner.gif) no-repeat white;
+  background-position:  right 2px top 2px;
+}
+
+#section2 #search-results h3 {
+  padding: 16px 0 4px 0;
+}
+
+#section2 #search-results .platforms img {
+  margin: 10px 8px 0 0;
+}
+
+#search-results .title {
+  margin-top: 24px;
+  padding: 0 8px 2px;
+  font-size: 13pt;
+}
+
+#search-results .title a {
+  text-decoration: none;
+}
+
+#search-results .title a:hover {
+  text-decoration: underline;
+}
+
+#search-results .description,
+#search-results .platforms,
+#search-results .encoding {
+  padding-left: 28px;
+}
+
+#search-results .description {
+  margin-top: 4px;
+}
+
+#search-results .encoding {
+  color: red;
+}
+
+#search-results .keyboard .title a {
+  background-image: url(/cdn/dev/keyboard-search/icon-keyman-20.png);
+  background-repeat: no-repeat;
+  background-position: 0px 4px;
+  padding-left: 28px;
+}
+
+
+#search-results .keyboard .detail {
+  padding: 0 8px;
+}
+
+#search-results .keyboard .id {
+  color: #006622;
+  padding: 2px 0 6px 28px;
+}
+
+#search-results .keyboard table {
+  clear: right;
+}
+
+/* Keyboard details */
+
+#keyboard-details th {
+  text-align: left;
+  padding: 4px 24px 4px 0;
+  color: #666699;
+}
+
+#keyboard-details td {
+  text-align: left;
+  padding: 4px 64px 4px 0;
+}
+
+#keyboard-details {
+  margin: 0 0 0 10px;
+}
+
+#keyboard-details-col {
+  margin: 8px 0 32px 0;
+}
+
+#keyboard-details-col .col {
+  float: left;
+  max-width: 50%;
+}
+
+.clear-left {
+  clear: left;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Responsive display of table data on mobile */
+  
+  #keyboard-details-col .col {
+    float: none;
+    max-width: unset;
+  }
+  
+  table#keyboard-details,
+  table#keyboard-details thead,
+  table#keyboard-details tbody,
+  table#keyboard-details th,
+  table#keyboard-details td,
+  table#keyboard-details tr {
+    display: block;
+  }
+}
+
+/* Permanent link to keyboards, at bottom of page */
+
+p#permalink {
+  font-size: 8pt;
+}
+
+/* Download boxes */
+
+.download {
+  clear: both;
+  padding: 8px;
+  margin: 8px;
+  border: solid 1px #B92034;
+  background: white;
+}
+
+.download-windows {
+  border: solid 1px #159bc7;
+  background: #dcf0f7;
+}
+
+.download .download-title {
+  font-weight: bold;
+  font-size: 14pt;  
+  margin: 0 0 4px;
+}
+
+.download .download-description {
+  margin: 4px 0 2px;
+}
+
+.download .download-filename {
+  color: #666666;
+  font-size: 11pt;
+}
+
+.download a.download-link {
+  float: right;
+  margin-top: 4px;
+  padding: 12px 30px 0 4px;
+  color: white;
+  background-image: url(/cdn/dev/keyboard-search/install-blank.png);
+  width: 202px;
+  height: 34px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16pt;
+  text-align: center;
+}
+
+.download.download-web a.download-link {
+  background-image: url(/cdn/dev/keyboard-search/link-blank.png);
+}
+
+.download.download-web {
+  border-color: #4383BD;
+}
+
+.download.download-android {
+  background-image: url(/cdn/dev/keyboard-search/icon-android.png);
+}
+
+.download.download-windows {
+  background-image: url(/cdn/dev/keyboard-search/icon-windows.png);
+}
+
+.download.download-ios {
+  background-image: url(/cdn/dev/keyboard-search/icon-ios.png);
+}
+
+.download.download-kmp-windows {
+  background-image: url(/cdn/dev/keyboard-search/icon-windows.png);
+}
+
+.download.download-kmp-macos {
+  background-image: url(/cdn/dev/keyboard-search/icon-macos.png);
+}
+
+.download.download-kmp-linux {
+  background-image: url(/cdn/dev/keyboard-search/icon-linux.png);
+}
+
+.download.download-android,
+.download.download-windows,
+.download.download-ios,
+.download.download-kmp-windows,
+.download.download-kmp-macos,
+.download.download-kmp-linux,
+.download.download-web {
+  padding-left: 48px;
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+}
+
+.download-other .download a.download-link {
+  background-image: url(/cdn/dev/keyboard-search/low-blank.png);
+}

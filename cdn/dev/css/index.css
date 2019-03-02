@@ -1,0 +1,893 @@
+/**************************************
+ * Section1 CSS
+ * ***********************************/
+
+.main1{
+    float: left;
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    background-image: url('../img/main-family.jpg');
+    background-repeat:no-repeat;
+    background-position:right;
+}
+
+.main1 h1{
+    float: left;
+    color: #fff;
+    font-size: 40pt;
+    line-height: 1.1;
+    margin: 120px 0px 0px 30px;
+    text-shadow: 1px 1px #000;
+    letter-spacing: -0.05em;
+}
+
+.main-install {
+  clear: both;
+  padding: 24px 48px;
+  background: #FC7200;
+}
+
+.main-install div {
+  font-size: 40pt;
+  font-weight: bold;
+  margin-bottom: 16px;
+  float: left;
+  color: white;
+}
+
+.main-install a {
+  padding: 0 24px;
+}
+
+@media all and (max-width: 1300px){
+	.main1 h1{
+		font-size: 36pt;
+		max-width: 310px;
+		margin-left: 30px;
+		margin-top: 90px;
+	}
+}
+
+@media all and (min-width: 1200px) and (max-width: 1300px){
+	.main1{
+		background-image: url('../img/main-family-medium.jpg');
+	}
+}
+
+@media all and (min-width: 1300px) and (max-width: 1500px){
+	.main1 h1{
+		font-size: 52pt;
+		max-width: 610px;
+		margin-left: 20px;
+		margin-top: 110px;
+	}
+}
+
+@media all and (min-width: 1500px){
+	.main1 h1{
+		font-size: 68pt;
+		margin-left: 50px;
+		margin-top: 90px;
+	}
+}
+
+@media all and (min-width: 1750px){
+	.main1{
+		background-image: url('../img/main-family-medium.jpg');
+	}
+}
+
+@media all and (min-width: 1900px){
+	.main1{
+		background-image: url('../img/main-family-big.jpg');
+	}
+}
+
+
+#main-banner{
+    float: right;
+    margin-right: 40px;
+    position: relative;
+    top: 270px;
+}
+
+/**************************************
+ * Section2 CSS
+ * ***********************************/
+
+#section2{
+	margin-bottom: 0px;
+}
+
+.main2{
+    float: left;
+    width: 100%;
+    background: #f2f2f2;
+}
+
+.section{
+	float: left;
+	width: 100%;
+	padding: 10px 0px;
+}
+
+.section-heading{
+	float: left;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 20pt;
+	line-height: 1.2em;
+}
+
+.section-explainer{
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+	line-height: 1.3;
+}
+
+/**************************************
+ * Language Section CSS
+ * ***********************************/
+
+@font-face {
+	font-family:GeezWeb;
+	font-style:normal;
+	font-weight:normal;
+	src:url('//s.keyman.com/font/deploy/wookianos.ttf') format('truetype');
+}
+@font-face {
+	font-family:MyanmarWeb;
+	font-style:normal;
+	font-weight:normal;
+	src:url('//s.keyman.com/font/deploy/Padauk.ttf') format('truetype');
+}
+/*@font-face {
+	font-family:LatinWeb;
+	font-style:normal;
+	font-weight:normal;
+	src:url('//s.keyman.com/font/deploy/DejaVuSans.ttf') format('truetype');
+}*/
+@font-face {
+	font-family:OriyaWeb;
+	font-style:normal;
+	font-weight:normal;
+	src:url('//s.keyman.com/font/deploy/utkalm.ttf') format('truetype');
+}
+@font-face {
+	font-family:SinhalaWeb;
+	font-style:normal;
+	font-weight:normal;
+	src:url('//s.keyman.com/font/deploy/kaputaunicode.ttf') format('truetype');
+}
+@font-face {
+	font-family:TamilWeb;
+	font-style:normal;
+	font-weight:normal;
+	src:url('//s.keyman.com/font/deploy/aava1.ttf') format('truetype');
+}
+@font-face {
+	font-family:CherokeeWeb;
+	font-style:normal;
+	font-weight:normal;
+	src:url('//s.keyman.com/font/deploy/digohweli_1_7.ttf') format('truetype');
+}
+@font-face {
+    font-family: SindhiWeb;
+    font-style:  normal;
+    font-weight: normal;
+    src: url('//s.keyman.com/font/deploy/MBKhursheed10.6.ttf')  format("truetype");
+}
+@font-face {
+  font-family: TibetanWeb;
+  font-style:  normal;
+  font-weight: normal;
+  src: url('//s.keyman.com/font/deploy/CTRC-Uchen.ttf')  format("truetype");
+}
+@font-face {
+    font-family: LaoWeb;
+    font-style:  normal;
+    font-weight: normal;
+    src: url('//s.keyman.com/font/deploy/SAYSETT0.eot'); 
+    src: url('//s.keyman.com/font/deploy/SAYSETT0.eot?#iefix') format('embedded-opentype'), 
+    url('//s.keyman.com/font/deploy/saysettha_web.woff') format('woff'), 
+    url('//s.keyman.com/font/deploy/saysettha_ot.ttf') format('truetype');         
+}
+@font-face {
+    font-family: PashtoWeb;
+    font-style:  normal;
+    font-weight: normal;
+    src: url('//s.keyman.com/font/deploy/LateefRegOT.ttf')  format("truetype");
+}
+@font-face {
+    font-family: "Noto Nastaliq Urdu Draft";
+    font-style:  normal;
+    font-weight: normal;
+    src: url('//s.keyman.com/font/deploy/NotoNastaliqUrduDraft.ttf')  format("truetype");
+}
+
+.lang-example {
+    font-family: Tahoma;
+    font-size: 14pt;
+}
+
+.section-languages{
+	background: #D6D6D6;
+}
+
+.section-languages .section-explainer{
+	margin-bottom: 20px;
+}
+
+ .column {
+  float: left;
+  width:155px;
+}
+
+ .column .listhead {
+  font-weight: bold;
+  text-indent: 20%;
+  color:#2F4B67
+}
+
+.section-announcement {
+  color: #B92034;
+  background: white;
+}
+
+.section-announcement p {
+  font-size: 36pt;
+  font-weight: bold;
+  padding: 36px 12px;
+  text-align: center;
+}
+
+.section-announcement p a {
+  color: #B92034;
+  text-decoration: none;
+  padding: 4px; 
+  display: inline-block;
+}
+
+.section-announcement p a:hover {
+  background: #D6D6D6;
+  border-radius: 6px;
+}
+
+.lang-ital{
+	font-style: italic;
+	font-size: 12pt;
+}
+
+.language{
+	float: left;
+	width: 300px;
+	height: 24px;
+	margin: 8px 10px;
+	color: #B92034;
+	font-size: 14pt;
+	text-decoration: none;
+	text-align: center;
+}
+
+.pipe{
+	color: #161616;
+}
+
+.section-languages form{
+	float: left;
+	width: 320px;
+	margin: 20px 320px 10px 320px;
+}
+
+.section-languages form input{
+	border-radius: 0px;
+}
+
+.section-languages form h4{
+	text-align: center;
+	width: 320px;
+	font-size: 15pt;
+	margin-bottom: 8px;
+}
+
+#language-search3{
+	float: left;
+	width: 220px;
+	height: 28px;
+	padding: 0px;
+	padding-left: 10px;
+	outline: none;
+	border-radius: 0px;
+	font-size: 12pt;
+	margin-left: 10px;
+}
+
+
+/* Amharic */
+:lang(amh).lang-example {
+	font-family: GeezWeb;
+}
+/* Burmese */
+:lang(mya).lang-example {
+	font-family: MyanmarWeb;
+}
+/* Cherokee */
+:lang(chr).lang-example {
+	font-family: CherokeeWeb;
+}
+/* Lao */
+:lang(lao).lang-example {
+	font-family: LaoWeb;
+}
+/* Malayalam
+:lang(mal).lang-example {
+	font-family: GeezWeb;
+} */
+
+/* Marathi
+:lang(mar).lang-example {
+	font-family: GeezWeb;
+} */
+/* Oriya */
+:lang(ori).lang-example {
+	font-family: OriyaWeb;
+}
+/* Rawang */
+:lang(raw).lang-example {
+	font-family: MyanmarWeb;
+}
+/* Sindhi */
+:lang(snd).lang-example {
+	font-family: SindhiWeb;
+}
+/* Sinhala */
+:lang(sin).lang-example {
+	font-family: SinhalaWeb;
+}
+
+/* Tamil */
+:lang(tam).lang-example {
+	font-family: TamilWeb;
+}
+/* Tibetan */
+:lang(bod).lang-example {
+	font-family: TibetanWeb;
+}
+/* Tigrigna */
+:lang(tir).lang-example {
+	font-family: GeezWeb;
+}
+/* Urdu */
+:lang(urd).lang-example {
+  font-family: "Noto Nastaliq Urdu Draft";
+}
+
+.language .new {
+  color: #69B7D2;
+  font-size: 0.7em;
+  font-weight: bold;
+  padding-left: 4px;
+}
+
+.new {
+  color: #FC7200;
+  font-weight: bold;
+}
+
+#hiero{
+	position: relative;
+	top: 2px;
+}
+
+
+/**************************************
+ * Products Section CSS
+ * ***********************************/
+
+.section-products{
+	background: #f2f2f2;
+}
+
+.product{
+	float: left;
+	width: 300px;
+	height: 310px;
+	padding: 0px 5px 10px 5px;
+	margin: 5px 5px;
+}
+
+.product img{
+	margin-left: 75px !important;
+}
+
+.product:hover {
+	background: #D6D6D6;
+	cursor: pointer;
+}
+
+.product a{
+	text-decoration: none;
+	color: #000;
+}
+
+.product h3{
+	margin-bottom: 6px;
+	font-size: 16pt;
+	color: #B92034;
+	text-align: center;
+}
+
+.product p{
+	padding: 0 8px;
+	line-height: 1.3;
+	font-size: 12pt !important;
+}
+
+/**************************************
+ * Testimonial
+ * ***********************************/
+ 
+.section-testimonials{
+    float: left;
+    width: 100%;
+    color: #888888;
+    padding: 20px 0px 30px 0px;
+  }  
+  
+.section-testimonials div {
+  color: #AAAAAA;
+  float: left;
+  font-family: 'Noto Serif';
+  font-size: 180px;
+  height: 120px;
+  margin-top: -24px;
+  margin-right: 8px;
+  overflow: hidden;
+  line-height: 1 !important;
+}
+
+.section-testimonials p {
+  line-height: 1.2em;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Cabin'; 
+  font-size: 24px; 
+  cursor: pointer;
+}
+
+.section-testimonials p span {
+  font-size: 16px;
+}
+
+/**************************************
+ * Developer
+ * ***********************************/
+
+.section-developers{
+	background: #D6D6D6;
+}
+
+.developer-half{
+	float: left;
+	width: 460px;
+	height: 250px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.developer-half:hover{
+	cursor: pointer;
+	background: #A4A8AB;
+}
+
+.developer-half h3{
+	margin-bottom: 8px;
+	font-size: 16pt;
+	color: #B92034;
+	text-align: center;
+}
+
+.developer-half img{
+	margin-left: 160px;
+}
+
+.section-developers a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.developer-half p{
+	line-height: 1.3;
+}
+
+/**************************************
+ * Language-Device Picker
+ * ***********************************/
+
+#language-device-picker{
+    float: left;
+    width: 300px;
+    padding: 5px 0px;
+    margin: 10px;
+    background: #fff;
+}
+
+#language-device-picker #language-picker, #language-device-picker #device-picker{
+    width: 290px;
+    margin: 5px;
+    padding: 5px 0px;
+}
+
+#language-device-picker #language-picker ul, #language-device-picker #device-picker ul{
+    border: solid 1px gray;
+    padding: 0px;
+    background: #f2f2f2;
+}
+
+#language-device-picker #language-picker h3, #language-device-picker #device-picker h3{
+    text-align: center;
+    padding: 5px;
+    color: #B92034;
+}
+
+#language-device-picker #language-picker ul li, #language-device-picker #device-picker ul li{
+    list-style: none;
+    display: block;
+    padding: 5px;
+    margin: 0px;
+    font-size: 14pt;
+}
+
+#language-device-picker #language-picker ul li:hover, #language-device-picker #device-picker ul li:hover{
+    background: #e4e4e4;
+    cursor: pointer;
+}
+
+#language-device-picker #language-picker ul li.selected, #language-device-picker #device-picker ul li.selected{
+    background: #e4e4e4;
+}
+
+#language-device-picker #language-device-dl{
+    margin-left: auto;
+    margin-right: auto;
+    width: 290px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    background: #FC7200;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#language-device-picker #language-device-dl a{
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+
+
+
+/**************************************
+ * MOBILE CSS
+ * ***********************************/
+
+@media all and (min-width: 768px) and (max-width: 1023px){
+	.wrapper{
+		width: 750px;
+	}
+	.main1{
+		background-image: url('../img/main-family-big.jpg');
+		background-size: 100%;
+		background-position: top;
+		height: 300px;
+	}
+	.main1 h1{
+		font-size: 40pt;
+		margin-top: 30px;
+	}
+	#main-banner{
+		top: 230px;	
+	}
+	.section-testimonials{
+		width: 700px;
+		padding: 60px 0px 30px 0px;
+	}
+	.developer-half{
+		width: 355px;
+		margin-left: 0px;
+	}
+	.developer-half img{
+		margin-left: 27px;
+	}
+	.section-languages form {
+		margin-left: 215px;
+	}
+	.section-languages form input{
+		border-radius: 0px;
+	}
+	#language-search3{
+		height: 30px;
+	}
+	.product{
+		margin-left: 40px;
+	}
+	.language{
+		margin-left: 45px;
+	}
+	.windows-only{
+	    display: none;    
+	}
+}
+
+@media all and (min-width: 600px) and (max-width: 768px){
+	.wrapper,
+  .footer .wrapper{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.header{
+		height: 48px;
+	}
+	#help{
+		top: 11px;
+		width: 100px;
+		margin-left: -100px;
+	}
+	#help p{
+		font-size: 12pt;
+	}
+	.main1{
+		background-position: center top;
+		background-size: 120%;
+		height: 200px;
+	}
+	.main1 h1{
+		float: none;
+		width: 320px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+		padding: 0px;
+		font-size: 28pt;
+		text-shadow: 1px 1px #000;
+	}
+	#main-banner{
+		width: 140px;
+		height: 140px;
+		position: absolute;
+		top: 160px;
+		left: 50%;
+		margin: 0px 0px 0px -70px;
+		z-index: 0;
+	}
+	.section-languages .section-heading{
+		margin-top: 60px;
+	}
+	.section-heading{
+		text-align: center;
+	}
+	
+	.section-explainer{
+		text-align: justify;
+		padding: 0px 10px;
+		width: 300px;
+	}
+	
+	.section-languages form{
+		margin: 20px 0px 10px 0px;
+	}
+	.language.desktop{
+		display: none;
+	}
+	
+	.lang-example.desktop{
+	    display: none;
+	}
+	#language-search{
+		margin-left: 10px;
+		border-radius: 0px;
+		height: 30px;
+	}
+	#search-submit{
+		border-radius: 0px;
+	}
+	.product{
+		margin-left: 5px;
+	}
+	.product h3{
+		text-align: center;
+		font-size: 18pt;
+	}
+	.developer-half{
+		height: 230px;
+		margin: 10px 0px 0px 0px;
+		text-align: center;
+	}
+	.developer-half p{
+		text-align: center;
+	}
+	.section-testimonials{
+		width: 300px;
+		padding: 60px 10px 30px 10px;
+		margin-left: 0px;
+	}
+	.section-testimonial p {
+	  font-size: 20px; 
+	}
+	.developer-half{
+		width: 300px;
+	}
+	.developer-half img{
+		margin-left: 0px;
+	}
+	.windows-only{
+	    display: none;    
+	}
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait){
+	#main-banner{
+		top: 190px;	
+	}
+}
+
+@media all and (min-width: 10px) and (max-width: 600px){
+	.wrapper,
+  .footer .wrapper{
+		width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.header{
+		height: 48px;
+	}
+	#help{
+		top: 11px;
+		width: 100px;
+		margin-left: -100px;
+	}
+	#help p{
+		font-size: 12pt;
+	}
+	.main1{
+		background-position: center top;
+		background-size: 120%;
+		height: 200px;
+	}
+	.main1 h1{
+		float: none;
+		width: 320px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+		padding: 0px;
+		font-size: 28pt;
+		text-shadow: 1px 1px #000;
+	}
+	#main-banner{
+		width: 140px;
+		height: 140px;
+		position: absolute;
+		top: 160px;
+		left: 50%;
+		margin: 0px 0px 0px -70px;
+		z-index: 0;
+	}
+	.section-languages .section-heading{
+		margin-top: 60px;
+	}
+	.section-heading{
+		text-align: center;
+	}
+	
+	.section-explainer{
+		text-align: justify;
+		padding: 0px 10px;
+		width: 300px;
+	}
+	
+	.section-languages form{
+		margin: 20px 0px 10px 0px;
+	}
+	.language.desktop{
+		display: none;
+	}
+	
+	.lang-example.desktop{
+	    display: none;
+	}
+	#language-search{
+		margin-left: 10px;
+		border-radius: 0px;
+		height: 30px;
+	}
+	#search-submit{
+		border-radius: 0px;
+	}
+	.product{
+		margin-left: 5px;
+	}
+	.product h3{
+		text-align: center;
+		font-size: 18pt;
+	}
+	.developer-half{
+		height: 230px;
+		margin: 10px 0px 0px 0px;
+		text-align: center;
+	}
+	.developer-half p{
+		text-align: center;
+	}
+	.section-testimonials{
+		width: 300px;
+		padding: 60px 10px 30px 10px;
+		margin-left: 0px;
+	}
+	.section-testimonial p {
+	  font-size: 20px; 
+	}
+	.developer-half{
+		width: 300px;
+	}
+	.developer-half img{
+		margin-left: 0px;
+	}
+	.windows-only{
+	    display: none;    
+	}
+}
+/* Landscape mode */
+@media all and (min-width: 321px) and (max-width: 600px) and (orientation: landscape){
+	.wrapper{
+		width: 480px;
+	}
+	.main1{
+		background-position: right top;
+		background-size: 65%;
+	}
+	.main1 h1{
+		width: 30%;
+		text-align: left;
+		margin: 40px 0px 0px 10px;
+		font-size: 20pt;
+	}
+	#main-banner{
+		top: 160px;
+		left: 100%;
+		margin-left: -150px;
+	}
+	.section-explainer{
+		width: 460px;
+		padding: 0px 10px;
+	}
+	.section-languages .section-heading{
+		margin-top: 50px;
+	}
+	.language{
+		margin-left: 80px;
+	}
+	.section-languages form {
+		margin: 20px 80px 10px 80px;
+	}
+	.section-testimonials{
+		width: 460px;
+		padding: 60px 10px 30px 10px;
+	}
+	.developer-half{
+		height: 230px;
+		margin: 10px 80px 00px 80px;
+	}
+	.main2 .wrapper{
+		width: 480px;
+	}  
+	.product{
+		margin-left: 80px;
+	}
+}

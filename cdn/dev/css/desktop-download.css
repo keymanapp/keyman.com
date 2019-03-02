@@ -1,0 +1,131 @@
+/************************************
+ Desktop Download CSS Body
+ ***********************************/
+
+ body[data-device |= Windows] #cta-big-mac{
+	display: block;
+}
+
+.download-stable, #cta-big-Windows, #cta-big-mac{
+	border: solid 2px #159bc7;
+	background: #dcf0f7;
+	margin: 20px;
+	padding: 5px;
+	text-align: center;
+	float: left;
+}
+
+.download-stable h3{
+	text-align: center;
+	font-size: 18pt;
+	margin-top: 5px;
+}
+
+.download-stable form{
+	display: inline-block;
+	clear: both;
+	margin: 10px;
+}
+
+.download-stable #lang-label{
+	float: left;
+	margin-top: 7px;
+}
+
+.download-cta-button{
+	margin: 10px;
+	height: 90px;
+}
+
+.download-cta-button a{
+	text-decoration: none;
+}
+
+.download-cta-button h4{
+	line-height: 50px;
+}
+
+.section-languages{
+	background: none;
+	margin-bottom: 20px;
+}
+
+.section-languages h2{
+	padding: 0px !important;
+	margin: 0px 0px 20px !important;
+	text-align: center;
+}
+
+#hiero{
+	margin: 0px !important;
+}
+
+#vista, #xp{
+	background: #FFBABA;
+	border: solid 2px red;
+	display: none;
+}
+
+#vista.show, #xp.show{
+	display: block;
+}
+
+#download-with-language{
+	float: none;
+}
+
+#cta-big-Windows, #cta-big-mac{
+	margin: 10px 0px 20px 0px;
+	box-sizing: border-box;
+	padding: 10px 20px;
+}
+
+#cta-big-Windows h3, #cta-big-mac h3{
+	color: black;
+  text-align: left;
+  padding: 0;
+  font-size: 20pt !important;
+  margin: 0 0 12px;
+}
+
+.download-stable-email{
+	text-align: left;
+	float: left;
+}
+
+.download-stable-email input{
+  margin: 5px 0;
+}
+
+.download-stable-email input[type='email']{
+	width: 200px;
+}
+
+.download-stable-email label a{
+	text-decoration: underline;
+	color: #b92034;
+}
+
+.download-cta-button{
+	width: 40%;
+	margin-top:12px;
+}
+
+.download-cta-button h4{
+	font-size: 24pt !important;
+  margin-top: 20px;
+}
+
+.download-cta-big p {
+  float: none;
+  padding: 4px 4px 0 0 !important;
+  color: #000;
+  width: 100%;
+  line-height: 1.3em !important;
+  font-size: 12pt !important;
+  text-align: left;
+}
+
+#standalone-email{
+	width: 50%;
+}

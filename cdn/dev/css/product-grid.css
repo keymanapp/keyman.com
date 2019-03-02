@@ -1,0 +1,48 @@
+table.product-grid {
+	width: 80%;
+	margin-bottom: 20px;
+	margin-left: 10%;
+}
+
+table.product-grid th{
+	background: #CCCCCC;
+	font-weight: bold;
+}
+
+table.product-grid td{
+	background: #fff;
+}
+
+table.product-grid, table.product-grid td{
+	border: 1px solid #CCCCCC;
+	text-align: left;
+}
+
+table.product-grid td, table.product-grid th{
+	padding: 4px 6px;
+}
+
+table.product-grid td:first-child{
+	font-weight: bold;
+	width: 30%;
+	padding: 0px 6px;
+	padding-bottom: 6px;
+}
+
+table.product-grid tr{
+	line-height: 24px;
+}
+
+table.product-grid td a{
+	text-decoration: none;
+	color: #000;
+}
+
+table.product-grid td a:hover{
+	border-bottom: 1px blue dotted;
+	color: blue;
+}
+
+table.product-grid .table-tick{
+	margin: 0px !important;
+}

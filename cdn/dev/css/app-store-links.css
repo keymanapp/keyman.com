@@ -1,0 +1,50 @@
+table.app-store-links {
+	width: 50%;
+	margin-bottom: 20px;
+	margin-left: 25%;
+}
+
+table.app-store-links th{
+	background: #CCCCCC;
+	font-weight: bold;
+}
+
+table.app-store-links td{
+	background: #fff;
+}
+
+table.app-store-links, table.app-store-links td{
+	border: 1px solid #CCCCCC;
+	text-align: center;
+}
+
+table.app-store-links td, table.app-store-links th{
+	padding: 4px 6px;
+}
+
+
+table.app-store-links tr{
+	height: 37px !important;
+	line-height: 37px;
+}
+
+table.app-store-links td a{
+	text-decoration: none;
+	color: #000;
+}
+
+table.app-store-links td a:hover{
+	color: blue;
+}
+
+table.app-store-links .table-tick{
+	margin: 0px !important;
+}
+
+table.app-store-links td a{
+  display:block; 
+}
+
+table.app-store-links td a img{
+  margin: 10px 0 0 !important;
+}

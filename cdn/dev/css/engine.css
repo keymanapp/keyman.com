@@ -1,0 +1,640 @@
+/**************************************
+ * CSS RESET
+ * ***********************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html{
+    font-family: 'Cabin', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+}
+
+/**************************************
+ * Page Layout CSS
+ * ***********************************/
+
+html{
+    cursor: default;
+}
+
+.wrapper{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button{
+    float: left;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px #3e3e3e;
+}
+
+.button a{
+    text-decoration: none;
+}
+
+.button h2{
+    color: #fff;
+}
+
+.orange{
+    background: #FC7200;
+}
+
+.orange:hover{
+    background: #F99246;
+}
+
+
+/**************************************
+ * Header CSS
+ * ***********************************/
+
+.header{
+    float: left;
+    width: 100%;
+    background: #fff;
+    display: block;
+}
+
+#logo{
+    margin-left: 30px;
+    display: block;
+}
+
+#header-bottom{
+    width: 100%;
+    height: 8px;
+    display: block;
+}
+
+/**************************************
+ * Section1 CSS
+ * ***********************************/
+
+.main1{
+    float: left;
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    background-image: url('../img/banner-keymanengine-medium.jpg');
+    background-repeat:no-repeat;
+    background-position:right;
+}
+
+.main1 h1{
+    float: left;
+    color: #fff;
+    font-size: 40pt;
+    line-height: 1.1;
+    margin: 100px 0px 0px 30px;
+    text-shadow: 1px 1px #000;
+}
+
+@media all and (max-width: 1150px){
+	.main1 h1{
+		font-size: 28pt;
+		margin-left: 30px;
+		margin-top: 130px;
+    max-width: 240px;
+    text-align: center;
+	}
+}
+
+@media all and (orientation: portrait) and (min-width: 640px) and (max-width: 1150px) {
+  .main1 h1 {
+    right: 16px;
+    top: 120px;
+    position: absolute;
+    font-size: 32pt !important;
+    text-align: right;
+    max-width: 250px;
+    text-shadow: 4px 4px #000;
+    font-weight: 700;
+  }
+  #app-store {
+    position: absolute;
+    top: 424px;
+    right: 40px;
+  }
+}
+
+@media all and (orientation: portrait) and (max-width: 639px) {
+  .main1 {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  .main1 h1 {
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 230px !important;
+    max-width: 100% !important;
+    width: auto !important;
+    font-size: 18pt !important;
+    text-align: center !important;
+  }
+  
+}
+
+@media all and (min-width:1151px) and (max-width: 1350px){
+	.main1 h1{
+		font-size: 36pt;
+		margin-left: 30px;
+		margin-top: 130px;
+	}
+}
+
+@media all and (min-width: 1160px) and (max-width: 1300px){
+	.main1{
+		background-image: url('../img/banner-keymanengine-medium.jpg');
+	}
+}
+
+@media all and (min-width: 1351px) and (max-width: 1500px){
+	.main1 h1{
+		font-size: 40pt;
+		max-width: 610px;
+		margin-left: 20px;
+		margin-top: 110px;
+	}
+}
+
+@media all and (min-width: 1501px){
+	.main1 h1{
+		font-size: 50pt;
+		margin-left: 30px;
+		margin-top: 100px;
+	}
+}
+
+@media all and (min-width: 1801px){
+	.main1 h1{
+		font-size: 50pt;
+		margin-left: 40px;
+		margin-top: 90px;
+	}
+}
+
+@media all and (min-width: 1700px){
+	.main1{
+		background-image: url('../img/banner-keymanengine-big.jpg');
+	}
+}
+
+@media all and (min-width: 1900px){
+	.main1{
+		background-image: url('../img/banner-keymanengine-big.jpg');
+	}
+}
+
+
+#main-banner{
+    position: absolute;
+    top: 380px;
+    left: 100%;
+    margin-left: -200px;
+}
+
+/**************************************
+ * Section2 CSS
+ * ***********************************/
+
+.main2{
+    float: left;
+    width: 100%;
+    background: #D6D6D6;
+}
+
+.device{
+    float: left;
+    width: 320px;
+}
+
+.device img {
+   margin-left: 60px;
+}
+
+.device .button{
+    margin-left: 60px;
+}
+
+.main2-text1{
+    float: left;
+    width: 320px;
+    min-width: 240px;
+}
+
+.main2-text1 h2{
+    padding: 20px;
+    font-size: 24pt;
+    color: #666666;
+}
+
+.main2-text2{
+    float: left;
+    width: 640px;
+}
+
+.main2-text2 p{
+    padding: 20px;
+    line-height: 1.2;
+    font-weight: 600 !important;
+}
+
+.main2-text2 a{
+	color: #B92034;
+	text-decoration: underline;
+}
+
+.main2-text2 ul {
+  list-style-type: none;
+  line-height: 1.6em; 
+  margin-left: 32px; 
+  margin-bottom: 16px;
+}
+
+#app-store {
+  margin-left: 64px;
+  margin-top: 16px;
+}
+
+/**************************************
+ * Footer CSS
+ * ***********************************/
+
+.footer{
+    float: left;
+    width: 100%;
+    height: 320px;
+    background: #A4A8AB;
+}
+
+.footer-third{
+    float: left;
+    width: 320px;
+    height: 200px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.footer-third-title{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18pt;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.footer-third form{
+    width: 320px;
+}
+
+.footer-third form input{
+	-webkit-appearance: none;
+	padding: 0px;
+    float: left;
+    height: 38px;
+    width: 200px;
+    padding-left: 10px;
+    font-size: 14pt;
+    border-radius: 6px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    box-shadow: none;
+    border: 1px solid #FFFFFF;
+    margin-left: 10px;
+}
+
+.footer-third form input:focus{
+    outline: 0;
+}
+
+.subscribe{
+    width: 90px;
+    margin: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background: #666666;
+    box-shadow: none;
+}
+.subscribe:hover{
+    background: #888888;
+}
+.footer-third img{
+    float: left;
+    width: 80px;
+    height: 50px;
+    margin-top: -5px;
+}
+
+.tavultesoft a, .tavultesoft a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.tavultesoft a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#facebook{
+    margin-left: 40px;
+}
+
+#facebook, #twitter, #blog{
+	opacity: 1;
+}
+
+#facebook:hover, #twitter:hover, #blog:hover{
+	opacity: 0.5;
+}
+
+.tavultesoft{
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tavultesoft p{
+    color: #fff;
+    font-size: 12pt;
+    margin-top: 10px;
+}
+
+/**************************************
+ * MOBILE CSS
+ * ***********************************/
+
+@media all and (min-width: 600px) and (max-width: 768px){
+	.wrapper{
+		width: 750px;
+	}
+	.main1{
+		background-image: url('../img/banner-keymanengine-big.jpg');
+		background-size: 100%;
+		background-position: center top;
+		height: 340px;
+	}
+	.main1 h1{
+		font-size: 30pt;
+		margin-top: 10px;
+	}
+	.device{
+		width: 250px;
+		margin: 0px;
+	}
+	.device img {
+		margin-left: 25px;
+	}
+
+	.device .button{
+		margin-left: 25px;
+	}
+	.footer-third{
+		width: 250px;
+		margin: 0px;
+	}
+	.footer-third form input{
+		width: 140px;	
+	}
+	.developer{
+		margin: 0px 30px;
+	}
+	#facebook{
+		margin-left: 40px;
+	}
+	.footer-third-title{
+		font-size: 16pt;	
+	}
+	.footer-third{
+		width: 375px;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	#main-banner{
+		top: 270px;	
+	}
+	.main2-text1{
+		font-size: 28pt;
+		text-align: center;
+		width: 750px;
+	}
+	.main2-text2{
+		text-align: justify;
+		margin: 0px 20px;
+		width: 710px;
+		font-size: 18pt;
+	}
+	.main2-text2 ul{
+		text-align: left;
+	}
+}
+
+@media all and (min-width: 10px) and (max-width: 400px){
+	.wrapper{
+		width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.header{
+		height: 48px;
+	}
+	#logo{
+		height: 44px;
+		width: 125px;
+		margin-left: 10px;
+	}
+	.main1{
+		background-position: center top;
+		background-size: 120%;
+		height: 320px !important;
+	}  
+	.main1 h1{
+		float: none;
+		width: 320px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0px;
+		font-size: 28pt;
+		text-shadow: 1px 1px #000;
+		position: relative;
+		top: -1px;
+	}
+	#main-banner{
+		width: 140px;
+		height: 140px;
+		position: absolute;
+		top: 145px;
+		left: 50%;
+		margin: 0px 0px 0px -70px;
+	}
+	.main2{
+		padding-top: 30px;
+	}
+	.main2 .wrapper{
+		width: 300px;
+	}
+	.main2 .device{
+		width: 100px;
+	}
+	.main2 img{
+		width: 100px;
+		margin-left: 0px;
+	}
+	.main2 .button{
+		width: 80px;
+		height: 34px;
+		line-height: 34px;
+		margin-top: -10px;
+		margin-left: 10px;
+	}
+	.main2-text1{
+		width: 300px;
+		text-align: center;
+		xheight: 90px;
+	}
+	.main2-text2{
+		width: 290px;
+		xheight: 280px;
+		padding: 20px 5px !important;
+		text-align: justify;
+	}
+	.main2-text2 ul{
+		text-align: left;
+	}
+	.footer{
+		height: 300px;
+		padding: 0px;
+	}
+	.footer-third{
+		height: 120px;
+		position: relative;
+		z-index: 9;
+		margin-left: 0px;
+	}
+	.footer-third-title{
+		margin-top: 30px;
+		margin-bottom: 15px;	
+	}
+	.tavultesoft{
+		display: none;
+	}
+}
+/* Landscape mode */
+@media all and (min-width: 480px) and (max-width: 600px) and (orientation: landscape){
+	.wrapper{
+		width: 480px;
+	}
+	.main1{
+		background-position: right center;
+		background-size: 65%;
+		height: 210px;
+	}
+	.main1 h1{
+		width: 40%;
+		text-align: left;
+		margin: 30px 0px 0px 10px;
+		font-size: 20pt;
+	}
+	#main-banner{
+		top: 160px;
+		left: 100%;
+		margin-left: -150px;
+	}
+	.main2 .wrapper{
+		width: 480px;
+	}
+	.main2 .device{
+		width: 160px;
+	}
+	.main2 img{
+		width: 160px;
+	}
+	.main2 .button{
+		width: 140px;
+		height: 44px;
+		line-height: 44px;
+	}
+	.main2-text1{
+		width: 480px;
+	}
+	.main2-text2{
+		width: 470px;
+	}
+	.popup{
+		width: 460px;
+		top: 10%;
+	}
+	.popup p{
+		width: 420px;
+	}
+	.popup form input{
+		width: 360px;
+	}
+	.notify{
+		width: 370px;
+	}
+	.footer{
+		height: 520px;
+	}
+	.footer-third{
+		margin-left: 80px;		
+	}
+	
+}

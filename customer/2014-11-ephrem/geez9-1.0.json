@@ -1,0 +1,17 @@
+{
+  "options":{
+    "device":"any",
+    "keyboardBaseUri":"http://keyman.com/customer/2014-11-ephrem/",
+    "fontBaseUri":"http://s.keyman.com/font/deploy/"
+  },
+  "keyboard":{
+    "id":"geez9",
+    "name":"Geez",
+    "filename":"geez9-1.0.js",
+    "version":"1.0",
+    "lastModified":"2014-10-24T13:38:01+00:00",
+    "font":{"family":"Wookianos","filename":"wookianos.ttf"},
+    "oskFont":{"family":"Wookianos","filename":"wookianos.ttf"},
+    "languages":[{"id":"amh","name":"Amharic"}]
+  }
+}
