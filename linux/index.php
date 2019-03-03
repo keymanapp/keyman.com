@@ -3,7 +3,7 @@
   
   // Required
   head([
-    'title' =>'Keyman ' . $beta_version . ' for Linux',
+    'title' =>'Keyman ' . $stable_version . ' for Linux',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css', 'prism.css'],
     'js' => ['prism.js'],
     'showMenu' => true,
@@ -25,7 +25,7 @@
     keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>*.
 </p>
 <p>
-    Keyman for Linux also includes KMFL, so your existing KMFL keyboards will continue to work.
+    Keyman for Linux also supports KMFL keyboards, so your existing KMFL keyboards will continue to work.
 </p>
 <p>
     * Keyman Developer is currently a Windows-only product; however, the command line compiler kmcomp runs in WINE.
@@ -116,7 +116,8 @@ sudo apt-get install keyman onboard</code></pre>
 <p>
     This brings up a configuration panel where you can "Download" Keyman keyboards from the cloud repository. You can also "Install"
     keyboards via local .kmp keyboard packages. In some keyboard packages, you might need to add the keyboard to
-    IBus by adding an "Other" input source.
+    IBus by adding an "Other" input source. See <a href="https://help.keyman.com/products/linux/installing-keyboard.php">
+    help.keyman.com</a> for more details on installing a keyboard.
 </p>
 
 <br/>
@@ -129,10 +130,22 @@ sudo apt-get install keyman onboard</code></pre>
 
 <br/>
 <p>
+    <span class="red">Q.</span> What's the relationship between KMFL and Keyman for Linux?
+</p>
+<p>
+    <span class="red">A.</span> KMFL and Keyman 11 are released together in the PPA, but are separate. The installation
+    instructions above will install Keyman, not KMFL.
+</p>
+
+<br/>
+<p>
     <span class="red">Q.</span> What Linux distros will Keyman work with?
 </p>
 <p>
     <span class="red">A.</span> Keyman runs on Debian, Ubuntu, Wasta Linux and can be compiled to run from source in most distributions.
+</p>
+<p>
+    Note: there's currently a limitation where the Keyman packages are incomplete on the Xenial ppa.
 </p>
 
 <br/>
