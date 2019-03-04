@@ -3,7 +3,7 @@
   
   // Required
   head([
-    'title' =>'Keyman ' . $beta_version . ' for Linux',
+    'title' =>'Keyman ' . $stable_version . ' for Linux',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css', 'prism.css'],
     'js' => ['prism.js'],
     'showMenu' => true,
@@ -25,7 +25,7 @@
     keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>*.
 </p>
 <p>
-    Keyman for Linux also includes KMFL, so your existing KMFL keyboards will continue to work.
+    Keyman for Linux also supports KMFL keyboards, so your existing KMFL keyboards will continue to work.
 </p>
 <p>
     * Keyman Developer is currently a Windows-only product; however, the command line compiler kmcomp runs in WINE.
@@ -116,7 +116,8 @@ sudo apt-get install keyman onboard</code></pre>
 <p>
     This brings up a configuration panel where you can "Download" Keyman keyboards from the cloud repository. You can also "Install"
     keyboards via local .kmp keyboard packages. In some keyboard packages, you might need to add the keyboard to
-    IBus by adding an "Other" input source.
+    IBus by adding an "Other" input source. See <a href="https://help.keyman.com/products/linux/installing-keyboard.php">
+    help.keyman.com</a> for more details on installing a keyboard.
 </p>
 
 <br/>
@@ -129,10 +130,45 @@ sudo apt-get install keyman onboard</code></pre>
 
 <br/>
 <p>
+    <span class="red">Q.</span> What's the relationship between Keyman for Linux and KMFL?
+</p>
+<p>
+    <span class="red">A.</span> Keyman for Linux and KMFL are released together in the Keyman
+    <a href="https://en.wikipedia.org/wiki/Ubuntu#Package_Archives">PPA</a>, but are separate. The installation
+    instructions above will install Keyman, not KMFL.
+</p>
+
+<br/>
+<p>
+    <span class="red">Q.</span> Can I have Keyman for Linux and KMFL installed at the same time?
+</p>
+<p>
+    <span class="red">A.</span> Yes. To install KMFL on Ubuntu:
+<pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install ibus-kmfl</code></pre>
+</p>
+
+<br/>
+<p>
+    <span class="red">Q.</span> If I already had KMFL installed. How can I uninstall KMFL before installing Keyman?
+</p>
+<p>
+    <span class="red">A.</span> It is good to remove any keyboards from ibus e.g. KMFL keyboards before you remove KMFL.
+    Then, to remove KMFL:
+<pre class='language-bash code'><code>sudo dpkg --purge ibus-kmfl libkmfl</code></pre>
+</p>
+
+<br/>
+<p>
     <span class="red">Q.</span> What Linux distros will Keyman work with?
 </p>
 <p>
     <span class="red">A.</span> Keyman runs on Debian, Ubuntu, Wasta Linux and can be compiled to run from source in most distributions.
+</p>
+<p>
+    Note: there's currently a limitation where the Keyman packages are incomplete on the Xenial ppa.
 </p>
 
 <br/>
