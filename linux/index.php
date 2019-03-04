@@ -157,7 +157,7 @@ sudo apt-get install ibus-kmfl</code></pre>
 <p>
     <span class="red">A.</span> It is good to remove any keyboards from ibus e.g. KMFL keyboards before you remove KMFL.
     Then, to remove KMFL:
-<pre class='language-bash code'><code>sudo dpkg--purge ibus-kmfl libkmfl</code></pre>
+<pre class='language-bash code'><code>sudo dpkg --purge ibus-kmfl libkmfl</code></pre>
 </p>
 
 <br/>
