@@ -116,14 +116,6 @@
 
 <br/>
 <p>
-    <span class="red">Q.</span> I found a bug. Where can I report it?
-</p>
-<p>
-    <span class="red">A.</span> Please report bugs through the <a href='https://community.software.sil.org/c/keyman'>SIL Keyman Community</a>.
-</p>
-
-<br/>
-<p>
     <span class="red">Q.</span> What languages does Keyman support?
 </p>
 <p>
@@ -135,29 +127,18 @@
 
 <br/>
 <p>
-    <span class="red">Q.</span> Will you help me install Keyman?
-</p>
-<p>
-    <span class="red">A.</span> Because we are offering this as a free download, we can not provide direct technical support.
-    Please direct support enquiries to the <a href='https://community.software.sil.org/c/keyman'>SIL Keyman Community</a>.
-</p>
-
-<br/>
-<p>
-    <span class="red">Q.</span> How can I update Keyman?
-</p>
-<p>
-    <span class="red">A.</span> First, logout and login again. This ensures that Keyman is not in use. Then you should be able to drag and update Keyman in the same way as you originally <a href='http://help.keyman.com/products/mac/<?php echo $stable_version; ?>/docs/start_download-install_keyman.php'>installed Keyman for macOS</a>.
-</p>
-
-<br/>
-<p>
     <span class="red">Q.</span> Are there any known issues?
 </p>
-
-<ul>
-    <li> ​Dragging the Keyman app to the Input Methods alias on install does not work on OS X 10.8.5 Mountain Lion.</li>
-    <li> On some computers, you need to allow “apps from anywhere” in security in order for Keyman to start.</li>
-    <li> The ​Keyman Configuration window should not be on top of other applications.</li>
-</ul>
+<p>
+    <span class="red">A.</span> Here are a few of the known issues:
+    <ul>
+        <li> Keyboards involving <a href="https://en.wikipedia.org/wiki/Plane_(Unicode)#Supplementary_Multilingual_Plane">SMP</a>
+            characters (code points U+10000–​U+10FFFF) aren't correctly processing the characters.</li>
+        <li>Keyman has compatibility <a href="https://github.com/keymanapp/keyman/issues?q=is%3Aopen+is%3Aissue+label%3Acompatibility+label%3Amac">
+            issues</a> with certain applications</li>
+        <li> ​Dragging the Keyman app to the Input Methods alias on install does not work on OS X 10.8.5 Mountain Lion.</li>
+        <li> On some computers, you need to allow “apps from anywhere” in security in order for Keyman to start.</li>
+        <li> The ​Keyman Configuration window should not be on top of other applications.</li>
+    </ul>
+</p>
 <br/>
