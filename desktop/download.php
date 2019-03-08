@@ -26,10 +26,10 @@
 </p>
 <div class="download-stable" id="download-with-language">
     <h3>Keyman Desktop <?php echo $stable_version; ?> for your language</h3>
-    <form method="get" action="/keyboards" name="fsearch">
-        <label for="language-search" id="lang-label">Language name:</label>
-        <input id="language-search" type="text" placeholder="Enter language" name="q">
-        <input id="search-submit" type="image" src="<?php echo cdn('img/search-button.png'); ?>" value="Search" onclick="if(document.getElementById('language-search').value==''){return false;}">
+    <form method="get" action="/keyboards" name="fsearch3">
+        <label for="language-search3" id="lang-label">Language name:</label>
+        <input id="language-search3" type="text" placeholder="Enter language" name="q">
+        <input id="search-submit3" type="image" src="<?php echo cdn('img/search-button.png'); ?>" value="Search" onclick="if(document.getElementById('language-search3').value==''){return false;}">
     </form>
 </div>
 
