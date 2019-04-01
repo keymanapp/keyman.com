@@ -357,4 +357,10 @@ function loaded(){
   });
 }
 
+/* Handling deprecated keyboards */
+
+function toggleDeprecatedVersionDetails() {
+  $('#deprecated-old').toggle();
+}
+
 loaded();

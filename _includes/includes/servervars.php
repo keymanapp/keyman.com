@@ -45,7 +45,7 @@
     return '';
   }
   
-  $site_suffix = GetHostSuffix();
+  $site_suffix = '';//GetHostSuffix();
   $site_protocol = (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
     
   if($site_suffix == '') {

@@ -19,6 +19,15 @@ h2 a {
   text-align: left;
 }
 
+#deprecated-old {
+  display: none;
+}
+
+#section2 p.deprecated-link a {
+  font-size: 12pt;
+  color: #666666;
+}
+
 .deprecated {
   display: block;
   color: #220000;
