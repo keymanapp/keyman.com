@@ -21,6 +21,7 @@
     static private $keyboard;
     static private $downloads;
     static private $title;
+    static private $error;
 
     // Additional properties for keyboard details
     static private $description;
@@ -30,6 +31,8 @@
     static private $keyboardEncoding;
     static private $minVersion;
     static private $keyboardPlatforms;
+
+    static private $deprecatedBy;
 
     /**
      * render_keyboard_details - display keyboard download boxes and details
@@ -42,8 +45,11 @@
       self::$tier = self::get_tier_from_request($tier);
       self::$landingPage = $landingPage;
 
+      self::LoadData();
+      self::WriteTitle();
       self::WriteDownloadBoxes();
       self::WriteKeyboardDetails();
+      if(!empty(self::$deprecatedBy)) echo "</div></div>";
     }
 
     /**
@@ -245,27 +251,37 @@ END;
       return FALSE;
     }
 
-    protected static function WriteDownloadBoxes() {
-      global $apihost, $stable_version, $downloadhost, $embed, $session_query_q, $embed_win, $embed_version, $pageDevice;
+    protected static function LoadData() {
+      global $apihost, $stable_version, $downloadhost;
 
+      self::$error = "";
       $s = @file_get_contents($apihost . '/keyboard/' . rawurlencode(self::$id));
       if ($s === FALSE) {
         // Will fail later in the script
+        self::$error .= error_get_last()['message'] . "\n";
         self::$title = 'Failed to load keyboard ' . self::$id;
         header('HTTP/1.0 404 Keyboard not found');
       } else {
-        self::$keyboard = json_decode($s);
-        self::$title = self::$keyboard->name;
-        if (!preg_match('/keyboard$/i', self::$title)) self::$title .= ' keyboard';
-        self::$description = isset(self::$keyboard->description) ? self::$keyboard->description : '';
-        self::$authorName = isset(self::$keyboard->authorName) ? self::$keyboard->authorName : '';
-        self::$minVersion = isset(self::$keyboard->minKeymanVersion) ? self::$keyboard->minKeymanVersion : $stable_version;
-        self::$license = self::map_license(isset(self::$keyboard->license) ? self::$keyboard->license : 'Unknown');
+        $s = json_decode($s);
+        if(is_object($s)) {
+          self::$keyboard = $s;
+          self::$title = self::$keyboard->name;
+          if (!preg_match('/keyboard$/i', self::$title)) self::$title .= ' keyboard';
+          self::$description = isset(self::$keyboard->description) ? self::$keyboard->description : '';
+          self::$authorName = isset(self::$keyboard->authorName) ? self::$keyboard->authorName : '';
+          self::$minVersion = isset(self::$keyboard->minKeymanVersion) ? self::$keyboard->minKeymanVersion : $stable_version;
+          self::$license = self::map_license(isset(self::$keyboard->license) ? self::$keyboard->license : 'Unknown');
+        } else {
+          self::$error .= "Error returned from $apihost: $s\n";
+          self::$title = 'Failed to load keyboard ' . self::$id;
+          header('HTTP/1.0 500 Internal Server Error');
+        }
       }
 
       $s = @file_get_contents($downloadhost . '/api/keyboard/1.0/' . rawurlencode(self::$id) . '?tier=' . self::$tier);
       if ($s === FALSE) {
         // Will fail later in the script
+        self::$error .= error_get_last()['message'] . "\n";
         if (empty(self::$title)) {
           self::$title = 'Failed to get downloads for keyboard ' . self::$id;
           header('HTTP/1.0 404 Keyboard downloads not found');
@@ -274,11 +290,46 @@ END;
         self::$downloads = json_decode($s);
       }
 
+      if(!empty(self::$keyboard)) {
+        if (in_array('unicode', self::$keyboard->encodings) && in_array('ansi', self::$keyboard->encodings))
+          self::$keyboardEncoding = 'Unicode, Legacy (ANSI)';
+        else if (in_array('unicode', self::$keyboard->encodings))
+          self::$keyboardEncoding = 'Unicode';
+        else // ansi
+          self::$keyboardEncoding = 'Legacy (ANSI)';
+
+        $date = new DateTime(self::$keyboard->lastModifiedDate);
+        self::$keyboardLastModifiedDate = $date->format('Y-m-d H:i');
+
+        $platformTitles = array('windows' => 'Windows', 'macos' => 'macOS', 'linux' => 'Linux', 'android' => 'Android', 'ios' => 'iPhone and iPad', 'desktopWeb' => 'Web', 'mobileWeb' => 'Mobile web');
+
+        self::$keyboardPlatforms = '';
+        $vars = get_object_vars(self::$keyboard->platformSupport);
+        foreach ($vars as $var => $value) {
+          if ($value != 'none' && array_key_exists($var, $platformTitles)) {
+            self::$keyboardPlatforms .= (self::$keyboardPlatforms == '' ? '' : ', ') . $platformTitles[$var];
+          }
+        }
+
+        if (isset(self::$keyboard->related)) {
+          foreach (self::$keyboard->related as $name => $value) {
+            if (isset($value->deprecatedBy) && $value->deprecatedBy) {
+              self::$deprecatedBy = $name;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    protected static function WriteTitle() {
       $head_options = [
         'title' => self::$title
       ];
 
+      global $embed, $session_query_q, $embed_win, $embed_version;
       global $embed_target;
+
       if ($embed != 'none') {
         $head_options += [
           'showMenu' => false,
@@ -297,10 +348,11 @@ END;
 
       if (!isset(self::$keyboard) || !isset(self::$downloads)) {
         // If parameters are missing ...
-?>
-        <h1 class='red underline'><?= self::$id ?></h1>
-        <p>Keyboard <?=self::$id ?> not found.</p>
-<?php
+        ?>
+          <h1 class='red underline'><?= self::$id ?></h1>
+          <p>Keyboard <?= self::$id ?> not found.</p>
+        <?php
+        if(ini_get('display_errors') !== '0') echo "<p>" . self::$error . "</p>";
         exit;
       }
 
@@ -331,35 +383,28 @@ END;
       }
 ?>
 <?php
-      if (in_array('unicode', self::$keyboard->encodings) && in_array('ansi', self::$keyboard->encodings))
-        self::$keyboardEncoding = 'Unicode, Legacy (ANSI)';
-      else if (in_array('unicode', self::$keyboard->encodings))
-        self::$keyboardEncoding = 'Unicode';
-      else // ansi
-        self::$keyboardEncoding = 'Legacy (ANSI)';
-
-      $date = new DateTime(self::$keyboard->lastModifiedDate);
-      self::$keyboardLastModifiedDate = $date->format('Y-m-d H:i');
-
-      $platformTitles = array('windows' => 'Windows', 'macos' => 'macOS', 'linux' => 'Linux', 'android' => 'Android', 'ios' => 'iPhone and iPad', 'desktopWeb' => 'Web', 'mobileWeb' => 'Mobile web');
-
-      self::$keyboardPlatforms = '';
-      $vars = get_object_vars(self::$keyboard->platformSupport);
-      foreach ($vars as $var => $value) {
-        if ($value != 'none' && array_key_exists($var, $platformTitles)) {
-          self::$keyboardPlatforms .= (self::$keyboardPlatforms == '' ? '' : ', ') . $platformTitles[$var];
-        }
+      if(!empty(self::$deprecatedBy)) {
+        $dep = self::$deprecatedBy;
+        $name = self::$title;
+        echo "
+          <div class='download deprecated-new'>
+            <a class='download-link' href='/keyboards/$dep$session_query_q'><span>Download</span></a>
+            <div class='download-title'>Download the latest version of $name</div>
+            <div class='download-description'>Click the Download button to get the latest version of this keyboard.</div>
+            <div class='download-filename'>$dep</div>
+          </div>
+          <div>
+            <p class='deprecated-link'><a href='javascript:toggleDeprecatedVersionDetails()'>View details for old version of this keyboard</a></p>
+            <div id='deprecated-old'>
+              <a href='/keyboards/$dep$session_query_q' class='deprecated'><span>Important note:</span>
+              This is an old version of this keyboard. Unless you have a good reason, click here to install the new version, called <span>$dep</span>, instead.</a>
+        ";
       }
+    }
 
-      if (isset(self::$keyboard->related)) {
-        foreach (self::$keyboard->related as $name => $value) {
-          if (isset($value->deprecatedBy) && $value->deprecatedBy) {
-            echo "<a href='/keyboards/$name$session_query_q' class='deprecated'><span>Important note:</span> 
-              This is an old version of this keyboard. Unless you have a good reason, click here to install the new version, called <span>$name</span>, instead.</a>";
-            break;
-          }
-        }
-      }
+    protected static function WriteDownloadBoxes() {
+      global $embed, $session_query_q, $embed_win, $embed_version, $pageDevice;
+      global $embed_target;
 
       $deviceboxfuncs = array(
         "Windows" => "self::WriteWindowsBoxes",
