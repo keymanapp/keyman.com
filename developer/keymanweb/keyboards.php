@@ -25,11 +25,11 @@
 <p>
   You can access a JSON version of this catalogue at:
   <br/>
-  <input type='text' readonly size='60' value='https://api.keyman.com/cloud/4.0/keyboards/' onclick='this.select()'> 
+  <input type='text' readonly size='60' value='https://api.keyman.com/cloud/4.0/keyboards/?version=<?=$stable_version?>' onclick='this.select()'> 
 </p>
 
 <ul>
-  <li><a href='https://api.keyman.com/cloud/4.0/keyboards/' target='_blank'>View current JSON data</a></li>
+  <li><a href='https://api.keyman.com/cloud/4.0/keyboards/?version=<?=$stable_version?>' target='_blank'>View current JSON data</a></li>
   <li><a href='https://help.keyman.com/developer/cloud/4.0/' target='_blank'>JSON API Documentation</a></li>
 </ul>
 
@@ -108,7 +108,7 @@ relies on font source paths being configured in <a href='https://help.keyman.com
   <tbody>
 
 <?php
-  $data = @file_get_contents('https://api.keyman.com/cloud/4.0/keyboards');
+  $data = @file_get_contents('https://api.keyman.com/cloud/4.0/keyboards?version='.$stable_version);
   if($data === FALSE) {
     // fallback if API is down, bad news anyway.
     $data = file_get_contents('keyboards.txt');
