@@ -25,11 +25,11 @@
 <p>
   You can access a JSON version of this catalogue at:
   <br/>
-  <input type='text' readonly size='60' value='https://api.keyman.com/cloud/4.0/keyboards/?version=<?=$stable_version?>' onclick='this.select()'> 
+  <input type='text' readonly size='60' value='https://api.keyman.com/cloud/4.0/keyboards/?languageidtype=bcp47&amp;version=<?=$stable_version?>' onclick='this.select()'> 
 </p>
 
 <ul>
-  <li><a href='https://api.keyman.com/cloud/4.0/keyboards/?version=<?=$stable_version?>' target='_blank'>View current JSON data</a></li>
+  <li><a href='https://api.keyman.com/cloud/4.0/keyboards/?languageidtype=bcp47&amp;version=<?=$stable_version?>' target='_blank'>View current JSON data</a></li>
   <li><a href='https://help.keyman.com/developer/cloud/4.0/' target='_blank'>JSON API Documentation</a></li>
 </ul>
 
@@ -102,13 +102,13 @@ relies on font source paths being configured in <a href='https://help.keyman.com
 
 <table id='catalogue'>
   <thead>
-    <tr><th rowspan='2'>Name</th><th rowspan='2'>Filename</th><th rowspan='2'>Version</th><th rowspan='2'>ISO Code</th><th rowspan='2'>Language</th><th colspan='3'>Device Support</th><th>Source</th></tr>
+    <tr><th rowspan='2'>Name</th><th rowspan='2'>Filename</th><th rowspan='2'>Version</th><th rowspan='2' style='width:100px'>BCP 47 Code</th><th rowspan='2'>Language</th><th colspan='3'>Device Support</th><th>Source</th></tr>
     <tr><th>Desktop</th><th>Phone</th><th>Tablet</th></tr>
   </thead>
   <tbody>
 
 <?php
-  $data = @file_get_contents('https://api.keyman.com/cloud/4.0/keyboards?version='.$stable_version);
+  $data = @file_get_contents('https://api.keyman.com/cloud/4.0/keyboards?languageidtype=bcp47&version='.$stable_version);
   if($data === FALSE) {
     // fallback if API is down, bad news anyway.
     $data = file_get_contents('keyboards.txt');
