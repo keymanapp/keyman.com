@@ -7,12 +7,15 @@
     'css' => ['template.css', 'feature-grid.css'],
     'showMenu' => true
   ]);
+
+  // These variables should be progressively added if we update older versions.
+  $ver_windows_10 = "10.0.1208.0";
 ?>
 
 <h2 class="red underline">Keyman Desktop Download Archive</h2>
 <ul>
     <!-- TODO: use downloads API to get the latest 10.0 version -->
-    <li><a href="https://downloads.keyman.com/windows/stable/10.0.1207.0/keymandesktop-10.0.1207.0.exe">Keyman Desktop 10.0.1207.0 Download</a> (No activation required)</li>
+    <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_10 ?>/keymandesktop-<?= $ver_windows_10 ?>.exe">Keyman Desktop <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/windows/stable/9.0.528.0/keymandesktop-9.0.528.0.exe">Keyman Desktop 9.0.528.0 Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/windows/stable/8.0.361.0/keymandesktop-8.0.361.0.exe">Keyman Desktop 8.0.361.0 Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/windows/stable/8.0.360.0/keymandesktop-8.0.360.0.exe">Keyman Desktop 8.0.360.0 Download</a> (Online static activation required)</li>
@@ -24,7 +27,7 @@
 <h2 class="red underline">Keyman Developer Download Archive</h2>
 <ul>
     <!-- TODO: use downloads API to get the latest 10.0 version -->
-    <li><a href="https://downloads.keyman.com/developer/stable/10.0.1207.0/keymandeveloper-10.0.1207.0.exe">Keyman Developer 10.0.1207.0 Download</a> (No activation required)</li>
+    <li><a href="https://downloads.keyman.com/developer/stable/<?= $ver_windows_10 ?>/keymandeveloper-<?= $ver_windows_10 ?>.exe">Keyman Developer <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/developer/stable/9.0.526.0/keymandeveloper-9.0.526.0.exe">Keyman Developer 9.0.526.0 Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/developer/stable/8.0.360.0/keymandeveloper-8.0.360.0.exe">Keyman Developer 8.0.360.0 Download</a> (Online static activation required)</li>
 </ul>
