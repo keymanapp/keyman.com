@@ -12,7 +12,6 @@
 	margin: 20px;
 	padding: 5px;
 	text-align: center;
-	float: left;
 }
 
 .download-stable h3{
@@ -75,7 +74,7 @@
 }
 
 #cta-big-Windows, #cta-big-mac{
-	margin: 10px 0px 20px 0px;
+	margin: 10px 20px 20px 20px;
 	box-sizing: border-box;
 	padding: 10px 20px;
 }

@@ -18,6 +18,7 @@
 <p lang="ta" class="lang-example desktop">
     கணினி விண்டோ திரையில் வுள்ள ஈமெயில், வோர்ட், அச்செச்ஸ், எக்ஸ்செல், அவுட்லுக், இன்டர்நெட் எக்ஸ்ப்லோறேர், போஎர் பாக்ஸ் , மற்றும் இவை போன்றவைகளில் தமிழில் டைப் செய்யவும். இந்த கணினி தட்டச்சில் உள்ள வரிசைகள் தமிழில் டைப் செய்ய உதவும் அனால் ஏற்கனவே உள்ள கணினி தட்டச்சில் எந்த வித மாற்றமும் வராது. இவை முழுமையான <a href="http://www.unicode.org/standard/translations/tamil.html" target="_blank">யூனிக்கோடு</a> (Unicode) விதி முறைக்கு கட்டுப்பட்டது 
 </p>
+<img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/thanjavur_temple.jpg'); ?>" title="Thanjavur Temple — Image courtesy of Venu62" />
 <div id="download-cta" data-language='ta' data-keyboard='visual_media_tamil_typewriter'>
   <div class="download-cta-big" id="cta-big-Holder">
     <img src="<?php echo cdn('img/wait.gif'); ?>" />
@@ -109,7 +110,6 @@
     </a>
   </div>
 </div>
-<img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/thanjavur_temple.jpg'); ?>" title="Thanjavur Temple — Image courtesy of Venu62" />
 <div class="spacer"></div>
 <h2 class="red underline">Other Tamil keyboard layouts</h2>
 <p>

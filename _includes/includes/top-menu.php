@@ -7,16 +7,16 @@
         <a id="home-link" href="/"><img id="logo" src="<?php echo cdn("img/logo2.png"); ?>" alt='Keyman Logo' /></a>
         <img id="header-bottom" src="<?php echo cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
-
-              <form action="/search/" method="get" role="search">
-                <div class="search-wrap">
-                  <label for="main-q" class="offscreen">Search</label>
-                  <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
-                  <button type="submit" class="offscreen">Search</button>
-                </div>
-              </form>
-        
-        <p><a href="http://help.keyman.com" target="blank">Support<img src="<?php echo cdn("img/helpIcon.png"); ?>"></a></p>
+    
+          <form action="/search/" method="get" role="search">
+            <div class="search-wrap">
+              <label for="main-q" class="offscreen">Search</label>
+              <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+              <button type="submit" class="offscreen">Search</button>
+            </div>
+          </form>
+          <p id="donate"><a href="/donate">Donate</a></p>
+          <p><a href="https://help.keyman.com" target="blank">Support<img src="<?php echo cdn("img/helpIcon.png"); ?>"></a></p>
         </div>
     </div>
     <div id="top-menu-bg"></div>
@@ -30,8 +30,8 @@
               <button type="submit" class="offscreen">Search</button>
             </div>
           </form>
-        
-          <a href="http://help.keyman.com"><img id="top-menu-icon2" src="<?php echo cdn("img/helpIcon.png"); ?>" /></a>
+          <a id='help1-donate' href="/donate">Donate</a>        
+          <a href="https://help.keyman.com"><img id="top-menu-icon2" src="<?php echo cdn("img/helpIcon.png"); ?>" /></a>
         </div>
         <div class="wrapper">
             <div class="menu-item" id="keyboards">
@@ -91,6 +91,7 @@
                     <div class="menu-dropdown-inner">
                         <ul>
                             <li><a href="/about/">About Keyman</a></li>
+                            <li><a href="/about/get-involved">Get Involved</a></li>
                             <li><a href="/free/">Free on all Platforms</a></li>
                             <li><a href="http://help.keyman.com">Help and Documentation</a></li>
                             <li><a href="/contact/">Contact Us</a></li>

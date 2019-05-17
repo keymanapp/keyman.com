@@ -72,7 +72,7 @@
   $resourceDomain="r.keymanweb.com{$site_suffix}";
 
   $statichost = "{$site_protocol}s.keyman.com{$site_suffix}";
-  $apihost = "{$site_protocol}api.keyman.com{$site_suffix}";
+  $apihost = "{$site_protocol}api.keyman.com"; //{$site_suffix}";
   $helphost = "{$site_protocol}help.keyman.com{$site_suffix}";
   $downloadhost = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}"; <-- downloads.keyman.com.local is not usually available being a more complex setup
   $localhost = "{$site_protocol}keyman.com{$site_suffix}";

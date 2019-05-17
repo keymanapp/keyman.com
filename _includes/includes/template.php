@@ -88,10 +88,11 @@
     }
     
     $foot = isset($args['foot']) ? $args['foot'] : true;
+    $addSection2 = !isset($args['addSection2']) || $args['addSection2'];
     $shutdown = 'template_finish';
     register_shutdown_function($shutdown,$foot);
     
-    begin_main();
+    begin_main($addSection2);
   }
   
   function banner
@@ -135,9 +136,9 @@
     require_once('banner.php');
   }
   
-  function begin_main(){
-    $html = '<div class="main"><div id="section2"><div class="wrapper">';
-    echo $html;
+  function begin_main($addSection2){
+    echo '<div class="main">';
+    if($addSection2) echo '<div id="section2"><div class="wrapper">';
   }
   
   function foot($args=[]){
