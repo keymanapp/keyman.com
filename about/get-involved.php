@@ -16,7 +16,7 @@
 </p>
 
 <ul>
-  <li><a href='#donate'>Make a financial donation</a></li>
+  <li><a href='#donate'>Make a donation</a></li>
   <li><a href='#create-keyboard'>Create a keyboard layout for your language</a>
   <li><a href='#support-users'>Support other users</a>
   <li><a href='#test-beta'>Test a new version</a>
@@ -25,11 +25,11 @@
   <li><a href='#join-team'>Join the team!</a>
 </ul>
 
-<h2 id='donate' class="red">Make a financial donation</h2>
+<h2 id='donate' class="red">Make a donation</h2>
 
 <p>
   <a href='/donate'>Click here</a> to make a donation to the Keyman project by credit card, 
-  check, or electronic transfer. Your donation will be used to help cover the costs of developing Keyman, including 
+  check, or bank transfer. Your donation will be used to help cover the costs of developing Keyman, including 
   paying staff and contractors, server costs and hardware and software purchases.
 </p>
 
@@ -57,7 +57,7 @@
 <p>
   Many users come and ask questions about using Keyman in our <a href='https://community.software.sil.org/c/keyman'>online community</a>.
   Each question that you answer helps many other users who may be searching for similar answers, and allows the developers to focus 
-  on improving Keyman! And if you have new knowledge about Keyman, you could even contribute that to the documentation -- keep reading.
+  on improving Keyman! And if you have new knowledge about Keyman, you could even contribute that to the documentation &mdash; keep reading.
 </p>
 
 <ul>
@@ -109,10 +109,10 @@
 <h2 id='join-team' class="red">Join the team!</h2>
 
 <p>
-  Do you have a passion for software development? Would you be interested in joining SIL and working full time on 
+  Do you have a passion for software development? Would you be interested in joining SIL and working full-time on 
   developing software that serves the needs of language communities around the world?
   <a href='https://software.sil.org/about/contact/'>Write us</a>, or ping us on <a href='https://twitter.com/keyman'>@Keyman</a> and 
-  introduce yourself -- we'd love to meet with you!
+  introduce yourself &mdash; we'd love to meet with you!
 </p>
 
 <ul>
