@@ -12,6 +12,7 @@
 <p>
     Type in Amharic on iPhone, Windows and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications. Free trial available!
 </p>
+<img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div id="download-cta" data-language='am' data-keyboard='gff_amharic'>
   <div class="download-cta-big" id="cta-big-Holder">
     <img src="<?php echo cdn('img/wait.gif'); ?>" />
@@ -103,7 +104,6 @@
     </a>
   </div>
 </div>
-<img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div class="spacer"></div>
 <h2 class="red underline">Other Ethiopic keyboards and languages</h2>
 

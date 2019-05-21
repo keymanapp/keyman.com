@@ -79,6 +79,7 @@
     <div class="download-cta-button">
       <h4>Download Now</h4>
     </div>
+    <div class="download-cta-base"></div>
 </div>
 END;
   }

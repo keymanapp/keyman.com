@@ -5,7 +5,8 @@
   head([
     'title' =>'Keyman | Type to the world in your language',
     'css' => ['template.css','index.css'],
-    'showMenu' => true
+    'showMenu' => true,
+    'addSection2' => false
   ]);
 ?>
     </div>

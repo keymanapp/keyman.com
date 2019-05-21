@@ -26,6 +26,11 @@
             <!--End mc_embed_signup-->
             <br>
             <div id="privacy-policy"><a href="/privacy/">Privacy policy</a></div>
+
+            <div id='footer-get-involved'>
+              <a href="/about/get-involved">Get involved</a>
+              <a href='/donate'>Donate</a>
+            </div>
         </div>
         <div class="footer-third" id="footer-social">
             <h2 class="footer-third-title">Keep in touch</h2>

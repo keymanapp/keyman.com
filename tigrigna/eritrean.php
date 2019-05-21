@@ -15,6 +15,7 @@
 <p>
   <a href="/tigrigna/">Click here</a> for Tigirigna (Ethiopia)
 </p>
+<img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div id="download-cta" data-language='ti' data-keyboard='gff_tigrinya_eritrea'>
   <div class="download-cta-big" id="cta-big-Holder">
     <img src="<?php echo cdn('img/wait.gif'); ?>" />
@@ -106,7 +107,6 @@
     </a>
   </div>
 </div>
-<img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div class="spacer"></div>
 <h2 class="red underline">Other Ethiopic languages</h2>
 <p>

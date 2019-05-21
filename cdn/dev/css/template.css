@@ -201,6 +201,11 @@ html{
     margin-right: auto;
 }
 
+.main > #section2 > .wrapper {
+	background: #f2f2f2;
+	padding-bottom: 30px;
+}
+
 .button{
     float: left;
     width: 200px;
@@ -353,6 +358,20 @@ html{
   float: left;
 }
 
+#help #donate {
+	padding-top: 5px;
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+#help #donate a {
+	background: #b92034;
+	color: #f0f0f0;
+	padding: 4px 6px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px rgba(185,32,52,0.5);
+}
+
 /* Search Box */
 
 .search-wrap {
@@ -465,6 +484,21 @@ input[type="search"] {
 
 #help1 form {
   float: left;
+}
+
+#help1 #help1-donate {
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+	background: #b92034;
+	color: #f0f0f0;
+	padding: 4px 6px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px rgba(185,32,52,0.5);
+	margin: 0px 12px 0 0;
+	vertical-align: top;
+	display: inline-block;
+	height: 12px;
 }
 
 #help1 .search-wrap {
@@ -822,6 +856,27 @@ input[type="search"] {
     margin-top: 10px;
 }
 
+#footer-get-involved {
+	text-align: center;
+	margin-top: 32px;
+}
+
+#footer-get-involved a {
+	font-size: 14pt;
+	text-decoration: none;
+	background: #b92034;
+	color: #f0f0f0;
+	padding: 4px 6px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px rgba(185,32,52,0.5);
+	margin-left: 8px;
+}
+
+#footer-get-involved a:hover {
+	background: #841016;
+	box-shadow: 0px 0px 4px rgba(132,16,22,0.5);
+}
+
 /**********************************
  * SECTION 1 CSS
  *********************************/
@@ -898,7 +953,7 @@ input[type="search"] {
 #section2{
 	float: left;
 	width: 100%;
-	margin-bottom: 30px;
+	background: #d3d3d3;
 	display: inline;
 }
 
@@ -1007,16 +1062,19 @@ input[type="search"] {
 }
 
 #download-cta{
-	float: left;
 	width: 630px;
 	margin: 5px 5px 20px 5px;
 }
 
 .download-cta-big{
-	float: left;
-	width: 100%;
 	background: #D6D6D6;
 	display: none;
+}
+
+.download-cta-base {
+	width: 0;
+	height: 0;
+	clear: both;
 }
 
 #cta-big-Holder{

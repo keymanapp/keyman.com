@@ -42,7 +42,7 @@ Keyman for Android, Keyman for iPhone and iPad and KeymanWeb.</p>
 <dt>Can I still buy licenses of Keyman?</dt>
 <dd><del>Yes, for the time being, licenses of Keyman will continue to be sold through the Tavultesoft Online Store. In the coming months, there may be changes to how Keyman is distributed, but we do not envisage Keyman becoming less accessible to users.</del></dd>
 <dd>No. Keyman 10 products are free and don't need a license to activate.</dd>
-<dd>If you'd like to make a charitable contribution for Keyman development, please donate <a href="https://www.givedirect.org/donate/?cid=13539">here</a></dd>
+<dd>If you'd like to make a charitable contribution for Keyman development, please donate <a href="/donate">here</a></dd>
 
 <dt>How can I get technical support?</dt>
 <dd>At present, direct your support requests to <a href='https://community.software.sil.org/c/keyman'>SIL Keyman Community</a>.</dd>
