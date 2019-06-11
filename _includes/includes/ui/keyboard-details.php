@@ -161,7 +161,7 @@ END;
     protected function WriteLinuxBoxes() {
       global $embed_linux;
       if (isset(self::$downloads->kmp)) {
-        if (isset(self::$keyboard->platformSupport->macos) && self::$keyboard->platformSupport->macos != 'none') {
+        if (isset(self::$keyboard->platformSupport->linux) && self::$keyboard->platformSupport->linux != 'none') {
           return self::download_box(
             self::embed_path(self::$downloads->kmp),
             htmlentities(self::$keyboard->name) . ' for Linux',
@@ -435,10 +435,6 @@ END;
       if ($embed == 'none') {
         echo "<h2 class='red underline'>Downloads for other devices</h2><div class='download-other'>";
         foreach ($deviceboxfuncs as $platform => $func) {
-          // TODO: display Linux boxes for Keyman 11 stable
-          if ($platform == 'Linux') {
-            continue;
-          }
           if ($platform != $pageDevice) {
             echo call_user_func($func);
           }

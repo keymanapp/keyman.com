@@ -313,7 +313,9 @@ function process_response(q, res) {
         return;
       }
 
-      // TODO: remove irrelevant Linux keyboards?
+      if(embed=='linux' && (!kbd.platformSupport || !kbd.platformSupport['linux'] || kbd.platformSupport['linux'] == 'none')) {
+        return;
+      }
 
       var k = $(
         "<div class='keyboard'>"+
