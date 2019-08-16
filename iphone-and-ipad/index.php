@@ -23,7 +23,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for iPhone and iPad <?php echo $beta_version ?> Beta? <a href="/<?= $beta_version_int ?>/">Learn more</a></p>
+        <p>Want to try the Keyman for iPhone and iPad <?php echo $beta_version ?> Beta? <a href="/<?= $beta_version ?>/">Learn more</a></p>
 <?php
     }
 ?>
