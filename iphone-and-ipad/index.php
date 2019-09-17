@@ -39,7 +39,7 @@
 
 <p>
   Keyman for iPhone and iPad makes it possible to type in over 600 languages on your iPhone or iPad.
-  Keyman provides system-wide keyboards in iOS 8 and later, allowing you to use your keyboard in all your favourite apps.
+  Keyman provides system-wide keyboards in iOS 9 and later, allowing you to use your keyboard in all your favourite apps.
   <br/><br/>
   Keyman also adds font rendering for languages that even Apple don't support.
   You can now have a seamless language experience on the world's easiest to use touch-oriented devices!
@@ -84,6 +84,13 @@
     </tr>
   </tbody>
 </table>
+
+<h2>New in Keyman 12.0 (Oct 2019)</h2>
+
+<ul>
+  <li>Added support for autocorrect and predictive text for languages with supported 'dictionaries' made through Keyman Developer.</li>
+  <li>Addition of a new Settings menu, which manages installed keyboards, dictionaries, and their settings.</li>
+</ul>
 
 <h2>New in Keyman 11.0 (Mar 2019)</h2>
 
