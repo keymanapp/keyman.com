@@ -43,7 +43,7 @@
 
 <p>
   Now you also have the flexibility of installing Keyman keyboard packages from either online
-  (like <a href="/keyboards">keyman.com/keyboards</a>) or local storage.
+  (like <a href="/keyboards">keyman.com/keyboards</a>) or local storage from a new "Settings" panel.
 </p>
 
 <p>
@@ -91,14 +91,22 @@
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
-        <td>Install custom keyboard packages</td>
+        <td>Install custom keyboard and dictionary packages</td>
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
   </tbody>
 </table>
 
 <br/>
+<h3>New in Keyman for Android 12.0 (Oct 2019)</h3>
 
+<ul>
+    <li>Add predictive text support to keyboards. Default English keyboard now uses a dictionary by default</li>
+    <li>Changed keyboard install/uninstalls to use new "Settings" menu</li>
+    <li>Add keyboard packages from the local device using the "Settings" menu</li>
+</ul>
+
+<br/>
 <h3>New in Keyman for Android 11.0 (Mar 2019)</h3>
 
 <ul>
