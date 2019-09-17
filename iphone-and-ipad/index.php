@@ -67,6 +67,10 @@
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
+      <td>Create your own custom dictionary for use with predictive text</td>
+      <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+    </tr>
+    <tr>
         <td>System-wide installable fonts</td>
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
@@ -79,7 +83,7 @@
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
-        <td>Install custom keyboard packages</td>
+        <td>Install custom keyboard and dictionary packages</td>
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
   </tbody>
@@ -88,7 +92,7 @@
 <h2>New in Keyman 12.0 (Oct 2019)</h2>
 
 <ul>
-  <li>Added support for autocorrect and predictive text for languages with supported 'dictionaries' made through Keyman Developer.</li>
+  <li>Added support for basic autocorrect and predictive text for languages with supported dictionaries.</li>
   <li>Addition of a new Settings menu, which manages installed keyboards, dictionaries, and their settings.</li>
 </ul>
 
