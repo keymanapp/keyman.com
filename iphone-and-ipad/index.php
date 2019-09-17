@@ -39,7 +39,7 @@
 
 <p>
   Keyman for iPhone and iPad makes it possible to type in over 600 languages on your iPhone or iPad.
-  Keyman provides system-wide keyboards in iOS 8 and later, allowing you to use your keyboard in all your favourite apps.
+  Keyman provides system-wide keyboards in iOS 9 and later, allowing you to use your keyboard in all your favourite apps.
   <br/><br/>
   Keyman also adds font rendering for languages that even Apple don't support.
   You can now have a seamless language experience on the world's easiest to use touch-oriented devices!
@@ -67,6 +67,10 @@
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
+      <td>Create your own custom dictionary for use with predictive text</td>
+      <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+    </tr>
+    <tr>
         <td>System-wide installable fonts</td>
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
@@ -79,11 +83,18 @@
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
-        <td>Install custom keyboard packages</td>
+        <td>Install custom keyboard and dictionary packages</td>
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
   </tbody>
 </table>
+
+<h2>New in Keyman 12.0 (Oct 2019)</h2>
+
+<ul>
+  <li>Added support for basic autocorrect and predictive text for languages with supported dictionaries.</li>
+  <li>Addition of a new Settings menu, which manages installed keyboards, dictionaries, and their settings.</li>
+</ul>
 
 <h2>New in Keyman 11.0 (Mar 2019)</h2>
 
