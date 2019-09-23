@@ -23,7 +23,7 @@
     -->
 
     <!-- KeymanWeb script --> 
-    <script src="https://s.keyman.com/kmw/engine/10.0.97/keymanweb.js"></script>
+    <script src="https://s.keyman.com/kmw/engine/12.0.85/keymanweb.js"></script>
     
     <!-- 
       For desktop browsers, a script for the user interface must be inserted here.
@@ -32,7 +32,7 @@
       The toolbar UI is best for any page designed to support keyboards for 
       a large number of languages.
     -->
-    <script src="https://s.keyman.com/kmw/engine/10.0.97/kmwuitoggle.js"></script>
+    <script src="https://s.keyman.com/kmw/engine/12.0.85/kmwuitoggle.js"></script>
     
     <!-- Initialization: set paths to keyboards, resources and fonts as required -->
     <script>

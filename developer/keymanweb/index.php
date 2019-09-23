@@ -16,7 +16,7 @@
     $build = $json->version;
   } else {
     // If the get-version API fails, we'll use the latest known version
-    $build = "10.0.103"; // NOTE: we don't yet have a 11.0 stable so we'll add that once we have it
+    $build = "12.0.85"; // NOTE: we don't yet have a 12.0 version; this is late, late Beta.
   }
   
   $cdnUrlBase = "$statichost/kmw/engine/$build";
