@@ -347,7 +347,11 @@ END;
           <h1 class='red underline'><?= self::$id ?></h1>
           <p>Keyboard <?= self::$id ?> not found.</p>
         <?php
-        if(ini_get('display_errors') !== '0') echo "<p>" . self::$error . "</p>";
+        // DEBUG: Only display errors on local sites
+        $site_suffix = GetHostSuffix();
+        if (($site_suffix == '.local')  && (ini_get('display_errors') !== '0')) {
+          echo "<p>" . self::$error . "</p>";
+        }
         exit;
       }
 
