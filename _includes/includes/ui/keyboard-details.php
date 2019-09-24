@@ -157,7 +157,6 @@ END;
       return FALSE;
     }
 
-    // TODO: Update the platformSupport and link to Keyman for Linux when they becomes available. For now, using "macos"
     protected function WriteLinuxBoxes() {
       global $embed_linux;
       if (isset(self::$downloads->kmp)) {
@@ -204,48 +203,44 @@ END;
     }
 
     protected function WriteAndroidBoxes() {
-      global $localhost, $pageDevice;
-      $link = "keyman://localhost/open?direct=true&amp;url=$localhost/keyboards/" . self::$keyboard->id . ".json";
-      if (isset(self::$downloads->js) && isset(self::$keyboard->platformSupport->android) && self::$keyboard->platformSupport->android != 'none') {
-        return self::download_box(
-          $link,
-          htmlentities(self::$keyboard->name) . ' for Android',
-          'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/android">Keyman for Android</a> must be installed first.',
-          'download-android',
-          'Install on Android',
-          $pageDevice != 'Android' ? 'Android' : '');
+      if (isset(self::$downloads->kmp)) {
+        if (isset(self::$keyboard->platformSupport->android) && self::$keyboard->platformSupport->android != 'none') {
+          return self::download_box(
+            self::embed_path(self::$downloads->kmp),
+            htmlentities(self::$keyboard->name) . ' for Android',
+            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/android">Keyman for Android</a> must be installed first.',
+            'download-android',
+            'Install on Android');
+        }
       }
-
       return FALSE;
     }
 
     protected function WriteiPhoneBoxes() {
-      global $localhost, $pageDevice;
-      $link = "keyman://localhost/open?direct=true&amp;url=$localhost/keyboards/" . self::$keyboard->id . ".json";
-      if (isset(self::$downloads->js) && isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
-        return self::download_box(
-          $link,
-          htmlentities(self::$keyboard->name) . ' for iPhone',
-          'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/iphone">Keyman for iPhone</a> must be installed first.',
-          'download-ios',
-          'Install on iPhone',
-          $pageDevice != 'iPhone' ? 'iPhone' : '');
+      if (isset(self::$downloads->kmp)) {
+        if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
+          return self::download_box(
+            self::embed_path(self::$downloads->kmp),
+            htmlentities(self::$keyboard->name) . ' for iPhone',
+            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/iphone">Keyman for iPhone</a> must be installed first.',
+            'download-ios',
+            'Install on iPhone');
+        }
       }
 
       return FALSE;
     }
 
     protected function WriteiPadBoxes() {
-      global $localhost, $pageDevice;
-      $link = "keyman://localhost/open?direct=true&amp;url=$localhost/keyboards/" . self::$keyboard->id . ".json";
-      if (isset(self::$downloads->js) && isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
-        return self::download_box(
-          $link,
-          htmlentities(self::$keyboard->name) . ' for iPad',
-          'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/ipad">Keyman for iPad</a> must be installed first.',
-          'download-ios',
-          'Install on iPad',
-          $pageDevice != 'iPad' ? 'iPad' : '');
+      if (isset(self::$downloads->js)) {
+        if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
+          return self::download_box(
+            self::embed_path(self::$downloads->kmp),
+            htmlentities(self::$keyboard->name) . ' for iPad',
+            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/ipad">Keyman for iPad</a> must be installed first.',
+            'download-ios',
+            'Install on iPad');
+        }
       }
 
       return FALSE;
@@ -352,7 +347,11 @@ END;
           <h1 class='red underline'><?= self::$id ?></h1>
           <p>Keyboard <?= self::$id ?> not found.</p>
         <?php
-        if(ini_get('display_errors') !== '0') echo "<p>" . self::$error . "</p>";
+        // DEBUG: Only display errors on local sites
+        $site_suffix = GetHostSuffix();
+        if (($site_suffix == '.local')  && (ini_get('display_errors') !== '0')) {
+          echo "<p>" . self::$error . "</p>";
+        }
         exit;
       }
 
