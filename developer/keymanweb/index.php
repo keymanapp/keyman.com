@@ -83,7 +83,7 @@ the on screen keyboard.</p>
 </code></pre>
 
 <ul>
-  <li><a href='https://help.keyman.com/developer/engine/web/<?php echo $stable_version; ?>/reference/core/addKeyboards'><code>addKeyboards</code> reference documentation</a></li>
+  <li><a href='https://help.keyman.com/developer/engine/web/<?= $stable_version; ?>/reference/core/addKeyboards'><code>addKeyboards</code> reference documentation</a></li>
 </ul>
 
 <h2 class='red underline'>Use the Keyman Cloud CDN</h2>
