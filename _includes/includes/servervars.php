@@ -69,7 +69,7 @@
 
   $staticDomain="s.keyman.com{$site_suffix}/kmc";
   $helpSite = "help.keyman.com{$site_suffix}";
-  $resourceDomain="r.keymanweb.com{$site_suffix}";
+  $resourceDomain="r.keymanweb.com"; //{$site_suffix}"; <-- local dev domain is usually not available
 
   $statichost = "{$site_protocol}s.keyman.com{$site_suffix}";
   $apihost = "{$site_protocol}api.keyman.com"; //{$site_suffix}";
