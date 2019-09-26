@@ -36,7 +36,7 @@
 
     <h3 class="red">Improved Templates for New Projects</h3>
       <p>Create a keyboard project that matches the folder structure used in the Keyman
-        <a href="https://github.com/keymanapp/keyboards/">keyboards respository</a>.
+        <a href="https://github.com/keymanapp/keyboards/">keyboards repository</a>.
         Keyman Developer will create and include all the basic files needed for the project.</p>
     <img src='<?= cdn("img/developer-new-project.png"); ?>' alt="Developer New Project" />
     <br/><br/>
