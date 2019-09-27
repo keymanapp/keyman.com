@@ -344,9 +344,9 @@
         <img src="<?php echo cdn("img/developer9.png"); ?>"/>
     </div>
     <div class="section" id="unicode">
-        <h2 class="red underline">Unicode 11.0 Compliant</h2>
+        <h2 class="red underline">Unicode 12.0 Compliant</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> complies with Unicode 11.0 – the international standard
+            Keyman Desktop <?php echo $stable_version_int; ?> complies with Unicode 12.0 – the international standard
             for language encoding. Everything you type with our Unicode keyboards will be readable to anyone.
         </p>
         <p>
