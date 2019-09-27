@@ -207,6 +207,10 @@ function wrapSearch(localCounter, updateHistory) {
     var resultsElement = $('#search-results');
     resultsElement.empty().append('<p>Enter the name of a keyboard or language to search for.</p>');
     return false;
+  } else if (q == 'ipa') {
+   // Special case to redirect IPA searches
+   location.href='/ipa';
+   return false;
   }
 
   if(!history.pushState && updateHistory) {
