@@ -22,7 +22,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for Android <?php echo $beta_version ?> Beta? <a href="/<?= $beta_version ?>/">Learn more</a></p>
+        <p>Want to try the Keyman for Android <?= $beta_version ?> Beta? <a href="/<?= $beta_version ?>/">Learn more</a></p>
 <?php
     }
 ?>
@@ -42,17 +42,26 @@
 </p>
 
 <p>
+  Create custom Keyman dictionaries with <a href='/developer'>Keyman Developer <?= $stable_version ?> </a>
+  and install them to use with your keyboards.
+</p>
+
+<p style='text-align:center'>
+  <img src='<?= cdn("img/android-sencoten.png"); ?>' />
+</p>
+
+<p>
   Now you also have the flexibility of installing Keyman keyboard packages from either online
   (like <a href="/keyboards">keyman.com/keyboards</a>) or local storage from a new "Settings" panel.
 </p>
 
 <p>
-    <img src='<?php echo cdn("img/android-kmp.png"); ?>' />
+    <img src='<?= cdn("img/android-kmp.png"); ?>' />
 </p>
 
 <p>The <strong class='red'>Keyman built-in browser</strong> dynamically loads your language font into each website you visit, so if you're an Android 4.x (Ice Cream Sandwich, Jellybean, or KitKat) user, you no longer see square boxes for your language on the web!</p>
 
-<p style='text-align:center'><img src='<?php echo cdn("img/android-browser.png"); ?>' /></p>
+<p style='text-align:center'><img src='<?= cdn("img/android-browser.png"); ?>' /></p>
   
 <p>
   The built-in browser feature applies your language font to websites that you browse, and includes a bookmark feature and of course supports typing your language into any website!
@@ -72,27 +81,27 @@
   <tbody>
     <tr>
         <td>World-leading input methods for hundreds of languages</td>
-        <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
         <td>Create your own custom keyboards</td>
-        <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
         <td>System-wide installable fonts</td>
-        <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
         <td>System keyboard support</td>
-        <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
         <td>Built in browser for full font support</td>
-        <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
         <td>Install custom keyboard and dictionary packages</td>
-        <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
   </tbody>
 </table>
@@ -216,7 +225,7 @@
 </ul>
 <br/>
 <p>
-  <a href="http://<?php echo $helpSite; ?>/products/android/version-history/">View all version history</a>
+  <a href="http://<?= $helpSite; ?>/products/android/version-history/">View all version history</a>
 </p>
 
 <?= $playstoreTable ?>

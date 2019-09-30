@@ -103,19 +103,6 @@
 </p>
 
 <p style="margin-top: 32px" class="center"><br/></p>
-<h4 class="caption">DG</h4>
-<br/>
-<p class="people-text">
-  I'm from Northern Ireland and I have a Natural Sciences degree from Cambridge.
-  I've been working on the Linux side of Keyman since May 2018. Prior to that I've
-  been working as a software developer and/or volunteering on various free and
-  open software projects.
-</p>
-<p class="people-text">
-    I enjoy audax, other non-speedy cycling, and board games.
-</p>
-
-<p style="margin-top: 32px" class="center"><br/></p>
 <h4 class="caption">DW</h4>
 <br/>
 
@@ -127,7 +114,7 @@
   our users.
 </p>
 <p class="people-text">
-  My wife and I have two elementary-aged children. I also enjoy playing Ultimate (frisbee), learning to play
+  My wife and I have two children. I also enjoy playing Ultimate (frisbee), learning to play
   guitar, and gaming.
 </p>
 
@@ -149,7 +136,18 @@
   working with youth. Since 2015, my wife and I have been welcoming foster children into our home.
 </p>
 
-
+<p style="margin-top: 32px" class="center"><br/></p>
+<h4 class="caption">DG</h4>
+<br/>
+<p class="people-text">
+  I'm from Northern Ireland and I have a Natural Sciences degree from Cambridge.
+  I've been working on the Linux side of Keyman since May 2018. Prior to that I've
+  been working as a software developer and/or volunteering on various free and
+  open software projects.
+</p>
+<p class="people-text">
+  I enjoy audax, other non-speedy cycling, and board games.
+</p>
 
 <h2 class="red underline">Online Community</h2>
 <p>
