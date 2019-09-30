@@ -1,6 +1,6 @@
  <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'Download Archives',
@@ -8,11 +8,12 @@
     'showMenu' => true
   ]);
 
+  require_once('./static-keys.php');
+
   // These variables should be progressively added if we update older versions.
   $ver_windows_11 = "11.0.1361.0";
   $ver_windows_10 = "10.0.1208.0";
 ?>
-
 <h2 class="red underline">Keyman Desktop Download Archive</h2>
 <ul>
     <!-- TODO: use downloads API to get the latest 11.0 version -->
@@ -46,17 +47,6 @@ Those that are listed with "Online static activation" require connection to an o
 
 <p>Please note: manual activation support requests will not be accepted. <a href='https://secure.tavultesoft.com/support/activate.php'>Self-service manual activation</a>.</p>
 
-<table class='feature-grid'>
-  <thead>
-    <tr><th>Version</th><th>Key</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Keyman Desktop 9.0 (Pro)</td><td>BUES-NJBK-3UZW-S3AB-9VNF</td></tr>
-    <tr><td>Keyman Developer 9.0</td><td>AVFT-PB54-CFRJ-NF67-DR67</td></tr>
-    <tr><td>Keyman Desktop 8.0 (Pro)</td><td>HWCY-LYT2-PKJ5-8ZQR-T74B</td></tr>
-    <tr><td>Keyman Developer 8.0</td><td>GXDZ-MZ9P-XS8J-PE76-CQD6</td></tr>
-    <tr><td>Keyman Desktop 7.1 Light</td><td>FYAW-JWRJ-RDHP-JB23-HMJB</td></tr>
-    <tr><td>Keyman Desktop 7.1 Pro</td><td>EZBX-KFP4-YAJS-X677-DRLV</td></tr>
-    <tr><td>Keyman 6.2</td><td>Name: Keyman<br/>Company: Keyman<br/>Licence No: K0300-1406-7831<br/>Reg Key: TS-Keyman-8341-B62F</td></tr>
-  </tbody>
-</table>
+<?php
+  render_static_keys(false);
+?>
