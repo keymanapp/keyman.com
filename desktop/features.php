@@ -4,7 +4,7 @@
   // Required
   head([
     'title' =>'Features | Keyman Desktop ' . $stable_version,
-    'css' => ['template.css','desktop-template.css'],
+    'css' => ['template.css','feature-template.css'],
     'showMenu' => true
   ]);
   require_once('includes/desktop-features.php');

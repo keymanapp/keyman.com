@@ -85,7 +85,7 @@
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/<?php echo $beta_version; ?>/guides/develop/imx' target='_blank'>IMX support (e.g. Chinese keyboard)</a></td>
+      <td><a href='http://help.keyman.com/developer/<?= $stable_version; ?>/guides/develop/imx' target='_blank'>IMX support (e.g. Chinese keyboard)</a></td>
       <td><?=$tick;?></td>
       <td></td>
     </tr>
@@ -116,7 +116,7 @@ sudo apt-get install keyman onboard</code></pre>
 <p>
     This brings up a configuration panel where you can "Download" Keyman keyboards from the cloud repository. You can also "Install"
     keyboards via local .kmp keyboard packages. In some keyboard packages, you might need to add the keyboard to
-    IBus by adding an "Other" input source. See <a href="https://help.keyman.com/products/linux/installing-keyboard.php">
+    IBus by adding an "Other" input source. See <a href='https://help.keyman.com/products/linux/<?= $stable_version; ?>/guide/installing-keyboard.php'>
     help.keyman.com</a> for more details on installing a keyboard.
 </p>
 

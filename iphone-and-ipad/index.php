@@ -165,7 +165,7 @@
 <br/>
 
 <p>
-  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version/">View all version history</a>
+  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version-history/">View all version history</a>
 </p>
 
 <?= $appstoreTable ?>
@@ -179,7 +179,7 @@
   You can develop your own keyboard layouts for Keyman for iPhone and iPad with <a href='/developer'>Keyman Developer</a>.  If you have existing keyboards, they can be ported to iOS with just a recompile.  And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iphone and iPad Documentation</a>
+  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iPhone and iPad Documentation</a>
 </p>
 <p>
   <a href="/downloads/#ios-engine">Download the latest Keyman Engine for iOS</a>

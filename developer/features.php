@@ -17,6 +17,12 @@
 </style>
 
 <div class="info-right">
+  <div class="section" id="features">
+    <h2 class="red underline">Keyman Developer <?php echo $stable_version; ?> Features</h2>
+    <p>Keyman Developer is the most powerful tool for creating keyboard layouts for any popular platform for any language around the world.</p>
+    <p>The same tool can be used to create wordlist dictionaries for your keyboards.</p>
+  </div>
+
   <div class="section" id="new">
     <h2 class="red underline">What's New</h2>
     <p>Keyman Developer embeds the open source <a href="https://microsoft.github.io/monaco-editor/">Monaco Editor</a>, the same editor

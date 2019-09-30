@@ -216,7 +216,7 @@
 </ul>
 <br/>
 <p>
-  <a href="http://<?php echo $helpSite; ?>/products/android/version/">View all version history</a>
+  <a href="http://<?php echo $helpSite; ?>/products/android/version-history/">View all version history</a>
 </p>
 
 <?= $playstoreTable ?>
