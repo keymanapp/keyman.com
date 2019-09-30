@@ -9,6 +9,17 @@
   ]);           
 ?>
 <h2 class="red underline">What people are saying about Keyman Desktop</h2>
+
+<p class="center">
+  <span class="testimonial">"@keyman, thank you for the Tamil keyboard. Loved how easy it is to type in Tamil.</span>
+  <h4 class="caption"><a href="https://twitter.com/BlueLotusTrans/status/1149465727193079808">@BlueLotusTrans</a> - July 2019</h4>
+</p>
+<p class="center">
+  <span class="testimonial">If you need to develop keyboard inputs for your language @keyman is a great resource.
+  Make keyboards for iOS, Android, Mac, & Windows! #ᏣᎳᎩ, Osage, Diné Bizaad, Lakota, & Cree Syllabics are just some
+  of the Keyman keyboards. </span>
+  <h4 class="caption"><a href="https://twitter.com/NativeLangsTech/status/1131316826795892736">@NativeLangsTech</a> - May 2019</h4>
+</p>
 <p class="center">
   <span class="testimonial">"The software works perfectly, and we've already translated a document into Tamil!"</span>
   <h4 class="caption">A Customer - IFMR, Tamil Nadu - June 2012</h4>
@@ -30,16 +41,8 @@
   <h4 class="caption">Margaret Gleeson - Victoria University of Wellington</h4>
 </p>
 <p class="center">
-  <span class="testimonial">"Thanks for all that you have done to facilitate keyboarding in languages with "unconventional" characters. Keyman is a phenomenal product; I've been using it for many years now."</span>
-  <h4 class="caption">Kevin Warfel - SIL/JAARS - April 2010</h4>
-</p>
-<p class="center">
   <span class="testimonial">"Excellent piece of software! Really easy to use. Excellent range of third-party keyboards available."</span>
   <h4 class="caption">Brian Hayes - November 2011</h4>
-</p>
-<p class="center">
-  <span class="testimonial">"I just wanted to tell you how useful Keyman has been for us over the years ... Using Keyman has simplified a lot the text entering ... It is easy and efficient."</span>
-  <h4 class="caption">Ismo & Judy Routamaa - SIL, Papua New Guinea</h4>
 </p>
 <p class="center">
   <span class="testimonial">"I only wish I had discovered Keyman sooner. For typing Polytonic Greek, I know of no better solution for the Windows Operating System than Keyman (and I've tried a handful of solutions). Where Windows has fallen remarkably short, Keyman has picked up the slack. I recommend the software to anyone and everyone who needs to integrate Greek scripting into their written prose."</span>

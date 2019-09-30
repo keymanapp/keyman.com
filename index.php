@@ -101,8 +101,11 @@
             <div class="section section-testimonials">
                 <div>“</div>
                 <p id="testimonial">
-                    Thank you for creating such a wonderful program. I can't live without it. I am telling people about Keyman and Keyman Developer, so you may see more orders coming in from Japan.
-                    <span>&mdash; Toshihide Nakayama - Japan</span>
+                    <!-- https://twitter.com/ibrahimasaar/status/1161753102527193088 -->
+                    Both Ukelele and MSKLC are useful in allowing quick and easy creation of keyboards but I really
+                    think #keyman is a much more complex tool in that it allows to develop for multiple platforms
+                    especially mobile.
+                  <span>&mdash; @ibrahimasaar - Le Havre</span>
                 </p>
             </div>
         </div>
