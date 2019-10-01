@@ -20,7 +20,7 @@
 ?>
 
 <h1>Keyman 12.0 Stable</h1>
-<p class="red">6 October 2019</p>
+<p class="red">7 October 2019</p>
 <li>Keyman 12.0 is now officially released! Find the 12.0 download for your platform below.</li>
 <br>
 
