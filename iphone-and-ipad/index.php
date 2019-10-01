@@ -28,15 +28,6 @@
     }
 ?>
 
-<div class='keyman-free-banner'>
-  <h4>Keyman is now Free!</h4>
-  <p>
-      We've renamed <strong>Keyman Pro</strong> to <strong>Keyman</strong> and made it completely free!
-      We've retired Keyman Free for iPhone and iPad because Keyman for iPhone and iPad does everything that
-      Keyman Free for iPhone and iPad does, plus lots more!
-  </p>
-</div> 
-
 <p>
   Keyman for iPhone and iPad makes it possible to type in over 600 languages on your iPhone or iPad.
   Keyman provides system-wide keyboards in iOS 9 and later, allowing you to use your keyboard in all your favourite apps.
