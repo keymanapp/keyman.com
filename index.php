@@ -105,6 +105,8 @@
                     Both Ukelele and MSKLC are useful in allowing quick and easy creation of keyboards but I really
                     think #keyman is a much more complex tool in that it allows to develop for multiple platforms
                     especially mobile.
+                </p>
+                <p id="twitter-testimonial">
                   <span>&mdash; @ibrahimasaar - Le Havre</span>
                 </p>
             </div>
