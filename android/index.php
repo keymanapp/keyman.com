@@ -225,7 +225,7 @@
 </ul>
 <br/>
 <p>
-  <a href="http://<?= $helpSite; ?>/products/android/version-history/">View all version history</a>
+  <a href="//<?= $helpSite; ?>/products/android/version-history/">View all version history</a>
 </p>
 
 <?= $playstoreTable ?>
@@ -240,7 +240,7 @@
   You can develop your own keyboard layouts for Keyman for Android with <a href="/developer/download.php">Keyman Developer</a>. If you have existing keyboards, they can be ported to Android with just a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href="http://help.keymandeveloper.com/engine/android/">Keyman Engine for Android Documentation</a>
+  <a href="//<?= $helpSite; ?>/developer/engine/android/">Keyman Engine for Android Documentation</a>
 </p>   
 <p>
   <a href="/downloads/#android-engine">Download the latest Keyman Engine for Android</a>
