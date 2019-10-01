@@ -23,6 +23,10 @@ function loaded(){
   $('#testimonial').click(function(){
     location.href="http://www.tavultesoft.com/testimonials.php";
   });
+
+  $('#twitter-testimonial').click(function() {
+      location.href="https://twitter.com/ibrahimasaar/status/1161753102527193088";
+  });
   
   // Email subscribe form
   $('.subscribe').click(function(){

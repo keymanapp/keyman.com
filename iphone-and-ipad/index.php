@@ -28,15 +28,6 @@
     }
 ?>
 
-<div class='keyman-free-banner'>
-  <h4>Keyman is now Free!</h4>
-  <p>
-      We've renamed <strong>Keyman Pro</strong> to <strong>Keyman</strong> and made it completely free!
-      We've retired Keyman Free for iPhone and iPad because Keyman for iPhone and iPad does everything that
-      Keyman Free for iPhone and iPad does, plus lots more!
-  </p>
-</div> 
-
 <p>
   Keyman for iPhone and iPad makes it possible to type in over 600 languages on your iPhone or iPad.
   Keyman provides system-wide keyboards in iOS 9 and later, allowing you to use your keyboard in all your favourite apps.
@@ -165,7 +156,7 @@
 <br/>
 
 <p>
-  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version/">View all version history</a>
+  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version-history/">View all version history</a>
 </p>
 
 <?= $appstoreTable ?>
@@ -179,7 +170,7 @@
   You can develop your own keyboard layouts for Keyman for iPhone and iPad with <a href='/developer'>Keyman Developer</a>.  If you have existing keyboards, they can be ported to iOS with just a recompile.  And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iphone and iPad Documentation</a>
+  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iPhone and iPad Documentation</a>
 </p>
 <p>
   <a href="/downloads/#ios-engine">Download the latest Keyman Engine for iOS</a>
