@@ -7,51 +7,50 @@
   // Required
   head([
     'class' => 'keyman11',
-    'title' => 'Keyman 12 is in beta!',
+    'title' => 'Keyman 12 is here and free!',
     'css' => ['template.css', 'dev.css', 'app-store-links.css', 'prism.css'],
     'js' => ['prism.js'],
     'showMenu' => true,
     'banner' => [
-        'title' => 'Keyman 12.0 Beta',
+        'title' => 'Type to the world with the latest Keyman 12 products',
         'image' => 'world.png',
         'background' => 'water'
     ]
 ]);
 ?>
 
-<h2>Announcing the release of Keyman 12.0 Beta</h2>
-<p class="red">7 August 2019</p>
-<p>We are pleased to announce that Keyman 12.0 is now in beta!</p>
+<h1>Keyman 12.0 Stable</h1>
+<p class="red">7 October 2019</p>
+<li>Keyman 12.0 is now officially released! Find the 12.0 download for your platform below.</li>
 <br>
 
 <h3>What's New?</h3>
 
 <ul>
   <li>Predictive Text for Android and iOS</li>
+  <li>Create lexical model packages with Keyman Developer</li>
 </ul>
 <br>
 
-<h3>What's Next?</h3>
+<h2>What's Next?</h2>
 <ul>
-  <li>Check the <a href="https://blog.keyman.com/2019/02/keyman-roadmap-february-2019/">Keyman Roadmap</a> for upcoming features.
+  <li>Looking for something else? Check the <a href="https://blog.keyman.com/2019/02/keyman-roadmap-february-2019/">Keyman Roadmap</a> and see if it's tentatively scheduled.
 </ul>
-<br>
 
-<h3>12.0 Beta Feedback</h3>
+<h2>12.0 Stable Feedback</h2>
 <ul>
-  <li>Please send feedback about Keyman 12 to the
-  <a href="https://community.software.sil.org/c/keyman">Keyman Community site</a> or submit bugs and feature requests to
-  our <a href="https://github.com/keymanapp/keyman/issues/new/choose">Issue Tracker</a>.</li>
+  <li>Please send feedback about Keyman 12 Stable to the
+    <a href="https://community.software.sil.org/c/keyman">Keyman Community site</a>.</li>
 </ul>
 <br>
 
 <h1 class='red underline'>User Software</h1>
 
 <?php
-  downloadSection('Keyman for Android 12', 'android', 'keyman-$version.apk', 'beta');
+  downloadSection('Keyman for Android 12', 'android', 'keyman-$version.apk', 'stable');
 ?>
-
-<p>You can also <a href="https://play.google.com/apps/testing/com.tavultesoft.kmapro">sign up</a> to access pre-release versions through Google Play.</p>
+<li>Keyman for Android is available on the Play Store.</li>
+<?= $playstoreTable ?>
 
 <h3>What's new in Keyman for Android 12?</h3>
 
@@ -63,12 +62,9 @@
 </ul>
 
 <h2 class="red underline">Keyman for iPhone and iPad 12</h2>
-<h3>Beta</h3>
-<p>Please register for the pre-release versions through the links below for Keyman <a href="https://testflight.apple.com/join/9W4XIoxQ">beta</a> 
-pre-releases on your iOS device.  This will grant access to the app through <a href="https://developer.apple.com/testflight/testers/">Apple's 
-TestFlight app</a>, which facilitates direct installation on iOS devices.</p>
-
-<?= iosTestFlightTable(); ?>
+<h3>Stable</h3>
+<li>Keyman for iPhone and iPad can be found on the App Store.</li>
+<?= $appstoreTable ?>
 
 <h3>What's new in Keyman for iPhone and iPad 12?</h3>
 
@@ -81,7 +77,7 @@ TestFlight app</a>, which facilitates direct installation on iOS devices.</p>
 
 
 <?php
-  downloadSection('Keyman Desktop 12',   'windows',     'keymandesktop-$version.exe', 'beta');
+  downloadSection('Keyman Desktop 12',   'windows',     'keymandesktop-$version.exe', 'stable');
 ?>
 
 <h3>What's New in Keyman Desktop 12 for Windows?</h3>
@@ -93,7 +89,7 @@ TestFlight app</a>, which facilitates direct installation on iOS devices.</p>
 
 
 <?php
-  downloadSection('Keyman 12 for macOS',   'mac',     'keyman-$version.dmg', 'beta');
+  downloadSection('Keyman 12 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 12 for macOS?</h3>
@@ -109,7 +105,8 @@ TestFlight app</a>, which facilitates direct installation on iOS devices.</p>
 <h3>What's New in Keyman 12 for Linux?</h3>
 
 <ul>
-  <li>No significant changes</li>
+  <li>Extract icon from .kmx file</li>
+  <li>Fixed bug so package installer doesn't download keyboard source</li>
 </ul>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
@@ -122,7 +119,7 @@ sudo apt-get install keyman onboard</code></pre></blockquote>
 
 
 <?php
-  downloadSection('KeymanWeb 12', 'web', 'keymanweb-$version.zip', 'beta');
+  downloadSection('KeymanWeb 12', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 12?</h3>
@@ -169,12 +166,13 @@ during prediction lookups.</li>
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-  downloadSection('Keyman Developer 12',    'developer', 'keymandeveloper-$version.exe', 'beta');
+  downloadSection('Keyman Developer 12',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 12?</h3>
 
 <ul>
-  <li>Lexical model "predictive text" compiler (not yet integrated into GUI)</li>
+  <li>Lexical model "predictive text" compiler integrated into GUI</li>
+  <li>New welcome screen on startup for creating keyboards or lexical model projects</li>
   <li>KMAnalyze keyboard source analysis tool</li>
 </ul>

@@ -25,7 +25,7 @@
     <br/><br/>
 
     <h3 class="red">BCP 47 language tags</h3>
-    <p>Use Keyman Developer to associate your Keyman keyboards with <a href="bcp47-tags">BCP 47</a> language identifiers.</p>
+    <p>Use Keyman Developer to associate your Keyman keyboards with <a href="#bcp47-tags">BCP 47</a> language identifiers.</p>
     <br/><br/>
 
     <h3 class="red">Web-based testing</h3>
@@ -100,7 +100,7 @@
     <br/><br/>
 
     <h3 class="red">Smart Character Map</h3>
-    <p>Fully Unicode 11.0: access every character in the newest version of the Unicode Standard from the Keyman Character
+    <p>Fully Unicode 12.0: access every character in the newest version of the Unicode Standard from the Keyman Character
       Map. </p>
     <p>Double-Click Insert: insert over 136,000 letters and symbols with a double-click. Say goodbye to multi-step
       clipboard actions.</p>
