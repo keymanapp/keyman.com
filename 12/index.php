@@ -27,8 +27,9 @@
 <h3>What's New?</h3>
 
 <ul>
-  <li>Predictive Text for Android and iOS</li>
-  <li>Create lexical model packages with Keyman Developer</li>
+  <li>Predictive Text for mobile phones and tablets &mdash; Android, iPhone and iPad</li>
+  <li>Create predictive text lexical model packages for any language with Keyman Developer</li>
+  <li>Keyman Developer projects simplified and more streamlined</li>
 </ul>
 <br>
 

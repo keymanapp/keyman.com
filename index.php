@@ -19,7 +19,7 @@
     
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p><a href='/12/'>New: Keyman 12.0 is now in released!</a></p>
+            <p><a href='/12/'>New: Keyman 12.0 is now available!</a></p>
           </div>
         </div>
     
