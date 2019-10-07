@@ -26,9 +26,9 @@
   downloadLargeCTA('Keyman Developer', 'developer', 'stable', 'keymandeveloper-$version.exe');
 ?>
 
-<h2 class='red underline'>kmcomp Compiler</h2>
+<h2 class='red underline'>kmcomp Keyboard Compiler</h2>
 
-<p>The kmcomp compiler is a command line tool that can be run on Windows, or using WINE on Linux and macOS. <a href='https://help.keyman.com/developer/11.0/context/kmcomp'>kmcomp reference</a>. This download is
+<p>The kmcomp compiler is a command line tool that can be run on Windows, or using WINE on Linux and macOS. <a href='https://help.keyman.com/developer/<?= $stable_version ?>/context/kmcomp'>kmcomp reference</a>. This download is
 provided separately primarily for users on non-Windows platforms.</p>
 
 <?php

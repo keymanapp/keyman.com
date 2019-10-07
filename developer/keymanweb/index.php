@@ -15,8 +15,8 @@
   if($json && property_exists($json, 'version')) {
     $build = $json->version;
   } else {
-    // If the get-version API fails, we'll use the latest known version
-    $build = "10.0.103"; // NOTE: we don't yet have a 11.0 stable so we'll add that once we have it
+    // If the get-version API fails, we'll use the latest known stable version
+    $build = "11.0.227";
   }
   
   $cdnUrlBase = "$statichost/kmw/engine/$build";
@@ -83,7 +83,7 @@ the on screen keyboard.</p>
 </code></pre>
 
 <ul>
-  <li><a href='https://help.keyman.com/developer/engine/web/10.0/reference/core/addKeyboards'><code>addKeyboards</code> reference documentation</a></li>
+  <li><a href='https://help.keyman.com/developer/engine/web/<?= $stable_version; ?>/reference/core/addKeyboards'><code>addKeyboards</code> reference documentation</a></li>
 </ul>
 
 <h2 class='red underline'>Use the Keyman Cloud CDN</h2>

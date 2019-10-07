@@ -4,7 +4,7 @@
   // Required
   head([
     'title' =>'Features | Keyman Desktop ' . $stable_version,
-    'css' => ['template.css','desktop-template.css'],
+    'css' => ['template.css','feature-template.css'],
     'showMenu' => true
   ]);
   require_once('includes/desktop-features.php');
@@ -344,9 +344,9 @@
         <img src="<?php echo cdn("img/developer9.png"); ?>"/>
     </div>
     <div class="section" id="unicode">
-        <h2 class="red underline">Unicode 11.0 Compliant</h2>
+        <h2 class="red underline">Unicode 12.0 Compliant</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> complies with Unicode 11.0 – the international standard
+            Keyman Desktop <?php echo $stable_version_int; ?> complies with Unicode 12.0 – the international standard
             for language encoding. Everything you type with our Unicode keyboards will be readable to anyone.
         </p>
         <p>
@@ -456,7 +456,9 @@
     <div class="section" id="customers">
         <h2 class="red underline">Used By The Biggest</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> is the result of over 23 years of dedication to perfecting Keyman. Everything we've learned since 1991 we've poured into Keyman Desktop <?php echo $stable_version_int; ?>. We're as dedicated as ever to making Keyman Desktop the best multi-lingual typing solution for you.
+            Keyman Desktop <?php echo $stable_version_int; ?> is the result of over 23 years of dedication to perfecting Keyman.
+            Everything we've learned since 1991 we've poured into Keyman Desktop <?php echo $stable_version_int; ?>.
+            We're as dedicated as ever to making Keyman Desktop the best multi-lingual typing solution for you.
         </p>
         <p>
             Keyman is used by more than 1,000,000 people in over 1,000 languages. All those user experiences feed back into perfecting Keyman.

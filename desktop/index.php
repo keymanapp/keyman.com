@@ -163,9 +163,9 @@
 </p>
 <br/>
 <p>
-    <span class="red">Q.</span> Are Keyman Desktop 10.0, 9.0, 8.0 and 7.1 still available for download?
+    <span class="red">Q.</span> Are Keyman Desktop 11.0, 10.0, 9.0, 8.0 and 7.1 still available for download?
 </p>
 <p>
-    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 10.0, 9.0, 8.0 and 7.1 <a href="/archive/downloads.php">here</a>.
+    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 11.0, 10.0, 9.0, 8.0 and 7.1 <a href="/archive/downloads.php">here</a>.
 </p>
 <br/>

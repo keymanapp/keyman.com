@@ -23,7 +23,7 @@
 
   // Major stable and beta versions
   global $stable_version_int, $beta_version_int;
-  $stable_version_int = 11;
+  $stable_version_int = 12;
   $beta_version_int = 12;
 
   $stable_version = $stable_version_int . '.0';
@@ -69,7 +69,7 @@
 
   $staticDomain="s.keyman.com{$site_suffix}/kmc";
   $helpSite = "help.keyman.com{$site_suffix}";
-  $resourceDomain="r.keymanweb.com{$site_suffix}";
+  $resourceDomain="r.keymanweb.com"; //{$site_suffix}"; <-- local dev domain is usually not available
 
   $statichost = "{$site_protocol}s.keyman.com{$site_suffix}";
   $apihost = "{$site_protocol}api.keyman.com"; //{$site_suffix}";

@@ -28,18 +28,9 @@
     }
 ?>
 
-<div class='keyman-free-banner'>
-  <h4>Keyman is now Free!</h4>
-  <p>
-      We've renamed <strong>Keyman Pro</strong> to <strong>Keyman</strong> and made it completely free!
-      We've retired Keyman Free for iPhone and iPad because Keyman for iPhone and iPad does everything that
-      Keyman Free for iPhone and iPad does, plus lots more!
-  </p>
-</div> 
-
 <p>
   Keyman for iPhone and iPad makes it possible to type in over 600 languages on your iPhone or iPad.
-  Keyman provides system-wide keyboards in iOS 8 and later, allowing you to use your keyboard in all your favourite apps.
+  Keyman provides system-wide keyboards in iOS 9 and later, allowing you to use your keyboard in all your favourite apps.
   <br/><br/>
   Keyman also adds font rendering for languages that even Apple don't support.
   You can now have a seamless language experience on the world's easiest to use touch-oriented devices!
@@ -67,6 +58,10 @@
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
+      <td>Create your own custom dictionary for use with predictive text</td>
+      <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
+    </tr>
+    <tr>
         <td>System-wide installable fonts</td>
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
@@ -79,11 +74,18 @@
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
-        <td>Install custom keyboard packages</td>
+        <td>Install custom keyboard and dictionary packages</td>
         <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
     </tr>
   </tbody>
 </table>
+
+<h2>New in Keyman 12.0 (Oct 2019)</h2>
+
+<ul>
+  <li>Added support for basic autocorrect and predictive text for languages with supported dictionaries.</li>
+  <li>Addition of a new Settings menu, which manages installed keyboards, dictionaries, and their settings.</li>
+</ul>
 
 <h2>New in Keyman 11.0 (Mar 2019)</h2>
 
@@ -154,7 +156,7 @@
 <br/>
 
 <p>
-  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version/">View all version history</a>
+  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version-history/">View all version history</a>
 </p>
 
 <?= $appstoreTable ?>
@@ -168,7 +170,7 @@
   You can develop your own keyboard layouts for Keyman for iPhone and iPad with <a href='/developer'>Keyman Developer</a>.  If you have existing keyboards, they can be ported to iOS with just a recompile.  And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iphone and iPad Documentation</a>
+  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iPhone and iPad Documentation</a>
 </p>
 <p>
   <a href="/downloads/#ios-engine">Download the latest Keyman Engine for iOS</a>

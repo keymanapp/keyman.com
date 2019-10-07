@@ -19,7 +19,7 @@
     
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p><a href='/12/'>New: Keyman 12.0 is now in Beta!</a></p>
+            <p><a href='/12/'>New: Keyman 12.0 is now available!</a></p>
           </div>
         </div>
     
@@ -101,8 +101,13 @@
             <div class="section section-testimonials">
                 <div>“</div>
                 <p id="testimonial">
-                    Thank you for creating such a wonderful program. I can't live without it. I am telling people about Keyman and Keyman Developer, so you may see more orders coming in from Japan.
-                    <span>&mdash; Toshihide Nakayama - Japan</span>
+                    <!-- https://twitter.com/ibrahimasaar/status/1161753102527193088 -->
+                    Both Ukelele and MSKLC are useful in allowing quick and easy creation of keyboards but I really
+                    think #keyman is a much more complex tool in that it allows to develop for multiple platforms
+                    especially mobile.
+                </p>
+                <p id="twitter-testimonial">
+                  <span>&mdash; @ibrahimasaar - Le Havre</span>
                 </p>
             </div>
         </div>

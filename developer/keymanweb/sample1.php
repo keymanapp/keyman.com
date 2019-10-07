@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<?php
+
+require_once("includes/servervars.php");
+
+$json = @file_get_contents("$apihost/version/web");
+if($json) {
+  $json = json_decode($json);
+}
+if($json && property_exists($json, 'version')) {
+  $build = $json->version;
+} else {
+  // If the get-version API fails, we'll use the latest known stable version
+  $build = "11.0.227";
+}
+
+$cdnUrlBase = "$statichost/kmw/engine/$build";
+?>
+
 <html lang="en">
   <head>
     <!-- Set the viewport width to match phone and tablet device widths -->                         
@@ -22,9 +40,9 @@
       time the user wants to start typing.
     -->
 
-    <!-- KeymanWeb script --> 
-    <script src="https://s.keyman.com/kmw/engine/10.0.97/keymanweb.js"></script>
-    
+    <!-- KeymanWeb script -->
+    <script src='<?=$cdnUrlBase?>/keymanweb.js'></script>
+
     <!-- 
       For desktop browsers, a script for the user interface must be inserted here.
        
@@ -32,7 +50,7 @@
       The toolbar UI is best for any page designed to support keyboards for 
       a large number of languages.
     -->
-    <script src="https://s.keyman.com/kmw/engine/10.0.97/kmwuitoggle.js"></script>
+    <script src='<?=$cdnUrlBase?>/kmwuitoggle.js'></script>
     
     <!-- Initialization: set paths to keyboards, resources and fonts as required -->
     <script>

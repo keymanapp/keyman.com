@@ -17,6 +17,12 @@
 </style>
 
 <div class="info-right">
+  <div class="section" id="features">
+    <h2 class="red underline">Keyman Developer <?php echo $stable_version; ?> Features</h2>
+    <p>Keyman Developer is the most powerful tool for creating keyboard layouts for any popular platform for any language around the world.</p>
+    <p>The same tool can be used to create wordlist dictionaries for your keyboards.</p>
+  </div>
+
   <div class="section" id="new">
     <h2 class="red underline">What's New</h2>
     <p>Keyman Developer embeds the open source <a href="https://microsoft.github.io/monaco-editor/">Monaco Editor</a>, the same editor
@@ -25,7 +31,7 @@
     <br/><br/>
 
     <h3 class="red">BCP 47 language tags</h3>
-    <p>Use Keyman Developer to associate your Keyman keyboards with <a href="bcp47-tags">BCP 47</a> language identifiers.</p>
+    <p>Use Keyman Developer to associate your Keyman keyboards with <a href="#bcp47-tags">BCP 47</a> language identifiers.</p>
     <br/><br/>
 
     <h3 class="red">Web-based testing</h3>
@@ -36,7 +42,7 @@
 
     <h3 class="red">Improved Templates for New Projects</h3>
       <p>Create a keyboard project that matches the folder structure used in the Keyman
-        <a href="https://github.com/keymanapp/keyboards/">keyboards respository</a>.
+        <a href="https://github.com/keymanapp/keyboards/">keyboards repository</a>.
         Keyman Developer will create and include all the basic files needed for the project.</p>
     <img src='<?= cdn("img/developer-new-project.png"); ?>' alt="Developer New Project" />
     <br/><br/>
@@ -100,7 +106,7 @@
     <br/><br/>
 
     <h3 class="red">Smart Character Map</h3>
-    <p>Fully Unicode 11.0: access every character in the newest version of the Unicode Standard from the Keyman Character
+    <p>Fully Unicode 12.0: access every character in the newest version of the Unicode Standard from the Keyman Character
       Map. </p>
     <p>Double-Click Insert: insert over 136,000 letters and symbols with a double-click. Say goodbye to multi-step
       clipboard actions.</p>
