@@ -1,5 +1,5 @@
 <?php
-  define('DEBUG', 1); // 0 = off, 1 = lots of logging but don't force a build, 2 = force a build
+  define('DEBUG', 0); // 0 = off, 1 = lots of logging but don't force a build, 2 = force a build
 
   if(!is_cli()) {
     echo 'keyboard-download.php must be run from the command line, not web server environment.';
@@ -32,6 +32,8 @@
   recordGoogleAnalyticsEvent($cid, $id, $platform, $mode);
 
   if(hasNewerBundleVersion($id, $downloads)) {
+    // TeamCity by default will not queue multiple instances of builds with similar properties
+    // so it doesn't hurt to re-trigger it.
     triggerBuildOfBundle($id);
   }
 
@@ -166,7 +168,6 @@
     }
 
     $bearer_token = $_ENV['teamcity_bearer_token'];
-
     $url = 'https://build.palaso.org/app/rest/buildQueue';
     $options = array(
       'http' => array(
@@ -178,7 +179,7 @@
       )
     );
     $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
+    $result = @file_get_contents($url, false, $context);
     if ($result !== FALSE) {
       if(DEBUG) {
         error_log("TeamCity response for $url(".print_r($options, true)."): ".$result);
