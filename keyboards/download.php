@@ -11,7 +11,7 @@
   //   mode:     optional, either bundle or standalone (for now, supported only for Windows)
   //   cid:      optional, adds client id for Google Analytics tracking
 
-  require_once('includes/template.php');
+  require_once('includes/servervars.php');
 
   if(DEBUG)
     header('Content-Type: text/plain');
@@ -29,11 +29,7 @@
 
   $downloads = getKeyboardDownloadData($id);
 
-  recordGoogleAnalyticsEvent($cid, $id, $platform, $mode);
-
-  if(hasNewerBundleVersion($id, $downloads)) {
-    triggerBuildOfBundle($id);
-  }
+  triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode);
 
   redirectToDownload($downloads, $target);
 
@@ -82,6 +78,31 @@
   }
 
   /**
+   * Start a background PHP process to do the async work so we don't block the user
+   */
+  function triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode) {
+    execInBackground("php ../_includes/async/keyboard-download.php " .
+      escapeshellarg($cid) . " " .
+      escapeshellarg($id) . " " .
+      escapeshellarg($platform) . " " .
+      escapeshellarg($mode)
+    );
+  }
+
+  /**
+   * Run in background, cross platform
+   * https://www.php.net/manual/en/function.exec.php#86329
+   */
+  function execInBackground($cmd) {
+    if (substr(php_uname(), 0, 7) == "Windows"){
+        pclose(popen("start /B ". $cmd, "r"));
+    }
+    else {
+        exec($cmd . " > /dev/null &");
+    }
+}
+
+  /**
    * Get metadata on the downloadable files from the download server for the keyboard in question
    */
   function getKeyboardDownloadData($id) {
@@ -98,109 +119,6 @@
     return $downloads;
   }
 
-  /**
-   * Record download request on Google Analytics
-   */
-  function recordGoogleAnalyticsEvent($cid, $id, $platform, $mode) {
-    if(empty($cid)) {
-      $uid = com_create_guid();
-      $gauser = 'uid='.$uid;
-    } else {
-      $gauser = 'cid='.rawurlencode($cid);
-    }
-
-    if(DEBUG) {
-      $gabaseurl = "https://www.google-analytics.com/debug/collect";
-    } else {
-      $gabaseurl = "https://www.google-analytics.com/collect";
-    }
-    $gaurl = "$gabaseurl?v=1&t=event&tid=UA-249828-1&$gauser&ds=server&ec=keyboard&ea=download-$platform-$mode&el=".rawurlencode($id);
-    $result = @file_get_contents($gaurl);
-    if(DEBUG)
-      var_dump($http_response_header);
-
-    return !($result === FALSE);
-  }
-
-  /**
-   * Check if a newer version of the keyboard package and/or Keyman Desktop executable are available
-   */
-  function hasNewerBundleVersion($id, $downloads) {
-    // Get the keyboard version from api.keyman.com:
-    $s = @file_get_contents($apihost . '/keyboard/' . rawurlencode($id));
-    if ($s !== FALSE) {
-      // Test if we have a Windows version available
-      $keyboard_info = json_decode($s);
-      $keyboardVersion = $keyboard_info->version;
-      $supportsWindows = is_object($keyboard_info) && isset($keyboard_info->platformSupport->windows) && $keyboard_info->platformSupport->windows != 'none';
-    } else {
-      // We avoid
-      $supportsWindows = false;
-    }
-
-    if($supportsWindows) {
-      if(!isset($downloads->windows) && $target == 'windows') {
-        // TODO: trigger Windows bundled build because it is not present and allow retry
-        $shouldBuild = true;
-      } else {
-        //
-        // Parse the executable filename. This is not ideal but better than adding a bunch of additional infrastructure
-        // to store the version metadata separately
-        //
-
-        $s = @file_get_contents($downloadhost . '/api/version/windows');
-        if ($s !== FALSE) {
-          $windowsVersion = json_decode($s);
-          $windowsStableVersion = $windowsVersion->windows->stable;
-        }
-
-        $shouldBuild =
-          preg_match('/keymandesktop-(\d+\.\d+\.\d+\.\d+)-(.+)-([0-9.]+)\.exe$/', $downloads->windows, $matches) &&
-          (version_compare($keyboardVersion, $matches[3], '>') || version_compare($windowsStableVersion, $matches[1], '>'));
-      }
-    } else {
-      $shouldBuild = false;
-    }
-
-    return $shouldBuild;
-  }
-
-  /**
-   * Ask TeamCity to queue build and upload of a keyboard bundle for Windows
-   */
-  function triggerBuildOfBundle($id) {
-    $data =
-    '<build>
-      <buildType id="Keyboards_BuildAndDeployBundledInstaller"/>
-      <comment><text>Build triggered by keyboard download</text></comment>
-      <properties>
-        <property name="target_keyboard" value="'.htmlspecialchars($id, ENT_COMPAT, 'UTF-8').'"/>
-      </properties>
-    </build>';
-
-    $bearer_token = $_ENV['teamcity_bearer_token'];
-    $url = 'https://build.palaso.org/app/rest/buildQueue';
-    $options = array(
-      'http' => array(
-          'header'  => "Content-Type: application/xml\r\n".
-                        "Origin: https://build.palaso.org\r\n".
-                        "Authorization: Bearer $bearer_token\r\n",
-          'method'  => 'POST',
-          'content' => $data
-      )
-    );
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-    if ($result === FALSE) {
-      /* Handle error */
-      // TODO: log the error; but where; this will come later with active error monitoring
-      if(DEBUG) {
-        var_dump($http_response_header);
-        var_dump($result);
-      }
-    }
-    return !($result === FALSE);
-  }
 
   /**
    * Redirect to the download, if it is available; otherwise, return to the keyboard
