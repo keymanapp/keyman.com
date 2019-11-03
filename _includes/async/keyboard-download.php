@@ -113,8 +113,9 @@
     }
 
     if($supportsWindows) {
-      if(!isset($downloads->windows) && $target == 'windows') {
-        // TODO: trigger Windows bundled build because it is not present and allow retry
+      if(!isset($downloads->windows)) {
+        // Trigger Windows bundled build because it is not present
+        // Building initial version will be triggered through a maintenance plan
         $shouldBuild = true;
       } else {
         //
