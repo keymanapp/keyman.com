@@ -8,8 +8,8 @@
 
   require_once(dirname(__FILE__)."\\..\\includes\\servervars.php");
 
-  if($argv < 4) {
-    error_log('Parameters: cid id platform mode');
+  if($argv < 5) {
+    error_log('Parameters: cid id platform mode bearer_token(teamcity)');
     exit(1);
   }
 
@@ -17,9 +17,10 @@
   $id = $argv[2];
   $platform = $argv[3];
   $mode = $argv[4];
+  $bearer_token = $argv[5];
 
   if(DEBUG) {
-    error_log("Input parameters: cid=$cid id=$id platform=$platform mode=$mode");
+    error_log("Input parameters: cid=$cid id=$id platform=$platform mode=$mode bearer_token=$bearer_token");
   }
 
   function fail($s) {
@@ -34,7 +35,7 @@
   if(hasNewerBundleVersion($id, $downloads)) {
     // TeamCity by default will not queue multiple instances of builds with similar properties
     // so it doesn't hurt to re-trigger it.
-    triggerBuildOfBundle($id);
+    triggerBuildOfBundle($id, $bearer_token);
   }
 
   // TODO: have shared download code
@@ -153,7 +154,7 @@
   /**
    * Ask TeamCity to queue build and upload of a keyboard bundle for Windows
    */
-  function triggerBuildOfBundle($id) {
+  function triggerBuildOfBundle($id, $bearer_token) {
     $data =
     '<build>
       <buildType id="Keyboards_BuildAndDeployBundledInstaller"/>
@@ -163,12 +164,6 @@
       </properties>
     </build>';
 
-    if(!isset($_ENV['teamcity_bearer_token'])) {
-      error_log("ERROR: teamcity_bearer_token is not configured.");
-      return false;
-    }
-
-    $bearer_token = $_ENV['teamcity_bearer_token'];
     $url = 'https://build.palaso.org/app/rest/buildQueue';
     $options = array(
       'http' => array(
