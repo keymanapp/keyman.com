@@ -152,15 +152,39 @@
   }
 
   /**
+   * Retrieves the keyboard source path from the keyboard_info api
+   */
+  function getKeyboardSourcePath($id) {
+    // Get the source path
+    $keyboard_info = @file_get_contents("https://api.keyman.com/keyboard/$id");
+    if($keyboard_info === FALSE) {
+      if(DEBUG) {
+        error_log("Unable to retrieve keyboard_info for $id");
+      }
+      return FALSE;
+    }
+    $keyboard_info = json_decode($keyboard_info);
+    if(!isset($keyboard_info->sourcePath)) {
+      if(DEBUG) {
+        error_log("No sourcePath found in keyboard_info for $id");
+      }
+      return FALSE;
+    }
+    return $keyboard_info->sourcePath;
+  }
+
+  /**
    * Ask TeamCity to queue build and upload of a keyboard bundle for Windows
    */
   function triggerBuildOfBundle($id, $bearer_token) {
+    $src = getKeyboardSourcePath($id);
+
     $data =
     '<build>
       <buildType id="Keyboards_BuildAndDeployBundledInstaller"/>
       <comment><text>Build triggered by keyboard download</text></comment>
       <properties>
-        <property name="target_keyboard" value="'.htmlspecialchars($id, ENT_COMPAT, 'UTF-8').'"/>
+        <property name="target_keyboard" value="'.htmlspecialchars($src, ENT_COMPAT, 'UTF-8').'"/>
       </properties>
     </build>';
 
