@@ -1,21 +1,21 @@
 <?php /*
   Name:             servervars
   Copyright:        Copyright (C) 2005 Tavultesoft Pty Ltd.
-  Documentation:    
-  Description:      
+  Documentation:
+  Description:
   Create Date:      17 Oct 2009
 
   Modified Date:    17 Oct 2009
   Authors:          mcdurdin
-  Related Files:    
-  Dependencies:     
+  Related Files:
+  Dependencies:
 
-  Bugs:             
-  Todo:             
-  Notes:            
+  Bugs:
+  Todo:
+  Notes:
   History:          17 Oct 2009 - mcdurdin - Alter help base dir
 */
-  if(file_exists($_SERVER['DOCUMENT_ROOT'].'/cdn/deploy/cdn.php')) {
+  if(!empty($_SERVER['DOCUMENT_ROOT']) && file_exists($_SERVER['DOCUMENT_ROOT'].'/cdn/deploy/cdn.php')) {
     require_once($_SERVER['DOCUMENT_ROOT'].'/cdn/deploy/cdn.php');
   }
 
@@ -35,22 +35,26 @@
   }
 
   // We allow the site to strip off everything post its basic siteurl
-  
+
   function GetHostSuffix() {
     global $site_url;
+
+    if(!isset($_SERVER['SERVER_NAME']))
+      return '';
+
     $name = $_SERVER['SERVER_NAME'];
     if(stripos($name, $site_url.'.') == 0) {
       return substr($name, strlen($site_url), 1024);
     }
     return '';
   }
-  
+
   $site_suffix = GetHostSuffix();
   $site_protocol = (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
-    
+
   if($site_suffix == '') {
     $TestServer = false;
-   
+
     $site_tavultesoft = 'www.tavultesoft.com';
     $site_securetavultesoft = 'secure.tavultesoft.com';
     $buy9Link = "https://secure.tavultesoft.com/buy/90/";
@@ -78,7 +82,7 @@
   $localhost = "{$site_protocol}keyman.com{$site_suffix}";
   $keymanwebhost = "{$site_protocol}keymanweb.com{$site_suffix}";
   $resourcehost = "https://r.keymanweb.com"; /// local dev domain is usually not available
-  
+
   function cdn($file) {
     global $cdn, $staticDomain, $TestServer;
     $use_cdn = !$TestServer || (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');

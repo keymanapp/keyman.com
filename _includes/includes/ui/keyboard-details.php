@@ -34,6 +34,26 @@
 
     static private $deprecatedBy;
 
+    private function WriteLinkAnnotator() {
+      echo '<script>
+        var binaryFileClientId = null;
+        function downloadBinaryFile(a) {
+          if(!a.href.match(/cid=/) && binaryFileClientId) {
+            a.href = a.href + "&cid="+binaryFileClientId;
+          }
+          //alert(a.href);
+          return true;
+        }
+
+        try {
+          if(ga) ga(function(tracker) {
+            binaryFileClientId = tracker.get("clientId");
+          });
+        } catch {
+        }
+      </script>';
+    }
+
     /**
      * render_keyboard_details - display keyboard download boxes and details
      * @param $id - keyboard ID
@@ -50,6 +70,7 @@
       self::WriteDownloadBoxes();
       self::WriteKeyboardDetails();
       if(!empty(self::$deprecatedBy)) echo "</div></div>";
+      self::WriteLinkAnnotator();
     }
 
     /**
@@ -74,14 +95,11 @@
       return array_key_exists($s, $license_map) ? $license_map[$s] : $s;
     }
 
-    protected function download_box($url, $title, $description, $class, $linktitle, $platform = '') {
+    protected function download_box($url, $title, $description, $class, $linktitle, $platform, $mode='standalone') {
       $urlbits = explode('/', $url);
       $filename = array_pop($urlbits);
-      if ($platform != '') {
-        $downloadlink = "<a class='download-link' href='#' onclick='alert(\"Click this link on your $platform device\");return false;'><span>$linktitle</span></a>";
-      } else {
-        $downloadlink = "<a class='download-link' href='$url'><span>$linktitle</span></a>";
-      }
+      $id = self::$id;
+      $downloadlink = "<a class='download-link binary-download' href='download?id=$id&platform=$platform&mode=$mode' onclick='return downloadBinaryFile(this);'><span>$linktitle</span></a>";
       return <<<END
       <div class='download $class'>
         $downloadlink
@@ -121,7 +139,8 @@ END;
           htmlentities(self::$keyboard->name) . ' + Keyman Desktop',
           'Keyman Desktop and ' . htmlentities(self::$keyboard->name) . ' in a single installer.',
           'download-windows',
-          'Install on Windows');
+          'Install on Windows',
+          'windows', 'bundle');
       }
 
       if (isset(self::$downloads->kmp)) {
@@ -133,7 +152,8 @@ END;
               'Install ' . htmlentities(self::$keyboard->name) :
               'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/desktop">Keyman Desktop</a> for Windows must be installed first.',
             'download-kmp-windows',
-            $embed_win ? 'Install keyboard' : 'Windows download');
+            $embed_win ? 'Install keyboard' : 'Windows download',
+            'windows');
         }
       }
 
@@ -151,7 +171,8 @@ END;
               'Install ' . htmlentities(self::$keyboard->name) :
               'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/macosx">Keyman for Mac</a> must be installed first.',
             'download-kmp-macos',
-            $embed_mac ? 'Install keyboard' : 'macOS download');
+            $embed_mac ? 'Install keyboard' : 'macOS download',
+            'macos');
         }
       }
       return FALSE;
@@ -168,7 +189,8 @@ END;
               'Install ' . htmlentities(self::$keyboard->name) :
               'Installs only ' . htmlentities(self::$keyboard->name) . '. Keyman for Linux must be installed first.',
             'download-kmp-linux',
-            $embed_linux ? 'Install keyboard' : 'Linux download');
+            $embed_linux ? 'Install keyboard' : 'Linux download',
+            'linux');
         }
       }
       return FALSE;
@@ -210,7 +232,8 @@ END;
             htmlentities(self::$keyboard->name) . ' for Android',
             'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/android">Keyman for Android</a> must be installed first.',
             'download-android',
-            'Install on Android');
+            'Install on Android',
+            'android');
         }
       }
       return FALSE;
@@ -224,7 +247,8 @@ END;
             htmlentities(self::$keyboard->name) . ' for iPhone',
             'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/iphone">Keyman for iPhone</a> must be installed first.',
             'download-ios',
-            'Install on iPhone');
+            'Install on iPhone',
+            'ios');
         }
       }
 
@@ -239,7 +263,8 @@ END;
             htmlentities(self::$keyboard->name) . ' for iPad',
             'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/ipad">Keyman for iPad</a> must be installed first.',
             'download-ios',
-            'Install on iPad');
+            'Install on iPad',
+            'ios');
         }
       }
 
