@@ -49,7 +49,7 @@
           if(ga) ga(function(tracker) {
             binaryFileClientId = tracker.get("clientId");
           });
-        } catch {
+        } catch(error) {
         }
       </script>';
     }
