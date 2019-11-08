@@ -54,11 +54,6 @@
       fail("Invalid mode parameter");
     }
 
-    // For now, the only bundle type supported is Windows
-    if($mode == 'standalone' && $platform != 'windows') {
-      fail("Bundles are only supported for Windows platform");
-    }
-
     switch($mode) {
       case 'bundle':
         if($platform != 'windows') {
