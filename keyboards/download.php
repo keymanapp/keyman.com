@@ -81,11 +81,18 @@
    * Start a background PHP process to do the async work so we don't block the user
    */
   function triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode) {
+    $bearer_token = getenv('TEAMCITY_TOKEN');
+    if($bearer_token === FALSE) {
+      error_log("ERROR: [download.php] TEAMCITY_TOKEN is not configured.");
+      return false;
+    }
+
     execInBackground("php ../_includes/async/keyboard-download.php " .
       escapeshellarg($cid) . " " .
       escapeshellarg($id) . " " .
       escapeshellarg($platform) . " " .
-      escapeshellarg($mode)
+      escapeshellarg($mode) . " " .
+      escapeshellarg($bearer_token)
     );
   }
 

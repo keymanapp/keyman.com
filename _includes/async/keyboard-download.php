@@ -8,8 +8,8 @@
 
   require_once(dirname(__FILE__)."\\..\\includes\\servervars.php");
 
-  if($argv < 4) {
-    error_log('Parameters: cid id platform mode');
+  if($argv < 5) {
+    error_log('Parameters: cid id platform mode bearer_token(teamcity)');
     exit(1);
   }
 
@@ -17,9 +17,10 @@
   $id = $argv[2];
   $platform = $argv[3];
   $mode = $argv[4];
+  $bearer_token = $argv[5];
 
   if(DEBUG) {
-    error_log("Input parameters: cid=$cid id=$id platform=$platform mode=$mode");
+    error_log("Input parameters: cid=$cid id=$id platform=$platform mode=$mode bearer_token=$bearer_token");
   }
 
   function fail($s) {
@@ -34,7 +35,7 @@
   if(hasNewerBundleVersion($id, $downloads)) {
     // TeamCity by default will not queue multiple instances of builds with similar properties
     // so it doesn't hurt to re-trigger it.
-    triggerBuildOfBundle($id);
+    triggerBuildOfBundle($id, $bearer_token);
   }
 
   // TODO: have shared download code
@@ -151,24 +152,42 @@
   }
 
   /**
+   * Retrieves the keyboard source path from the keyboard_info api
+   */
+  function getKeyboardSourcePath($id) {
+    // Get the source path
+    $keyboard_info = @file_get_contents("https://api.keyman.com/keyboard/$id");
+    if($keyboard_info === FALSE) {
+      if(DEBUG) {
+        error_log("Unable to retrieve keyboard_info for $id");
+      }
+      return FALSE;
+    }
+    $keyboard_info = json_decode($keyboard_info);
+    if(!isset($keyboard_info->sourcePath)) {
+      if(DEBUG) {
+        error_log("No sourcePath found in keyboard_info for $id");
+      }
+      return FALSE;
+    }
+    return $keyboard_info->sourcePath;
+  }
+
+  /**
    * Ask TeamCity to queue build and upload of a keyboard bundle for Windows
    */
-  function triggerBuildOfBundle($id) {
+  function triggerBuildOfBundle($id, $bearer_token) {
+    $src = getKeyboardSourcePath($id);
+
     $data =
     '<build>
       <buildType id="Keyboards_BuildAndDeployBundledInstaller"/>
       <comment><text>Build triggered by keyboard download</text></comment>
       <properties>
-        <property name="target_keyboard" value="'.htmlspecialchars($id, ENT_COMPAT, 'UTF-8').'"/>
+        <property name="target_keyboard" value="'.htmlspecialchars($src, ENT_COMPAT, 'UTF-8').'"/>
       </properties>
     </build>';
 
-    if(!isset($_ENV['teamcity_bearer_token'])) {
-      error_log("ERROR: teamcity_bearer_token is not configured.");
-      return false;
-    }
-
-    $bearer_token = $_ENV['teamcity_bearer_token'];
     $url = 'https://build.palaso.org/app/rest/buildQueue';
     $options = array(
       'http' => array(
