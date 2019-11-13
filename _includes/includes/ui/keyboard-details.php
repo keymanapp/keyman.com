@@ -34,7 +34,7 @@
 
     static private $deprecatedBy;
 
-    private function WriteLinkAnnotator() {
+    private static function WriteLinkAnnotator() {
       echo '<script>
         var binaryFileClientId = null;
         function downloadBinaryFile(a) {
@@ -90,16 +90,28 @@
       return $tier;
     }
 
-    protected function map_license($s) {
+    protected static function map_license($s) {
       $license_map = ['mit' => 'MIT'];
       return array_key_exists($s, $license_map) ? $license_map[$s] : $s;
     }
 
-    protected function download_box($url, $title, $description, $class, $linktitle, $platform, $mode='standalone') {
+    protected static function download_box($url, $title, $description, $class, $linktitle, $platform, $mode='standalone') {
       $urlbits = explode('/', $url);
       $filename = array_pop($urlbits);
       $id = self::$id;
-      $downloadlink = "<a class='download-link binary-download' href='download?id=$id&platform=$platform&mode=$mode' onclick='return downloadBinaryFile(this);'><span>$linktitle</span></a>";
+      global $embed;
+      
+      $e_filename = urlencode($filename);
+      $e_id = urlencode($id);
+
+      if($embed != 'none') {
+        // note: if embed != none, mode should was be standalone
+        $url = "keyman:download?filename=$e_filename&url=".urlencode("https://keyman.com/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
+      } else {
+        $url = "/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
+      }
+      $url = htmlspecialchars($url);
+      $downloadlink = "<a class='download-link binary-download' href='$url' onclick='return downloadBinaryFile(this);'><span>$linktitle</span></a>";
       return <<<END
       <div class='download $class'>
         $downloadlink
@@ -110,7 +122,7 @@
 END;
     }
 
-    protected function onlinelink_box($id, $url, $title, $description, $class = '') {
+    protected static function onlinelink_box($id, $url, $title, $description, $class = '') {
       global $embed_target;
       return <<<END
       <div class='download download-web $class'>
@@ -122,7 +134,7 @@ END;
 END;
     }
 
-    protected function embed_path($kmp) {
+    protected static function embed_path($kmp) {
       global $embed;
       if ($embed == 'none') {
         return $kmp;
@@ -130,7 +142,7 @@ END;
       return 'keyman:download?filename=' . basename($kmp) . '&amp;url=' . $kmp;
     }
 
-    protected function WriteWindowsBoxes() {
+    protected static function WriteWindowsBoxes() {
       global $embed_win;
       $result = '';
       if (!$embed_win && isset(self::$downloads->windows) && isset(self::$keyboard->platformSupport->windows) && self::$keyboard->platformSupport->windows != 'none') {
@@ -160,7 +172,7 @@ END;
       return $result === '' ? FALSE : $result;
     }
 
-    protected function WriteMacOSBoxes() {
+    protected static function WriteMacOSBoxes() {
       global $embed_mac;
       if (isset(self::$downloads->kmp)) {
         if (isset(self::$keyboard->platformSupport->macos) && self::$keyboard->platformSupport->macos != 'none') {
@@ -178,7 +190,7 @@ END;
       return FALSE;
     }
 
-    protected function WriteLinuxBoxes() {
+    protected static function WriteLinuxBoxes() {
       global $embed_linux;
       if (isset(self::$downloads->kmp)) {
         if (isset(self::$keyboard->platformSupport->linux) && self::$keyboard->platformSupport->linux != 'none') {
@@ -196,7 +208,7 @@ END;
       return FALSE;
     }
 
-    protected function WriteWebBoxes() {
+    protected static function WriteWebBoxes() {
       global $keymanwebhost;
       if (isset(self::$downloads->js)) {
         if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none') {
@@ -224,7 +236,7 @@ END;
       return FALSE;
     }
 
-    protected function WriteAndroidBoxes() {
+    protected static function WriteAndroidBoxes() {
       if (isset(self::$downloads->kmp)) {
         if (isset(self::$keyboard->platformSupport->android) && self::$keyboard->platformSupport->android != 'none') {
           return self::download_box(
@@ -239,7 +251,7 @@ END;
       return FALSE;
     }
 
-    protected function WriteiPhoneBoxes() {
+    protected static function WriteiPhoneBoxes() {
       if (isset(self::$downloads->kmp)) {
         if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
           return self::download_box(
@@ -255,7 +267,7 @@ END;
       return FALSE;
     }
 
-    protected function WriteiPadBoxes() {
+    protected static function WriteiPadBoxes() {
       if (isset(self::$downloads->js)) {
         if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
           return self::download_box(
