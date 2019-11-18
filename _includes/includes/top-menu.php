@@ -92,8 +92,9 @@
                         <ul>
                             <li><a href="/about/">About Keyman</a></li>
                             <li><a href="/about/get-involved">Get Involved</a></li>
+                            <li><a href="/training">Training Events</a></li>
                             <li><a href="/free/">Free on all Platforms</a></li>
-                            <li><a href="http://help.keyman.com">Help and Documentation</a></li>
+                            <li><a href="https://help.keyman.com">Help and Documentation</a></li>
                             <li><a href="/contact/">Contact Us</a></li>
                             <li><a href="https://blog.keyman.com/">Keyman Blog</a></li>
                             <li><a href="/testimonials/">Testimonials</a></li>

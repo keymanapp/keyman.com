@@ -19,7 +19,7 @@
     
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p><a href='/12/'>New: Keyman 12.0 is now available!</a></p>
+            <p style='font-size:2em'><a href='/training/'>🎓 New! Keyman training in Switzerland, Feb 2020</a></p>
           </div>
         </div>
     
