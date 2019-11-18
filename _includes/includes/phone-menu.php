@@ -47,9 +47,11 @@
             <h3>About</h3>
             <ul>
               <li><a href="/about/">About Keyman</a></li>
+              <li><a href="/about/get-involved">Get Involved</a></li>
+              <li><a href="/training">Training Events</a></li>
               <li><a href="/free/">Free on all Platforms</a></li>
               <li><a href="/contact/">Contact Us</a></li>
-              <li><a href="http://blog.tavultesoft.com">Keyman Blog</a></li>
+              <li><a href="https://blog.keyman.com">Keyman Blog</a></li>
               <li><a href="/testimonials/">Testimonials</a></li>
               <li><a href="/search/">Search Site</a></li>
            </ul>
@@ -57,7 +59,7 @@
         <div class="phone-menu-item">
             <h3>Help</h3>
             <ul>
-                <li><a href="http://help.keyman.com">Help and Documentation</a></li>
+                <li><a href="https://help.keyman.com">Help and Documentation</a></li>
            </ul>
         </div>
     </div>
