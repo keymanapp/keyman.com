@@ -19,7 +19,7 @@ By the end of the workshop, you will have a working keyboard layout for your lan
 </p>
 
 <p>
-We currently have places available for this workshop. <a href='https://forms.gle/KfMgiFQfNiDMw7Pz7'>Register your interest now!</a>
+We currently have places available for this workshop. <a href='https://intre.org/index.php?487'>Register now!</a>
 </p>
 
 <br style="clear:both" />
