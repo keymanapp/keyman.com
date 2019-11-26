@@ -182,7 +182,7 @@
     $data =
     '<build>
       <buildType id="Keyboards_BuildAndDeployBundledInstaller"/>
-      <comment><text>Build triggered by keyboard download</text></comment>
+      <comment><text>'.htmlspecialchars($id, ENT_COMPAT, 'UTF-8').': build triggered by keyboard download</text></comment>
       <properties>
         <property name="target_keyboard" value="'.htmlspecialchars($src, ENT_COMPAT, 'UTF-8').'"/>
       </properties>
