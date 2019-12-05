@@ -378,6 +378,8 @@ END;
       }
       head($head_options);
 
+      echo "<script src='".cdn('js/qrcode.js')."'></script>";
+
       if (!isset(self::$keyboard) || !isset(self::$downloads)) {
         // If parameters are missing ...
         ?>
@@ -412,10 +414,13 @@ END;
                    onclick="return do_search()">
           </form>
         </div>
-
+<?php
+        if(empty(self::$deprecatedBy)) {
+          self::WriteQRCode('top');
+        }
+?>
         <h1 class='red underline'><?= self::$title ?></h1>
-
-        <?php
+<?php
       }
 ?>
 <?php
@@ -460,7 +465,7 @@ END;
           <h2 class='red underline'>Downloads for your device</h2><p>Sorry, this keyboard requires Keyman Desktop <?= self::$keyboard->minKeymanVersion ?> or higher.</p>
 <?php
         } else {
-          echo "<h2 class='red underline'>Downloads for your device</h2>" . call_user_func($text);
+          echo "<h2 class='red underline' style='clear:none'>Downloads for your device</h2>" . call_user_func($text);
         }
       }
 
@@ -470,6 +475,9 @@ END;
 
       if ($embed == 'none') {
         echo "<h2 class='red underline'>Downloads for other devices</h2><div class='download-other'>";
+        if(empty(self::$deprecatedBy)) {
+          self::WriteQRCode('other');
+        }
         foreach ($deviceboxfuncs as $platform => $func) {
           if ($platform != $pageDevice) {
             echo call_user_func($func);
@@ -592,5 +600,21 @@ END;
         </a>
       </p>
       <?php
+    }
+
+    protected static function WriteQRCode($context) {
+?>
+    <div class='qrcode-host qrcode-<?=$context?>'>
+      <div id="qrcode-<?=$context?>"></div>
+      <div class='qrcode-caption'>Scan this code to load this keyboard on another device</div>
+    </div>
+    <script type="text/javascript">
+      new QRCode(document.getElementById("qrcode-<?=$context?>"), {
+        text: location.href,
+        width: 128,
+        height: 128
+      });
+    </script>
+<?php
     }
   }
