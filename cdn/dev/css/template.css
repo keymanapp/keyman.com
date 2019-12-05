@@ -2529,7 +2529,11 @@ ul.beta-link a {
 	padding: 0 10px;
 }
 
-@media all and (max-width: 768px){
+#section2 .qrcode-host img {
+	max-width: initial;
+}
+
+@media all and (max-width: 767px){
 	.qrcode-other {
 		float: none;
 		display: block;
@@ -2538,9 +2542,5 @@ ul.beta-link a {
 	}
 	.qrcode-top {
 		display: none;
-	}
-
-	#section2 .qrcode-host img {
-		max-width: initial;
 	}
 }
