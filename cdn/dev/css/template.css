@@ -2508,3 +2508,39 @@ ul.beta-link a {
 .page-keyman10 #section2 {
   /* background: url(/cdn/dev/img/beta.png) top right no-repeat; */
 }
+
+/* QR Codes for keyboard downloads */
+
+.qrcode-host {
+	float: right;
+	border: solid 1px #B92034;
+	padding: 0 0 10px 0;
+	background: white;
+	max-width: 148px;
+	text-align: center;
+	margin: 8px 8px 8px 0;
+}
+
+.qrcode-other {
+	display: none;
+}
+
+.qrcode-host .qrcode-caption {
+	padding: 0 10px;
+}
+
+#section2 .qrcode-host img {
+	max-width: initial;
+}
+
+@media all and (max-width: 767px){
+	.qrcode-other {
+		float: none;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.qrcode-top {
+		display: none;
+	}
+}
