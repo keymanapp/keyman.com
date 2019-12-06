@@ -2,6 +2,8 @@
   namespace UI;
 
   require_once('includes/template.php');
+  require_once('includes/playstore.php');
+  require_once('includes/appstore.php');
 
   use \DateTime;
 
@@ -237,12 +239,13 @@ END;
     }
 
     protected static function WriteAndroidBoxes() {
+      global $playstore;
       if (isset(self::$downloads->kmp)) {
         if (isset(self::$keyboard->platformSupport->android) && self::$keyboard->platformSupport->android != 'none') {
           return self::download_box(
             self::embed_path(self::$downloads->kmp),
             htmlentities(self::$keyboard->name) . ' for Android',
-            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/android">Keyman for Android</a> must be installed first.',
+            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.$playstore.'">Keyman for Android</a> must be installed first.',
             'download-android',
             'Install on Android',
             'android');
@@ -252,12 +255,13 @@ END;
     }
 
     protected static function WriteiPhoneBoxes() {
+      global $appstore;
       if (isset(self::$downloads->kmp)) {
         if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
           return self::download_box(
             self::embed_path(self::$downloads->kmp),
             htmlentities(self::$keyboard->name) . ' for iPhone',
-            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/iphone">Keyman for iPhone</a> must be installed first.',
+            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.$appstore.'">Keyman for iPhone</a> must be installed first.',
             'download-ios',
             'Install on iPhone',
             'ios');
@@ -268,12 +272,13 @@ END;
     }
 
     protected static function WriteiPadBoxes() {
+      global $appstore;
       if (isset(self::$downloads->js)) {
         if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
           return self::download_box(
             self::embed_path(self::$downloads->kmp),
             htmlentities(self::$keyboard->name) . ' for iPad',
-            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/ipad">Keyman for iPad</a> must be installed first.',
+            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.$appstore.'">Keyman for iPad</a> must be installed first.',
             'download-ios',
             'Install on iPad',
             'ios');
@@ -518,7 +523,7 @@ END;
               if (isset(self::$keyboard->helpLink)) {
 ?>
                 <a <?= $embed_target ?>
-                  href='<?= self::$keyboard->helpLink ?>'><?= self::$keyboard->helpLink ?></a>
+                  href='<?= self::$keyboard->helpLink ?>'>Keyboard help</a>
 <?php
               } else {
                 echo "Help not available.";

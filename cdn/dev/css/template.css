@@ -2544,3 +2544,42 @@ ul.beta-link a {
 		display: none;
 	}
 }
+
+@media all and (min-width: 10px) and (max-width: 600px) {
+	html #search-box #search-q {
+		width: 80px;
+	}
+
+	html #section2 h1 {
+		font-size: 16pt;
+	}
+
+	html #section2 h2 {
+		font-size: 14pt;
+		padding-left: 0;
+	}
+
+	html .download {
+		background-image: none !important;
+	}
+
+	html .download a.download-link {
+		margin: 4px auto 8px auto;
+		display: block;
+		float: none;
+	}
+
+	html .download .download-filename {
+		margin-top: 8px;
+	}
+
+	html .download.download-android, 
+	html .download.download-windows,
+	html .download.download-ios, 
+	html .download.download-kmp-windows, 
+	html .download.download-kmp-macos, 
+	html .download.download-kmp-linux, 
+	html .download.download-web {
+		padding-left: 8px;
+	}
+}
