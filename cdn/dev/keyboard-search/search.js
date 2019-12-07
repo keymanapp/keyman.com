@@ -297,6 +297,8 @@ function process_response(q, res) {
   resultsElement.empty();
 
   if(res.keyboards) {
+    var deprecatedElement = null;
+
     $('<h3>').addClass('red underline').text(res.rangetext ? res.rangetext : "Keyboards matching '"+q+"'").appendTo(resultsElement);
 
     document.title = q + ' - Keyboard search';
@@ -315,6 +317,12 @@ function process_response(q, res) {
 
       if(embed=='linux' && (!kbd.platformSupport || !kbd.platformSupport['linux'] || kbd.platformSupport['linux'] == 'none')) {
         return;
+      }
+
+      if(kbd.deprecated && !deprecatedElement) {
+        deprecatedElement = $('<div class="keyboards-deprecated"><h2>Obsolete keyboards</h2></div>');
+        deprecatedElement.click(function() {deprecatedElement.toggleClass('show');});
+        resultsElement.append(deprecatedElement);
       }
 
       var k = $(
@@ -352,7 +360,7 @@ function process_response(q, res) {
         }
       }
       $('.platforms', k).text();
-      resultsElement.append(k);
+      (deprecatedElement ? deprecatedElement : resultsElement).append(k);
     });
   }
   if(res.languages) {

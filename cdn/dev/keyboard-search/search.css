@@ -132,6 +132,14 @@ h2 a {
   color: red;
 }
 
+#search-results .deprecated .keyboard {
+  display: none;
+}
+
+#search-results .deprecated.show .keyboard {
+  display: block;
+}
+
 #search-results .keyboard .title a {
   background-image: url(/cdn/dev/keyboard-search/icon-keyman-20.png);
   background-repeat: no-repeat;
