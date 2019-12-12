@@ -1,3 +1,3 @@
 <?php
-    header('Location: http://help.keyman.com/');
+    header('Location: https://help.keyman.com/');
 ?>
