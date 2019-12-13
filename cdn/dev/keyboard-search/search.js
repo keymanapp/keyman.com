@@ -320,8 +320,8 @@ function process_response(q, res) {
       }
 
       if(kbd.deprecated && !deprecatedElement) {
-        deprecatedElement = $('<div class="keyboards-deprecated"><h2>Obsolete keyboards</h2></div>');
-        deprecatedElement.click(function() {deprecatedElement.toggleClass('show');});
+        deprecatedElement = $('<div class="keyboards-deprecated"><h4 class="red">Show obsolete keyboards</h4></div>');
+        deprecatedElement.find('h4').click(function() {deprecatedElement.toggleClass('show');});
         resultsElement.append(deprecatedElement);
       }
 
