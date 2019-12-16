@@ -273,7 +273,7 @@ END;
 
     protected static function WriteiPadBoxes() {
       global $appstore;
-      if (isset(self::$downloads->js)) {
+      if (isset(self::$downloads->kmp)) {
         if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
           return self::download_box(
             self::embed_path(self::$downloads->kmp),
