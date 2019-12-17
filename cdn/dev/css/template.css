@@ -160,10 +160,12 @@ html{
 :lang(ori).lang-example {
 	font-family: OriyaWeb;
 }
-/* Rawang */
+/* Rawang
 :lang(raw).lang-example {
 	font-family: MyanmarWeb;
 }
+*/
+
 /* Sindhi */
 :lang(snd).lang-example {
 	font-family: SindhiWeb;
