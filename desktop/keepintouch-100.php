@@ -256,7 +256,7 @@
     <li>Get news of updates, features and special offers
   </ul>
 
-  <p class='embed browser'>You can also <a href='.' target='_blank'>open this page in your browser</a></p>
+  <p class='embed browser'>You can also <a href='keepintouch-100' target='_blank'>open this page in your browser</a></p>
 
   <div id='facebook'>
     <h2>Facebook</h2>
