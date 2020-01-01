@@ -17,11 +17,13 @@
     </div>
     <div class="main2">
     
+        <!-- event banner: uncomment this section when we have an event or promotion
         <div class="section section-announcement">
           <div class='wrapper'>
             <p style='font-size:2em'><a href='/training/'>🎓 New! Keyman training in Switzerland, Feb 2020</a></p>
           </div>
         </div>
+        -->
     
         <div class="section section-languages">
             <div class="wrapper">

@@ -8,18 +8,20 @@
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline">Keyman Developer Training - Basel, Switzerland, February 2020</h2>
+<h2 class="red underline">Training Events</h2>
+
+<p>No training events are currently scheduled.</p>
+
+<br>
+
+<h3 class="red underline">Cancelled: Keyman Developer Training - Basel, Switzerland, February 2020</h3>
 <p>
-Coming soon! We have scheduled a Keyman Developer training workshop for <b>24-28 February 2020</b> in <b>Basel, Switzerland</b>.
-In this hands-on workshop, you'll learn how to create powerful multi-platform keyboard layouts for desktop and mobile devices.
-</p>
+Due to insufficient numbers, we have cancelled this workshop. We will continue to look at ways to make this training available
+and will provide updates via the Keyman mailing list and website.  We hope that in the near future we will be able to provide
+the training you need in a way that you can take advantage of.</p>
 
 <p>
-By the end of the workshop, you will have a working keyboard layout for your language(s) ready to share with the world.
-</p>
-
-<p>
-We currently have places available for this workshop. <a href='https://intre.org/index.php?487'>Register now!</a>
+In the meantime, please do contact us if we can be of any assistance.
 </p>
 
 <br style="clear:both" />
