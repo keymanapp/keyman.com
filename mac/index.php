@@ -68,7 +68,7 @@
     </tr>
     <tr>
       <td><a href='http://help.keyman.com/developer/language/reference/if'><code>if()</code> statement</a></td>
-      <td></td>
+      <td><?=$tick;?> (except options forms)</td>
     </tr>
     <tr>
       <td><a href='http://help.keyman.com/developer/language/reference/language'><code>&amp;language</code> store</a></td>
