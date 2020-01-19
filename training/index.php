@@ -23,7 +23,7 @@ For those in the US, this will be early morning, after which they can spend the 
 it will fall in the evening, and they can spend the following day doing their assignment before the next group session.  We will have support
 staff in various time zones standing by to help participants if needed.</p>
 
-<p>The cost is $30 which must be paid by bank card or SIL account number at our <a href='https://intre.org?487' target='_blank'>registration site</a>.
+<p>The cost is $30 which must be paid by credit card at our <a href='https://intre.org?487' target='_blank'>registration site</a>.
 The payment confirmation email will contain a link to register for the Zoom webinar, which will send you reminders as the day approaches.</p>
 
 <p><a href='https://intre.org/?487&amp;a=home' target='_blank'>Learn more...</a>
