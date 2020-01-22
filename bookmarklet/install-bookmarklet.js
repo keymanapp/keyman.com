@@ -3,7 +3,7 @@ function getBookmarkletCode(lang, kbd) {
     "javascript:void((function(){try{var%20e=document.createElement('script');e.type='text/javascript';"+
     "e.src='"+resourceBase+"/code/bml20.php"+
     "?langid="+encodeURIComponent(lang.id)+
-    "&keyboard="+encodeURIComponent(kbd.id)+
+    "&amp;keyboard="+encodeURIComponent(kbd.id)+
     "';document.body.appendChild(e);}catch(v){}})())";
   return code;
 }  
