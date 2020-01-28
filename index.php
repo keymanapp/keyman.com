@@ -20,6 +20,9 @@
         <!-- event banner: uncomment this section when we have an event or promotion -->
         <div class="section section-announcement">
           <div class='wrapper'>
+            <p style='font-size:2em'><a href='/13/'>New: Keyman 13.0 is now in Beta!</a></p>
+          </div>
+          <div class='wrapper'>
             <p style='font-size:2em'><a href='/training/'>🎓 New! Online Keyman Developer Training Workshop, Feb 2020</a></p>
           </div>
         </div>

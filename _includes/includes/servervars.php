@@ -24,7 +24,7 @@
   // Major stable and beta versions
   global $stable_version_int, $beta_version_int;
   $stable_version_int = 12;
-  $beta_version_int = 12;
+  $beta_version_int = 13;
 
   $stable_version = $stable_version_int . '.0';
   $beta_version = $beta_version_int . '.0';
@@ -70,6 +70,12 @@
     $dl9Link = "/desktop/download.php";
     $upgradeLink = "http://tavultesoft.com{$site_suffix}/keyman/upgrade.php";
   }
+
+  // Alpha and Beta signup links
+  global $playstore_signup_link, $testflight_alpha_link, $testflight_beta_link;
+  $playstore_signup_link = "https://play.google.com/apps/testing/com.tavultesoft.kmapro";
+  $testflight_alpha_link = "https://testflight.apple.com/join/vnCV2EiH";
+  $testflight_beta_link = "https://testflight.apple.com/join/9W4XIoxQ";
 
   $staticDomain="s.keyman.com{$site_suffix}/kmc";
   $helpSite = "help.keyman.com{$site_suffix}";
