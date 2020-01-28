@@ -28,6 +28,7 @@ head([
 <ul>
   <li>Share keyboard download links via QR Codes for all Keyman platforms<br>
     <img alt='Share keyboards via QR Codes' src='share-qr-code.png'></li>
+  <li>Improved capability and stability on all platforms</li>
   <li>Dark mode support on Keyman for iPhone and iPad<br>
     <img alt='Dark mode for Keyman for iPhone and iPad' src='ios-dark.png'></li>
 </ul>
@@ -130,7 +131,7 @@ downloadSection('KeymanWeb 13', 'web', 'keymanweb-$version.zip', 'beta');
 <h3>What's New in KeymanWeb 13?</h3>
 
 <ul>
-  <li>No significant changes</li>
+  <li>Various bug fixes and compatibility improvements</li>
 </ul>
 
 
@@ -144,6 +145,7 @@ downloadSection('Keyman Developer 13',    'developer', 'keymandeveloper-$version
 <h3>What's new in Keyman Developer 13?</h3>
 
 <ul>
+  <li>New lexical model editor</li>
   <li>Add unsupported kmdecomp decompiler utility</li>
   <li>Add x64 version of kmcomp</li>
   <li>Hotkeys defined in .kmn no longer need to be quoted</li>
