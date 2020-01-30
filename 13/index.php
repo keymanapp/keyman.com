@@ -42,7 +42,7 @@ head([
 <h3>13.0 Beta Feedback</h3>
 <ul>
   <li>Please send feedback about Keyman 13 to the
-  <a href="https://community.software.sil.org/c/keyman">Keyman Community site</a> or submit bugs and feature requests to our
+  <a href="https://community.software.sil.org/t/keyman-13-beta-feedback/2961">Keyman Community site</a> or submit bugs and feature requests to our
   <a href="https://github.com/keymanapp/keyman/issues/new/choose">Issue Tracker</a></li>
 </ul>
 <br>
@@ -76,20 +76,18 @@ downloadSection('Keyman 13 for macOS',   'mac',     'keyman-$version.dmg', 'beta
 
 <h2 id='linux' class='red underline'>Keyman 13 for Linux</h2>
 
-<h3>What's New in Keyman 13 for Linux?</h3>
-
-<ul>
-  <li>No significant changes</li>
-</ul>
-
-<!-- TODO: Add this when we can package and ship -->
-<!--
-<li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
+<h3>Beta</h3>
+<li>Ubuntu, Wasta-Linux: Keyman for Linux Beta can be installed via launchpad:</li>
+<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-nightly
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install keyman onboard</code></pre></blockquote>
--->
+
+<h3>What's New in Keyman 13 for Linux?</h3>
+
+<ul>
+  <li>In "About "keyboards, add QR Codes to share keyboards</li>
+</ul>
 
 
 <?php
