@@ -23,7 +23,7 @@
 
   // Major stable and beta versions
   global $stable_version_int, $beta_version_int;
-  $stable_version_int = 12;
+  $stable_version_int = 13;
   $beta_version_int = 13;
 
   $stable_version = $stable_version_int . '.0';
