@@ -25,6 +25,10 @@ head([
 <h2>Dark mode support on Keyman for iPhone and iPad</h2>
 <p style='text-align: center'><img alt='Dark mode for Keyman for iPhone and iPad' src='ios-dark.png'></p>
 
+<h2>Simplified Keyman installer on macOS</h2>
+<p>We've made it easier to install Keyman via an AppleScript that guides you through the process.
+  This has been tested on macOS 10.13, 10.14, and 10.15.</p>
+
 <h2>There's more!</h2>
 <p>We have made many other smaller changes and improvements to Keyman 13, such as an improved Lexical Model editor in Keyman Developer,
 improvements to context handling in Keyman for macOS, and setting keyboard options in Keyman for Linux. Read about all the changes in our

@@ -77,7 +77,7 @@
     <tr>
       <td><a href='http://help.keyman.com/developer/language/reference/if'><code>if()</code> statement</a></td>
       <td><?=$tick;?></td>
-      <td><?=$tick;?><br>(except options forms)</td>
+      <td><?=$tick;?><br></td>
     </tr>
     <tr>
       <td><a href='http://help.keyman.com/developer/language/reference/mnemoniclayout'>mnemonic layouts</a> (always US base layout)</td>
