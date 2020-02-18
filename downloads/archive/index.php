@@ -19,7 +19,7 @@
 <ul>
     <!-- TODO: use downloads API to get the latest 12.0 version -->
     <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_12 ?>/keymandesktop-<?= $ver_windows_12 ?>.exe">Keyman Desktop <?= $ver_windows_12 ?> Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_11 ?>/keymandesktop-<?= $ver_windows_11 ?>.exe">Keyman Desktop <?= $ver_windows_11 ?> Download</a> (No activation required)</li>    <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_11 ?>/keymandesktop-<?= $ver_windows_11 ?>.exe">Keyman Desktop <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
+    <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_11 ?>/keymandesktop-<?= $ver_windows_11 ?>.exe">Keyman Desktop <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_10 ?>/keymandesktop-<?= $ver_windows_10 ?>.exe">Keyman Desktop <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/windows/stable/9.0.528.0/keymandesktop-9.0.528.0.exe">Keyman Desktop 9.0.528.0 Download</a> (No activation required)</li>
     <li><a href="https://downloads.keyman.com/windows/stable/8.0.361.0/keymandesktop-8.0.361.0.exe">Keyman Desktop 8.0.361.0 Download</a> (No activation required)</li>
