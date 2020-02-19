@@ -45,7 +45,7 @@
 ?>
 
 <h2 id='linux' class='red underline'>Keyman for Linux</h2>
-<p>Ubuntu: Keyman for Linux can be installed via <a href='https://launchpad.net/keyman'>launchpad</a>:</p>
+<p>Ubuntu: Keyman for Linux can be installed via <a href='https://launchpad.net/~keymanapp/+archive/ubuntu/keyman-daily'>launchpad</a>:</p>
 <pre class='language-bash code'><code>
 sudo add-apt-repository ppa:keymanapp/keyman-daily
 sudo apt-get update

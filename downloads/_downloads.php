@@ -11,7 +11,7 @@
 <p>Keyman for iPhone and iPad can be found on the App Store.</p>
 <?= $appstoreTable ?>
 
-<h2 id='linux' class='red underline'>Keyman 12 for Linux</h2>
+<h2 id='linux' class='red underline'>Keyman for Linux</h2>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
 <blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
