@@ -107,6 +107,15 @@
 </table>
 
 <br/>
+<h3>New in Keyman for Android 13.0 (Feb 2020)</h3>
+<ul>
+    <li>Download keyboard and dictionary resources in the background</li>
+    <li>Show available keyboard updates as Android system notifications</li>
+    <li>Add QR codes to Keyboard Info pages to share keyboard downloads</li>
+    <li>Improve handling keyboard context with applications such as Gmail and Chrome</li>
+</ul>
+
+<br/>
 <h3>New in Keyman for Android 12.0 (Oct 2019)</h3>
 
 <ul>
