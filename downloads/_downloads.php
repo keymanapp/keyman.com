@@ -17,7 +17,7 @@
 <blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install keyman onboard</code></pre></blockquote>
+sudo apt-get install keyman ibus-keyman onboard</code></pre></blockquote>
 
 <h2 class='red underline large'>Products for Software Developers</h2>
 
