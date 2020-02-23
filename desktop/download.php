@@ -1,7 +1,7 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
-  
+
   // Required
   head([
     'title' =>'Download Keyman Desktop ' . $stable_version,
@@ -42,6 +42,7 @@
     Keyman Desktop can be downloaded without any keyboard layouts. This is a good option if you wish to upgrade an existing installation, preserving your existing configuration and keyboard layouts, or if you wish to use Keyman Desktop for multiple languages. Keyboard layouts can be added after Keyman Desktop has been installed.
 </p>
 
+<a id='standalone'></a>
 <?php
   downloadLargeCTA('Keyman Desktop', 'windows', 'stable', 'keymandesktop-$version.exe');
 ?>

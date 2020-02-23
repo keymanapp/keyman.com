@@ -102,7 +102,7 @@
       $filename = array_pop($urlbits);
       $id = self::$id;
       global $embed;
-      
+
       $e_filename = urlencode($filename);
       $e_id = urlencode($id);
 
@@ -164,7 +164,7 @@ END;
             htmlentities(self::$keyboard->name) . ' for Windows',
             $embed_win ?
               'Install ' . htmlentities(self::$keyboard->name) :
-              'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/desktop">Keyman Desktop</a> for Windows must be installed first.',
+              'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/desktop/download#standalone">Keyman Desktop</a> for Windows must be installed first.',
             'download-kmp-windows',
             $embed_win ? 'Install keyboard' : 'Windows download',
             'windows');
