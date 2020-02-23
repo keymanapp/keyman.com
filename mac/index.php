@@ -92,7 +92,7 @@
     <span class="red">Q.</span> How do I install Keyman for macOS?
 </p>
 <p>
-    <span class="red">A.</span> Visit <a href='http://help.keyman.com/products/mac/<?php echo $stable_version; ?>/docs/start_download-install_keyman.php'>Keyman for macOS help</a>
+    <span class="red">A.</span> Visit <a href='http://help.keyman.com/products/mac/current-version/start/install-keyman'>Keyman for macOS help</a>
     to learn how to install and start using Keyman on macOS.
 </p>
 
