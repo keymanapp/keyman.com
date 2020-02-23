@@ -51,6 +51,7 @@
         'name' => 'Cameroon AZERTY (SIL) Unicode',
         'desc' => 'Cameroon AZERTY keyboard supporting the Standardized Alphabet for Cameroonian languages - designed for a French (AZERTY) keyboard',
         'help' => 'sil_cameroon_azerty',
+        'web'  => '#aal-Latn,Keyboard_sil_cameroon_azerty',
         'id'   => 'sil_cameroon_azerty')
 
       );
