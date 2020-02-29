@@ -3,7 +3,7 @@
 
   if(isset($_REQUEST['embed'])) {
     $embed = $_REQUEST['embed'];
-    if(!in_array($embed, ['none','windows','macos','linux'])) {
+    if(!in_array($embed, ['none','windows','macos','linux','android','ios'])) {
       $embed = 'none';
     }
     if(isset($_REQUEST['version'])) {
@@ -24,6 +24,8 @@
   $embed_win = $embed == 'windows';
   $embed_mac = $embed == 'macos';
   $embed_linux = $embed == 'linux';
+  $embed_android = $embed == 'android';
+  $embed_ios = $embed == 'ios';
   
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
