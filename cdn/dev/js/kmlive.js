@@ -12,14 +12,14 @@ function loaded(){
     window.setTimeout(loaded, 100);
     return;
   }
-  
+
   $('#open-sales-form').click(function(e){
     window.open("http://tavultesoft.com/sendmessage.php","_blank","width=660,height=600,resizable=no,scrollbars=yes");
     e.preventDefault();
     e.stopPropagation();
   });
-  
-  
+
+
   $('#testimonial').click(function(){
     location.href="http://www.tavultesoft.com/testimonials.php";
   });
@@ -27,11 +27,11 @@ function loaded(){
   $('#twitter-testimonial').click(function() {
       location.href="https://twitter.com/ibrahimasaar/status/1161753102527193088";
   });
-  
+
   // Email subscribe form
   $('.subscribe').click(function(){
     $('#mc-embedded-subscribe-form').submit();
-  });    
+  });
 
   // Popup close
   $('#popup-close').click(function(){
@@ -49,7 +49,7 @@ function loaded(){
 	$('.popup').fadeOut(300);
     }
   });
-  
+
   // Scrolling top menu functionality (Non touch devices only)
   var device = $(document.body).data('device');
   if (device != 'Android' && device != 'iPhone' && device != 'iPad') {
@@ -76,27 +76,11 @@ function loaded(){
       $('.info-left').removeClass('fixed-pos');
     }
   }
-  
-  // Touch device menu functionality
-  if (device == 'Android' || device == 'iPhone' || device == 'iPad') {
-    $('#show-phone-menu').click(function(event){
-      if ($("#phone-menu").css("display") == "none") {
-	/*document.ontouchstart = function(e){
-	  var phoneMenuWidth = document.width * 0.8;
-	  var tabletMenuWidth = document.width * 0.4;
-	  if (document.width <= 600 && e.pageX > phoneMenuWidth || document.width > 600 && e.pageX > tabletMenuWidth ) {
-	    e.preventDefault();
-	    e.stopPropagation();
-	  }
-	}*/
-	$("#phone-menu").show();
-      }else{
-	$("body").css("overflow","auto");
-	$("#phone-menu").hide();
-      }	
-    });
-  }
-  
+
+  $('#show-phone-menu').click(function(event) {
+    $("#phone-menu").toggle();
+  });
+
   // Downloads
   $('.download-cta-button').click(function(e){
     var platform = $(this).closest('.download-cta-big').attr('id');
@@ -107,17 +91,17 @@ function loaded(){
     }
     var language = $(this).closest('.download-cta-big').parent('#download-cta').data('language');
     var keyboard = $(this).closest('.download-cta-big').parent('#download-cta').data('keyboard');
-    
+
     var url = $(this).closest('.download-cta-big').data('url');
     if(url) {
       window.location.href = url;
       return;
     }
-    
+
     var link = '';
     if (platform == 'Web') {
       if (language && keyboard) {
-        link = 'http://keymanweb.com/#'+language+',Keyboard_'+keyboard; 
+        link = 'http://keymanweb.com/#'+language+',Keyboard_'+keyboard;
       }else{
         link = 'http://keymanweb.com';
       }
@@ -160,12 +144,12 @@ function loaded(){
       window.location.href = link;
     }
   });
-  
+
   $('#android-install-cancel, #ios-install-cancel').click(function(e){
     $('#android-install, #ios-install, #install-modal').hide();
     e.preventDefault();
   });
-  
+
   // Download CTA switching
   $('#cta-big-Holder').hide();
   if (device == 'Other') {
@@ -179,7 +163,7 @@ function loaded(){
     window.location.href = link;
     return false;
   });
-  
+
   function show_download_popup(language,keyboard){
     var promo = getCookie('promotion');
     if (promo != '') {
@@ -204,12 +188,12 @@ function loaded(){
     // Google Analytics event
     ga('send', 'event', 'Keyboard Download', 'Start', keyboard);
   }
-  
+
   $('#product-download-popup-close').click(function(){
     $('#product-download-popup, #install-modal').fadeOut();
     $('#download-signup-response').text('');
   });
-  
+
   $('#download-signup .button').click(function(){
     var email = $('#download-signup').children('input').val();
     var keyboard = $('#download-cta').data('keyboard');
@@ -240,7 +224,7 @@ function loaded(){
       });
     }
   });
-  
+
   function getCookie(cname)
   {
     var name = cname + "=";
@@ -252,7 +236,7 @@ function loaded(){
      }
     return "";
   }
-  
+
   if (bowser.firefox) {
     $('#ie-dl,#chrome-dl').remove();
   }else if (bowser.chrome) {
@@ -262,7 +246,7 @@ function loaded(){
   }else{
     $('#product-download-popup-instruct').remove();
   }
-  
+
   // Uninstall Feedback
   var uninstallFeedbackSent = false;
   $('.feedback').click(function(){
@@ -301,52 +285,52 @@ function loaded(){
       }
     });
   });
-  
-  
+
+
   // GA event listeners
-  
+
   // Click through download discount
   $('#discount-purchase-button a').on('click', function() {
     var keyboard = $('#download-cta').data('keyboard');
     ga('send', 'event', 'Keyboard Download Promotion (25%)', 'Click (step 1)', keyboard);
   });
-  
+
   // Install keyboard into Keyman for iOS (already installed)
   $('#ios-installed').on('click', function() {
     var keyboard = $('#download-cta').data('keyboard');
     ga('send', 'event', 'Keyman for iOS', 'Keyboard Download', keyboard);
   });
-  
+
   // Download Keyman for iOS
   $('#ios-install-confirm').on('click', function() {
     var keyboard = $('#download-cta').data('keyboard');
     ga('send', 'event', 'Keyman for iOS', 'App Store Link Click', keyboard);
   });
-  
+
   // Install keyboard into Keyman for Android (already installed)
   $('#android-installed').on('touchend', function() {
     var keyboard = $('#download-cta').data('keyboard');
     ga('send', 'event', 'Keyman for Android', 'Keyboard Download', keyboard);
   });
-  
+
   // Download Keyman for Android
   $('#android-install-confirm').on('click', function() {
     var keyboard = $('#download-cta').data('keyboard');
     ga('send', 'event', 'Keyman for Android', 'App Store Link Click', keyboard);
   });
-  
+
   // Mailchimp form signup
   $('#mc-embedded-subscribe-form').on('submit', function() {
     var keyboard = $('#download-cta').data('keyboard');
     ga('send', 'event', 'Mailing List', 'Signup (footer)', keyboard);
   });
-  
+
   // Desktop features clicker
   $('.info-left li').click(function(){
     $('.info-left>ul>li.active').removeClass('active');
     $(this).addClass('active');
   });
-  
+
   // Desktop feature scroller
   $(window).on('scroll', function() {
     var scrollTop = $(this).scrollTop();
