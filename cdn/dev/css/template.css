@@ -2,7 +2,7 @@
  * CSS RESET
  * ***********************************/
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -16,8 +16,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -29,7 +29,7 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -119,10 +119,10 @@ html{
     font-family: LaoWeb;
     font-style:  normal;
     font-weight: normal;
-    src: url('//s.keyman.com/font/deploy/saysettha_web.eot'); 
-    src: url('//s.keyman.com/font/deploy/saysettha_web.eot?#iefix') format('embedded-opentype'), 
-    url('//s.keyman.com/font/deploy/saysettha_web.woff') format('woff'), 
-    url('//s.keyman.com/font/deploy/saysettha_web.ttf') format('truetype');         
+    src: url('//s.keyman.com/font/deploy/saysettha_web.eot');
+    src: url('//s.keyman.com/font/deploy/saysettha_web.eot?#iefix') format('embedded-opentype'),
+    url('//s.keyman.com/font/deploy/saysettha_web.woff') format('woff'),
+    url('//s.keyman.com/font/deploy/saysettha_web.ttf') format('truetype');
 }
 @font-face {
     font-family: PashtoWeb;
@@ -398,7 +398,7 @@ input[type="search"] {
   border: none;
   background-image: url('../img/search-icon.png');
   background-repeat: no-repeat;
-  background-position: right 4px; 
+  background-position: right 4px;
   color: white;
 }
 .search-wrap input:focus {
@@ -466,7 +466,7 @@ input[type="search"] {
 #top-menu1.faded-menu {
 	position: fixed;
 	top: 0;
-	background: rgba(255,255,255,0.9); 
+	background: rgba(255,255,255,0.9);
 }
 
 #top-menu-icon{
@@ -752,7 +752,7 @@ input[type="search"] {
   font-family: "social-logos";
   src: url("../../fonts/social-logos.ttf");
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
 }
 
 [data-icon]:before {
@@ -809,7 +809,7 @@ input[type="search"] {
 #footer-social a#footer-community {
   padding-left: 27px;
 }
-  
+
 .subscribe{
     width: 90px;
     margin: 0px;
@@ -1025,7 +1025,7 @@ input[type="search"] {
 	background: #404040;
 	color: white;
 	margin: 16px 48px;
-	
+
 }
 
 .keyman-free-banner h4 {
@@ -1746,7 +1746,7 @@ span.no_keyboard_details {
 }
 
 #product-download-popup-instruct img{
-	
+
 }
 
 /**********************************
@@ -1757,7 +1757,8 @@ span.no_keyboard_details {
 	display: none;
 	float: left;
 	margin: 10px;
-	position: relative;
+  position: relative;
+  cursor: pointer;
 	z-index: 6;
 }
 #phone-menu{
@@ -2268,7 +2269,7 @@ button.feedback{
 		font-weight: normal !important;
 	}
 	#jira-feedback{
-		display: none;	
+		display: none;
 	}
 	#desktop-special{
 		margin-top: 30px;
@@ -2297,7 +2298,7 @@ button.feedback{
 	#download-cta{
 		margin: 0px 80px;
 	}
-	
+
 }
 
 
@@ -2432,7 +2433,7 @@ button.feedback{
 		font-weight: normal !important;
 	}
 	#jira-feedback{
-		display: none;	
+		display: none;
 	}
 	#desktop-special{
 		margin-top: 30px;
@@ -2601,12 +2602,12 @@ ul.beta-link a {
 		margin-top: 8px;
 	}
 
-	html .download.download-android, 
+	html .download.download-android,
 	html .download.download-windows,
-	html .download.download-ios, 
-	html .download.download-kmp-windows, 
-	html .download.download-kmp-macos, 
-	html .download.download-kmp-linux, 
+	html .download.download-ios,
+	html .download.download-kmp-windows,
+	html .download.download-kmp-macos,
+	html .download.download-kmp-linux,
 	html .download.download-web {
 		padding-left: 8px;
 	}
