@@ -1,4 +1,7 @@
 <?php
+  require __DIR__ . '/../../vendor/autoload.php';
+  Sentry\init(['dsn' => 'https://44d5544d7c45466ba1928b9196faf67e@sentry.keyman.com/3' ]);
+
   require_once('servervars.php');
   
   function template_finish($foot) {
