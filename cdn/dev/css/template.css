@@ -1312,7 +1312,6 @@ p.desc {
   right: 0;
   bottom: 0;
   margin: 0 16px 26px 25px;
-  height: 50px;
 }
 .down a {
   margin: 0 0 0 8px;
@@ -1341,7 +1340,6 @@ span.no_keyboard_details {
   border: solid 1px #F2F2F2;
   position: relative;
   cursor: default;
-  width:768px;
 }
 .kbd h3 {
   margin-left:5px;

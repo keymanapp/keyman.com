@@ -56,39 +56,35 @@
       array(
         'name' => 'SIL IPA Unicode',
         'desc' => 'This mnemonic keyboard, developed by Martin Hosken of SIL, is designed to provide easy access to any IPA character.',
-        'help' => 'sil_ipa',
         'id' => 'sil_ipa'),
 
       array(
         'name' => 'IPATotal',
         'desc' => 'This keyboard encodes all the characters of the IPA, as well as a host of additional characters and symbols. It includes help in English and Portuguese.',
-        'help' => 'ipatotal',
         'id' => 'ipatotal'),
 
       array(
         'name' => 'LingfilSemitica',
         'desc' => 'An excellent keyboard for Latin transcription of Semitic languages, with support for the full IPA range. Optimised for Swedish keyboard layouts.',
-        'help' => 'lingfilsemitica',
         'id' => 'lingfilsemitica'),
 
       array(
         'name' => 'BU Keyboard',
         'desc' => 'This keyboard provides access to a wide range of IPA, Americanist, and European Latin characters, along with arrows and symbols for currency, typesetting, and mathematics.',
-        'help' => 'bu',
         'id' => 'bu')
 
       );
 
       foreach ($keyboardlayouts as $kl) {
-        $helpLink = "https://help.keyman.com/keyboard/" . $kl['help'];
+        $helpLink = "https://help.keyman.com/keyboard/" . $kl['id'];
 ?>
         <div class='kbd'>
           <h3 class='red'><?= $kl['name'] ?></h3>
           <p class='desc' ><?= $kl['desc'] ?></p>
           <div class='down'>
-            <a href='<?= $helpLink ?>'><img src='<?= cdn('img/details_button.png') ?>' alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
             <a href='/keyboard/<?= $kl['id'] ?>'><img
               src='<?= cdn('img/download_button.png') ?>' alt='Download' title='Download the <?= $kl['name'] ?> keyboard now' /></a>
+            <a href='<?= $helpLink ?>'><img src='<?= cdn('img/details_button.png') ?>' alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
           </div>
         </div>
 <?php
@@ -97,11 +93,12 @@
 	  </div>
 
   </div>
-	
+
   <div id='info'>
     <h2 class="red">More Information</h2>
 
-    <p>The keyboard downloads come with Keyman Desktop, our multilingual typing application. <a href='/desktop'>Learn more…</a></p>
+    <p>These keyboards work with Keyman, the open source multilingual keyboard solution, on Windows, macOS, Linux, iPhone, iPad, Android and Web. All of these
+    keyboards are available for use completely free of charge.</p>
 
-    <p>Keyman Desktop will automatically configure your computer to work with IPA.</p>
+    <p>Keyman will automatically configure your computer or device to work with IPA.</p>
   </div>
