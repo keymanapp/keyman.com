@@ -1,13 +1,13 @@
 <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'Keyman Engine | Add custom virtual keyboards to your web, mobile or desktop application',
     'css' => ['template.css'],
     'showMenu' => true,
     'banner' => [
-      'title' => 'Integrate Keyman into your desktop, web and mobile applications', 
+      'title' => 'Integrate Keyman into your desktop, web and mobile applications',
       'image' => 'gears.png',
       'background' => 'water'
     ]
@@ -81,4 +81,14 @@
   <a href='https://help.keyman.com/developer/engine/android/'>Keyman Engine for Android Documentation</a>
   <br/>
   <a href='/downloads/#android-engine'>Get the Keyman Engine for Android SDK now</a>
+</p>
+<br/>
+<h3 class='red underline'>Keyboard App Builder</h3>
+<p>
+  <a href='https://software.sil.org/keyboardappbuilder/' target='_blank'>Keyboard App Builder</a> (KAB) provides a zero-code
+  method of distributing a Keyman keyboard bundled as an app for Android devices. KAB provides a wizard to build a simple app
+  that embeds Keyman Engine and your selected keyboards as a standard Android .apk app which can be uploaded to the Play Store or
+  distributed peer-to-peer.
+  <br/><br/>
+  KAB is not supported by the Keyman team. <a href='https://community.software.sil.org/c/kab'>Support for KAB</a>
 </p>
