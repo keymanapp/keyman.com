@@ -1099,6 +1099,10 @@ body[data-device |= Windows] #cta-big-Windows{
 	display: block;
 }
 
+body[data-device |= Linux] #cta-big-Linux{
+	display: block;
+}
+
 body[data-device |= mac] #cta-big-mac{
 	display: block;
 }
