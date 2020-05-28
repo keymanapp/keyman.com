@@ -10,7 +10,7 @@
 ?>
 <h2 class="red underline large">Keyman for Visual Media (Typewriter)</h2>
 <p>
-    Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications. Free trial available!
+  Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <p class="desktop">
     This keyboard follows the standard Tamil typewriter layout.
