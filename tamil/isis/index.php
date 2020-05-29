@@ -10,7 +10,7 @@
 ?>
 <h2 class="red underline large">Keyman for Tamil (ISIS)</h2>
 <p>
-    Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications. Free trial available!
+    Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <p class="desktop">
     This keyboard is phonetic (Romanised). It comes in the ISIS keyboards package, great for working in multiple Indian scripts.

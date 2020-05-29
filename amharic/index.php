@@ -10,7 +10,7 @@
 ?>
 <h2 class="red underline large">Keyman for Amharic | <span lang="am" class="lang-example large">አማርኛ ይጻፉ</span></h2>
 <p>
-    Type in Amharic on iPhone, Windows and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications. Free trial available!
+  Type in Amharic on iPhone, Windows and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div id="download-cta" data-language='am' data-keyboard='gff_amharic'>
@@ -27,6 +27,18 @@
         <h4>Download Now</h4>
       </div>
       <a class="download-cta-more" href="/desktop/">Learn more about Keyman Desktop</a>
+    </div>
+  </div>
+  <div class="download-cta-big Linux" id="cta-big-Linux">
+    <h3>Amharic for Keyman for Linux</h3>
+    <p>
+      Type in Amharic in all your favourite software applications for Linux. Install Keyman for Linux first.
+    </p>
+    <div class="download-stable-email">
+      <div class="download-cta-button">
+        <h4>Download Now</h4>
+      </div>
+      <a class="download-cta-more" href="/linux/">Learn more about Keyman for Linux</a>
     </div>
   </div>
   <div class="download-cta-big mac" id="cta-big-mac">

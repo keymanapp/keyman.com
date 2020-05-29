@@ -10,7 +10,7 @@
 ?>
 <h2 class="red underline large">Keyman for Visual Media (Typewriter)</h2>
 <p>
-    Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications. Free trial available!
+  Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <p class="desktop">
     This keyboard follows the standard Tamil typewriter layout.
@@ -33,6 +33,18 @@
         <h4>Download Now</h4>
       </div>
       <a class="download-cta-more" href="/desktop/">Learn more about Keyman Desktop</a>
+    </div>
+  </div>
+  <div class="download-cta-big Linux" id="cta-big-Linux">
+    <h3>Visual Media (Typewriter) for Keyman for Linux</h3>
+    <p>
+      Type in Tamil in all your favourite software applications for Linux. Install Keyman for Linux first.
+    </p>
+    <div class="download-stable-email">
+      <div class="download-cta-button">
+        <h4>Download Now</h4>
+      </div>
+      <a class="download-cta-more" href="/linux/">Learn more about Keyman for Linux</a>
     </div>
   </div>
   <div class="download-cta-big mac" id="cta-big-mac">
