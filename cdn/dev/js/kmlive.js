@@ -135,7 +135,13 @@ function loaded(){
       } else {
         window.location.href = '/mac/download.php';
       }
-    }else if (platform == 'Windows' || platform == 'Linux') {
+    }else if (platform == 'Linux') {
+      if(keyboard && language) {
+        window.location.href = '/keyboards/'+keyboard;
+      } else {
+        window.location.href = '/linux/download.php';
+      }
+    }else if (platform == 'Windows') {
       if (language && keyboard) {
         link = '/keyboards/'+keyboard;
       }else{
