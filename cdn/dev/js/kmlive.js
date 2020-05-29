@@ -135,7 +135,7 @@ function loaded(){
       } else {
         window.location.href = '/mac/download.php';
       }
-    }else if (platform == 'Windows') {
+    }else if (platform == 'Windows' || platform == 'Linux') {
       if (language && keyboard) {
         link = '/keyboards/'+keyboard;
       }else{
