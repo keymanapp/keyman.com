@@ -11,13 +11,20 @@
 <h2 class="red underline">What people are saying about Keyman Desktop</h2>
 
 <p class="center">
-  <span class="testimonial">"@keyman, thank you for the Tamil keyboard. Loved how easy it is to type in Tamil.</span>
+  <span class="testimonial">"I know most us had our first Amharic typing experience on #powergeez. It has been 10 years
+    since the last update. [Person facepalming] (a lot of compatibility issues)<br><br>
+    I would suggest to stick with keyman and I am sure you would love the experience. I type #Amharic like a Pro on
+    Keyman [winking face] "</span>
+  <h4 class="caption"><a href="https://twitter.com/MekonnenAkele/status/1208281934721409025">@MekonnenAkele</a> - December 2019</h4>
+</p>
+<p class="center">
+  <span class="testimonial">"@keyman, thank you for the Tamil keyboard. Loved how easy it is to type in Tamil."</span>
   <h4 class="caption"><a href="https://twitter.com/BlueLotusTrans/status/1149465727193079808">@BlueLotusTrans</a> - July 2019</h4>
 </p>
 <p class="center">
-  <span class="testimonial">If you need to develop keyboard inputs for your language @keyman is a great resource.
+  <span class="testimonial">"If you need to develop keyboard inputs for your language @keyman is a great resource.
   Make keyboards for iOS, Android, Mac, & Windows! #ᏣᎳᎩ, Osage, Diné Bizaad, Lakota, & Cree Syllabics are just some
-  of the Keyman keyboards. </span>
+  of the Keyman keyboards."</span>
   <h4 class="caption"><a href="https://twitter.com/NativeLangsTech/status/1131316826795892736">@NativeLangsTech</a> - May 2019</h4>
 </p>
 <p class="center">
@@ -78,6 +85,19 @@
   <h4 class="caption">Abdul-Majid Bhurgri - July 2010</h4>
 </p>
 <h2 class="red underline">What people are saying about Keyman Developer</h2>
+<p class="center">
+  <span class="testimonial">"had a blast at the @keyman 2020 Workshop last week, great lectures, great trainers, and
+    great fun hanging out with keyboard enthusiasts -not to mention a great price!  After years of day dreaming about it,
+    I made a #Musnad:  https://keyman.com/keyboards/gff_musnad"</span>
+<h4 class="caption"><a href="https://twitter.com/ethiopic/status/1235564088341774338">@ethiopic</a> - March 2020</h4>
+</p>
+<p class="center">
+  <span class="testimonial">"Thanks to @keyman, just finished a Taiwanese Pe̍h-ōe-jī keyboard for all platforms just the
+    3rd day of the 1-week workshop. Can't wait to publish it! https://pic.twitter.com/BE4PRpkUsm"
+  </span>
+<h4 class="caption"><a href="https://twitter.com/ngoohebi/status/1232731288143974400">@ngoohebi</a> - February 2020</a></h4>
+</p>
+
 <p class="center">
   <span class="testimonial">"Keyman Developer is a must for anyone that needs to develop keyboards and input methods, its many programming and input features provide users with a one stop keyboard management solution."</span>
   <h4 class="caption">Ken Skuse - BBC World Service</h4>
