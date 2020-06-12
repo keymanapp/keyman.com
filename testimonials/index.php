@@ -11,10 +11,8 @@
 <h2 class="red underline">What people are saying about Keyman Desktop</h2>
 
 <p class="center">
-  <span class="testimonial">"I know most us had our first Amharic typing experience on #powergeez. It has been 10 years
-    since the last update. [Person facepalming] (a lot of compatibility issues)<br><br>
-    I would suggest to stick with keyman and I am sure you would love the experience. I type #Amharic like a Pro on
-    Keyman [winking face] "</span>
+  <span class="testimonial">"... I would suggest to stick with keyman and I am sure you would love the experience.<br/>
+  I type #Amharic like a Pro on Keyman [winking face]"</span>
   <h4 class="caption"><a href="https://twitter.com/MekonnenAkele/status/1208281934721409025">@MekonnenAkele</a> - December 2019</h4>
 </p>
 <p class="center">
