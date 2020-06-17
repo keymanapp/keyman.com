@@ -7,9 +7,11 @@
     // Three tiers: development = x.keyman.com.local
     // Staging = staging.x.keyman.com
     // Production = x.keyman.com
+    // Test = GitHub actions
     const TIER_DEVELOPMENT = "TIER_DEVELOPMENT";
     const TIER_STAGING = "TIER_STAGING";
     const TIER_PRODUCTION = "TIER_PRODUCTION";
+    const TIER_TEST = "TIER_TEST";
 
     public $s_keyman_com, $api_keyman_com, $help_keyman_com, $downloads_keyman_com, $keyman_com, $keymanweb_com, $r_keymanweb_com;
 
@@ -20,7 +22,9 @@
     }
 
     function __construct() {
-      if(isset($_SERVER['KEYMANHOSTS_TIER']) && in_array($_SERVER['KEYMANHOSTS_TIER'], [KeymanHosts::TIER_STAGING, KeymanHosts::TIER_PRODUCTION])) {
+      if(isset($_SERVER['KEYMANHOSTS_TIER']) && in_array($_SERVER['KEYMANHOSTS_TIER'],
+          [KeymanHosts::TIER_DEVELOPMENT, KeymanHosts::TIER_STAGING,
+           KeymanHosts::TIER_PRODUCTION, KeymanHosts::TIER_TEST])) {
         $this->tier = $_SERVER['KEYMANHOSTS_TIER'];
         $site_suffix = '';
         $site_protocol = 'https://';
@@ -30,7 +34,7 @@
         $site_protocol = 'http://';
       }
 
-      if($this->tier == KeymanHosts::TIER_STAGING) {
+      if(in_array($this->tier, [KeymanHosts::TIER_STAGING, KeymanHosts::TIER_TEST])) {
         // As we build more staging areas, change these over as well. Assumption that we'll stage across multiple sites is a
         // little presumptuous but we can live with it.
         $this->s_keyman_com = "https://s.keyman.com";
@@ -45,7 +49,7 @@
         $this->s_keyman_com = "{$site_protocol}s.keyman.com{$site_suffix}";
         $this->api_keyman_com = "{$site_protocol}api.keyman.com{$site_suffix}";
         $this->help_keyman_com = "{$site_protocol}help.keyman.com{$site_suffix}";
-        $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com{$site_suffix}";
+        $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}";
         $this->keyman_com = "{$site_protocol}keyman.com{$site_suffix}";
         $this->keymanweb_com = "{$site_protocol}keymanweb.com{$site_suffix}";
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available

@@ -1,0 +1,10 @@
+{
+    "name": "keymanapi/keyman.com",
+    "require": {
+        "sentry/sdk": "^2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "dantleech/fink": "^0.9.0"
+    }
+}
