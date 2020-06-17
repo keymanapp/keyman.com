@@ -108,9 +108,9 @@
 
       if($embed != 'none') {
         // note: if embed != none, mode should was be standalone
-        $url = "keyman:download?filename=$e_filename&url=".urlencode("https://keyman.com/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
+        $url = "keyman:download?filename=$e_filename&url=".urlencode("https://keyman.com/_legacy/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
       } else {
-        $url = "/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
+        $url = "/_legacy/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
       }
       $url = htmlspecialchars($url);
       $downloadlink = "<a class='download-link binary-download' href='$url' onclick='return downloadBinaryFile(this);'><span>$linktitle</span></a>";
@@ -372,12 +372,12 @@ END;
           'showMenu' => false,
           'showHeader' => false,
           'foot' => false,
-          'css' => ['template.css', '../keyboard-search/search.css', '../keyboard-search/embed.css']
+          'css' => ['template.css', '../legacy-keyboard-search/embed.css']
         ];
         $embed_target = " target='_blank' ";
       } else {
         $head_options += [
-          'css' => ['template.css', '../keyboard-search/search.css']
+          'css' => ['template.css', '../legacy-keyboard-search/search.css']
         ];
         $embed_target = '';
       }
@@ -403,8 +403,8 @@ END;
         ?>
 
         <div id='navigation'>
-          <a class='nav-right' target='_blank' href='/keyboards'>Go to keyman.com</a>
-          <a href='/keyboards<?= $session_query_q ?>'>Home</a>
+          <a class='nav-right' target='_blank' href='/_legacy/keyboards'>Go to keyman.com</a>
+          <a href='/_legacy/keyboards<?= $session_query_q ?>'>Home</a>
         </div>
 
         <?php
@@ -412,8 +412,8 @@ END;
         ?>
 
         <div id='search-box'>
-          <form method='get' action='/keyboards' name='f'>
-            <div id='search-title'><a href='/keyboards'>Keyboard Search</a>:</div>
+          <form method='get' action='/_legacy/keyboards' name='f'>
+            <div id='search-title'><a href='/_legacy/keyboards'>Keyboard Search</a>:</div>
             <input id="search-q" type="text" placeholder="(new search)" name="q">
             <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="Search"
                    onclick="return do_search()">
@@ -434,7 +434,7 @@ END;
         $name = self::$title;
         echo "
           <div class='download deprecated-new'>
-            <a class='download-link' href='/keyboards/$dep$session_query_q'><span>Download</span></a>
+            <a class='download-link' href='/_legacy/keyboards/$dep$session_query_q'><span>Download</span></a>
             <div class='download-title'>Download the latest version of $name</div>
             <div class='download-description'>Click the Download button to get the latest version of this keyboard.</div>
             <div class='download-filename'>$dep</div>
@@ -442,7 +442,7 @@ END;
           <div>
             <p class='deprecated-link'><a href='javascript:toggleDeprecatedVersionDetails()'>View details for old version of this keyboard</a></p>
             <div id='deprecated-old'>
-              <a href='/keyboards/$dep$session_query_q' class='deprecated'><span>Important note:</span>
+              <a href='/_legacy/keyboards/$dep$session_query_q' class='deprecated'><span>Important note:</span>
               This is an old version of this keyboard. Unless you have a good reason, click here to install the new version, called <span>$dep</span>, instead.</a>
         ";
       }
@@ -581,7 +581,7 @@ END;
                   <?php
                   foreach (self::$keyboard->related as $name => $value) {
                     $hname = htmlentities($name);
-                    echo "<a href='/keyboards/$hname$session_query_q'>$hname</a> ";
+                    echo "<a href='/_legacy/keyboards/$hname$session_query_q'>$hname</a> ";
                     if (isset($value->deprecates) && $value->deprecates) echo " (deprecated) ";
                     if (isset($value->deprecatedBy) && $value->deprecatedBy) echo " (new version) ";
                   }
@@ -600,7 +600,7 @@ END;
 
       <p id='permalink'>
         Permanent link to this keyboard:
-        <a <?= $embed_target ?> href='https://keyman.com/keyboards/<?= self::$keyboard->id ?>'>
+        <a <?= $embed_target ?> href='https://keyman.com/_legacy/keyboards/<?= self::$keyboard->id ?>'>
           https://keyman.com/keyboards/<?= self::$keyboard->id ?>
         </a>
       </p>

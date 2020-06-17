@@ -1,9 +1,8 @@
 <?php
-  $loadJQueryEarly = true;
   require_once('includes/template.php');
   $lang = isset($_GET['language']) ? $_GET['language'] : '';
   $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
-  
+
   // Required
   head([
     'title' =>'Keyman Bookmarklet',
@@ -36,7 +35,7 @@
     <h3>Keyman Bookmarklet Search</h3>
     <div id="bookmarklet-list">
         <div id="bookmarklet-list-inner">
-            
+
         </div>
     </div>
     <p>

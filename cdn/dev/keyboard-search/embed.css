@@ -1,5 +1,3 @@
-@import 'search.css';
-
 #section2 h2:first-child {
   margin-top: 0;
   padding-top: 4px;
@@ -35,6 +33,6 @@
   float: right;
 }
 
-.wrapper { 
+.wrapper {
   width: auto;
 }

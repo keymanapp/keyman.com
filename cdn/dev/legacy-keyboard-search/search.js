@@ -210,7 +210,7 @@ function wrapSearch(localCounter, updateHistory) {
   }
 
   if(!history.pushState && updateHistory) {
-    location.href = '/keyboards?q='+encodeURIComponent(q)+embed_query_x;
+    location.href = '/_legacy/keyboards?q='+encodeURIComponent(q)+embed_query_x;
     return false;
   }
 
@@ -239,11 +239,11 @@ function wrapSearch(localCounter, updateHistory) {
     if(updateHistory && history.pushState && embed != 'windows') {
       var r = q.match(/^(c(ountry)?|l(anguage)?)\:(iso|id)\:(.+)$/);
       if(r && r[1].charAt(0) == 'c') {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/countries/'+r[5]);
+        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/_legacy/keyboards/countries/'+r[5]);
       } else if(r && r[1].charAt(0) == 'l') {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/languages/'+r[5]);
+        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/_legacy/keyboards/languages/'+r[5]);
       } else {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards?q='+encodeURIComponent(q));
+        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/_legacy/keyboards?q='+encodeURIComponent(q));
       }
     }
     process_response(q, xhr.responseText);
@@ -336,7 +336,7 @@ function process_response(q, res) {
           "</div>"+
         "</div>");
 
-      $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+embed_query_q);
+      $('.title a', k).text(kbd.name).attr('href', '/_legacy/keyboards/'+kbd.id+embed_query_q);
 
       if(!kbd.encodings.toString().match(/unicode/)) {
         $('.encoding', k).text('Note: Not a Unicode keyboard');
@@ -424,7 +424,7 @@ function process_response(q, res) {
         "<div class='language'>"+
           "<div class='title'><a></a></div>"+
         "</div>");
-      var e2 = $('.title a', e).text(l.name).attr('href', '/keyboards/languages/'+l.id+embed_query_q);
+      var e2 = $('.title a', e).text(l.name).attr('href', '/_legacy/keyboards/languages/'+l.id+embed_query_q);
       if(embed != 'windows') {
         // We use ajaxy search only when not embedded
         e2.click(function() {
@@ -442,7 +442,7 @@ function process_response(q, res) {
         "<div class='language'>"+
           "<div class='title'><a>Non-language keyboards</a></div>"+
         "</div>");
-      var e2 = $('.title a', e).attr('href', '/keyboards/languages/und'+embed_query_q);
+      var e2 = $('.title a', e).attr('href', '/_legacy/keyboards/languages/und'+embed_query_q);
       resultsElement.append(e);
     }
   }
@@ -454,7 +454,7 @@ function process_response(q, res) {
         "<div class='country'>"+
           "<div class='title'><a></a></div>"+
         "</div>");
-      var e2 = $('.title a', e).text(c.name).attr('href', '/keyboards/countries/'+c.id+embed_query_q);
+      var e2 = $('.title a', e).text(c.name).attr('href', '/_legacy/keyboards/countries/'+c.id+embed_query_q);
       if(embed != 'windows') {
         // We use ajaxy search only when not embedded
         e2.click(function() {
@@ -529,12 +529,12 @@ var load_search_count = 0, load_search = function() {
   }
 
 
-  var params = location.pathname.match(/\/keyboards\/languages\/(.+)$/);
+  var params = location.pathname.match(/\/_legacy\/keyboards\/languages\/(.+)$/);
   if(params) {
     return init('l:id:'+params[1]);
   }
 
-  params = location.pathname.match(/\/keyboards\/countries\/(.+)$/);
+  params = location.pathname.match(/\/_legacy\/keyboards\/countries\/(.+)$/);
   if(params) {
     return init('c:id:'+params[1]);
   }

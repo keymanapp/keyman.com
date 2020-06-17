@@ -1,18 +1,18 @@
 <?php
   require_once('includes/template.php');
-  require_once('includes/ui/keyboard-details.php');
+  require_once('includes/ui/legacy-keyboard-details.php');
   require_once('./session.php');
 
   if(isset($_REQUEST['legacy'])) {
     $id = find_id_by_legacy(clean_id($_REQUEST['legacy']));
     if(!empty($id)) {
-      header("Location: /keyboards/$id");
+      header("Location: /_legacy/keyboards/$id");
       exit;
     }
   }
 
   if(!isset($_REQUEST['id'])) {
-    header('Location: /keyboards');
+    header('Location: /_legacy/keyboards');
     exit;
   }
 

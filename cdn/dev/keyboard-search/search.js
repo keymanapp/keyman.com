@@ -5,191 +5,7 @@ var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
 var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
 /////////////////////////////////////////////////////////////////////////////////////
-// We need these polyfills for IE8 for downlevel embedded search
-// boxes on Keyman Desktop 7, 8, 9... Wow.
-/////////////////////////////////////////////////////////////////////////////////////
-
-// Production steps of ECMA-262, Edition 5, 15.4.4.21
-// Reference: http://es5.github.io/#x15.4.4.21
-// https://tc39.github.io/ecma262/#sec-array.prototype.reduce
-if (!Array.prototype.reduce) {
-  // Note: cannot use Object.defineProperty because IE8.
-  Array.prototype.reduce = function(callback /*, initialValue*/) {
-    if (this === null) {
-      throw new TypeError( 'Array.prototype.reduce ' +
-        'called on null or undefined' );
-    }
-    if (typeof callback !== 'function') {
-      throw new TypeError( callback +
-        ' is not a function');
-    }
-
-    // 1. Let O be ? ToObject(this value).
-    var o = Object(this);
-
-    // 2. Let len be ? ToLength(? Get(O, "length")).
-    var len = o.length >>> 0;
-
-    // Steps 3, 4, 5, 6, 7
-    var k = 0;
-    var value;
-
-    if (arguments.length >= 2) {
-      value = arguments[1];
-    } else {
-      while (k < len && !(k in o)) {
-        k++;
-      }
-
-      // 3. If len is 0 and initialValue is not present,
-      //    throw a TypeError exception.
-      if (k >= len) {
-        throw new TypeError( 'Reduce of empty array ' +
-          'with no initial value' );
-      }
-      value = o[k++];
-    }
-
-    // 8. Repeat, while k < len
-    while (k < len) {
-      // a. Let Pk be ! ToString(k).
-      // b. Let kPresent be ? HasProperty(O, Pk).
-      // c. If kPresent is true, then
-      //    i.  Let kValue be ? Get(O, Pk).
-      //    ii. Let accumulator be ? Call(
-      //          callbackfn, undefined,
-      //          « accumulator, kValue, k, O »).
-      if (k in o) {
-        value = callback(value, o[k], k, o);
-      }
-
-      // d. Increase k by 1.
-      k++;
-    }
-
-    // 9. Return accumulator.
-    return value;
-  };
-}
-
-// https://tc39.github.io/ecma262/#sec-array.prototype.find
-if (!Array.prototype.find) {
-  // Note: cannot use Object.defineProperty because IE8.
-  Array.prototype.find = function(predicate) {
-   // 1. Let O be ? ToObject(this value).
-    if (this == null) {
-      throw new TypeError('"this" is null or not defined');
-    }
-
-    var o = Object(this);
-
-    // 2. Let len be ? ToLength(? Get(O, "length")).
-    var len = o.length >>> 0;
-
-    // 3. If IsCallable(predicate) is false, throw a TypeError exception.
-    if (typeof predicate !== 'function') {
-      throw new TypeError('predicate must be a function');
-    }
-
-    // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
-    var thisArg = arguments[1];
-
-    // 5. Let k be 0.
-    var k = 0;
-
-    // 6. Repeat, while k < len
-    while (k < len) {
-      // a. Let Pk be ! ToString(k).
-      // b. Let kValue be ? Get(O, Pk).
-      // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
-      // d. If testResult is true, return kValue.
-      var kValue = o[k];
-      if (predicate.call(thisArg, kValue, k, o)) {
-        return kValue;
-      }
-      // e. Increase k by 1.
-      k++;
-    }
-
-    // 7. Return undefined.
-    return undefined;
-  };
-}
-
-if (!window.JSON) {
-  window.JSON = {
-    parse: function(sJSON) { return eval('(' + sJSON + ')'); },
-    stringify: function() { alert('Not implemented'); }
-  }
-}
-
-// Production steps of ECMA-262, Edition 5, 15.4.4.18
-// Reference: http://es5.github.io/#x15.4.4.18
-if (!Array.prototype.forEach) {
-
-  Array.prototype.forEach = function(callback/*, thisArg*/) {
-
-    var T, k;
-
-    if (this == null) {
-      throw new TypeError('this is null or not defined');
-    }
-
-    // 1. Let O be the result of calling toObject() passing the
-    // |this| value as the argument.
-    var O = Object(this);
-
-    // 2. Let lenValue be the result of calling the Get() internal
-    // method of O with the argument "length".
-    // 3. Let len be toUint32(lenValue).
-    var len = O.length >>> 0;
-
-    // 4. If isCallable(callback) is false, throw a TypeError exception.
-    // See: http://es5.github.com/#x9.11
-    if (typeof callback !== 'function') {
-      throw new TypeError(callback + ' is not a function');
-    }
-
-    // 5. If thisArg was supplied, let T be thisArg; else let
-    // T be undefined.
-    if (arguments.length > 1) {
-      T = arguments[1];
-    }
-
-    // 6. Let k be 0.
-    k = 0;
-
-    // 7. Repeat while k < len.
-    while (k < len) {
-
-      var kValue;
-
-      // a. Let Pk be ToString(k).
-      //    This is implicit for LHS operands of the in operator.
-      // b. Let kPresent be the result of calling the HasProperty
-      //    internal method of O with argument Pk.
-      //    This step can be combined with c.
-      // c. If kPresent is true, then
-      if (k in O) {
-
-        // i. Let kValue be the result of calling the Get internal
-        // method of O with argument Pk.
-        kValue = O[k];
-
-        // ii. Call the Call internal method of callback with T as
-        // the this value and argument list containing kValue, k, and O.
-        callback.call(T, kValue, k, O);
-      }
-      // d. Increase k by 1.
-      k++;
-    }
-    // 8. return undefined.
-  };
-}
-
-/////////////////////////////////////////////////////////////////////////////////////
-// Search functionality. If embed = 'windows', disable all 'modern' browser functionality
-// for the Keyman Desktop 7-9 living-in-the-past experience.
+// Search functionality.
 /////////////////////////////////////////////////////////////////////////////////////
 
 var counter = 0;
@@ -218,7 +34,7 @@ function wrapSearch(localCounter, updateHistory) {
 
   var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
 
-  var url = base+'/search?q='+encodeURIComponent(q);
+  var url = base+'/search/2.0?q='+encodeURIComponent(q);
 
   if(embed) {
     url += '&embed='+embed;
@@ -226,7 +42,7 @@ function wrapSearch(localCounter, updateHistory) {
 
   var xhr = createCORSRequest('GET', url);
 
-  var xhronload = function() {
+  xhr.onload = function() {
     if(counter > localCounter) {
       // out of order response, or later query
       return;
@@ -236,7 +52,7 @@ function wrapSearch(localCounter, updateHistory) {
 
     //hide_loading();
     $('#search-box').removeClass('searching');
-    if(updateHistory && history.pushState && embed != 'windows') {
+    if(updateHistory && history.pushState) {
       var r = q.match(/^(c(ountry)?|l(anguage)?)\:(iso|id)\:(.+)$/);
       if(r && r[1].charAt(0) == 'c') {
         history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/countries/'+r[5]);
@@ -249,22 +65,6 @@ function wrapSearch(localCounter, updateHistory) {
     process_response(q, xhr.responseText);
     // process the response.
   };
-
-  if (!xhr) {
-    // Use a thunk through keyman.com to api.keyman.com. Slower but still works without CORS
-    // We need this because existing Keyman users on Windows XP etc will be using IE<8. Sad but true.
-    base = location.protocol+'//'+location.host;
-    url = base+'/_ie_thunk/search.php?q='+encodeURIComponent(q);
-    xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-
-    xhr.onreadystatechange = function() {
-      if(xhr.readyState == 4) xhronload();
-    }
-  } else {
-    xhr.onload = xhronload;
-  }
-
 
   xhr.onerror = function() {
     if(window.console) {
@@ -281,15 +81,13 @@ function wrapSearch(localCounter, updateHistory) {
   return true;
 }
 
-if(embed != 'windows') {
-  window.onpopstate = function(e) {
-    if(e.state) {
-      process_response(e.state.q, e.state.text);
-      $('#search-q').val(e.state.q);
-      return true;
-    } else return false;
-  };
-}
+window.onpopstate = function(e) {
+  if(e.state) {
+    process_response(e.state.q, e.state.text);
+    $('#search-q').val(e.state.q);
+    return true;
+  } else return false;
+};
 
 function process_response(q, res) {
   var resultsElement = $('#search-results');
@@ -307,19 +105,8 @@ function process_response(q, res) {
 
       // Remove irrelevant keyboards
 
-      if(embed=='windows' && (!kbd.platformSupport || !kbd.platformSupport['windows'] || kbd.platformSupport['windows'] == 'none')) {
-        return;
-      }
-
-      if(embed=='macos' && (!kbd.platformSupport || !kbd.platformSupport['macos'] || kbd.platformSupport['macos'] == 'none')) {
-        return;
-      }
-
-      if(embed=='linux' && (!kbd.platformSupport || !kbd.platformSupport['linux'] || kbd.platformSupport['linux'] == 'none')) {
-        return;
-      }
-
       if(kbd.deprecated && !deprecatedElement) {
+        // TODO: make title change depending on whether deprecated keyboards are shown or hidden
         deprecatedElement = $('<div class="keyboards-deprecated"><h4 class="red">Show obsolete keyboards</h4></div>');
         deprecatedElement.find('h4').click(function() {deprecatedElement.toggleClass('show');});
         resultsElement.append(deprecatedElement);
@@ -327,9 +114,10 @@ function process_response(q, res) {
 
       var k = $(
         "<div class='keyboard'>"+
-          "<div class='title'><a></a></div>"+
+          "<div class='title'><a></a><span class='match'></span></div>"+
           "<div class='detail'>"+
-            "<div class='id'></div>"+
+            "<div class='id-downloads'><div class='id'></div>"+
+            "<div class='downloads'></div></div>"+
             "<div class='encoding'></div>"+
             "<div class='description'></div>"+
             "<div class='platforms'></div>"+
@@ -338,12 +126,27 @@ function process_response(q, res) {
 
       $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+embed_query_q);
 
+      if(kbd.match.downloads == 0)
+        $('.downloads', k).text('No recent downloads');
+      else if(kbd.match.downloads == 1)
+        $('.downloads', k).text(kbd.match.downloads+' monthly downloads');
+      else
+      $('.downloads', k).text(kbd.match.downloads+' monthly downloads');
+
       if(!kbd.encodings.toString().match(/unicode/)) {
         $('.encoding', k).text('Note: Not a Unicode keyboard');
       }
 
       $('.id', k).text(kbd.id);
       $('.description', k).html(kbd.description);
+
+      switch(kbd.match.type) {
+        case 'keyboard': $('.title a', k).mark(q); break; // don't annotate
+        case 'language': $('.title .match', k).text('('+kbd.match.name+' language)').mark(q); break;
+        case 'region': $('.title .match', k).text('('+kbd.match.name+')').mark(q); break;
+        case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(q); break;
+        case 'description': $('.description', k).mark(q); break;
+      }
 
       if(kbd.platformSupport) {
         for(var i in kbd.platformSupport) {
@@ -370,81 +173,24 @@ function process_response(q, res) {
       $('<h3>').addClass('red underline').text('Choose a language').appendTo(resultsElement);
     }
 
-    var letterPrefix = 'letter-'; // Needed for links on IE
-    if(embed == 'windows') {
-      // Build a shortcut index - for Windows only at this stage
-
-      function firstAlpha(s) {
-        var m = s.match(/[a-zA-Z]/);
-        if(!m) return null
-        return m[0].toUpperCase();
-      }
-
-      // https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-a-array-of-objects#comment64856953_34890276
-      function groupByArray(xs, key) {
-        return xs.reduce(function (rv, x) {
-          var v = key instanceof Function ? key(x) : x[key];
-          var el = rv.find(function(r) { return r && r.key === v });
-          if (el) {
-            el.values.push(x);
-          } else {
-            rv.push({ key: v, values: [x] });
-          }
-          return rv;
-        }, []);
-      }
-
-      var ix = groupByArray(res.languages, function(lang) { return firstAlpha(lang.name) });
-      var hindex = $('<h3>');
-      hindex.append('<span>Index: </span>');
-      ix.forEach(function(letter) {
-        var e = $("<span class='index'><a href='#"+letterPrefix+letter.key+"'>"+letter.key+"</a> </span> ");
-        hindex.append(e);
-      });
-      hindex.append("<span class='index'><a href='#other'>Other</a> </span>");
-      resultsElement.append(hindex);
-    }
-
     // Build the language list
 
     var p = null, first = '';
     res.languages.forEach(function(l) {
-      if(embed == 'windows') {
-        var f = firstAlpha(l.name);
-        if(first != f) {
-          first = f;
-          var e = $("<h2 id='"+letterPrefix+f+"'>"+f+"</h2>");
-          resultsElement.append(e);
-          p = $("<div style='column-count: 3'></div>");
-          resultsElement.append(p);
-        }
-      }
 
       var e = $(
         "<div class='language'>"+
           "<div class='title'><a></a></div>"+
         "</div>");
       var e2 = $('.title a', e).text(l.name).attr('href', '/keyboards/languages/'+l.id+embed_query_q);
-      if(embed != 'windows') {
-        // We use ajaxy search only when not embedded
-        e2.click(function() {
-          document.f.q.value = 'l:id:'+l.id;
-          return do_search();
-        });
-      }
+
+      e2.click(function() {
+        document.f.q.value = 'l:id:'+l.id;
+        return do_search();
+      });
+
       (p ? p : resultsElement).append(e);
     });
-
-    if(embed == 'windows') {
-      // Add a separate copy of the 'Undetermined' language for IPA, etc.
-      var e = $(
-        "<h2 id='other'>Other</h2>"+
-        "<div class='language'>"+
-          "<div class='title'><a>Non-language keyboards</a></div>"+
-        "</div>");
-      var e2 = $('.title a', e).attr('href', '/keyboards/languages/und'+embed_query_q);
-      resultsElement.append(e);
-    }
   }
 
   if(res.countries) {
@@ -455,13 +201,11 @@ function process_response(q, res) {
           "<div class='title'><a></a></div>"+
         "</div>");
       var e2 = $('.title a', e).text(c.name).attr('href', '/keyboards/countries/'+c.id+embed_query_q);
-      if(embed != 'windows') {
-        // We use ajaxy search only when not embedded
-        e2.click(function() {
-          document.f.q.value = 'c:id:'+c.id;
-          return do_search();
-        });
-      }
+
+      e2.click(function() {
+        document.f.q.value = 'c:id:'+c.id;
+        return do_search();
+      });
       resultsElement.append(e);
     });
   }
@@ -477,25 +221,7 @@ function do_search() {
 
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
-
-    // Check if the XMLHttpRequest object has a "withCredentials" property.
-    // "withCredentials" only exists on XMLHTTPRequest2 objects.
-    xhr.open(method, url, true);
-
-  } /*else if (typeof XDomainRequest != "undefined") {
-    // This is still not reliable in IE8, so we will use thunk -- managed outside here
-    // Otherwise, check if XDomainRequest.
-    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-
-  }*/ else {
-
-    // Otherwise, CORS is not supported by the browser.
-    xhr = null;
-
-  }
+  xhr.open(method, url, true);
   return xhr;
 }
 
@@ -547,11 +273,7 @@ var load_search_count = 0, load_search = function() {
     }
   }
 
-  if(embed == 'windows') {
-    return init('l:*');
-  }
-
   return false;
 };
 
-window.addEventListener ? window.addEventListener('load', load_search, false) : window.attachEvent('onload', load_search);
+window.addEventListener('load', load_search, false);

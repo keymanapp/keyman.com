@@ -1,6 +1,6 @@
 <?php
   require_once('includes/template.php');
-  require_once('includes/ui/keyboard-details.php');
+  require_once('includes/ui/legacy-keyboard-details.php');
   require_once('./session.php');
 
   if(!isset($_REQUEST['id'])) {
@@ -26,7 +26,7 @@
   // If we find the keyboard, then we go direct to the
   // download page.
   if(find_keyboard($id)) {
-    header("Location: /keyboards/$id");
+    header("Location: /_legacy/keyboards/$id");
     exit;
   }
 
