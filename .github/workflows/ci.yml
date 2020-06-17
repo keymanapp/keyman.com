@@ -30,6 +30,8 @@ jobs:
         New-WebAppPool -name "NewWebSiteAppPool"  -force
         New-WebSite -name "NewWebSite" -PhysicalPath "$ENV:GITHUB_WORKSPACE" -ApplicationPool "NewWebSiteAppPool" -port 8888 -force
         Set-WebConfigurationproperty -filter "system.webServer/httpErrors" -pspath "MACHINE/WEBROOT/APPHOST" -name errorMode -value Detailed
+        Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.php"
+        Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.md"
 
     #
     # This step configures FastCGI according to the documentation at https://www.php.net/manual/en/install.windows.manual.php
