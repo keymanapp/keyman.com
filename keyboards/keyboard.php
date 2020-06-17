@@ -23,8 +23,8 @@
   }
 
   function find_id_by_legacy($legacy) {
-    global $apihost;
-    $s = @file_get_contents($apihost.'/search/?q=k:legacy:'.rawurlencode($legacy));
+    global $KeymanHosts;
+    $s = @file_get_contents($KeymanHosts->api_keyman_com.'/search/?q=k:legacy:'.rawurlencode($legacy));
     if($s === FALSE) {
       return null;
     }

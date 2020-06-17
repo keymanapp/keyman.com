@@ -19,8 +19,6 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/cdn/deploy/cdn.php');
   }
 
-  $site_url = 'keyman.com';
-
   // Major stable and beta versions
   global $stable_version_int, $beta_version_int;
   $stable_version_int = 13;
@@ -34,42 +32,7 @@
       return $beta_version_int > $stable_version_int;
   }
 
-  // We allow the site to strip off everything post its basic siteurl
-
-  function GetHostSuffix() {
-    global $site_url;
-
-    if(!isset($_SERVER['SERVER_NAME']))
-      return '';
-
-    $name = $_SERVER['SERVER_NAME'];
-    if(stripos($name, $site_url.'.') == 0) {
-      return substr($name, strlen($site_url), 1024);
-    }
-    return '';
-  }
-
-  $site_suffix = GetHostSuffix();
-  $site_protocol = (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
-
-  if($site_suffix == '') {
-    $TestServer = false;
-
-    $site_tavultesoft = 'www.tavultesoft.com';
-    $site_securetavultesoft = 'secure.tavultesoft.com';
-    $buy9Link = "https://secure.tavultesoft.com/buy/90/";
-    $dl9Link = "/desktop/download.php";
-    $upgradeLink = "https://secure.tavultesoft.com/keyman/upgrade.php";
-  } else {
-    $TestServer = true;
-
-    $site_tavultesoft = "tavultesoft.com{$site_suffix}";
-    $site_securetavultesoft = $site_tavultesoft;
-
-    $buy9Link = "http://tavultesoft.com{$site_suffix}/buy/90";
-    $dl9Link = "/desktop/download.php";
-    $upgradeLink = "http://tavultesoft.com{$site_suffix}/keyman/upgrade.php";
-  }
+  require_once(__DIR__ . '/KeymanHosts.php');
 
   // Alpha and Beta signup links
   global $playstore_signup_link, $testflight_alpha_link, $testflight_beta_link;
@@ -77,21 +40,10 @@
   $testflight_alpha_link = "https://testflight.apple.com/join/vnCV2EiH";
   $testflight_beta_link = "https://testflight.apple.com/join/9W4XIoxQ";
 
-  $staticDomain="s.keyman.com{$site_suffix}/kmc";
-  $helpSite = "help.keyman.com{$site_suffix}";
-  $resourceDomain="r.keymanweb.com"; //{$site_suffix}"; <-- local dev domain is usually not available
-
-  $statichost = "{$site_protocol}s.keyman.com{$site_suffix}";
-  $apihost = "{$site_protocol}api.keyman.com"; //{$site_suffix}";
-  $helphost = "{$site_protocol}help.keyman.com{$site_suffix}";
-  $downloadhost = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}"; <-- downloads.keyman.com.local is not usually available being a more complex setup
-  $localhost = "{$site_protocol}keyman.com{$site_suffix}";
-  $keymanwebhost = "{$site_protocol}keymanweb.com{$site_suffix}";
-  $resourcehost = "https://r.keymanweb.com"; /// local dev domain is usually not available
 
   function cdn($file) {
-    global $cdn, $staticDomain, $TestServer;
-    $use_cdn = !$TestServer || (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
+    global $cdn, $KeymanHosts;
+    $use_cdn = $KeymanHosts->Tier() != KeymanHosts::TIER_DEVELOPMENT || (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
     if($use_cdn) {
       if($cdn && isset($cdn['/'.$file])) {
         return "/cdn/deploy{$cdn['/'.$file]}";

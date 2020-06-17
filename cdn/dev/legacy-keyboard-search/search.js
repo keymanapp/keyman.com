@@ -216,7 +216,10 @@ function wrapSearch(localCounter, updateHistory) {
 
   $('#search-box').addClass('searching');
 
-  var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
+  var base =
+    location.host === 'staging-keyman-com.azurewebsites.net' ?
+    location.protocol+'//staging-api-keyman-com-azurewebsites.net' :
+    location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
 
   var url = base+'/search?q='+encodeURIComponent(q);
 

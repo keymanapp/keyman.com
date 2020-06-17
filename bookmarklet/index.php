@@ -12,7 +12,7 @@
 ?>
 
 <script type="text/javascript">
-  var resourceBase="<?php echo $site_protocol . $resourceDomain ?>";
+  var resourceBase="<?php echo $KeymanHosts->r_keymanweb_com; ?>";
   var kbdname = '<?= $kbd ?>';
   var languageCode = '<?= $lang ?>';
 </script>

@@ -1,6 +1,6 @@
 <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'Keyman Desktop ' . $stable_version,
@@ -20,7 +20,7 @@
     With keyboards for over 1000 languages, Keyman Desktop lets you type in your language even when Windows doesn't. You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>.
 </p>
 <p>
-    Our unique virtual keyboard technology makes it easy to type in all your programs, including Microsoft Office, Adobe Creative Suite, internet browsers and more, as well as supporting the latest version of Windows. 
+    Our unique virtual keyboard technology makes it easy to type in all your programs, including Microsoft Office, Adobe Creative Suite, internet browsers and more, as well as supporting the latest version of Windows.
 </p>
 <p>
     With over 20 years of development history, Keyman Desktop <?php echo $stable_version; ?> is the easiest and most efficient version to use we've ever built.
@@ -31,7 +31,7 @@
   <li><a href="keyboards.php">Clever keyboards</a></li>
 </ul>
 <div class="button-div">
-    <a href="<?php echo $dl9Link; ?>"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="/desktop/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 
 <?php
@@ -131,7 +131,7 @@
     You can learn about all the features of Keyman Desktop <?php echo $stable_version; ?> by <a href="features.php">clicking here!</a>
 </p>
 <div class="button-div">
-    <a href="<?php echo $dl9Link; ?>"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="/desktop/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 <h2 class="red underline">Frequently Asked Questions</h2>
 <p>

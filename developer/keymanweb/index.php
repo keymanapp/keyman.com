@@ -1,13 +1,13 @@
 <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'KeymanWeb | Source Code and Development',
     'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
     'showMenu' => true
-  ]);           
-  
+  ]);
+
   $json = @file_get_contents("$apihost/version/web");
   if($json) {
     $json = json_decode($json);
@@ -18,8 +18,8 @@
     // If the get-version API fails, we'll use the latest known stable version
     $build = "11.0.227";
   }
-  
-  $cdnUrlBase = "$statichost/kmw/engine/$build";
+
+  $cdnUrlBase = "{$KeymanHosts->s_keyman_com}/kmw/engine/$build";
 ?>
 <script src='<?=cdn('js/clipboard.min.js')?>'></script>
 <script src='<?=cdn('js/prism.js')?>'></script>
@@ -48,13 +48,13 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
 &lt;/script&gt;
 </code></pre>
 </div>
-  
+
 <p>Upgrade Note: with KeymanWeb <?= $stable_version; ?>, the unminified version is no longer served from our CDN.
 Instead, we use source maps to make the full source available in web developer tools.</p>
 
 <p><a href='sample1.php' target='_blank'>Try it!</a></p>
 
-<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the 
+<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the
 Toggle User Interface for desktop browsers.  Mobile browsers all integrate the language selection into
 the on screen keyboard.</p>
 
@@ -104,7 +104,7 @@ the on screen keyboard.</p>
 
 <br>
 
-<h2 class="red underline">Get the code + Contribute</h2>    
+<h2 class="red underline">Get the code + Contribute</h2>
 <p>
   There are additional samples in the code repository. We prefer git pull requests for code submissions.
 </p>

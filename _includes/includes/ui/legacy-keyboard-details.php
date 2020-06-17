@@ -4,6 +4,7 @@
   require_once('includes/template.php');
   require_once('includes/playstore.php');
   require_once('includes/appstore.php');
+  require_once('includes/KeymanHosts.php');
 
   use \DateTime;
 
@@ -211,7 +212,7 @@ END;
     }
 
     protected static function WriteWebBoxes() {
-      global $keymanwebhost;
+      global $KeymanHosts;
       if (isset(self::$downloads->js)) {
         if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none') {
           if (isset(self::$keyboard->languages)) {
@@ -227,7 +228,7 @@ END;
             }
           }
           if (!isset($lang)) $lang = 'en';
-          $url = "$keymanwebhost/#$lang,Keyboard_" . self::$keyboard->id;
+          $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
           return self::onlinelink_box(
             self::$id,
             $url,
@@ -289,10 +290,10 @@ END;
     }
 
     protected static function LoadData() {
-      global $apihost, $stable_version, $downloadhost;
+      global $KeymanHosts, $stable_version;
 
       self::$error = "";
-      $s = @file_get_contents($apihost . '/keyboard/' . rawurlencode(self::$id));
+      $s = @file_get_contents($KeymanHosts->api_keyman_com . '/keyboard/' . rawurlencode(self::$id));
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
@@ -309,13 +310,13 @@ END;
           self::$minVersion = isset(self::$keyboard->minKeymanVersion) ? self::$keyboard->minKeymanVersion : $stable_version;
           self::$license = self::map_license(isset(self::$keyboard->license) ? self::$keyboard->license : 'Unknown');
         } else {
-          self::$error .= "Error returned from $apihost: $s\n";
+          self::$error .= "Error returned from {$KeymanHosts->api_keyman_com}: $s\n";
           self::$title = 'Failed to load keyboard ' . self::$id;
           header('HTTP/1.0 500 Internal Server Error');
         }
       }
 
-      $s = @file_get_contents($downloadhost . '/api/keyboard/1.0/' . rawurlencode(self::$id) . '?tier=' . self::$tier);
+      $s = @file_get_contents($KeymanHosts->downloads_keyman_com . '/api/keyboard/1.0/' . rawurlencode(self::$id) . '?tier=' . self::$tier);
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
@@ -392,8 +393,8 @@ END;
           <p>Keyboard <?= self::$id ?> not found.</p>
         <?php
         // DEBUG: Only display errors on local sites
-        $site_suffix = GetHostSuffix();
-        if (($site_suffix == '.local')  && (ini_get('display_errors') !== '0')) {
+        global $KeymanHosts;
+        if($KeymanHosts->Tier() == \KeymanHosts::TIER_DEVELOPMENT  && (ini_get('display_errors') !== '0')) {
           echo "<p>" . self::$error . "</p>";
         }
         exit;
