@@ -22,9 +22,16 @@ jobs:
       shell: powershell
       run: |
         Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServer -NoRestart
         Enable-WindowsOptionalFeature -Online -FeatureName IIS-CGI -NoRestart
         Enable-WindowsOptionalFeature -Online -FeatureName IIS-ISAPIExtensions -NoRestart
         Enable-WindowsOptionalFeature -Online -FeatureName IIS-ISAPIFilter -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName IIS-StaticContent -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName IIS-DefaultDocument -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName IIS-CommonHttpFeatures -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpRedirect -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName IIS-DirectoryBrowsing -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpErrors -NoRestart
         choco install --no-progress urlrewrite
         Import-Module WebAdministration
         New-WebAppPool -name "NewWebSiteAppPool"  -force
@@ -65,7 +72,13 @@ jobs:
       run: |
         composer install --no-progress
         npm install
-        curl -v http://localhost:8888/iphone
+
+    #
+    # Test
+    #
+    - name: Test Curl
+      shell: cmd
+      run: curl -v http://localhost:8888/iphone
 
     #
     # Finally, run the unit tests!
