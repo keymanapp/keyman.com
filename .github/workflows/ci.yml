@@ -65,6 +65,7 @@ jobs:
       run: |
         composer install --no-progress
         npm install
+        curl -v http://localhost:8888/iphone
 
     #
     # Finally, run the unit tests!
