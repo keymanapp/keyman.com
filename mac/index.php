@@ -134,7 +134,7 @@
     <ul>
         <li> Keyboards involving <a href="https://en.wikipedia.org/wiki/Plane_(Unicode)#Supplementary_Multilingual_Plane">SMP</a>
             characters (code points U+10000–​U+10FFFF) aren't correctly processing the characters.</li>
-        <li>Keyman has compatibility <a href="https://github.com/keymanapp/keyman/issues?q=is%3Aopen+is%3Aissue+label%3Acompatibility+label%3Amac">
+        <li>Keyman has compatibility <a href="https://github.com/keymanapp/keyman/issues?q=is%3Aopen+is%3Aissue+label%3Acompatibility+label%3Amac%2f">
             issues</a> with certain applications</li>
         <li> ​Dragging the Keyman app to the Input Methods alias on install does not work on OS X 10.8.5 Mountain Lion.</li>
         <li> On some computers, you need to allow “apps from anywhere” in security in order for Keyman to start.</li>
