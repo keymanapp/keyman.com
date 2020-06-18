@@ -81,6 +81,7 @@ jobs:
       run: |
         curl -v http://localhost:8888/albanian
         curl -v http://localhost:8888/keyboards/basic_kbdal
+        curl -v http://localhost:8888/phpinfo.php
 
     #
     # Finally, run the unit tests!

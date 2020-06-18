@@ -78,7 +78,7 @@
   function triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode) {
     $bearer_token = getenv('TEAMCITY_TOKEN');
     if($bearer_token === FALSE) {
-      error_log("ERROR: [download.php] TEAMCITY_TOKEN is not configured.");
+      //error_log("ERROR: [download.php] TEAMCITY_TOKEN is not configured.");
       return false;
     }
 
