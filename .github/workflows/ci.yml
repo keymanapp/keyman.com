@@ -78,7 +78,9 @@ jobs:
     #
     - name: Test Curl
       shell: cmd
-      run: curl -v http://localhost:8888/iphone
+      run: |
+        curl -v http://localhost:8888/albanian
+        curl -v http://localhost:8888/keyboards/basic_kbdal
 
     #
     # Finally, run the unit tests!
