@@ -9,6 +9,11 @@
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
+
+  header('HTTP/1.0 500');
+  header('Content-Type: text/plain');
+  echo 'argh';
+  exit;
 ?>
 
 <script type="text/javascript">
