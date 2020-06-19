@@ -40,7 +40,7 @@ jobs:
         Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.php"
         Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.md"
 
-        Add-Content -path c:\tools\php\php.ini -value '','error_log = $ENV:GITHUB_WORKSPACE\php_errors.log'
+        Add-Content -path c:\tools\php\php.ini -value '',"error_log = $ENV:GITHUB_WORKSPACE\php_errors.log"
     #
     # This step configures FastCGI according to the documentation at https://www.php.net/manual/en/install.windows.manual.php
     # This alternative doesn't work: New-WebHandler -name "PHP" -Path *.php -Modules FastCgiModule -ScriptProcessor "c:\tools\php\php-cgi.exe" -Verb 'GET,POST' -Force
