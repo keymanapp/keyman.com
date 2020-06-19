@@ -4,10 +4,11 @@
   $site_url = 'keyman.com';
 
   class KeymanHosts {
-    // Three tiers: development = x.keyman.com.local
-    // Staging = staging.x.keyman.com
-    // Production = x.keyman.com
-    // Test = GitHub actions
+    // Four tiers. These use the following rough patterns:
+    // * development = [x.]keyman.com.local
+    // * Staging = staging-[x-]keyman-com.azurewebsites.net
+    // * Production = [x.]keyman.com
+    // * Test = GitHub actions, localhost:8888 (uses staging tier for other hosts)
     const TIER_DEVELOPMENT = "TIER_DEVELOPMENT";
     const TIER_STAGING = "TIER_STAGING";
     const TIER_PRODUCTION = "TIER_PRODUCTION";
@@ -26,12 +27,27 @@
           [KeymanHosts::TIER_DEVELOPMENT, KeymanHosts::TIER_STAGING,
            KeymanHosts::TIER_PRODUCTION, KeymanHosts::TIER_TEST])) {
         $this->tier = $_SERVER['KEYMANHOSTS_TIER'];
-        $site_suffix = '';
-        $site_protocol = 'https://';
+      } else if(file_exists(__DIR__ . '/tier.txt')) {
+        $this->tier = trim(file_get_contents(__DIR__ . '/tier.txt'));
       } else {
         $this->tier = KeymanHosts::TIER_DEVELOPMENT;
+      }
+
+      switch($this->tier) {
+      // Not all these are currently used but helps to cleanup confusion
+      case KeymanHosts::TIER_PRODUCTION:
+      case KeymanHosts::TIER_STAGING:
+        $site_suffix = '';
+        $site_protocol = 'https://';
+        break;
+      case KeymanHosts::TIER_TEST:
+        $site_suffix = '';
+        $site_protocol = 'http://';
+        break;
+      case KeymanHosts::TIER_DEVELOPMENT:
         $site_suffix = '.local';
         $site_protocol = 'http://';
+        break;
       }
 
       if(in_array($this->tier, [KeymanHosts::TIER_STAGING, KeymanHosts::TIER_TEST])) {
