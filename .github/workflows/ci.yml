@@ -80,9 +80,7 @@ jobs:
     - name: Test Curl
       shell: cmd
       run: |
-        curl -v http://localhost:8888/phpinfo
-        curl -v http://localhost:8888/albanian
-        curl -v http://localhost:8888/keyboards/basic_kbdal
+        curl -v http://localhost:8888/developer/keymanweb/keyboards
 
     #
     # Finally, run the unit tests!
