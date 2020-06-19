@@ -133,9 +133,9 @@ function process_response(q, res) {
       if(kbd.match.downloads == 0)
         $('.downloads', k).text('No recent downloads');
       else if(kbd.match.downloads == 1)
-        $('.downloads', k).text(kbd.match.downloads+' monthly downloads');
+        $('.downloads', k).text(kbd.match.downloads+' monthly download');
       else
-      $('.downloads', k).text(kbd.match.downloads+' monthly downloads');
+        $('.downloads', k).text(kbd.match.downloads+' monthly downloads');
 
       if(!kbd.encodings.toString().match(/unicode/)) {
         $('.encoding', k).text('Note: Not a Unicode keyboard');
