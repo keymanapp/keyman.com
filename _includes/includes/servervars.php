@@ -43,13 +43,11 @@
 
   function cdn($file) {
     global $cdn, $KeymanHosts;
-    $use_cdn = $KeymanHosts->Tier() != KeymanHosts::TIER_DEVELOPMENT || (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
+    $use_cdn = $KeymanHosts->Tier() == KeymanHosts::TIER_PRODUCTION || (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
     if($use_cdn) {
       if($cdn && isset($cdn['/'.$file])) {
         return "/cdn/deploy{$cdn['/'.$file]}";
-      } /*else {
-        error_log("Missing CDN file $file, see ".print_r($cdn, true), 1, 'marc@keyman.com', 'From: support@keyman.com');
-      }*/
+      }
     }
     return "/cdn/dev/{$file}";
   }
