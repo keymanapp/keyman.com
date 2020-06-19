@@ -102,7 +102,7 @@
 </p>
 <p class="center">
   <span class="testimonial">"We are delighted to be in a position to distribute Aboriginal language keyboard solutions to our clients. The local Saanich tribe will be the first to benefit ... You can be sure that your invention will be a wonderful enabling tool for a host of new Indigenous communities via their connections to First Peoples' Cultural Foundation."</span>
-  <h4 class="caption">Peter Brand - <a href="https://www.fpcf.ca/" target="_blank">First Peoples' Cultural Foundation</a>, British Columbia</h4>
+  <h4 class="caption">Peter Brand - <a href="http://fpcf.ca/" target="_blank">First Peoples' Cultural Foundation</a>, British Columbia</h4>
 </p>
 <p class="center">
   <span class="testimonial">"I must admit you are doing a great service to linguistic community in developing this type of software which is essential for developing Keyboards and language-specific software by this. I had written to someone who has a master's degree in computer application (MCA), was full of praise of this software. He was not aware of it, and added that it is a wonderful tool. I have no knowledge of computer systems intricacies. I believe in the same way: it is wonderful. I wish Marc and his associates a grand success for developing software like this."</span>
