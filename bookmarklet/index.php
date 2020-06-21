@@ -1,10 +1,7 @@
 <?php
-  header('HTTP/1.0 500');
-  header('Content-Type: text/plain');
-  echo 'argh';
-  exit;
+  some invalid code
 
-require_once('includes/template.php');
+  require_once('includes/template.php');
   $lang = isset($_GET['language']) ? $_GET['language'] : '';
   $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
 
