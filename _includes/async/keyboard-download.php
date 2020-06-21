@@ -44,8 +44,8 @@
    * Get metadata on the downloadable files from the download server for the keyboard in question
    */
   function getKeyboardDownloadData($id) {
-    global $downloadhost;
-    $url = $downloadhost . '/api/keyboard/1.0/' . rawurlencode($id);
+    global $KeymanHosts;
+    $url = $KeymanHosts->downloads_keyman_com . '/api/keyboard/1.0/' . rawurlencode($id);
     $s = @file_get_contents($url);
     if($s === FALSE) {
       fail("Unable to find keyboard $id");
@@ -90,12 +90,12 @@
    * Check if a newer version of the keyboard package and/or Keyman Desktop executable are available
    */
   function hasNewerBundleVersion($id, $downloads) {
-    global $apihost, $downloadhost;
+    global $KeymanHosts;
 
     $shouldBuild = false;
 
     // Get the keyboard version from api.keyman.com:
-    $url = $apihost . '/keyboard/' . rawurlencode($id);
+    $url = $KeymanHosts->api_keyman_com . '/keyboard/' . rawurlencode($id);
     $s = @file_get_contents($url);
     if ($s !== FALSE) {
       // Test if we have a Windows version available
@@ -124,7 +124,7 @@
         // to store the version metadata separately
         //
 
-        $url = $downloadhost . '/api/version/windows';
+        $url = $KeymanHosts->downloads_keyman_com . '/api/version/windows';
         $s = @file_get_contents($url);
         if ($s !== FALSE) {
           $windowsVersion = json_decode($s);

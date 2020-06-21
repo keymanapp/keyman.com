@@ -1,7 +1,7 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/appstore.php');
-  
+
   // Required
   head([
     'title' =>'Keyman for iPhone and iPad',
@@ -9,7 +9,7 @@
     'showMenu' => true,
     'banner' => [
       'title' => '600 languages,<br/>all your apps.',
-      'button' => '<a href="'.$appstore.'" target="itunes_store"><img id="app-store" src="cdn(Available_on_the_App_Store_Badge_US-UK_135x40_0824.png)" 
+      'button' => '<a href="'.$appstore.'" target="itunes_store"><img id="app-store" src="cdn(Available_on_the_App_Store_Badge_US-UK_135x40_0824.png)"
         alt="Available on the App Store" /></a>',
       'image' => 'ios-splash.png',
       'background' => 'water'
@@ -165,7 +165,7 @@
 <br/>
 
 <p>
-  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version-history/">View all version history</a>
+  <a href="<?= $KeymanHosts->help_keyman_com ?>/products/iphone-and-ipad/version-history/">View all version history</a>
 </p>
 
 <?= $appstoreTable ?>

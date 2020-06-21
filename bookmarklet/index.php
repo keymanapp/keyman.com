@@ -1,9 +1,8 @@
 <?php
-  $loadJQueryEarly = true;
   require_once('includes/template.php');
   $lang = isset($_GET['language']) ? $_GET['language'] : '';
   $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
-  
+
   // Required
   head([
     'title' =>'Keyman Bookmarklet',
@@ -13,7 +12,7 @@
 ?>
 
 <script type="text/javascript">
-  var resourceBase="<?php echo $site_protocol . $resourceDomain ?>";
+  var resourceBase="<?php echo $KeymanHosts->r_keymanweb_com; ?>";
   var kbdname = '<?= $kbd ?>';
   var languageCode = '<?= $lang ?>';
 </script>
@@ -36,7 +35,7 @@
     <h3>Keyman Bookmarklet Search</h3>
     <div id="bookmarklet-list">
         <div id="bookmarklet-list-inner">
-            
+
         </div>
     </div>
     <p>

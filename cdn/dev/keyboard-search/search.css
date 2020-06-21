@@ -4,7 +4,7 @@
 
 #search-box {
   padding: 10px;
-  
+
 }
 
 h2 a {
@@ -163,6 +163,11 @@ h2 a {
   padding-left: 28px;
 }
 
+#search-results .title .match {
+  padding-left: 6px;
+  font-size: 16px;
+}
+
 
 #search-results .keyboard .detail {
   padding: 0 8px;
@@ -170,7 +175,13 @@ h2 a {
 
 #search-results .keyboard .id {
   color: #006622;
-  padding: 2px 0 6px 28px;
+  padding: 2px 0 2px 28px;
+}
+
+#search-results .keyboard .downloads {
+  color:  grey;
+  font-size: 0.75em;
+  padding: 0px 0 2px 28px;
 }
 
 #search-results .keyboard table {
@@ -209,12 +220,12 @@ h2 a {
 
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Responsive display of table data on mobile */
-  
+
   #keyboard-details-col .col {
     float: none;
     max-width: unset;
   }
-  
+
   table#keyboard-details,
   table#keyboard-details thead,
   table#keyboard-details tbody,
@@ -248,7 +259,7 @@ p#permalink {
 
 .download .download-title {
   font-weight: bold;
-  font-size: 14pt;  
+  font-size: 14pt;
   margin: 0 0 4px;
 }
 

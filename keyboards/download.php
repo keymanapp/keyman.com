@@ -78,7 +78,7 @@
   function triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode) {
     $bearer_token = getenv('TEAMCITY_TOKEN');
     if($bearer_token === FALSE) {
-      error_log("ERROR: [download.php] TEAMCITY_TOKEN is not configured.");
+      //error_log("ERROR: [download.php] TEAMCITY_TOKEN is not configured.");
       return false;
     }
 
@@ -108,9 +108,8 @@
    * Get metadata on the downloadable files from the download server for the keyboard in question
    */
   function getKeyboardDownloadData($id) {
-    global $downloadhost;
-
-    $s = @file_get_contents($downloadhost . '/api/keyboard/1.0/' . rawurlencode($id));
+    global $KeymanHosts;
+    $s = @file_get_contents($KeymanHosts->downloads_keyman_com . '/api/keyboard/1.0/' . rawurlencode($id));
     if($s === FALSE) {
       echo "Unable to find keyboard $id";
       exit;

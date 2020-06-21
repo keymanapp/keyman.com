@@ -15,8 +15,8 @@
   }
 
   function find_keyboard($id) {
-    global $apihost;
-    $s = @file_get_contents($apihost.'/keyboard/'.$id);
+    global $KeymanHosts;
+    $s = @file_get_contents($KeymanHosts->api_keyman_com.'/keyboard/'.$id);
     if($s === FALSE) {
       return null;
     }

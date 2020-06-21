@@ -1,2 +1,5 @@
 **/.idea
 cdn/deploy/
+
+/vendor/
+/node_modules/

@@ -1,19 +1,19 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/playstore.php');
-  
+
   // Required
   head([
     'title' =>'Keyman for Android',
     'css' => ['template.css','feature-grid.css','app-store-links.css'],
     'showMenu' => true,
     'banner' => [
-      'title' => 'Type in Your Language On Your Android Device!', 
+      'title' => 'Type in Your Language On Your Android Device!',
       'button' => '<a href="'.$playstore.'"><img id="app-store" src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" alt="Android app on Google Play"></a>',
       'image' => 'android-splash.png',
       'background' => 'water'
     ]
-  ]);           
+  ]);
 ?>
 <h2 class="red underline">Keyman for Android</h2>
 
@@ -62,7 +62,7 @@
 <p>The <strong class='red'>Keyman built-in browser</strong> dynamically loads your language font into each website you visit, so if you're an Android 4.x (Ice Cream Sandwich, Jellybean, or KitKat) user, you no longer see square boxes for your language on the web!</p>
 
 <p style='text-align:center'><img src='<?= cdn("img/android-browser.png"); ?>' /></p>
-  
+
 <p>
   The built-in browser feature applies your language font to websites that you browse, and includes a bookmark feature and of course supports typing your language into any website!
 </p>
@@ -234,13 +234,13 @@
 </ul>
 <br/>
 <p>
-  <a href="//<?= $helpSite; ?>/products/android/version-history/">View all version history</a>
+  <a href="<?= $KeymanHosts->help_keyman_com ?>/products/android/version-history/">View all version history</a>
 </p>
 
 <?= $playstoreTable ?>
 
 <h2 class="red underline">Keyman Engine for Android</h2>
-    
+
 <p>
   As always, we make our technology available to app developers! Keyman Engine for Android is our programming interface for Keyman for Android. Bringing with it over 600 languages and multiple keyboards for many of those languages, as well as automatic embedded font support, Keyman Engine for Android makes it straightforward to take your app to the world!
 </p>
@@ -249,8 +249,8 @@
   You can develop your own keyboard layouts for Keyman for Android with <a href="/developer/download.php">Keyman Developer</a>. If you have existing keyboards, they can be ported to Android with just a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href="//<?= $helpSite; ?>/developer/engine/android/">Keyman Engine for Android Documentation</a>
-</p>   
+  <a href="<?= $KeymanHosts->help_keyman_com ?>/developer/engine/android/">Keyman Engine for Android Documentation</a>
+</p>
 <p>
   <a href="/downloads/#android-engine">Download the latest Keyman Engine for Android</a>
 </p>
