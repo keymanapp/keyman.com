@@ -1,6 +1,4 @@
 <?php
-  some invalid code
-
   require_once('includes/template.php');
   $lang = isset($_GET['language']) ? $_GET['language'] : '';
   $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
