@@ -8,7 +8,7 @@
     'showMenu' => true
   ]);
 
-  $json = @file_get_contents("$apihost/version/web");
+  $json = @file_get_contents("{$KeymanHosts->api_keyman_com}/version/web");
   if($json) {
     $json = json_decode($json);
   }

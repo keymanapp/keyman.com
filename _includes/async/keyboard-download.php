@@ -45,7 +45,7 @@
    */
   function getKeyboardDownloadData($id) {
     global $KeymanHosts;
-    $url = $KeymanHosts->download_keyman_com . '/api/keyboard/1.0/' . rawurlencode($id);
+    $url = $KeymanHosts->downloads_keyman_com . '/api/keyboard/1.0/' . rawurlencode($id);
     $s = @file_get_contents($url);
     if($s === FALSE) {
       fail("Unable to find keyboard $id");
@@ -124,7 +124,7 @@
         // to store the version metadata separately
         //
 
-        $url = $KeymanHosts->download_keyman_com . '/api/version/windows';
+        $url = $KeymanHosts->downloads_keyman_com . '/api/version/windows';
         $s = @file_get_contents($url);
         if ($s !== FALSE) {
           $windowsVersion = json_decode($s);
