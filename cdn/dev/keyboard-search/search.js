@@ -57,7 +57,7 @@ function wrapSearch(localCounter, updateHistory) {
     //hide_loading();
     $('#search-box').removeClass('searching');
     if(updateHistory && history.pushState) {
-      var r = q.match(/^(c(ountry)?|l(anguage)?)\:(iso|id)\:(.+)$/);
+      var r = q.match(/^(c|l)\:(id)\:(.+)$/);
       if(r && r[1].charAt(0) == 'c') {
         history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/countries/'+r[5]);
       } else if(r && r[1].charAt(0) == 'l') {
@@ -98,12 +98,16 @@ function process_response(q, res) {
   res = JSON.parse(res);
   resultsElement.empty();
 
+  var qq = res.context && res.context.text ? res.context.text : q;
+
   if(res.keyboards) {
     var deprecatedElement = null;
 
-    $('<h3>').addClass('red underline').text(res.rangetext ? res.rangetext : "Keyboards matching '"+q+"'").appendTo(resultsElement);
+    $('<h3>').addClass('red underline').text(res.context.range ? res.context.range : "Keyboards matching '"+q+"'").appendTo(resultsElement);
 
     document.title = q + ' - Keyboard search';
+
+    console.log(res.context);
 
     res.keyboards.forEach(function(kbd) {
 
@@ -145,12 +149,15 @@ function process_response(q, res) {
       $('.description', k).html(kbd.description);
 
       switch(kbd.match.type) {
-        case 'keyboard': $('.title a', k).mark(q); break; // don't annotate
-        case 'keyboard_id': $('.id', k).mark(q); break; // don't annotate
-        case 'language': $('.title .match', k).text('('+kbd.match.name+' language)').mark(q); break;
-        case 'region': $('.title .match', k).text('('+kbd.match.name+')').mark(q); break;
-        case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(q); break;
-        case 'description': $('.description', k).mark(q); break;
+        case 'keyboard': $('.title a', k).mark(qq); break; // don't annotate
+        case 'keyboard_id': $('.id', k).mark(qq); break; // don't annotate
+        case 'language': $('.title .match', k).text('('+kbd.match.name+' language)').mark(qq); break;
+        case 'language_id': $('.title .match', k).text('(language tag \''+kbd.match.name+'\')').mark(qq); break;
+        case 'country': $('.title .match', k).text('('+kbd.match.name+')').mark(qq); break;
+        case 'country_id': $('.title .match', k).text('(country id \''+kbd.match.name+'\')').mark(qq); break;
+        case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(qq); break;
+        case 'script_id': $('.title .match', k).text('(script id \''+kbd.match.name+'\')').mark(qq); break;
+        case 'description': $('.description', k).mark(qq); break;
       }
 
       if(kbd.platformSupport) {
@@ -170,52 +177,8 @@ function process_response(q, res) {
       $('.platforms', k).text();
       (deprecatedElement ? deprecatedElement : resultsElement).append(k);
     });
-  }
-  if(res.languages) {
-    if(q != 'l:*') {
-      $('<h3>').addClass('red underline').text(res.rangetext && !res.keyboards ? res.rangetext : "Languages matching '"+q+"'").appendTo(resultsElement);
-    } else {
-      $('<h3>').addClass('red underline').text('Choose a language').appendTo(resultsElement);
-    }
-
-    // Build the language list
-
-    var p = null, first = '';
-    res.languages.forEach(function(l) {
-
-      var e = $(
-        "<div class='language'>"+
-          "<div class='title'><a></a></div>"+
-        "</div>");
-      var e2 = $('.title a', e).text(l.name).attr('href', '/keyboards/languages/'+l.id+embed_query_q);
-
-      e2.click(function() {
-        document.f.q.value = 'l:id:'+l.id;
-        return do_search();
-      });
-
-      (p ? p : resultsElement).append(e);
-    });
-  }
-
-  if(res.countries) {
-    $('<h3>').addClass('red underline').text(res.rangetext && !res.keyboards ? res.rangetext : "Countries matching '"+q+"'").appendTo(resultsElement);
-    res.countries.forEach(function(c) {
-      var e = $(
-        "<div class='country'>"+
-          "<div class='title'><a></a></div>"+
-        "</div>");
-      var e2 = $('.title a', e).text(c.name).attr('href', '/keyboards/countries/'+c.id+embed_query_q);
-
-      e2.click(function() {
-        document.f.q.value = 'c:id:'+c.id;
-        return do_search();
-      });
-      resultsElement.append(e);
-    });
-  }
-  if(!res.keyboards && !res.languages && !res.countries) {
-    $('<h3>').addClass('red').text("No matches found for '"+q+"'").appendTo(resultsElement);
+  } else {
+    $('<h3>').addClass('red').text("No matches found for '"+qq+"'").appendTo(resultsElement);
   }
 }
 
