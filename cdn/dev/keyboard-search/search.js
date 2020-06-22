@@ -14,9 +14,9 @@ var counter = 0;
 function getCurrentPath(q, page) {
   var r = q.match(/^(c|l)\:(id)\:(.+)$/);
   if(r && r[1].charAt(0) == 'c') {
-    return '/keyboards/countries/'+r[5]+'?page='+page;
+    return '/keyboards/countries/'+r[3]+'?page='+page;
   } else if(r && r[1].charAt(0) == 'l') {
-    return '/keyboards/languages/'+r[5]+'?page='+page;
+    return '/keyboards/languages/'+r[3]+'?page='+page;
   } else {
     return '/keyboards?q='+encodeURIComponent(q)+'&page='+page;
   }
