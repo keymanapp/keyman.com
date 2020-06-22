@@ -62,6 +62,7 @@
   <form method='get' action='/keyboards' name='f'>
     <input id="search-q" type="text" placeholder="Enter language or keyboard" name="q" autofocus>
     <input id="search-f" type="image" src="<?= cdn('img/search-button.png"') ?>" value="Search" onclick="return do_search()">
+    <input id="search-page" type="hidden" name="page" value="1">
   </form>
 </div>
 
