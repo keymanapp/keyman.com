@@ -164,12 +164,13 @@ function process_response(q, res) {
       switch(kbd.match.type) {
         case 'keyboard': $('.title a', k).mark(qq); break; // don't annotate
         case 'keyboard_id': $('.id', k).mark(qq); break; // don't annotate
+        // case keyboard_legacy_id: // nothing to annotate, currently, and it's a bit ancient so let's not stress over it
         case 'language': $('.title .match', k).text('('+kbd.match.name+' language)').mark(qq); break;
-        case 'language_id': $('.title .match', k).text('(language tag \''+kbd.match.name+'\')').mark(qq); break;
+        case 'language_bcp47_tag': $('.title .match', k).text('(language, BCP 47 tag \''+kbd.match.name+'\')').mark(qq); break;
         case 'country': $('.title .match', k).text('('+kbd.match.name+')').mark(qq); break;
-        case 'country_id': $('.title .match', k).text('(country id \''+kbd.match.name+'\')').mark(qq); break;
+        case 'country_iso3166_code': $('.title .match', k).text('(country, ISO 3166 code \''+kbd.match.name+'\')').mark(qq); break;
         case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(qq); break;
-        case 'script_id': $('.title .match', k).text('(script id \''+kbd.match.name+'\')').mark(qq); break;
+        case 'script_iso15924_code': $('.title .match', k).text('(script, ISO 15924 code \''+kbd.match.name+'\')').mark(qq); break;
         case 'description': $('.description', k).mark(qq); break;
       }
 
