@@ -146,6 +146,7 @@ function process_response(q, res) {
 
       switch(kbd.match.type) {
         case 'keyboard': $('.title a', k).mark(q); break; // don't annotate
+        case 'keyboard_id': $('.id', k).mark(q); break; // don't annotate
         case 'language': $('.title .match', k).text('('+kbd.match.name+' language)').mark(q); break;
         case 'region': $('.title .match', k).text('('+kbd.match.name+')').mark(q); break;
         case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(q); break;
