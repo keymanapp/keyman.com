@@ -9,7 +9,6 @@
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
-
 ?>
 
 <script type="text/javascript">

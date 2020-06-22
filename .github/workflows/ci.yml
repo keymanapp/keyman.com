@@ -83,8 +83,6 @@ jobs:
       shell: cmd
       run: |
         npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3
-      # node linkcheck-cli.js http://localhost:8888 --ordered --recursive --host-requests 10 -e --filter-level 3
-      #npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3
 
     - name: Report errors
       if: ${{ failure() }}
