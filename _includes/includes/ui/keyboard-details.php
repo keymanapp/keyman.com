@@ -379,18 +379,36 @@ END;
           'showMenu' => false,
           'showHeader' => false,
           'foot' => false,
+          'js' => ['../keyboard-search/search.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css', '../keyboard-search/embed.css']
         ];
         $embed_target = " target='_blank' ";
       } else {
         $head_options += [
+          'js' => ['../keyboard-search/search.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css']
         ];
         $embed_target = '';
       }
       head($head_options);
 
-      echo "<script src='".cdn('js/qrcode.js')."'></script>";
+      if($embed == 'none') { ?>
+        <script>
+          var detail_page = true;
+          var embed='none';
+          var embed_query='';
+        </script>
+      <?php
+      } else {
+        global $session_query;
+      ?>
+        <script>
+          var detail_page = true;
+          var embed='<?=$embed?>';
+          var embed_query='<?=$session_query?>';
+        </script>
+      <?php
+      }
 
       if (!isset(self::$keyboard) || !isset(self::$downloads)) {
         // If parameters are missing ...
@@ -422,6 +440,7 @@ END;
           <form method='get' action='/keyboards' name='f'>
             <div id='search-title'><a href='/keyboards'>Keyboard Search</a>:</div>
             <input id="search-q" type="text" placeholder="(new search)" name="q">
+            <input id='search-page' type='hidden' name='page'>
             <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="Search"
                    onclick="return do_search()">
           </form>
@@ -598,6 +617,32 @@ END;
               <?php
             }
             ?>
+            <tr>
+              <th>Supported Languages</th>
+              <td class='supported-languages'>
+                <?php
+                  (function() {
+                    $n = 0;
+                    $count = count(get_object_vars(self::$keyboard->languages)) - 3;
+                    foreach(self::$keyboard->languages as $tag => $detail) {
+                      if($n == 3) {
+                        echo " <a id='expand-languages' href='#expand-languages'>Expand $count more &gt;&gt;</a>";
+                        echo "<a id='collapse-languages' href='#collapse-languages'>&lt;&lt; Collapse</a> <span class='expand-languages'>";
+                      }
+                      echo
+                        "<a href='/keyboards?q=l:id:".htmlspecialchars(urlencode($tag)).
+                        "' title='".htmlspecialchars($tag).": ".htmlspecialchars($detail->displayName)."'>" .
+                        (!strcasecmp($tag, self::$tag) ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
+                        "</a> ";
+                      $n++;
+                    }
+                    if($n >= 3) {
+                      echo "</span>";
+                    }
+                  })();
+                ?>
+              </td>
+            </tr>
             </tbody>
           </table>
 

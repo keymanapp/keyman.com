@@ -54,6 +54,11 @@ function wrapSearch(localCounter, updateHistory) {
     url += '&embed='+embed;
   }
 
+  if(detail_page) {
+    location.href = getCurrentPath(q, page);
+    return false;
+  }
+
   var xhr = createCORSRequest('GET', url);
 
   var currentPath = getCurrentPath(q, page);
@@ -253,20 +258,17 @@ var load_search_count = 0, load_search = function() {
     return false;
   }
 
-  if(typeof window.doInit != 'undefined') {
-    window.doInit();
-    return false;
+  if(!detail_page) {
+    $('#search-q').on('input', function() {
+      if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
+      dynamic_search_timeout = window.setTimeout(function() {
+        if(document.f.q.value.length > 2) {
+          document.f.page.value = 1;
+          search(false);
+        }
+      }, 250);
+    });
   }
-
-  $('#search-q').on('input', function() {
-    if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
-    dynamic_search_timeout = window.setTimeout(function() {
-      if(document.f.q.value.length > 2) {
-        document.f.page.value = 1;
-        search(false);
-      }
-    }, 250);
-  });
 
   var init = function(value, page, updateHistory) {
     page = parseInt(page, 10);
