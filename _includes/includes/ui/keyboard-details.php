@@ -309,7 +309,7 @@ END;
         $s = json_decode($s);
         if(is_object($s)) {
           self::$keyboard = $s;
-          self::$title = self::$keyboard->name;
+          self::$title = htmlentities(self::$keyboard->name);
           if (!preg_match('/keyboard$/i', self::$title)) self::$title .= ' keyboard';
           self::$description = isset(self::$keyboard->description) ? self::$keyboard->description : '';
           self::$authorName = isset(self::$keyboard->authorName) ? self::$keyboard->authorName : '';
@@ -457,12 +457,12 @@ END;
 <?php
       if(!empty(self::$deprecatedBy)) {
         $dep = self::$deprecatedBy;
-        $name = self::$title;
+        $id = self::$id;
         echo "
           <div class='download deprecated-new'>
             <a class='download-link' href='/keyboards/$dep$session_query_q'><span>Download</span></a>
-            <div class='download-title'>Download the latest version of $name</div>
-            <div class='download-description'>Click the Download button to get the latest version of this keyboard.</div>
+            <div class='download-title'>Keyboard '$id' is obsolete.</div>
+            <div class='download-description'>Click the Download button to get the replacement <span style='font-weight:bold'>$dep</span> keyboard instead.</div>
             <div class='download-filename'>$dep</div>
           </div>
           <div>
