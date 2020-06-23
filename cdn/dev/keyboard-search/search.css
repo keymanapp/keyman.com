@@ -135,9 +135,7 @@ h2 a {
 #search-results .keyboards-deprecated h4 {
   margin-top: 24px;
   margin-left: 8px;
-  xborder-top: solid 1px #B92034;
-  cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14pt;
 }
 
