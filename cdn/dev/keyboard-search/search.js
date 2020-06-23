@@ -216,8 +216,14 @@ function buildPager(res, q) {
   }
 
   appendPager(pager, '&lt; Previous', res.context.pageNumber-1);
-  for(var i = 1; i <= res.context.totalPages; i++) {
+  if(res.context.pageNumber > 5) {
+    ('<span>...</span>').appendTo(pager);
+  }
+  for(var i = Math.max(1, res.context.pageNumber - 4); i <= Math.min(res.context.totalPages, res.context.pageNumber + 4); i++) {
     appendPager(pager, i, i);
+  }
+  if(res.context.pageNumber < res.context.totalPages - 4) {
+    $('<span>...</span>').appendTo(pager);
   }
   appendPager(pager, 'Next &gt;', res.context.pageNumber+1);
   return pager;
