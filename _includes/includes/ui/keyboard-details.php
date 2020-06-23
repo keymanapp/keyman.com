@@ -66,6 +66,7 @@ define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
      * @param $id - keyboard ID
      * @param string $tier - ['stable', 'alpha', or 'beta']
      * @param bool $landingPage - when true, details won't display keyboard search box or title
+     * @param string $tag - BCP 47 tag to pass as a hint to download links for apps to make connection
      */
     public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false, $tag = null) {
       self::$id = $id;
