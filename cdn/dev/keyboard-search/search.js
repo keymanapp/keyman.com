@@ -30,13 +30,13 @@ function wrapSearch(localCounter, updateHistory) {
   var page = parseInt(document.f.page.value, 10);
   if(isNaN(page) || page < 1 || page > 999) page = 1;
 
-  var q = document.f.q.value;
+  var q = document.f.q.value.trim();
   // Workaround for HTML form encoding spaces with "+", which breaks keyboard searches
   q = q.replace(/\+/g, ' ');
   document.f.q.value = q;
   if(q == '') {
     var resultsElement = $('#search-results');
-    resultsElement.empty().append('<p>Enter the name of a keyboard or language to search for.</p>');
+    resultsElement.empty().append('<p>Enter the name of a keyboard or language to search for. (<a href="?q=p:*">Popular keyboards</a>)</p>');
     return false;
   }
 
