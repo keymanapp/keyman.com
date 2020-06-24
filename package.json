@@ -1,16 +1,17 @@
 {
   "name": "keyman.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Source for https://keyman.com/",
+  "keywords": ["keyboards", "keyboard layouts", "keyman"],
+  "contributors": ["Marc Durdin <marc@durdin.net> (https://github.com/mcdurdin)"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "composer test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keymanapp/keyman.com.git"
   },
-  "author": "",
+  "author": "SIL International",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/keymanapp/keyman.com/issues"

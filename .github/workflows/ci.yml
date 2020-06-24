@@ -40,6 +40,8 @@ jobs:
         Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.php"
         Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.md"
 
+        Add-Content -path c:\tools\php\php.ini -value '',"error_log = $ENV:GITHUB_WORKSPACE\php_errors.log","session.save_path = $ENV:GITHUB_WORKSPACE\.phpsessions","error_reporting = E_ALL","display_errors = On","display_startup_errors = On","html_errors = Off"
+        mkdir $ENV:GITHUB_WORKSPACE\.phpsessions
     #
     # This step configures FastCGI according to the documentation at https://www.php.net/manual/en/install.windows.manual.php
     # This alternative doesn't work: New-WebHandler -name "PHP" -Path *.php -Modules FastCgiModule -ScriptProcessor "c:\tools\php\php-cgi.exe" -Verb 'GET,POST' -Force
@@ -75,17 +77,16 @@ jobs:
         npm install
 
     #
-    # Test
-    #
-    #- name: Test Curl
-    #  shell: cmd
-    #  run: |
-    #    curl -v http://localhost:8888/cameroon/
-    #    curl -v http://localhost:8888/developer/keymanweb/keyboards
-
-    #
     # Finally, run the unit tests!
     #
     - name:  Run unit tests
       shell: cmd
-      run:   npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3
+      run: |
+        npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3
+
+    - name: Report errors
+      if: ${{ failure() }}
+      shell: cmd
+      run: |
+        type php_errors.log
+        php -r "phpinfo();"

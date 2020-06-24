@@ -134,26 +134,14 @@ h2 a {
 
 #search-results .keyboards-deprecated h4 {
   margin-top: 24px;
-  margin-left: 36px;
-  cursor: pointer;
-  font-weight: bold;
+  margin-left: 8px;
+  font-weight: 600;
   font-size: 14pt;
-}
-
-#search-results .keyboards-deprecated h4:hover {
-  text-decoration: underline;
-}
-
-#search-results .keyboards-deprecated .keyboard {
-  display: none;
-}
-
-#search-results .keyboards-deprecated.show .keyboard {
-  display: block;
 }
 
 #search-results .keyboards-deprecated .keyboard .title::after {
   content: " (obsolete)";
+  color: red;
 }
 
 #search-results .keyboard .title a {
@@ -188,12 +176,28 @@ h2 a {
   clear: right;
 }
 
+#search-results .pager {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: solid 1px #B92034;
+}
+
+#search-results .statistics {
+  color: #444444;
+}
+
+#search-results .pager a,
+#search-results .pager span {
+  padding: 0 4px;
+}
+
 /* Keyboard details */
 
 #keyboard-details th {
   text-align: left;
   padding: 4px 24px 4px 0;
   color: #666699;
+  white-space: nowrap;
 }
 
 #keyboard-details td {
@@ -212,6 +216,32 @@ h2 a {
 #keyboard-details-col .col {
   float: left;
   max-width: 50%;
+}
+
+#keyboard-details .supported-languages {
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+#keyboard-details .supported-languages a {
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+#keyboard-details .supported-languages #expand-languages,
+#keyboard-details .supported-languages #collapse-languages {
+  color: #B92034;
+}
+
+#keyboard-details .supported-languages .expand-languages,
+#keyboard-details .supported-languages #collapse-languages,
+#keyboard-details .supported-languages #expand-languages:target {
+  display: none;
+}
+
+#keyboard-details .supported-languages #expand-languages:target ~ .expand-languages,
+#keyboard-details .supported-languages #expand-languages:target + #collapse-languages {
+  display: inline;
 }
 
 .clear-left {

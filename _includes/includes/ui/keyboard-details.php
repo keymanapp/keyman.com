@@ -21,6 +21,9 @@ define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
     static private $id;
     static private $tier;
 
+    // Properties to provide to apps in embedded download mode
+    static private $tag;
+
     // Properties for querying keyboard downloads
     static private $keyboard;
     static private $downloads;
@@ -63,9 +66,11 @@ define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
      * @param $id - keyboard ID
      * @param string $tier - ['stable', 'alpha', or 'beta']
      * @param bool $landingPage - when true, details won't display keyboard search box or title
+     * @param string $tag - BCP 47 tag to pass as a hint to download links for apps to make connection
      */
-    public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false) {
+    public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false, $tag = null) {
       self::$id = $id;
+      self::$tag = $tag;
       self::$tier = self::get_tier_from_request($tier);
       self::$landingPage = $landingPage;
 
@@ -111,6 +116,7 @@ define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
       if($embed != 'none') {
         // note: if embed != none, mode should was be standalone
         $url = "keyman:download?filename=$e_filename&url=".urlencode("https://keyman.com/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
+        if(!empty(self::$tag)) $url .= "&tag=".urlencode(self::$tag);
       } else {
         $url = "/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
       }
@@ -304,7 +310,7 @@ END;
         $s = json_decode($s);
         if(is_object($s)) {
           self::$keyboard = $s;
-          self::$title = self::$keyboard->name;
+          self::$title = htmlentities(self::$keyboard->name);
           if (!preg_match('/keyboard$/i', self::$title)) self::$title .= ' keyboard';
           self::$description = isset(self::$keyboard->description) ? self::$keyboard->description : '';
           self::$authorName = isset(self::$keyboard->authorName) ? self::$keyboard->authorName : '';
@@ -374,18 +380,36 @@ END;
           'showMenu' => false,
           'showHeader' => false,
           'foot' => false,
+          'js' => ['../keyboard-search/search.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css', '../keyboard-search/embed.css']
         ];
         $embed_target = " target='_blank' ";
       } else {
         $head_options += [
+          'js' => ['../keyboard-search/search.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css']
         ];
         $embed_target = '';
       }
       head($head_options);
 
-      echo "<script src='".cdn('js/qrcode.js')."'></script>";
+      if($embed == 'none') { ?>
+        <script>
+          var detail_page = true;
+          var embed='none';
+          var embed_query='';
+        </script>
+      <?php
+      } else {
+        global $session_query;
+      ?>
+        <script>
+          var detail_page = true;
+          var embed='<?=$embed?>';
+          var embed_query='<?=$session_query?>';
+        </script>
+      <?php
+      }
 
       if (!isset(self::$keyboard) || !isset(self::$downloads)) {
         // If parameters are missing ...
@@ -417,6 +441,7 @@ END;
           <form method='get' action='/keyboards' name='f'>
             <div id='search-title'><a href='/keyboards'>Keyboard Search</a>:</div>
             <input id="search-q" type="text" placeholder="(new search)" name="q">
+            <input id='search-page' type='hidden' name='page'>
             <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="Search"
                    onclick="return do_search()">
           </form>
@@ -433,12 +458,12 @@ END;
 <?php
       if(!empty(self::$deprecatedBy)) {
         $dep = self::$deprecatedBy;
-        $name = self::$title;
+        $id = self::$id;
         echo "
           <div class='download deprecated-new'>
             <a class='download-link' href='/keyboards/$dep$session_query_q'><span>Download</span></a>
-            <div class='download-title'>Download the latest version of $name</div>
-            <div class='download-description'>Click the Download button to get the latest version of this keyboard.</div>
+            <div class='download-title'>Keyboard '$id' is obsolete.</div>
+            <div class='download-description'>Click the Download button to get the replacement <span style='font-weight:bold'>$dep</span> keyboard instead.</div>
             <div class='download-filename'>$dep</div>
           </div>
           <div>
@@ -476,11 +501,11 @@ END;
         }
       }
 
-      if ($webtext) {
-        echo "<h2 class='red underline'>Online tools</h2>" . $webtext;
-      }
-
       if ($embed == 'none') {
+        if ($webtext) {
+          echo "<h2 class='red underline'>Online tools</h2>" . $webtext;
+        }
+
         echo "<h2 class='red underline'>Downloads for other devices</h2><div class='download-other'>";
         if(empty(self::$deprecatedBy)) {
           self::WriteQRCode('other');
@@ -593,6 +618,32 @@ END;
               <?php
             }
             ?>
+            <tr>
+              <th>Supported Languages</th>
+              <td class='supported-languages'>
+                <?php
+                  (function() {
+                    $n = 0;
+                    $count = count(get_object_vars(self::$keyboard->languages)) - 3;
+                    foreach(self::$keyboard->languages as $tag => $detail) {
+                      if($n == 3) {
+                        echo " <a id='expand-languages' href='#expand-languages'>Expand $count more &gt;&gt;</a>";
+                        echo "<a id='collapse-languages' href='#collapse-languages'>&lt;&lt; Collapse</a> <span class='expand-languages'>";
+                      }
+                      echo
+                        "<a href='/keyboards?q=l:id:".htmlspecialchars(urlencode($tag)).
+                        "' title='".htmlspecialchars($tag).": ".htmlspecialchars($detail->displayName)."'>" .
+                        (!strcasecmp($tag, self::$tag) ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
+                        "</a> ";
+                      $n++;
+                    }
+                    if($n >= 3) {
+                      echo "</span>";
+                    }
+                  })();
+                ?>
+              </td>
+            </tr>
             </tbody>
           </table>
 

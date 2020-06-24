@@ -1,6 +1,7 @@
 if(typeof embed_query == 'undefined') {
   var embed_query = '';
 }
+
 var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
 var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
@@ -10,23 +11,32 @@ var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
 var counter = 0;
 
+function getCurrentPath(q, page) {
+  var r = q.match(/^(c|l)\:(id)\:(.+)$/);
+  if(r && r[1].charAt(0) == 'c') {
+    return '/keyboards/countries/'+r[3]+'?page='+page;
+  } else if(r && r[1].charAt(0) == 'l') {
+    return '/keyboards/languages/'+r[3]+'?page='+page;
+  } else {
+    return '/keyboards?q='+encodeURIComponent(q)+'&page='+page;
+  }
+}
+
 function search(updateHistory) {
   wrapSearch(++counter, updateHistory);
 }
 
 function wrapSearch(localCounter, updateHistory) {
-  var q = document.f.q.value;
+  var page = parseInt(document.f.page.value, 10);
+  if(isNaN(page) || page < 1 || page > 999) page = 1;
+
+  var q = document.f.q.value.trim();
   // Workaround for HTML form encoding spaces with "+", which breaks keyboard searches
   q = q.replace(/\+/g, ' ');
   document.f.q.value = q;
   if(q == '') {
     var resultsElement = $('#search-results');
-    resultsElement.empty().append('<p>Enter the name of a keyboard or language to search for.</p>');
-    return false;
-  }
-
-  if(!history.pushState && updateHistory) {
-    location.href = '/keyboards?q='+encodeURIComponent(q)+embed_query_x;
+    resultsElement.empty().append('<p>Enter the name of a keyboard or language to search for. (<a href="?q=p:*">Popular keyboards</a>)</p>');
     return false;
   }
 
@@ -38,13 +48,20 @@ function wrapSearch(localCounter, updateHistory) {
     location.protocol+'//staging-api-keyman-com-azurewebsites.net' :
     location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
 
-  var url = base+'/search/2.0?q='+encodeURIComponent(q);
+  var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(q);
 
   if(embed) {
     url += '&embed='+embed;
   }
 
+  if(detail_page) {
+    location.href = getCurrentPath(q, page);
+    return false;
+  }
+
   var xhr = createCORSRequest('GET', url);
+
+  var currentPath = getCurrentPath(q, page);
 
   xhr.onload = function() {
     if(counter > localCounter) {
@@ -56,15 +73,9 @@ function wrapSearch(localCounter, updateHistory) {
 
     //hide_loading();
     $('#search-box').removeClass('searching');
-    if(updateHistory && history.pushState) {
-      var r = q.match(/^(c(ountry)?|l(anguage)?)\:(iso|id)\:(.+)$/);
-      if(r && r[1].charAt(0) == 'c') {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/countries/'+r[5]);
-      } else if(r && r[1].charAt(0) == 'l') {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/languages/'+r[5]);
-      } else {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards?q='+encodeURIComponent(q));
-      }
+    currentPath = getCurrentPath(q, page);
+    if(updateHistory) {
+      history.pushState({q: q, text: responseText}, q + ' - Keyboard search', currentPath);
     }
     process_response(q, xhr.responseText);
     // process the response.
@@ -98,12 +109,23 @@ function process_response(q, res) {
   res = JSON.parse(res);
   resultsElement.empty();
 
+  var qq = res.context && res.context.text ? res.context.text : q;
+
   if(res.keyboards) {
     var deprecatedElement = null;
 
-    $('<h3>').addClass('red underline').text(res.rangetext ? res.rangetext : "Keyboards matching '"+q+"'").appendTo(resultsElement);
+    $('<h3>').addClass('red underline').text(res.context.range ? res.context.range : "Keyboards matching '"+q+"'").appendTo(resultsElement);
+
+    $('<div class="statistics">').text(res.context.totalRows + ' results; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.').appendTo(resultsElement);
+
+    /* not sure if we want this here:
+    if(res.context.totalPages > 1) {
+      buildPager(res, q).appendTo(resultsElement);
+    }*/
 
     document.title = q + ' - Keyboard search';
+
+    console.log(res.context);
 
     res.keyboards.forEach(function(kbd) {
 
@@ -111,8 +133,8 @@ function process_response(q, res) {
 
       if(kbd.deprecated && !deprecatedElement) {
         // TODO: make title change depending on whether deprecated keyboards are shown or hidden
-        deprecatedElement = $('<div class="keyboards-deprecated"><h4 class="red">Show obsolete keyboards</h4></div>');
-        deprecatedElement.find('h4').click(function() {deprecatedElement.toggleClass('show');});
+        deprecatedElement = $(
+          '<div class="keyboards-deprecated"><h4 class="red underline">Obsolete keyboards</h4></div>');
         resultsElement.append(deprecatedElement);
       }
 
@@ -128,7 +150,7 @@ function process_response(q, res) {
           "</div>"+
         "</div>");
 
-      $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+embed_query_q);
+      $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?tag='+kbd.match.tag+embed_query_x : embed_query_q));
 
       if(kbd.match.downloads == 0)
         $('.downloads', k).text('No recent downloads');
@@ -145,11 +167,16 @@ function process_response(q, res) {
       $('.description', k).html(kbd.description);
 
       switch(kbd.match.type) {
-        case 'keyboard': $('.title a', k).mark(q); break; // don't annotate
-        case 'language': $('.title .match', k).text('('+kbd.match.name+' language)').mark(q); break;
-        case 'region': $('.title .match', k).text('('+kbd.match.name+')').mark(q); break;
-        case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(q); break;
-        case 'description': $('.description', k).mark(q); break;
+        case 'keyboard': $('.title a', k).mark(qq); break; // don't annotate
+        case 'keyboard_id': $('.id', k).mark(qq); break; // don't annotate
+        // case keyboard_legacy_id: // nothing to annotate, currently, and it's a bit ancient so let's not stress over it
+        case 'language': $('.title .match', k).text('('+kbd.match.name+' language)').mark(qq); break;
+        case 'language_bcp47_tag': $('.title .match', k).text('(language, BCP 47 tag \''+kbd.match.name+'\')').mark(qq); break;
+        case 'country': $('.title .match', k).text('('+kbd.match.name+')').mark(qq); break;
+        case 'country_iso3166_code': $('.title .match', k).text('(country, ISO 3166 code \''+kbd.match.name+'\')').mark(qq); break;
+        case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(qq); break;
+        case 'script_iso15924_code': $('.title .match', k).text('(script, ISO 15924 code \''+kbd.match.name+'\')').mark(qq); break;
+        case 'description': $('.description', k).mark(qq); break;
       }
 
       if(kbd.platformSupport) {
@@ -169,56 +196,53 @@ function process_response(q, res) {
       $('.platforms', k).text();
       (deprecatedElement ? deprecatedElement : resultsElement).append(k);
     });
-  }
-  if(res.languages) {
-    if(q != 'l:*') {
-      $('<h3>').addClass('red underline').text(res.rangetext && !res.keyboards ? res.rangetext : "Languages matching '"+q+"'").appendTo(resultsElement);
-    } else {
-      $('<h3>').addClass('red underline').text('Choose a language').appendTo(resultsElement);
+
+    if(res.context.totalPages > 1) {
+      buildPager(res, q).appendTo(resultsElement);
     }
-
-    // Build the language list
-
-    var p = null, first = '';
-    res.languages.forEach(function(l) {
-
-      var e = $(
-        "<div class='language'>"+
-          "<div class='title'><a></a></div>"+
-        "</div>");
-      var e2 = $('.title a', e).text(l.name).attr('href', '/keyboards/languages/'+l.id+embed_query_q);
-
-      e2.click(function() {
-        document.f.q.value = 'l:id:'+l.id;
-        return do_search();
-      });
-
-      (p ? p : resultsElement).append(e);
-    });
-  }
-
-  if(res.countries) {
-    $('<h3>').addClass('red underline').text(res.rangetext && !res.keyboards ? res.rangetext : "Countries matching '"+q+"'").appendTo(resultsElement);
-    res.countries.forEach(function(c) {
-      var e = $(
-        "<div class='country'>"+
-          "<div class='title'><a></a></div>"+
-        "</div>");
-      var e2 = $('.title a', e).text(c.name).attr('href', '/keyboards/countries/'+c.id+embed_query_q);
-
-      e2.click(function() {
-        document.f.q.value = 'c:id:'+c.id;
-        return do_search();
-      });
-      resultsElement.append(e);
-    });
-  }
-  if(!res.keyboards && !res.languages && !res.countries) {
-    $('<h3>').addClass('red').text("No matches found for '"+q+"'").appendTo(resultsElement);
+  } else {
+    $('<h3>').addClass('red').text("No matches found for '"+qq+"'").appendTo(resultsElement);
   }
 }
 
+function buildPager(res, q) {
+  var pager = $('<div class="pager">');
+  function appendPager(pager, text, page) {
+    if(page != res.context.pageNumber && page > 0 && page <= res.context.totalPages) {
+      $('<a>'+text+'</a>').attr('href', getCurrentPath(q, page)).click((event) => goToPage(event, q, page)).appendTo(pager);
+    } else {
+      $('<span>'+text+'</span>').appendTo(pager);
+    }
+  }
+
+  appendPager(pager, '&lt; Previous', res.context.pageNumber-1);
+  if(res.context.pageNumber > 5) {
+    ('<span>...</span>').appendTo(pager);
+  }
+  for(var i = Math.max(1, res.context.pageNumber - 4); i <= Math.min(res.context.totalPages, res.context.pageNumber + 4); i++) {
+    appendPager(pager, i, i);
+  }
+  if(res.context.pageNumber < res.context.totalPages - 4) {
+    $('<span>...</span>').appendTo(pager);
+  }
+  appendPager(pager, 'Next &gt;', res.context.pageNumber+1);
+  return pager;
+}
+
+function goToPage(event, q, page) {
+  page = parseInt(page, 10);
+  if(isNaN(page)) page = 1;
+  document.f.q.value = decodeURIComponent(q);
+  document.f.page.value = page;
+
+  event.preventDefault();
+  search(true);
+  window.scrollTo(0, 0);
+  return false;
+}
+
 function do_search() {
+  document.f.page.value = 1;
   search(true);
   return false; // always return false from search box
 }
@@ -240,44 +264,52 @@ var load_search_count = 0, load_search = function() {
     return false;
   }
 
-  if(typeof window.doInit != 'undefined') {
-    window.doInit();
-    return false;
+  if(!detail_page) {
+    $('#search-q').on('input', function() {
+      if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
+      dynamic_search_timeout = window.setTimeout(function() {
+        if(document.f.q.value.length > 2) {
+          document.f.page.value = 1;
+          search(false);
+        }
+      }, 250);
+    });
   }
 
-  $('#search-q').on('input', function() {
-    if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
-    dynamic_search_timeout = window.setTimeout(function() {
-      search(false);
-    }, 250);
-  });
-
-  var init = function(value) {
+  var init = function(value, page, updateHistory) {
+    page = parseInt(page, 10);
+    if(isNaN(page)) page = 1;
     document.f.q.value = decodeURIComponent(value);
-    search(false);
-    return true;
+    document.f.page.value = page;
+
+    search(!!updateHistory);
+    return value != '';
   }
 
+  // Get initial search
 
-  var params = location.pathname.match(/\/keyboards\/languages\/(.+)$/);
-  if(params) {
-    return init('l:id:'+params[1]);
-  }
-
-  params = location.pathname.match(/\/keyboards\/countries\/(.+)$/);
-  if(params) {
-    return init('c:id:'+params[1]);
-  }
-
-  params = location.search.substr(1).split('&');
+  var page = 1, q = '', params = location.search.substr(1).split('&');
   for(var i = 0; i < params.length; i++) {
     var p = params[i].split('=');
     if(p.length == 2 && p[0] == 'q') {
-      return init(p[1]);
+      q = decodeURIComponent(p[1]);
+    } else if(p.length == 2 && p[0] == 'page') {
+      page = decodeURIComponent(p[1]);
     }
   }
 
-  return false;
+
+  params = location.pathname.match(/\/keyboards\/languages\/(.+)$/);
+  if(params) {
+    q = 'l:id:'+params[1];
+  } else {
+    params = location.pathname.match(/\/keyboards\/countries\/(.+)$/);
+    if(params) {
+      q = 'c:id:'+params[1];
+    }
+  }
+
+  return init(q, page);
 };
 
 window.addEventListener('load', load_search, false);
