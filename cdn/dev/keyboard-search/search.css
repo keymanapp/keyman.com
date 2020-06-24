@@ -188,6 +188,21 @@ h2 a {
   clear: right;
 }
 
+#search-results .pager {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: solid 1px #B92034;
+}
+
+#search-results .statistics {
+  color: #444444;
+}
+
+#search-results .pager a,
+#search-results .pager span {
+  padding: 0 4px;
+}
+
 /* Keyboard details */
 
 #keyboard-details th {

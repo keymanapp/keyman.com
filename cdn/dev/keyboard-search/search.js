@@ -1,6 +1,7 @@
 if(typeof embed_query == 'undefined') {
   var embed_query = '';
 }
+
 var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
 var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
@@ -10,11 +11,25 @@ var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
 var counter = 0;
 
+function getCurrentPath(q, page) {
+  var r = q.match(/^(c|l)\:(id)\:(.+)$/);
+  if(r && r[1].charAt(0) == 'c') {
+    return '/keyboards/countries/'+r[3]+'?page='+page;
+  } else if(r && r[1].charAt(0) == 'l') {
+    return '/keyboards/languages/'+r[3]+'?page='+page;
+  } else {
+    return '/keyboards?q='+encodeURIComponent(q)+'&page='+page;
+  }
+}
+
 function search(updateHistory) {
   wrapSearch(++counter, updateHistory);
 }
 
 function wrapSearch(localCounter, updateHistory) {
+  var page = parseInt(document.f.page.value, 10);
+  if(isNaN(page) || page < 1 || page > 999) page = 1;
+
   var q = document.f.q.value;
   // Workaround for HTML form encoding spaces with "+", which breaks keyboard searches
   q = q.replace(/\+/g, ' ');
@@ -22,11 +37,6 @@ function wrapSearch(localCounter, updateHistory) {
   if(q == '') {
     var resultsElement = $('#search-results');
     resultsElement.empty().append('<p>Enter the name of a keyboard or language to search for.</p>');
-    return false;
-  }
-
-  if(!history.pushState && updateHistory) {
-    location.href = '/keyboards?q='+encodeURIComponent(q)+embed_query_x;
     return false;
   }
 
@@ -38,13 +48,15 @@ function wrapSearch(localCounter, updateHistory) {
     location.protocol+'//staging-api-keyman-com-azurewebsites.net' :
     location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
 
-  var url = base+'/search/2.0?q='+encodeURIComponent(q);
+  var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(q);
 
   if(embed) {
     url += '&embed='+embed;
   }
 
   var xhr = createCORSRequest('GET', url);
+
+  var currentPath = getCurrentPath(q, page);
 
   xhr.onload = function() {
     if(counter > localCounter) {
@@ -56,15 +68,9 @@ function wrapSearch(localCounter, updateHistory) {
 
     //hide_loading();
     $('#search-box').removeClass('searching');
-    if(updateHistory && history.pushState) {
-      var r = q.match(/^(c|l)\:(id)\:(.+)$/);
-      if(r && r[1].charAt(0) == 'c') {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/countries/'+r[5]);
-      } else if(r && r[1].charAt(0) == 'l') {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards/languages/'+r[5]);
-      } else {
-        history.pushState({q: q, text: responseText}, q + ' - Keyboard search', '/keyboards?q='+encodeURIComponent(q));
-      }
+    currentPath = getCurrentPath(q, page);
+    if(updateHistory) {
+      history.pushState({q: q, text: responseText}, q + ' - Keyboard search', currentPath);
     }
     process_response(q, xhr.responseText);
     // process the response.
@@ -104,6 +110,13 @@ function process_response(q, res) {
     var deprecatedElement = null;
 
     $('<h3>').addClass('red underline').text(res.context.range ? res.context.range : "Keyboards matching '"+q+"'").appendTo(resultsElement);
+
+    $('<div class="statistics">').text(res.context.totalRows + ' results; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.').appendTo(resultsElement);
+
+    /* not sure if we want this here:
+    if(res.context.totalPages > 1) {
+      buildPager(res, q).appendTo(resultsElement);
+    }*/
 
     document.title = q + ' - Keyboard search';
 
@@ -177,12 +190,47 @@ function process_response(q, res) {
       $('.platforms', k).text();
       (deprecatedElement ? deprecatedElement : resultsElement).append(k);
     });
+
+    if(res.context.totalPages > 1) {
+      buildPager(res, q).appendTo(resultsElement);
+    }
   } else {
     $('<h3>').addClass('red').text("No matches found for '"+qq+"'").appendTo(resultsElement);
   }
 }
 
+function buildPager(res, q) {
+  var pager = $('<div class="pager">');
+  function appendPager(pager, text, page) {
+    if(page != res.context.pageNumber && page > 0 && page <= res.context.totalPages) {
+      $('<a>'+text+'</a>').attr('href', getCurrentPath(q, page)).click((event) => goToPage(event, q, page)).appendTo(pager);
+    } else {
+      $('<span>'+text+'</span>').appendTo(pager);
+    }
+  }
+
+  appendPager(pager, '&lt; Previous', res.context.pageNumber-1);
+  for(var i = 1; i <= res.context.totalPages; i++) {
+    appendPager(pager, i, i);
+  }
+  appendPager(pager, 'Next &gt;', res.context.pageNumber+1);
+  return pager;
+}
+
+function goToPage(event, q, page) {
+  page = parseInt(page, 10);
+  if(isNaN(page)) page = 1;
+  document.f.q.value = decodeURIComponent(q);
+  document.f.page.value = page;
+
+  event.preventDefault();
+  search(true);
+  window.scrollTo(0, 0);
+  return false;
+}
+
 function do_search() {
+  document.f.page.value = 1;
   search(true);
   return false; // always return false from search box
 }
@@ -212,36 +260,47 @@ var load_search_count = 0, load_search = function() {
   $('#search-q').on('input', function() {
     if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
     dynamic_search_timeout = window.setTimeout(function() {
-      search(false);
+      if(document.f.q.value.length > 2) {
+        document.f.page.value = 1;
+        search(false);
+      }
     }, 250);
   });
 
-  var init = function(value) {
+  var init = function(value, page, updateHistory) {
+    page = parseInt(page, 10);
+    if(isNaN(page)) page = 1;
     document.f.q.value = decodeURIComponent(value);
-    search(false);
-    return true;
+    document.f.page.value = page;
+
+    search(!!updateHistory);
+    return value != '';
   }
 
+  // Get initial search
 
-  var params = location.pathname.match(/\/keyboards\/languages\/(.+)$/);
-  if(params) {
-    return init('l:id:'+params[1]);
-  }
-
-  params = location.pathname.match(/\/keyboards\/countries\/(.+)$/);
-  if(params) {
-    return init('c:id:'+params[1]);
-  }
-
-  params = location.search.substr(1).split('&');
+  var page = 1, q = '', params = location.search.substr(1).split('&');
   for(var i = 0; i < params.length; i++) {
     var p = params[i].split('=');
     if(p.length == 2 && p[0] == 'q') {
-      return init(p[1]);
+      q = decodeURIComponent(p[1]);
+    } else if(p.length == 2 && p[0] == 'page') {
+      page = decodeURIComponent(p[1]);
     }
   }
 
-  return false;
+
+  params = location.pathname.match(/\/keyboards\/languages\/(.+)$/);
+  if(params) {
+    q = 'l:id:'+params[1];
+  } else {
+    params = location.pathname.match(/\/keyboards\/countries\/(.+)$/);
+    if(params) {
+      q = 'c:id:'+params[1];
+    }
+  }
+
+  return init(q, page);
 };
 
 window.addEventListener('load', load_search, false);
