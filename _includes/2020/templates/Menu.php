@@ -1,13 +1,41 @@
 <?php
-  global $stable_version, $beta_version;
+  declare(strict_types=1);
+
+  namespace Keyman\Site\com\keyman\templates;
+
+  require_once __DIR__ . '/../../autoload.php';
+
+  use Keyman\Site\com\keyman\Util;
+
+  class Menu {
+    // Note: we'll move to named parameters when PHP lets us in the future
+    public static function render(array $fields): void {
+      if(!isset($fields['pageClass'])) $fields['pageClass'] = 'default';
+      if(!isset($fields['stable_version'])) {
+        // TODO: REFACTOR; these are buried in servervars.php which is a *bad* place for them
+        $fields['stable_version'] = '13.0';
+        $fields['beta_version'] = '13.0';
+      }
+      Menu::render_phone_menu((object)$fields);
+      Menu::render_top_menu((object)$fields);
+    }
+
+    private static function render_phone_menu(object $fields): void {
 ?>
-<div id="container" class="page-<?=$pageClass?>">
+
+<?php
+    }
+
+    private static function render_top_menu(object $fields): void {
+?>
+
+<div id="container" class="page-<?=$fields->pageClass?>">
     <div class="header">
-        <img id="show-phone-menu" src="<?php echo cdn("img/phonehide.png"); ?>" />
-        <a id="home-link" href="/"><img id="logo" src="<?php echo cdn("img/logo2.png"); ?>" alt='Keyman Logo' /></a>
-        <img id="header-bottom" src="<?php echo cdn("img/headerbar.png"); ?>" alt='Header bottom' />
+        <img id="show-phone-menu" src="<?php echo Util::cdn("img/phonehide.png"); ?>" />
+        <a id="home-link" href="/"><img id="logo" src="<?php echo Util::cdn("img/logo2.png"); ?>" alt='Keyman Logo' /></a>
+        <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
-    
+
           <form action="/search/" method="get" role="search">
             <div class="search-wrap">
               <label for="main-q" class="offscreen">Search</label>
@@ -16,12 +44,12 @@
             </div>
           </form>
           <p id="donate"><a href="/donate">Donate</a></p>
-          <p><a href="https://help.keyman.com" target="blank">Support<img src="<?php echo cdn("img/helpIcon.png"); ?>"></a></p>
+          <p><a href="https://help.keyman.com" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>"></a></p>
         </div>
     </div>
     <div id="top-menu-bg"></div>
     <div id="top-menu1">
-        <a href="/"><img id="top-menu-icon" src="<?php echo cdn("img/icon1.png"); ?>" /></a>
+        <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" /></a>
         <div id='help1'>
           <form action="/search/" method="get" role="search">
             <div class="search-wrap">
@@ -30,20 +58,20 @@
               <button type="submit" class="offscreen">Search</button>
             </div>
           </form>
-          <a id='help1-donate' href="/donate">Donate</a>        
-          <a href="https://help.keyman.com"><img id="top-menu-icon2" src="<?php echo cdn("img/helpIcon.png"); ?>" /></a>
+          <a id='help1-donate' href="/donate">Donate</a>
+          <a href="https://help.keyman.com"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" /></a>
         </div>
         <div class="wrapper">
             <div class="menu-item" id="keyboards">
-                <h3>Keyboards<span class="header-triangle"><img src="<?php echo cdn("img/img_trans.png"); ?>" /></span></h3>
+                <h3>Keyboards<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <h4>Find a Keyboard (1000+)</h4>
                         <form method="get" action="/keyboards" name="fsearch">
                             <input id="language-search" type="text" placeholder="Enter language" name="q">
-                            <input id="search-submit" type="image" src="<?php echo cdn('img/search-button.png'); ?>" value="Search" onclick="if(document.getElementById('language-search').value==''){return false;}">
+                            <input id="search-submit" type="image" src="<?php echo Util::cdn('img/search-button.png'); ?>" value="Search" onclick="if(document.getElementById('language-search').value==''){return false;}">
                         </form>
-                        
+
                         <h4>Featured keyboards</h4>
                         <ul>
                             <li><a href="/amharic/">Amharic and Ethiopic keyboards</a></li>
@@ -63,16 +91,16 @@
                 </div>
             </div>
             <div class="menu-item" id="products">
-                <h3>Products<span class="header-triangle"><img src="<?php echo cdn("img/img_trans.png"); ?>" /></span></h3>
+                <h3>Products<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <h4>Core Products</h4>
                         <ul>
-                            <li><a href="/desktop/">Keyman Desktop <?=$stable_version?></a></li>
-                            <li><a href="/mac/">Keyman <?=$stable_version?> for macOS</a></li>
-                            <li><a href="/linux/">Keyman for Linux <?=$stable_version?></a></li>
-                            <li><a href="/iphone-and-ipad/">Keyman for iPhone and iPad <?=$stable_version?></a></li>
-                            <li><a href="/android/">Keyman for Android <?=$stable_version?></a></li>
+                            <li><a href="/desktop/">Keyman Desktop <?=$fields->stable_version?></a></li>
+                            <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                            <li><a href="/linux/">Keyman for Linux <?=$fields->stable_version?></a></li>
+                            <li><a href="/iphone-and-ipad/">Keyman for iPhone and iPad <?=$fields->stable_version?></a></li>
+                            <li><a href="/android/">Keyman for Android <?=$fields->stable_version?></a></li>
                             <li><a href="/keymanweb/">KeymanWeb.com</a></li>
                             <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
                         </ul>
@@ -86,7 +114,7 @@
                 </div>
             </div>
             <div class="menu-item" id="tavultesoft">
-                <h3>About<span class="header-triangle"><img src="<?php echo cdn("img/img_trans.png"); ?>" /></span></h3>
+                <h3>About<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <ul>
@@ -103,7 +131,7 @@
                 </div>
             </div>
             <!--            <div class="menu-item" id="account">
-                <h3>Account<span class="header-triangle"><img src="<?php echo cdn("img/img_trans.png"); ?>" /></span></h3>
+                <h3>Account<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <ul>
@@ -121,6 +149,10 @@
                 </div>
             </div>
         </div>
-        <img id="top-menu-bottom" src="<?php echo cdn("img/headerbar.png"); ?>" />
+        <img id="top-menu-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" />
     </div>
     <div id="phone-header-spacer"></div>
+
+<?php
+    }
+  }

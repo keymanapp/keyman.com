@@ -1,5 +1,8 @@
 <?php
-  require_once('servervars.php');
+
+use Keyman\Site\com\keyman\templates\MenuFields;
+
+require_once('servervars.php');
 
   function template_finish($foot) {
     //ob_end_flush();
@@ -70,10 +73,24 @@
     } else {
       $showHeader = true;
     }
-    require_once('head.php');
+
+    require_once(__DIR__ . '/../2020/templates/Head.php');
+    $head = [];
+    if(isset($title)) $head['title'] = $title;
+    if(isset($favicon)) $head['favicon'] = $favicon;
+    if(isset($css)) $head['css'] = $css;
+    if(isset($js)) $head['js'] = $js;
+    \Keyman\Site\com\keyman\templates\Head::render($head);
+
     if($menu == true) {
-        require_once ('phone-menu.php');
-        require_once('top-menu.php');
+      require_once ('phone-menu.php');
+      global $stable_version, $beta_version;
+      require_once(__DIR__ . '/../2020/templates/Menu.php');
+      \Keyman\Site\com\keyman\templates\Menu::render([
+        'stable_version' => $stable_version,
+        'beta_version' => $beta_version,
+        'pageClass' => $pageClass
+      ]);
     } else {
         require_once ('no-menu.php');
     }
@@ -145,7 +162,13 @@
       $display = true;
     }
     if($display == true){
-      require_once('footer.php');
+      global $stable_version, $beta_version;
+      require_once(__DIR__ . '/../2020/templates/Foot.php');
+      \Keyman\Site\com\keyman\templates\Foot::render([
+        'stable_version' => $stable_version,
+        'beta_version' => $beta_version
+      ]);
+
     }else{
       require_once('no-footer.php');
     }

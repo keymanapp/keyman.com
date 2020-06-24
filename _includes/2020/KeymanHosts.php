@@ -1,7 +1,7 @@
 <?php
+  declare(strict_types=1);
 
-  // TODO refactor away $site_url
-  $site_url = 'keyman.com';
+  namespace Keyman\Site\com\keyman;
 
   class KeymanHosts {
     // Four tiers. These use the following rough patterns:
@@ -17,6 +17,14 @@
     public $s_keyman_com, $api_keyman_com, $help_keyman_com, $downloads_keyman_com, $keyman_com, $keymanweb_com, $r_keymanweb_com;
 
     private $tier;
+
+    private static $instance;
+
+    public static function Instance(): KeymanHosts {
+      if(!self::$instance)
+        self::$instance = new KeymanHosts();
+      return self::$instance;
+    }
 
     public function Tier() {
       return $this->tier;
@@ -72,5 +80,3 @@
       }
     }
   }
-
-  $KeymanHosts = new KeymanHosts();

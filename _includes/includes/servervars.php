@@ -32,7 +32,11 @@
       return $beta_version_int > $stable_version_int;
   }
 
-  require_once(__DIR__ . '/KeymanHosts.php');
+  require_once(__DIR__ . '/../2020/KeymanHosts.php');
+
+  use \Keyman\Site\com\keyman\KeymanHosts;
+  // TODO refactor away global variable
+  $KeymanHosts = Keyman\Site\com\keyman\KeymanHosts::Instance();
 
   // Alpha and Beta signup links
   global $playstore_signup_link, $testflight_alpha_link, $testflight_beta_link;
