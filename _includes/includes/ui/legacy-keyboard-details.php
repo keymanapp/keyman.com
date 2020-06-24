@@ -394,7 +394,7 @@ END;
         <?php
         // DEBUG: Only display errors on local sites
         global $KeymanHosts;
-        if($KeymanHosts->Tier() == \KeymanHosts::TIER_DEVELOPMENT  && (ini_get('display_errors') !== '0')) {
+        if($KeymanHosts->Tier() == KeymanHosts::TIER_DEVELOPMENT  && (ini_get('display_errors') !== '0')) {
           echo "<p>" . self::$error . "</p>";
         }
         exit;
