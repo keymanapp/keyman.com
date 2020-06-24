@@ -21,6 +21,9 @@ define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
     static private $id;
     static private $tier;
 
+    // Properties to provide to apps in embedded download mode
+    static private $tag;
+
     // Properties for querying keyboard downloads
     static private $keyboard;
     static private $downloads;
@@ -63,9 +66,11 @@ define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
      * @param $id - keyboard ID
      * @param string $tier - ['stable', 'alpha', or 'beta']
      * @param bool $landingPage - when true, details won't display keyboard search box or title
+     * @param string $tag - BCP 47 tag to pass as a hint to download links for apps to make connection
      */
-    public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false) {
+    public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false, $tag = null) {
       self::$id = $id;
+      self::$tag = $tag;
       self::$tier = self::get_tier_from_request($tier);
       self::$landingPage = $landingPage;
 
@@ -111,6 +116,7 @@ define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
       if($embed != 'none') {
         // note: if embed != none, mode should was be standalone
         $url = "keyman:download?filename=$e_filename&url=".urlencode("https://keyman.com/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
+        if(!empty(self::$tag)) $url .= "&tag=".urlencode(self::$tag);
       } else {
         $url = "/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
       }
@@ -476,11 +482,11 @@ END;
         }
       }
 
-      if ($webtext) {
-        echo "<h2 class='red underline'>Online tools</h2>" . $webtext;
-      }
-
       if ($embed == 'none') {
+        if ($webtext) {
+          echo "<h2 class='red underline'>Online tools</h2>" . $webtext;
+        }
+
         echo "<h2 class='red underline'>Downloads for other devices</h2><div class='download-other'>";
         if(empty(self::$deprecatedBy)) {
           self::WriteQRCode('other');
