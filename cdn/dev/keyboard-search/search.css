@@ -134,26 +134,14 @@ h2 a {
 
 #search-results .keyboards-deprecated h4 {
   margin-top: 24px;
-  margin-left: 36px;
-  cursor: pointer;
-  font-weight: bold;
+  margin-left: 8px;
+  font-weight: 600;
   font-size: 14pt;
-}
-
-#search-results .keyboards-deprecated h4:hover {
-  text-decoration: underline;
-}
-
-#search-results .keyboards-deprecated .keyboard {
-  display: none;
-}
-
-#search-results .keyboards-deprecated.show .keyboard {
-  display: block;
 }
 
 #search-results .keyboards-deprecated .keyboard .title::after {
   content: " (obsolete)";
+  color: red;
 }
 
 #search-results .keyboard .title a {

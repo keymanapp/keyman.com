@@ -133,8 +133,8 @@ function process_response(q, res) {
 
       if(kbd.deprecated && !deprecatedElement) {
         // TODO: make title change depending on whether deprecated keyboards are shown or hidden
-        deprecatedElement = $('<div class="keyboards-deprecated"><h4 class="red">Show obsolete keyboards</h4></div>');
-        deprecatedElement.find('h4').click(function() {deprecatedElement.toggleClass('show');});
+        deprecatedElement = $(
+          '<div class="keyboards-deprecated"><h4 class="red underline">Obsolete keyboards</h4></div>');
         resultsElement.append(deprecatedElement);
       }
 
