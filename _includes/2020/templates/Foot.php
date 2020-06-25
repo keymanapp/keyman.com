@@ -4,16 +4,13 @@
   namespace Keyman\Site\com\keyman\templates;
 
   use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\KeymanVersion;
 
   class Foot {
     static function render(array $fields = []) {
-      global $stable_version;
-      if(!isset($fields['stable_version'])) {
-        // TODO: REFACTOR; these are buried in servervars.php which is a *bad* place for them
-        $fields['stable_version'] = '13.0';
-        $fields['beta_version'] = '13.0';
-      }
       $fields = (object)$fields;
+      $fields->stable_version = KeymanVersion::stable_version;
+      $fields->beta_version = KeymanVersion::beta_version;
 ?>
 
       </div>

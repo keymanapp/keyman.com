@@ -3,9 +3,6 @@
 
   namespace Keyman\Site\com\keyman;
 
-  # use Keyman\Site\com\keyman\KeymanHosts;
-  # use Keyman\Site\com\keyman\templates\Foot;
-
   class Util {
     static function Fail($message) {
       echo $message;

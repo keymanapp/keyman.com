@@ -19,23 +19,30 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/cdn/deploy/cdn.php');
   }
 
-  // Major stable and beta versions
-  global $stable_version_int, $beta_version_int;
-  $stable_version_int = 13;
-  $beta_version_int = 13;
+  // *don't* use autoloader here because it may lead to side-effects in older pages
 
-  $stable_version = $stable_version_int . '.0';
-  $beta_version = $beta_version_int . '.0';
-
-  function betaTier() {
-      global $stable_version_int, $beta_version_int;
-      return $beta_version_int > $stable_version_int;
-  }
-
+  require_once(__DIR__ . '/../2020/KeymanVersion.php');
   require_once(__DIR__ . '/../2020/KeymanHosts.php');
 
+  use \Keyman\Site\com\keyman\KeymanVersion;
   use \Keyman\Site\com\keyman\KeymanHosts;
+
+  // Major stable and beta versions
+  // TODO: refactor away these globals
+  global $stable_version_int, $beta_version_int;
+  $stable_version_int = KeymanVersion::stable_version_int;
+  $beta_version_int = KeymanVersion::beta_version_int;
+
+  global $stable_version, $beta_version;
+  $stable_version = KeymanVersion::stable_version;
+  $beta_version = KeymanVersion::beta_version;
+
+  function betaTier() {
+    return KeymanVersion::IsBetaTier();
+  }
+
   // TODO refactor away global variable
+  global $KeymanHosts;
   $KeymanHosts = Keyman\Site\com\keyman\KeymanHosts::Instance();
 
   // Alpha and Beta signup links

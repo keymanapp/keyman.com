@@ -1,6 +1,11 @@
 <?php
   require_once('servervars.php');
 
+  // *Don't* use autoloader here because of potential side-effects in older pages
+  require_once(__DIR__ . '/../2020/Util.php');
+  require_once(__DIR__ . '/../2020/KeymanVersion.php');
+  require_once(__DIR__ . '/../2020/templates/Head.php');
+
   function template_finish($foot) {
     //ob_end_flush();
 
@@ -72,7 +77,6 @@
     }
 
     // This avoids the global variable plague of earlier templates!
-    require_once(__DIR__ . '/../2020/templates/Head.php');
     $head = [];
     if(isset($title)) $head['title'] = $title;
     if(isset($favicon)) $head['favicon'] = $favicon;

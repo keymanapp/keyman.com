@@ -3,8 +3,6 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
-  require_once __DIR__ . '/../../autoload.php';
-
   use Keyman\Site\com\keyman\Util;
 
   class Head {

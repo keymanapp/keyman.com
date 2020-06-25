@@ -3,22 +3,17 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
-  require_once __DIR__ . '/../../autoload.php';
-
   use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\KeymanVersion;
 
   class Menu {
     // Note: we'll move to named parameters when PHP lets us in the future
     public static function render(array $fields): void {
-      if(!isset($fields['pageClass'])) $fields['pageClass'] = 'default';
-      if(!isset($fields['stable_version'])) {
-        // TODO: REFACTOR; these are buried in servervars.php which is a *bad* place for them
-        $fields['stable_version'] = '13.0';
-        $fields['beta_version'] = '13.0';
-      }
-      if(!isset($fields['device'])) $fields['device'] = '';
-
       $fields = (object)$fields;
+      if(!isset($fields->pageClass)) $fields->pageClass = 'default';
+      if(!isset($fields->device)) $fields->device = '';
+      $fields->stable_version = KeymanVersion::stable_version;
+      $fields->beta_version = KeymanVersion::beta_version;
 
       echo <<<END
 <body data-device="$fields->device">
