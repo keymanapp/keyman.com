@@ -357,4 +357,4 @@ function toggleDeprecatedVersionDetails() {
   $('#deprecated-old').toggle();
 }
 
-loaded();
+$(loaded);

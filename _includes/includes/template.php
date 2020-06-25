@@ -81,13 +81,13 @@
     \Keyman\Site\com\keyman\templates\Head::render($head);
 
     if($menu == true) {
-      require_once ('phone-menu.php');
       global $stable_version, $beta_version;
       require_once(__DIR__ . '/../2020/templates/Menu.php');
       \Keyman\Site\com\keyman\templates\Menu::render([
         'stable_version' => $stable_version,
         'beta_version' => $beta_version,
-        'pageClass' => $pageClass
+        'pageClass' => $pageClass,
+        'device' => (isset($device) ? $device : '')
       ]);
     } else {
         require_once ('no-menu.php');
