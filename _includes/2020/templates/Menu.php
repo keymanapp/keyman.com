@@ -32,7 +32,7 @@ END;
             <h3>Keyboards</h3>
             <form method="get" action="/keyboards" name="fsearch">
                 <input id="language-search2" type="text" placeholder="Enter language" name="q">
-                <input id="search-submit2" type="image" src="<?php echo cdn("img/search-button.png"); ?>" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
+                <input id="search-submit2" type="image" src="<?php echo Util::cdn("img/search-button.png"); ?>" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
             </form>
         </div>
         <div class="phone-menu-item">
