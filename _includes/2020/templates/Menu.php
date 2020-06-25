@@ -193,17 +193,6 @@ END;
                     </div>
                 </div>
             </div>
-            <!--            <div class="menu-item" id="account">
-                <h3>Account<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
-                <div class="menu-item-dropdown">
-                    <div class="menu-dropdown-inner">
-                        <ul>
-                            <li><a href="/account/home/profile/">Update Profile</a></li>
-                            <li><a href="/account/home/">My Account</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>-->
             <div class="menu-item" id="developer">
                 <div class="menu-item-sub" id="develop">
                     <a href="/developer/">
