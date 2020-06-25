@@ -1,8 +1,5 @@
 <?php
-
-use Keyman\Site\com\keyman\templates\MenuFields;
-
-require_once('servervars.php');
+  require_once('servervars.php');
 
   function template_finish($foot) {
     //ob_end_flush();
@@ -74,6 +71,7 @@ require_once('servervars.php');
       $showHeader = true;
     }
 
+    // This avoids the global variable plague of earlier templates!
     require_once(__DIR__ . '/../2020/templates/Head.php');
     $head = [];
     if(isset($title)) $head['title'] = $title;
