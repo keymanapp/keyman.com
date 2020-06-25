@@ -25,6 +25,7 @@
           return "/cdn/deploy{$cdn['/'.$file]}";
         }
       }
+      // TODO: log warning or error to sentry on missing files
       return "/cdn/dev/{$file}";
     }
   }
