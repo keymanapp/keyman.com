@@ -85,11 +85,8 @@
     \Keyman\Site\com\keyman\templates\Head::render($head);
 
     if($menu == true) {
-      global $stable_version, $beta_version;
       require_once(__DIR__ . '/../2020/templates/Menu.php');
       \Keyman\Site\com\keyman\templates\Menu::render([
-        'stable_version' => $stable_version,
-        'beta_version' => $beta_version,
         'pageClass' => $pageClass,
         'device' => (isset($device) ? $device : '')
       ]);
@@ -164,13 +161,8 @@
       $display = true;
     }
     if($display == true){
-      global $stable_version, $beta_version;
       require_once(__DIR__ . '/../2020/templates/Foot.php');
-      \Keyman\Site\com\keyman\templates\Foot::render([
-        'stable_version' => $stable_version,
-        'beta_version' => $beta_version
-      ]);
-
+      \Keyman\Site\com\keyman\templates\Foot::render();
     }else{
       require_once('no-footer.php');
     }
