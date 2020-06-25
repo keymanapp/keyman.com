@@ -11,15 +11,20 @@
     }
 
     static function cdn($file) {
-      /* TODO: setup cdn
-      global $cdn;
+      global $cdn; // we'll continue to use this as global for now.
+      if(!isset($cdn)) {
+        if(!empty($_SERVER['DOCUMENT_ROOT']) && file_exists($_SERVER['DOCUMENT_ROOT'].'/cdn/deploy/cdn.php')) {
+          require_once($_SERVER['DOCUMENT_ROOT'].'/cdn/deploy/cdn.php');
+        } else {
+          $cdn = false;
+        }
+      }
       $use_cdn = KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION || (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
       if($use_cdn) {
         if($cdn && isset($cdn['/'.$file])) {
           return "/cdn/deploy{$cdn['/'.$file]}";
         }
       }
-      */
       return "/cdn/dev/{$file}";
     }
   }
