@@ -1,7 +1,7 @@
 <?php
+  declare(strict_types=1);
 
-  // TODO refactor away $site_url
-  $site_url = 'keyman.com';
+  namespace Keyman\Site\com\keyman;
 
   class KeymanHosts {
     // Four tiers. These use the following rough patterns:
@@ -18,6 +18,14 @@
 
     private $tier;
 
+    private static $instance;
+
+    public static function Instance(): KeymanHosts {
+      if(!self::$instance)
+        self::$instance = new KeymanHosts();
+      return self::$instance;
+    }
+
     public function Tier() {
       return $this->tier;
     }
@@ -27,8 +35,8 @@
           [KeymanHosts::TIER_DEVELOPMENT, KeymanHosts::TIER_STAGING,
            KeymanHosts::TIER_PRODUCTION, KeymanHosts::TIER_TEST])) {
         $this->tier = $_SERVER['KEYMANHOSTS_TIER'];
-      } else if(file_exists(__DIR__ . '/tier.txt')) {
-        $this->tier = trim(file_get_contents(__DIR__ . '/tier.txt'));
+      } else if(file_exists(__DIR__ . '/../tier.txt')) {
+        $this->tier = trim(file_get_contents(__DIR__ . '/../tier.txt'));
       } else {
         $this->tier = KeymanHosts::TIER_DEVELOPMENT;
       }
@@ -72,5 +80,3 @@
       }
     }
   }
-
-  $KeymanHosts = new KeymanHosts();

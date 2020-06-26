@@ -1,6 +1,11 @@
 <?php
   require_once('servervars.php');
 
+  // *Don't* use autoloader here because of potential side-effects in older pages
+  require_once(__DIR__ . '/../2020/Util.php');
+  require_once(__DIR__ . '/../2020/KeymanVersion.php');
+  require_once(__DIR__ . '/../2020/templates/Head.php');
+
   function template_finish($foot) {
     //ob_end_flush();
 
@@ -70,10 +75,21 @@
     } else {
       $showHeader = true;
     }
-    require_once('head.php');
+
+    // This avoids the global variable plague of earlier templates!
+    $head = [];
+    if(isset($title)) $head['title'] = $title;
+    if(isset($favicon)) $head['favicon'] = $favicon;
+    if(isset($css)) $head['css'] = $css;
+    if(isset($js)) $head['js'] = $js;
+    \Keyman\Site\com\keyman\templates\Head::render($head);
+
     if($menu == true) {
-        require_once ('phone-menu.php');
-        require_once('top-menu.php');
+      require_once(__DIR__ . '/../2020/templates/Menu.php');
+      \Keyman\Site\com\keyman\templates\Menu::render([
+        'pageClass' => $pageClass,
+        'device' => (isset($device) ? $device : '')
+      ]);
     } else {
         require_once ('no-menu.php');
     }
@@ -145,7 +161,8 @@
       $display = true;
     }
     if($display == true){
-      require_once('footer.php');
+      require_once(__DIR__ . '/../2020/templates/Foot.php');
+      \Keyman\Site\com\keyman\templates\Foot::render();
     }else{
       require_once('no-footer.php');
     }

@@ -4,12 +4,11 @@
   require_once('includes/template.php');
   require_once('includes/playstore.php');
   require_once('includes/appstore.php');
-  require_once('includes/KeymanHosts.php');
 
   use \DateTime;
-use KeymanHosts;
+  use \Keyman\Site\com\keyman\KeymanHosts;
 
-define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
+  define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
   define('DOCUMENTATION_ROOT', 'https://help.keyman.com/keyboard/');
 
   class KeyboardDetails
@@ -419,7 +418,7 @@ END;
         <?php
         // DEBUG: Only display errors on local sites
         global $KeymanHosts;
-        if($KeymanHosts->Tier() == \KeymanHosts::TIER_DEVELOPMENT && (ini_get('display_errors') !== '0')) {
+        if($KeymanHosts->Tier() == KeymanHosts::TIER_DEVELOPMENT && (ini_get('display_errors') !== '0')) {
           echo "<p>" . self::$error . "</p>";
         }
         exit;
