@@ -45,7 +45,7 @@ function wrapSearch(localCounter, updateHistory) {
   // TODO: setup a base hosts.js file?
   var base =
     location.host === 'staging-keyman-com.azurewebsites.net' ?
-    location.protocol+'//staging-api-keyman-com-azurewebsites.net' :
+    location.protocol+'//staging-api-keyman-com.azurewebsites.net' :
     location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
 
   var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(q);
