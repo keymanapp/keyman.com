@@ -7,7 +7,7 @@
   //
   // Parameters:
   //   id        string identifier of keyboard to download
-  //   platform  one of windows,macos,linux,ios,android,web
+  //   platform  one of windows,macos,linux,ios,android,web,any
   //   mode:     optional, either bundle or standalone (for now, supported only for Windows)
   //   cid:      optional, adds client id for Google Analytics tracking
 
@@ -37,16 +37,16 @@
    * Validate that input parameters are correct
    */
   function validateParameters(&$id, &$platform, &$mode, &$cid, &$target) {
-    if(!isset($_REQUEST['id']) || !isset($_REQUEST['platform'])) {
-      fail("Usage: download.php?id=<keyboard_id>&platform=<platform>[&mode=<bundle|standalone>][&cid=xxxx]");
+    if(!isset($_REQUEST['id'])) {
+      fail("Usage: download.php?id=<keyboard_id>[&platform=<platform>][&mode=<bundle|standalone>][&cid=xxxx]");
     }
 
     $id = $_REQUEST['id'];
-    $platform = $_REQUEST['platform'];
+    if(isset($_REQUEST['platform'])) $platform = $_REQUEST['platform']; else $platform = 'any';
     if(isset($_REQUEST['mode'])) $mode = $_REQUEST['mode']; else $mode = 'standalone';
     if(isset($_REQUEST['cid'])) $cid = $_REQUEST['cid'];
 
-    if(!in_array($platform, ['windows','macos','linux','ios','android','web'])) {
+    if(!in_array($platform, ['windows','macos','linux','ios','android','web','any'])) {
       fail("Invalid platform parameter");
     }
 
@@ -76,6 +76,7 @@
    * Start a background PHP process to do the async work so we don't block the user
    */
   function triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode) {
+    // TODO: this is no longer required for Keyman 14.0 (yay!)
     $bearer_token = getenv('TEAMCITY_TOKEN');
     if($bearer_token === FALSE) {
       //error_log("ERROR: [download.php] TEAMCITY_TOKEN is not configured.");

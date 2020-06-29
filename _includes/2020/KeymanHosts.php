@@ -73,7 +73,7 @@
         $this->s_keyman_com = "{$site_protocol}s.keyman.com{$site_suffix}";
         $this->api_keyman_com = "{$site_protocol}api.keyman.com{$site_suffix}";
         $this->help_keyman_com = "{$site_protocol}help.keyman.com{$site_suffix}";
-        $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}";
+        $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com{$site_suffix}";
         $this->keyman_com = "{$site_protocol}keyman.com{$site_suffix}";
         $this->keymanweb_com = "{$site_protocol}keymanweb.com{$site_suffix}";
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available

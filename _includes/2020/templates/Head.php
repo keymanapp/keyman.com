@@ -37,7 +37,7 @@
   <?php
     array_unshift($fields->js,
       Util::cdn('js/jquery1-11-1.min.js'),
-      Util::cdn('js/bowser.min.js'),
+      Util::cdn('js/bowser.es5.2.9.0.min.js'),
       Util::cdn('js/kmlive.js')
     );
 

@@ -275,16 +275,7 @@ p#permalink {
 /* Download boxes */
 
 .download {
-  clear: both;
-  padding: 8px;
-  margin: 8px;
-  border: solid 1px #B92034;
-  background: white;
-}
-
-.download-windows {
-  border: solid 1px #159bc7;
-  background: #dcf0f7;
+  margin: 0px 0px 16px 16px;
 }
 
 .download .download-title {
@@ -293,17 +284,14 @@ p#permalink {
   margin: 0 0 4px;
 }
 
-.download .download-description {
-  margin: 4px 0 2px;
-}
-
+.download .download-description,
 .download .download-filename {
   color: #666666;
   font-size: 11pt;
+  margin: 4px 0 2px;
 }
 
 .download a.download-link {
-  float: right;
   margin-top: 4px;
   padding: 12px 30px 0 4px;
   color: white;
@@ -320,46 +308,72 @@ p#permalink {
   background-image: url(/cdn/dev/keyboard-search/link-blank.png);
 }
 
-.download.download-web {
-  border-color: #4383BD;
-}
+/*.platforms span + span::before {
+  content: ", ";
+}*/
 
-.download.download-android {
-  background-image: url(/cdn/dev/keyboard-search/icon-android.png);
-}
-
-.download.download-windows {
-  background-image: url(/cdn/dev/keyboard-search/icon-windows.png);
-}
-
-.download.download-ios {
-  background-image: url(/cdn/dev/keyboard-search/icon-ios.png);
-}
-
-.download.download-kmp-windows {
-  background-image: url(/cdn/dev/keyboard-search/icon-windows.png);
-}
-
-.download.download-kmp-macos {
-  background-image: url(/cdn/dev/keyboard-search/icon-macos.png);
-}
-
-.download.download-kmp-linux {
-  background-image: url(/cdn/dev/keyboard-search/icon-linux.png);
-}
-
-.download.download-android,
-.download.download-windows,
-.download.download-ios,
-.download.download-kmp-windows,
-.download.download-kmp-macos,
-.download.download-kmp-linux,
-.download.download-web {
-  padding-left: 48px;
+.platforms span {
   background-repeat: no-repeat;
-  background-position: 10px 8px;
+  background-size: 18px;
+  background-position: top left;
+  padding-left: 24px;
+  display: block;
+  margin: 4px 0;
 }
 
-.download-other .download a.download-link {
-  background-image: url(/cdn/dev/keyboard-search/low-blank.png);
+.platform-android {
+  background-image: url("/cdn/dev/keyboard-search/icon-android.png");
+}
+
+.platform-ios {
+  background-image: url("/cdn/dev/keyboard-search/icon-ios.png");
+}
+
+.platform-linux {
+  background-image: url("/cdn/dev/keyboard-search/icon-linux.png");
+}
+
+.platform-macos {
+  background-image: url("/cdn/dev/keyboard-search/icon-macos.png");
+}
+
+.platform-desktopWeb {
+  background-image: url("/cdn/dev/keyboard-search/icon-desktopWeb.png");
+}
+
+.platform-mobileWeb {
+  background-image: url("/cdn/dev/keyboard-search/icon-mobileWeb.png");
+}
+
+.platform-windows {
+  background-image: url("/cdn/dev/keyboard-search/icon-windows.png");
+}
+
+.download { display: none; }
+.download.download-web {
+  display: block;
+}
+
+html[data-platform='android'] .download.download-android {
+  display: block;
+}
+
+html[data-platform='ios'] .download.download-ios {
+  display: block;
+}
+
+html[data-platform='linux'] .download.download-linux {
+  display: block;
+}
+
+html[data-platform='macos'] .download.download-macos {
+  display: block;
+}
+
+html[data-platform='windows'] .download.download-windows {
+  display: block;
+}
+
+html[data-platform='unknown'] .download.download-unknown {
+  display: block;
 }

@@ -7,7 +7,12 @@
   use Keyman\Site\com\keyman\KeymanVersion;
 
   class Menu {
-    // Note: we'll move to named parameters when PHP lets us in the future
+    //
+    /**
+     *
+     * @param $fields   array of 'pageClass' (default: 'default'), and 'device' (default: blank)
+     * Note: we'll move to named parameters when PHP lets us in the future
+     */
     public static function render(array $fields): void {
       $fields = (object)$fields;
       if(!isset($fields->pageClass)) $fields->pageClass = 'default';

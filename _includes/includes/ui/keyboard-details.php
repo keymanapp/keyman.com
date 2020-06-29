@@ -13,6 +13,16 @@
 
   class KeyboardDetails
   {
+    const platformTitles = [
+      'windows' => 'Windows',
+      'macos' => 'macOS',
+      'linux' => 'Linux',
+      'android' => 'Android',
+      'ios' => 'iPhone and iPad',
+      'desktopWeb' => 'Web',
+      'mobileWeb' => 'Mobile web'
+    ];
+
     // Property for landing pages not to display keyboard searchbox and title
     static private $landingPage;
 
@@ -40,26 +50,6 @@
 
     static private $deprecatedBy;
 
-    private static function WriteLinkAnnotator() {
-      echo '<script>
-        var binaryFileClientId = null;
-        function downloadBinaryFile(a) {
-          if(!a.href.match(/cid=/) && binaryFileClientId) {
-            a.href = a.href + "&cid="+binaryFileClientId;
-          }
-          //alert(a.href);
-          return true;
-        }
-
-        try {
-          if(ga) ga(function(tracker) {
-            binaryFileClientId = tracker.get("clientId");
-          });
-        } catch(error) {
-        }
-      </script>';
-    }
-
     /**
      * render_keyboard_details - display keyboard download boxes and details
      * @param $id - keyboard ID
@@ -78,7 +68,6 @@
       self::WriteDownloadBoxes();
       self::WriteKeyboardDetails();
       if(!empty(self::$deprecatedBy)) echo "</div></div>";
-      self::WriteLinkAnnotator();
     }
 
     /**
@@ -103,44 +92,27 @@
       return array_key_exists($s, $license_map) ? $license_map[$s] : $s;
     }
 
-    protected static function download_box($url, $title, $description, $class, $linktitle, $platform, $mode='standalone') {
-      $urlbits = explode('/', $url);
-      $filename = array_pop($urlbits);
-      $id = self::$id;
-      global $embed;
+    protected static function download_box($platform) {
+      if(isset(self::$keyboard->platformSupport->$platform) && self::$keyboard->platformSupport->$platform != 'none') {
+        $filename = self::$id . ".kmp";
+        $installLink = '/keyboard/install/' . urlencode(self::$id);
+        if(!empty(self::$tag)) $installLink .= "?tag=" . urlencode(self::$tag);
+        $h_filename = htmlspecialchars($filename);
+        $platformTitle = self::platformTitles[$platform];
 
-      $e_filename = urlencode($filename);
-      $e_id = urlencode($id);
-
-      if($embed != 'none') {
-        // note: if embed != none, mode should was be standalone
-        $url = "keyman:download?filename=$e_filename&url=".urlencode("https://keyman.com/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
-        if(!empty(self::$tag)) $url .= "&tag=".urlencode(self::$tag);
+        return <<<END
+<div class="download download-$platform">
+  <a class='download-link binary-download' href='$installLink'><span>Install keyboard</span></a>
+  <div class="download-description">Installs {$h_filename} for $platformTitle on this device</div>
+</div>
+END;
       } else {
-        $url = "/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
+        return <<<END
+<div class="download download-$platform">
+  <span>This keyboard is not supported on this device. You may find other options below.</span>
+</div>
+END;
       }
-      $url = htmlspecialchars($url);
-      $downloadlink = "<a class='download-link binary-download' href='$url' onclick='return downloadBinaryFile(this);'><span>$linktitle</span></a>";
-      return <<<END
-      <div class='download $class'>
-        $downloadlink
-        <div class='download-title'>$title</div>
-        <div class='download-description'>$description</div>
-        <div class='download-filename'>$filename</div>
-      </div>
-END;
-    }
-
-    protected static function onlinelink_box($id, $url, $title, $description, $class = '') {
-      global $embed_target;
-      return <<<END
-      <div class='download download-web $class'>
-        <a class='download-link' $embed_target href='$url'>Use keyboard online</a>
-        <div class='download-title'>$title</div>
-        <div class='download-description'>$description</div>
-        <div class='download-filename'>$id</div>
-      </div>
-END;
     }
 
     protected static function embed_path($kmp) {
@@ -151,73 +123,8 @@ END;
       return 'keyman:download?filename=' . basename($kmp) . '&amp;url=' . $kmp;
     }
 
-    protected static function WriteWindowsBoxes() {
-      global $embed_win;
-      $result = '';
-      if (!$embed_win && isset(self::$downloads->windows) && isset(self::$keyboard->platformSupport->windows) && self::$keyboard->platformSupport->windows != 'none') {
-        $result = self::download_box(
-          self::$downloads->windows,
-          htmlentities(self::$keyboard->name) . ' + Keyman Desktop',
-          'Keyman Desktop and ' . htmlentities(self::$keyboard->name) . ' in a single installer.',
-          'download-windows',
-          'Install on Windows',
-          'windows', 'bundle');
-      }
-
-      if (isset(self::$downloads->kmp)) {
-        if (isset(self::$keyboard->platformSupport->windows) && self::$keyboard->platformSupport->windows != 'none') {
-          $result .= self::download_box(
-            self::embed_path(self::$downloads->kmp),
-            htmlentities(self::$keyboard->name) . ' for Windows',
-            $embed_win ?
-              'Install ' . htmlentities(self::$keyboard->name) :
-              'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/desktop/download#standalone">Keyman Desktop</a> for Windows must be installed first.',
-            'download-kmp-windows',
-            $embed_win ? 'Install keyboard' : 'Windows download',
-            'windows');
-        }
-      }
-
-      return $result === '' ? FALSE : $result;
-    }
-
-    protected static function WriteMacOSBoxes() {
-      global $embed_mac;
-      if (isset(self::$downloads->kmp)) {
-        if (isset(self::$keyboard->platformSupport->macos) && self::$keyboard->platformSupport->macos != 'none') {
-          return self::download_box(
-            self::embed_path(self::$downloads->kmp),
-            htmlentities(self::$keyboard->name) . ' for macOS',
-            $embed_mac ?
-              'Install ' . htmlentities(self::$keyboard->name) :
-              'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="/macosx">Keyman for Mac</a> must be installed first.',
-            'download-kmp-macos',
-            $embed_mac ? 'Install keyboard' : 'macOS download',
-            'macos');
-        }
-      }
-      return FALSE;
-    }
-
-    protected static function WriteLinuxBoxes() {
-      global $embed_linux;
-      if (isset(self::$downloads->kmp)) {
-        if (isset(self::$keyboard->platformSupport->linux) && self::$keyboard->platformSupport->linux != 'none') {
-          return self::download_box(
-            self::embed_path(self::$downloads->kmp),
-            htmlentities(self::$keyboard->name) . ' for Linux',
-            $embed_linux ?
-              'Install ' . htmlentities(self::$keyboard->name) :
-              'Installs only ' . htmlentities(self::$keyboard->name) . '. Keyman for Linux must be installed first.',
-            'download-kmp-linux',
-            $embed_linux ? 'Install keyboard' : 'Linux download',
-            'linux');
-        }
-      }
-      return FALSE;
-    }
-
     protected static function WriteWebBoxes() {
+      global $embed_target;
       global $KeymanHosts;
       if (isset(self::$downloads->js)) {
         if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none') {
@@ -235,63 +142,15 @@ END;
           }
           if (!isset($lang)) $lang = 'en';
           $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
-          return self::onlinelink_box(
-            self::$id,
-            $url,
-            'Use ' . htmlentities(self::$keyboard->name) . ' online',
-            'Use ' . htmlentities(self::$keyboard->name) . ' in your web browser. No need to install anything.');
+          $description = htmlentities(self::$keyboard->name);
+          return <<<END
+          <div class="download download-web">
+          <a class="download-link" $embed_target href='$url'>Use keyboard online</a>
+          <div class="download-description">Use $description in your web browser. No need to install anything.</div>
+        </div>
+END;
         }
       }
-      return FALSE;
-    }
-
-    protected static function WriteAndroidBoxes() {
-      global $playstore;
-      if (isset(self::$downloads->kmp)) {
-        if (isset(self::$keyboard->platformSupport->android) && self::$keyboard->platformSupport->android != 'none') {
-          return self::download_box(
-            self::embed_path(self::$downloads->kmp),
-            htmlentities(self::$keyboard->name) . ' for Android',
-            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.$playstore.'">Keyman for Android</a> must be installed first.',
-            'download-android',
-            'Install on Android',
-            'android');
-        }
-      }
-      return FALSE;
-    }
-
-    protected static function WriteiPhoneBoxes() {
-      global $appstore;
-      if (isset(self::$downloads->kmp)) {
-        if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
-          return self::download_box(
-            self::embed_path(self::$downloads->kmp),
-            htmlentities(self::$keyboard->name) . ' for iPhone',
-            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.$appstore.'">Keyman for iPhone</a> must be installed first.',
-            'download-ios',
-            'Install on iPhone',
-            'ios');
-        }
-      }
-
-      return FALSE;
-    }
-
-    protected static function WriteiPadBoxes() {
-      global $appstore;
-      if (isset(self::$downloads->kmp)) {
-        if (isset(self::$keyboard->platformSupport->ios) && self::$keyboard->platformSupport->ios != 'none') {
-          return self::download_box(
-            self::embed_path(self::$downloads->kmp),
-            htmlentities(self::$keyboard->name) . ' for iPad',
-            'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.$appstore.'">Keyman for iPad</a> must be installed first.',
-            'download-ios',
-            'Install on iPad',
-            'ios');
-        }
-      }
-
       return FALSE;
     }
 
@@ -345,15 +204,16 @@ END;
         $date = new DateTime(self::$keyboard->lastModifiedDate);
         self::$keyboardLastModifiedDate = $date->format('Y-m-d H:i');
 
-        $platformTitles = array('windows' => 'Windows', 'macos' => 'macOS', 'linux' => 'Linux', 'android' => 'Android', 'ios' => 'iPhone and iPad', 'desktopWeb' => 'Web', 'mobileWeb' => 'Mobile web');
+        $platformTitles = self::platformTitles;
 
-        self::$keyboardPlatforms = '';
+        self::$keyboardPlatforms = "<span class='platforms'>";
         $vars = get_object_vars(self::$keyboard->platformSupport);
         foreach ($vars as $var => $value) {
           if ($value != 'none' && array_key_exists($var, $platformTitles)) {
-            self::$keyboardPlatforms .= (self::$keyboardPlatforms == '' ? '' : ', ') . $platformTitles[$var];
+            self::$keyboardPlatforms .= "<span class='platform-$var'>{$platformTitles[$var]}</span>";
           }
         }
+        self::$keyboardPlatforms .= "</span>";
 
         if (isset(self::$keyboard->related)) {
           foreach (self::$keyboard->related as $name => $value) {
@@ -379,13 +239,13 @@ END;
           'showMenu' => false,
           'showHeader' => false,
           'foot' => false,
-          'js' => ['../keyboard-search/search.js', 'qrcode.js'],
+          'js' => ['../keyboard-search/search.js', '../keyboard-search/keyboard-details.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css', '../keyboard-search/embed.css']
         ];
         $embed_target = " target='_blank' ";
       } else {
         $head_options += [
-          'js' => ['../keyboard-search/search.js', 'qrcode.js'],
+          'js' => ['../keyboard-search/search.js', '../keyboard-search/keyboard-details.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css']
         ];
         $embed_target = '';
@@ -431,6 +291,8 @@ END;
           <a class='nav-right' target='_blank' href='/keyboards'>Go to keyman.com</a>
           <a href='/keyboards<?= $session_query_q ?>'>Home</a>
         </div>
+
+        <h1 class='red underline'><?= self::$title ?></h1>
 
         <?php
       } else if (!self::$landingPage) {
@@ -478,44 +340,36 @@ END;
       global $embed, $session_query_q, $embed_win, $embed_version, $pageDevice;
       global $embed_target;
 
-      $deviceboxfuncs = array(
-        "Windows" => "self::WriteWindowsBoxes",
-        "mac" => "self::WritemacOSBoxes",
-        "Linux" => "self::WriteLinuxBoxes",
-        "iPhone" => "self::WriteiPhoneBoxes",
-        "iPad" => "self::WriteiPadBoxes",
-        "Android" => "self::WriteAndroidBoxes"
-      );
+      // We'll write all the different platforms here and then let Bowser determine
+      // which box to show. This is true for both embedded and web-based viewing.
 
-      $text = (isset($pageDevice) && array_key_exists($pageDevice, $deviceboxfuncs)) ? $deviceboxfuncs[$pageDevice] : '';
-      $webtext = self::WriteWebBoxes();
+      $text = '';
 
-      if ($text) {
-        if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
+      foreach(self::platformTitles as $platform => $title) {
+        if($platform != 'desktopWeb' && $platform != 'mobileWeb')
+          $text .= self::download_box($platform);
+      }
+
+      $text .= self::download_box('unknown');
+
+      if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
 ?>
-          <h2 class='red underline'>Downloads for your device</h2><p>Sorry, this keyboard requires Keyman Desktop <?= self::$keyboard->minKeymanVersion ?> or higher.</p>
+        <p>Sorry, this keyboard requires Keyman Desktop <?= self::$keyboard->minKeymanVersion ?> or higher.</p>
 <?php
-        } else {
-          echo "<h2 class='red underline' style='clear:none'>Downloads for your device</h2>" . call_user_func($text);
-        }
+      } else {
+        echo $text;
       }
 
       if ($embed == 'none') {
+        $webtext = self::WriteWebBoxes();
         if ($webtext) {
-          echo "<h2 class='red underline'>Online tools</h2>" . $webtext;
+          echo $webtext;
         }
 
-        echo "<h2 class='red underline'>Downloads for other devices</h2><div class='download-other'>";
         if(empty(self::$deprecatedBy)) {
           self::WriteQRCode('other');
         }
-        foreach ($deviceboxfuncs as $platform => $func) {
-          if ($platform != $pageDevice) {
-            echo call_user_func($func);
-          }
-        }
       }
-      echo "</div>";
     }
 
     protected static function WriteKeyboardDetails() {
@@ -533,6 +387,10 @@ END;
             <tr>
               <th>Keyboard ID</th>
               <td><?= htmlentities(self::$id) ?></td>
+            </tr>
+            <tr>
+              <th>Supported Platforms</th>
+              <td><?= self::$keyboardPlatforms ?></td>
             </tr>
             <tr>
               <th>Author</th>
@@ -587,16 +445,16 @@ END;
           <table id='keyboard-details'>
             <tbody>
             <tr>
+              <th>Package Download</th>
+              <td><a href="<?= self::$downloads->kmp ?>" onclick='return downloadBinaryFile(this);'><?= self::$keyboard->id ?>.kmp</a></td>
+            </tr>
+            <tr>
               <th>Encoding</th>
               <td><?= self::$keyboardEncoding ?></td>
             </tr>
             <tr>
               <th>Minimum Keyman Version</th>
               <td><?= self::$minVersion ?></td>
-            </tr>
-            <tr>
-              <th>Platform Support</th>
-              <td><?= self::$keyboardPlatforms ?></td>
             </tr>
             <?php
             if (isset(self::$keyboard->related)) {

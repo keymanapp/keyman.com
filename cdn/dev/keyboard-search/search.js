@@ -298,7 +298,6 @@ var load_search_count = 0, load_search = function() {
     }
   }
 
-
   params = location.pathname.match(/\/keyboards\/languages\/(.+)$/);
   if(params) {
     q = 'l:id:'+params[1];
