@@ -150,7 +150,7 @@ function process_response(q, res) {
           "</div>"+
         "</div>");
 
-      $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?tag='+kbd.match.tag+embed_query_x : embed_query_q));
+      $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
 
       if(kbd.match.downloads == 0)
         $('.downloads', k).text('No recent downloads');

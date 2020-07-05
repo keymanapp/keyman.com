@@ -31,7 +31,7 @@
     static private $tier;
 
     // Properties to provide to apps in embedded download mode
-    static private $tag;
+    static private $bcp47;
 
     // Properties for querying keyboard downloads
     static private $keyboard;
@@ -55,11 +55,11 @@
      * @param $id - keyboard ID
      * @param string $tier - ['stable', 'alpha', or 'beta']
      * @param bool $landingPage - when true, details won't display keyboard search box or title
-     * @param string $tag - BCP 47 tag to pass as a hint to download links for apps to make connection
+     * @param string $bcp47 - BCP 47 tag to pass as a hint to download links for apps to make connection
      */
-    public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false, $tag = null) {
+    public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false, $bcp47 = null) {
       self::$id = $id;
-      self::$tag = $tag;
+      self::$bcp47 = $bcp47;
       self::$tier = self::get_tier_from_request($tier);
       self::$landingPage = $landingPage;
 
@@ -95,8 +95,8 @@
     protected static function download_box($platform) {
       if(isset(self::$keyboard->platformSupport->$platform) && self::$keyboard->platformSupport->$platform != 'none') {
         $filename = self::$id . ".kmp";
-        $installLink = '/keyboard/install/' . urlencode(self::$id);
-        if(!empty(self::$tag)) $installLink .= "?tag=" . urlencode(self::$tag);
+        $installLink = '/keyboard/install/' . rawurlencode(self::$id);
+        if(!empty(self::$bcp47)) $installLink .= "?bcp47=" . rawurlencode(self::$bcp47);
         $h_filename = htmlspecialchars($filename);
         $platformTitle = self::platformTitles[$platform];
 
@@ -482,15 +482,15 @@ END;
                   (function() {
                     $n = 0;
                     $count = count(get_object_vars(self::$keyboard->languages)) - 3;
-                    foreach(self::$keyboard->languages as $tag => $detail) {
+                    foreach(self::$keyboard->languages as $bcp47 => $detail) {
                       if($n == 3) {
                         echo " <a id='expand-languages' href='#expand-languages'>Expand $count more &gt;&gt;</a>";
                         echo "<a id='collapse-languages' href='#collapse-languages'>&lt;&lt; Collapse</a> <span class='expand-languages'>";
                       }
                       echo
-                        "<a href='/keyboards?q=l:id:".htmlspecialchars(urlencode($tag)).
-                        "' title='".htmlspecialchars($tag).": ".htmlspecialchars($detail->displayName)."'>" .
-                        (!strcasecmp($tag, self::$tag) ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
+                        "<a href='/keyboards?q=l:id:".htmlspecialchars(rawurlencode($bcp47)).
+                        "' title='".htmlspecialchars($bcp47).": ".htmlspecialchars($detail->displayName)."'>" .
+                        (!strcasecmp($bcp47, self::$bcp47) ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
                         "</a> ";
                       $n++;
                     }

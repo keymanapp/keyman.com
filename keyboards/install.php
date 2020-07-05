@@ -18,7 +18,7 @@
   KeyboardInstallPage::render_keyboard_details(
     isset($_REQUEST['id']) ? $_REQUEST['id'] : null,
     isset($_REQUEST['tier']) ? $_REQUEST['tier'] : null,
-    isset($_REQUEST['tag']) ? $_REQUEST['tag'] : null
+    isset($_REQUEST['bcp47']) ? $_REQUEST['bcp47'] : null
   );
 
   class KeyboardInstallPage
@@ -30,7 +30,7 @@
     static private $tier;
 
     // Properties to provide to apps in embedded download mode
-    static private $tag;
+    static private $bcp47;
 
     // Properties for querying keyboard downloads
     static private $keyboard;  // from api.keyman.com/keyboard
@@ -44,11 +44,11 @@
      * @param $id - keyboard ID
      * @param string $tier - ['stable', 'alpha', or 'beta']
      * @param bool $landingPage - when true, details won't display keyboard search box or title
-     * @param string $tag - BCP 47 tag to pass as a hint to download links for apps to make connection
+     * @param string $bcp47 - BCP 47 tag to pass as a hint to download links for apps to make connection
      */
-    public static function render_keyboard_details($id, $tier, $tag) {
+    public static function render_keyboard_details($id, $tier, $bcp47) {
       self::$id = $id;
-      self::$tag = self::validate_tag($tag);
+      self::$bcp47 = self::validate_bcp47($bcp47);
       self::$tier = self::validate_tier($tier);
 
       self::LoadData();
@@ -75,17 +75,18 @@
     }
 
     /**
-     * validate_tag - checks provided $tier or $_REQUEST['tier'] and determines
+     * validate_bcp47 - checks provided $tier or $_REQUEST['tier'] and determines
      *                         if the tier is 'stable', 'alpha', or 'beta'.
      *                         Default to 'stable'
      * @param string $tier - ['stable', 'alpha', or 'beta']
      * @return string
      */
-    private static function validate_tag($tag) {
+    private static function validate_bcp47($bcp47) {
+      if($bcp47 === null) return null;
       // RegEx from https://stackoverflow.com/questions/7035825/regular-expression-for-a-language-tag-as-defined-by-bcp47, https://stackoverflow.com/a/34775980/1836776
       if(preg_match("/^(?<grandfathered>(?:en-GB-oed|i-(?:ami|bnn|default|enochian|hak|klingon|lux|mingo|navajo|pwn|t(?:a[oy]|su))|sgn-(?:BE-(?:FR|NL)|CH-DE))|(?:art-lojban|cel-gaulish|no-(?:bok|nyn)|zh-(?:guoyu|hakka|min(?:-nan)?|xiang)))|(?:(?<language>(?:[A-Za-z]{2,3}(?:-(?<extlang>[A-Za-z]{3}(?:-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(?:-(?<script>[A-Za-z]{4}))?(?:-(?<region>[A-Za-z]{2}|[0-9]{3}))?(?:-(?<variant>[A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(?:-(?<extension>[0-9A-WY-Za-wy-z](?:-[A-Za-z0-9]{2,8})+))*)(?:-(?<privateUse>x(?:-[A-Za-z0-9]{1,8})+))?$/Di",
-          $tag)) {
-        return $tag;
+          $bcp47)) {
+        return $bcp47;
       }
       return null;
     }
@@ -102,7 +103,7 @@
         $e_id = urlencode($id);
 
         $url = "/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
-        if(!empty(self::$tag)) $url .= "&tag=".self::$tag;
+        if(!empty(self::$bcp47)) $url .= "&bcp47=".rawurlencode(self::$bcp47);
         $url = htmlspecialchars($url);
         $downloadlink = "";
         return <<<END
@@ -123,14 +124,17 @@ END;
 
     protected static function WriteWindowsBoxes() {
       $keyboard = self::$keyboard;
-      $tag = rawurlencode(empty(self::$tag) ? '' : self::BOOTSTRAP_SEPARATOR.self::$tag);
+      $bcp47 = rawurlencode(empty(self::$bcp47) ? '' : self::BOOTSTRAP_SEPARATOR.self::$bcp47);
       $tier = self::$tier;
       $version = self::$versions->windows->$tier;
-      $downloadLink = KeymanHosts::Instance()->downloads_keyman_com . "/windows/{$tier}/{$version}/keyman-setup" . self::BOOTSTRAP_SEPARATOR . "{$keyboard->id}{$tag}.exe";
+      $downloadLink = KeymanHosts::Instance()->downloads_keyman_com . "/windows/{$tier}/{$version}/keyman-setup" . self::BOOTSTRAP_SEPARATOR . "{$keyboard->id}{$bcp47}.exe";
       $downloadLinkE = json_encode($downloadLink, JSON_UNESCAPED_SLASHES);
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/desktop/current-version/docs/start_download-install_keyman";
       $e_keyboard_id = rawurlencode($keyboard->id);
       $h_keyboard_name = htmlentities($keyboard->name);
+
+      $keyboardHomeUrl = "/keyboards/{$e_keyboard_id}";
+      if(!empty(self::$bcp47)) $keyboardHomeUrl .= "?bcp47=" . rawurlencode(self::$bcp47);
 
       $result = <<<END
 <div class='download download-windows'>
@@ -146,7 +150,7 @@ END;
 </script>
 <ul>
 <li><a href='$helpLink'>Help on installing Keyman</a></li>
-<li><a href='/keyboards/{$e_keyboard_id}'>{$h_keyboard_name} keyboard home</a></li>
+<li><a href='$keyboardHomeUrl'>{$h_keyboard_name} keyboard home</a></li>
 </ul>
 </div>
 
