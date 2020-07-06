@@ -24,7 +24,6 @@
     if($s === FALSE) {
       return null;
     }
-    var_dump($s);
     return json_decode($s);
   }
 
