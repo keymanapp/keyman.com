@@ -9,7 +9,7 @@
   use \Keyman\Site\com\keyman\KeymanHosts;
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
-  define('DOCUMENTATION_ROOT', 'https://help.keyman.com/keyboard/');
+  define('DOCUMENTATION_ROOT', KeymanHosts::Instance()->help_keyman_com . '/keyboard/');
 
   class KeyboardDetails
   {
@@ -113,14 +113,6 @@ END;
 </div>
 END;
       }
-    }
-
-    protected static function embed_path($kmp) {
-      global $embed;
-      if ($embed == 'none') {
-        return $kmp;
-      }
-      return 'keyman:download?filename=' . basename($kmp) . '&amp;url=' . $kmp;
     }
 
     protected static function WriteWebBoxes() {

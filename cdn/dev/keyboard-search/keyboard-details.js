@@ -1,3 +1,7 @@
+/**
+ * Add the current platform as a data-platform attribute on the html element
+ * so that we can use it for CSS selectors to display the appropriate content.
+ */
 (function() {
   const bowserParser = bowser.getParser(window.navigator.userAgent);
   const platform = bowserParser.getOSName({toLowerCase: true});
@@ -7,12 +11,14 @@
     'unknown');
 })();
 
+/**
+ * Adds unique identifiers for cross-domain links for download counters
+ */
 var binaryFileClientId = null;
 function downloadBinaryFile(a) {
   if(!a.href.match(/cid=/) && binaryFileClientId) {
     a.href = a.href + "&cid="+binaryFileClientId;
   }
-  //alert(a.href);
   return true;
 }
 

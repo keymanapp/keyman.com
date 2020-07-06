@@ -9,6 +9,10 @@
   }
 
   $id = clean_id($_REQUEST['id']);
+  if(empty($id)) {
+    header('Location: /keyboards');
+    exit;
+  }
 
   function clean_id($id) {
     return preg_replace('/[^A-Za-z0-9_ .-]/', '', $id);
@@ -20,6 +24,7 @@
     if($s === FALSE) {
       return null;
     }
+    var_dump($s);
     return json_decode($s);
   }
 
