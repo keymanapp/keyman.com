@@ -63,7 +63,7 @@
         // little presumptuous but we can live with it.
         $this->s_keyman_com = "https://s.keyman.com";
         $this->api_keyman_com = "https://staging-api-keyman-com.azurewebsites.net";
-        $this->help_keyman_com = "https://help.keyman.com";
+        $this->help_keyman_com = "https://staging-help-keyman-com.azurewebsites.net";
         $this->downloads_keyman_com = "https://downloads.keyman.com";
         $this->keyman_com = "https://staging-keyman-com.azurewebsites.net";
         $this->keymanweb_com = "https://keymanweb.com";
@@ -73,7 +73,7 @@
         $this->s_keyman_com = "{$site_protocol}s.keyman.com{$site_suffix}";
         $this->api_keyman_com = "{$site_protocol}api.keyman.com{$site_suffix}";
         $this->help_keyman_com = "{$site_protocol}help.keyman.com{$site_suffix}";
-        $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}";
+        $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com{$site_suffix}";
         $this->keyman_com = "{$site_protocol}keyman.com{$site_suffix}";
         $this->keymanweb_com = "{$site_protocol}keymanweb.com{$site_suffix}";
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available

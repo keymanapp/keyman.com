@@ -18,7 +18,7 @@
 
   $id = clean_id($_REQUEST['id']);
 
-  $tag = isset($_REQUEST['tag']) ? $_REQUEST['tag'] : null;
+  $bcp47 = isset($_REQUEST['bcp47']) ? $_REQUEST['bcp47'] : null;
 
   function clean_id($id) {
     return preg_replace('/[^A-Za-z0-9_ .-]/', '', $id);
@@ -37,6 +37,6 @@
     return $search->keyboards[0]->id;
   }
 
-  \UI\KeyboardDetails::render_keyboard_details($id, 'stable', false, $tag);
+  \UI\KeyboardDetails::render_keyboard_details($id, 'stable', false, $bcp47);
 
 ?>
