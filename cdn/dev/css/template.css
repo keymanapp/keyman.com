@@ -676,7 +676,8 @@ input[type="search"] {
 	top:-6px;left:3px
 }
 
-#phone-menu{
+#phone-menu,
+.menu-visible#phone-menu {
 	display: none;
 }
 
@@ -2109,7 +2110,10 @@ button.feedback{
 	}
 	#show-phone-menu{
 		display: block;
-	}
+  }
+  .menu-visible#phone-menu {
+    display: block;
+  }
 	#phone-menu{
 		width: 40%;
 	}
@@ -2220,6 +2224,9 @@ button.feedback{
 	#show-phone-menu{
 		display: block;
 	}
+  .menu-visible#phone-menu {
+    display: block;
+  }
 	#show-phone-menu-spacer{
 		display: block;
 		width: 40px;
@@ -2384,6 +2391,9 @@ button.feedback{
 	#show-phone-menu{
 		display: block;
 	}
+  .menu-visible#phone-menu {
+    display: block;
+  }
 	#show-phone-menu-spacer{
 		display: block;
 		width: 40px;
