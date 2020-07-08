@@ -78,7 +78,7 @@ function loaded(){
   }
 
   $('#show-phone-menu').click(function(event) {
-    $("#phone-menu").toggle();
+    $("#phone-menu").toggleClass('menu-visible');
   });
 
   // Downloads
