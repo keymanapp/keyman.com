@@ -10,21 +10,3 @@
     platform.match(/^(android|ios|linux|macos|windows)$/) ? platform :
     'unknown');
 })();
-
-/**
- * Adds unique identifiers for cross-domain links for download counters
- */
-var binaryFileClientId = null;
-function downloadBinaryFile(a) {
-  if(!a.href.match(/cid=/) && binaryFileClientId) {
-    a.href = a.href + "&cid="+binaryFileClientId;
-  }
-  return true;
-}
-
-try {
-  if(ga) ga(function(tracker) {
-    binaryFileClientId = tracker.get("clientId");
-  });
-} catch(error) {
-}
