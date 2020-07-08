@@ -93,7 +93,9 @@
     }
 
     protected static function download_box($platform) {
-      if(isset(self::$keyboard->platformSupport->$platform) && self::$keyboard->platformSupport->$platform != 'none') {
+      if(!empty(self::$deprecatedBy)) {
+        return "";
+      } else if(isset(self::$keyboard->platformSupport->$platform) && self::$keyboard->platformSupport->$platform != 'none') {
         $filename = self::$id . ".kmp";
         $installLink = '/keyboard/install/' . rawurlencode(self::$id);
         if(!empty(self::$bcp47)) $installLink .= "?bcp47=" . rawurlencode(self::$bcp47);
@@ -118,8 +120,8 @@ END;
     protected static function WriteWebBoxes() {
       global $embed_target;
       global $KeymanHosts;
-      if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none') {
-        if(empty(self::$bcp47)) {
+      if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none' && empty(self::$deprecatedBy)) {
+          if(empty(self::$bcp47)) {
           if (isset(self::$keyboard->languages)) {
             if (is_array(self::$keyboard->languages)) {
               if (count(self::$keyboard->languages) > 0) {
