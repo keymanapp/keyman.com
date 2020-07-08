@@ -61,9 +61,14 @@
         exit;
       }
 
-      header("HTTP/1.1 302 Found");
-      header("Cache-Control: no-store");
-      header("Location: $url");
+      if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
+        // We don't do a redirect for Test tier because a test instance of the
+        // downloads server is not available and so it gives us an error
+        header("HTTP/1.1 302 Found");
+        header("Cache-Control: no-store");
+        header("Location: $url");
+      }
+
       echo "<a href='$url_e'>Download Link</a>";
     }
 
