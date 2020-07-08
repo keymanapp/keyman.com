@@ -20,7 +20,7 @@
   <tbody>
     <tr>
       <td>
-        <a href="$url" target="itunes_store"><img id="app-store" src="{$img}" alt="Android app on Google Play"></a>
+        <a href="$url" target="play_store"><img id="app-store" src="{$img}" alt="Android app on Google Play"></a>
         <a href="$url">Get Keyman for Android</a>
       </td>
     </tr>
