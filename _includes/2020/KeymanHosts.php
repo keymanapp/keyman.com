@@ -63,7 +63,7 @@
         // little presumptuous but we can live with it.
         $this->s_keyman_com = "https://s.keyman.com";
         $this->api_keyman_com = "https://staging-api-keyman-com.azurewebsites.net";
-        $this->help_keyman_com = "https://help.keyman.com";
+        $this->help_keyman_com = "https://staging-help-keyman-com.azurewebsites.net";
         $this->downloads_keyman_com = "https://downloads.keyman.com";
         $this->keyman_com = "https://staging-keyman-com.azurewebsites.net";
         $this->keymanweb_com = "https://keymanweb.com";

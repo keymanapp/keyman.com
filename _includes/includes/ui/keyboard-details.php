@@ -35,7 +35,6 @@
 
     // Properties for querying keyboard downloads
     static private $keyboard;
-    static private $downloads;
     static private $title;
     static private $error;
 
@@ -47,6 +46,7 @@
     static private $keyboardEncoding;
     static private $minVersion;
     static private $keyboardPlatforms;
+    static private $kmpDownloadUrl;
 
     static private $deprecatedBy;
 
@@ -118,8 +118,8 @@ END;
     protected static function WriteWebBoxes() {
       global $embed_target;
       global $KeymanHosts;
-      if (isset(self::$downloads->js)) {
-        if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none') {
+      if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none') {
+        if(empty(self::$bcp47)) {
           if (isset(self::$keyboard->languages)) {
             if (is_array(self::$keyboard->languages)) {
               if (count(self::$keyboard->languages) > 0) {
@@ -132,16 +132,18 @@ END;
               }
             }
           }
-          if (!isset($lang)) $lang = 'en';
-          $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
-          $description = htmlentities(self::$keyboard->name);
+        } else {
+          $lang = self::$bcp47;
+        }
+        if (!isset($lang)) $lang = 'en';
+        $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
+        $description = htmlentities(self::$keyboard->name);
           return <<<END
           <div class="download download-web">
           <a class="download-link" $embed_target href='$url'>Use keyboard online</a>
           <div class="download-description">Use $description in your web browser. No need to install anything.</div>
         </div>
 END;
-        }
       }
       return FALSE;
     }
@@ -171,18 +173,6 @@ END;
           self::$title = 'Failed to load keyboard ' . self::$id;
           header('HTTP/1.0 500 Internal Server Error');
         }
-      }
-
-      $s = @file_get_contents($KeymanHosts->downloads_keyman_com . '/api/keyboard/1.0/' . rawurlencode(self::$id) . '?tier=' . self::$tier);
-      if ($s === FALSE) {
-        // Will fail later in the script
-        self::$error .= error_get_last()['message'] . "\n";
-        if (empty(self::$title)) {
-          self::$title = 'Failed to get downloads for keyboard ' . self::$id;
-          header('HTTP/1.0 404 Keyboard downloads not found');
-        }
-      } else {
-        self::$downloads = json_decode($s);
       }
 
       if(!empty(self::$keyboard)) {
@@ -215,6 +205,12 @@ END;
             }
           }
         }
+
+        self::$kmpDownloadUrl = "/go/package/download/" .
+          rawurlencode(self::$id) .
+          "?version=" . rawurlencode(self::$keyboard->version) .
+          (empty(self::$tier) ? "" : "&tier=" . rawurlencode(self::$tier)) .
+          (empty(self::$bcp47) ? "" : "&bcp47=" . rawurlencode(self::$bcp47));
       }
     }
 
@@ -262,7 +258,7 @@ END;
       <?php
       }
 
-      if (!isset(self::$keyboard) || !isset(self::$downloads)) {
+      if (!isset(self::$keyboard)) {
         // If parameters are missing ...
         ?>
           <h1 class='red underline'><?= self::$id ?></h1>
@@ -438,7 +434,7 @@ END;
             <tbody>
             <tr>
               <th>Package Download</th>
-              <td><a href="<?= self::$downloads->kmp ?>" onclick='return downloadBinaryFile(this);'><?= self::$keyboard->id ?>.kmp</a></td>
+              <td><a href="<?= self::$kmpDownloadUrl ?>"><?= self::$keyboard->id ?>.kmp</a></td>
             </tr>
             <tr>
               <th>Encoding</th>
