@@ -97,7 +97,7 @@
         return "";
       } else if(isset(self::$keyboard->platformSupport->$platform) && self::$keyboard->platformSupport->$platform != 'none') {
         $filename = self::$id . ".kmp";
-        $installLink = '/keyboard/install/' . rawurlencode(self::$id);
+        $installLink = '/keyboards/install/' . rawurlencode(self::$id);
         if(!empty(self::$bcp47)) $installLink .= "?bcp47=" . rawurlencode(self::$bcp47);
         $h_filename = htmlspecialchars($filename);
         $platformTitle = self::platformTitles[$platform];
