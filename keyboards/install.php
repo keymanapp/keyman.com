@@ -146,14 +146,42 @@ END;
     }
 
     protected static function WriteAndroidBoxes() {
-      return self::download_box(
-        'Keyman for Android',
-        PlayStore::url,
-        htmlentities(self::$keyboard->name) . ' for Android',
-        'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.PlayStore::url.'">Keyman for Android</a> must be installed first.',
-        'download-android',
-        'Install on Android',
-        'android');
+      $keyboard = self::$keyboard;
+      $e_keyboard_id = rawurlencode($keyboard->id);
+      $h_keyboard_name = htmlentities($keyboard->name);
+
+      $keyboardHomeUrl = "/keyboards/{$e_keyboard_id}";
+
+      // Note, we don't need to capture an event for the keyboard download here, because we'll capture it when the bootstrap downloads the file.
+      $downloadLink = KeymanHosts::Instance()->downloads_keyman_com . "/keyboards/{$keyboard->id}/{$keyboard->version}/{$keyboard->id}.kmp";
+      if (!empty(self::$bcp47)) {
+        $bcp47_query = "?bcp47=" . rawurlencode(self::$bcp47);
+        $downloadLink .= $bcp47_query;
+        $keyboardHomeUrl .= $bcp47_query;
+      }
+      $downloadLinkE = json_encode($downloadLink, JSON_UNESCAPED_SLASHES);
+      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/android/current-version/installing-keyboards";
+
+      $result = <<<END
+<div class='download download-android'>
+<p>Your $h_keyboard_name keyboard download should start shortly. If it does not, <a href='$downloadLink'>click here</a> to start the download.</p>
+<script>
+  window.setTimeout(function() {
+    if(document.documentElement.getAttribute('data-platform') == 'android') {
+      // TODO: show arrow in window where download is likely to be accessible from; this is browser+browser version dependent :(
+      // TODO: don't forget to look for a library that implements this which may save pain
+      location.href = $downloadLinkE;
+    }
+  }, 1000);
+</script>
+<ul>
+<li><a href='$helpLink'>Help on installing Keyman</a></li>
+<li><a href='$keyboardHomeUrl'>{$h_keyboard_name} keyboard home</a></li>
+</ul>
+</div>
+
+END;
+      return $result;
     }
 
     protected static function WriteiPhoneBoxes() {
