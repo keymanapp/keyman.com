@@ -67,3 +67,43 @@ function startAfterPageLoad_Windows(data) {
     }
   }, 10);
 }
+
+/**
+ * Redirects to keyman:// to trigger Keyman Configuration, and if that fails,
+ * to the standard download url for the package to install. This currently only
+ * applies to Linux users.
+ * @param {object} data from the object with properties for host, tier, version, id, bcp47, name
+ */
+function startAfterPageLoad_Linux(data) {
+  window.setTimeout(function() {
+    const platform = document.documentElement.getAttribute('data-platform'), browser = document.documentElement.getAttribute('data-browser');
+    if(platform == 'linux') {
+      const downloadKeymanUrl = '/linux/download';
+      const installKeyboardUrl =
+        "/keyboards/install/" + encodeURIComponent(data.id) +
+        (data.bcp47 == "" ? "" : "?bcp47=" + encodeURIComponent(data.bcp47));
+
+      const keymanUrl = buildStandardKeymanProtocolDownloadLink(
+        data.id, data.bcp47
+      );
+
+      location.href = keymanUrl;
+
+      const fallbackHandle = window.setTimeout(function() {
+        document.getElementById("content").innerHTML =
+          "<p>Keyman for Linux is not installed yet. Please install it first before installing the keyboard.</p> \
+          <ol> \
+            <li id='step1'><a href='" + downloadKeymanUrl + "' title='Download and install Keyman'>Install Keyman for Linux</a></li> \
+            <li id='step2'><a class='download-link binary-download' href='" + installKeyboardUrl + "'>\
+              <span>Install keyboard</span></a>\
+              <div class='download-description'>Downloads " + data.name + " for Linux.</div> \
+            </li> \
+          </ol>";
+      }, 1000);
+
+      window.addEventListener('blur', function() {
+        window.clearTimeout(fallbackHandle);
+       });
+    }
+  }, 10);
+}

@@ -148,14 +148,50 @@ END;
     }
 
     protected static function WriteLinuxBoxes() {
-      return self::download_box(
-        'Keyman for Linux',
-        '', // TODO: fill in instructions for install
-        htmlentities(self::$keyboard->name) . ' for Linux',
-        'Installs only ' . htmlentities(self::$keyboard->name) . '. Keyman for Linux must be installed first.',
-        'download-kmp-linux',
-        'Install keyboard',
-        'linux');
+      $keyboard = self::$keyboard;
+      $tier = self::$tier;
+      $version = self::$versions->linux->$tier;
+
+      $e = [
+        'name' => $keyboard->name,
+        'host' => KeymanHosts::Instance()->downloads_keyman_com,
+        'tier' => $tier,
+        'version' => $version,
+        'id' => $keyboard->id,
+        'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
+      ];
+
+      $u = array_map('rawurlencode', $e);
+      $hu = array_map('htmlentities', $u);
+      $h = array_map('htmlentities', $e);
+
+      // Note, we don't need to capture an event for the keyboard download here, because we'll
+      // capture it when the bootstrap downloads the file.
+
+      $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}?" .
+        "platform=linux&version={$hu['version']}&tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+
+      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/linux/current-version/guide/installing-keyboard";
+
+      $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
+        (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
+
+      $result = <<<END
+        <div id='content' class='download download-linux'>
+          <p>Your {$h['name']} keyboard download should start shortly. If it does not,
+            <a href='$downloadLink'>click here</a> to start the download.</p>
+          <script data-host="{$h['host']}" data-tier="{$h['tier']}" data-version="{$h['version']}"
+              data-id="{$h['id']}" data-bcp47="{$h['bcp47']}" data-name="{$h['name']}">
+            startAfterPageLoad_Linux(document.currentScript.dataset);
+          </script>
+          <ul>
+            <li><a href='$helpLink'>Help on installing Keyman</a></li>
+            <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+          </ul>
+        </div>
+END;
+      return $result;
     }
 
     protected static function WriteAndroidBoxes() {
