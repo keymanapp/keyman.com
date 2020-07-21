@@ -9,7 +9,7 @@
   use \Keyman\Site\com\keyman\KeymanHosts;
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
-  define('DOCUMENTATION_ROOT', 'https://help.keyman.com/keyboard/');
+  define('DOCUMENTATION_ROOT', KeymanHosts::Instance()->help_keyman_com . '/keyboard/');
 
   class KeyboardDetails
   {
@@ -109,7 +109,7 @@
 
       if($embed != 'none') {
         // note: if embed != none, mode should was be standalone
-        $url = "keyman:download?filename=$e_filename&url=".urlencode("https://keyman.com/_legacy/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
+        $url = "keyman:download?filename=$e_filename&url=".urlencode(KeymanHosts::Instance()->keyman_com . "/_legacy/keyboard/download?id=$e_id&platform=$platform&mode=$mode");
       } else {
         $url = "/_legacy/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
       }
@@ -404,7 +404,7 @@ END;
         ?>
 
         <div id='navigation'>
-          <a class='nav-right' target='_blank' href='/_legacy/keyboards'>Go to keyman.com</a>
+          <a class='nav-right' target='_blank' href='/_legacy/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com ?></a>
           <a href='/_legacy/keyboards<?= $session_query_q ?>'>Home</a>
         </div>
 
@@ -601,8 +601,8 @@ END;
 
       <p id='permalink'>
         Permanent link to this keyboard:
-        <a <?= $embed_target ?> href='https://keyman.com/_legacy/keyboards/<?= self::$keyboard->id ?>'>
-          https://keyman.com/keyboards/<?= self::$keyboard->id ?>
+        <a <?= $embed_target ?> href='<?= KeymanHosts::Instance()->keyman_com ?>/_legacy/keyboards/<?= self::$keyboard->id ?>'>
+          <?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= self::$keyboard->id ?>
         </a>
       </p>
       <?php

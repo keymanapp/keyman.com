@@ -14,7 +14,9 @@
     const TIER_PRODUCTION = "TIER_PRODUCTION";
     const TIER_TEST = "TIER_TEST";
 
-    public $s_keyman_com, $api_keyman_com, $help_keyman_com, $downloads_keyman_com, $keyman_com, $keymanweb_com, $r_keymanweb_com;
+    public $s_keyman_com, $api_keyman_com, $help_keyman_com, $downloads_keyman_com, $keyman_com, $keymanweb_com, $r_keymanweb_com, $blog_keyman_com;
+    public $s_keyman_com_host, $api_keyman_com_host, $help_keyman_com_host, $downloads_keyman_com_host, $keyman_com_host,
+      $keymanweb_com_host, $r_keymanweb_com_host, $blog_keyman_com_host;
 
     private $tier;
 
@@ -58,14 +60,16 @@
         break;
       }
 
+      $this->blog_keyman_com = "https://blog.keyman.com";
+
       if(in_array($this->tier, [KeymanHosts::TIER_STAGING, KeymanHosts::TIER_TEST])) {
         // As we build more staging areas, change these over as well. Assumption that we'll stage across multiple sites is a
         // little presumptuous but we can live with it.
         $this->s_keyman_com = "https://s.keyman.com";
-        $this->api_keyman_com = "https://staging-api-keyman-com.azurewebsites.net";
-        $this->help_keyman_com = "https://staging-help-keyman-com.azurewebsites.net";
+        $this->api_keyman_com = "https://api.keyman-staging.com";
+        $this->help_keyman_com = "https://help.keyman-staging.com";
         $this->downloads_keyman_com = "https://downloads.keyman.com";
-        $this->keyman_com = "https://staging-keyman-com.azurewebsites.net";
+        $this->keyman_com = "https://keyman-staging.com";
         $this->keymanweb_com = "https://keymanweb.com";
         $this->r_keymanweb_com = "https://r.keymanweb.com";
       } else {
@@ -78,5 +82,14 @@
         $this->keymanweb_com = "{$site_protocol}keymanweb.com{$site_suffix}";
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available
       }
+
+      $this->blog_keyman_com_host = preg_replace('^http(s)?://(.+)$', '$2', $this->blog_keyman_com);
+      $this->s_keyman_com_host  = preg_replace('^http(s)?://(.+)$', '$2', $this->s_keyman_com);
+      $this->api_keyman_com_host = preg_replace('^http(s)?://(.+)$', '$2', $this->api_keyman_com);
+      $this->help_keyman_com_host = preg_replace('^http(s)?://(.+)$', '$2', $this->help_keyman_com);
+      $this->downloads_keyman_com_host = preg_replace('^http(s)?://(.+)$', '$2', $this->downloads_keyman_com);
+      $this->keyman_com_host = preg_replace('^http(s)?://(.+)$', '$2', $this->keyman_com);
+      $this->keymanweb_com_host = preg_replace('^http(s)?://(.+)$', '$2', $this->keymanweb_com);
+      $this->r_keymanweb_com_host = preg_replace('^http(s)?://(.+)$', '$2', $this->r_keymanweb_com);
     }
   }

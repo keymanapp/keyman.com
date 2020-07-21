@@ -1,7 +1,9 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'title' =>'Download Keyman Developer ' . $stable_version,
@@ -28,7 +30,7 @@
 
 <h2 class='red underline'>kmcomp Keyboard Compiler</h2>
 
-<p>The kmcomp compiler is a command line tool that can be run on Windows, or using WINE on Linux and macOS. <a href='https://help.keyman.com/developer/<?= $stable_version ?>/context/kmcomp'>kmcomp reference</a>. This download is
+<p>The kmcomp compiler is a command line tool that can be run on Windows, or using WINE on Linux and macOS. <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?= $stable_version ?>/context/kmcomp'>kmcomp reference</a>. This download is
 provided separately primarily for users on non-Windows platforms.</p>
 
 <?php

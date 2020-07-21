@@ -2,6 +2,9 @@
   require_once('includes/template.php');
   require_once('./session.php');
 
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   $head_options = [
     'title' =>'Keyboard Search'
   ];
@@ -22,7 +25,7 @@
 </script>
 
 <div id='navigation'>
-  <a class='nav-right' target='_blank' href='/keyboards'>Go to keyman.com&nbsp;</a>
+  <a class='nav-right' target='_blank' href='/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com ?>&nbsp;</a>
   <a href='/keyboards<?=$session_query_q?>'>Home</a>
 </div>
 

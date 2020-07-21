@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
   require_once('./session.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   $head_options = [
     'title' =>'Keyboard Search',
@@ -39,7 +41,7 @@
 <?php
     if($embed != 'macos') { // TODO: check for Linux
 ?>
-  <a class='nav-right' target='_blank' href='/keyboards'>Go to keyman.com&nbsp;</a>
+  <a class='nav-right' target='_blank' href='/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com_host ?>&nbsp;</a>
 <?php
     }
     else {
@@ -47,7 +49,7 @@
   <!–– The WebView class does not handle target='_blank' well.
   Keyman for macOS will be able to interpret the target session query variable
   and know to pop this page (without that variable) open in the default browser. ––>
-  <a class='nav-right' href='keyman:link?url=https://keyman.com/keyboards'>Go to keyman.com</a>
+  <a class='nav-right' href='keyman:link?url=<?= KeymanHosts::Instance()->keyman_com ?>/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com_host ?></a>
 <?php
     }
 ?>

@@ -1,12 +1,14 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'title' =>'Keyman for Tamil (ISIS)',
     'css' => ['template.css','index.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
 <h2 class="red underline large">Keyman for Tamil (ISIS)</h2>
 <p>
@@ -16,7 +18,7 @@
     This keyboard is phonetic (Romanised). It comes in the ISIS keyboards package, great for working in multiple Indian scripts.
 </p>
 <p lang="ta" class="lang-example desktop">
-    கணினி விண்டோ திரையில் வுள்ள ஈமெயில், வோர்ட், அச்செச்ஸ், எக்ஸ்செல், அவுட்லுக், இன்டர்நெட் எக்ஸ்ப்லோறேர், போஎர் பாக்ஸ் , மற்றும் இவை போன்றவைகளில் தமிழில் டைப் செய்யவும். இந்த கணினி தட்டச்சில் உள்ள வரிசைகள் தமிழில் டைப் செய்ய உதவும் அனால் ஏற்கனவே உள்ள கணினி தட்டச்சில் எந்த வித மாற்றமும் வராது. இவை முழுமையான <a href="http://www.unicode.org/standard/translations/tamil.html" target="_blank">யூனிக்கோடு</a> (Unicode) விதி முறைக்கு கட்டுப்பட்டது 
+    கணினி விண்டோ திரையில் வுள்ள ஈமெயில், வோர்ட், அச்செச்ஸ், எக்ஸ்செல், அவுட்லுக், இன்டர்நெட் எக்ஸ்ப்லோறேர், போஎர் பாக்ஸ் , மற்றும் இவை போன்றவைகளில் தமிழில் டைப் செய்யவும். இந்த கணினி தட்டச்சில் உள்ள வரிசைகள் தமிழில் டைப் செய்ய உதவும் அனால் ஏற்கனவே உள்ள கணினி தட்டச்சில் எந்த வித மாற்றமும் வராது. இவை முழுமையான <a href="http://www.unicode.org/standard/translations/tamil.html" target="_blank">யூனிக்கோடு</a> (Unicode) விதி முறைக்கு கட்டுப்பட்டது
 </p>
 <img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/thanjavur_temple.jpg'); ?>" title="Thanjavur Temple — Image courtesy of Venu62" />
 
@@ -39,14 +41,14 @@
   <div class="download-cta-big mac" id="cta-big-mac">
     <h3>Tamil (ISIS) Keyman for macOS</h3>
     <p>
-      Type in Tamil in all your favourite software applications for macOS. Download <a href="/mac/">Keyman 
+      Type in Tamil in all your favourite software applications for macOS. Download <a href="/mac/">Keyman
       for macOS</a> first
     </p>
     <div class="download-cta-button">
       <h4>Download Now</h4>
     </div>
     <a class="download-cta-more" href="/mac/">Learn more about Keyman for macOS</a>
-  </div> 
+  </div>
   <div class="download-cta-big iPhone" id="cta-big-iPhone">
     <h3>Tamil Keyman for iPhone</h3>
     <div class="download-cta-button">
@@ -74,7 +76,7 @@
       Type in Tamil on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
     </p>
   </div>
-  
+
   <div class="download-cta-big" id="cta-big-Web">
     <h3>Type Tamil (ISIS) in your Browser</h3>
     <p>
@@ -84,9 +86,9 @@
       <h4>Start Typing!</h4>
     </div>
   </div>
-  
+
   <h3 id="cta-other-downloads">Download a Tamil keyboard on these devices:</h3>
-  
+
   <div class="download-cta-small iPhone" id="cta-iPhone">
     <a href="/iphone/">
       <img src="<?php echo cdn('img/cta-icons/icon-iphone.png'); ?>" />
@@ -132,7 +134,7 @@
   <p>For technical support, please <a href='https://community.software.sil.org/c/keyman'>visit our forums</a> online.</p>
 
   <p>
-    Get help on this keyboard with the <a href='https://help.keyman.com/keyboard/isis_tamil'>Tamil (ISIS) Keyboard Documentation</a>.
+    Get help on this keyboard with the <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/isis_tamil'>Tamil (ISIS) Keyboard Documentation</a>.
   </p>
 </div>
 <br/>

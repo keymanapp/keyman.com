@@ -1,12 +1,14 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'title' =>'SIL acquires rights to Keyman software | Keyman',
     'css' => ['template.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
 <h2 class="red underline">SIL acquires rights to Keyman software</h2>
 
@@ -14,8 +16,8 @@
     That store is now closed and this page has been updated to reflect this.</p>
 <br/>
 
-<p>(October 2015) <a href='http://www.sil.org'>SIL International</a>, a global language development NGO and Tavultesoft, a leading supplier of keyboarding software are pleased to announce that as of 
-30th September 2015, SIL International has purchased all rights to Tavultesoft’s Keyman® keyboarding software. SIL International has purchased Keyman Desktop, Keyman Developer, Keyman for Mac, 
+<p>(October 2015) <a href='http://www.sil.org'>SIL International</a>, a global language development NGO and Tavultesoft, a leading supplier of keyboarding software are pleased to announce that as of
+30th September 2015, SIL International has purchased all rights to Tavultesoft’s Keyman® keyboarding software. SIL International has purchased Keyman Desktop, Keyman Developer, Keyman for Mac,
 Keyman for Android, Keyman for iPhone and iPad and KeymanWeb.</p>
 
 <blockquote class='sidebar'>
@@ -52,7 +54,7 @@ Keyman for Android, Keyman for iPhone and iPad and KeymanWeb.</p>
 <dd>Keyman is now <a href="/free">free</a>!</dd>
 
 <dt>I have a created a keyboard with Keyman Developer. Should I still share it with Tavultesoft?</dt>
-<dd>Yes, we welcome all keyboard layouts developed by the Keyman community. Tavultesoft’s existing open source keyboard repository will now be stewarded by SIL International. To learn how to submit your keyboard layout, visit <a href='http://help.keyman.com/developer/keyboards'>http://help.keyman.com/developer/keyboards</a>.</dd>
+<dd>Yes, we welcome all keyboard layouts developed by the Keyman community. Tavultesoft’s existing open source keyboard repository will now be stewarded by SIL International. To learn how to submit your keyboard layout, visit <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/keyboards'><?= KeymanHosts::Instance()->help_keyman_com_host ?>/developer/keyboards</a>.</dd>
 
 <dt>I have other questions. Who should I ask?</dt>
 <dd>Please direct any other questions regarding the acquisition to the <a href='https://community.software.sil.org/c/keyman'>SIL Keyman Community</a>.</dd>

@@ -1,8 +1,12 @@
 <?php
+
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
   require_once('includes/appstore.php');
   require_once('includes/playstore.php');
+
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   // Required
   head([
@@ -26,7 +30,7 @@
 
 <ul>
   <li>Keyman is open source and free, owned and distributed by SIL International.</li>
-  <li><a href="https://help.keyman.com/developer/10.0/guides/distribute/packages">Distribution</a> of keyboards now uses
+  <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/10.0/guides/distribute/packages">Distribution</a> of keyboards now uses
       the same .kmp format on Windows, macOS, iOS and Android.</li>
   <li>Includes support for Unicode 11.0</li>
   <li>All platforms include support for BCP 47 language identifiers</li>
@@ -50,7 +54,7 @@
 
 <h3>What's New in Keyman Desktop 10 for Windows?</h3>
 
-<p>Compatible with Windows 7 and later, <a href="https://help.keyman.com/products/desktop/10.0/">Keyman Desktop 10</a>
+<p>Compatible with Windows 7 and later, <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/10.0/">Keyman Desktop 10</a>
     supports Unicode 11.0 and BCP 47 language identifiers. Desktop 10 also includes additional user interface for Turkish.</p>
 
 <?php
@@ -59,7 +63,7 @@
 
 <h3>What's New in Keyman 10 for macOS?</h3>
 
-<p>Compatible with macOS 10.7 and later, <a href="https://help.keyman.com/products/mac/10.0/docs/">Keyman 10 for macOS</a>
+<p>Compatible with macOS 10.7 and later, <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/mac/10.0/docs/">Keyman 10 for macOS</a>
   adds support for Keyman version 10.0 keyboards. You can include L/R Alt and Ctrl modifiers for your keyboards,
   and easily install keyboard packages by double-clicking the kmp file.</p>
 
@@ -71,9 +75,9 @@
 
 <h3>What's new in Keyman for Android 10?</h3>
 
-<p><a href="https://help.keyman.com/developer/10.0/guides/distribute/install-kmp-android">Install custom keyboards</a>
+<p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/10.0/guides/distribute/install-kmp-android">Install custom keyboards</a>
   by clicking a link to your Keyman package (.kmp) file. Longpress behaviors on
-  <a href="https://help.keyman.com/products/android/10.0/">Keyman for Android 10</a> also improved.</p>
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/android/10.0/">Keyman for Android 10</a> also improved.</p>
 
 <h2 class="red underline">Keyman for iPhone and iPad 10</h2>
 <h3>Stable</h3>
@@ -82,9 +86,9 @@
 
 <h3>What's new in Keyman for iPhone and iPad 10?</h3>
 
-<p><a href="https://help.keyman.com/developer/10.0/guides/distribute/install-kmp-ios">Install custom keyboards</a>
+<p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/10.0/guides/distribute/install-kmp-ios">Install custom keyboards</a>
   by clicking a link to your Keyman package (.kmp) file.
-  <a href="https://help.keyman.com/products/iphone-and-ipad/10.0/">Keyman for iPhone and iPad 10</a> is now built as a
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/iphone-and-ipad/10.0/">Keyman for iPhone and iPad 10</a> is now built as a
   Swift 4.0 app.</p>
 
 <?php
@@ -93,16 +97,16 @@
 
 <h3>What's New in KeymanWeb 10?</h3>
 
-<p><a href="https://help.keyman.com/products/web/10.0/">KeymanWeb 10</a> adds several fixes for using physical keyboards
+<p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/web/10.0/">KeymanWeb 10</a> adds several fixes for using physical keyboards
   on touch-enabled inputs. Deadkey and longpress behaviors also improved, along with support for L/R Alt and Ctrl
   modifiers on keyboards.</p>
-  
+
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
   downloadSection('Keyman Developer 10',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
-<p><a href="https://help.keyman.com/developer/10.0/">Keyman Developer 10</a> allows you to create
+<p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/10.0/">Keyman Developer 10</a> allows you to create
   keyboard layouts for any popular platform for any language around the world. Create keyboards for any script in
   Unicode 11.0 and associate them with BCP 47 language identifiers.</p>

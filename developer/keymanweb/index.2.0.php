@@ -1,12 +1,14 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'title' =>'KeymanWeb | Source Code and Development',
     'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
     'showMenu' => true
-  ]);           
+  ]);
 
   // Hard coded now, because we cannot easily query for legacy 2.0 versions
   $build = "2.0.473";
@@ -19,7 +21,7 @@
 <p class='note red'>Note: Please see <a href='index.php'>KeymanWeb <?= $stable_version ?></a> documentation for information on the latest version.</p>
 
 <p>
-  KeymanWeb 2.0 is an Open Source input method system for the web, supporting both desktops and touch devices. Keyboard layouts for 
+  KeymanWeb 2.0 is an Open Source input method system for the web, supporting both desktops and touch devices. Keyboard layouts for
   use with KeymanWeb can be created with the free download <a href='http://www.tavultesoft.com/keymandev/download90.php'>Keyman Developer</a> (Windows).
 </p>
 
@@ -48,7 +50,7 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
   })(tavultesoft.keymanweb);
 &lt;/script&gt;
 END;
-    $url = "$proto://s.keyman.com/kmw/engine/$build";
+    $url = KeymanHosts::Instance()->s_keyman_com . "/kmw/engine/$build";
 
     if($type === 'src') {
       $s = <<<END
@@ -71,7 +73,7 @@ END;
 END;
     }
     $visible = !$visible ? " style='display:none'":"";
-    
+
     return "<pre id='kmw-$proto-$type' class='language-markup code'$visible'><code>$s\n$keyboardLoad</code></pre>";
   }
 
@@ -93,12 +95,12 @@ END;
 
 <p><a href='sample1.php' target='_blank'>Try it!</a></p>
 
-<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the 
+<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the
 Toggle User Interface for desktop browsers.  Mobile browsers all integrate the language selection into
 the on screen keyboard.</p>
 
 <ul>
-  <li>Learn more about using KeymanWeb in the <a href='https://help.keyman.com/developer/engine/web/'>KeymanWeb documentation</a></li>
+  <li>Learn more about using KeymanWeb in the <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/'>KeymanWeb documentation</a></li>
 </ul>
 
 <h2 class='red underline'>Add custom keyboard to a Website</h2>
@@ -122,7 +124,7 @@ the on screen keyboard.</p>
 </code></pre>
 
 <ul>
-  <li><a href='https://help.keyman.com/developer/engine/web/2.0/reference/core/addKeyboards'>addKeyboards reference documentation</a></li>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/2.0/reference/core/addKeyboards'>addKeyboards reference documentation</a></li>
 </ul>
 
 <h2 class='red underline'>Use the Keyman Cloud CDN</h2>
@@ -130,27 +132,27 @@ the on screen keyboard.</p>
 <p>The Keyman Cloud CDN is appropriate for smaller sites. HTTP and HTTPS endpoints are available. HTTPS is recommended.</p>
 
 <table class='basic-table'><tbody>
-<tr><td>HTTP endpoint:</td><td><input type='text' readonly size='60' value='http://s.keyman.com/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
-<tr><td>HTTPS endpoint:</td><td><input type='text' readonly size='60' value='https://s.keyman.com/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
+<tr><td>HTTP endpoint:</td><td><input type='text' readonly size='60' value='<?= KeymanHosts::Instance()->s_keyman_com ?>/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
+<tr><td>HTTPS endpoint:</td><td><input type='text' readonly size='60' value='<?= KeymanHosts::Instance()->s_keyman_com ?>/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
 </tbody></table>
 
 <br>
 
 <ul>
   <li><a href='keyboards.php'>Keyman Cloud CDN Keyboard Catalogue</a></li>
-  <li><a href='https://help.keyman.com/developer/engine/web/get-version.php'>How to: retrieve the latest version of KeymanWeb from Keyman Cloud CDN</a></li>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/get-version.php'>How to: retrieve the latest version of KeymanWeb from Keyman Cloud CDN</a></li>
 </ul>
 
 <br>
 
-<h2 class="red underline">Get the code + Contribute</h2>    
+<h2 class="red underline">Get the code + Contribute</h2>
 <p>
   There are additional samples in the code repository. We prefer git pull requests for code submissions.
 </p>
 
 <ul>
   <li><a href='https://github.com/keymanapp/keyman/tree/master/web'>KeymanWeb on GitHub</a></li>
-  <li><a href='https://downloads.keyman.com/web/'>Download KeymanWeb releases</a> (alpha, beta and stable)</li>
+  <li><a href='<?= KeymanHosts::Instance()->downloads_keyman_com ?>/web/'>Download KeymanWeb releases</a> (alpha, beta and stable)</li>
 </ul>
 
 <br>

@@ -1,5 +1,7 @@
 <?php
   require_once('includes/template.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   // Required
   head([
@@ -16,14 +18,14 @@
 
 <h2 class="red underline">Keyman Developer <?php echo $stable_version_int; ?></h2>
 <p><a href="features.php">Keyman Developer <?php echo $stable_version_int; ?></a> is the most powerful tool for creating
-  keyboard layouts for any popular platform for any language around the world. Build keyboards layouts for desktop, 
+  keyboard layouts for any popular platform for any language around the world. Build keyboards layouts for desktop,
   web, tablet and phone. Optimise your keyboards for each platform, including touch-and-hold keys and alternative layers.
 </p>
 
 <ul>
   <li><a href="features.php">See the features.</a></li>
-  <li><a href='download.php'>Keyman Developer Downloads</a></li> 
-  <li><a href='https://help.keyman.com/developer/<?php echo $stable_version; ?>/'>Keyman Developer Support</a></li>
+  <li><a href='download.php'>Keyman Developer Downloads</a></li>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?php echo $stable_version; ?>/'>Keyman Developer Support</a></li>
 </ul>
 
 <?php
@@ -56,6 +58,6 @@
   <br/><br/>
   <a href="https://github.com/keymanapp/keyboards">Github repository</a>
   <br/>
-  <a href="http://help.keyman.com/developer/keyboards">Learn about the repository</a>
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/keyboards">Learn about the repository</a>
 </p>
 

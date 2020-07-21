@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/playstore.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   // Required
   head([
@@ -52,7 +54,7 @@
 
 <p>
   Now you also have the flexibility of installing Keyman keyboard packages from either online
-  (like <a href="/keyboards">keyman.com/keyboards</a>) or local storage from a new "Settings" panel.
+  (like <a href="/keyboards"><?= KeymanHosts::Instance()->keyman_com ?>/keyboards</a>) or local storage from a new "Settings" panel.
 </p>
 
 <p>
@@ -139,7 +141,7 @@
 <h3>New in Keyman for Android 10.0 (July 2018)</h3>
 
 <ul>
-  <li><a href="https://help.keyman.com/developer/10.0/guides/distribute/install-kmp-android">Install custom keyboard</a>
+  <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/10.0/guides/distribute/install-kmp-android">Install custom keyboard</a>
     by clicking a link to your Keyman package (.kmp) file</li>
   <li>Improved longpress behavior</li>
   <li>Fixed OSK missing some keys on older Android configurations</li>

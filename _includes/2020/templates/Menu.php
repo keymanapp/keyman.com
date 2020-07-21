@@ -5,6 +5,7 @@
 
   use Keyman\Site\com\keyman\Util;
   use Keyman\Site\com\keyman\KeymanVersion;
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   class Menu {
     //
@@ -77,7 +78,7 @@ END;
               <li><a href="/training">Training Events</a></li>
               <li><a href="/free/">Free on all Platforms</a></li>
               <li><a href="/contact/">Contact Us</a></li>
-              <li><a href="https://blog.keyman.com">Keyman Blog</a></li>
+              <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
               <li><a href="/testimonials/">Testimonials</a></li>
               <li><a href="/search/">Search Site</a></li>
            </ul>
@@ -85,7 +86,7 @@ END;
         <div class="phone-menu-item">
             <h3>Help</h3>
             <ul>
-                <li><a href="https://help.keyman.com">Help and Documentation</a></li>
+                <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
            </ul>
         </div>
     </div>
@@ -112,7 +113,7 @@ END;
             </div>
           </form>
           <p id="donate"><a href="/donate">Donate</a></p>
-          <p><a href="https://help.keyman.com" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>"></a></p>
+          <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>"></a></p>
         </div>
     </div>
     <div id="top-menu-bg"></div>
@@ -127,7 +128,7 @@ END;
             </div>
           </form>
           <a id='help1-donate' href="/donate">Donate</a>
-          <a href="https://help.keyman.com"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" /></a>
+          <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" /></a>
         </div>
         <div class="wrapper">
             <div class="menu-item" id="keyboards">
@@ -190,9 +191,9 @@ END;
                             <li><a href="/about/get-involved">Get Involved</a></li>
                             <li><a href="/training">Training Events</a></li>
                             <li><a href="/free/">Free on all Platforms</a></li>
-                            <li><a href="https://help.keyman.com">Help and Documentation</a></li>
+                            <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
                             <li><a href="/contact/">Contact Us</a></li>
-                            <li><a href="https://blog.keyman.com/">Keyman Blog</a></li>
+                            <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
                             <li><a href="/testimonials/">Testimonials</a></li>
                         </ul>
                     </div>

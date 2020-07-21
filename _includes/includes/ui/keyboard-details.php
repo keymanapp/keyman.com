@@ -278,7 +278,7 @@ END;
         ?>
 
         <div id='navigation'>
-          <a class='nav-right' target='_blank' href='/keyboards'>Go to keyman.com</a>
+          <a class='nav-right' target='_blank' href='/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com ?></a>
           <a href='/keyboards<?= $session_query_q ?>'>Home</a>
         </div>
 
@@ -500,8 +500,8 @@ END;
 
       <p id='permalink'>
         Permanent link to this keyboard:
-        <a <?= $embed_target ?> href='https://keyman.com/keyboards/<?= self::$keyboard->id ?>'>
-          https://keyman.com/keyboards/<?= self::$keyboard->id ?>
+        <a <?= $embed_target ?> href='<?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= self::$keyboard->id ?>'>
+          <?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= self::$keyboard->id ?>
         </a>
       </p>
       <?php

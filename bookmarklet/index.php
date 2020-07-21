@@ -1,5 +1,8 @@
 <?php
   require_once('includes/template.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   $lang = isset($_GET['language']) ? $_GET['language'] : '';
   $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
 
@@ -28,7 +31,7 @@
     <div><a href='#'></a></div>
     <p>
         Drag this button to your Bookmarks toolbar to install this keyboard to your web browser!
-        <a target="_blank" href="http://help.keyman.com/products/bookmarklet/">Learn more</a>
+        <a target="_blank" href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/bookmarklet/">Learn more</a>
     </p>
 </div>
 <div id="bookmarklet-search">

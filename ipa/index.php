@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
   require_once('../keyboards/session.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   $head_options = [
     'title' =>'IPA Keyboards'
@@ -76,7 +78,7 @@
       );
 
       foreach ($keyboardlayouts as $kl) {
-        $helpLink = "https://help.keyman.com/keyboard/" . $kl['id'];
+        $helpLink = KeymanHosts::Instance()->help_keyman_com . "/keyboard/" . $kl['id'];
 ?>
         <div class='kbd'>
           <h3 class='red'><?= $kl['name'] ?></h3>
