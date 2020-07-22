@@ -1,6 +1,6 @@
 <?php
   require_once('includes/template.php');
-  require_once __DIR__ . '/../_includes/autoload.php';
+  require_once __DIR__ . '/../../_includes/autoload.php';
   use Keyman\Site\com\keyman\KeymanHosts;
 
   // Required

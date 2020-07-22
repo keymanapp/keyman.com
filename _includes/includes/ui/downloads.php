@@ -1,6 +1,6 @@
 <?php
 
-  require_once __DIR__ . '/../_includes/autoload.php';
+  require_once __DIR__ . '/../../autoload.php';
   use Keyman\Site\com\keyman\KeymanHosts;
 
   $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->downloads_keyman_com . '/api/version/2.0'));
