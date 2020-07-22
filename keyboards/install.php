@@ -90,35 +90,48 @@ END;
       $bcp47 = rawurlencode(empty(self::$bcp47) ? '' : self::BOOTSTRAP_SEPARATOR.self::$bcp47);
       $tier = self::$tier;
       $version = self::$versions->windows->$tier;
-      $e_keyboard_id = rawurlencode($keyboard->id);
-      $h_keyboard_name = htmlentities($keyboard->name);
 
-      // Note, we don't need to capture an event for the keyboard download here, because we'll capture it when the bootstrap downloads the file.
-      $downloadLink = KeymanHosts::Instance()->downloads_keyman_com . "/windows/{$tier}/{$version}/keyman-setup" . self::BOOTSTRAP_SEPARATOR . "{$keyboard->id}{$bcp47}.exe";
-      $downloadLinkE = json_encode($downloadLink, JSON_UNESCAPED_SLASHES);
+      $e = [
+        'name' => $keyboard->name,
+        'host' => KeymanHosts::Instance()->downloads_keyman_com,
+        'tier' => $tier,
+        'version' => $version,
+        'id' => $keyboard->id,
+        'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47
+      ];
+
+      $u = array_map('rawurlencode', $e);
+      $hu = array_map('htmlentities', $u);
+      $h = array_map('htmlentities', $e);
+
+      // Note, we don't need to capture an event for the keyboard download here, because we'll capture
+      // it when the bootstrap downloads the file.
+
+      // This maps to buildStandardWindowsDownloadUrl in install.js (which we don't use here for those
+      // few users who have JS disabled -- although this is not really a tested/supported scenario)
+      $downloadLink = KeymanHosts::Instance()->downloads_keyman_com .
+        "/windows/{$hu['tier']}/{$hu['version']}/keyman-setup" .
+        self::BOOTSTRAP_SEPARATOR . "{$hu['id']}" .
+        (empty($hu['bcp47']) ? "" : "." . "{$hu['bcp47']}.exe");
+
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/desktop/current-version/docs/start_download-install_keyman";
 
-      $keyboardHomeUrl = "/keyboards/{$e_keyboard_id}";
-      if(!empty(self::$bcp47)) $keyboardHomeUrl .= "?bcp47=" . rawurlencode(self::$bcp47);
+      $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
+        (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
 
       $result = <<<END
-<div class='download download-windows'>
-<p>Your $h_keyboard_name keyboard download should start shortly. If it does not, <a href='$downloadLink'>click here</a> to start the download.</p>
-<script>
-  window.setTimeout(function() {
-    if(document.documentElement.getAttribute('data-platform') == 'windows') {
-      // TODO: show arrow in window where download is likely to be accessible from; this is browser+browser version dependent :(
-      // TODO: don't forget to look for a library that implements this which may save pain
-      location.href = $downloadLinkE;
-    }
-  }, 1000);
-</script>
-<ul>
-<li><a href='$helpLink'>Help on installing Keyman</a></li>
-<li><a href='$keyboardHomeUrl'>{$h_keyboard_name} keyboard home</a></li>
-</ul>
-</div>
-
+        <div class='download download-windows'>
+        <p>Your {$h['name']} keyboard download should start shortly. If it does not,
+          <a href='$downloadLink'>click here</a> to start the download.</p>
+        <script data-host="{$h['host']}" data-tier="{$h['tier']}" data-version="{$h['version']}"
+            data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
+          startAfterPageLoad_Windows(document.currentScript.dataset);
+        </script>
+        <ul>
+        <li><a href='$helpLink'>Help on installing Keyman</a></li>
+        <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+        </ul>
+        </div>
 END;
       return $result;
     }
@@ -220,7 +233,7 @@ END;
     protected static function WriteTitle() {
       $head_options = [
         'title' => self::$title,
-        'js' => [Util::cdn('keyboard-search/keyboard-details.js')],
+        'js' => [Util::cdn('keyboard-search/keyboard-details.js'), Util::cdn('keyboard-search/install.js')],
         'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css'), Util::cdn('keyboard-search/install.css')]
       ];
       Head::render($head_options);
@@ -230,8 +243,8 @@ END;
       if (!isset(self::$keyboard)) {
         // If parameters are missing ...
 ?>
-          <h1 class='red underline'><?= self::$id ?></h1>
-          <p>Keyboard <?= self::$id ?> not found.</p>
+          <h1 class='red underline'><?= htmlentities(self::$id); ?></h1>
+          <p>Keyboard <?= htmlentities(self::$id); ?> not found.</p>
 <?php
         // DEBUG: Only display errors on local sites
         if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT && (ini_get('display_errors') !== '0')) {
