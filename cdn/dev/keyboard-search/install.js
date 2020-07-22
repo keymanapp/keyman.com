@@ -34,12 +34,14 @@ function buildStandardKeymanProtocolDownloadLink(id, bcp47) {
 
 /**
  * Redirects to keyman:// to trigger Keyman Configuration, and if that fails,
- * to the standard download url for the package to install.
+ * to the standard download url for the package to install. This currently only
+ * applies to Windows users (it may apply in future for Linux as well).
  * @param {object} data from the object with properties for host, tier, version, id, bcp47
  */
 function startAfterPageLoad_Windows(data) {
   window.setTimeout(function() {
-    if(document.documentElement.getAttribute('data-platform') == 'windows') {
+    const platform = document.documentElement.getAttribute('data-platform'), browser = document.documentElement.getAttribute('data-browser');
+    if(platform == 'windows') {
       // This only runs for Windows
       const downloadUrl = buildStandardWindowsDownloadUrl(
         data.host, data.tier, data.version, data.id, data.bcp47
@@ -49,7 +51,11 @@ function startAfterPageLoad_Windows(data) {
         data.id, data.bcp47
       );
 
-      location.href = keymanUrl;
+      if(browser != "Internet Explorer" && browser != "Microsoft Edge Legacy") {
+        // On IE and Edge Legacy, we will never try the keyman: protocol because
+        // it gives a poor user experience.
+        location.href = keymanUrl;
+      }
 
       const fallbackHandle = window.setTimeout(function() {
           location.href = downloadUrl;
