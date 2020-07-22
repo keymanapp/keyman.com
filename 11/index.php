@@ -4,6 +4,9 @@
   require_once('includes/appstore.php');
   require_once('includes/playstore.php');
 
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'class' => 'keyman11',
@@ -35,7 +38,7 @@
 
 <h2>What's Next?</h2>
 <ul>
-  <li>Looking for something else? Check the <a href="https://blog.keyman.com/2019/02/keyman-roadmap-february-2019/">Keyman Roadmap</a> and see if it's tentatively scheduled.
+  <li>Looking for something else? Check the <a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>/2019/02/keyman-roadmap-february-2019/">Keyman Roadmap</a> and see if it's tentatively scheduled.
 </ul>
 
 <h2>11.0 Stable Feedback</h2>

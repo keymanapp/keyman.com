@@ -1,7 +1,9 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'title' =>'Download Keyman for Linux',
@@ -40,6 +42,6 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre>
 </p>
 
 <ul>
-  <li><a href='https://downloads.keyman.com/linux'>All Linux downloads</a>
+  <li><a href='<?= KeymanHosts::Instance()->downloads_keyman_com ?>/linux'>All Linux downloads</a>
   <li>apt install ...
 </ul>

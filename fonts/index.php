@@ -1,17 +1,19 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'title' =>'Keyman Font Support',
     'css' => ['template.css'],
     'showMenu' => true,
     'banner' => [
-      'title' => 'Font support for all devices', 
+      'title' => 'Font support for all devices',
       'image' => 'gears.png',
       'background' => 'water'
     ]
-  ]);           
+  ]);
 ?>
 <h2 class="red underline">How to fix square boxes</h2>
 <p>
@@ -69,5 +71,5 @@
 <p>
   Many Keyman keyboards type out letters that need special fonts. Without the right font, these letters may turn into square boxes or become unreadable. Keyman Desktop keyboards that require a special font will generally come packaged with the font. You can also use the Keyman Font Helper tool to find suitable fonts for your keyboard.
   <br/><br/>
-  <a href="https://help.keyman.com/products/desktop/<?php echo $stable_version; ?>/docs/basic_fonthelper.php">Learn more about the Font Helper tool.</a>
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/<?php echo $stable_version; ?>/docs/basic_fonthelper.php">Learn more about the Font Helper tool.</a>
 </p>

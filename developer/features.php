@@ -1,5 +1,7 @@
 <?php
   require_once('includes/template.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   // Required
   head([
@@ -27,7 +29,7 @@
     <h2 class="red underline">What's New</h2>
     <p>Keyman Developer embeds the open source <a href="https://microsoft.github.io/monaco-editor/">Monaco Editor</a>, the same editor
         in Microsoft Visual Studio Code. You can create and apply
-        <a href="https://help.keyman.com/developer/11.0/reference/editor-themes">custom editor themes</a> to Keyman Developer.</p>
+        <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/11.0/reference/editor-themes">custom editor themes</a> to Keyman Developer.</p>
     <br/><br/>
 
     <h3 class="red">BCP 47 language tags</h3>
@@ -230,7 +232,7 @@
 
     <h3 class="red">Keyman Developer <?php echo $stable_version_int; ?> Help</h3>
     <p>Access help for every feature of Keyman Developer <?php echo $stable_version_int; ?>
-      online at <a href='https://help.keyman.com/developer'>https://help.keyman.com/developer</a>. On the site, you'll
+      online at <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer'><?= KeymanHosts::Instance()->help_keyman_com_host ?>/developer</a>. On the site, you'll
       find helpful guides and tutorials to teach you how to develop and distribute your keyboards.</p>
     <br/><br/>
 

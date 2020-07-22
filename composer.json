@@ -8,6 +8,10 @@
     },
     "scripts": {
       "test": "vendor\\bin\\phpunit --testdox",
-      "check-links": "npx broken-link-checker http://keyman.com.local --ordered --recursive --host-requests 10 -e --filter-level 3"
+      "check-links": [
+        "Composer\\Config::disableProcessTimeout",
+        "npx broken-link-checker http://keyman.com.local --ordered --recursive --host-requests 10 -e --filter-level 3"
+      ],
+      "lint": "find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 php -l"
     }
 }

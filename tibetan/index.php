@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
   require_once('../keyboards/session.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   $head_options = [
     'title' =>'Tibetan Keyboards'
@@ -75,8 +77,8 @@
           <p class='desc'><?= $kl['desc'] ?></p>
           <div class='down'>
             <a href='https://keymanweb.com/<?= $kl['web'] ?>' target='_blank'><img src="<?= cdn('img/use_online.png') ?>" alt='Type Now' title='Try the <?= $kl['name'] ?> keyboard' /></a>
-            <a href='https://help.keyman.com/keyboard/<?= $kl['help'] ?>' target='_blank'><img src="<?= cdn('img/details_button.png'); ?>" alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
-            <a href='https://keyman.com/keyboards/<?= $kl['id']?>'><img src="<?= cdn('img/download_button.png'); ?>" alt='Download' title='Download the <?= $kl['name'] ?> keyboard' /></a>
+            <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/<?= $kl['help'] ?>' target='_blank'><img src="<?= cdn('img/details_button.png'); ?>" alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
+            <a href='<?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= $kl['id']?>'><img src="<?= cdn('img/download_button.png'); ?>" alt='Download' title='Download the <?= $kl['name'] ?> keyboard' /></a>
           </div>
         </div>
   <?php

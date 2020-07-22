@@ -5,6 +5,7 @@
 
   use Keyman\Site\com\keyman\Util;
   use Keyman\Site\com\keyman\KeymanVersion;
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   class Foot {
     static function render(array $fields = []) {
@@ -49,7 +50,7 @@
             <div>
               <a href="https://facebook.com/KeymanApp" target="_blank" data-icon='&#xf203;'>Facebook</a>
               <a href="https://twitter.com/keyman" target="_blank" data-icon='&#xf202;'>Twitter</a>
-              <a href="https://blog.keyman.com/" target="_blank" data-icon='&#xf413;'>Keyman blog</a>
+              <a href="https://<?= KeymanHosts::Instance()->blog_keyman_com ?>/" target="_blank" data-icon='&#xf413;'>Keyman blog</a>
               <a href="https://github.com/keymanapp" target="_blank" data-icon='&#xf200;'>GitHub</a>
               <a href="https://community.software.sil.org/c/keyman" target="_blank" id='footer-community'>Keyman Community</a>
             </div>
@@ -93,7 +94,7 @@
         <div id="product-download-popup-links">
             <p>Useful Links:</p>
             <ul>
-                <li><a href="http://help.keyman.com/products/desktop/<?php echo $fields->stable_version; ?>/docs/start_download-install_keyman.php" target="_blank">How to Install Keyman Desktop</a></li>
+                <li><a href="http://<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/<?php echo $fields->stable_version; ?>/docs/start_download-install_keyman.php" target="_blank">How to Install Keyman Desktop</a></li>
                 <li><a href="/contact/" target="_blank">Keyman Desktop Support</a></li>
             </ul>
             <form name="download-signup" id="download-signup" method="post" >

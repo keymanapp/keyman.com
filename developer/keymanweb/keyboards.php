@@ -1,14 +1,16 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
+
   // Required
   head([
     'title' =>'KeymanWeb | Keyboard Catalogue',
     'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
     'showMenu' => true
-  ]);           
-  
-  $keyboardcdn = 'https://s.keyman.com/keyboard';
+  ]);
+
+  $keyboardcdn = KeymanHosts::Instance()->s_keyman_com.'/keyboard';
 ?>
 <script src='<?=cdn('js/clipboard.min.js')?>'></script>
 <script src='<?=cdn('js/prism.js')?>'></script>
@@ -25,21 +27,21 @@
 <p>
   You can access a JSON version of this catalogue at:
   <br/>
-  <input type='text' readonly size='60' value='https://api.keyman.com/cloud/4.0/keyboards/?languageidtype=bcp47&amp;version=<?=$stable_version?>' onclick='this.select()'> 
+  <input type='text' readonly size='60' value='<?= KeymanHosts::Instance()->api_keyman_com ?>/cloud/4.0/keyboards/?languageidtype=bcp47&amp;version=<?=$stable_version?>' onclick='this.select()'>
 </p>
 
 <ul>
-  <li><a href='https://api.keyman.com/cloud/4.0/keyboards/?languageidtype=bcp47&amp;version=<?=$stable_version?>' target='_blank'>View current JSON data</a></li>
-  <li><a href='https://help.keyman.com/developer/cloud/4.0/' target='_blank'>JSON API Documentation</a></li>
+  <li><a href='<?= KeymanHosts::Instance()->api_keyman_com ?>/cloud/4.0/keyboards/?languageidtype=bcp47&amp;version=<?=$stable_version?>' target='_blank'>View current JSON data</a></li>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/cloud/4.0/' target='_blank'>JSON API Documentation</a></li>
 </ul>
 
 <h2 class="red underline">How to add a keyboard to your site</h2>
 
 <h3 class="red">From the Keyman Cloud CDN</h3>
-  
+
 <p>Downloading from the Keyman Cloud CDN guarantees you have the latest version of the keyboard, and automatically loads
-webfonts if needed for your platform. It is the simplest way to add a keyboard to your site and is suitable for 
-small-medium sized sites. Larger sites will need to maintain their own copy of the keyboard file for performance and 
+webfonts if needed for your platform. It is the simplest way to add a keyboard to your site and is suitable for
+small-medium sized sites. Larger sites will need to maintain their own copy of the keyboard file for performance and
 stability.</p>
 
 <p>First, find the keyboard you want to use in the catalogue below, and note the id of the language and the filename.</p>
@@ -50,7 +52,7 @@ stability.</p>
   keyman.addKeyboards('hieroglyphic@egy');
 &lt;/script&gt;
 </code></pre>
-  
+
 <h3 class="red">From another location</h3>
 
 <p>First, find the keyboard you want to use in the catalogue below, and note all the details for the keyboard.</p>
@@ -58,7 +60,7 @@ stability.</p>
 <p>Then, save the keyboard .js file (right click on filename, and save), and upload it to your site.</p>
 
 <p>Finally, add the following code to your page; this example is for Lao 2008 Basic. Note that the font information
-relies on font source paths being configured in <a href='https://help.keyman.com/developer/engine/web/<?php echo $stable_version; ?>/reference/core/init' target='_blank'>keyman.init()</a>.</p>
+relies on font source paths being configured in <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/<?php echo $stable_version; ?>/reference/core/init' target='_blank'>keyman.init()</a>.</p>
 
 <pre class='code language-markup'><code>&lt;script&gt;
   keyman.addKeyboards({
@@ -69,7 +71,7 @@ relies on font source paths being configured in <a href='https://help.keyman.com
       name:'Lao',
       region:'Asia',
       font: {
-        family: 'LaoWeb', 
+        family: 'LaoWeb',
         source: ['saysettha_web.ttf','saysettha_web.woff']
       }
     },
@@ -81,7 +83,7 @@ relies on font source paths being configured in <a href='https://help.keyman.com
 <br>
 
 <ul>
-  <li><a href='https://help.keyman.com/developer/engine/web/<?php echo $stable_version; ?>/reference/core/addKeyboards'>keyman.addKeyboards()</a> reference documentation</li>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/<?php echo $stable_version; ?>/reference/core/addKeyboards'>keyman.addKeyboards()</a> reference documentation</li>
 </ul>
 
 <br>
@@ -94,7 +96,7 @@ relies on font source paths being configured in <a href='https://help.keyman.com
   <li>If the keyboard is on Github, the Github link will be on the right of the table.
 </ul>
 <br />
-<p id='catalogue-key'><span class='device-support-none'>&#x2718;</span> = Unsupported 
+<p id='catalogue-key'><span class='device-support-none'>&#x2718;</span> = Unsupported
   <span class='device-support-basic'>&#x2714;</span> = Supported
   <span class='device-support-optimised'>&#x2714;</span> = Optimised
   <span class='device-support-dictionary'>D</span> = Dictionary
@@ -108,14 +110,14 @@ relies on font source paths being configured in <a href='https://help.keyman.com
   <tbody>
 
 <?php
-  $data = @file_get_contents('https://api.keyman.com/cloud/4.0/keyboards?languageidtype=bcp47&version='.$stable_version);
+  $data = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . '/cloud/4.0/keyboards?languageidtype=bcp47&version='.$stable_version);
   if($data === FALSE) {
     // fallback if API is down, bad news anyway.
     $data = file_get_contents('keyboards.txt');
   }
   $data = json_decode($data);
   //var_dump($data);
-  
+
   function devicestring($v) {
     switch($v) {
       case 0: return "<td class='device-support-none'>&#x2718;</td>";
@@ -125,7 +127,7 @@ relies on font source paths being configured in <a href='https://help.keyman.com
     }
     return $v;
   }
-  
+
   foreach($data->keyboard as $keyboard) {
     $id = htmlentities($keyboard->id, ENT_QUOTES);
     $name = htmlentities($keyboard->name, ENT_QUOTES);

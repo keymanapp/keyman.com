@@ -1,5 +1,7 @@
  <?php
   require_once('includes/template.php');
+  require_once __DIR__ . '/../../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   // Required
   head([
@@ -18,25 +20,25 @@
 <h2 class="red underline">Keyman Desktop Download Archive</h2>
 <ul>
     <!-- TODO: use downloads API to get the latest 12.0 version -->
-    <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_12 ?>/keymandesktop-<?= $ver_windows_12 ?>.exe">Keyman Desktop <?= $ver_windows_12 ?> Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_11 ?>/keymandesktop-<?= $ver_windows_11 ?>.exe">Keyman Desktop <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/<?= $ver_windows_10 ?>/keymandesktop-<?= $ver_windows_10 ?>.exe">Keyman Desktop <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/9.0.528.0/keymandesktop-9.0.528.0.exe">Keyman Desktop 9.0.528.0 Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/8.0.361.0/keymandesktop-8.0.361.0.exe">Keyman Desktop 8.0.361.0 Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/8.0.360.0/keymandesktop-8.0.360.0.exe">Keyman Desktop 8.0.360.0 Download</a> (Online static activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/7.1.273.0/keymandesktoplight-7.1.273.0.exe">Keyman Desktop Light 7.1.273.0 Download</a> (Online static activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/7.1.273.0/keymandesktoppro-7.1.273.0.exe">Keyman Desktop Pro 7.1.273.0 Download</a> (Online static activation required)</li>
-    <li><a href="https://downloads.keyman.com/windows/stable/6.2.183.0/keyman6-2-183-0.exe">Keyman 6.2.183.0 Download</a> (Offline static activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/<?= $ver_windows_12 ?>/keymandesktop-<?= $ver_windows_12 ?>.exe">Keyman Desktop <?= $ver_windows_12 ?> Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/<?= $ver_windows_11 ?>/keymandesktop-<?= $ver_windows_11 ?>.exe">Keyman Desktop <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/<?= $ver_windows_10 ?>/keymandesktop-<?= $ver_windows_10 ?>.exe">Keyman Desktop <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/9.0.528.0/keymandesktop-9.0.528.0.exe">Keyman Desktop 9.0.528.0 Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/8.0.361.0/keymandesktop-8.0.361.0.exe">Keyman Desktop 8.0.361.0 Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/8.0.360.0/keymandesktop-8.0.360.0.exe">Keyman Desktop 8.0.360.0 Download</a> (Online static activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/7.1.273.0/keymandesktoplight-7.1.273.0.exe">Keyman Desktop Light 7.1.273.0 Download</a> (Online static activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/7.1.273.0/keymandesktoppro-7.1.273.0.exe">Keyman Desktop Pro 7.1.273.0 Download</a> (Online static activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/6.2.183.0/keyman6-2-183-0.exe">Keyman 6.2.183.0 Download</a> (Offline static activation required)</li>
 </ul>
 
 <h2 class="red underline">Keyman Developer Download Archive</h2>
 <ul>
     <!-- TODO: use downloads API to get the latest 12.0 version -->
-    <li><a href="https://downloads.keyman.com/developer/stable/<?= $ver_windows_12 ?>/keymandeveloper-<?= $ver_windows_12 ?>.exe">Keyman Developer <?= $ver_windows_12 ?> Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/developer/stable/<?= $ver_windows_11 ?>/keymandeveloper-<?= $ver_windows_11 ?>.exe">Keyman Developer <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/developer/stable/<?= $ver_windows_10 ?>/keymandeveloper-<?= $ver_windows_10 ?>.exe">Keyman Developer <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/developer/stable/9.0.526.0/keymandeveloper-9.0.526.0.exe">Keyman Developer 9.0.526.0 Download</a> (No activation required)</li>
-    <li><a href="https://downloads.keyman.com/developer/stable/8.0.360.0/keymandeveloper-8.0.360.0.exe">Keyman Developer 8.0.360.0 Download</a> (Online static activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_12 ?>/keymandeveloper-<?= $ver_windows_12 ?>.exe">Keyman Developer <?= $ver_windows_12 ?> Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_11 ?>/keymandeveloper-<?= $ver_windows_11 ?>.exe">Keyman Developer <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_10 ?>/keymandeveloper-<?= $ver_windows_10 ?>.exe">Keyman Developer <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/9.0.526.0/keymandeveloper-9.0.526.0.exe">Keyman Developer 9.0.526.0 Download</a> (No activation required)</li>
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/8.0.360.0/keymandeveloper-8.0.360.0.exe">Keyman Developer 8.0.360.0 Download</a> (Online static activation required)</li>
 </ul>
 
 <h2 class="red underline">Static activation license keys</h2>

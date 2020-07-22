@@ -2,6 +2,8 @@
   require_once('includes/template.php');
   require_once('includes/ui/keyboard-details.php');
   require_once('../keyboards/session.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   $head_options = [
     'title' =>'EuroLatin Keyboard for Keyman'
@@ -259,7 +261,7 @@
     For technical support, please <a href='https://community.software.sil.org/c/keyman'>visit our forums</a> online.
   </p>
   <p>
-    <a href='http://help.keyman.com/keyboard/sil_euro_latin' target='_blank'>EuroLatin (SIL) Keyboard Documentation</a>
+    <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/sil_euro_latin' target='_blank'>EuroLatin (SIL) Keyboard Documentation</a>
   </p>
 
 </div>

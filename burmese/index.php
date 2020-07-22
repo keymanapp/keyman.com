@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
   require_once('../keyboards/session.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\com\keyman\KeymanHosts;
 
   $head_options = [
     'title' =>'Burmese Keyboards'
@@ -59,7 +61,7 @@
           <p class='desc'><?= $kl['desc'] ?></p>
           <div class='down' style="position:relative">
             <a href='https://keymanweb.com/<?= $kl['web'] ?>'><img src='<?= cdn('img/use_online.png') ?>' alt='Type Now' title='Try the <?= $kl['name'] ?> keyboard' /></a>
-            <a href='https://help.keyman.com/keyboard/<?= $kl['help'] ?>'><img src='<?= cdn('img/details_button.png') ?>' alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
+            <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/<?= $kl['help'] ?>'><img src='<?= cdn('img/details_button.png') ?>' alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
             <a href='/keyboards/<?= $kl['id'] ?>'><img src='<?= cdn('img/download_button.png') ?>' alt='Download' title='Download the <?= $kl['name'] ?> keyboard' /></a>
           </div>
         </div>
