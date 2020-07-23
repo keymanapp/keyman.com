@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../autoload.php';
-use Keyman\Site\com\keyman\KeymanHosts;
+use Keyman\Site\Common\KeymanHosts;
 
 
  if(!isset($device)){

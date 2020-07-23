@@ -5,7 +5,7 @@
 
   use Keyman\Site\com\keyman\Util;
   use Keyman\Site\com\keyman\KeymanVersion;
-  use Keyman\Site\com\keyman\KeymanHosts;
+  use Keyman\Site\Common\KeymanHosts;
 
   class Foot {
     static function render(array $fields = []) {

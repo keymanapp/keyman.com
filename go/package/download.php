@@ -8,7 +8,7 @@
   const DEBUG=0;
 
   use Keyman\Site\com\keyman\Validation;
-  use Keyman\Site\com\keyman\KeymanHosts;
+  use Keyman\Site\Common\KeymanHosts;
 
   PackageDownloadPage::redirect_to_file(
     isset($_REQUEST['id']) ? $_REQUEST['id'] : null,

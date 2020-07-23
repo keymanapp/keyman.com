@@ -3,7 +3,7 @@
 
   namespace Keyman\Site\com\keyman;
 
-  use Keyman\Site\com\keyman\KeymanHosts;
+  use Keyman\Site\Common\KeymanHosts;
 
   class KeymanDownloadVersions {
     private static $versions;
