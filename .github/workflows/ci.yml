@@ -72,7 +72,7 @@ jobs:
     - name:  Install dependencies
       shell: cmd
       run: |
-        echo TIER_TEST > _includes\tier.txt
+        echo TIER_TEST > tier.txt
         composer install --no-progress
         npm install
 
