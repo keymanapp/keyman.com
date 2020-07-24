@@ -17,3 +17,13 @@ ol li a {
 #step2 div {
   margin-left: 30px;
 }
+
+.download.download-linux[keyman-installed='true'] div#keyman-installed,
+.download.download-linux[keyman-installed='false'] div:not(#keyman-installed) {
+  display: block;
+}
+
+.download.download-linux[keyman-installed='false'] div#keyman-installed,
+.download.download-linux[keyman-installed='true'] div:not(#keyman-installed) {
+  display: none;
+}
