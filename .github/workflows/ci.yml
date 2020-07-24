@@ -82,12 +82,12 @@ jobs:
     - name: Lint
       shell: bash
       run: |
-        find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 php -l
+        ( set +e; set +o pipefail; find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 -d '\n' php -l | grep -v "No syntax errors detected"; exit ${PIPESTATUS[2]} )
 
-    - name:  Run unit tests
+    - name: Check broken links
       shell: bash
       run: |
-        npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3
+        ( set +e; set +o pipefail; npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3 | grep -E "BROKEN|Getting links from"; exit ${PIPESTATUS[0]} )
 
     - name: Report errors
       if: ${{ failure() }}
@@ -96,7 +96,7 @@ jobs:
         echo "--- tier.txt ---"
         cat tier.txt
         echo "--- PHP Errors ---"
-        cat php_errors.log
+        [ -f php_errors.log ] && cat php_errors.log
         echo "--- Contents of /khmer/ ---"
         curl http://localhost:8888/khmer/
         echo "--- PHPInfo ---"
