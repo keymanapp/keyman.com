@@ -1,7 +1,7 @@
 <?php
   require_once('includes/servervars.php');
   require_once __DIR__ . '/../_includes/autoload.php';
-  use Keyman\Site\com\keyman\KeymanHosts;
+  use Keyman\Site\Common\KeymanHosts;
 
   if(!isset($_REQUEST['id'])) {
     header('HTTP/1.0 404 id parameter is required');

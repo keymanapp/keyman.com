@@ -3,7 +3,7 @@
   require_once('./session.php');
 
   require_once __DIR__ . '/../../_includes/autoload.php';
-  use Keyman\Site\com\keyman\KeymanHosts;
+  use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
     'title' =>'Keyboard Search'

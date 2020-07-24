@@ -5,7 +5,7 @@
 
   use Keyman\Site\com\keyman\Util;
   use Keyman\Site\com\keyman\KeymanVersion;
-  use Keyman\Site\com\keyman\KeymanHosts;
+  use Keyman\Site\Common\KeymanHosts;
 
   class Menu {
     //
@@ -101,7 +101,7 @@ END;
 <div id="container" class="page-<?=$fields->pageClass?>">
     <div class="header">
         <img id="show-phone-menu" src="<?php echo Util::cdn("img/phonehide.png"); ?>" />
-        <a id="home-link" href="/"><img id="logo" src="<?php echo Util::cdn("img/logo2.png"); ?>" alt='Keyman Logo' /></a>
+        <a id="home-link" href="/"><img id="logo" src="<?php echo Util::cdn(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION ? "img/logo2.png" : "img/logo2dev.png"); ?>" alt='Keyman Logo' /></a>
         <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
 

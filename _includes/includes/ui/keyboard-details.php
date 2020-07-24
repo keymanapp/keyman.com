@@ -6,7 +6,7 @@
   require_once('includes/appstore.php');
 
   use \DateTime;
-  use \Keyman\Site\com\keyman\KeymanHosts;
+  use \Keyman\Site\Common\KeymanHosts;
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
   define('DOCUMENTATION_ROOT', KeymanHosts::Instance()->help_keyman_com . '/keyboard/');
