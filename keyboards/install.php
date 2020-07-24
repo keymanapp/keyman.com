@@ -12,7 +12,7 @@
   use Keyman\Site\com\keyman\templates\AppStore;
   use Keyman\Site\com\keyman\templates\PlayStore;
   use Keyman\Site\com\keyman\KeymanDownloadVersions;
-  use Keyman\Site\com\keyman\KeymanHosts;
+  use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\com\keyman\Util;
 

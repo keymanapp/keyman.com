@@ -1,12 +1,12 @@
 <?php
   declare(strict_types=1);
 
-  namespace Keyman\Site\com\keyman;
+  namespace Keyman\Site\Common;
 
   class KeymanHosts {
     // Four tiers. These use the following rough patterns:
     // * development = [x.]keyman.com.local
-    // * Staging = staging-[x-]keyman-com.azurewebsites.net
+    // * Staging = [x.]keyman-staging.com
     // * Production = [x.]keyman.com
     // * Test = GitHub actions, localhost:8888 (uses staging tier for other hosts)
     const TIER_DEVELOPMENT = "TIER_DEVELOPMENT";
@@ -14,10 +14,15 @@
     const TIER_PRODUCTION = "TIER_PRODUCTION";
     const TIER_TEST = "TIER_TEST";
 
-    public $s_keyman_com, $api_keyman_com, $help_keyman_com, $downloads_keyman_com, $keyman_com, $keymanweb_com, $r_keymanweb_com,
-      $blog_keyman_com, $donate_keyman_com;
-    public $s_keyman_com_host, $api_keyman_com_host, $help_keyman_com_host, $downloads_keyman_com_host, $keyman_com_host,
-      $keymanweb_com_host, $r_keymanweb_com_host, $blog_keyman_com_host;
+    public
+      $s_keyman_com, $api_keyman_com, $help_keyman_com, $downloads_keyman_com,
+      $keyman_com, $keymanweb_com, $r_keymanweb_com, $blog_keyman_com,
+      $donate_keyman_com;
+
+    public
+      $s_keyman_com_host, $api_keyman_com_host, $help_keyman_com_host, $downloads_keyman_com_host,
+      $keyman_com_host,  $keymanweb_com_host, $r_keymanweb_com_host, $blog_keyman_com_host,
+      $donate_keyman_com_host;
 
     private $tier;
 
@@ -25,12 +30,16 @@
 
     public static function Instance(): KeymanHosts {
       if(!self::$instance)
-        self::$instance = new KeymanHosts();
+        self::Rebuild();
       return self::$instance;
     }
 
     public function Tier() {
       return $this->tier;
+    }
+
+    public static function Rebuild() {
+      self::$instance = new KeymanHosts();
     }
 
     function __construct() {

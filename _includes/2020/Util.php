@@ -3,6 +3,8 @@
 
   namespace Keyman\Site\com\keyman;
 
+  use Keyman\Site\Common\KeymanHosts;
+
   class Util {
     static function Fail($message) {
       echo $message;

@@ -72,7 +72,7 @@ jobs:
     - name:  Install dependencies
       shell: cmd
       run: |
-        echo TIER_TEST > _includes\tier.txt
+        echo TIER_TEST > tier.txt
         composer install --no-progress
         npm install
 
@@ -88,5 +88,11 @@ jobs:
       if: ${{ failure() }}
       shell: cmd
       run: |
+        echo --- tier.txt ---
+        type tier.txt
+        echo --- PHP Errors ---
         type php_errors.log
+        echo --- Contents of /khmer/ ---
+        curl http://localhost:8888/khmer/
+        echo --- PHPInfo ---
         php -r "phpinfo();"

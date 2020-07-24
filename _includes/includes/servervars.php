@@ -18,11 +18,11 @@
 
 // *don't* use autoloader here because it may lead to side-effects in older pages
   require_once(__DIR__ . '/../2020/KeymanVersion.php');
-  require_once(__DIR__ . '/../2020/KeymanHosts.php');
+  require_once(__DIR__ . '/../../_common/KeymanHosts.php');
   require_once(__DIR__ . '/../2020/Util.php');
 
   use \Keyman\Site\com\keyman\KeymanVersion;
-  use \Keyman\Site\com\keyman\KeymanHosts;
+  use \Keyman\Site\Common\KeymanHosts;
   use \Keyman\Site\com\keyman\Util;
 
   // Major stable and beta versions
