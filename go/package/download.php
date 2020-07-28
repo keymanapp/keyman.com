@@ -7,8 +7,12 @@
 
   const DEBUG=0;
 
+  use Keyman\Site\com\keyman\KeymanComSentry;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\Common\JsonApiFailure;
+
+  KeymanComSentry::init();
 
   PackageDownloadPage::redirect_to_file(
     isset($_REQUEST['id']) ? $_REQUEST['id'] : null,
@@ -24,8 +28,7 @@
 
     public static function redirect_to_file($id, $version, $platform, $tier, $bcp47, $update, $ga_cookie) {
       if(empty($id)) {
-        echo "Invalid parameters; id and version expected";
-        exit;
+        JsonApiFailure::InvalidParameters("id, version");
       }
 
       if(empty($version)) {
@@ -36,8 +39,7 @@
         }
 
         if(empty($json)) {
-          echo "Invalid parameter; id not found";
-          exit;
+          JsonApiFailure::Failure(404, JsonApiFailure::ERROR_NotFound, "package with id $id was not found");
         }
 
         $version = $json->version;
