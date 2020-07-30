@@ -97,7 +97,7 @@ jobs:
         cat tier.txt
         echo "--- PHP Errors ---"
         [ -f php_errors.log ] && cat php_errors.log
-        echo "--- Contents of /khmer/ ---"
-        curl http://localhost:8888/khmer/
+        echo "--- Contents of /keyboards/khmer_angkor ---"
+        curl http://localhost:8888/keyboards/khmer_angkor
         echo "--- PHPInfo ---"
         php -r 'phpinfo();'
