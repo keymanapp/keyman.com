@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "3YE4W86L3G.Tavultesoft.Keyman",
-        "paths": ["/keyboards/install/*"],
+        "paths": ["/keyboards/install/*"]
       }, {
         "appIDs": ["3YE4W86L3G.Tavultesoft.Keyman"],
         "components": [
