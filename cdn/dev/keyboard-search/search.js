@@ -11,14 +11,15 @@ var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
 var counter = 0;
 
-function getCurrentPath(q, page) {
+function getCurrentPath(q, page, obsolete) {
   var r = q.match(/^(c|l)\:(id)\:(.+)$/);
+  obsolete = obsolete ? '&obsolete=1' : '';
   if(r && r[1].charAt(0) == 'c') {
-    return '/keyboards/countries/'+r[3]+'?page='+page;
+    return '/keyboards/countries/'+r[3]+'?page='+page+obsolete;
   } else if(r && r[1].charAt(0) == 'l') {
-    return '/keyboards/languages/'+r[3]+'?page='+page;
+    return '/keyboards/languages/'+r[3]+'?page='+page+obsolete;
   } else {
-    return '/keyboards?q='+encodeURIComponent(q)+'&page='+page;
+    return '/keyboards?q='+encodeURIComponent(q)+'&page='+page+obsolete;
   }
 }
 
@@ -29,6 +30,8 @@ function search(updateHistory) {
 function wrapSearch(localCounter, updateHistory) {
   var page = parseInt(document.f.page.value, 10);
   if(isNaN(page) || page < 1 || page > 999) page = 1;
+
+  var obsolete = document.f.obsolete.value == 1;
 
   var q = document.f.q.value.trim();
   // Workaround for HTML form encoding spaces with "+", which breaks keyboard searches
@@ -50,14 +53,18 @@ function wrapSearch(localCounter, updateHistory) {
     url += '&embed='+embed;
   }
 
+  if(obsolete) {
+    url += '&obsolete='+obsolete;
+  }
+
   if(detail_page) {
-    location.href = getCurrentPath(q, page);
+    location.href = getCurrentPath(q, page, obsolete);
     return false;
   }
 
   var xhr = createCORSRequest('GET', url);
 
-  var currentPath = getCurrentPath(q, page);
+  var currentPath = getCurrentPath(q, page, obsolete);
 
   xhr.onload = function() {
     if(counter > localCounter) {
@@ -69,11 +76,11 @@ function wrapSearch(localCounter, updateHistory) {
 
     //hide_loading();
     $('#search-box').removeClass('searching');
-    currentPath = getCurrentPath(q, page);
+    currentPath = getCurrentPath(q, page, obsolete);
     if(updateHistory) {
-      history.pushState({q: q, text: responseText}, q + ' - Keyboard search', currentPath);
+      history.pushState({q: q, obsolete: obsolete, text: responseText}, q + ' - Keyboard search', currentPath);
     }
-    process_response(q, xhr.responseText);
+    process_response(q, obsolete, xhr.responseText);
     // process the response.
   };
 
@@ -94,13 +101,13 @@ function wrapSearch(localCounter, updateHistory) {
 
 window.onpopstate = function(e) {
   if(e.state) {
-    process_response(e.state.q, e.state.text);
+    process_response(e.state.q, e.state.obsolete, e.state.text);
     $('#search-q').val(e.state.q);
     return true;
   } else return false;
 };
 
-function process_response(q, res) {
+function process_response(q, obsolete, res) {
   var resultsElement = $('#search-results');
   res = JSON.parse(res);
   resultsElement.empty();
@@ -197,18 +204,18 @@ function process_response(q, res) {
     });
 
     if(res.context.totalPages > 1) {
-      buildPager(res, q).appendTo(resultsElement);
+      buildPager(res, q, obsolete).appendTo(resultsElement);
     }
   } else {
     $('<h3>').addClass('red').text("No matches found for '"+qq+"'").appendTo(resultsElement);
   }
 }
 
-function buildPager(res, q) {
+function buildPager(res, q, obsolete) {
   var pager = $('<div class="pager">');
   function appendPager(pager, text, page) {
     if(page != res.context.pageNumber && page > 0 && page <= res.context.totalPages) {
-      $('<a>'+text+'</a>').attr('href', getCurrentPath(q, page)).click((event) => goToPage(event, q, page)).appendTo(pager);
+      $('<a>'+text+'</a>').attr('href', getCurrentPath(q, page, obsolete)).click((event) => goToPage(event, q, page)).appendTo(pager);
     } else {
       $('<span>'+text+'</span>').appendTo(pager);
     }
@@ -275,11 +282,12 @@ var load_search_count = 0, load_search = function() {
     });
   }
 
-  var init = function(value, page, updateHistory) {
+  var init = function(value, page, obsolete, updateHistory) {
     page = parseInt(page, 10);
     if(isNaN(page)) page = 1;
     document.f.q.value = decodeURIComponent(value);
     document.f.page.value = page;
+    document.f.obsolete.value = obsolete;
 
     search(!!updateHistory);
     return value != '';
@@ -287,13 +295,15 @@ var load_search_count = 0, load_search = function() {
 
   // Get initial search
 
-  var page = 1, q = '', params = location.search.substr(1).split('&');
+  var page = 1, obsolete = 0, q = '', params = location.search.substr(1).split('&');
   for(var i = 0; i < params.length; i++) {
     var p = params[i].split('=');
     if(p.length == 2 && p[0] == 'q') {
       q = decodeURIComponent(p[1]);
     } else if(p.length == 2 && p[0] == 'page') {
       page = decodeURIComponent(p[1]);
+    } else if(p.length == 2 && p[0] == 'obsolete') {
+      obsolete = decodeURIComponent(p[1]);
     }
   }
 
@@ -307,7 +317,7 @@ var load_search_count = 0, load_search = function() {
     }
   }
 
-  return init(q, page);
+  return init(q, page, obsolete);
 };
 
 window.addEventListener('load', load_search, false);
