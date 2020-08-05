@@ -229,13 +229,13 @@ END;
           'showMenu' => false,
           'showHeader' => false,
           'foot' => false,
-          'js' => ['../keyboard-search/search.js', '../keyboard-search/keyboard-details.js', 'qrcode.js'],
+          'js' => ['../keyboard-search/keyboard-details.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css', '../keyboard-search/embed.css']
         ];
         $embed_target = " target='_blank' ";
       } else {
         $head_options += [
-          'js' => ['../keyboard-search/search.js', '../keyboard-search/keyboard-details.js', 'qrcode.js'],
+          'js' => ['../keyboard-search/keyboard-details.js', 'qrcode.js'],
           'css' => ['template.css', '../keyboard-search/search.css']
         ];
         $embed_target = '';
@@ -244,7 +244,6 @@ END;
 
       if($embed == 'none') { ?>
         <script>
-          var detail_page = true;
           var embed='none';
           var embed_query='';
         </script>
@@ -253,7 +252,6 @@ END;
         global $session_query;
       ?>
         <script>
-          var detail_page = true;
           var embed='<?=$embed?>';
           var embed_query='<?=$session_query?>';
         </script>
@@ -293,8 +291,7 @@ END;
             <div id='search-title'><a href='/keyboards'>Keyboard Search</a>:</div>
             <input id="search-q" type="text" placeholder="(new search)" name="q">
             <input id='search-page' type='hidden' name='page'>
-            <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="Search"
-                   onclick="return do_search()">
+            <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="Search">
           </form>
         </div>
 <?php

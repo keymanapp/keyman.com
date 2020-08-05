@@ -58,11 +58,6 @@ function wrapSearch(localCounter, updateHistory) {
     url += '&obsolete='+obsolete;
   }
 
-  if(detail_page) {
-    location.href = getCurrentPath(q, page, obsolete);
-    return false;
-  }
-
   var xhr = createCORSRequest('GET', url);
 
   function stripCommonWords(q) {
@@ -280,22 +275,20 @@ var load_search_count = 0, load_search = function() {
     return false;
   }
 
-  if(!detail_page) {
-    $('#search-q').on('input', function() {
-      if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
-      dynamic_search_timeout = window.setTimeout(function() {
-        document.f.page.value = 1;
-        search(false);
-      }, 250);
-    });
+  $('#search-q').on('input', function() {
+    if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
+    dynamic_search_timeout = window.setTimeout(function() {
+      document.f.page.value = 1;
+      search(false);
+    }, 250);
+  });
 
-    $('#search-results-empty code').click(function(tag) {
-      const prefix = this.innerText;
-      document.f.q.value = document.f.q.value.replace(/^.+:([^:]*)$/, '$1') +
-        (document.f.q.value.startsWith(prefix) ? '' : prefix);
-      document.f.q.focus();
-    });
-  }
+  $('#search-results-empty code').click(function(tag) {
+    const prefix = this.innerText;
+    document.f.q.value = document.f.q.value.replace(/^.+:([^:]*)$/, '$1') +
+      (document.f.q.value.startsWith(prefix) ? '' : prefix);
+    document.f.q.focus();
+  });
 
   var init = function(value, page, obsolete, updateHistory) {
     page = parseInt(page, 10);
@@ -303,7 +296,6 @@ var load_search_count = 0, load_search = function() {
     document.f.q.value = decodeURIComponent(value);
     document.f.page.value = page;
     document.f.obsolete.value = obsolete;
-
     search(!!updateHistory);
     return value != '';
   }
