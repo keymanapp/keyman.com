@@ -37,9 +37,10 @@ function wrapSearch(localCounter, updateHistory) {
   // Workaround for HTML form encoding spaces with "+", which breaks keyboard searches
   q = q.replace(/\+/g, ' ');
   document.f.q.value = q;
-  if(q == '') {
+  if((!updateHistory && q.trim().length < 3) || q.trim().length == 0) {
     var resultsElement = $('#search-results');
-    resultsElement.empty().append('<p>Enter the name of a keyboard or language to search for. (<a href="?q=p:*">Popular keyboards</a>)</p>');
+    resultsElement.empty();
+    doUpdateHistory(q, page, obsolete, '', updateHistory);
     return false;
   }
 
@@ -64,8 +65,6 @@ function wrapSearch(localCounter, updateHistory) {
 
   var xhr = createCORSRequest('GET', url);
 
-  var currentPath = getCurrentPath(q, page, obsolete);
-
   function stripCommonWords(q) {
     return q.replace(/\b(keyboard|language|script|font)\b/g, '').trim();
   }
@@ -80,10 +79,7 @@ function wrapSearch(localCounter, updateHistory) {
 
     //hide_loading();
     $('#search-box').removeClass('searching');
-    currentPath = getCurrentPath(q, page, obsolete);
-    if(updateHistory) {
-      history.pushState({q: q, obsolete: obsolete, text: responseText}, q + ' - Keyboard search', currentPath);
-    }
+    doUpdateHistory(q, page, obsolete, responseText, updateHistory);
     process_response(q, obsolete, xhr.responseText);
     // process the response.
   };
@@ -101,6 +97,16 @@ function wrapSearch(localCounter, updateHistory) {
   xhr.send();
 
   return true;
+}
+
+function doUpdateHistory(q, page, obsolete, text, updateHistory) {
+  var currentPath = getCurrentPath(q, page, obsolete);
+
+  if(updateHistory) {
+    history.pushState({q: q, obsolete: obsolete, text: text}, q + ' - Keyboard search', currentPath);
+  } else if(history && history.replaceState) {
+    history.replaceState({q: q, obsolete: obsolete, text: text}, q + ' - Keyboard search', currentPath);
+  }
 }
 
 window.onpopstate = function(e) {
@@ -278,11 +284,16 @@ var load_search_count = 0, load_search = function() {
     $('#search-q').on('input', function() {
       if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
       dynamic_search_timeout = window.setTimeout(function() {
-        if(document.f.q.value.length > 2) {
-          document.f.page.value = 1;
-          search(false);
-        }
+        document.f.page.value = 1;
+        search(false);
       }, 250);
+    });
+
+    $('#search-results-empty code').click(function(tag) {
+      const prefix = this.innerText;
+      document.f.q.value = document.f.q.value.replace(/^.+:([^:]*)$/, '$1') +
+        (document.f.q.value.startsWith(prefix) ? '' : prefix);
+      document.f.q.focus();
     });
   }
 
