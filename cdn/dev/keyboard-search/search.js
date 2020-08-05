@@ -51,7 +51,7 @@ function wrapSearch(localCounter, updateHistory) {
   var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(stripCommonWords(q));
 
   if(embed) {
-    url += '&embed='+embed;
+    url += '&platform='+embed;
   }
 
   if(obsolete) {
