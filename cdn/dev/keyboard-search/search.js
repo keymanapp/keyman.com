@@ -328,7 +328,7 @@ var load_search_count = 0, load_search = function() {
 };
 
 function isKeyboardObsolete(kbd) {
-  return kbd.deprecated || (typeof kbd.encodings.includes === 'function' && kbd.encodings.includes('ansi'));
+  return kbd.deprecated || (typeof kbd.encodings.includes === 'function' && !kbd.encodings.includes('unicode'));
 }
 
 window.addEventListener('load', load_search, false);
