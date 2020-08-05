@@ -33,7 +33,7 @@ function wrapSearch(localCounter, updateHistory) {
 
   var obsolete = document.f.obsolete.value == 1;
 
-  var q = document.f.q.value.trim();
+  var q = document.f.q.value;
   // Workaround for HTML form encoding spaces with "+", which breaks keyboard searches
   q = q.replace(/\+/g, ' ');
   document.f.q.value = q;
@@ -47,7 +47,7 @@ function wrapSearch(localCounter, updateHistory) {
 
   var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
 
-  var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(q);
+  var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(stripCommonWords(q));
 
   if(embed) {
     url += '&embed='+embed;
@@ -65,6 +65,10 @@ function wrapSearch(localCounter, updateHistory) {
   var xhr = createCORSRequest('GET', url);
 
   var currentPath = getCurrentPath(q, page, obsolete);
+
+  function stripCommonWords(q) {
+    return q.replace(/\b(keyboard|language|script|font)\b/g, '').trim();
+  }
 
   xhr.onload = function() {
     if(counter > localCounter) {
