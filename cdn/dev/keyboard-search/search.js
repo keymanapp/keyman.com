@@ -142,7 +142,7 @@ function process_response(q, obsolete, res) {
 
       // Remove irrelevant keyboards
 
-      if(kbd.deprecated && !deprecatedElement) {
+      if(isKeyboardObsolete(kbd) && !deprecatedElement) {
         // TODO: make title change depending on whether deprecated keyboards are shown or hidden
         deprecatedElement = $(
           '<div class="keyboards-deprecated"><h4 class="red underline">Obsolete keyboards</h4></div>');
@@ -326,5 +326,9 @@ var load_search_count = 0, load_search = function() {
 
   return init(q, page, obsolete);
 };
+
+function isKeyboardObsolete(kbd) {
+  return kbd.deprecated || (typeof kbd.encodings.includes === 'function' && kbd.encodings.includes('ansi'));
+}
 
 window.addEventListener('load', load_search, false);
