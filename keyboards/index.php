@@ -71,6 +71,16 @@
   </form>
 </div>
 
-<div id='search-results'>
-  <p>Enter the name of a keyboard or language to search for.</p>
+<div id='search-results-container'>
+<div id='search-results'></div>
+<div id='search-results-empty'>
+  <p>Enter the name of a keyboard or language to search for. (<a href="?q=p:*">Popular keyboards</a>)</p>
+  <br />
+  <p>Hints</p>
+  <ul>
+    <li>The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names.</li>
+    <li>You can apply prefixes <code>k:</code> (keyboards), <code>l:</code> (languages), <code>s:</code> (scripts, writing systems)
+    or <code>c:</code> (countries) to filter your search results.</li>
+    <li>Use prefix <code>l:id:</code> to search for a BCP 47 language tag.</li>
+  </ul>
 </div>
