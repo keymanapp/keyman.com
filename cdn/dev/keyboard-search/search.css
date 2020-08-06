@@ -392,3 +392,7 @@ html[data-platform='unknown'] .download.download-unknown {
 #search-results:empty + #search-results-empty {
   display: unset;
 }
+
+.embed#search-results-container .platforms {
+  display: none;
+}

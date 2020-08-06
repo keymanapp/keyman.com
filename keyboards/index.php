@@ -69,7 +69,7 @@
   </form>
 </div>
 
-<div id='search-results-container'>
+<div id='search-results-container' class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>'>
 <div id='search-results'></div>
 <div id='search-results-empty'>
   <p>Enter the name of a keyboard or language to search for. (<a href="?q=p:*">Popular keyboards</a>)</p>
