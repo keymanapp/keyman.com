@@ -24,7 +24,6 @@
   if($embed == 'none') {
 ?>
 <script>
-  var detail_page=false;
   var embed='none';
   var embed_query='';
 </script>
@@ -32,7 +31,6 @@
   } else {
 ?>
 <script>
-  var detail_page=false;
   var embed='<?=$embed?>';
   var embed_query='<?=$session_query?>';
 </script>
