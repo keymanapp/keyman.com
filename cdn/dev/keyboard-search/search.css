@@ -377,3 +377,18 @@ html[data-platform='windows'] .download.download-windows {
 html[data-platform='unknown'] .download.download-unknown {
   display: block;
 }
+
+#search-results-empty {
+  display: none;
+}
+
+#section2 #search-results-empty code {
+  font-family: Consolas, 'Courier New', Courier, monospace;
+  background: #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search-results:empty + #search-results-empty {
+  display: unset;
+}
