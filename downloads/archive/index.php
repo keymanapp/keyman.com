@@ -41,6 +41,16 @@
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/8.0.360.0/keymandeveloper-8.0.360.0.exe">Keyman Developer 8.0.360.0 Download</a> (Online static activation required)</li>
 </ul>
 
+<h2 class="red underline">Obsolete Keyboards</h2>
+
+<p>Keyboards that are non-Unicode or older versions may be downloaded from the following link. Generally, unless you know you have a specific
+need for an older keyboard, you should download the latest version from the <a href='/keyboards/'>Keyboard Search</a>. Note that the search
+for obsolete keyboards will return both current and obsolete keyboards.</p>
+
+<ul>
+  <li><a href='/keyboards/?obsolete=1'>Obsolete keyboard search</a></li>
+</ul>
+
 <h2 class="red underline">Static activation license keys</h2>
 
 <p>Keyman Desktop 9.0 and earlier versions are now available for free. We have made special builds of two older versions of Keyman Desktop available which do not require any activation: 9.0.528.0 and 8.0.361.0. These are feature identical to the Professional Editions.</p>
