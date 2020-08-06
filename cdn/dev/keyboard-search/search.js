@@ -112,7 +112,10 @@ function process_response(q, res) {
 
     $('<h3>').addClass('red underline').text(res.context.range ? res.context.range : "Keyboards matching '"+q+"'").appendTo(resultsElement);
 
-    $('<div class="statistics">').text(res.context.totalRows + ' results; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.').appendTo(resultsElement);
+    $('<div class="statistics">').text(
+      res.context.totalRows + (res.context.totalRows == 1 ? ' result' : ' results') +
+      (res.context.totalPages < 2 ? '' : '; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.')
+    ).appendTo(resultsElement);
 
     /* not sure if we want this here:
     if(res.context.totalPages > 1) {
