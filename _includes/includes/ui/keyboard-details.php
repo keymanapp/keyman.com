@@ -275,12 +275,10 @@ END;
       if ($embed != 'none') {
         ?>
 
-        <div id='navigation'>
-          <a class='nav-right' target='_blank' href='/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com ?></a>
-          <a href='/keyboards<?= $session_query_q ?>'>Home</a>
+        <div id='search-box'>
+          <label id='search-new'><a href='/keyboards<?= $session_query_q ?>'>New search</a></label>
+          <h1 class='red'><?= self::$title ?></h1>
         </div>
-
-        <h1 class='red underline'><?= self::$title ?></h1>
 
         <?php
       } else if (!self::$landingPage) {

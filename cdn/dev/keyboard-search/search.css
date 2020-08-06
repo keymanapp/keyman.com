@@ -2,11 +2,6 @@
  Search box
 */
 
-#search-box {
-  padding: 10px;
-
-}
-
 h2 a {
   color: #B92034;
   text-decoration: none;
@@ -50,9 +45,12 @@ h2 a {
 }
 
 #search-box {
+  padding: 10px;
   background: white;
+  border-top: solid 1px #666666;
   border-bottom: solid 1px #666666;
-  min-height: 36px;
+  min-height: 54px;
+  box-sizing: border-box;
 }
 
 #search-box #search-title {
@@ -78,6 +76,20 @@ h2 a {
   border-radius: 0px;
   border: solid 1px gray;
   padding-left: 10px;
+  font-family: Cabin, sans-serif;
+  font-size: 16px;
+}
+
+#search-box label {
+  float: left;
+  height: 32px;
+  display: block;
+  padding: 8px 8px 0 0;
+  box-sizing: border-box;
+}
+
+#search-box label#search-new {
+  float: right;
 }
 
 #search-box #search-f {
@@ -105,7 +117,7 @@ h2 a {
 }
 
 #search-results .title {
-  margin-top: 24px;
+  margin-top: 16px;
   padding: 0 8px 2px;
   font-size: 13pt;
 }
@@ -183,6 +195,8 @@ h2 a {
 }
 
 #search-results .statistics {
+  margin: 8px 0 0 8px;
+  font-size: 13px;
   color: #444444;
 }
 
@@ -216,6 +230,7 @@ h2 a {
 #keyboard-details-col .col {
   float: left;
   max-width: 50%;
+  box-sizing: border-box;
 }
 
 #keyboard-details .supported-languages {
@@ -248,7 +263,15 @@ h2 a {
   clear: left;
 }
 
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 640px) {
+  #search-box label[for=search-q] {
+    display: none;
+  }
+
+  html #search-box #search-q {
+    width: 120px;
+  }
+
   /* Responsive display of table data on mobile */
 
   #keyboard-details-col .col {
@@ -393,6 +416,16 @@ html[data-platform='unknown'] .download.download-unknown {
   display: unset;
 }
 
-.embed#search-results-container .platforms {
+/* Embedded formatting */
+
+.embed #search-results-container .platforms,
+.embed h2 {
   display: none;
+}
+
+.embed #search-results .keyboard .title {
+  margin-top: 24px;
+}
+.embed #search-results .title {
+margin-top: 2px;
 }
