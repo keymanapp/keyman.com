@@ -1,17 +1,19 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   // Required
   head([
     'title' =>'Get Involved | Keyman',
     'css' => ['template.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
 <h2 class="red underline">Get Involved</h2>
 <p>
-  Keyman is a free and open source software project. Continued development of Keyman depends on the generosity of 
-  you, our users. There are many ways in which you can get involved; keep reading to find the best way you can 
+  Keyman is a free and open source software project. Continued development of Keyman depends on the generosity of
+  you, our users. There are many ways in which you can get involved; keep reading to find the best way you can
   be a part of the journey:
 </p>
 
@@ -28,35 +30,35 @@
 <h2 id='donate' class="red">Make a donation</h2>
 
 <p>
-  <a href='/donate'>Click here</a> to make a donation to the Keyman project by credit card, 
-  check, or bank transfer. Your donation will be used to help cover the costs of developing Keyman, including 
+  <a href='/donate'>Click here</a> to make a donation to the Keyman project by credit card,
+  check, or bank transfer. Your donation will be used to help cover the costs of developing Keyman, including
   paying staff and contractors, server costs and hardware and software purchases.
 </p>
 
 <ul>
-  <li><a href='https://donate.keyman.com/faq'>Learn more about donating</a>
+  <li><a href='<?= KeymanHosts::Instance()->donate_keyman_com ?>/faq'>Learn more about donating</a>
   <li><a href='/donate'>Donate now</a>
 </ul>
 
 <h2 id='create-keyboard' class="red">Create a keyboard layout for your language</h2>
 
 <p>
-  Keyman Developer is our comprehensive tool for creating keyboard layouts for every major platform; it is of 
-  course completely free and open source! Go ahead and <a href='/developer/download.php'>download Keyman Developer</a> 
+  Keyman Developer is our comprehensive tool for creating keyboard layouts for every major platform; it is of
+  course completely free and open source! Go ahead and <a href='/developer/download.php'>download Keyman Developer</a>
   to start creating keyboard layouts today. Once you have created a layout, you can share it online, and if you like,
   contribute it to the Keyman keyboard repository.
 </p>
 
 <ul>
   <li><a href='/developer'>Learn about Keyman Developer</a>
-  <li><a href='https://help.keyman.com/developer/keyboards'>Share your keyboard layouts</a>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/keyboards'>Share your keyboard layouts</a>
 </ul>
 
 <h2 id='support-users' class="red">Support other users</h2>
 
 <p>
   Many users come and ask questions about using Keyman in our <a href='https://community.software.sil.org/c/keyman'>online community</a>.
-  Each question that you answer helps many other users who may be searching for similar answers, and allows the developers to focus 
+  Each question that you answer helps many other users who may be searching for similar answers, and allows the developers to focus
   on improving Keyman! And if you have new knowledge about Keyman, you could even contribute that to the documentation &mdash; keep reading.
 </p>
 
@@ -95,13 +97,13 @@
 <h2 id='improve-docs' class="red">Improve the documentation</h2>
 
 <p>
-  Keyman has a lot of documentation! While we work hard to keep Keyman documentation up to date, there is 
+  Keyman has a lot of documentation! While we work hard to keep Keyman documentation up to date, there is
   always room for improvement. If you spot a gap in the documentation, or a mistake, you can submit an update
   through our GitHub documentation repository, by editing the source files directly online in GitHub!
 </p>
 
 <ul>
-  <li><a href='https://help.keyman.com'>Read the documentation</a>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>'>Read the documentation</a>
   <li><a href='https://github.com/keymanapp/help.keyman.com'>Start exploring the documentation repository</a>
   <!-- TODO: update help.keyman.com readme to clarify how users can edit files? -->
 </ul>
@@ -109,9 +111,9 @@
 <h2 id='join-team' class="red">Join the team!</h2>
 
 <p>
-  Do you have a passion for software development? Would you be interested in joining SIL and working full-time on 
+  Do you have a passion for software development? Would you be interested in joining SIL and working full-time on
   developing software that serves the needs of language communities around the world?
-  <a href='https://software.sil.org/about/contact/'>Write us</a>, or ping us on <a href='https://twitter.com/keyman'>@Keyman</a> and 
+  <a href='https://software.sil.org/about/contact/'>Write us</a>, or ping us on <a href='https://twitter.com/keyman'>@Keyman</a> and
   introduce yourself &mdash; we'd love to meet with you!
 </p>
 

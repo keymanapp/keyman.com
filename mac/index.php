@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   // Required
   head([
     'title' =>'Keyman ' . $stable_version . ' for macOS',
@@ -13,9 +15,9 @@
       'background' => 'water'
     ]
   ]);
-  
+
   $tick = '<img class="table-tick" src="'.cdn("img/table-tick.png").'"/>';
-  
+
 ?>
 <br/>
 <h2 class="red underline">Introducing Keyman for macOS</h2>
@@ -63,23 +65,23 @@
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/language/reference/baselayout'><code>baselayout()</code> statement</a></td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/reference/baselayout'><code>baselayout()</code> statement</a></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/language/reference/if'><code>if()</code> statement</a></td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/reference/if'><code>if()</code> statement</a></td>
       <td><?=$tick;?> (except options forms)</td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/language/reference/language'><code>&amp;language</code> store</a></td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/reference/language'><code>&amp;language</code> store</a></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/language/reference/mnemoniclayout'>mnemonic layouts</a> (always US base layout)</td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/reference/mnemoniclayout'>mnemonic layouts</a> (always US base layout)</td>
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/<?php echo $stable_version; ?>/guides/develop/imx' target='_blank'>IMX support (e.g. Chinese keyboard)</a></td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?php echo $stable_version; ?>/guides/develop/imx' target='_blank'>IMX support (e.g. Chinese keyboard)</a></td>
       <td></td>
     </tr>
   </tbody>
@@ -92,7 +94,7 @@
     <span class="red">Q.</span> How do I install Keyman for macOS?
 </p>
 <p>
-    <span class="red">A.</span> Visit <a href='http://help.keyman.com/products/mac/current-version/start/install-keyman'>Keyman for macOS help</a>
+    <span class="red">A.</span> Visit <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/products/mac/current-version/start/install-keyman'>Keyman for macOS help</a>
     to learn how to install and start using Keyman on macOS.
 </p>
 

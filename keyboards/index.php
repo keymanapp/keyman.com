@@ -1,29 +1,35 @@
 <?php
   require_once('includes/template.php');
   require_once('./session.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   $head_options = [
-    'title' =>'Keyboard Search'
-  ];
-  
+    'title' =>'Keyboard Search',
+    'css' => ['template.css', '../keyboard-search/search.css'],
+    'js' => ['../keyboard-search/jquery.mark.js', '../keyboard-search/search.js']
+];
+
   if($embed != 'none') {
     $head_options += [
       'showMenu' => false,
       'showHeader' => false,
-      'foot' => false,
-      'css' => ['template.css','../keyboard-search/embed.css']
+      'foot' => false
     ];
-  } else {
-    $head_options += [
-      'css' => ['template.css','../keyboard-search/search.css']
-    ];
+    array_push($head_options['css'], '../keyboard-search/embed.css');
   }
-  
-  head($head_options);
-  
-  if($embed != 'none') {
-?>
 
+  head($head_options);
+
+  if($embed == 'none') {
+?>
+<script>
+  var embed='none';
+  var embed_query='';
+</script>
+<?php
+  } else {
+?>
 <script>
   var embed='<?=$embed?>';
   var embed_query='<?=$session_query?>';
@@ -31,36 +37,25 @@
 
 <div id='navigation'>
 <?php
-  if($embed != 'macos') {
+    if($embed != 'macos') { // TODO: check for Linux
 ?>
-  <a class='nav-right' target='_blank' href='/keyboards'>Go to keyman.com&nbsp;</a>
+  <a class='nav-right' target='_blank' href='/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com_host ?>&nbsp;</a>
 <?php
-  }
-  else {
+    }
+    else {
 ?>
-  <!––The WebView class does not handle target='_blank' well.
+  <!–– The WebView class does not handle target='_blank' well.
   Keyman for macOS will be able to interpret the target session query variable
   and know to pop this page (without that variable) open in the default browser. ––>
-  <a class='nav-right' href='keyman:link?url=https://keyman.com/keyboards'>Go to keyman.com</a>
+  <a class='nav-right' href='keyman:link?url=<?= KeymanHosts::Instance()->keyman_com ?>/keyboards'>Go to <?= KeymanHosts::Instance()->keyman_com_host ?></a>
 <?php
-}
+    }
 ?>
   <a href='/keyboards<?=$session_query_q?>'>Home</a>
 </div>
 
 <?php
   }
-  if($embed == 'none' || $embed == 'macos' || $embed == 'linux') {
-    if($embed == 'none') {
-?>
-
-<script>
-  var embed=false;
-  var embed_query='';
-</script>
-
-<?php
-    } /* $embed == 'none' */
 ?>
 
 <h2 class="red underline"><a href='/keyboards'>Keyboard Search</a></h2>
@@ -69,32 +64,21 @@
   <form method='get' action='/keyboards' name='f'>
     <input id="search-q" type="text" placeholder="Enter language or keyboard" name="q" autofocus>
     <input id="search-f" type="image" src="<?= cdn('img/search-button.png"') ?>" value="Search" onclick="return do_search()">
+    <input id="search-obsolete" type="hidden" name="obsolete" value="0">
+    <input id="search-page" type="hidden" name="page" value="1">
   </form>
 </div>
 
-<div id='search-results'>
-  <p>Enter the name of a keyboard or language to search for.</p>
+<div id='search-results-container' class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>'>
+<div id='search-results'></div>
+<div id='search-results-empty'>
+  <p>Enter the name of a keyboard or language to search for. (<a href="?q=p:*">Popular keyboards</a>)</p>
+  <br />
+  <p>Hints</p>
+  <ul>
+    <li>The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names.</li>
+    <li>You can apply prefixes <code>k:</code> (keyboards), <code>l:</code> (languages), <code>s:</code> (scripts, writing systems)
+    or <code>c:</code> (countries) to filter your search results.</li>
+    <li>Use prefix <code>l:id:</code> to search for a BCP 47 language tag.</li>
+  </ul>
 </div>
-
-<?php
-  }
-  else {
-    // We are going to show just a list of languages. This is not dynamic so we load from API once
-    // In future we may allow a search box as well, if we can resolve the issues with focus and
-    // embedded browser
-?>
-
-<form method='get' action='/keyboards' name='f'>
-  <input type="hidden" name="embed" value="<?=$embed?>">
-  <input type="hidden" name="version" value="<?$embed_version?>">
-  <input id="search-q" type="hidden" name="q">
-</form>
-
-<div id='search-results'>
-  <p>Loading...</p>
-</div>
-<?php
-}
-?>
-
-<script src='<?=cdn('keyboard-search/search.js')?>'></script>

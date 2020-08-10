@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
   require_once('../keyboards/session.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
     'title' =>'Classical Greek Keyboards'
@@ -422,8 +424,8 @@ foreach ($keyboardlayouts as $n => $kl) {
     <h3 class='red'><?= $kl['name'] ?></h3>
     <p class='desc'><?= $kl['desc'] ?></p>
     <div class='down'>
-      <a href='https://help.keyman.com/keyboard/<?= $kl['help'] ?>'><img src="<?= cdn('img/details_button.png'); ?>" alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
-      <a href='https://keyman.com/keyboard/<?= $kl['id'] ?>'><img src="<?= cdn('img/download_button.png'); ?>" alt='Download' title='Download the <?= $kl['name'] ?> keyboard now' /></a>
+      <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/<?= $kl['help'] ?>'><img src="<?= cdn('img/details_button.png'); ?>" alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
+      <a href='<?= KeymanHosts::Instance()->keyman_com ?>/keyboard/<?= $kl['id'] ?>'><img src="<?= cdn('img/download_button.png'); ?>" alt='Download' title='Download the <?= $kl['name'] ?> keyboard now' /></a>
     </div>
   </div>
 <?php
@@ -505,7 +507,7 @@ foreach ($keyboardlayouts as $n => $kl) {
 
   foreach ($keyboardlayouts as $kl) {
 ?>
-    <td><a href='https://help.keyman.com/keyboard/<?= $kl['help'] ?>'><img src='<?= cdn("img/tiny_help.png"); ?>' border='0' alt='Help' /></a></td>
+    <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/<?= $kl['help'] ?>'><img src='<?= cdn("img/tiny_help.png"); ?>' border='0' alt='Help' /></a></td>
 <?php
   }
   echo "</th></tr>";
@@ -513,7 +515,7 @@ foreach ($keyboardlayouts as $n => $kl) {
   echo "<tr id='feature_download'><th>Downloads</th>";
   foreach ($keyboardlayouts as $kl) {
 ?>
-    <td><a href='https://keyman.com/keyboards/<?= $kl['id'] ?>'><img border='0' src='<?= cdn("img/tiny_download.png"); ?>' alt='Download' /></a></td>
+    <td><a href='<?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= $kl['id'] ?>'><img border='0' src='<?= cdn("img/tiny_download.png"); ?>' alt='Download' /></a></td>
 <?php
   }
 
@@ -547,7 +549,7 @@ foreach ($keyboardlayouts as $n => $kl) {
   <li>
     <span class='question'>Whenever I type a sigma, a vowel, and then a diacritic or breathing mark in Microsoft Word, the sigma changes to a final sigma</span>
     <span class='answer'>
-    This is a bug in Microsoft Word.  Visit <a href='https://help.keyman.com/kb/43'>knowledge base article KMKB0043</a> for a resolution.
+    This is a bug in Microsoft Word.  Visit <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/kb/43'>knowledge base article KMKB0043</a> for a resolution.
   </span>
   </li>
 </ul>

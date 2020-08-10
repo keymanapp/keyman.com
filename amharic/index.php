@@ -1,12 +1,14 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   // Required
   head([
     'title' =>'Keyman for Amharic | አማርኛ ይጻፉ',
     'css' => ['template.css','index.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
 <h2 class="red underline large">Keyman for Amharic | <span lang="am" class="lang-example large">አማርኛ ይጻፉ</span></h2>
 <p>
@@ -44,7 +46,7 @@
   <div class="download-cta-big mac" id="cta-big-mac">
     <h3>Amharic Keyman for macOS</h3>
     <p>
-      Type in Amharic in all your favourite software applications for macOS. Download <a href="/mac/">Keyman 
+      Type in Amharic in all your favourite software applications for macOS. Download <a href="/mac/">Keyman
       for macOS</a> first
     </p>
     <div class="download-cta-button">
@@ -79,7 +81,7 @@
       Type in Amharic on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
     </p>
   </div>
-  
+
   <div class="download-cta-big" id="cta-big-Web">
     <h3>Type Amharic in your Browser</h3>
     <p>
@@ -89,9 +91,9 @@
       <h4>Start Typing!</h4>
     </div>
   </div>
-  
+
   <h3 id="cta-other-downloads">Download an Amharic keyboard on these devices:</h3>
-  
+
   <div class="download-cta-small iPhone" id="cta-iPhone">
     <a href="/iphone/">
       <img src="<?php echo cdn('img/cta-icons/icon-iphone.png'); ?>" />
@@ -198,7 +200,7 @@
         </tr>
       </tbody>
     </table>
-    <span class="answer">Find other supported Ge'ez fonts on your computer by <a href="https://help.keyman.com/products/desktop/10.0/docs/start_font.php">using the Font Helper tool.</a></span>
+    <span class="answer">Find other supported Ge'ez fonts on your computer by <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/10.0/docs/start_font.php">using the Font Helper tool.</a></span>
   </li>
   <li>
     <span class="question">What transcription method do the keyboards use?</span>
@@ -335,7 +337,7 @@
 
   <p>For technical support, please <a href='https://community.software.sil.org/c/keyman'>visit our forums</a> online.</p>
 
-  <p><a href='https://help.keyman.com/keyboard/gff_amharic'>Amharic Keyboard Documentation</a></p>
+  <p><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/gff_amharic'>Amharic Keyboard Documentation</a></p>
 </div>
 <br/>
 
