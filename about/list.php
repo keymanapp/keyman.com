@@ -1,15 +1,18 @@
 <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'Subscribe to the SIL Keyman mailing list | Keyman',
     'css' => ['template.css'],
     'showMenu' => true,
-	'foot' => false
-  ]);           
+	  'foot' => false
+  ]);
 ?>
 <h2 class="red underline">Subscribe to the SIL Keyman mailing list</h2>
+
+<p>Sign up to this list to receive announcements about new releases of Keyman. Email frequency is low, usually no more than one or
+two every few months.</p>
 
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
