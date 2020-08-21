@@ -122,7 +122,7 @@ function process_response(q, obsolete, res) {
   if(res.keyboards) {
     var deprecatedElement = null;
 
-    $('<h3>').addClass('red underline').text(res.context.range ? res.context.range : "Keyboards matching '"+q+"'").appendTo(resultsElement);
+    //$('<h3>').addClass('red underline').text(res.context.range ? res.context.range : "Keyboards matching '"+q+"'").appendTo(resultsElement);
 
     $('<div class="statistics">').text(
       res.context.totalRows + (res.context.totalRows == 1 ? ' result' : ' results') +
