@@ -67,3 +67,31 @@ function startAfterPageLoad_Windows(data) {
     }
   }, 10);
 }
+
+/**
+ * Redirects to keyman:// to trigger Keyman Configuration, and if that fails,
+ * to the standard download url for the package to install. This currently only
+ * applies to Linux users.
+ * @param {object} data from the object with properties for host, tier, version, id, bcp47, name
+ */
+function startAfterPageLoad_Linux(data) {
+  window.setTimeout(function() {
+    const platform = document.documentElement.getAttribute('data-platform');
+    if(platform == 'linux') {
+
+      const keymanUrl = buildStandardKeymanProtocolDownloadLink(
+        data.id, data.bcp47
+      );
+
+      location.href = keymanUrl;
+
+      const fallbackHandle = window.setTimeout(function() {
+        document.getElementById("content").setAttribute('keyman-installed', 'false');
+      }, 1000);
+
+      window.addEventListener('blur', function() {
+        window.clearTimeout(fallbackHandle);
+       });
+    }
+  }, 10);
+}
