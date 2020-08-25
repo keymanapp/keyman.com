@@ -125,7 +125,7 @@ END;
           <a href='$downloadLink'>click here</a> to start the download.</p>
         <script data-host="{$h['host']}" data-tier="{$h['tier']}" data-version="{$h['version']}"
             data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
-          startAfterPageLoad_Windows(document.currentScript.dataset);
+          startAfterPageLoad(document.currentScript.dataset);
         </script>
         <ul>
         <li><a href='$helpLink'>Help on installing Keyman</a></li>
@@ -187,7 +187,7 @@ END;
             <p>Your {$h['name']} keyboard download should start shortly. If it does not,
               <a href='$downloadLink'>click here</a> to start the download.</p>
             <script data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
-              startAfterPageLoad_Linux(document.currentScript.dataset);
+              startAfterPageLoad(document.currentScript.dataset);
             </script>
             <ul>
               <li><a href='$helpLink'>Help on installing Keyman</a></li>

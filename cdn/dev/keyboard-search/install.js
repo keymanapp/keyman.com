@@ -35,63 +35,40 @@ function buildStandardKeymanProtocolDownloadLink(id, bcp47) {
 /**
  * Redirects to keyman:// to trigger Keyman Configuration, and if that fails,
  * to the standard download url for the package to install. This currently only
- * applies to Windows users (it may apply in future for Linux as well).
+ * applies to Windows and Linux users.
  * @param {object} data from the object with properties for host, tier, version, id, bcp47
  */
-function startAfterPageLoad_Windows(data) {
-  window.setTimeout(function() {
-    const platform = document.documentElement.getAttribute('data-platform'), browser = document.documentElement.getAttribute('data-browser');
-    if(platform == 'windows') {
-      // This only runs for Windows
-      const downloadUrl = buildStandardWindowsDownloadUrl(
-        data.host, data.tier, data.version, data.id, data.bcp47
-      );
+function startAfterPageLoad(data) {
+  window.setTimeout(function () {
+    const platform = document.documentElement.getAttribute('data-platform');
+    const browser = document.documentElement.getAttribute('data-browser');
+    const keymanUrl = buildStandardKeymanProtocolDownloadLink(
+      data.id, data.bcp47
+    );
 
-      const keymanUrl = buildStandardKeymanProtocolDownloadLink(
-        data.id, data.bcp47
-      );
-
-      if(browser != "Internet Explorer" && browser != "Microsoft Edge Legacy") {
-        // On IE and Edge Legacy, we will never try the keyman: protocol because
-        // it gives a poor user experience.
-        location.href = keymanUrl;
-      }
-
-      const fallbackHandle = window.setTimeout(function() {
-          location.href = downloadUrl;
-      }, 1000);
-
-      window.addEventListener('blur', function() {
-        window.clearTimeout(fallbackHandle);
-       });
+    if (browser != "Internet Explorer" && browser != "Microsoft Edge Legacy") {
+      // On IE and Edge Legacy, we will never try the keyman: protocol because
+      // it gives a poor user experience.
+      location.href = keymanUrl;
     }
+
+    const downloadUrl = (platform == 'windows')
+      ? buildStandardWindowsDownloadUrl(
+        data.host, data.tier, data.version, data.id, data.bcp47
+      )
+      : '';
+    const fallbackFunc = (platform == 'windows') ?
+      function () { location.href = downloadUrl; } :
+      function () {
+        document.getElementById("content").setAttribute('keyman-installed', 'false');
+      };
+    const fallbackHandle = window.setTimeout(fallbackFunc, 1000);
+
+    window.addEventListener('blur', function () {
+      window.clearTimeout(fallbackHandle);
+    });
   }, 10);
 }
 
-/**
- * Redirects to keyman:// to trigger Keyman Configuration, and if that fails,
- * to the standard download url for the package to install. This currently only
- * applies to Linux users.
- * @param {object} data from the object with properties for host, tier, version, id, bcp47, name
- */
-function startAfterPageLoad_Linux(data) {
-  window.setTimeout(function() {
-    const platform = document.documentElement.getAttribute('data-platform');
-    if(platform == 'linux') {
 
-      const keymanUrl = buildStandardKeymanProtocolDownloadLink(
-        data.id, data.bcp47
-      );
-
-      location.href = keymanUrl;
-
-      const fallbackHandle = window.setTimeout(function() {
-        document.getElementById("content").setAttribute('keyman-installed', 'false');
-      }, 1000);
-
-      window.addEventListener('blur', function() {
-        window.clearTimeout(fallbackHandle);
-       });
-    }
-  }, 10);
 }
