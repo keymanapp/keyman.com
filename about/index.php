@@ -135,18 +135,31 @@
   In addition to my software work, I also enjoy swimming and other water sports, baking and cooking, day hiking, and
   working with youth. Since 2015, my wife and I have been welcoming foster children into our home.
 </p>
+  <p style="margin-top: 32px" class="center"><br /></p>
+  <h4 class="caption">DG</h4>
+  <br />
+  <p class="people-text">
+    I'm from Northern Ireland and I have a Natural Sciences degree from Cambridge.
+    I've been working on the Linux side of Keyman since May 2018. Prior to that I've
+    been working as a software developer and/or volunteering on various free and
+    open software projects.
+  </p>
+  <p class="people-text">
+    I enjoy audax, other non-speedy cycling, and board games.
+  </p>
 
-<p style="margin-top: 32px" class="center"><br/></p>
-<h4 class="caption">DG</h4>
-<br/>
-<p class="people-text">
-  I'm from Northern Ireland and I have a Natural Sciences degree from Cambridge.
-  I've been working on the Linux side of Keyman since May 2018. Prior to that I've
-  been working as a software developer and/or volunteering on various free and
-  open software projects.
-</p>
-<p class="people-text">
-  I enjoy audax, other non-speedy cycling, and board games.
+  <p style="margin-top: 32px;" class="center"><img class="inline" src="<?php echo cdn("img/eberhard.jpg"); ?>" /><br /><br /></p>
+  <h4 class="caption">Eberhard Beilharz</h4>
+  <br />
+
+  <p class="people-text">I am one of the few non-native English speakers in the team, coming from
+    Germany. I have a degree in computer science from the University of Applied Sciences in
+    Karlsruhe. After working in a small software company for several years I joined SIL’s
+    language software development department where I worked on different projects with a focus on
+    maintaining cross-platform compatibility of our products. During my time with the Keyman team
+    I mainly worked on all aspects of Keyman for Linux.</p>
+  <p class="people-text">
+    If I happen to have some spare time I enjoy reading, bicycling and other outdoor activities.</p>
 </p>
 
 <h2 class="red underline">Social Media and Mailing Lists</h2>
