@@ -148,7 +148,7 @@
     I enjoy audax, other non-speedy cycling, and board games.
   </p>
 
-  <p style="margin-top: 32px;" class="center"><img class="inline" src="<?php echo cdn("img/eberhard.jpg"); ?>" /><br /><br /></p>
+  <p style="margin-top: 32px;" class="center"><img class="inline" src="<?php echo cdn("img/eberhard.png"); ?>" /><br /><br /></p>
   <h4 class="caption">Eberhard Beilharz</h4>
   <br />
 
