@@ -108,9 +108,9 @@
    * Get metadata on the downloadable files from the download server for the keyboard in question
    */
   function getKeyboardDownloadData($id) {
-    global $downloadhost;
+    global $KeymanHosts;
 
-    $s = @file_get_contents($downloadhost . '/api/keyboard/1.0/' . rawurlencode($id));
+    $s = @file_get_contents($KeymanHosts->downloads_keyman_com . '/api/keyboard/1.0/' . rawurlencode($id));
     if($s === FALSE) {
       echo "Unable to find keyboard $id";
       exit;

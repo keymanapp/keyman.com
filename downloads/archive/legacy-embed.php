@@ -1,5 +1,7 @@
  <?php
   require_once('includes/template.php');
+  require_once __DIR__ . '/../../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
 
   // Required
   head([
@@ -16,7 +18,7 @@
 <div id='section2'>
 <h2 class="red underline">About Keyman</h2>
 
-<p>Keyman is now a free program. We recommend you download the latest version of Keyman from <a href='keyman:link?url=https://keyman.com/downloads/'>keyman.com</a>.</p>
+<p>Keyman is now a free program. We recommend you download the latest version of Keyman from <a href='keyman:link?url=<?= KeymanHosts::Instance()->keyman_com ?>/downloads/'><?= KeymanHosts::Instance()->keyman_com_host ?></a>.</p>
 
 <p>If you wish to continue using this version, please use the table below to find a free license key for activation:</p>
 

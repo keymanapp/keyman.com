@@ -78,7 +78,7 @@ function loaded(){
   }
 
   $('#show-phone-menu').click(function(event) {
-    $("#phone-menu").toggle();
+    $("#phone-menu").toggleClass('menu-visible');
   });
 
   // Downloads
@@ -357,4 +357,4 @@ function toggleDeprecatedVersionDetails() {
   $('#deprecated-old').toggle();
 }
 
-loaded();
+$(loaded);
