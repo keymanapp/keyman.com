@@ -1,12 +1,12 @@
 <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'About Keyman | Keyman',
     'css' => ['template.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
 <h2 class="red underline">About Keyman</h2>
 <p>
@@ -25,12 +25,12 @@
 <p>
   <img src='<?= cdn('img/sil-logo-blue-2017_1.png') ?>' style='float:left; margin: 0 16px 0 0'>
   Keyman is created by SIL International. Partners in Language Development,
-  SIL International is a faith-based nonprofit organization committed to serving language communities 
-  worldwide as they build capacity for sustainable language development. SIL does this primarily 
-  through research, translation, training and materials development. 
+  SIL International is a faith-based nonprofit organization committed to serving language communities
+  worldwide as they build capacity for sustainable language development. SIL does this primarily
+  through research, translation, training and materials development.
 </p>
 
-<p>  
+<p>
   You can learn more about SIL International on the
   <a href='http://www.sil.org/about'>SIL International web site</a>.
 </p>
@@ -40,7 +40,7 @@
 <p>
   <p class='center'><img src='<?= cdn('img/npic-logo.png') ?>' class='inline'><br><br>
 </p>
-  
+
 <p>
   One of the Keyman international software teams operates out of the <a href='http://npic.edu.kh/'>
   National Polytechnic Institute of Cambodia</a>.
@@ -67,7 +67,7 @@
 </p>
 <p class="people-text">
   My personal blog can be found at <a href="https://marc.durdin.net/">marc.durdin.net</a> and my Twitter account is
-  <a href="https://www.twitter.com/MarcDurdin">@MarcDurdin</a>. 
+  <a href="https://www.twitter.com/MarcDurdin">@MarcDurdin</a>.
 </p>
 
 <p style="margin-top: 32px;" class="center"><img class="inline" src="<?php echo cdn("img/makara.jpg"); ?>" /><br/><br/></p>
@@ -135,25 +135,42 @@
   In addition to my software work, I also enjoy swimming and other water sports, baking and cooking, day hiking, and
   working with youth. Since 2015, my wife and I have been welcoming foster children into our home.
 </p>
+  <p style="margin-top: 32px" class="center"><br /></p>
+  <h4 class="caption">DG</h4>
+  <br />
+  <p class="people-text">
+    I'm from Northern Ireland and I have a Natural Sciences degree from Cambridge.
+    I've been working on the Linux side of Keyman since May 2018. Prior to that I've
+    been working as a software developer and/or volunteering on various free and
+    open software projects.
+  </p>
+  <p class="people-text">
+    I enjoy audax, other non-speedy cycling, and board games.
+  </p>
 
-<p style="margin-top: 32px" class="center"><br/></p>
-<h4 class="caption">DG</h4>
-<br/>
-<p class="people-text">
-  I'm from Northern Ireland and I have a Natural Sciences degree from Cambridge.
-  I've been working on the Linux side of Keyman since May 2018. Prior to that I've
-  been working as a software developer and/or volunteering on various free and
-  open software projects.
-</p>
-<p class="people-text">
-  I enjoy audax, other non-speedy cycling, and board games.
+  <p style="margin-top: 32px;" class="center"><img class="inline" src="<?php echo cdn("img/eberhard.png"); ?>" /><br /><br /></p>
+  <h4 class="caption">Eberhard Beilharz</h4>
+  <br />
+
+  <p class="people-text">I am one of the few non-native English speakers in the team, coming from
+    Germany. I have a degree in computer science from the University of Applied Sciences in
+    Karlsruhe. After working in a small software company for several years I joined SIL’s
+    language software development department where I worked on different projects with a focus on
+    maintaining cross-platform compatibility of our products. During my time with the Keyman team
+    I mainly worked on all aspects of Keyman for Linux.</p>
+  <p class="people-text">
+    If I happen to have some spare time I enjoy reading, bicycling and other outdoor activities.</p>
 </p>
 
-<h2 class="red underline">Online Community</h2>
+<h2 class="red underline">Social Media and Mailing Lists</h2>
 <p>
   <a href="https://twitter.com/keyman"><img class="contact-social" src="<?php echo cdn("img/twitter2.png"); ?>"/>Twitter</a>
   <br/>
   <a href="https://www.facebook.com/KeymanApp"><img class="contact-social" src="<?php echo cdn("img/facebook2.png"); ?>"/>Facebook</a>
+  <br/>
+  <a href="https://community.software.sil.org/c/keyman"><img class="contact-social" src="<?php echo cdn("img/discourse-16.png"); ?>"/>SIL Keyman Community Forum</a>
+  <br/>
+  <a href="/about/list"><img class="contact-social" src="<?php echo cdn("img/email-16.png"); ?>"/>Keyman Announcements by Email</a>
 </p>
 
 <h2 class="red underline">Open Source Credits and Kudos</h2>
