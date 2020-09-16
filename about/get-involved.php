@@ -19,12 +19,13 @@
 
 <ul>
   <li><a href='#donate'>Make a donation</a></li>
-  <li><a href='#create-keyboard'>Create a keyboard layout for your language</a>
-  <li><a href='#support-users'>Support other users</a>
-  <li><a href='#test-beta'>Test a new version</a>
-  <li><a href='#write-code'>Write some code</a>
-  <li><a href='#improve-docs'>Improve the documentation</a>
-  <li><a href='#join-team'>Join the team!</a>
+  <li><a href='#create-keyboard'>Create a keyboard layout for your language</a></li>
+  <li><a href='#localize-keyman'>Localize Keyman for your language</a></li>
+  <li><a href='#support-users'>Support other users</a></li>
+  <li><a href='#test-beta'>Test a new version</a></li>
+  <li><a href='#write-code'>Write some code</a></li>
+  <li><a href='#improve-docs'>Improve the documentation</a></li>
+  <li><a href='#join-team'>Join the team!</a></li>
 </ul>
 
 <h2 id='donate' class="red">Make a donation</h2>
@@ -53,6 +54,15 @@
   <li><a href='/developer'>Learn about Keyman Developer</a>
   <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/keyboards'>Share your keyboard layouts</a>
 </ul>
+
+<h2 id='localize-keyman' class="red">Localize Keyman for your language</h2>
+
+<p>
+  Many of the Keyman products have an option to change the displayed language. In Keyman for Android and
+  Keyman for iPhone and iPad, the Keyman UI will match your device's locale (if the translated strings are available).
+  If your language is not an available option, or some of the strings need to be updated, visit
+  <a href="https://translate.keyman.com">https://translate.keyman.com</a> to help translate Keyman into your language.
+</p>
 
 <h2 id='support-users' class="red">Support other users</h2>
 
