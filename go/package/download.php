@@ -15,6 +15,7 @@
   KeymanComSentry::init();
 
   PackageDownloadPage::redirect_to_file(
+    isset($_REQUEST['type']) ? $_REQUEST['type'] : null,
     isset($_REQUEST['id']) ? $_REQUEST['id'] : null,
     isset($_REQUEST['version']) ? $_REQUEST['version'] : null,
     isset($_REQUEST['platform']) ? $_REQUEST['platform'] : null,
@@ -26,20 +27,28 @@
 
   class PackageDownloadPage {
 
-    public static function redirect_to_file($id, $version, $platform, $tier, $bcp47, $update, $ga_cookie) {
+    public static function redirect_to_file($type, $id, $version, $platform, $tier, $bcp47, $update, $ga_cookie) {
+      if(empty($type)) {
+        $type = 'keyboard';
+      }
+
+      if($type !== 'keyboard' && $type !== 'model') {
+        JsonApiFailure::InvalidParameters("type");
+      }
+
       if(empty($id)) {
         JsonApiFailure::InvalidParameters("id, version");
       }
 
       if(empty($version)) {
         // If version isn't provided, we'll query the live api for the version
-        $json = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . '/keyboard/' . rawurlencode($id));
+        $json = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . "/$type/" . rawurlencode($id));
         if ($json !== FALSE) {
           $json = json_decode($json);
         }
 
         if(empty($json)) {
-          JsonApiFailure::Failure(404, JsonApiFailure::ERROR_NotFound, "package with id $id was not found");
+          JsonApiFailure::Failure(404, JsonApiFailure::ERROR_NotFound, "$type package with id $id was not found");
         }
 
         $version = $json->version;
@@ -51,19 +60,24 @@
       $tier = Validation::validate_tier($tier, 'stable');
       $platform = Validation::validate_platform($platform, 'unknown');
 
-      $url = KeymanHosts::Instance()->downloads_keyman_com . "/keyboards/$id/$version/$id.kmp";
+      if($type === 'keyboard') {
+        $url = KeymanHosts::Instance()->downloads_keyman_com . "/keyboards/$id/$version/$id.kmp";
+      }
+      else {
+        $url = KeymanHosts::Instance()->downloads_keyman_com . "/models/$id/$version/$id.model.kmp";
+      }
+
       $url_e = htmlentities($url);
 
-      if(DEBUG) header('Content-Type: text/plain');
-
-      self::report_download_event($ga_cookie, $id, $platform, $tier, $bcp47, $update);
-
       if(DEBUG) {
+        header('Content-Type: text/plain');
         echo "\n\nLocation: $url\n";
         exit;
       }
 
       if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
+        self::report_download_event($ga_cookie, $id . ($type === "model" ? ".$type" : ""), $platform, $tier, $bcp47, $update);
+
         // We don't do a redirect for Test tier because a test instance of the
         // downloads server is not available and so it gives us an error
         header("HTTP/1.1 302 Found");
