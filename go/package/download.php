@@ -32,12 +32,12 @@
         $type = 'keyboard';
       }
 
-      if(empty($id)) {
-        JsonApiFailure::InvalidParameters("id, version");
-      }
-
       if($type !== 'keyboard' && $type !== 'model') {
         JsonApiFailure::InvalidParameters("type");
+      }
+
+      if(empty($id)) {
+        JsonApiFailure::InvalidParameters("id, version");
       }
 
       if(empty($version)) {
