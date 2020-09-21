@@ -243,6 +243,11 @@ h2 a {
   box-sizing: border-box;
 }
 
+#keyboard-details .links div {
+  margin-bottom: 6px;
+  line-height: 1.2em;
+}
+
 #keyboard-details .supported-languages {
   font-size: 0.8em;
   line-height: 1.4em;
