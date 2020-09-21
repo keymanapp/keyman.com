@@ -220,7 +220,7 @@ function buildPager(res, q, obsolete) {
   var pager = $('<div class="pager">');
   function appendPager(pager, text, page) {
     if(page != res.context.pageNumber && page > 0 && page <= res.context.totalPages) {
-      $('<a>'+text+'</a>').attr('href', getCurrentPath(q, page, obsolete)).click((event) => goToPage(event, q, page)).appendTo(pager);
+      $('<a>'+text+'</a>').attr('href', getCurrentPath(q, page, obsolete)).click(function(event) { return goToPage(event, q, page)}).appendTo(pager);
     } else {
       $('<span>'+text+'</span>').appendTo(pager);
     }
