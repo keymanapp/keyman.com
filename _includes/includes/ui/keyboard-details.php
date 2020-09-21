@@ -300,23 +300,19 @@ END;
         <h1 class='red underline'><?= self::$title ?></h1>
 <?php
       }
-?>
-<?php
+
       if(!empty(self::$deprecatedBy)) {
         $dep = self::$deprecatedBy;
         $id = self::$id;
         echo "
-          <div class='download deprecated-new'>
-            <a class='download-link' href='/keyboards/$dep$session_query_q'><span>Download</span></a>
-            <div class='download-title'>Keyboard '$id' is obsolete.</div>
-            <div class='download-description'>Click the Download button to get the replacement <span style='font-weight:bold'>$dep</span> keyboard instead.</div>
-            <div class='download-filename'>$dep</div>
+          <div>
+            <a href='/keyboards/$dep$session_query_q' class='deprecated'><span>Important note:</span>
+            This is an obsolete version of this keyboard. Unless you have a good reason, click here to install the new version, called <span>$dep</span>, instead.</a>
           </div>
           <div>
-            <p class='deprecated-link'><a href='javascript:toggleDeprecatedVersionDetails()'>View details for old version of this keyboard</a></p>
+            <p class='deprecated-link'><a href='javascript:toggleDeprecatedVersionDetails()'>View details for obsolete version instead</a></p>
             <div id='deprecated-old'>
-              <a href='/keyboards/$dep$session_query_q' class='deprecated'><span>Important note:</span>
-              This is an old version of this keyboard. Unless you have a good reason, click here to install the new version, called <span>$dep</span>, instead.</a>
+
         ";
       }
     }
