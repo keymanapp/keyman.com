@@ -433,7 +433,7 @@ html[data-platform='unknown'] .download.download-unknown {
   display: none;
 }
 
-.embed #search-results .keyboard .title {
+.embed #search-results .keyboard {
   margin-top: 24px;
 }
 .embed #search-results .title {
