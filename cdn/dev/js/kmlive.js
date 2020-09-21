@@ -349,6 +349,14 @@ function loaded(){
         }
     });
   });
+
+  /* While search box in Keyboards menu is focused, make its parent always visible */
+
+  $("#language-search").on('focus', function() {
+    $('#keyboards').addClass('menu-item-force');
+  }).on('blur', function() {
+    $('#keyboards').removeClass('menu-item-force');
+  });
 }
 
 /* Handling deprecated keyboards */
