@@ -76,7 +76,9 @@
       }
 
       if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
-        self::report_download_event($ga_cookie, $id . ($type === "model" ? ".$type" : ""), $platform, $tier, $bcp47, $update);
+        if(KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_PRODUCTION) {
+          self::report_download_event($ga_cookie, $id . ($type === "model" ? ".$type" : ""), $platform, $tier, $bcp47, $update);
+        }
 
         // We don't do a redirect for Test tier because a test instance of the
         // downloads server is not available and so it gives us an error
