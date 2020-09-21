@@ -7,7 +7,7 @@
   $head_options = [
     'title' =>'Keyboard Search',
     'css' => ['template.css', '../keyboard-search/search.css'],
-    'js' => ['../keyboard-search/jquery.mark.js', '../keyboard-search/search.js']
+    'js' => ['../keyboard-search/jquery.mark.js', '../keyboard-search/dedicated-landing-pages.js', '../keyboard-search/search.js']
 ];
 
   if($embed != 'none') {

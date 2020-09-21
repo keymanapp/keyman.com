@@ -116,8 +116,11 @@ h2 a {
   margin: 10px 8px 0 0;
 }
 
-#search-results .title {
+#search-results .keyboard {
   margin-top: 16px;
+}
+
+#search-results .title {
   padding: 0 8px 2px;
   font-size: 13pt;
 }
@@ -171,6 +174,13 @@ h2 a {
 
 #search-results .keyboard .detail {
   padding: 0 8px;
+}
+
+#search-results .keyboard.keyboardLandingPage {
+  border: solid 1px #444444;
+  border-radius: 6px;
+  background: white;
+  padding: 8px 0;
 }
 
 #search-results .keyboard .id {
