@@ -437,9 +437,7 @@ END;
               <th>Minimum Keyman Version</th>
               <td><?= self::$minVersion ?></td>
             </tr>
-            <?php
-            if (isset(self::$keyboard->related)) {
-              ?>
+            <?php if (isset(self::$keyboard->related)) { ?>
               <tr>
                 <th>Related Keyboards</th>
                 <td>
@@ -453,9 +451,21 @@ END;
                   ?>
                 </td>
               </tr>
-              <?php
-            }
-            ?>
+            <?php } ?>
+            <?php if(isset(self::$keyboard->links) && sizeof(self::$keyboard->links) > 0) { ?>
+              <tr>
+                <th>Links</th>
+                <td class='links'>
+                  <?php
+                    foreach(self::$keyboard->links as $link) {
+                      $hurl = htmlentities($link->url);
+                      $hname = htmlentities($link->name);
+                      echo "<div><a href='$hurl'>$hname</a></div>";
+                    }
+                  ?>
+                </td>
+              </tr>
+            <?php } ?>
             <tr>
               <th>Supported Languages</th>
               <td class='supported-languages'>
