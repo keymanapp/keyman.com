@@ -5,6 +5,8 @@ if(typeof embed_query == 'undefined') {
 var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
 var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
+var dynamic_search_timeout = 0;
+
 /////////////////////////////////////////////////////////////////////////////////////
 // Search functionality.
 /////////////////////////////////////////////////////////////////////////////////////
@@ -12,22 +14,43 @@ var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 var counter = 0;
 
 function getCurrentPath(q, page, obsolete) {
+  q = q.trim();
   var r = q.match(/^(c|l)\:(id)\:(.+)$/);
   obsolete = obsolete ? '&obsolete=1' : '';
+  page = page > 1 ? 'page='+page : '';
+  var path = '';
   if(r && r[1].charAt(0) == 'c') {
-    return '/keyboards/countries/'+r[3]+'?page='+page+obsolete;
+    path = '/keyboards/countries/';
   } else if(r && r[1].charAt(0) == 'l') {
-    return '/keyboards/languages/'+r[3]+'?page='+page+obsolete;
+    path = '/keyboards/languages/'+r[3];
+  } else if(q == '') {
+    path = '/keyboards'
   } else {
-    return '/keyboards?q='+encodeURIComponent(q)+'&page='+page+obsolete;
+    path = '/keyboards?q='+encodeURIComponent(q);
+  }
+
+  if(page + obsolete == '') {
+    return path;
+  }
+
+  return path + (path.includes('?') ? '&' : '?') + page + obsolete;
+}
+
+function clearDynamicSearchTimeout() {
+  if(dynamic_search_timeout) {
+    window.clearTimeout(dynamic_search_timeout);
+    dynamic_search_timeout = 0;
   }
 }
 
 function search(updateHistory) {
+  clearDynamicSearchTimeout();
   wrapSearch(++counter, updateHistory);
 }
 
 function wrapSearch(localCounter, updateHistory) {
+  $('#search-box').addClass('searching');
+
   var page = parseInt(document.f.page.value, 10);
   if(isNaN(page) || page < 1 || page > 999) page = 1;
 
@@ -40,11 +63,11 @@ function wrapSearch(localCounter, updateHistory) {
   if((!updateHistory && q.trim().length < 3) || q.trim().length == 0) {
     var resultsElement = $('#search-results');
     resultsElement.empty();
-    doUpdateHistory(q, page, obsolete, '', updateHistory);
+    if(updateHistory)
+      doUpdateHistory(q, page, obsolete, '{"context":{}}', updateHistory);
+    $('#search-box').removeClass('searching');
     return false;
   }
-
-  $('#search-box').addClass('searching');
 
   var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
 
@@ -65,16 +88,13 @@ function wrapSearch(localCounter, updateHistory) {
   }
 
   xhr.onload = function() {
+    $('#search-box').removeClass('searching');
     if(counter > localCounter) {
       // out of order response, or later query
       return;
     }
 
-    var responseText = xhr.responseText;
-
-    //hide_loading();
-    $('#search-box').removeClass('searching');
-    doUpdateHistory(q, page, obsolete, responseText, updateHistory);
+    doUpdateHistory(q, page, obsolete, xhr.responseText, updateHistory);
     process_response(q, obsolete, xhr.responseText);
     // process the response.
   };
@@ -140,6 +160,12 @@ function process_response(q, obsolete, res) {
   resultsElement.empty();
 
   var qq = res.context && res.context.text ? res.context.text : q;
+
+  if(qq == '') {
+    var resultsElement = $('#search-results');
+    resultsElement.empty();
+    return;
+  }
 
 
   var pageMatch = process_page_match(q);
@@ -295,7 +321,6 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 
-var dynamic_search_timeout = 0;
 
 var load_search_count = 0, load_search = function() {
   // Because load order of jQuery may be after load_search, we should wait
@@ -307,8 +332,9 @@ var load_search_count = 0, load_search = function() {
   }
 
   $('#search-q').on('input', function() {
-    if(dynamic_search_timeout) window.clearTimeout(dynamic_search_timeout);
+    clearDynamicSearchTimeout();
     dynamic_search_timeout = window.setTimeout(function() {
+      dynamic_search_timeout = 0;
       document.f.page.value = 1;
       search(false);
     }, 250);
@@ -321,16 +347,6 @@ var load_search_count = 0, load_search = function() {
     document.f.q.focus();
   });
 
-  var init = function(value, page, obsolete, updateHistory) {
-    page = parseInt(page, 10);
-    if(isNaN(page)) page = 1;
-    document.f.q.value = decodeURIComponent(value);
-    document.f.page.value = page;
-    document.f.obsolete.value = obsolete;
-    search(!!updateHistory);
-    return value != '';
-  }
-
   // Get initial search
 
   var page = 1, obsolete = 0, q = '', params = location.search.substr(1).split('&');
@@ -339,7 +355,8 @@ var load_search_count = 0, load_search = function() {
     if(p.length == 2 && p[0] == 'q') {
       q = decodeURIComponent(p[1]);
     } else if(p.length == 2 && p[0] == 'page') {
-      page = decodeURIComponent(p[1]);
+      page = parseInt(decodeURIComponent(p[1]), 10);
+      if(isNaN(page)) page = 1;
     } else if(p.length == 2 && p[0] == 'obsolete') {
       obsolete = decodeURIComponent(p[1]);
     }
@@ -355,7 +372,11 @@ var load_search_count = 0, load_search = function() {
     }
   }
 
-  return init(q, page, obsolete);
+  document.f.q.value = q;
+  document.f.page.value = page;
+  document.f.obsolete.value = obsolete;
+  search(false);
+  return q != '';
 };
 
 function isKeyboardObsolete(kbd) {
