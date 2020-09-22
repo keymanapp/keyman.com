@@ -474,7 +474,7 @@ END;
                     $n = 0;
                     $count = count(get_object_vars(self::$keyboard->languages)) - 3;
                     $langs = (array) self::$keyboard->languages;
-                    usort($langs, function($i1, $i2) {
+                    uasort($langs, function($i1, $i2) {
                       return strcasecmp($i1->languageName, $i2->languageName);
                     });
 
