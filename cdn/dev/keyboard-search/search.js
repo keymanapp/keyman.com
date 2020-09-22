@@ -112,6 +112,28 @@ window.onpopstate = function(e) {
   } else return false;
 };
 
+function process_page_match(q) {
+  q = q.toLowerCase();
+  var page = dedicatedLandingPages.find(function(p) {
+    var term = p.terms.find(function(t) {
+      return t.startsWith(q);
+    });
+    return term !== undefined;
+  });
+  if(page === undefined) return null;
+
+  var result = {
+    description: page.description,
+    id: page.id,
+    name: page.name,
+    encodings: ["unicode"],
+    isDedicatedLandingPage: true,
+    match: {type: "description"},
+    platformSupport: {}
+  };
+  return result;
+}
+
 function process_response(q, obsolete, res) {
   var resultsElement = $('#search-results');
   res = JSON.parse(res);
@@ -119,28 +141,29 @@ function process_response(q, obsolete, res) {
 
   var qq = res.context && res.context.text ? res.context.text : q;
 
+
+  var pageMatch = process_page_match(q);
+  if(pageMatch) {
+    if(!res.keyboards) {
+      res.keyboards = [];
+    }
+    if(res.context.pageNumber == 1) {
+      res.keyboards.unshift(pageMatch);
+    }
+    res.context.totalRows++;
+  }
+
   if(res.keyboards) {
     var deprecatedElement = null;
-
-    //$('<h3>').addClass('red underline').text(res.context.range ? res.context.range : "Keyboards matching '"+q+"'").appendTo(resultsElement);
 
     $('<div class="statistics">').text(
       res.context.totalRows + (res.context.totalRows == 1 ? ' result' : ' results') +
       (res.context.totalPages < 2 ? '' : '; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.')
     ).appendTo(resultsElement);
 
-    /* not sure if we want this here:
-    if(res.context.totalPages > 1) {
-      buildPager(res, q).appendTo(resultsElement);
-    }*/
-
     document.title = q + ' - Keyboard search';
 
-    console.log(res.context);
-
     res.keyboards.forEach(function(kbd) {
-
-      // Remove irrelevant keyboards
 
       if(isKeyboardObsolete(kbd) && !deprecatedElement) {
         // TODO: make title change depending on whether deprecated keyboards are shown or hidden
@@ -149,8 +172,10 @@ function process_response(q, obsolete, res) {
         resultsElement.append(deprecatedElement);
       }
 
+      $keyboardClass = kbd.isDedicatedLandingPage ? 'keyboard keyboardLandingPage' : 'keyboard';
+
       var k = $(
-        "<div class='keyboard'>"+
+        "<div class='"+$keyboardClass+"'>"+
           "<div class='title'><a></a><span class='match'></span></div>"+
           "<div class='detail'>"+
             "<div class='id-downloads'><div class='id'></div>"+
@@ -161,9 +186,15 @@ function process_response(q, obsolete, res) {
           "</div>"+
         "</div>");
 
-      $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
+      if(kbd.isDedicatedLandingPage) {
+        $('.title a', k).text(kbd.name).attr('href', kbd.id+embed_query_q);
+      } else {
+        $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
+      }
 
-      if(kbd.match.downloads == 0)
+      if(kbd.isDedicatedLandingPage) {
+        // We won't show the downloads text
+      } else if(kbd.match.downloads == 0)
         $('.downloads', k).text('No recent downloads');
       else if(kbd.match.downloads == 1)
         $('.downloads', k).text(kbd.match.downloads+' monthly download');
@@ -187,7 +218,7 @@ function process_response(q, obsolete, res) {
         case 'country_iso3166_code': $('.title .match', k).text('(country, ISO 3166 code \''+kbd.match.name+'\')').mark(qq); break;
         case 'script': $('.title .match', k).text('('+kbd.match.name+' script)').mark(qq); break;
         case 'script_iso15924_code': $('.title .match', k).text('(script, ISO 15924 code \''+kbd.match.name+'\')').mark(qq); break;
-        case 'description': $('.description', k).mark(qq); break;
+        case 'description': $('.description', k).mark(qq); $('.title a', k).mark(qq); break;
       }
 
       if(kbd.platformSupport) {
