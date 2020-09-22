@@ -213,7 +213,7 @@ function process_response(q, obsolete, res) {
         "</div>");
 
       if(kbd.isDedicatedLandingPage) {
-        $('.title a', k).text(kbd.name).attr('href', kbd.id+embed_query_q);
+        $('.title a', k).text(kbd.name).attr('href', '/keyboards/h'+kbd.id+embed_query_q);
       } else {
         $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
       }
