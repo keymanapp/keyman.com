@@ -463,7 +463,12 @@ END;
                   (function() {
                     $n = 0;
                     $count = count(get_object_vars(self::$keyboard->languages)) - 3;
-                    foreach(self::$keyboard->languages as $bcp47 => $detail) {
+                    $langs = (array) self::$keyboard->languages;
+                    usort($langs, function($i1, $i2) {
+                      return strcasecmp($i1->languageName, $i2->languageName);
+                    });
+
+                    foreach($langs as $bcp47 => $detail) {
                       if($n == 3) {
                         echo " <a id='expand-languages' href='#expand-languages'>Expand $count more &gt;&gt;</a>";
                         echo "<a id='collapse-languages' href='#collapse-languages'>&lt;&lt; Collapse</a> <span class='expand-languages'>";
