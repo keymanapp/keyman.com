@@ -71,9 +71,9 @@
         'id' => 'lingfilsemitica'),
 
       array(
-        'name' => 'BU Keyboard',
-        'desc' => 'This keyboard provides access to a wide range of IPA, Americanist, and European Latin characters, along with arrows and symbols for currency, typesetting, and mathematics.',
-        'id' => 'bu')
+        'name' => 'BU Phonetic',
+        'desc' => 'This keyboard provides access to a wide range of characters for Latin-based scripts in Unicode 4.1.0.',
+        'id' => 'bu_phonetic')
 
       );
 
