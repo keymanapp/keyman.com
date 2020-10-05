@@ -262,26 +262,58 @@ END;
         'android');
     }
 
-    protected static function WriteiPhoneBoxes() {
-      return self::download_box(
-        'Keyman for iPhone',
-        AppStore::url,
-        htmlentities(self::$keyboard->name) . ' for iPhone',
-        'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.AppStore::url.'">Keyman for iPhone</a> must be installed first.',
-        'download-ios',
-        'Install on iPhone',
-        'ios');
-    }
+    protected static function WriteiOSBoxes() {
 
-    protected static function WriteiPadBoxes() {
-      return self::download_box(
-        'Keyman for iPad',
-        AppStore::url,
-        htmlentities(self::$keyboard->name) . ' for iPad',
-        'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.AppStore::url.'">Keyman for iPad</a> must be installed first.',
-        'download-ios',
-        'Install on iPad',
-        'ios');
+      $keyboard = self::$keyboard;
+      $tier = self::$tier;
+      $version = self::$versions->ios->$tier;
+
+      $e = [
+        'name' => $keyboard->name,
+        'host' => KeymanHosts::Instance()->downloads_keyman_com,
+        'tier' => $tier,
+        'version' => $version,
+        'id' => $keyboard->id,
+        'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
+      ];
+
+      $u = array_map('rawurlencode', $e);
+      $hu = array_map('htmlentities', $u);
+      $h = array_map('htmlentities', $e);
+
+      // Note, we don't need to capture an event for the keyboard download here, because we'll
+      // capture it in the /go/package/download step
+
+      $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
+        "?platform=ios&version={$hu['version']}&tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+
+      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/iphone-and-ipad/current-version/installing-keyboards";
+
+      $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
+        (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
+
+      $downloadKeymanUrl = AppStore::url;
+
+      $result = <<<END
+        <div id='content' class='download download-ios'>
+          <div>
+            <p>If you have not yet installed Keyman for iPhone and iPad, please install it first before installing the keyboard.</p>
+            <ol>
+              <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for iPhone and iPad</a></li>
+              <li id='step2'><a class='download-link binary-download' href='$downloadLink'>
+                <span>Install keyboard</span></a>
+                <div class='download-description'>Downloads {$h['name']} for iPhone and iPad.</div>
+              </li>
+            </ol>
+            <ul>
+              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+            </ul>
+          </div>
+        </div>
+END;
+      return $result;      
     }
 
     protected static function LoadData() {
@@ -358,8 +390,7 @@ END;
         "Windows" => "self::WriteWindowsBoxes",
         "mac" => "self::WritemacOSBoxes",
         "Linux" => "self::WriteLinuxBoxes",
-        "iPhone" => "self::WriteiPhoneBoxes",
-        "iPad" => "self::WriteiPadBoxes",
+        "iOS" => "self::WriteiOSBoxes",
         "Android" => "self::WriteAndroidBoxes"
       );
 
