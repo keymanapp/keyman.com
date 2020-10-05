@@ -96,6 +96,18 @@
 
 <h2 class="red underline">Frequently Asked Questions</h2>
 <p>
+  <span class="red">Q.</span> What Linux distros will Keyman work with?
+</p>
+<p>
+  <span class="red">A.</span> Keyman is built for amd64 architecture and runs on Debian, Ubuntu, Wasta Linux.
+  It can be compiled to run from source in most distributions.
+</p>
+<p>
+  Note: Keyman packages are unavailable on the Xenial ppa.
+</p>
+
+<br/>
+<p>
     <span class="red">Q.</span> How do I install Keyman for Linux?
 </p>
 <p>
@@ -158,17 +170,6 @@ sudo apt-get install ibus-kmfl</code></pre>
     <span class="red">A.</span> It is good to remove any keyboards from ibus e.g. KMFL keyboards before you remove KMFL.
     Then, to remove KMFL:
 <pre class='language-bash code'><code>sudo dpkg --purge ibus-kmfl libkmfl</code></pre>
-</p>
-
-<br/>
-<p>
-    <span class="red">Q.</span> What Linux distros will Keyman work with?
-</p>
-<p>
-    <span class="red">A.</span> Keyman runs on Debian, Ubuntu, Wasta Linux and can be compiled to run from source in most distributions.
-</p>
-<p>
-    Note: there's currently a limitation where the Keyman packages are incomplete on the Xenial ppa.
 </p>
 
 <br/>
