@@ -1,0 +1,35 @@
+/* List entries */
+
+ol {
+  list-style-type: decimal;
+}
+
+#section2 ol li {
+  list-style-type: decimal;
+  margin-left: 64px;
+  font-size: 16pt;
+}
+
+#section2 ol li a.download-link {
+  padding-top: 6px;
+  height: 40px;
+}
+
+ol li a {
+  font-size: 16pt;
+}
+
+#step2 div {
+  margin: 0 0 0 20px;
+  line-height: 1.6em;
+}
+
+.download.download-linux[keyman-installed='true'] div#keyman-installed,
+.download.download-linux[keyman-installed='false'] div:not(#keyman-installed) {
+  display: block;
+}
+
+.download.download-linux[keyman-installed='false'] div#keyman-installed,
+.download.download-linux[keyman-installed='true'] div:not(#keyman-installed) {
+  display: none;
+}

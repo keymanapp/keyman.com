@@ -1,0 +1,23 @@
+{
+  "name": "keyman.com",
+  "version": "1.0.0",
+  "description": "Source for https://keyman.com/",
+  "keywords": ["keyboards", "keyboard layouts", "keyman"],
+  "contributors": ["Marc Durdin <marc@durdin.net> (https://github.com/mcdurdin)"],
+  "scripts": {
+    "test": "composer test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keymanapp/keyman.com.git"
+  },
+  "author": "SIL International",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keymanapp/keyman.com/issues"
+  },
+  "homepage": "https://github.com/keymanapp/keyman.com#readme",
+  "devDependencies": {
+    "broken-link-checker": "^0.7.8"
+  }
+}

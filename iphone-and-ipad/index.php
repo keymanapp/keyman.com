@@ -1,7 +1,9 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/appstore.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   // Required
   head([
     'title' =>'Keyman for iPhone and iPad',
@@ -9,7 +11,7 @@
     'showMenu' => true,
     'banner' => [
       'title' => '600 languages,<br/>all your apps.',
-      'button' => '<a href="'.$appstore.'" target="itunes_store"><img id="app-store" src="cdn(Available_on_the_App_Store_Badge_US-UK_135x40_0824.png)" 
+      'button' => '<a href="'.$appstore.'" target="itunes_store"><img id="app-store" src="cdn(Available_on_the_App_Store_Badge_US-UK_135x40_0824.png)"
         alt="Available on the App Store" /></a>',
       'image' => 'ios-splash.png',
       'background' => 'water'
@@ -165,7 +167,7 @@
 <br/>
 
 <p>
-  <a href="//<?php echo $helpSite; ?>/products/iphone-and-ipad/version-history/">View all version history</a>
+  <a href="<?= $KeymanHosts->help_keyman_com ?>/products/iphone-and-ipad/version-history/">View all version history</a>
 </p>
 
 <?= $appstoreTable ?>
@@ -179,7 +181,7 @@
   You can develop your own keyboard layouts for Keyman for iPhone and iPad with <a href='/developer'>Keyman Developer</a>.  If you have existing keyboards, they can be ported to iOS with just a recompile.  And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iPhone and iPad Documentation</a>
+  <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iPhone and iPad Documentation</a>
 </p>
 <p>
   <a href="/downloads/#ios-engine">Download the latest Keyman Engine for iOS</a>
