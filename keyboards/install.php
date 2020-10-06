@@ -65,7 +65,6 @@
 
     protected static function WriteWindowsBoxes() {
       $keyboard = self::$keyboard;
-      $bcp47 = rawurlencode(empty(self::$bcp47) ? '' : self::BOOTSTRAP_SEPARATOR.self::$bcp47);
       $tier = self::$tier;
       $version = self::$versions->windows->$tier;
 
@@ -117,7 +116,6 @@ END;
     protected static function WritemacOSBoxes() {
       $keyboard = self::$keyboard;
       $tier = self::$tier;
-      $version = self::$versions->mac->$tier;
 
       $e = [
         'name' => $keyboard->name,
@@ -170,7 +168,6 @@ END;
     protected static function WriteLinuxBoxes() {
       $keyboard = self::$keyboard;
       $tier = self::$tier;
-      $version = self::$versions->linux->$tier;
 
       $e = [
         'name' => $keyboard->name,
@@ -232,7 +229,6 @@ END;
     protected static function WriteAndroidBoxes() {
       $keyboard = self::$keyboard;
       $tier = self::$tier;
-      $version = self::$versions->android->$tier;
 
       $e = [
         'name' => $keyboard->name,
