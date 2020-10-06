@@ -266,13 +266,12 @@ END;
 
       $keyboard = self::$keyboard;
       $tier = self::$tier;
-      $version = self::$versions->ios->$tier;
 
       $e = [
         'name' => $keyboard->name,
         'host' => KeymanHosts::Instance()->downloads_keyman_com,
         'tier' => $tier,
-        'version' => $version,
+        'keyboardversion' => $keyboard->version,
         'id' => $keyboard->id,
         'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
       ];
@@ -285,8 +284,8 @@ END;
       // capture it in the /go/package/download step
 
       $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
-        "?platform=ios&version={$hu['version']}&tier={$hu['tier']}" .
-        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+        "?platform=ios&amp;version={$hu['keyboardversion']}&amp;tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/iphone-and-ipad/current-version/installing-keyboards";
 
