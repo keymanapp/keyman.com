@@ -123,7 +123,7 @@ END;
         'name' => $keyboard->name,
         'host' => KeymanHosts::Instance()->downloads_keyman_com,
         'tier' => $tier,
-        'version' => $version,
+        'keyboardversion' => $keyboard->version,
         'id' => $keyboard->id,
         'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
       ];
@@ -136,8 +136,8 @@ END;
       // capture it in the /go/package/download step
 
       $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
-        "?platform=macos&version={$hu['version']}&tier={$hu['tier']}" .
-        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+        "?platform=macos&amp;version={$hu['keyboardversion']}&amp;tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/mac/current-version/start/install-keyboard";
 
@@ -176,7 +176,7 @@ END;
         'name' => $keyboard->name,
         'host' => KeymanHosts::Instance()->downloads_keyman_com,
         'tier' => $tier,
-        'version' => $version,
+        'keyboardversion' => $keyboard->version,
         'id' => $keyboard->id,
         'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
       ];
@@ -189,8 +189,8 @@ END;
       // capture it when the bootstrap downloads the file.
 
       $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
-        "?platform=linux&version={$hu['version']}&tier={$hu['tier']}" .
-        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+        "?platform=linux&amp;version={$hu['keyboardversion']}&amp;tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/linux/current-version/guide/installing-keyboard";
 
@@ -238,7 +238,7 @@ END;
         'name' => $keyboard->name,
         'host' => KeymanHosts::Instance()->downloads_keyman_com,
         'tier' => $tier,
-        'version' => $version,
+        'version' => $keyboard->version,
         'id' => $keyboard->id,
         'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
       ];
@@ -251,8 +251,8 @@ END;
       // capture it in the /go/package/download step
 
       $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
-        "?platform=android&version={$hu['version']}&tier={$hu['tier']}" .
-        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+        "?platform=android&amp;version={$hu['version']}&amp;tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/android/current-version/installing-keyboards";
 
