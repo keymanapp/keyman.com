@@ -40,8 +40,10 @@ jobs:
         Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.php"
         Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.md"
 
-        Add-Content -path c:\tools\php\php.ini -value '',"error_log = $ENV:GITHUB_WORKSPACE\php_errors.log","session.save_path = $ENV:GITHUB_WORKSPACE\.phpsessions","error_reporting = E_ALL","display_errors = On","display_startup_errors = On","html_errors = Off"
+        mkdir c:\tools\php\tmp
+        Add-Content -path c:\tools\php\php.ini -value '',"error_log = $ENV:GITHUB_WORKSPACE\php_errors.log","session.save_path = $ENV:GITHUB_WORKSPACE\.phpsessions","error_reporting = E_ALL","display_errors = On","display_startup_errors = On","html_errors = Off","sys_temp_dir = c:\tools\php\tmp"
         mkdir $ENV:GITHUB_WORKSPACE\.phpsessions
+
     #
     # This step configures FastCGI according to the documentation at https://www.php.net/manual/en/install.windows.manual.php
     # This alternative doesn't work: New-WebHandler -name "PHP" -Path *.php -Modules FastCgiModule -ScriptProcessor "c:\tools\php\php-cgi.exe" -Verb 'GET,POST' -Force
@@ -87,8 +89,15 @@ jobs:
     - name: Check broken links
       shell: bash
       run: |
-        ( set +e; set +o pipefail; npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3 | grep -E "BROKEN|Getting links from"; exit ${PIPESTATUS[0]} )
+        ( set +e; set +o pipefail; npx broken-link-checker http://localhost:8888 --ordered --recursive --host-requests 50 -e --filter-level 3 | grep -E "BROKEN|Getting links from" | grep -B 1 "BROKEN"; exit ${PIPESTATUS[0]} )
 
+    - name: Check PHP errors
+      shell: bash
+      run: |
+        ( set +e; set +o pipefail; [ -f php_errors.log ] && echo 'PHP reported errors or warnings; see log below' && exit 1 || ( echo 'No PHP errors found' && exit 0 ) )
+    #
+    # If any of the tests fail, let's grab a bit more detail on the environment
+    #
     - name: Report errors
       if: ${{ failure() }}
       shell: bash

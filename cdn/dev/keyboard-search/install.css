@@ -33,3 +33,29 @@ ol li a {
 .download.download-linux[keyman-installed='true'] div:not(#keyman-installed) {
   display: none;
 }
+
+@media only screen and (max-width: 640px) {
+  #section2 ol li {
+    margin-left: 0;
+    font-size: 24pt;
+  }
+
+  ol li a {
+    font-size: 12pt;
+    margin-left: 8px;
+  }
+
+  html .download a.download-link {
+      margin: 0;
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+  }  
+
+  html .download a.download-link span {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1em;
+    margin-top: 0.33em;
+  }
+}
