@@ -53,41 +53,18 @@
 
       self::LoadData();
       self::WriteTitle();
-      self::WriteDownloadBoxes();
+
+      echo self::WriteWindowsBoxes();
+      echo self::WritemacOSBoxes();
+      echo self::WriteLinuxBoxes();
+      echo self::WriteAndroidBoxes();
+      echo self::WriteiOSBoxes();
+
       Foot::render();
-    }
-
-    protected static function download_box($keymanProductName, $keymanUrl, $title, $description, $class, $linktitle, $platform, $mode='standalone') {
-
-      if(isset(self::$keyboard->platformSupport->$platform) && self::$keyboard->platformSupport->$platform != 'none') {
-        $id = self::$id;
-
-        $e_id = urlencode($id);
-
-        // TODO: this won't work now, needs rewrite for other platforms
-        // TODO: copying the WriteWindowsBoxes function
-        $url = "/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
-        if(!empty(self::$bcp47)) $url .= "&bcp47=".rawurlencode(self::$bcp47);
-        $url = htmlspecialchars($url);
-        return <<<END
-        <div class='download download-$platform'>
-
-        <ol>
-          <li id='step1'><a href='$keymanUrl' title='Download and install Keyman'>Install $keymanProductName</a></li>
-          <li id='step2'><a class='download-link binary-download' href='$url' onclick='return downloadBinaryFile(this);'><span>Install $title</span></a></li>
-        </ol>
-
-        </div>
-END;
-      } else {
-        // TODO: this message not yet clear
-        return "<div class='download download-platform'>Not available for $platform</div>";
-      }
     }
 
     protected static function WriteWindowsBoxes() {
       $keyboard = self::$keyboard;
-      $bcp47 = rawurlencode(empty(self::$bcp47) ? '' : self::BOOTSTRAP_SEPARATOR.self::$bcp47);
       $tier = self::$tier;
       $version = self::$versions->windows->$tier;
 
@@ -136,16 +113,15 @@ END;
       return $result;
     }
 
-    protected static function WriteMacOSBoxes() {
+    protected static function WritemacOSBoxes() {
       $keyboard = self::$keyboard;
       $tier = self::$tier;
-      $version = self::$versions->mac->$tier;
 
       $e = [
         'name' => $keyboard->name,
         'host' => KeymanHosts::Instance()->downloads_keyman_com,
         'tier' => $tier,
-        'version' => $version,
+        'keyboardversion' => $keyboard->version,
         'id' => $keyboard->id,
         'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
       ];
@@ -158,8 +134,8 @@ END;
       // capture it in the /go/package/download step
 
       $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
-        "?platform=macos&version={$hu['version']}&tier={$hu['tier']}" .
-        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+        "?platform=macos&amp;version={$hu['keyboardversion']}&amp;tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/mac/current-version/start/install-keyboard";
 
@@ -192,13 +168,12 @@ END;
     protected static function WriteLinuxBoxes() {
       $keyboard = self::$keyboard;
       $tier = self::$tier;
-      $version = self::$versions->linux->$tier;
 
       $e = [
         'name' => $keyboard->name,
         'host' => KeymanHosts::Instance()->downloads_keyman_com,
         'tier' => $tier,
-        'version' => $version,
+        'keyboardversion' => $keyboard->version,
         'id' => $keyboard->id,
         'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
       ];
@@ -211,8 +186,8 @@ END;
       // capture it when the bootstrap downloads the file.
 
       $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
-        "?platform=linux&version={$hu['version']}&tier={$hu['tier']}" .
-        (empty($hu['bcp47']) ? "" : "&bcp47={$hu['bcp47']}");
+        "?platform=linux&amp;version={$hu['keyboardversion']}&amp;tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/linux/current-version/guide/installing-keyboard";
 
@@ -252,14 +227,55 @@ END;
     }
 
     protected static function WriteAndroidBoxes() {
-      return self::download_box(
-        'Keyman for Android',
-        PlayStore::url,
-        htmlentities(self::$keyboard->name) . ' for Android',
-        'Installs only ' . htmlentities(self::$keyboard->name) . '. <a href="'.PlayStore::url.'">Keyman for Android</a> must be installed first.',
-        'download-android',
-        'Install on Android',
-        'android');
+      $keyboard = self::$keyboard;
+      $tier = self::$tier;
+
+      $e = [
+        'name' => $keyboard->name,
+        'host' => KeymanHosts::Instance()->downloads_keyman_com,
+        'tier' => $tier,
+        'version' => $keyboard->version,
+        'id' => $keyboard->id,
+        'bcp47' => empty(self::$bcp47) ? '' : self::$bcp47,
+      ];
+
+      $u = array_map('rawurlencode', $e);
+      $hu = array_map('htmlentities', $u);
+      $h = array_map('htmlentities', $e);
+
+      // Note, we don't need to capture an event for the keyboard download here, because we'll
+      // capture it in the /go/package/download step
+
+      $downloadLink = KeymanHosts::Instance()->keyman_com . "/go/package/download/{$hu['id']}" .
+        "?platform=android&amp;version={$hu['version']}&amp;tier={$hu['tier']}" .
+        (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
+
+      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/android/current-version/installing-keyboards";
+
+      $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
+        (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
+
+      $downloadKeymanUrl = PlayStore::url;
+
+      $result = <<<END
+        <div id='content' class='download download-android'>
+          <div>
+            <p>If you have not yet installed Keyman for Android, please install it first before installing the keyboard.</p>
+            <ol>
+              <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for Android</a></li>
+              <li id='step2'><a class='download-link binary-download' href='$downloadLink'>
+                <span>Install keyboard</span></a>
+                <div class='download-description'>Downloads {$h['name']} for Android.</div>
+              </li>
+            </ol>
+            <ul>
+              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+            </ul>
+          </div>
+        </div>
+END;
+      return $result;      
     }
 
     protected static function WriteiOSBoxes() {
@@ -380,23 +396,5 @@ END;
 ?>
         <h1 class='red underline'><?= self::$title ?></h1>
 <?php
-    }
-
-    protected static function WriteDownloadBoxes() {
-      global $pageDevice;
-
-      $deviceboxfuncs = array(
-        "Windows" => "self::WriteWindowsBoxes",
-        "mac" => "self::WritemacOSBoxes",
-        "Linux" => "self::WriteLinuxBoxes",
-        "iOS" => "self::WriteiOSBoxes",
-        "Android" => "self::WriteAndroidBoxes"
-      );
-
-      foreach($deviceboxfuncs as $device => $func) {
-        echo call_user_func($func);
-      }
-
-      //?echo "</div>";
     }
   }
