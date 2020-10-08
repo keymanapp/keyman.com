@@ -50,7 +50,7 @@
         if(!empty($versions->$platform->$tier->files->$file)) {
           $fileData = $versions->$platform->$tier->files->$file;
           $fileSize = formatSizeUnits($fileData->size);
-          echo "<li><a href=" . KeymanHosts::Instance()->downloads_keyman_com . "/$platform/$tier/{$versions->$platform->$tier->version}/$file'>$file $tier</a> (released $fileData->date, $fileSize)</li>\n";
+          echo "<li><a href='" . KeymanHosts::Instance()->downloads_keyman_com . "/$platform/$tier/{$versions->$platform->$tier->version}/$file'>$file $tier</a> (released $fileData->date, $fileSize)</li>\n";
         }
       }
     }

@@ -40,7 +40,7 @@
 <p><a href='<?=$KeymanHosts->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
 
 <?php
-  downloadSection('Keyman Desktop for Windows', 'windows', 'keymandesktop-$version.exe', 'beta alpha');
+  downloadSection('Keyman for Windows',         'windows', 'keyman-$version.exe', 'beta alpha');
   downloadSection('Keyman for macOS',           'mac',     'keyman-$version.dmg', 'beta alpha');
 ?>
 
