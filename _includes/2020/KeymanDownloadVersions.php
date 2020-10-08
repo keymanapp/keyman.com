@@ -13,7 +13,7 @@
       'ios' => 'keyman-ios-(\d+\.\d+\.\d+)\.ipa', // Always use App Store; included for completeness but not generally used
       'mac' => 'keyman-(\d+\.\d+\.\d+)\.dmg',
       'linux' => '-', // Linux distribution is multiple archives, use a package manager
-      'windows' => 'keymandesktop-(\d+\.\d+\.\d+(\.\d+)?).exe'
+      'windows' => 'keyman(desktop)?-(\d+\.\d+\.\d+(\.\d+)?).exe'
     ];
 
     static function getDownloadUrls() {

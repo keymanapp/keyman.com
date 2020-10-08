@@ -44,5 +44,6 @@
 
 <a id='standalone'></a>
 <?php
-  downloadLargeCTA('Keyman Desktop', 'windows', 'stable', 'keymandesktop-$version.exe');
+  // TODO #186: 14.0 stable release requires rename here
+  downloadLargeCTA('Keyman for Windows', 'windows', 'stable', 'keymandesktop-$version.exe');
 ?>
