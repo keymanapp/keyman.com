@@ -78,7 +78,7 @@ function loaded(){
   }
 
   $('#show-phone-menu').click(function(event) {
-    $("#phone-menu").toggle();
+    $("#phone-menu").toggleClass('menu-visible');
   });
 
   // Downloads
@@ -349,6 +349,14 @@ function loaded(){
         }
     });
   });
+
+  /* While search box in Keyboards menu is focused, make its parent always visible */
+
+  $("#language-search").on('focus', function() {
+    $('#keyboards').addClass('menu-item-force');
+  }).on('blur', function() {
+    $('#keyboards').removeClass('menu-item-force');
+  });
 }
 
 /* Handling deprecated keyboards */
@@ -357,4 +365,4 @@ function toggleDeprecatedVersionDetails() {
   $('#deprecated-old').toggle();
 }
 
-loaded();
+$(loaded);

@@ -1,14 +1,16 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   // Required
   head([
     'title' =>'KeymanWeb | Source Code and Development',
     'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
     'showMenu' => true
-  ]);           
-  
-  $json = @file_get_contents("$apihost/version/web");
+  ]);
+
+  $json = @file_get_contents("{$KeymanHosts->api_keyman_com}/version/web");
   if($json) {
     $json = json_decode($json);
   }
@@ -18,8 +20,8 @@
     // If the get-version API fails, we'll use the latest known stable version
     $build = "11.0.227";
   }
-  
-  $cdnUrlBase = "$statichost/kmw/engine/$build";
+
+  $cdnUrlBase = "{$KeymanHosts->s_keyman_com}/kmw/engine/$build";
 ?>
 <script src='<?=cdn('js/clipboard.min.js')?>'></script>
 <script src='<?=cdn('js/prism.js')?>'></script>
@@ -48,18 +50,18 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
 &lt;/script&gt;
 </code></pre>
 </div>
-  
+
 <p>Upgrade Note: with KeymanWeb <?= $stable_version; ?>, the unminified version is no longer served from our CDN.
 Instead, we use source maps to make the full source available in web developer tools.</p>
 
 <p><a href='sample1.php' target='_blank'>Try it!</a></p>
 
-<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the 
+<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the
 Toggle User Interface for desktop browsers.  Mobile browsers all integrate the language selection into
 the on screen keyboard.</p>
 
 <ul>
-  <li>Learn more about using KeymanWeb in the <a href='https://help.keyman.com/developer/engine/web/'>KeymanWeb documentation</a></li>
+  <li>Learn more about using KeymanWeb in the <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/'>KeymanWeb documentation</a></li>
 </ul>
 
 <h2 class='red underline'>Add custom keyboard to a Website</h2>
@@ -83,7 +85,7 @@ the on screen keyboard.</p>
 </code></pre>
 
 <ul>
-  <li><a href='https://help.keyman.com/developer/engine/web/<?= $stable_version; ?>/reference/core/addKeyboards'><code>addKeyboards</code> reference documentation</a></li>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/<?= $stable_version; ?>/reference/core/addKeyboards'><code>addKeyboards</code> reference documentation</a></li>
 </ul>
 
 <h2 class='red underline'>Use the Keyman Cloud CDN</h2>
@@ -91,27 +93,27 @@ the on screen keyboard.</p>
 <p>The Keyman Cloud CDN is appropriate for smaller sites. While HTTP and HTTPS endpoints are available, HTTPS is always recommended.</p>
 
 <table class='basic-table'><tbody>
-  <tr><td>HTTPS endpoint:</td><td><input type='text' readonly size='60' value='https://s.keyman.com/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
+  <tr><td>HTTPS endpoint:</td><td><input type='text' readonly size='60' value='<?= KeymanHosts::Instance()->s_keyman_com ?>/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
 </tbody></table>
 
 <br>
 
 <ul>
   <li><a href='keyboards.php'>Keyman Cloud CDN Keyboard Catalogue</a></li>
-  <li><a href='https://help.keyman.com/developer/cloud/version/2.0'>How to: retrieve the latest version of KeymanWeb from Keyman Cloud CDN</a></li>
+  <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/cloud/version/2.0'>How to: retrieve the latest version of KeymanWeb from Keyman Cloud CDN</a></li>
   <li><a href='index.2.0.php'>Using older versions of KeymanWeb</a></li>
 </ul>
 
 <br>
 
-<h2 class="red underline">Get the code + Contribute</h2>    
+<h2 class="red underline">Get the code + Contribute</h2>
 <p>
   There are additional samples in the code repository. We prefer git pull requests for code submissions.
 </p>
 
 <ul>
   <li><a href='https://github.com/keymanapp/keyman/tree/master/web'>KeymanWeb on GitHub</a></li>
-  <li><a href='https://downloads.keyman.com/web/'>Download KeymanWeb releases</a> (alpha, beta and stable)</li>
+  <li><a href='<?= KeymanHosts::Instance()->downloads_keyman_com ?>/web/'>Download KeymanWeb releases</a> (alpha, beta and stable)</li>
 </ul>
 
 <br>
