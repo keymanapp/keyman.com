@@ -20,7 +20,7 @@
         <!-- event banner: uncomment this section when we have an event or promotion -->
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p style='font-size:2em'><a href='/keyboards/'>New: Introducing the refreshed keyboard search!</a></p>
+            <p style='font-size:2em'><a href='/14'>New: Keyman 14 is now in Beta!</a></p>
           </div>
         </div>
         <!-- -->
