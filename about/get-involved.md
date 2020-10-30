@@ -20,7 +20,7 @@ be a part of the journey:
 check, or bank transfer. Your donation will be used to help cover the costs of developing Keyman, including
 paying staff and contractors, server costs and hardware and software purchases.
 
-* [Learn more about donating](https://donate.keyman.com/faq)
+* [Learn more about donating]($donate.keyman.com/faq)
 * [Donate now](/donate)
 
 ## Create a keyboard layout for your language ## {#create-keyboard}
@@ -30,7 +30,7 @@ to start creating keyboard layouts today. Once you have created a layout, you ca
 contribute it to the Keyman keyboard repository.
 
 * [Learn about Keyman Developer](/developer)
-* [Share your keyboard layouts](https://help.keyman.com/developer/keyboards)
+* [Share your keyboard layouts]($help.keyman.com/developer/keyboards)
 
 ## Localize Keyman for your language ## {#localize-keyman}
 Many of the Keyman products have an option to change the displayed language. In Keyman for Android and
@@ -68,7 +68,7 @@ Keyman has a lot of documentation! While we work hard to keep Keyman documentati
 always room for improvement. If you spot a gap in the documentation, or a mistake, you can submit an update
 through our GitHub documentation repository, by editing the source files directly online in GitHub!
 
-* [Read the documentation](https://help.keyman.com)
+* [Read the documentation]($help.keyman.com)
 * [Start exploring the documentation repository](https://github.com/keymanapp/help.keyman.com)
   <!-- TODO: update help.keyman.com readme to clarify how users can edit files? -->
 
