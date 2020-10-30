@@ -1,5 +1,7 @@
 <?php
   require_once('includes/template.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
 
   // Required
   head([
@@ -20,7 +22,7 @@
   community or organization with the Keyman Engine for Desktop. Or add a custom virtual keyboard to your existing
   Windows application.
   <br/><br/>
-  <a href='https://help.keyman.com/developer/engine/desktop/'>Keyman Engine for Windows documentation</a>
+  <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/desktop/'>Keyman Engine for Windows documentation</a>
   <br/>
   <a href='https://github.com/keymanapp/keyman/'>Get the source</a>
   <br/>
@@ -46,7 +48,7 @@
   You can of course build your own keyboard layouts using <a href='/developer/'>Keyman Developer</a>, as well as
   access our library of hundreds of keyboard layouts covering thousands of languages.
   <br/><br/>
-  <a href='https://help.keyman.com/developer/engine/web/'>KeymanWeb Documentation</a>
+  <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/'>KeymanWeb Documentation</a>
   <br/>
   <a href='/developer/keymanweb/'>Add KeymanWeb to your website</a>
 </p>
@@ -63,7 +65,7 @@
   a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus,
   dynamic keyboard layers and more!
   <br/><br/>
-  <a href='https://help.keyman.com/developer/engine/iphone-and-ipad/'>Keyman Engine for iPhone and iPad Documentation</a>
+  <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/iphone-and-ipad/'>Keyman Engine for iPhone and iPad Documentation</a>
   <br/>
   <a href='/downloads/#ios-engine'>Get the Keyman Engine for iOS now</a>
 </p>
@@ -78,7 +80,7 @@
   a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus,
   dynamic keyboard layers and more!
   <br/><br/>
-  <a href='https://help.keyman.com/developer/engine/android/'>Keyman Engine for Android Documentation</a>
+  <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/android/'>Keyman Engine for Android Documentation</a>
   <br/>
   <a href='/downloads/#android-engine'>Get the Keyman Engine for Android SDK now</a>
 </p>

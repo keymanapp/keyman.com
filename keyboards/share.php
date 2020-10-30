@@ -9,14 +9,18 @@
   }
 
   $id = clean_id($_REQUEST['id']);
+  if(empty($id)) {
+    header('Location: /keyboards');
+    exit;
+  }
 
   function clean_id($id) {
     return preg_replace('/[^A-Za-z0-9_ .-]/', '', $id);
   }
 
   function find_keyboard($id) {
-    global $apihost;
-    $s = @file_get_contents($apihost.'/keyboard/'.$id);
+    global $KeymanHosts;
+    $s = @file_get_contents($KeymanHosts->api_keyman_com.'/keyboard/'.$id);
     if($s === FALSE) {
       return null;
     }
