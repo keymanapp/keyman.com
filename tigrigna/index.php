@@ -116,7 +116,7 @@
         <li><a href="/keyboards/gff-awn-powerpack-7">Awngi</a></li>
         <li><a href="/keyboards/gff-bcq-powerpack-7">Bench</a></li>
         <li><a href="/keyboards/gff_blin">Blin</a></li>
-        <li><a href="/keyboards/https://keyman.com/keyboards/gff_geez">Ge'ez</a></li>
+        <li><a href="/keyboards/gff_geez">Ge'ez</a></li>
         <li><a href="/keyboards/gff-mym-powerpack-7">Me'en-Mursi-Suri-Dizi</a></li>
         <li><a href="/keyboards/gff_gurage">Gurage</a></li>
         <li><a href="/keyboards/gff_gurage_legacy">Gurage Legacy</a></li>
