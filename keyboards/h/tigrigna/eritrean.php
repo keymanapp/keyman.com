@@ -117,10 +117,11 @@
         <li><a href="/tigrigna/">Tigrigna (Ethiopia)</a></li>
         <li><a href="/keyboards/gff-awn-powerpack-7">Awngi</a></li>
         <li><a href="/keyboards/gff-bcq-powerpack-7">Bench</a></li>
-        <li><a href="/keyboards/gff-byn-powerpack-7">Blin</a></li>
-        <li><a href="/keyboards/gff-gez-powerpack-7">Ge'ez</a></li>
+        <li><a href="/keyboards/gff_blin">Blin</a></li>
+        <li><a href="/keyboards/gff_geez">Ge'ez</a></li>
         <li><a href="/keyboards/gff-mym-powerpack-7">Me'en-Mursi-Suri-Dizi</a></li>
-        <li><a href="/keyboards/gff-sgw-powerpack-7">Sebatbeit</a></li>
+        <li><a href="/keyboards/gff_gurage">Gurage</a></li>
+        <li><a href="/keyboards/gff_gurage_legacy">Gurage Legacy</a></li>
         <li><a href="/amharic/">Amharic</a></li>
     </ul>
 </p>
