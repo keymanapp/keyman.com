@@ -1,7 +1,7 @@
 <?php
-  require_once('includes/template.php');
-  require_once(__DIR__ . '/../../vendor/erusev/parsedown/Parsedown.php');
-  require_once(__DIR__ . '/../../vendor/erusev/parsedown-extra/ParsedownExtra.php');
+  require_once(__DIR__ . '/../_includes/includes/template.php');
+  require_once(__DIR__ . '/../vendor/erusev/parsedown/Parsedown.php');
+  require_once(__DIR__ . '/../vendor/erusev/parsedown-extra/ParsedownExtra.php');
   use Keyman\Site\Common\KeymanHosts;
 
   $pagetitle = 'TODO';
@@ -10,16 +10,11 @@
     die('Require file parameter');
   }
 
-  $file = realpath(__DIR__ . '/../../') . DIRECTORY_SEPARATOR . $_REQUEST['file'];
+  $file = realpath(__DIR__ . '/../') . DIRECTORY_SEPARATOR . $_REQUEST['file'];
   $contents = trim(file_get_contents($file));
   $contents = str_replace("\r\n", "\n", $contents);
 
-  // Regex Keyman hosts
-  $contents = str_replace("\$api.keyman.com", KeymanHosts::Instance()->api_keyman_com, $contents);
-  $contents = str_replace("\$donate.keyman.com", KeymanHosts::Instance()->donate_keyman_com, $contents);
-  $contents = str_replace("\$help.keyman.com", KeymanHosts::Instance()->help_keyman_com, $contents);
-  $contents = str_replace("\$keyman.com", KeymanHosts::Instance()->keyman_com, $contents);
-
+  KeymanHosts::Instance()->fixupHostReferences($contents);
   //echo $contents;
 
   // This header specification comes from YAML originally and is not common across

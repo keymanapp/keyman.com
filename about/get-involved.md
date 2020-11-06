@@ -20,7 +20,7 @@ be a part of the journey:
 check, or bank transfer. Your donation will be used to help cover the costs of developing Keyman, including
 paying staff and contractors, server costs and hardware and software purchases.
 
-* [Learn more about donating]($donate.keyman.com/faq)
+* [Learn more about donating](https://donate.keyman.com/faq)
 * [Donate now](/donate)
 
 ## Create a keyboard layout for your language ## {#create-keyboard}
@@ -30,13 +30,13 @@ to start creating keyboard layouts today. Once you have created a layout, you ca
 contribute it to the Keyman keyboard repository.
 
 * [Learn about Keyman Developer](/developer)
-* [Share your keyboard layouts]($help.keyman.com/developer/keyboards)
+* [Share your keyboard layouts](https://help.keyman.com/developer/keyboards)
 
 ## Localize Keyman for your language ## {#localize-keyman}
 Many of the Keyman products have an option to change the displayed language. In Keyman for Android and
 Keyman for iPhone and iPad, the Keyman UI will match your device's locale (if the translated strings are available).
 If your language is not an available option, or some of the strings need to be updated, visit
-[https://translate.keyman.com](https://translate.keyman.com) to help translate Keyman into your language.
+[translate.keyman.com](https://translate.keyman.com/) to help translate Keyman into your language.
 
 ## Support other users ## {#support-users}
 Many users come and ask questions about using Keyman in our [online community](https://community.software.sil.org/c/keyman).
@@ -68,7 +68,7 @@ Keyman has a lot of documentation! While we work hard to keep Keyman documentati
 always room for improvement. If you spot a gap in the documentation, or a mistake, you can submit an update
 through our GitHub documentation repository, by editing the source files directly online in GitHub!
 
-* [Read the documentation]($help.keyman.com)
+* [Read the documentation](https://help.keyman.com/)
 * [Start exploring the documentation repository](https://github.com/keymanapp/help.keyman.com)
   <!-- TODO: update help.keyman.com readme to clarify how users can edit files? -->
 
@@ -80,3 +80,15 @@ introduce yourself &mdash; we'd love to meet with you!
 
 * [Write to us](https://software.sil.org/about/contact/)
 * [Send us a tweet or DM on Twitter](https://twitter.com/keyman)
+
+## Test Links (not for production)
+* [s.keyman.com](https://s.keyman.com)
+* [api.keyman.com](https://api.keyman.com)
+* [help.keyman.com](https://help.keyman.com)
+* [downloads.keyman.com](https://downloads.keyman.com)
+* [keyman.com](https://keyman.com)
+* [keymanweb.com](https://keymanweb.com)
+* [r.keymanweb.com](https://r.keymanweb.com)
+* [blog.keyman.com](https://blog.keyman.com)
+* [donate.keyman.com](https://donate.keyman.com)
+* [translate.keyman.com](https://translate.keyman.com)
