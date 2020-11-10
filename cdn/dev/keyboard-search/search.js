@@ -285,7 +285,7 @@ function buildPager(res, q, obsolete) {
 
   appendPager(pager, '&lt; Previous', res.context.pageNumber-1);
   if(res.context.pageNumber > 5) {
-    ('<span>...</span>').appendTo(pager);
+    $('<span>...</span>').appendTo(pager);
   }
   for(var i = Math.max(1, res.context.pageNumber - 4); i <= Math.min(res.context.totalPages, res.context.pageNumber + 4); i++) {
     appendPager(pager, i, i);
