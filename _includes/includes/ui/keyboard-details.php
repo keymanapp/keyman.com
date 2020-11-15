@@ -354,7 +354,7 @@ END;
     }
 
     protected static function WriteKeyboardDetails() {
-      global $embed_target, $session_query_q;
+      global $embed_target, $session_query_q, $KeymanHosts;
 
       // this is html, trusted in database
       ?>
@@ -444,7 +444,15 @@ END;
                   <?php
                   foreach (self::$keyboard->related as $name => $value) {
                     $hname = htmlentities($name);
-                    echo "<a href='/keyboards/$hname$session_query_q'>$hname</a> ";
+                    // TODO(lowpri): we could return this information in the API to avoid multiple
+                    // round trip queries but that requires more changes to the API, docs, and
+                    // schema.
+                    $s = @file_get_contents($KeymanHosts->api_keyman_com . '/keyboard/' . rawurlencode($name));
+                    if ($s === FALSE) {
+                      echo "<span class='keyboard-unavailable' title='This keyboard is not available on {$KeymanHosts->keyman_com_host}'>$hname</span> ";
+                    } else {
+                      echo "<a href='/keyboards/$hname$session_query_q'>$hname</a> ";
+                    }
                     if (isset($value->deprecates) && $value->deprecates) echo " (deprecated) ";
                     if (isset($value->deprecatedBy) && $value->deprecatedBy) echo " (new version) ";
                   }
