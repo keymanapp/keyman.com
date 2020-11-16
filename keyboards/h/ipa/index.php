@@ -84,7 +84,7 @@
           <h3 class='red'><?= $kl['name'] ?></h3>
           <p class='desc' ><?= $kl['desc'] ?></p>
           <div class='down'>
-            <a href='/keyboard/<?= $kl['id'] ?>'><img
+            <a href='/keyboards/<?= $kl['id'] ?>'><img
               src='<?= cdn('img/download_button.png') ?>' alt='Download' title='Download the <?= $kl['name'] ?> keyboard now' /></a>
             <a href='<?= $helpLink ?>'><img src='<?= cdn('img/details_button.png') ?>' alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
           </div>

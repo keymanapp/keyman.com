@@ -425,7 +425,7 @@ foreach ($keyboardlayouts as $n => $kl) {
     <p class='desc'><?= $kl['desc'] ?></p>
     <div class='down'>
       <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/keyboard/<?= $kl['help'] ?>'><img src="<?= cdn('img/details_button.png'); ?>" alt='Details' title='More information about the <?= $kl['name'] ?> keyboard' /></a>
-      <a href='<?= KeymanHosts::Instance()->keyman_com ?>/keyboard/<?= $kl['id'] ?>'><img src="<?= cdn('img/download_button.png'); ?>" alt='Download' title='Download the <?= $kl['name'] ?> keyboard now' /></a>
+      <a href='<?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= $kl['id'] ?>'><img src="<?= cdn('img/download_button.png'); ?>" alt='Download' title='Download the <?= $kl['name'] ?> keyboard now' /></a>
     </div>
   </div>
 <?php
