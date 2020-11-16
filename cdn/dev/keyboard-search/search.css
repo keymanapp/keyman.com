@@ -248,6 +248,10 @@ h2 a {
   line-height: 1.2em;
 }
 
+#keyboard-details .keyboard-unavailable {
+  text-decoration: underline;
+}
+
 #keyboard-details .supported-languages {
   font-size: 0.8em;
   line-height: 1.4em;
