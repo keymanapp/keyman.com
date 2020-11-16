@@ -43,10 +43,11 @@
     }
 
     /**
-     * Modifies $contents to regex the Keyman live hosts for Markdown files
+     * Returns $contents after regex'ing the Keyman live hosts for Markdown files
      * @param $contents
+     * @return $contents
      */
-    public function fixupHostReferences(&$contents) {
+    public function fixupHostReferences($contents) {
       // Regex Keyman hosts
       $contents = str_replace("https://s.keyman.com", $this->s_keyman_com, $contents);
       $contents = str_replace("https://api.keyman.com", $this->api_keyman_com, $contents);
@@ -58,6 +59,8 @@
       $contents = str_replace("https://blog.keyman.com", $this->blog_keyman_com, $contents);
       $contents = str_replace("https://donate.keyman.com", $this->donate_keyman_com, $contents);
       $contents = str_replace("https://translate.keyman.com", $this->translate_keyman_com, $contents);
+
+      return $contents;
     }
 
     function __construct() {

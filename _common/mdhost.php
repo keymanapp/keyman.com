@@ -14,7 +14,7 @@
   $contents = trim(file_get_contents($file));
   $contents = str_replace("\r\n", "\n", $contents);
 
-  KeymanHosts::Instance()->fixupHostReferences($contents);
+  $contents = KeymanHosts::Instance()->fixupHostReferences($contents);
   //echo $contents;
 
   // This header specification comes from YAML originally and is not common across

@@ -80,15 +80,3 @@ introduce yourself &mdash; we'd love to meet with you!
 
 * [Write to us](https://software.sil.org/about/contact/)
 * [Send us a tweet or DM on Twitter](https://twitter.com/keyman)
-
-## Test Links (not for production)
-* [s.keyman.com](https://s.keyman.com)
-* [api.keyman.com](https://api.keyman.com)
-* [help.keyman.com](https://help.keyman.com)
-* [downloads.keyman.com](https://downloads.keyman.com)
-* [keyman.com](https://keyman.com)
-* [keymanweb.com](https://keymanweb.com)
-* [r.keymanweb.com](https://r.keymanweb.com)
-* [blog.keyman.com](https://blog.keyman.com)
-* [donate.keyman.com](https://donate.keyman.com)
-* [translate.keyman.com](https://translate.keyman.com)
