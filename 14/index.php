@@ -25,19 +25,23 @@ head([
 <br>
 
 <h3>What's New?</h3>
+<p>These major features are in all supported platforms:</p>
 <ul>
   <li>
-    Simpler and Smoother Keyboard Seach<br>
+    Simpler and Smoother Keyboard Search<br>
     <img alt='Search for Khmer Keyboard' src='keyboard_search_khmer.png'>
   </li>
   <li>
-    Localizable UI through <a href="https://translate.keyman.com">translate.keyman.com</a>.
+    Localizable UI through <a href="<?= KeymanHosts::translate_keyman_com ?>">translate.keyman.com</a> (not yet available for macOS).
   </li>
   <li>
     Mobile apps download and install keyboard packages from keyman.com
   </li>
   <li>
-    Consolidated crash reporting to <a href="https://sentry.keyman.com">sentry.keyman.com</a>
+    Consolidated crash reporting to <a href="<?= KeymanHosts::sentry_keyman_com ?>">sentry.keyman.com</a>
+  </li>
+  <li>
+    Many bug fixes and improvements (see the <a href="<?= KeymanHosts::help_keyman_com ?>/version-history">version history</a>)
   </li>
 </ul>
 <br>
@@ -68,8 +72,15 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
 
 <ul>
   <li>Renamed from <strong class="red">Keyman Desktop</strong> to <strong class="red">Keyman for Windows</strong></li>
-  <li>Handles major version upgrades from 10 onward</li>
-  <li>Add GUI for setting configuration options</li>
+  <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
+  <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
+  <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
+  <li>Choose associated language when keyboard is installed (#3524)</li>
+  <li>Much improved keyboard download experience (#3326)</li>
+  <li>Improved BCP 47 tag support (#3529)</li>
+  <li>Much improved initial download and installation experience including bundled keyboards (#3304)</li>
+  <li>Keyman Configuration changes now apply instantly (#3753)</li>
+  <li>Improved user experience when many keyboards installed (#3626, #3627)
 </ul>
 
 
@@ -81,7 +92,11 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta
 <h3>What's New in Keyman 14 for macOS?</h3>
 
 <ul>
-  <li>Added icon for Keyman.app</li>
+  <li>Added icon for Keyman app (#3892)</li>
+  <li>Improved compatibility with Java apps (#3944)</li>
+  <li>Added support for European layouts in On Screen Keyboard (#3924)</li>
+  <li>Made it possible to specify app compatibility modes as a user default (#3949)</li>
+  <li>Improved input reliability with modifier keys and cursor keys (#2588, #3946)</li>
 </ul>
 
 
@@ -91,9 +106,10 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta
 <h3>What's New in Keyman 14 for Linux?</h3>
 
 <ul>
-  <li>Open a .kmp file with Keyman Config</li>
-  <li>Now supports Ubuntu 20.10 (Groovy)</li>
-  <li>Improved UI</li>
+  <li>Open a .kmp file with Keyman Config (#3183)</li>
+  <li>Now supports Ubuntu 20.10 (Groovy) (#3876)</li>
+  <li>Improved user interface</li>
+  <li>Improved support for KDE, Gnome, Fedora, Arch Linux</li>
 </ul>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
@@ -119,6 +135,8 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
   </li>
   <li>Consolidated install menus for installing keyboards</li>
   <li>Add system globe action to show system keyboards</li>
+  <li>Improved correction suggestions (#3555)</li>
+  <li>Match user input capital letters when offering suggestions (#3845)</li>
 </ul>
 
 <h2 class="red underline">Keyman for iPhone and iPad 14</h2>
@@ -134,6 +152,8 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
 <ul>
   <li>Select a language during keyboard package installation</li>
   <li>Improved batching of keyboard and dictionary downloads</li>
+  <li>Improved correction suggestions (#3555)</li>
+  <li>Match user input capital letters when offering suggestions (#3845)</li>
 </ul>
 
 
@@ -162,13 +182,16 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
 <h3>What's new in Keyman Developer 14?</h3>
 
 <ul>
-  <li>Improve how casing is handled for lexical-models</li>
-  <li>Add support for notany() and context()</li>
-  <li>Remove IE dependency from Developer setup</li>
+  <li>Improve how casing is handled for lexical-models (#3770)</li>
+  <li>Add support for notany() and context() (#3816)</li>
+  <li>Remove IE dependency from Developer setup (#3839)</li>
+  <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWSP*, ... (#3878)</li>
+  <li>Improved BCP 47 support and script mapping (#3818)</li>
+  <li>Model compiler merges duplicate words and normalizes when compiling (#3338)</li>
+  <li>Support ISO9995 key identifiers (e.g. E01) (#2741)</li>
 </ul>
 
 
 <h2>Get Involved</h2>
 <p>There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!
 </p>
-
