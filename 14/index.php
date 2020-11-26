@@ -140,7 +140,7 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
   <li>Consolidated install menus for installing keyboards (#3245)</li>
   <li>Fix slow input in the embedded browser (#3768)</li>
   <li>Add system globe action to show system keyboards (#3197)</li>
-  <li>Improved correction suggestions (#3555)</li>
+  <li>Improved corrections and predictions (#3555)</li>
   <li>Match user input capital letters when offering suggestions (#3845)</li>
   <li> Update minimum Android SDK to 21 (Android 5.0 Lollipop) (#2993)</li>
 </ul>
@@ -156,9 +156,9 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
 <h3>What's new in Keyman for iPhone and iPad 14?</h3>
 
 <ul>
-  <li>Select a language during keyboard package installation</li>
-  <li>Improved batching of keyboard and dictionary downloads</li>
-  <li>Improved correction suggestions (#3555)</li>
+  <li>Choose associated language(s) when keyboard is installed (#3437)</li>
+  <li>Improved batching of keyboard and dictionary downloads (#3458)</li>
+  <li>Improved corrections and predictions (#3555)</li>
   <li>Match user input capital letters when offering suggestions (#3845)</li>
 </ul>
 
@@ -173,8 +173,11 @@ downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'beta');
 <h3>What's New in KeymanWeb 14?</h3>
 
 <ul>
-  <li>Add special keys for right-to-left keyboards</li>
-  <li>Block key previews for blank/hidden keys</li>
+  <li>Adds special keys for right-to-left keyboards (#3851, #3937)</li>
+  <li>Interaction with explicitly blank / hidden keys is now blocked (#3857, #3858)</li>
+  <li>Sourcemap improvements (#2809)</li>
+  <li>Fixes issues with keyboard rules involving system stores (#2884)</li>
+  <li>Fixes issues with keyboard rules involving both 'notany' and 'context' (#3817)</li>
 </ul>
 
 
