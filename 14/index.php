@@ -131,14 +131,18 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
 <h3>What's new in Keyman for Android 14?</h3>
 
 <ul>
+  <li>Improved UI for installing keyboard packages (#3498)</li>
   <li>
-    Select a language during keyboard package installation<br>
+    Select a language during keyboard package installation (#3481)<br>
     <img alt='Select language during keyboard installation' src='select_language.png'>
   </li>
-  <li>Consolidated install menus for installing keyboards</li>
-  <li>Add system globe action to show system keyboards</li>
+  <li>Added new menu to add languages for an installed keyboard package (#3255)</li>
+  <li>Consolidated install menus for installing keyboards (#3245)</li>
+  <li>Fix slow input in the embedded browser (#3768)</li>
+  <li>Add system globe action to show system keyboards (#3197)</li>
   <li>Improved correction suggestions (#3555)</li>
   <li>Match user input capital letters when offering suggestions (#3845)</li>
+  <li> Update minimum Android SDK to 21 (Android 5.0 Lollipop) (#2993)</li>
 </ul>
 
 <h2 class="red underline">Keyman for iPhone and iPad 14</h2>
