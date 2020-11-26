@@ -4,6 +4,8 @@ require_once('includes/ui/downloads.php');
 require_once('includes/appstore.php');
 require_once('includes/playstore.php');
 
+use Keyman\Site\Common\KeymanHosts;
+
 // Required
 head([
   'class' => 'keyman11',
@@ -32,16 +34,16 @@ head([
     <img alt='Search for Khmer Keyboard' src='keyboard_search_khmer.png'>
   </li>
   <li>
-    Localizable UI through <a href="<?= KeymanHosts::translate_keyman_com ?>">translate.keyman.com</a> (not yet available for macOS).
+    Localizable UI through <a href="<?= KeymanHosts::Instance()->translate_keyman_com ?>">translate.keyman.com</a> (not yet available for macOS).
   </li>
   <li>
     Mobile apps download and install keyboard packages from keyman.com
   </li>
   <li>
-    Consolidated crash reporting to <a href="<?= KeymanHosts::sentry_keyman_com ?>">sentry.keyman.com</a>
+    Consolidated crash reporting to <a href="<?= KeymanHosts::Instance()->sentry_keyman_com ?>">sentry.keyman.com</a>
   </li>
   <li>
-    Many bug fixes and improvements (see the <a href="<?= KeymanHosts::help_keyman_com ?>/version-history">version history</a>)
+    Many bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>)
   </li>
 </ul>
 <br>
