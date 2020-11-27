@@ -57,6 +57,8 @@ function startAfterPageLoad_Windows(data) {
         location.href = keymanUrl;
       }
 
+      /*
+      Disabled, see https://github.com/keymanapp/keyman.com/issues/200
       const fallbackHandle = window.setTimeout(function() {
           location.href = downloadUrl;
       }, 1000);
@@ -64,6 +66,7 @@ function startAfterPageLoad_Windows(data) {
       window.addEventListener('blur', function() {
         window.clearTimeout(fallbackHandle);
        });
+      */
     }
   }, 10);
 }
@@ -85,6 +88,8 @@ function startAfterPageLoad_Linux(data) {
 
       location.href = keymanUrl;
 
+      /*
+      Disabled, see https://github.com/keymanapp/keyman.com/issues/200
       const fallbackHandle = window.setTimeout(function() {
         document.getElementById("content").setAttribute('keyman-installed', 'false');
       }, 1000);
@@ -92,6 +97,7 @@ function startAfterPageLoad_Linux(data) {
       window.addEventListener('blur', function() {
         window.clearTimeout(fallbackHandle);
        });
+      */
     }
   }, 10);
 }

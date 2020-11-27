@@ -11,7 +11,6 @@
   use Keyman\Site\com\keyman\templates\Foot;
   use Keyman\Site\com\keyman\templates\AppStore;
   use Keyman\Site\com\keyman\templates\PlayStore;
-  use Keyman\Site\com\keyman\KeymanDownloadVersions;
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\com\keyman\Util;
@@ -99,7 +98,8 @@
       $result = <<<END
         <div class='download download-windows'>
         <p>Your {$h['name']} keyboard download should start shortly. If it does not,
-          <a href='$downloadLink'>click here</a> to start the download.</p>
+        click the button below to start the download.</p>
+        <div class='download download-windows'><a class='download-link binary-download' href='$downloadLink'><span>Download keyboard</span></a></div>
         <script data-host="{$h['host']}" data-tier="{$h['tier']}" data-version="{$h['version']}"
             data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
           startAfterPageLoad_Windows(document.currentScript.dataset);
@@ -195,31 +195,26 @@ END;
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
 
       $downloadKeymanUrl = KeymanHosts::Instance()->keyman_com . '/linux/download';
-      $installKeyboardUrl = KeymanHosts::Instance()->keyman_com .
-        "/keyboards/install/{$hu['id']}" . (empty($hu['bcp47']) ? "" : "?bcp47={$hu['bcp47']}");
 
       $result = <<<END
-        <div id='content' class='download download-linux' keyman-installed='true'>
-          <div id='keyman-installed'>
-            <p>Your {$h['name']} keyboard download should start shortly. If it does not,
-              <a href='$downloadLink'>click here</a> to start the download.</p>
-            <script data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
-              startAfterPageLoad_Linux(document.currentScript.dataset);
-            </script>
-            <ul>
-              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
-              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
-            </ul>
-          </div>
+        <div id='content' class='download download-linux'>
+          <script data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
+            startAfterPageLoad_Linux(document.currentScript.dataset);
+          </script>
           <div>
-            <p>Keyman for Linux is not installed yet. Please install it first before installing the keyboard.</p>
+            <p>If you have not yet installed Keyman for Linux, please install it first before installing the keyboard.</p>
             <ol>
               <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for Linux</a></li>
-              <li id='step2'><a class='download-link binary-download' href='$installKeyboardUrl'>
+              <li id='step2'><a class='download-link binary-download' href='$downloadLink'>
                 <span>Install keyboard</span></a>
-                <div class='download-description'>Downloads {$h['name']} for Linux.</div>
               </li>
             </ol>
+          </div>
+          <br>
+          <ul>
+            <li><a href='$helpLink'>Help on installing a keyboard</a></li>
+            <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+          </ul>
           </div>
         </div>
 END;
@@ -275,7 +270,7 @@ END;
           </div>
         </div>
 END;
-      return $result;      
+      return $result;
     }
 
     protected static function WriteiOSBoxes() {
@@ -328,7 +323,7 @@ END;
           </div>
         </div>
 END;
-      return $result;      
+      return $result;
     }
 
     protected static function LoadData() {
