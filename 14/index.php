@@ -22,7 +22,7 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 14.0 Beta</h2>
-<p class="red">30 November 2020</p>
+<p class="red">TBD 2020</p>
 <p>We are pleased to announce that Keyman 14.0 is now in beta!</p>
 <br>
 
@@ -82,7 +82,10 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
   <li>Improved BCP 47 tag support (#3529)</li>
   <li>Much improved initial download and installation experience including bundled keyboards (#3304)</li>
   <li>Keyman Configuration changes now apply instantly (#3753)</li>
-  <li>Improved user experience when many keyboards installed (#3626, #3627)
+  <li>Improved user experience when many keyboards installed (#3626, #3627)</li>
+  <li>Improved bootstrap installer</li>
+  <li>Now uses Chromium to host all web-based UI (e.g. Keyman Configuration)</li>
+  <li>Breaking: Keyman Engine no longer supports the keyboard usage page (usage.htm)</li>
 </ul>
 
 
