@@ -1,4 +1,5 @@
 <?php
+/*
 require_once('includes/template.php');
 require_once('includes/ui/downloads.php');
 require_once('includes/appstore.php');
@@ -207,3 +208,4 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
 <h2>Get Involved</h2>
 <p>There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!
 </p>
+*/
