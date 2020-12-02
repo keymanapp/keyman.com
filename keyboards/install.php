@@ -15,9 +15,26 @@
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\com\keyman\Util;
 
+  // Bundled downloads will make use of Keyman tier, which the site visitor
+  // can override with tier=[alpha|beta|stable]. If no override has been
+  // made, then we make a determination on the basis of which site is in use
+  // and whether not we are currently in a beta phase.
+  if(isset($_REQUEST['tier']))
+    $tier = $_REQUEST['tier'];
+  else {
+    if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION) {
+      $tier = 'stable';
+    } else if(KeymanVersion::IsBetaTier()) {
+      // if we are in a beta phase, then we'll use the beta download
+      $tier = 'beta';
+    } else {
+      $tier = 'alpha';
+    }
+  }
+
   KeyboardInstallPage::render_keyboard_details(
     isset($_REQUEST['id']) ? $_REQUEST['id'] : null,
-    isset($_REQUEST['tier']) ? $_REQUEST['tier'] : null,
+    $tier,
     isset($_REQUEST['bcp47']) ? $_REQUEST['bcp47'] : null
   );
 
@@ -88,7 +105,8 @@
       $downloadLink = KeymanHosts::Instance()->downloads_keyman_com .
         "/windows/{$hu['tier']}/{$hu['version']}/keyman-setup" .
         self::BOOTSTRAP_SEPARATOR . "{$hu['id']}" .
-        (empty($hu['bcp47']) ? "" : "." . "{$hu['bcp47']}.exe");
+        (empty($hu['bcp47']) ? "" : ".{$hu['bcp47']}") .
+        ".exe";
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/desktop/current-version/docs/start_download-install_keyman";
 
