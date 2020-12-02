@@ -47,6 +47,7 @@
     static private $minVersion;
     static private $keyboardPlatforms;
     static private $kmpDownloadUrl;
+    static private $downloadCount;
 
     static private $deprecatedBy;
 
@@ -213,6 +214,15 @@ END;
           "?version=" . rawurlencode(self::$keyboard->version) .
           (empty(self::$tier) ? "" : "&tier=" . rawurlencode(self::$tier)) .
           (empty(self::$bcp47) ? "" : "&bcp47=" . rawurlencode(self::$bcp47));
+
+        self::$downloadCount = 0;
+        $s = @file_get_contents($KeymanHosts->api_keyman_com . '/search/2.0?q=k:id:' . rawurlencode(self::$id));
+        if ($s !== FALSE) {
+          $s = json_decode($s);
+          if(is_object($s) && !empty($s->keyboards[0]->match->downloads)) {
+            self::$downloadCount = $s->keyboards[0]->match->downloads;
+          }
+        }
       }
     }
 
@@ -428,6 +438,10 @@ END;
             <tr>
               <th>Package Download</th>
               <td><a href="<?= self::$kmpDownloadUrl ?>"><?= self::$keyboard->id ?>.kmp</a></td>
+            </tr>
+            <tr>
+              <th>Monthly Downloads</th>
+              <td><?= self::$downloadCount ?></td>
             </tr>
             <tr>
               <th>Encoding</th>
