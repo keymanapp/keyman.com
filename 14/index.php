@@ -1,5 +1,5 @@
 <?php
-/*
+
 require_once('includes/template.php');
 require_once('includes/ui/downloads.php');
 require_once('includes/appstore.php');
@@ -75,6 +75,7 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
 
 <ul>
   <li>Renamed from <strong class="red">Keyman Desktop</strong> to <strong class="red">Keyman for Windows</strong></li>
+  <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. Rather, if you select a Keyman keyboard, Keyman will be restarted for you automatically.</li>
   <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
   <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
   <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
@@ -208,4 +209,3 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
 <h2>Get Involved</h2>
 <p>There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!
 </p>
-*/
