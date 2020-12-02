@@ -1,6 +1,6 @@
 ﻿<?php
     require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'Keyman | Type to the world in your language',
@@ -16,22 +16,22 @@
         <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 1000 languages supported' />
     </div>
     <div class="main2">
-    
+
         <!-- event banner: uncomment this section when we have an event or promotion -->
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p style='font-size:2em'><a href='/13/'>New: Keyman 13.0 is now available!</a></p>
+            <p style='font-size:2em'><a href='/14/'>New: Keyman 14.0 is now in beta!</a></p>
           </div>
         </div>
         <!-- -->
-    
+
         <div class="section section-languages">
             <div class="wrapper">
                 <h2 class="section-heading">Choose a keyboard for your language</h2>
                 <p class="section-explainer">Select a language to download a suitable keyboard for your device. We've listed some of the more popular below, if yours isn't there, use the search tool to find it.</p>
 
                 <?php require_once('includes/ui/download-links.php'); ?>
-                
+
                 <form name="fsearch" action="/keyboards" method="get">
                     <h4>Search over 1000 languages</h4>
                     <input type="text" name="q" id="language-search3" placeholder="Enter your language" />
