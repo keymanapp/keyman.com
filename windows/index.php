@@ -3,11 +3,11 @@
 
   // Required
   head([
-    'title' =>'Keyman Desktop ' . $stable_version,
+    'title' =>'Keyman for Windows ' . $stable_version,
     'css' => ['template.css','index.css','desktop.css','feature-grid.css'],
     'showMenu' => true,
     'banner' => [
-      'title' => 'Keyman Desktop <?php echo $stable_version; ?><br/><span id="title-small">Type in your language</span>',
+      'title' => 'Keyman for Windows <?php echo $stable_version; ?><br/><span id="title-small">Type in your language</span>',
       'button' => '<div id="banner-buttons"><a class="banner-button" href="download.php"><img src="'.cdn('img/download_button.png').'" /></a></div>',
       'image' => 'osk1.png',
       'background' => 'water'
@@ -15,15 +15,15 @@
   ]);
 ?>
 <br/>
-<h2 class="red underline">Introducing Keyman Desktop <?php echo $stable_version; ?></h2>
+<h2 class="red underline">Introducing Keyman for Windows <?php echo $stable_version; ?></h2>
 <p>
-    With keyboards for over 1000 languages, Keyman Desktop lets you type in your language even when Windows doesn't. You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>.
+    With keyboards for over 1000 languages, Keyman for Windows lets you type in your language even when Windows doesn't. You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>.
 </p>
 <p>
     Our unique virtual keyboard technology makes it easy to type in all your programs, including Microsoft Office, Adobe Creative Suite, internet browsers and more, as well as supporting the latest version of Windows.
 </p>
 <p>
-    With over 20 years of development history, Keyman Desktop <?php echo $stable_version; ?> is the easiest and most efficient version to use we've ever built.
+    With over 20 years of development history, Keyman for Windows <?php echo $stable_version; ?> is the easiest and most efficient version to use we've ever built.
     And now that Keyman is free, we've completely removed any obstacles from getting you typing right away.
 </p>
 <ul>
@@ -37,7 +37,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman Desktop <?php echo $beta_version ?> Beta? <a href="/<?= $beta_version ?>/">Learn more</a></p>
+        <p>Want to try the Keyman for Windows <?php echo $beta_version ?> Beta? <a href="/<?= $beta_version ?>/">Learn more</a></p>
 <?php
     }
 ?>
@@ -128,7 +128,7 @@
     </tbody>
 </table>
 <p>
-    You can learn about all the features of Keyman Desktop <?php echo $stable_version; ?> by <a href="features.php">clicking here!</a>
+    You can learn about all the features of Keyman for Windows <?php echo $stable_version; ?> by <a href="features.php">clicking here!</a>
 </p>
 <div class="button-div">
     <a href="/desktop/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
@@ -145,7 +145,7 @@
     <span class="red">Q.</span> What versions of Windows will Keyman <?php echo $stable_version; ?> work with?
 </p>
 <p>
-    <span class="red">A.</span> Keyman Desktop <?php echo $stable_version; ?> is compatible with Windows 7, 8, 8.1, 10 and Server 2008, 2008 R2, 2012 and 2012 R2. If you're using an older version of Windows, Keyman Desktop 8.0 is still available for download at our archive page <a href="/downloads/archive/">here</a>.
+    <span class="red">A.</span> Keyman for Windows <?php echo $stable_version; ?> is compatible with Windows 7, 8, 8.1, 10 and Server 2008, 2008 R2, 2012 and 2012 R2. If you're using an older version of Windows, Keyman Desktop 8.0 is still available for download at our archive page <a href="/downloads/archive/">here</a>.
 </p>
 <br/>
 <p>
@@ -156,7 +156,7 @@
 </p>
 <br/>
 <p>
-    <span class="red">Q.</span> Should I upgrade my older version of Keyman Desktop?
+    <span class="red">Q.</span> Should I upgrade my older version of Keyman?
 </p>
 <p>
     <span class="red">A.</span> Unless you are using Windows Vista or older version of Windows, we recommend that you upgrade to version <?php echo $stable_version; ?>.

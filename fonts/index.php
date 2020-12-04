@@ -19,7 +19,7 @@
 <p>
   If you've read or received a message via Keyman that is displayed as square boxes, the most likely cause is that your device does not support the language or script. The Keyman range of products for desktop, web and mobile can help!
   <br/><br/>
-  <a href="../desktop">Get Keyman Desktop for Windows</a>
+  <a href="../windows">Get Keyman for Windows</a>
   <br/>
   <a href="../mac">Get Keyman for macOS</a>
   <br/>
@@ -69,7 +69,7 @@
 
 <h2 class="red underline">Keyman Fonts for desktop</h2>
 <p>
-  Many Keyman keyboards type out letters that need special fonts. Without the right font, these letters may turn into square boxes or become unreadable. Keyman Desktop keyboards that require a special font will generally come packaged with the font. You can also use the Keyman Font Helper tool to find suitable fonts for your keyboard.
+  Many Keyman keyboards type out letters that need special fonts. Without the right font, these letters may turn into square boxes or become unreadable. Keyman keyboards that require a special font will generally come packaged with the font. You can also use the Keyman Font Helper tool to find suitable fonts for your keyboard.
   <br/><br/>
   <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/<?php echo $stable_version; ?>/docs/basic_fonthelper.php">Learn more about the Font Helper tool.</a>
 </p>

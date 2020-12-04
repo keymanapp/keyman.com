@@ -23,15 +23,15 @@
     <img src="<?php echo cdn('img/wait.gif'); ?>" />
   </div>
   <div class="download-cta-big Windows" id="cta-big-Windows">
-    <h3>Tigrigna for Keyman Desktop</h3>
+    <h3>Tigrigna for Keyman for Windows</h3>
     <p>
-      Type in Tigrigna in all your favourite software applications for Windows. Keyman Desktop will automatically configure your system for the Tigrigna language.
+      Type in Tigrigna in all your favourite software applications for Windows. Keyman for Windows will automatically configure your system for the Tigrigna language.
     </p>
     <div class="download-stable-email">
       <div class="download-cta-button">
         <h4>Download Now</h4>
       </div>
-      <a class="download-cta-more" href="/desktop/">Learn more about Keyman Desktop</a>
+      <a class="download-cta-more" href="/desktop/">Learn more about Keyman for Windows</a>
     </div>
   </div>
   <div class="download-cta-big iPhone" id="cta-big-iPhone">
@@ -130,7 +130,7 @@
 <ul id="faq">
   <li>
     <span class="question">Which font should I use in Microsoft Word and other programs on Windows?</span>
-    <span class="answer">Keyman Desktop Ethiopic packages come with the following Ge'ez fonts, which we recommend you use:</span>
+    <span class="answer">Keyman for Windows Ethiopic packages come with the following Ge'ez fonts, which we recommend you use:</span>
     <table id="ethiopic-fonts" >
       <tbody>
         <tr>

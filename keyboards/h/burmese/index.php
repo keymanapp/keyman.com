@@ -30,7 +30,7 @@
     <h1 class="red">Burmese Keyboards</h1>
     <p>Type Burmese in all your favourite applications from your own hardware keyboard.</p>
     <p>These <a href='http://www.unicode.org/standard/WhatIsUnicode.html'>Unicode</a>
-      layouts run on Keyman Desktop in any Unicode compliant Windows application. They allow intuitive typing of Burmese-script languages.</p>
+      layouts run on Keyman for Windows in any Unicode compliant Windows application. They allow intuitive typing of Burmese-script languages.</p>
   </div>
 
   <div id='downloads'>
@@ -73,9 +73,9 @@
 
   <div id='info'>
     <h2 class="red">More Information</h2>
-    <p>The keyboard downloads come with Keyman Desktop, our multilingual typing application. <a href='/desktop'>Learn more…</a></p>
+    <p>The keyboard downloads come with Keyman for Windows, our multilingual typing application. <a href='/desktop'>Learn more…</a></p>
 
-    <p>Keyman Desktop will automatically configure your computer to work with Burmese.</p>
+    <p>Keyman for Windows will automatically configure your computer to work with Burmese.</p>
 
     <p><a href='/keyboards/languages/my'>Other Burmese Keyman keyboards</a></p>
   </div>

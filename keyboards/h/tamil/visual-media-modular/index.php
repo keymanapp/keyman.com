@@ -26,15 +26,15 @@
     <img src="<?php echo cdn('img/wait.gif'); ?>" />
   </div>
   <div class="download-cta-big Windows" id="cta-big-Windows">
-    <h3>Visual Media (Modular) for Keyman Desktop</h3>
+    <h3>Visual Media (Modular) for Keyman for Windows</h3>
     <p>
-      Type in Tamil in all your favourite software applications for Windows. Keyman Desktop will automatically configure your system for the Tamil language.
+      Type in Tamil in all your favourite software applications for Windows. Keyman for Windows will automatically configure your system for the Tamil language.
     </p>
     <div class="download-stable-email">
       <div class="download-cta-button">
         <h4>Download Now</h4>
       </div>
-      <a class="download-cta-more" href="/desktop/">Learn more about Keyman Desktop</a>
+      <a class="download-cta-more" href="/desktop/">Learn more about Keyman for Windows</a>
     </div>
   </div>
   <div class="download-cta-big Linux" id="cta-big-Linux">

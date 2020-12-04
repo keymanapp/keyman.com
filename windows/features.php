@@ -1,9 +1,9 @@
 <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
-    'title' =>'Features | Keyman Desktop ' . $stable_version,
+    'title' =>'Features | Keyman for Windows ' . $stable_version,
     'css' => ['template.css','feature-template.css'],
     'showMenu' => true
   ]);
@@ -11,22 +11,22 @@
 ?>
 <div class="info-right">
     <div class="section" id="features">
-        <h2 class="red underline">Keyman Desktop <?php echo $stable_version; ?> Features</h2>
+        <h2 class="red underline">Keyman for Windows <?php echo $stable_version; ?> Features</h2>
         <p>
-            From Amharic to Zulu, Keyman Desktop <?php echo $stable_version; ?> is rich in features which make typing in any language easy.
+            From Amharic to Zulu, Keyman for Windows <?php echo $stable_version; ?> is rich in features which make typing in any language easy.
         </p>
         <img src="<?php echo cdn("img/world-lang.png"); ?>"/>
         <br/><br/>
         <p>
-            A lightning-quick install, integrated tutorial and instant-access help will have you typing in seconds. It's the perfect mix of powerful software, intelligent keyboards and intuitive design. 
+            A lightning-quick install, integrated tutorial and instant-access help will have you typing in seconds. It's the perfect mix of powerful software, intelligent keyboards and intuitive design.
         </p>
         <br/>
         <h2 class="red center">Type Everywhere</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> takes typing in your language everywhere. Use it across your desktop and online, in all your favourite programs for text and image editing, Web browsing, email, IM and so much more.
+            Keyman for Windows <?php echo $stable_version_int; ?> takes typing in your language everywhere. Use it across your desktop and online, in all your favourite programs for text and image editing, Web browsing, email, IM and so much more.
         </p>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman for Windows <?php echo $stable_version_int; ?> runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
         </p>
         <img src="<?php echo cdn("img/win_logos.png"); ?>"/>
         <br/><br/><br/>
@@ -43,7 +43,7 @@
     <div class="section" id="setup">
         <h2 class="red underline">Easy Setup</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> installs in just three steps:
+            Keyman for Windows <?php echo $stable_version_int; ?> installs in just three steps:
         </p>
         <img src="<?php echo cdn("img/setup-click1.png"); ?>"/>
         <img src="<?php echo cdn("img/setup-click2.png"); ?>"/>
@@ -56,13 +56,13 @@
     <div class="section" id="compatibility">
         <h2 class="red underline">Compatibility</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman for Windows <?php echo $stable_version_int; ?> runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
         </p>
     </div>
     <div class="section" id="keyboard-list">
         <h2 class="red underline">Access Keyboards For Thousands Of Languages</h2>
         <p>
-            Keyman Desktop offers you the biggest keyboard range of any desktop input solution. Here's just a small sample:
+            Keyman for Windows offers you the biggest keyboard range of any desktop input solution. Here's just a small sample:
         </p>
         <br/>
         <ol class='col' id='col1'>
@@ -132,8 +132,8 @@
                     </ol>
             </li>
         </ol>
-        
-        <ol class='col' id='col2'>		
+
+        <ol class='col' id='col2'>
             <li><h3 class='first'>F</h3>
                     <ol>
                             <li>Faroese</li>
@@ -170,7 +170,7 @@
                     </ol>
             </li>
             <li><h3>I</h3>
-                    <ol>	
+                    <ol>
                             <li>Icelandic</li>
                             <li>Igbo</li>
                             <li>Inuit</li>
@@ -180,13 +180,13 @@
                     </ol>
             </li>
             <li><h3>J</h3>
-                    <ol>	
+                    <ol>
                             <li>Jola-Fonyi</li>
                             <li>Jutish</li>
                     </ol>
             </li>
             <li><h3>K</h3>
-                    <ol>	
+                    <ol>
                             <li>Kaba</li>
                             <li>Kannada</li>
                             <li>Karelian</li>
@@ -199,10 +199,10 @@
                     </ol>
             </li>
         </ol>
-        
-        <ol class='col' id='col3'>		
+
+        <ol class='col' id='col3'>
             <li><h3 class='first'>L</h3>
-                    <ol>	
+                    <ol>
                             <li>Ladin</li>
                             <li>Lakota</li>
                             <li>Latin</li>
@@ -210,7 +210,7 @@
                             <li>Lao</li>
                             <li>Lithuanian</li>
                     </ol>
-            </li>	
+            </li>
             <li><h3>M</h3>
                     <ol>
                             <li>Macedonian</li>
@@ -239,7 +239,7 @@
                     </ol>
             </li>
             <li><h3>P</h3>
-                    <ol>	
+                    <ol>
                             <li>Pashto</li>
                             <li>Polish</li>
                             <li>Portuguese</li>
@@ -247,7 +247,7 @@
                     </ol>
             </li>
             <li><h3>Q</h3>
-                    <ol>	
+                    <ol>
                             <li>Quechua</li>
                     </ol>
             </li>
@@ -261,7 +261,7 @@
                     </ol>
             </li>
         </ol>
-        
+
         <ol class='col' id='col4'>
             <li><h3 class='first'>S</h3>
                     <ol>
@@ -283,7 +283,7 @@
                             <li>Swiss German</li>
                             <li>Syriac, Ancient</li>
                     </ol>
-            </li>	
+            </li>
             <li><h3>T</h3>
                     <ol>
                             <li>Tagalog</li>
@@ -346,11 +346,11 @@
     <div class="section" id="unicode">
         <h2 class="red underline">Unicode 12.0 Compliant</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> complies with Unicode 12.0 – the international standard
+            Keyman for Windows <?php echo $stable_version_int; ?> complies with Unicode 12.0 – the international standard
             for language encoding. Everything you type with our Unicode keyboards will be readable to anyone.
         </p>
         <p>
-            With Unicode keyboards for Keyman Desktop <?php echo $stable_version_int; ?>, say goodbye to square boxes and garbled text. What you type won't degrade.
+            With Unicode keyboards for Keyman for Windows <?php echo $stable_version_int; ?>, say goodbye to square boxes and garbled text. What you type won't degrade.
         </p>
         <img src="<?php echo cdn("img/no-squares.png"); ?>"/>
         <br/>
@@ -361,7 +361,7 @@
     <div class="section" id="keyboard-limit">
         <h2 class="red underline">Keyboard Limit</h2>
         <p>
-            With Keyman Desktop, you can install and enable as many keyboards as you need.
+            With Keyman for Windows, you can install and enable as many keyboards as you need.
         </p>
         <img src="<?php echo cdn("img/tab-keyboards.png"); ?>"/>
     </div>
@@ -371,14 +371,14 @@
             Associate your Keyman keyboards with a Windows language to ensure easy typing.
         </p>
         <p>
-            Keyman Desktop <?php echo $stable_version; ?> allows you to associate a keyboard with multiple Windows languages.
+            Keyman for Windows <?php echo $stable_version; ?> allows you to associate a keyboard with multiple Windows languages.
         </p>
         <img src="<?php echo cdn("img/tab-layout.png"); ?>"/>
     </div>
     <div class="section" id="keyboard-information">
         <h2 class="red underline">Keyboard Information</h2>
         <p>
-            Access advanced keyboard information such as Keyboard filename, version number, encodings, layout type and more. 
+            Access advanced keyboard information such as Keyboard filename, version number, encodings, layout type and more.
         </p>
         <img src="<?php echo cdn("img/tab-layout.png"); ?>"/>
     </div>
@@ -404,7 +404,7 @@
     <div class="section" id="character-map">
         <h2 class="red underline">Keyman Character Map</h2>
         <p>
-            Access every character in the newest version of the Unicode Standard from the Keyman Character Map. 
+            Access every character in the newest version of the Unicode Standard from the Keyman Character Map.
         </p>
         <p>
             Insert over 109,000 letters and symbols with a double-click. Say goodbye to multi-step clipboard actions.
@@ -420,7 +420,7 @@
             Font Helper takes the stress out of finding the right font for your keyboard. Your fonts are ranked to show which ones give the best support.
         </p>
         <p>
-            Not only does Font Helper rank your fonts, it also shows which characters in your keyboard each font supports. 
+            Not only does Font Helper rank your fonts, it also shows which characters in your keyboard each font supports.
         </p>
         <img src="<?php echo cdn("img/fonthelper-pro.png"); ?>"/>
     </div>
@@ -456,9 +456,9 @@
     <div class="section" id="customers">
         <h2 class="red underline">Used By The Biggest</h2>
         <p>
-            Keyman Desktop <?php echo $stable_version_int; ?> is the result of over 23 years of dedication to perfecting Keyman.
-            Everything we've learned since 1991 we've poured into Keyman Desktop <?php echo $stable_version_int; ?>.
-            We're as dedicated as ever to making Keyman Desktop the best multi-lingual typing solution for you.
+            Keyman for Windows <?php echo $stable_version_int; ?> is the result of over 25 years of dedication to perfecting Keyman.
+            Everything we've learned since 1991 we've poured into Keyman for Windows <?php echo $stable_version_int; ?>.
+            We're as dedicated as ever to making Keyman for Windows the best multi-lingual typing solution for you.
         </p>
         <p>
             Keyman is used by more than 1,000,000 people in over 1,000 languages. All those user experiences feed back into perfecting Keyman.
@@ -470,7 +470,7 @@
             Keyman is maintained by a team of software developers who understand the complexities of computer and human languages.
         </p>
         <p>
-            Organisations worldwide rely on Keyman Desktop for multi-lingual typing. Join the crowd.
+            Organisations worldwide rely on Keyman for Windows for multi-lingual typing. Join the crowd.
         </p>
         <img src="<?php echo cdn("img/customers.png"); ?>"/>
     </div>

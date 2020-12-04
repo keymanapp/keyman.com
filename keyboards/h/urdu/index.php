@@ -22,15 +22,15 @@
     <img src="<?php echo cdn('img/wait.gif'); ?>" />
   </div>
   <div class="download-cta-big Windows" id="cta-big-Windows">
-    <h3>Urdu for Keyman Desktop</h3>
+    <h3>Urdu for Keyman for Windows</h3>
     <p>
-      Type in Urdu in all your favourite software applications for Windows. Keyman Desktop will automatically configure your system for the Urdu language.
+      Type in Urdu in all your favourite software applications for Windows. Keyman for Windows will automatically configure your system for the Urdu language.
     </p>
     <div class="download-stable-email">
       <div class="download-cta-button">
         <h4>Download Now</h4>
       </div>
-      <a class="download-cta-more" href="/desktop/">Learn more about Keyman Desktop</a>
+      <a class="download-cta-more" href="/desktop/">Learn more about Keyman for Windows</a>
     </div>
   </div>
   <div class="download-cta-big mac" id="cta-big-mac">
@@ -130,7 +130,7 @@
         </tr>
       </tbody>
     </table>
-    <span class="answer">The Noto Nastaliq Urdu Draft font is included in the Urdu keyboard download for Keyman Desktop. Find other supported Urdu fonts on your computer by <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/10.0/docs/start_font.php">using the Font Helper tool.</a></span>
+    <span class="answer">The Noto Nastaliq Urdu Draft font is included in the Urdu keyboard download for Keyman for Windows. Find other supported Urdu fonts on your computer by <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/10.0/docs/start_font.php">using the Font Helper tool.</a></span>
   </li>
   <li>
     <span class="question">What layout does this keyboard use?</span><br>

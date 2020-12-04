@@ -44,8 +44,8 @@ END;
         <div class="phone-menu-item">
             <h3>Products</h3>
             <ul>
-                <li><a href="/desktop/">Keyman Desktop <?=$fields->stable_version?></a></li>
-                <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                <li><a href="/desktop/">Keyman for Windows <?=$fields->stable_version?></a></li>
+                <li><a href="/mac/">Keyman for macOS <?=$fields->stable_version?></a></li>
                 <li><a href="/linux/">Keyman for Linux <?=$fields->stable_version?></a></li>
                 <li><a href="/keymanweb/">KeymanWeb.com</a></li>
                 <li><a href="/iphone/">Keyman for iPhone</a></li>
@@ -165,8 +165,8 @@ END;
                     <div class="menu-dropdown-inner">
                         <h4>Core Products</h4>
                         <ul>
-                            <li><a href="/desktop/">Keyman Desktop <?=$fields->stable_version?></a></li>
-                            <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                            <li><a href="/desktop/">Keyman for Windows <?=$fields->stable_version?></a></li>
+                            <li><a href="/mac/">Keyman for macOS <?=$fields->stable_version?></a></li>
                             <li><a href="/linux/">Keyman for Linux <?=$fields->stable_version?></a></li>
                             <li><a href="/iphone-and-ipad/">Keyman for iPhone and iPad <?=$fields->stable_version?></a></li>
                             <li><a href="/android/">Keyman for Android <?=$fields->stable_version?></a></li>

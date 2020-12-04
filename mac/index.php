@@ -108,7 +108,7 @@
 
 <br/>
 <p>
-    <span class="red">Q.</span> Will my existing Keyman Desktop keyboards work with Keyman for macOS?
+    <span class="red">Q.</span> Will my existing Keyman for Windows keyboards work with Keyman for macOS?
 </p>
 <p>
     <span class="red">A.</span> Most keyboards will work without change, and even without recompiling. A small subset of keyboards

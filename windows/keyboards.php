@@ -1,19 +1,19 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
-  
+
   // Required
   head([
     'title' =>'Clever Keyboards',
     'css' => ['template.css','index.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
 
 <h1>Clever Keyboards</h1>
 
 <h2>Smart &amp; Flexible</h2>
-<p>Keyman Desktop keyboards are cleverly built to adapt to you: </p>
+<p>Keyman for Windows keyboards are cleverly built to adapt to you: </p>
 
 <h3>Any Hardware Standard</h3>
 <p>Whether you're on QWERTY, QWERTZ, AZERTY or any other standard, you can use your hardware keyboard with any Keyman keyboard.</p>
@@ -32,7 +32,7 @@
 <h3>Automatic Normalisation</h3>
 <p>Keyman keyboards are smart enough to handle character normalisation for you. Your data stays consistent however you typed that character.</p>
 <p><img class='borderless'  src='<?= cdn('img/desktop/normalisationb.png')?>' alt='Combining & Precomposed Accents ' /></p>
- 
+
 <h2>Language-Specific Features</h2>
 <p>Many keyboards also come with language-specific features to make them smarter.  For example:</p>
 
@@ -56,4 +56,4 @@
 <p>Lao keyboards split syllables behind the scenes, giving easy-to-search seamless text with correct line breaks.</p>
 <p><img class='borderless' src='<?= cdn('img/desktop/example-lao.png')?>' alt='Lao Syllables Splitting '/></p>
 
-<p><a href='/desktop'>Back to Keyman Desktop home</a></p>
+<p><a href='/desktop'>Back to Keyman for Windows home</a></p>

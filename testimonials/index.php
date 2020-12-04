@@ -8,7 +8,7 @@
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline">What people are saying about Keyman Desktop</h2>
+<h2 class="red underline">What people are saying about Keyman</h2>
 
 <p class="center">
   <span class="testimonial">"... I would suggest to stick with keyman and I am sure you would love the experience.<br/>
