@@ -115,9 +115,7 @@
 <p>
     <span class="red">A.</span> Ubuntu: Keyman for Linux can be installed via launchpad:
 <pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install keyman ibus-keyman onboard</code></pre>
+sudo apt install keyman onboard-keyman</code></pre>
 </p>
 
 <br/>
@@ -159,9 +157,7 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre>
 <p>
     <span class="red">A.</span> Yes. To install KMFL on Ubuntu:
 <pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install ibus-kmfl</code></pre>
+sudo apt install ibus-kmfl</code></pre>
 </p>
 
 <br/>
