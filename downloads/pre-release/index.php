@@ -49,7 +49,7 @@
 <pre class='language-bash code'><code>
 sudo add-apt-repository ppa:keymanapp/keyman-daily
 sudo apt-get update
-sudo apt-get install keyman onboard</code></pre>
+sudo apt-get install keyman onboard-keyman</code></pre>
 
 <?php
   downloadSection('Keyman for Android',         'android', 'keyman-$version.apk', 'beta alpha');
