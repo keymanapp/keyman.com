@@ -23,9 +23,7 @@
   Keyman for Linux is currently available via Launchpad:
 </p>
 <pre><code class='language-bash'>sudo add-apt-repository ppa:keymanapp/keyman
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install keyman ibus-keyman onboard</code></pre>
+sudo apt install keyman onboard-keyman</code></pre>
 
 <h3 class='red underline'>Debian</h3>
 
