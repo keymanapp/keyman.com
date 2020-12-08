@@ -26,6 +26,20 @@
 <head>
   <meta charset="utf-8">
   <title><?= $fields->title; ?></title>
+  <?php
+/* Our local CDN version is identical to this file:
+  <script
+    src="https://browser.sentry-cdn.com/5.28.0/bundle.min.js"
+    integrity="sha384-1HcgUzJmxPL9dRnZD2wMIj5+xsJfHS+WR+pT2yJNEldbOr9ESTzgHMQOcsb2yyDl"
+    crossorigin="anonymous"
+  ></script>*/
+  ?>
+  <script src="<?= Util::cdn('js/sentry.bundle.5.28.0.min.js'); ?>"></script>
+  <script>
+    Sentry.init({
+      dsn: "https://44d5544d7c45466ba1928b9196faf67e@sentry.keyman.com/3",
+    });
+  </script>
   <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
   <link rel='shortcut icon' href="<?= $fields->favicon; ?>">
   <?php foreach($fields->css as $cssFile) { ?>
