@@ -21,6 +21,6 @@
     <li><a href="#customers">Used By Biggest</a></li>
   </ul>
   <div class="button-dl9">
-    <a href="/desktop/download">Download for Free</a>
+    <a href="/windows/download">Download for Free</a>
   </div>
 </div>

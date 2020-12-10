@@ -108,7 +108,7 @@
         (empty($hu['bcp47']) ? "" : ".{$hu['bcp47']}") .
         ".exe";
 
-      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/desktop/current-version/docs/start_download-install_keyman";
+      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/windows/current-version/docs/start_download-install_keyman";
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);

@@ -90,7 +90,7 @@
   <div id='info'>
     <h2 class="red">More Information</h2>
 
-    <p>The keyboard downloads come with Keyman for Windows, our multilingual typing application. <a href='/desktop'>Learn more…</a></p>
+    <p>The keyboard downloads come with Keyman for Windows, our multilingual typing application. <a href='/windows'>Learn more…</a></p>
 
     <p>Keyman for Windows will automatically configure your computer to work with Tibetan.</p>
 

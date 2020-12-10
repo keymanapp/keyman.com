@@ -56,4 +56,4 @@
 <p>Lao keyboards split syllables behind the scenes, giving easy-to-search seamless text with correct line breaks.</p>
 <p><img class='borderless' src='<?= cdn('img/desktop/example-lao.png')?>' alt='Lao Syllables Splitting '/></p>
 
-<p><a href='/desktop'>Back to Keyman for Windows home</a></p>
+<p><a href='/windows'>Back to Keyman for Windows home</a></p>

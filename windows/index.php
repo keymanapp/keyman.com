@@ -31,7 +31,7 @@
   <li><a href="keyboards.php">Clever keyboards</a></li>
 </ul>
 <div class="button-div">
-    <a href="/desktop/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="/windows/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 
 <?php
@@ -131,7 +131,7 @@
     You can learn about all the features of Keyman for Windows <?php echo $stable_version; ?> by <a href="features.php">clicking here!</a>
 </p>
 <div class="button-div">
-    <a href="/desktop/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="/windows/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 <h2 class="red underline">Frequently Asked Questions</h2>
 <p>

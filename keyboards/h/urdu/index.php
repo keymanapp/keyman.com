@@ -30,7 +30,7 @@
       <div class="download-cta-button">
         <h4>Download Now</h4>
       </div>
-      <a class="download-cta-more" href="/desktop/">Learn more about Keyman for Windows</a>
+      <a class="download-cta-more" href="/windows/">Learn more about Keyman for Windows</a>
     </div>
   </div>
   <div class="download-cta-big mac" id="cta-big-mac">
