@@ -32,7 +32,7 @@
 
     <p>
       Choose from our selection of Tibetan keyboards and type Tibetan in all your favourite applications, without changing your hardware.<br/><br/>
-      These <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> keyboards run on Keyman Desktop in any compliant Windows application. They allow intuitive typing of Tibetan-script languages using a standard hardware keyboard.
+      These <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> keyboards run on Keyman for Windows in any compliant Windows application. They allow intuitive typing of Tibetan-script languages using a standard hardware keyboard.
     </p>
   </div>
 
@@ -90,9 +90,9 @@
   <div id='info'>
     <h2 class="red">More Information</h2>
 
-    <p>The keyboard downloads come with Keyman Desktop, our multilingual typing application. <a href='/desktop'>Learn more…</a></p>
+    <p>The keyboard downloads come with Keyman for Windows, our multilingual typing application. <a href='/windows'>Learn more…</a></p>
 
-    <p>Keyman Desktop will automatically configure your computer to work with Tibetan.</p>
+    <p>Keyman for Windows will automatically configure your computer to work with Tibetan.</p>
 
     <p><a href='/keyboards/languages/bo'>Other Tibetan Keyman keyboards</a></p>
   </div>

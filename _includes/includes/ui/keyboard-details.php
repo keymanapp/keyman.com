@@ -345,7 +345,7 @@ END;
 
       if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
 ?>
-        <p>Sorry, this keyboard requires Keyman Desktop <?= self::$keyboard->minKeymanVersion ?> or higher.</p>
+        <p>Sorry, this keyboard requires Keyman <?= self::$keyboard->minKeymanVersion ?> or higher.</p>
 <?php
       } else {
         echo $text;

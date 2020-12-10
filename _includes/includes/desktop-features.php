@@ -3,7 +3,7 @@
 ?>
 <div class="info-left">
   <ul>
-    <li>Keyman Desktop <?php echo $stable_version; ?> Features</li>
+    <li>Keyman for Windows <?php echo $stable_version; ?> Features</li>
     <li><a href="#setup">Easy Setup</a></li>
     <li><a href="#compatibility">Compatibility</a></li>
     <li><a href="#keyboard-list">Over 1000 Keyboards Available</a></li>
@@ -21,6 +21,6 @@
     <li><a href="#customers">Used By Biggest</a></li>
   </ul>
   <div class="button-dl9">
-    <a href="/desktop/download">Download for Free</a>
+    <a href="/windows/download">Download for Free</a>
   </div>
 </div>

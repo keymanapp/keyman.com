@@ -151,7 +151,7 @@
 <h2 class="red underline">Classical Greek Keyboards</h2>
 <p class='info'>
   Need to type in Biblical or Classical Greek? Choose from our selection of Polytonic Greek keyboards. These
-  <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> keyboards run on Keyman Desktop in any Unicode Windows application.
+  <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> keyboards run on Keyman for Windows in any Unicode Windows application.
 </p>
 
 <div id='greek' lang='gr'>
@@ -403,14 +403,14 @@ $features = array(
 
   array(
     'name' => 'Integrated help',
-    'help' => 'Is keyboard help documentation accessible from the Keyman Desktop help icon?',
+    'help' => 'Is keyboard help documentation accessible from the Keyman for Windows help icon?',
     'id' => 'doc',
     'icon' => 'yes',
     'map' => array(
       'galaxie'     => 'yes',
       'lopez'       => 'yes',
-      'stanthony'   => array('1/2', 'Documentation is available in the Start Menu but not integrated into Keyman Desktop help'),
-      'stanthonyez' => array('1/2', 'Documentation is available in the Start Menu but not integrated into Keyman Desktop help'),
+      'stanthony'   => array('1/2', 'Documentation is available in the Start Menu but not integrated into Keyman for Windows help'),
+      'stanthonyez' => array('1/2', 'Documentation is available in the Start Menu but not integrated into Keyman for Windows help'),
       'perry'       => 'yes',
       'sil'         => 'yes'
     ))

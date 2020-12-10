@@ -78,36 +78,6 @@
 <div id="jira-feedback">
   <div id="jira-feedback-tab"><h4><a href='https://community.software.sil.org/c/keyman'>Support</a></h4></div>
 </div>
-<div id="product-download-popup">
-    <div id="product-download-popup-header">
-        <img src="<?php echo Util::cdn('img/download-free-badge.png'); ?>" />
-        <p id="product-download-popup-name">Keyboard Download</p>
-        <p id="product-download-popup-close">Close</p>
-    </div>
-    <div id="product-download-popup-body">
-        <div id="product-download-popup-instruct">
-            <p>Click to install:</p>
-            <img id="ie-dl" src="<?php echo Util::cdn('img/ie-dl.png'); ?>" />
-            <img id="chrome-dl" src="<?php echo Util::cdn('img/chrome-dl.png'); ?>" />
-            <img id="firefox-dl" src="<?php echo Util::cdn('img/firefox-dl.png'); ?>" />
-        </div>
-        <div id="product-download-popup-links">
-            <p>Useful Links:</p>
-            <ul>
-                <li><a href="http://<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/<?php echo $fields->stable_version; ?>/docs/start_download-install_keyman.php" target="_blank">How to Install Keyman Desktop</a></li>
-                <li><a href="/contact/" target="_blank">Keyman Desktop Support</a></li>
-            </ul>
-            <form name="download-signup" id="download-signup" method="post" >
-                <p>Sign up for helpful hints and tips:</p>
-                <input type="email" name="email" placeholder="email address" />
-                <div class="button">
-                    <h2>Signup</h2>
-                </div>
-                <p id="download-signup-response"></p>
-            </form>
-        </div>
-    </div>
-</div>
 <div id="KeymanWebControl"></div>
 </body>
 </html>

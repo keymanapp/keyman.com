@@ -99,7 +99,7 @@
     <br/><br/>
 
     <p><img class='borderless' src='<?= cdn('/img/keyman-kmw.png') ?>'
-      alt='Create Keyboards for Keyman Desktop or KeymanWeb '/></p>
+      alt='Create Keyboards for Keyman on all major platforms '/></p>
     <br/><br/>
 
     <hr />

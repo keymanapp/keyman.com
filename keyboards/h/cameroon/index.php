@@ -32,7 +32,7 @@
 
     <p>
       Choose from our selection of Cameroon keyboards to match your physical hardware: QWERTY (US Keyboard) or AZERTY (French Keyboard).<br/><br/>
-      These <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> keyboards run on Keyman Desktop in any compliant Windows application.
+      These <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> keyboards run on Keyman for Windows in any compliant Windows application.
     </p>
   </div>
 
@@ -101,7 +101,7 @@
   <div id='info'>
     <h2 class="red">More Information</h2>
 
-    <p>The keyboard downloads come with Keyman Desktop, our multilingual typing application. <a href='/desktop'>Learn more…</a></p>
+    <p>The keyboard downloads come with Keyman for Windows, our multilingual typing application. <a href='/windows'>Learn more…</a></p>
 
     <p>For technical support, please <a href='https://community.software.sil.org/c/keyman'>visit our forums</a> online.</p>
 

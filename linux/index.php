@@ -45,7 +45,7 @@
 ?>
 
 <p>
-    As with all Keyman products, Keyman for Linux is completely free and open-source. The feature grid below details the technical differences in functionality between Keyman Desktop for Windows, and the current version of Keyman for Linux:
+    As with all Keyman products, Keyman for Linux is completely free and open-source. The feature grid below details the technical differences in functionality between Keyman for Windows, and the current version of Keyman for Linux:
 </p>
 <table class='feature-grid'>
   <thead>
