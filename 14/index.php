@@ -21,7 +21,7 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 14.0 Beta</h2>
-<p class="red">TBD 2020</p>
+<p class="red">15 December 2020</p>
 <p>We are pleased to announce that Keyman 14.0 is now in beta!</p>
 <br>
 
