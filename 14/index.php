@@ -25,6 +25,8 @@ head([
 <p>We are pleased to announce that Keyman 14.0 is now in beta!</p>
 <br>
 
+<p><a href='https://blog.keyman.com/2020/12/keyman-14-0-beta/'>Read our blog post</a></p>
+
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
 <ul>
