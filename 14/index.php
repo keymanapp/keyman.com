@@ -23,6 +23,7 @@ head([
 <h2>Announcing the release of Keyman 14.0 Beta</h2>
 <p class="red">15 December 2020</p>
 <p>We are pleased to announce that Keyman 14.0 is now in beta!</p>
+<p style='border: solid 1px #B92034; padding: 4px; border-radius: 6px; margin: 8px'><b class='red' style='font-weight:bold'>Note:</b> A beta version of Keyman is a version that is nearing full 'stable' release. It will still have bugs, but it will be essentially feature-complete. This version is great for getting the latest features if you are willing to risk occasionally running into problems.</p>
 <br>
 
 <p><a href='https://blog.keyman.com/2020/12/keyman-14-0-beta/'>Read our blog post</a></p>
