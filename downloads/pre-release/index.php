@@ -48,8 +48,7 @@
 <p>Ubuntu: Keyman for Linux can be installed via <a href='https://launchpad.net/~keymanapp/+archive/ubuntu/keyman-daily'>launchpad</a>:</p>
 <pre class='language-bash code'><code>
 sudo add-apt-repository ppa:keymanapp/keyman-daily
-sudo apt-get update
-sudo apt-get install keyman onboard-keyman</code></pre>
+sudo apt install keyman onboard-keyman</code></pre>
 
 <?php
   downloadSection('Keyman for Android',         'android', 'keyman-$version.apk', 'beta alpha');
