@@ -117,14 +117,13 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta
   <li>Open a .kmp file with Keyman Config (#3183)</li>
   <li>Now supports Ubuntu 20.10 (Groovy) (#3876)</li>
   <li>Improved user interface</li>
-  <li>Improved support for KDE, Gnome, Fedora, Arch Linux</li>
+  <li>Improved support for KDE, Gnome, Arch Linux</li>
 </ul>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-nightly
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install keyman onboard</code></pre></blockquote>
+<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-daily
+sudo apt upgrade
+sudo apt install keyman onboard-keyman</code></pre></blockquote>
 
 
 <?php
