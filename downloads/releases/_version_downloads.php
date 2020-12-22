@@ -17,7 +17,7 @@
 
   // note: we currently ignore the tier parameter
 
-  $versions = @json_decode(file_get_contents("http://downloads.keyman.com.local/api/version/2.0?targetVersion=$version"));
+  $versions = @json_decode(file_get_contents("https://downloads.keyman.com/api/version/2.0?targetVersion=$version")); // TODO: use KeymanHosts in the future
 
   if(empty($versions->android))
     $tier = 'unknown';
