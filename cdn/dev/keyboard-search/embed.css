@@ -1,40 +1,27 @@
-@import 'search.css';
+/* These controls are only for embedded pages */
 
-#section2 h2:first-child {
+#section2 h1 {
+  padding-top: 6px;
+  padding-bottom: 0;
+  font-size: 24px;
+}
+
+#search-box {
+  margin-bottom: 12px;
+}
+
+#section2 h2 {
   margin-top: 0;
   padding-top: 4px;
+  padding-left: 0;
   text-align: left;
+  font-size: 24px;
 }
 
-#search-results .keyboard .title {
-    margin-top: 24px;
-}
-#search-results .title {
-  margin-top: 2px;
-}
-
-#navigation {
-  border-bottom: solid 1px #666666;
-  background: #cccccc;
-  padding: 4px;
-}
-
-#navigation a {
-  display: inline-block;
-  border: solid 1px #888888;
-  padding: 4px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-  background: #888888;
-  text-decoration: none;
-  color: white;
-  margin: 4px;
-}
-
-#navigation a.nav-right {
-  display: block;
-  float: right;
-}
-
-.wrapper { 
+.wrapper {
   width: auto;
+}
+
+#section2 .col {
+  float: none;
 }

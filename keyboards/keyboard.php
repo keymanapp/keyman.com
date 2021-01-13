@@ -18,13 +18,15 @@
 
   $id = clean_id($_REQUEST['id']);
 
+  $bcp47 = isset($_REQUEST['bcp47']) ? $_REQUEST['bcp47'] : null;
+
   function clean_id($id) {
     return preg_replace('/[^A-Za-z0-9_ .-]/', '', $id);
   }
 
   function find_id_by_legacy($legacy) {
-    global $apihost;
-    $s = @file_get_contents($apihost.'/search/?q=k:legacy:'.rawurlencode($legacy));
+    global $KeymanHosts;
+    $s = @file_get_contents($KeymanHosts->api_keyman_com.'/search/?q=k:legacy:'.rawurlencode($legacy));
     if($s === FALSE) {
       return null;
     }
@@ -35,6 +37,6 @@
     return $search->keyboards[0]->id;
   }
 
-  \UI\KeyboardDetails::render_keyboard_details($id);
+  \UI\KeyboardDetails::render_keyboard_details($id, 'stable', false, $bcp47);
 
 ?>

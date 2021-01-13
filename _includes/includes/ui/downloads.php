@@ -1,5 +1,9 @@
 <?php
-  $versions = @json_decode(file_get_contents('https://downloads.keyman.com/api/version/2.0'));
+
+  require_once __DIR__ . '/../../autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
+  $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->downloads_keyman_com . '/api/version/2.0'));
   //if($versions === NULL || $versions === FALSE) {
   //  echo "<p class='error'>WARNING: unable to retrieve latest versions of Keyman from download server</p>";
   //}
@@ -21,17 +25,17 @@
 
     return $bytes;
   }
-  
+
   function downloadSection($product, $platform, $filepattern, $tiers = '', $target = '') {
     if($target == '') $target = $platform;
-    
+
     echo "<h2 id='$target' class='red underline'>$product</h2>\n\n";
     $tiers = explode(' ',$tiers);
     foreach($tiers as $tier) {
       echo downloadLinks($product, $platform, $tier, $filepattern);
     }
   }
-  
+
   function downloadLinks($product, $platform, $tier, $filepatterns) {
     global $versions;
     $tierTitle = ucFirst($tier);
@@ -46,17 +50,17 @@
         if(!empty($versions->$platform->$tier->files->$file)) {
           $fileData = $versions->$platform->$tier->files->$file;
           $fileSize = formatSizeUnits($fileData->size);
-          echo "<li><a href='https://downloads.keyman.com/$platform/$tier/{$versions->$platform->$tier->version}/$file'>$file $tier</a> (released $fileData->date, $fileSize)</li>\n";
+          echo "<li><a href='" . KeymanHosts::Instance()->downloads_keyman_com . "/$platform/$tier/{$versions->$platform->$tier->version}/$file'>$file $tier</a> (released $fileData->date, $fileSize)</li>\n";
         }
       }
     }
-    echo "<li><a href='https://downloads.keyman.com/$platform/$tier/'>All $product $tier releases</a></li>\n";
+    echo "<li><a href='" . KeymanHosts::Instance()->downloads_keyman_com . "/$platform/$tier/'>All $product $tier releases</a></li>\n";
     echo "</ul><br/>\n";
   }
 
   function downloadLargeCTA($product, $platform, $tier, $filepattern) {
     global $versions;
-    
+
     if(empty($versions)) return;
     $file = str_replace('$version', $versions->$platform->$tier->version, $filepattern);
     $file = str_replace('$tier', $tier, $file);
@@ -65,12 +69,13 @@
       echo "<p>No downloads found for $product.</p>";
       return false;
     }
-    
+
     $fileData = $versions->$platform->$tier->files->$file;
     $fileSize = formatSizeUnits($fileData->size);
-    
+    $host = KeymanHosts::Instance()->downloads_keyman_com;
+
     echo <<<END
-<div class="download-cta-big selected" id="cta-big-Windows" data-url='https://downloads.keyman.com/$platform/$tier/{$versions->$platform->$tier->version}/$file' data-version='{$versions->$platform->$tier->version}'>
+<div class="download-cta-big selected" id="cta-big-Windows" data-url='$host/$platform/$tier/{$versions->$platform->$tier->version}/$file' data-version='{$versions->$platform->$tier->version}'>
     <div class="download-stable-email">
     <h3>$product {$versions->$platform->$tier->version}</h3>
     <p>Released: {$fileData->date}</p>
@@ -83,7 +88,7 @@
 </div>
 END;
   }
-  
+
   function iosTestflightTable() {
     $testflight = 'https://itunes.apple.com/us/app/testflight/id899247664?mt=8';
     $testflight_beta_signup = 'https://testflight.apple.com/join/9W4XIoxQ';

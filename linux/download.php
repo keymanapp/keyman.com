@@ -1,7 +1,9 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   // Required
   head([
     'title' =>'Download Keyman for Linux',
@@ -21,9 +23,7 @@
   Keyman for Linux is currently available via Launchpad:
 </p>
 <pre><code class='language-bash'>sudo add-apt-repository ppa:keymanapp/keyman
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install keyman ibus-keyman onboard</code></pre>
+sudo apt install keyman onboard-keyman</code></pre>
 
 <h3 class='red underline'>Debian</h3>
 
@@ -40,6 +40,6 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre>
 </p>
 
 <ul>
-  <li><a href='https://downloads.keyman.com/linux'>All Linux downloads</a>
+  <li><a href='<?= KeymanHosts::Instance()->downloads_keyman_com ?>/linux'>All Linux downloads</a>
   <li>apt install ...
 </ul>
