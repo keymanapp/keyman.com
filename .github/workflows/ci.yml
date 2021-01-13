@@ -18,6 +18,8 @@ jobs:
       with:
         php-version: '7.4'
         extensions: curl, intl, mbstring, openssl
+        coverage: none
+        env: fail-fast
 
     #
     # Configure IIS and setup site for running unit tests
@@ -48,7 +50,7 @@ jobs:
         Add-WebConfigurationProperty //defaultDocument/files "IIS:\sites\NewWebSite" -AtIndex 0 -Name collection -Value "index.md"
 
         mkdir c:\tools\php\tmp
-        Add-Content -path c:\tools\php\php.ini -value '',"error_log = $ENV:GITHUB_WORKSPACE\php_errors.log","session.save_path = $ENV:GITHUB_WORKSPACE\.phpsessions","error_reporting = E_ALL","display_errors = On","display_startup_errors = On","html_errors = Off","sys_temp_dir = c:\tools\php\tmp"
+        Add-Content -path c:\tools\php\php.ini -value '',"error_log = $ENV:GITHUB_WORKSPACE\php_errors.log","session.save_path = $ENV:GITHUB_WORKSPACE\.phpsessions","error_reporting = E_ALL","display_errors = On","display_startup_errors = On","html_errors = Off","sys_temp_dir = c:\tools\php\tmp","upload_tmp_dir = c:\tools\php\tmp"
         mkdir $ENV:GITHUB_WORKSPACE\.phpsessions
 
     #
