@@ -19,7 +19,8 @@ jobs:
         php-version: '7.4'
         extensions: curl, intl, mbstring, openssl
         coverage: none
-        env: fail-fast
+      env:
+        fail-fast: true
 
     #
     # Configure IIS and setup site for running unit tests
