@@ -1,8 +1,8 @@
 <?php
   $loadJQueryEarly = true;
   require_once('includes/template.php');
-  $lang = isset($_GET['language']) ? $_GET['language'] : '';
-  $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
+  $lang = isset($_GET['language']) ? json_encode($_GET['language']) : '""';
+  $kbd = isset($_GET['keyboard']) ? json_encode($_GET['keyboard']) : '""';
 
   // Required
   head([
@@ -13,9 +13,12 @@
 ?>
 
 <script type="text/javascript">
-  var resourceBase="<?php echo $site_protocol . $resourceDomain ?>";
-  var kbdname = '<?= $kbd ?>';
-  var languageCode = '<?= $lang ?>';
+  const bookmarkletParameters = {
+    keymanVersion: "<?= $stable_version ?>",
+    resourceBase: "<?php echo $site_protocol . $resourceDomain ?>",
+    keyboardId: <?= $kbd ?>,
+    languageId: <?= $lang ?>
+  };
 </script>
 <script type='text/javascript' src='install-bookmarklet.js'></script>
 
