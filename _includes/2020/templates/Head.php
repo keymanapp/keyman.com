@@ -36,8 +36,19 @@
   ?>
   <script src="<?= Util::cdn('js/sentry.bundle.5.28.0.min.js'); ?>"></script>
   <script>
+        // running from web server
+        $host = $_SERVER['SERVER_NAME'];
+        if(preg_match('/\.local$/', $host))
+          // If the host name is, e.g. api.keyman.com.local, then we'll assume this is a development environment
+          $environment = 'development';
+        else if(preg_match('/(^|\.)keyman-staging\.com$/', $host))
+          $environment = 'staging';
+        else
+          $environment = 'production';
+
     Sentry.init({
       dsn: "https://44d5544d7c45466ba1928b9196faf67e@sentry.keyman.com/3",
+      environment: location.host.match(/\.local$/) ? 'development' : location.host.match(/(^|\.)keyman-staging\.com$/) ? 'staging' : 'production',
     });
   </script>
   <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
