@@ -36,7 +36,11 @@
     <h3>Keyman Bookmarklet Search</h3>
     <div id="bookmarklet-list">
         <div id="bookmarklet-list-inner">
+<<<<<<< HEAD
             
+=======
+            <div id="spinner"></div>
+>>>>>>> 539bba5... fix: use full BCP 47 code for bml
         </div>
     </div>
     <p>

@@ -1458,11 +1458,20 @@ span.no_keyboard_details {
 	border: solid 4px gray;
 	background: #fff;
 	margin: 10px 10px 30px 10px;
-	display: none;
 	overflow: none;
 	position: relative;
 	left: 50%;
 	margin-left: -214px;
+}
+
+#bookmarklet-search #spinner {
+	width: 24px;
+	height: 24px;
+	left: 198px;
+	top: 160px;
+	position: relative;
+	display: block;
+	background-image: url("/cdn/dev/img/spinner.gif");
 }
 
 #bookmarklet-search h3{
