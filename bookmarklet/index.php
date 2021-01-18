@@ -2,9 +2,10 @@
   require_once('includes/template.php');
   require_once __DIR__ . '/../_includes/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\KeymanVersion;
 
-  $lang = isset($_GET['language']) ? $_GET['language'] : '';
-  $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
+  $lang = isset($_GET['language']) ? json_encode($_GET['language']) : '""';
+  $kbd = isset($_GET['keyboard']) ? json_encode($_GET['keyboard']) : '""';
 
   // Required
   head([
@@ -15,9 +16,12 @@
 ?>
 
 <script type="text/javascript">
-  var resourceBase="<?php echo $KeymanHosts->r_keymanweb_com; ?>";
-  var kbdname = '<?= $kbd ?>';
-  var languageCode = '<?= $lang ?>';
+  const bookmarkletParameters = {
+    keymanVersion: "<?= KeymanVersion::stable_version ?>",
+    resourceBase: "<?= KeymanHosts::Instance()->r_keymanweb_com ?>",
+    keyboardId: <?= $kbd ?>,
+    languageId: <?= $lang ?>
+  };
 </script>
 <script type='text/javascript' src='install-bookmarklet.js'></script>
 

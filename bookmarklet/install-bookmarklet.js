@@ -3,7 +3,7 @@ var loaded = false;
 function getBookmarkletCode(lang, kbd) {
   var code =
     "javascript:void((function(){try{var%20e=document.createElement('script');e.type='text/javascript';"+
-    "e.src='"+resourceBase+"/code/bml20.php"+
+    "e.src='"+bookmarkletParameters.resourceBase+"/code/bml20.php"+
     "?langid="+encodeURIComponent(lang.id)+
     "&amp;keyboard="+encodeURIComponent(kbd.id)+
     "';document.body.appendChild(e);}catch(v){}})())";
@@ -46,8 +46,8 @@ window.addEventListener('load', function() {
     .on('keyup', filterList)
     .on('change', filterList);
 
-  if (languageCode == '' || kbdname == '') {
-    $.get(resourceBase+'/api/4.0/languages?languageidtype=bcp47', function(data) {
+  if (bookmarkletParameters.languageId == '' || bookmarkletParameters.keyboardId == '') {
+    $.get(bookmarkletParameters.resourceBase+'/api/4.0/languages?version='+bookmarkletParameters.keymanVersion+'&languageidtype=bcp47', function(data) {
       $('#bookmarklet-search #spinner').hide();
       data.languages.languages.forEach(function(lang) {
         lang.keyboards.forEach(function(kbd) {
@@ -58,7 +58,8 @@ window.addEventListener('load', function() {
       filterList();
     });
   } else {
-    $.get(resourceBase+'/api/4.0/languages/'+languageCode+'/'+kbdname, function(data) {
+    $('#bookmarklet-search').hide();
+    $.get(bookmarkletParameters.resourceBase+'/api/4.0/languages/'+bookmarkletParameters.languageId+'/'+bookmarkletParameters.keyboardId+'?version='+bookmarkletParameters.keymanVersion+'&languageidtype=bcp47', function(data) {
       createSingleBookmarklet(data.language, data.language.keyboards[0]);
     });
   }
