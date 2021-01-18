@@ -38,7 +38,7 @@
     <h3>Keyman Bookmarklet Search</h3>
     <div id="bookmarklet-list">
         <div id="bookmarklet-list-inner">
-
+            <div id="spinner"></div>
         </div>
     </div>
     <p>
