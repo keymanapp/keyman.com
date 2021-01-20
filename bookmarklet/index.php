@@ -1,9 +1,9 @@
 <?php
   $loadJQueryEarly = true;
   require_once('includes/template.php');
-  $lang = isset($_GET['language']) ? $_GET['language'] : '';
-  $kbd = isset($_GET['keyboard']) ? $_GET['keyboard'] : '';
-  
+  $lang = isset($_GET['language']) ? json_encode($_GET['language']) : '""';
+  $kbd = isset($_GET['keyboard']) ? json_encode($_GET['keyboard']) : '""';
+
   // Required
   head([
     'title' =>'Keyman Bookmarklet',
@@ -13,34 +13,37 @@
 ?>
 
 <script type="text/javascript">
-  var resourceBase="<?php echo $site_protocol . $resourceDomain ?>";
-  var kbdname = '<?= $kbd ?>';
-  var languageCode = '<?= $lang ?>';
+  const bookmarkletParameters = {
+    keymanVersion: "<?= $stable_version ?>",
+    resourceBase: "<?php echo $site_protocol . $resourceDomain ?>",
+    keyboardId: <?= $kbd ?>,
+    languageId: <?= $lang ?>
+  };
 </script>
 <script type='text/javascript' src='install-bookmarklet.js'></script>
 
 <h2 class="red underline">Keyman Bookmarklet</h2>
 <p>
-    The KeymanWeb bookmarklet allows you to use a KeymanWeb keyboard on nearly any web page just by clicking the KeymanWeb bookmark, after the page finishes loading.
+    The KeymanWeb bookmarklet allows you to use a KeymanWeb keyboard on nearly any web page just by clicking the KeymanWeb bookmark.
 </p>
 
 <div id='bookmarklet'>
     <h3>Keyman Bookmarklet</h3>
     <div><a href='#'></a></div>
     <p>
-        Drag this button to your Bookmarks toolbar to install this keyboard to your web browser!
-        <a target="_blank" href="http://help.keyman.com/products/bookmarklet/">Learn more</a>
+        Drag this button to your Bookmarks toolbar to install this keyboard to your web browser.
+        <a target="_blank" href="https://help.keyman.com/products/bookmarklet/">Learn more</a>
     </p>
 </div>
 <div id="bookmarklet-search">
-    <h3>Keyman Bookmarklet Search</h3>
+    <h3><input id="bookmarklet-search-box" autofocus placeholder="Search for language name"></h3>
     <div id="bookmarklet-list">
         <div id="bookmarklet-list-inner">
-            
+            <div id="spinner"></div>
         </div>
     </div>
     <p>
-        Drag a Bookmarklet to your Bookmarks toolbar to install the keyboard to your web browser!
+        Drag a Bookmarklet to your Bookmarks toolbar to install the keyboard to your web browser.
     </p>
 </div>
 
