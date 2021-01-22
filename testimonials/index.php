@@ -1,29 +1,29 @@
 <?php
   require_once('includes/template.php');
-  
+
   // Required
   head([
     'title' =>'Testimonials | Keyman',
     'css' => ['template.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
-<h2 class="red underline">What people are saying about Keyman Desktop</h2>
+<h2 class="red underline">What people are saying about Keyman</h2>
 
 <p class="center">
   <span class="testimonial">"... I would suggest to stick with keyman and I am sure you would love the experience.<br/>
   I type #Amharic like a Pro on Keyman [winking face]"</span>
-  <h4 class="caption"><a href="https://twitter.com/MekonnenAkele/status/1208281934721409025">@MekonnenAkele</a> - December 2019</h4>
+  <h4 class="caption"><a href="https://twitter.com/MekonnenAkele/status/1208281934721409025" target="_blank">@MekonnenAkele</a> - December 2019</h4>
 </p>
 <p class="center">
   <span class="testimonial">"@keyman, thank you for the Tamil keyboard. Loved how easy it is to type in Tamil."</span>
-  <h4 class="caption"><a href="https://twitter.com/BlueLotusTrans/status/1149465727193079808">@BlueLotusTrans</a> - July 2019</h4>
+  <h4 class="caption"><a href="https://twitter.com/BlueLotusTrans/status/1149465727193079808" target="_blank">@BlueLotusTrans</a> - July 2019</h4>
 </p>
 <p class="center">
   <span class="testimonial">"If you need to develop keyboard inputs for your language @keyman is a great resource.
   Make keyboards for iOS, Android, Mac, & Windows! #ᏣᎳᎩ, Osage, Diné Bizaad, Lakota, & Cree Syllabics are just some
   of the Keyman keyboards."</span>
-  <h4 class="caption"><a href="https://twitter.com/NativeLangsTech/status/1131316826795892736">@NativeLangsTech</a> - May 2019</h4>
+  <h4 class="caption"><a href="https://twitter.com/NativeLangsTech/status/1131316826795892736" target="_blank">@NativeLangsTech</a> - May 2019</h4>
 </p>
 <p class="center">
   <span class="testimonial">"The software works perfectly, and we've already translated a document into Tamil!"</span>
@@ -39,7 +39,7 @@
 </p>
 <p class="center">
   <span class="testimonial">"I have just launched a web site that promotes the Amharic language through the use of "creative writings" ... Thank you for producing a quality software."</span>
-  <h4 class="caption">Toto Adefris <span lang="am" class="lang-example">(ቶቶ አደፍርስ)</span> - <a href="http://totoadefris.ning.com/" target="blank">The Very Best of Toto</a> - December 2009</h4>
+  <h4 class="caption">Toto Adefris <span lang="am" class="lang-example">(ቶቶ አደፍርስ)</span> - <a href="http://totoadefris.ning.com/" target="_blank">The Very Best of Toto</a> - December 2009</h4>
 </p>
 <p class="center">
   <span class="testimonial">"Thank you for this fascinating programme. I am enjoying the ability to type instead of hand writing phonetic characters."</span>
@@ -59,7 +59,7 @@
 </p>
 <p class="center">
   <span class="testimonial">"I do most of my greek work on a Windows 7 operating system, running Keyman. It makes typing polytonic Greek a real breeze."</span>
-  <h4 class="caption">Seumas Macdonald - <a href="http://jeltzz.blogspot.com.au/2010/07/really-slow.html" target="blank">Compliant Subversity blog</a> - July 2010</h4>
+  <h4 class="caption">Seumas Macdonald - <a href="http://jeltzz.blogspot.com.au/2010/07/really-slow.html" target="_blank">Compliant Subversity blog</a> - July 2010</h4>
 </p>
 <h2 class="red underline">What people are saying about KeymanWeb</h2>
 <p class="center">
@@ -72,11 +72,11 @@
 </p>
 <p class="center">
   <span class="testimonial">"Keymanweb virtual online keyboard is a winner."</span>
-  <h4 class="caption">Seumas Macdonald - <a href="http://jeltzz.blogspot.com.au/2010/07/rethinking-approach-on-gregory-reader.html" target="blank">Compliant Subversity blog</a> - July 2010</h4>
+  <h4 class="caption">Seumas Macdonald - <a href="http://jeltzz.blogspot.com.au/2010/07/rethinking-approach-on-gregory-reader.html" target="_blank">Compliant Subversity blog</a> - July 2010</h4>
 </p>
 <p class="center">
   <span class="testimonial">"In my opinion your KeymanWeb is the best online keyboard tool. I strongly support such good products."</span>
-  <h4 class="caption">Fabio - <a href="http://www.elgalepin.com/" target="blank">El Galepin</a> - March 2009</h4>
+  <h4 class="caption">Fabio - <a href="http://www.elgalepin.com/" target="_blank">El Galepin</a> - March 2009</h4>
 </p>
 <p class="center">
   <span class="testimonial">"The solution offered by you indeed is the best which is free, easy to use and readily accessible too. Congraulations and thank you."</span>
@@ -87,13 +87,13 @@
   <span class="testimonial">"had a blast at the @keyman 2020 Workshop last week, great lectures, great trainers, and
     great fun hanging out with keyboard enthusiasts -not to mention a great price!  After years of day dreaming about it,
     I made a #Musnad:  https://keyman.com/keyboards/gff_musnad"</span>
-<h4 class="caption"><a href="https://twitter.com/ethiopic/status/1235564088341774338">@ethiopic</a> - March 2020</h4>
+<h4 class="caption"><a href="https://twitter.com/ethiopic/status/1235564088341774338" target="_blank">@ethiopic</a> - March 2020</h4>
 </p>
 <p class="center">
   <span class="testimonial">"Thanks to @keyman, just finished a Taiwanese Pe̍h-ōe-jī keyboard for all platforms just the
     3rd day of the 1-week workshop. Can't wait to publish it! https://pic.twitter.com/BE4PRpkUsm"
   </span>
-<h4 class="caption"><a href="https://twitter.com/ngoohebi/status/1232731288143974400">@ngoohebi</a> - February 2020</a></h4>
+<h4 class="caption"><a href="https://twitter.com/ngoohebi/status/1232731288143974400" target="_blank">@ngoohebi</a> - February 2020</a></h4>
 </p>
 
 <p class="center">
@@ -102,7 +102,7 @@
 </p>
 <p class="center">
   <span class="testimonial">"We are delighted to be in a position to distribute Aboriginal language keyboard solutions to our clients. The local Saanich tribe will be the first to benefit ... You can be sure that your invention will be a wonderful enabling tool for a host of new Indigenous communities via their connections to First Peoples' Cultural Foundation."</span>
-  <h4 class="caption">Peter Brand - <a href="www.fpcf.ca" target="blank">First Peoples' Cultural Foundation</a>, British Columbia</h4>
+  <h4 class="caption">Peter Brand - <a href="http://fpcf.ca/" target="_blank">First Peoples' Cultural Foundation</a>, British Columbia</h4>
 </p>
 <p class="center">
   <span class="testimonial">"I must admit you are doing a great service to linguistic community in developing this type of software which is essential for developing Keyboards and language-specific software by this. I had written to someone who has a master's degree in computer application (MCA), was full of praise of this software. He was not aware of it, and added that it is a wonderful tool. I have no knowledge of computer systems intricacies. I believe in the same way: it is wonderful. I wish Marc and his associates a grand success for developing software like this."</span>

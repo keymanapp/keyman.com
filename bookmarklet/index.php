@@ -1,6 +1,9 @@
 <?php
-  $loadJQueryEarly = true;
   require_once('includes/template.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\KeymanVersion;
+
   $lang = isset($_GET['language']) ? json_encode($_GET['language']) : '""';
   $kbd = isset($_GET['keyboard']) ? json_encode($_GET['keyboard']) : '""';
 
@@ -14,8 +17,8 @@
 
 <script type="text/javascript">
   const bookmarkletParameters = {
-    keymanVersion: "<?= $stable_version ?>",
-    resourceBase: "<?php echo $site_protocol . $resourceDomain ?>",
+    keymanVersion: "<?= KeymanVersion::stable_version ?>",
+    resourceBase: "<?= KeymanHosts::Instance()->r_keymanweb_com ?>",
     keyboardId: <?= $kbd ?>,
     languageId: <?= $lang ?>
   };
@@ -32,7 +35,7 @@
     <div><a href='#'></a></div>
     <p>
         Drag this button to your Bookmarks toolbar to install this keyboard to your web browser.
-        <a target="_blank" href="https://help.keyman.com/products/bookmarklet/">Learn more</a>
+        <a target="_blank" href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/bookmarklet/">Learn more</a>
     </p>
 </div>
 <div id="bookmarklet-search">

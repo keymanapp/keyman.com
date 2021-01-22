@@ -47,11 +47,11 @@
                   With the world’s most powerful keyboarding engine, intuitive and rapid text input is now possible in
                   your language, and for over 99% of the global population’s mother tongues!</p>
                 <div class="product" id="product-desktop">
-                    <a href="/desktop">
+                    <a href="/windows">
                         <img src="<?php echo cdn("img/icon-desktop.png"); ?>" />
-                        <h3>Keyman Desktop <?php echo $stable_version; ?></h3>
+                        <h3>Keyman for Windows <?php echo $stable_version; ?></h3>
                         <p>
-                            Type in your language in all your favourite software applications for Windows.  Keyman Desktop will automatically configure your system for your language.
+                            Type in your language in all your favourite software applications for Windows.  Keyman for Windows will automatically configure your system for your language.
                         </p>
                     </a>
                 </div>

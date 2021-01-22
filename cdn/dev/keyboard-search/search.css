@@ -2,11 +2,6 @@
  Search box
 */
 
-#search-box {
-  padding: 10px;
-  
-}
-
 h2 a {
   color: #B92034;
   text-decoration: none;
@@ -50,9 +45,12 @@ h2 a {
 }
 
 #search-box {
+  padding: 10px;
   background: white;
+  border-top: solid 1px #666666;
   border-bottom: solid 1px #666666;
-  min-height: 36px;
+  min-height: 54px;
+  box-sizing: border-box;
 }
 
 #search-box #search-title {
@@ -78,6 +76,20 @@ h2 a {
   border-radius: 0px;
   border: solid 1px gray;
   padding-left: 10px;
+  font-family: Cabin, sans-serif;
+  font-size: 16px;
+}
+
+#search-box label {
+  float: left;
+  height: 32px;
+  display: block;
+  padding: 8px 8px 0 0;
+  box-sizing: border-box;
+}
+
+#search-box label#search-new {
+  float: right;
 }
 
 #search-box #search-f {
@@ -104,8 +116,11 @@ h2 a {
   margin: 10px 8px 0 0;
 }
 
+#search-results .keyboard {
+  margin-top: 16px;
+}
+
 #search-results .title {
-  margin-top: 24px;
   padding: 0 8px 2px;
   font-size: 13pt;
 }
@@ -134,26 +149,14 @@ h2 a {
 
 #search-results .keyboards-deprecated h4 {
   margin-top: 24px;
-  margin-left: 36px;
-  cursor: pointer;
-  font-weight: bold;
+  margin-left: 8px;
+  font-weight: 600;
   font-size: 14pt;
-}
-
-#search-results .keyboards-deprecated h4:hover {
-  text-decoration: underline;
-}
-
-#search-results .keyboards-deprecated .keyboard {
-  display: none;
-}
-
-#search-results .keyboards-deprecated.show .keyboard {
-  display: block;
 }
 
 #search-results .keyboards-deprecated .keyboard .title::after {
   content: " (obsolete)";
+  color: red;
 }
 
 #search-results .keyboard .title a {
@@ -163,18 +166,53 @@ h2 a {
   padding-left: 28px;
 }
 
+#search-results .title .match {
+  padding-left: 6px;
+  font-size: 16px;
+}
+
 
 #search-results .keyboard .detail {
   padding: 0 8px;
 }
 
+#search-results .keyboard.keyboardLandingPage {
+  border: solid 1px #444444;
+  border-radius: 6px;
+  background: white;
+  padding: 8px 0;
+}
+
 #search-results .keyboard .id {
   color: #006622;
-  padding: 2px 0 6px 28px;
+  padding: 2px 0 2px 28px;
+}
+
+#search-results .keyboard .downloads {
+  color:  grey;
+  font-size: 0.75em;
+  padding: 0px 0 2px 28px;
 }
 
 #search-results .keyboard table {
   clear: right;
+}
+
+#search-results .pager {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: solid 1px #B92034;
+}
+
+#search-results .statistics {
+  margin: 8px 0 0 8px;
+  font-size: 13px;
+  color: #444444;
+}
+
+#search-results .pager a,
+#search-results .pager span {
+  padding: 0 4px;
 }
 
 /* Keyboard details */
@@ -183,6 +221,7 @@ h2 a {
   text-align: left;
   padding: 4px 24px 4px 0;
   color: #666699;
+  white-space: nowrap;
 }
 
 #keyboard-details td {
@@ -201,20 +240,64 @@ h2 a {
 #keyboard-details-col .col {
   float: left;
   max-width: 50%;
+  box-sizing: border-box;
+}
+
+#keyboard-details .links div {
+  margin-bottom: 6px;
+  line-height: 1.2em;
+}
+
+#keyboard-details .keyboard-unavailable {
+  text-decoration: underline;
+}
+
+#keyboard-details .supported-languages {
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+#keyboard-details .supported-languages a {
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+#keyboard-details .supported-languages #expand-languages,
+#keyboard-details .supported-languages #collapse-languages {
+  color: #B92034;
+}
+
+#keyboard-details .supported-languages .expand-languages,
+#keyboard-details .supported-languages #collapse-languages,
+#keyboard-details .supported-languages #expand-languages:target {
+  display: none;
+}
+
+#keyboard-details .supported-languages #expand-languages:target ~ .expand-languages,
+#keyboard-details .supported-languages #expand-languages:target + #collapse-languages {
+  display: inline;
 }
 
 .clear-left {
   clear: left;
 }
 
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 640px) {
+  #search-box label[for=search-q] {
+    display: none;
+  }
+
+  html #search-box #search-q {
+    width: 120px;
+  }
+
   /* Responsive display of table data on mobile */
-  
+
   #keyboard-details-col .col {
     float: none;
     max-width: unset;
   }
-  
+
   table#keyboard-details,
   table#keyboard-details thead,
   table#keyboard-details tbody,
@@ -234,35 +317,30 @@ p#permalink {
 /* Download boxes */
 
 .download {
-  clear: both;
-  padding: 8px;
-  margin: 8px;
-  border: solid 1px #B92034;
-  background: white;
+  margin: 0px 0px 16px 16px;
 }
 
-.download-windows {
-  border: solid 1px #159bc7;
-  background: #dcf0f7;
+@media only screen and (max-width: 640px) {
+  /* Download box on phones */
+  .download {
+    margin: 0;
+  }
 }
 
 .download .download-title {
   font-weight: bold;
-  font-size: 14pt;  
+  font-size: 14pt;
   margin: 0 0 4px;
 }
 
-.download .download-description {
-  margin: 4px 0 2px;
-}
-
+.download .download-description,
 .download .download-filename {
   color: #666666;
   font-size: 11pt;
+  margin: 4px 0 2px;
 }
 
 .download a.download-link {
-  float: right;
   margin-top: 4px;
   padding: 12px 30px 0 4px;
   color: white;
@@ -279,46 +357,101 @@ p#permalink {
   background-image: url(/cdn/dev/keyboard-search/link-blank.png);
 }
 
-.download.download-web {
-  border-color: #4383BD;
-}
+/*.platforms span + span::before {
+  content: ", ";
+}*/
 
-.download.download-android {
-  background-image: url(/cdn/dev/keyboard-search/icon-android.png);
-}
-
-.download.download-windows {
-  background-image: url(/cdn/dev/keyboard-search/icon-windows.png);
-}
-
-.download.download-ios {
-  background-image: url(/cdn/dev/keyboard-search/icon-ios.png);
-}
-
-.download.download-kmp-windows {
-  background-image: url(/cdn/dev/keyboard-search/icon-windows.png);
-}
-
-.download.download-kmp-macos {
-  background-image: url(/cdn/dev/keyboard-search/icon-macos.png);
-}
-
-.download.download-kmp-linux {
-  background-image: url(/cdn/dev/keyboard-search/icon-linux.png);
-}
-
-.download.download-android,
-.download.download-windows,
-.download.download-ios,
-.download.download-kmp-windows,
-.download.download-kmp-macos,
-.download.download-kmp-linux,
-.download.download-web {
-  padding-left: 48px;
+.platforms span {
   background-repeat: no-repeat;
-  background-position: 10px 8px;
+  background-size: 18px;
+  background-position: top left;
+  padding-left: 24px;
+  display: block;
+  margin: 4px 0;
 }
 
-.download-other .download a.download-link {
-  background-image: url(/cdn/dev/keyboard-search/low-blank.png);
+.platform-android {
+  background-image: url("/cdn/dev/keyboard-search/icon-android.png");
+}
+
+.platform-ios {
+  background-image: url("/cdn/dev/keyboard-search/icon-ios.png");
+}
+
+.platform-linux {
+  background-image: url("/cdn/dev/keyboard-search/icon-linux.png");
+}
+
+.platform-macos {
+  background-image: url("/cdn/dev/keyboard-search/icon-macos.png");
+}
+
+.platform-desktopWeb {
+  background-image: url("/cdn/dev/keyboard-search/icon-desktopWeb.png");
+}
+
+.platform-mobileWeb {
+  background-image: url("/cdn/dev/keyboard-search/icon-mobileWeb.png");
+}
+
+.platform-windows {
+  background-image: url("/cdn/dev/keyboard-search/icon-windows.png");
+}
+
+.download { display: none; }
+.download.download-web {
+  display: block;
+}
+
+html[data-platform='android'] .download.download-android {
+  display: block;
+}
+
+html[data-platform='ios'] .download.download-ios {
+  display: block;
+}
+
+html[data-platform='linux'] .download.download-linux {
+  display: block;
+}
+
+html[data-platform='macos'] .download.download-macos {
+  display: block;
+}
+
+html[data-platform='windows'] .download.download-windows {
+  display: block;
+}
+
+html[data-platform='unknown'] .download.download-unknown {
+  display: block;
+}
+
+#search-results-empty {
+  display: none;
+}
+
+#section2 #search-results-empty code {
+  font-family: Consolas, 'Courier New', Courier, monospace;
+  background: #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search-results:empty + #search-results-empty {
+  display: unset;
+}
+
+/* Embedded formatting */
+
+.embed #search-results-container .platforms,
+.embed h2 {
+  display: none;
+}
+
+.embed #search-results .keyboard {
+  margin-top: 24px;
+}
+.embed #search-results .title {
+margin-top: 2px;
 }
