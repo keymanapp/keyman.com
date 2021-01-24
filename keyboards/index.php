@@ -50,8 +50,8 @@
     <ul>
       <li>The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names.</li>
       <li>You can apply prefixes <code>k:</code> (keyboards), <code>l:</code> (languages), <code>s:</code> (scripts, writing systems)
-      or <code>c:</code> (countries) to filter your search results.</li>
-      <li>Use prefix <code>l:id:</code> to search for a BCP 47 language tag.</li>
+      or <code>c:</code> (countries) to filter your search results. For example <code>c:thailand</code> searches for keyboards for languages used in Thailand.</li>
+      <li>Use prefix <code>l:id:</code> to search for a BCP 47 language tag, for example <code>l:id:ti-et</code> searches for Tigrigna (Ethiopia).</li>
     </ul>
   </div>
 </div>
