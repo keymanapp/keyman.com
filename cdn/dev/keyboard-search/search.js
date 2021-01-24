@@ -129,7 +129,10 @@ window.onpopstate = function(e) {
     process_response(e.state.q, e.state.obsolete, e.state.text);
     $('#search-q').val(e.state.q);
     return true;
-  } else return false;
+  } else {
+    prepareInitialSearch();
+    return true;
+  }
 };
 
 // https://tc39.github.io/ecma262/#sec-array.prototype.find
@@ -406,6 +409,10 @@ var load_search_count = 0, load_search = function() {
 
   // Get initial search
 
+  return prepareInitialSearch();
+};
+
+function prepareInitialSearch() {
   var page = 1, obsolete = 0, q = '', params = location.search.substr(1).split('&');
   for(var i = 0; i < params.length; i++) {
     var p = params[i].split('=');
