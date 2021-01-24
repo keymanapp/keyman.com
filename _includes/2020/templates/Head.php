@@ -3,9 +3,10 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
-  use Keyman\Site\com\keyman\Util;
+use Keyman\Site\com\keyman\Util;
+use Keyman\Site\Common\KeymanHosts;
 
-  class Head {
+class Head {
     static function render($fields = []) {
       $fields = (object)$fields;
 
@@ -25,6 +26,11 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <?php
+    if(KeymanHosts::Instance()->Tier() != KeymanHosts::TIER_PRODUCTION) {
+      echo '    <meta name="robots" content="none">';
+    }
+  ?>
   <title><?= $fields->title; ?></title>
   <?php
 /* Our local CDN version is identical to this file:
