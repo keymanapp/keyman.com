@@ -45,9 +45,16 @@
 ?>
 
 <h2 id='linux' class='red underline'>Keyman for Linux</h2>
-<p>Ubuntu: Keyman for Linux can be installed via <a href='https://launchpad.net/~keymanapp/+archive/ubuntu/keyman-daily'>launchpad</a>:</p>
+<h3>Beta</h3>
+<p>Ubuntu: Beta versions of Keyman for Linux can be installed via <a href='https://launchpad.net/~keymanapp/+archive/ubuntu/keyman-beta'>launchpad</a>:</p>
 <pre class='language-bash code'><code>
-sudo add-apt-repository ppa:keymanapp/keyman-daily
+sudo add-apt-repository ppa:keymanapp/keyman-beta
+sudo apt install keyman onboard-keyman</code></pre>
+
+<h3>Alpha</h3>
+<p>Ubuntu: Alpha versions of Keyman for Linux can be installed via <a href='https://launchpad.net/~keymanapp/+archive/ubuntu/keyman-alpha'>launchpad</a>:</p>
+<pre class='language-bash code'><code>
+sudo add-apt-repository ppa:keymanapp/keyman-alpha
 sudo apt install keyman onboard-keyman</code></pre>
 
 <?php

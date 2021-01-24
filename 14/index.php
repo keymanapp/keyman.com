@@ -123,7 +123,7 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta
 </ul>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-daily
+<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-beta
 sudo apt upgrade
 sudo apt install keyman onboard-keyman</code></pre></blockquote>
 
