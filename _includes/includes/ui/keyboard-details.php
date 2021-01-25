@@ -435,10 +435,16 @@ END;
 
           <table id='keyboard-details'>
             <tbody>
+<?php
+              if(isset(self::$keyboard->packageFilename)) {
+?>
             <tr>
               <th>Package Download</th>
               <td><a href="<?= self::$kmpDownloadUrl ?>"><?= self::$keyboard->id ?>.kmp</a></td>
             </tr>
+<?php
+              }
+?>
             <tr>
               <th>Monthly Downloads</th>
               <td><?= self::$downloadCount ?></td>
