@@ -44,7 +44,7 @@
   <div id='search-results-container' class=''>
   <div id='search-results'></div>
   <div id='search-results-empty'>
-    <p>Enter the name of a keyboard or language to search for. (<a href="?q=p:*">Popular keyboards</a>)</p>
+    <p>Enter the name of a keyboard or language to search for. (<a href="?q=p:popular">Popular keyboards</a> | <a href="?q=p:alphabetical">All keyboards</a>)</p>
     <br />
     <p>Hints</p>
     <ul>

@@ -999,11 +999,12 @@ input[type="search"] {
 	line-height: 1.2em;
 }
 
+#section2 ul{
+	padding: 0 0 0 20px;
+}
 #section2 li{
-	padding: 0px 10px;
 	margin-left: 10px;
 	list-style: disc;
-	list-style-position: inside;
 	line-height: 1.5em;
 }
 
