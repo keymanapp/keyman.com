@@ -142,6 +142,15 @@ sudo apt install keyman onboard-keyman</code></pre>
 
 <br/>
 <p>
+  <span class="red">Q.</span>Does Keyman for Linux work with Wayland?
+</p>
+<p>
+  <span class="red">A.</span>Currently, there's <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
+  to add support for Wayland. As a workaround, use X11.
+</p>
+
+<br/>
+<p>
     <span class="red">Q.</span> What's the relationship between Keyman for Linux and KMFL?
 </p>
 <p>

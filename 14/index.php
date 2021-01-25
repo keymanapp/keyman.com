@@ -149,7 +149,9 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
   <li>Add system globe action to show system keyboards (#3197)</li>
   <li>Improved corrections and predictions (#3555)</li>
   <li>Match user input capital letters when offering suggestions (#3845)</li>
-  <li> Update minimum Android SDK to 21 (Android 5.0 Lollipop) (#2993)</li>
+  <li>Update minimum Android SDK to 21 (Android 5.0 Lollipop) (#2993)</li>
+  <li>Keyman now works more reliably with WeChat and Telegram (#4254)</li>
+  <li>Added new menu to change the display language (#4261)</li>
 </ul>
 
 <h2 class="red underline">Keyman for iPhone and iPad 14</h2>
@@ -185,6 +187,8 @@ downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'beta');
   <li>Sourcemap improvements (#2809)</li>
   <li>Fixes issues with keyboard rules involving system stores (#2884)</li>
   <li>Fixes issues with keyboard rules involving both 'notany' and 'context' (#3817)</li>
+  <li>The OSK for KeymanWeb, Keyman for Android, and Keyman for iPhone and iPad now load more quickly (#4279)</li>
+  <li>Improved OSK handling of large fonts for key text (#4270, #4255)</li>
 </ul>
 
 
@@ -199,6 +203,8 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
 
 <ul>
   <li>Improve how casing is handled for lexical-models (#3770)</li>
+  <li>Lexical models may now specify the '<code>languageUsesCasing</code>' flag (and, optionally, an '<code>applyCasing()</code>' function).
+    These will allow predictive-text suggestions to detect and preserve capitalization when appropriate (#4291, 4299).</li>
   <li>Add support for notany() and context() (#3816)</li>
   <li>Remove IE dependency from Developer setup (#3839)</li>
   <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWSP*, ... (#3878)</li>
