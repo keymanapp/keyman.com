@@ -76,7 +76,7 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
 
 <ul>
   <li>Renamed from <strong class="red">Keyman Desktop</strong> to <strong class="red">Keyman for Windows</strong></li>
-  <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. Rather, if you select a Keyman keyboard, Keyman will be restarted for you automatically.</li>
+  <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. (This helps maintain input method language tag stability.)</li>
   <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
   <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
   <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
