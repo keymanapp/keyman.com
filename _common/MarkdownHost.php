@@ -31,7 +31,10 @@
       // and `---` must be the first three characters of the file (no BOM!); note that
       // the full spec supports metadata sections anywhere but we only support top-of-file.
       //
-      // Currently we support only the 'title' keyword, and it must be a plain text title.
+      // Currently we support only the 'title' and 'redirect' keywords.
+      //
+      // title: must be a plain text title
+      // redirect: must be a relative or absolute url
       //
       // ---
       // keyword: content
@@ -41,18 +44,29 @@
       // source: https://yaml.org/spec/1.2/spec.html#id2760395
       // source: https://pandoc.org/MANUAL.html#extension-yaml_metadata_block
       //
-      if(preg_match('/^---\n(.+)\n---\n(.+)/s', $contents, $match)) {
-        $metadata = $match[1];
-        $contents = $match[2];
-      } else {
-        $metadata = 'title: untitled';
+      $lines = explode("\n", $contents);
+
+      $found = count($lines) > 3 && rtrim($lines[0]) == '---';
+      $headers = [];
+      for($i = 1; $i < count($lines); $i++) {
+        if($lines[$i] == '---') break;
+        if(!preg_match('/^([a-z0-9_-]+):(.+)$/', $lines[$i], $match)) {
+          $found = false;
+          break;
+        } else {
+          $headers[$match[1]] = trim($match[2]);
+        }
+      }
+      $found = $found && $i < count($lines);
+
+      if($found) $contents = implode("\n", array_slice($lines, $i));
+
+      if(isset($headers['redirect'])) {
+        header("Location: {$headers['redirect']}");
+        exit;
       }
 
-      if(preg_match('/^title: (.+)/', $metadata, $match)) {
-        $this->pagetitle = $match[1];
-      } else {
-        $this->pagetitle = 'Untitled';
-      }
+      $this->pagetitle = isset($headers['title']) ? $headers['title'] : 'Untitled';
 
       // Performs the parsing + prettification of Markdown for display through PHP.
       $Parsedown = new \ParsedownExtra();
@@ -60,7 +74,9 @@
       // Does the magic.
       $this->content =
        "<h1>" . htmlentities($this->pagetitle) . "</h1>\n" .
-       $Parsedown->text($contents);
+       "<div class='markdown'>" .
+       $Parsedown->text($contents) .
+       "</div>";
     }
   }
 
