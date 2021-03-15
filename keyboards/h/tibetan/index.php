@@ -26,7 +26,7 @@
 
   <div id='intro'>
     <img title="Chiyu Gompa and Mount Kailash &mdash; Image Courtesy of Reurinkjan" src="<?= cdn('img/Mount_Kailash_-_reurinkjan.jpg') ?>"
-         id="photo" style='float:right; margin: 8px 0px 8px 24px' />
+         id="photo" style='float:right; margin: 8px 0px 8px 24px; width: 50%' />
 
     <h1 class="red underline">Tibetan Keyboards</h1>
 

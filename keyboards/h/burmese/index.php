@@ -25,7 +25,8 @@
 ?>
 
   <div id='intro'>
-    <img title="Mandalay Hill 3 &mdash; Image Courtesy of Stefan Fussan" src="<?= cdn('img/Mandalay_Hill_3.jpg') ?>" id="photo" style='float:right; margin: 8px 0px 8px 24px; width: 50%' />
+    <img title="Mandalay Hill 3 &mdash; Image Courtesy of Stefan Fussan" src="<?= cdn('img/Mandalay_Hill_3.jpg') ?>"
+         id="photo" style='float:right; margin: 8px 0px 8px 24px; width: 50%' />
 
     <h1 class="red">Burmese Keyboards</h1>
     <p>Type Burmese in all your favourite applications from your own hardware keyboard.</p>

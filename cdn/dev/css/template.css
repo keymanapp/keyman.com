@@ -2280,6 +2280,10 @@ button.feedback{
 	.download-cta-big{
 		height: auto;
 	}
+	.download-cta-big p{
+		width: auto;
+	}
+
 	.download-cta-small{
 		display: none;
 	}

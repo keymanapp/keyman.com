@@ -133,7 +133,7 @@
 
   #greek {
     font: 12pt "Palatino Linotype",Tahoma !important; border: solid 1px #D6AE7C; background: #FAF2E8;
-    padding: 2px 3px; width:500px; margin: 15px 5px -5px;
+    padding: 2px 3px 2px 3px; margin: 15px 5px -5px;
     border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px
   }
   #greek div {

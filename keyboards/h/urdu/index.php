@@ -111,7 +111,7 @@
 <div class="spacer"></div>
 <h2 class='red underline'>Screenshots</h2>
 <h3>Urdu on Windows</h3>
-<img src="<?php echo cdn('img/urdu-desktop.png'); ?>" style='width:50%' />
+<img src="<?php echo cdn('img/urdu-desktop.png'); ?>"' />
 <br/><br/>
 <h3>Urdu on iPhone</h3>
 <img src="<?php echo cdn('img/urdu-keyboard-iphone5-small.png'); ?>" />
