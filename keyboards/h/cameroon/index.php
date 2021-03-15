@@ -26,7 +26,7 @@
 
   <div id='intro'>
     <img title="Mont Mbapit14 &mdash; Image Courtesy of Noel Coston" src="<?= cdn('img/Mont_Mbapit14.jpg') ?>"
-         id="photo" style='float:right; margin: 8px 0px 8px 24px' />
+         id="photo" style='float:right; margin: 8px 0px 8px 24px; width: 50%' />
 
     <h1 class="red underline">Cameroon Keyboards</h1>
 
