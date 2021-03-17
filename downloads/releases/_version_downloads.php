@@ -55,7 +55,7 @@
     exit;
   }
 
-  downloadSection('Keyman Desktop for Windows',   'windows',   ['keyman-$version.exe', 'keymandesktop-$version.exe'], $tier);
+  downloadSection('Keyman for Windows',         'windows',   ['keyman-$version.exe', 'keymandesktop-$version.exe'], $tier);
   downloadSection('Keyman for macOS',           'mac',     'keyman-$version.dmg', $tier);
   downloadSection('Keyman for Android',         'android', 'keyman-$version.apk', $tier);
 ?>
