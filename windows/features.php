@@ -11,9 +11,9 @@
 ?>
 <div class="info-right">
     <div class="section" id="features">
-        <h2 class="red underline">Keyman for Windows <?php echo $stable_version; ?> Features</h2>
+        <h2 class="red underline">Keyman <?= $stable_version ?> for Windows Features</h2>
         <p>
-            From Amharic to Zulu, Keyman for Windows <?php echo $stable_version; ?> is rich in features which make typing in any language easy.
+            From Amharic to Zulu, Keyman <?= $stable_version ?> for Windows is rich in features which make typing in any language easy.
         </p>
         <img src="<?php echo cdn("img/world-lang.png"); ?>"/>
         <br/><br/>
@@ -23,31 +23,39 @@
         <br/>
         <h2 class="red center">Type Everywhere</h2>
         <p>
-            Keyman for Windows <?php echo $stable_version_int; ?> takes typing in your language everywhere. Use it across your desktop and online, in all your favourite programs for text and image editing, Web browsing, email, IM and so much more.
+            Keyman <?= $stable_version; ?> for Windows takes typing in your language everywhere. Use it across your desktop and online, in all your favourite programs for text and image editing, Web browsing, email, IM and so much more.
         </p>
         <p>
-            Keyman for Windows <?php echo $stable_version_int; ?> runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
         </p>
-        <img src="<?php echo cdn("img/win_logos.png"); ?>"/>
         <br/><br/><br/>
         <h2 class="red center">What's New</h2>
         <ul>
-            <li>Rewritten for Windows 7, 8 and 8.1. Now integrates deeply into Windows Text Services Framework and presents as a keyboard through all Windows language interfaces. This means that keyboard input support is more consistent and more efficient in all applications.</li>
-            <li>Behind the scenes, Keyman is now fully Unicode internally.</li>
-            <li>User interface extensively redesigned, cleaned up and simplified.</li>
-            <li>Keyboards now support hi-res icons for clean presentation on large screens.</li>
-            <li>Keyboards now have more version information and online help integration.</li>
-            <li>Keyman now supports iPhone, iPad and Android – all your favourite keyboard layouts available on your phone and tablet devices</li>
+            <li>Updated for latest release of Windows 10</li>
+            <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. (This helps maintain input method language tag stability.)</li>
+            <li>On Screen Keyboard loads much faster</li>
+            <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
+            <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
+            <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
+            <li>Choose associated language when keyboard is installed (#3524)</li>
+            <li>Much improved keyboard download experience (#3326)</li>
+            <li>Improved BCP 47 tag support (#3529)</li>
+            <li>Much improved initial download and installation experience including bundled keyboards (#3304)</li>
+            <li>Keyman Configuration changes now apply instantly (#3753)</li>
+            <li>Improved user experience when many keyboards installed (#3626, #3627)</li>
+            <li>Improved bootstrap installer</li>
+            <li>Now uses Chromium to host all web-based UI (e.g. Keyman Configuration)</li>
+            <li>Breaking: Keyman Engine no longer supports the keyboard usage page (usage.htm)</li>
         </ul>
     </div>
     <div class="section" id="setup">
         <h2 class="red underline">Easy Setup</h2>
         <p>
-            Keyman for Windows <?php echo $stable_version_int; ?> installs in just three steps:
+            Keyman <?= $stable_version; ?> for Windows installs in just three steps:
         </p>
-        <img src="<?php echo cdn("img/setup-click1.png"); ?>"/>
-        <img src="<?php echo cdn("img/setup-click2.png"); ?>"/>
-        <img src="<?php echo cdn("img/setup-click3.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/setup-click1.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/setup-click2.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/setup-click3.png"); ?>"/>
         <br/>
         <p>
             Installing Keyboards is even easier. Simply download and open the file, and Keyman will do the rest.
@@ -56,7 +64,7 @@
     <div class="section" id="compatibility">
         <h2 class="red underline">Compatibility</h2>
         <p>
-            Keyman for Windows <?php echo $stable_version_int; ?> runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
         </p>
     </div>
     <div class="section" id="keyboard-list">
@@ -344,13 +352,13 @@
         <img src="<?php echo cdn("img/developer9.png"); ?>"/>
     </div>
     <div class="section" id="unicode">
-        <h2 class="red underline">Unicode 12.0 Compliant</h2>
+        <h2 class="red underline">Unicode 13.0 Compliant</h2>
         <p>
-            Keyman for Windows <?php echo $stable_version_int; ?> complies with Unicode 12.0 – the international standard
+            Keyman <?= $stable_version; ?> for Windows complies with Unicode 13.0 – the international standard
             for language encoding. Everything you type with our Unicode keyboards will be readable to anyone.
         </p>
         <p>
-            With Unicode keyboards for Keyman for Windows <?php echo $stable_version_int; ?>, say goodbye to square boxes and garbled text. What you type won't degrade.
+            With Unicode keyboards for Keyman <?= $stable_version; ?> for Windows, say goodbye to square boxes and garbled text. What you type won't degrade.
         </p>
         <img src="<?php echo cdn("img/no-squares.png"); ?>"/>
         <br/>
@@ -363,7 +371,7 @@
         <p>
             With Keyman for Windows, you can install and enable as many keyboards as you need.
         </p>
-        <img src="<?php echo cdn("img/tab-keyboards.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/tab-keyboards.png"); ?>"/>
     </div>
     <div class="section" id="language-association">
         <h2 class="red underline">Associate Keyboards With Windows Languages</h2>
@@ -371,35 +379,35 @@
             Associate your Keyman keyboards with a Windows language to ensure easy typing.
         </p>
         <p>
-            Keyman for Windows <?php echo $stable_version; ?> allows you to associate a keyboard with multiple Windows languages.
+            Keyman <?= $stable_version ?> for Windows allows you to associate a keyboard with multiple Windows languages.
         </p>
-        <img src="<?php echo cdn("img/tab-layout.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/tab-layout.png"); ?>"/>
     </div>
     <div class="section" id="keyboard-information">
         <h2 class="red underline">Keyboard Information</h2>
         <p>
             Access advanced keyboard information such as Keyboard filename, version number, encodings, layout type and more.
         </p>
-        <img src="<?php echo cdn("img/tab-layout.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/tab-layout.png"); ?>"/>
     </div>
     <div class="section" id="hotkeys">
         <h2 class="red underline">Hotkeys For Everything</h2>
         <p>
             Set hotkeys for Keyman keyboards, Keyman features and even Windows languages from the Hotkeys tab of Keyman Configuration.
         </p>
-        <img src="<?php echo cdn("img/tab-hotkeys.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/tab-hotkeys.png"); ?>"/>
     </div>
     <div class="section" id="language-switcher">
         <h2 class="red underline">Language Switcher</h2>
         <p>
             Language Switcher gathers all your Windows languages and Keyman keyboards in one menu. Jump to any keyboard with a single hotkey.
         </p>
-        <img src="<?php echo cdn("img/languageswitcher.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/languageswitcher.png"); ?>"/>
         <br/><br/>
         <p>
             The Keyman Menu keeps your installed Keyman keyboards in order and easy to access from the Windows taskbar.
         </p>
-        <img src="<?php echo cdn("img/menu-large.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/menu.png"); ?>"/>
     </div>
     <div class="section" id="character-map">
         <h2 class="red underline">Keyman Character Map</h2>
@@ -412,7 +420,7 @@
         <p>
             Search with instant feedback, by name, range, block, font, or code point, using standard wildcards.
         </p>
-        <img src="<?php echo cdn("img/charmap.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/charmap-big.png"); ?>"/>
     </div>
     <div class="section" id="font-helper">
         <h2 class="red underline">Font Helper</h2>
@@ -422,7 +430,7 @@
         <p>
             Not only does Font Helper rank your fonts, it also shows which characters in your keyboard each font supports.
         </p>
-        <img src="<?php echo cdn("img/fonthelper-pro.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/fonthelper.png"); ?>"/>
     </div>
     <div class="section" id="osk">
         <h2 class="red underline">On Screen Keyboard</h2>
@@ -435,7 +443,7 @@
         <p>
             Type using your hardware keyboard or click on screen.
         </p>
-        <img src="<?php echo cdn("img/osk_tibetan.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/osk-greek-566x226.png"); ?>"/>
         <br/><br/><br/>
         <h2 class="red underline">Keyboard Usage</h2>
         <p>
@@ -451,13 +459,13 @@
         <p>
             All users have full access to the built-in and online help documents, deep Keyman diagnostic tools, as well as the Keyman Community Forums.
         </p>
-        <img src="<?php echo cdn("img/tab-support.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/14/windows/tab-support.png"); ?>"/>
     </div>
     <div class="section" id="customers">
         <h2 class="red underline">Used By The Biggest</h2>
         <p>
-            Keyman for Windows <?php echo $stable_version_int; ?> is the result of over 25 years of dedication to perfecting Keyman.
-            Everything we've learned since 1991 we've poured into Keyman for Windows <?php echo $stable_version_int; ?>.
+            Keyman <?= $stable_version; ?> for Windows is the result of nearly 30 years of dedication to perfecting Keyman.
+            Everything we've learned since 1991 we've poured into Keyman <?= $stable_version; ?> for Windows.
             We're as dedicated as ever to making Keyman for Windows the best multi-lingual typing solution for you.
         </p>
         <p>

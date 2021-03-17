@@ -20,7 +20,7 @@
         <!-- event banner: uncomment this section when we have an event or promotion -->
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p style='font-size:2em'><a href='/14/'>New (15 Dec 2020): Keyman 14.0 is now in beta!</a></p>
+            <p style='font-size:2em'><a href='/14/'>New (22 Mar 2021): Keyman 14.0 is now available to download!</a></p>
           </div>
         </div>
         <!-- -->
@@ -49,7 +49,7 @@
                 <div class="product" id="product-desktop">
                     <a href="/windows">
                         <img src="<?php echo cdn("img/icon-desktop.png"); ?>" />
-                        <h3>Keyman for Windows <?php echo $stable_version; ?></h3>
+                        <h3>Keyman <?= $stable_version ?> for Windows</h3>
                         <p>
                             Type in your language in all your favourite software applications for Windows.  Keyman for Windows will automatically configure your system for your language.
                         </p>

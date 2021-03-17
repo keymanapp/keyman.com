@@ -943,7 +943,7 @@ input[type="search"] {
 
 #sect1-image img{
 	max-height: 100%;
-	width: auto;
+	max-width: 100%;
 	padding: 0px;
 }
 
@@ -2007,7 +2007,7 @@ button.feedback{
 }
 
 /* 7 inch */
-@media all and (min-width: 600px) and (max-width: 768px){
+@media all and (min-width: 600px) and (max-width: 1023px){
 	.wrapper{
 		width: 580px;
 	}

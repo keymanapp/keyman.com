@@ -10,25 +10,25 @@ use Keyman\Site\Common\KeymanHosts;
 // Required
 head([
   'class' => 'keyman11',
-  'title' => 'Keyman 14 is now in Beta!',
+  'title' => 'Keyman 14 is now available!',
   'css' => ['template.css', 'dev.css', 'app-store-links.css', 'prism.css'],
   'js' => ['prism.js'],
   'showMenu' => true,
   'banner' => [
-    'title' => 'Keyman 14.0 Beta',
-    'image' => 'world.png',
-    'background' => 'water'
+  'title' => 'Keyman 14.0 is now available!',
+    'image' => 'screenshots/14/typewriter.png',
+    'background' => 'black'
   ]
 ]);
 ?>
 
-<h2>Announcing the release of Keyman 14.0 Beta</h2>
-<p class="red">15 December 2020</p>
-<p>We are pleased to announce that Keyman 14.0 is now in beta!</p>
-<p style='border: solid 1px #B92034; padding: 4px; border-radius: 6px; margin: 8px'><b class='red' style='font-weight:bold'>Note:</b> A beta version of Keyman is a version that is nearing full 'stable' release. It will still have bugs, but it will be essentially feature-complete. This version is great for getting the latest features if you are willing to risk occasionally running into problems.</p>
+<h2>Announcing the release of Keyman 14.0</h2>
+<p class="red">22 March 2021</p>
+<p>We are pleased to announce that Keyman 14.0 is now available for download!</p>
+
 <br>
 
-<p><a href='https://blog.keyman.com/2020/12/keyman-14-0-beta/'>Read our blog post</a></p>
+<p><a href='https://blog.keyman.com/2021/03/keyman-14-0/'>Read our Keyman 14 launch blog post</a></p>
 
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
@@ -60,10 +60,10 @@ head([
 </ul>
 <br>
 
-<h3>14.0 Beta Feedback</h3>
+<h3>Keyman 14.0 Feedback</h3>
 <ul>
   <li>Please send feedback about Keyman 14 to the
-    <a href="https://community.software.sil.org/t/keyman-14-beta-feedback/4115">Keyman Community site</a> or submit bugs and feature requests to our
+    <a href="https://community.software.sil.org/c/keyman">Keyman Community site</a> or submit bugs and feature requests to our
     <a href="https://github.com/keymanapp/keyman/issues/new/choose">Issue Tracker</a></li>
 </ul>
 <br>
@@ -71,14 +71,16 @@ head([
 <h1 class='red underline'>User Software</h1>
 
 <?php
-downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe', 'beta');
+downloadSection('Keyman 14 for Windows',   'windows',     'keyman-$version.exe', 'stable');
 ?>
 
-<h3>What's New in Keyman for Windows 14?</h3>
+<h3>What's New in Keyman 14 for Windows?</h3>
 
 <ul>
   <li>Renamed from <strong class="red">Keyman Desktop</strong> to <strong class="red">Keyman for Windows</strong></li>
+  <li>Updated for latest release of Windows 10</li>
   <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. (This helps maintain input method language tag stability.)</li>
+  <li>On Screen Keyboard loads much faster</li>
   <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
   <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
   <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
@@ -96,7 +98,7 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
 
 
 <?php
-downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta');
+downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 14 for macOS?</h3>
@@ -123,19 +125,18 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta
 </ul>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-beta
+<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-stable
 sudo apt upgrade
 sudo apt install keyman onboard-keyman</code></pre></blockquote>
 
 
 <?php
-downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta');
+downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stable');
 ?>
 
-<p>You can also <a href=<?= $playstore_signup_link ?>>sign up</a> to access pre-release versions through Google Play.</p>
 <?= $playstoreTable ?>
 
-<h3>What's new in Keyman for Android 14?</h3>
+<h3>What's new in Keyman 14 for Android?</h3>
 
 <ul>
   <li>Improved UI for installing keyboard packages (#3498)</li>
@@ -154,15 +155,11 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
   <li>Added new menu to change the display language (#4261)</li>
 </ul>
 
-<h2 class="red underline">Keyman for iPhone and iPad 14</h2>
-<h3>Beta</h3>
-<p>Please register for the pre-release version through the links below for Keyman <a href=<?= $testflight_beta_link ?>>beta</a>
-  pre-releases on your iOS device. This will grant access to the app through <a  href="https://developer.apple.com/testflight/testers/">Apple's
-    Testflight app</a>, which facilitates direct installation on iOS devices.</p>
+<h2 class="red underline">Keyman 14 for iPhone and iPad</h2>
 
-<?= iosTestFlightTable(); ?>
+<?= $appstoreTable ?>
 
-<h3>What's new in Keyman for iPhone and iPad 14?</h3>
+<h3>What's new in Keyman 14 for iPhone and iPad?</h3>
 
 <ul>
   <li>Choose associated language(s) when keyboard is installed (#3437)</li>
