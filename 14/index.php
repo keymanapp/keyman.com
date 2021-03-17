@@ -78,7 +78,7 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
 
 <ul>
   <li>Renamed from <strong class="red">Keyman Desktop</strong> to <strong class="red">Keyman for Windows</strong></li>
-  <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. Rather, if you select a Keyman keyboard, Keyman will be restarted for you automatically.</li>
+  <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. (This helps maintain input method language tag stability.)</li>
   <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
   <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
   <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
@@ -169,6 +169,7 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
   <li>Improved batching of keyboard and dictionary downloads (#3458)</li>
   <li>Improved corrections and predictions (#3555)</li>
   <li>Match user input capital letters when offering suggestions (#3845)</li>
+  <li>User interface now available in additional languages, including French, German and Khmer</li>
 </ul>
 
 
@@ -208,9 +209,11 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
   <li>Add support for notany() and context() (#3816)</li>
   <li>Remove IE dependency from Developer setup (#3839)</li>
   <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWSP*, ... (#3878)</li>
-  <li>Improved BCP 47 support and script mapping (#3818)</li>
+  <li>Improved BCP 47 support and script mapping (#3818, #4563)</li>
   <li>Model compiler merges duplicate words and normalizes when compiling (#3338)</li>
   <li>Support ISO9995 key identifiers (e.g. E01) (#2741)</li>
+  <li><a href="https://help.keyman.com/developer/language/guide/expansions">Range expansions</a> (#4584)</li>
+  <li><a href="https://help.keyman.com/developer/language/reference/casedkeys">&amp;CasedKeys store</a> (#4586)</li>
 </ul>
 
 
