@@ -61,7 +61,7 @@
     <img src='<?= cdn("img/android-kmp.png"); ?>' />
 </p>
 
-<p>The <strong class='red'>Keyman built-in browser</strong> dynamically loads your language font into each website you visit, so if you're an Android 4.x (Ice Cream Sandwich, Jellybean, or KitKat) user, you no longer see square boxes for your language on the web!</p>
+<p>The <strong class='red'>Keyman built-in browser</strong> dynamically loads your language font into each website you visit so you no longer see square boxes for your language on the web!</p>
 
 <p style='text-align:center'><img src='<?= cdn("img/android-browser.png"); ?>' /></p>
 
@@ -90,7 +90,7 @@
         <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
-        <td>System-wide installable fonts</td>
+        <td>External keyboard support</td>
         <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
@@ -107,6 +107,16 @@
     </tr>
   </tbody>
 </table>
+
+<br/>
+<h3>New in Keyman for Android 14.0 (Mar 2020)</h3>
+
+<ul>
+    <li>Improved UI for installing keyboard packages</li>
+    <li>Select a language during keyboard package installation</li>
+    <li>Added new Settings menu to "Change Display Language"</li>
+    <li>Updated minimum version of Android to 5.0 (Lollipop)</li>
+</ul>
 
 <br/>
 <h3>New in Keyman for Android 13.0 (Feb 2020)</h3>
