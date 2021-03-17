@@ -13,13 +13,15 @@
   require_once('./static-keys.php');
 
   // These variables should be progressively added if we update older versions.
+  $ver_windows_13 = "13.0.118.0";
   $ver_windows_12 = "12.0.66.0";
   $ver_windows_11 = "11.0.1361.0";
   $ver_windows_10 = "10.0.1208.0";
 ?>
 <h2 class="red underline">Keyman Desktop Download Archive</h2>
 <ul>
-    <!-- TODO: use downloads API to get the latest 12.0 version -->
+    <!-- TODO: use downloads API to get the latest 13.0 version -->
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/<?= $ver_windows_13 ?>/keymandesktop-<?= $ver_windows_13 ?>.exe">Keyman Desktop <?= $ver_windows_13 ?> Download</a> (No activation required)</li>
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/<?= $ver_windows_12 ?>/keymandesktop-<?= $ver_windows_12 ?>.exe">Keyman Desktop <?= $ver_windows_12 ?> Download</a> (No activation required)</li>
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/<?= $ver_windows_11 ?>/keymandesktop-<?= $ver_windows_11 ?>.exe">Keyman Desktop <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/windows/stable/<?= $ver_windows_10 ?>/keymandesktop-<?= $ver_windows_10 ?>.exe">Keyman Desktop <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
@@ -33,7 +35,8 @@
 
 <h2 class="red underline">Keyman Developer Download Archive</h2>
 <ul>
-    <!-- TODO: use downloads API to get the latest 12.0 version -->
+    <!-- TODO: use downloads API to get the latest 13.0 version -->
+    <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_13 ?>/keymandeveloper-<?= $ver_windows_13 ?>.exe">Keyman Developer <?= $ver_windows_13 ?> Download</a> (No activation required)</li>
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_12 ?>/keymandeveloper-<?= $ver_windows_12 ?>.exe">Keyman Developer <?= $ver_windows_12 ?> Download</a> (No activation required)</li>
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_11 ?>/keymandeveloper-<?= $ver_windows_11 ?>.exe">Keyman Developer <?= $ver_windows_11 ?> Download</a> (No activation required)</li>
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_10 ?>/keymandeveloper-<?= $ver_windows_10 ?>.exe">Keyman Developer <?= $ver_windows_10 ?> Download</a> (No activation required)</li>
