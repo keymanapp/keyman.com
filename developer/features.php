@@ -27,37 +27,20 @@
 
   <div class="section" id="new">
     <h2 class="red underline">What's New</h2>
-    <p>Keyman Developer embeds the open source <a href="https://microsoft.github.io/monaco-editor/">Monaco Editor</a>, the same editor
-        in Microsoft Visual Studio Code. You can create and apply
-        <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/11.0/reference/editor-themes">custom editor themes</a> to Keyman Developer.</p>
-    <br/><br/>
 
-    <h3 class="red">BCP 47 language tags</h3>
-    <p>Use Keyman Developer to associate your Keyman keyboards with <a href="#bcp47-tags">BCP 47</a> language identifiers.</p>
-    <br/><br/>
-
-    <h3 class="red">Web-based testing</h3>
-    <p>Touch keyboards can be developed and tested on your Windows desktop or laptop before you take them to your mobile device.</p>
-    <p>From your mobile device, browse to your Keyboard Test Host and easily install the keyboard with a click of a button.</p>
-    <p><img src='<?= cdn("img/developer-web-testing.png") ?>' alt="Developer web-based testing" /></p>
-    <br/><br/>
-
-    <h3 class="red">Improved Templates for New Projects</h3>
-      <p>Create a keyboard project that matches the folder structure used in the Keyman
-        <a href="https://github.com/keymanapp/keyboards/">keyboards repository</a>.
-        Keyman Developer will create and include all the basic files needed for the project.</p>
-    <img src='<?= cdn("img/developer-new-project.png"); ?>' alt="Developer New Project" />
-    <br/><br/>
-
-      <p>The new project wizard also allows you to import a Windows system keyboard as your keyboard project.</p>
-    <img src='<?= cdn("img/developer-select-system-keyboard.png"); ?>' alt="Developer Select System Keyboard" />
-    <br/><br/>
-
-    <h3 class="red">Better modifier support across platforms</h3>
-    <p>Visual editors now support keyboards that distinguish left and right ctrl/alt modifiers which
-        you can also use for web and mobile targets.</p>
-    <img src='<?= cdn("img/developer-right-alt.png"); ?>' alt="Developer right alt modifier" />
-    <br/><br/>
+    <ul>
+      <li>Improve how casing is handled for lexical-models (#3770)</li>
+      <li>Lexical models may now specify the '<code>languageUsesCasing</code>' flag (and, optionally, an '<code>applyCasing()</code>' function).
+        These will allow predictive-text suggestions to detect and preserve capitalization when appropriate (#4291, 4299).</li>
+      <li>Add support for notany() and context() (#3816)</li>
+      <li>Remove IE dependency from Developer setup (#3839)</li>
+      <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWSP*, ... (#3878)</li>
+      <li>Improved BCP 47 support and script mapping (#3818, #4563)</li>
+      <li>Model compiler merges duplicate words and normalizes when compiling (#3338)</li>
+      <li>Support ISO9995 key identifiers (e.g. E01) (#2741)</li>
+      <li><a href="https://help.keyman.com/developer/language/guide/expansions">Range expansions</a> (#4584)</li>
+      <li><a href="https://help.keyman.com/developer/language/reference/casedkeys">&amp;CasedKeys store</a> (#4586)</li>
+    </ul>
 
   </div>
 
@@ -96,10 +79,6 @@
     <p>Devise a taskbar icon that distinguishes your keyboard <br/>at a glance.</p>
     <p><img class='borderless' src='<?= cdn('/img/developer-edit-icon.png') ?>'
       alt='Developer includes an Icon editor'/></p>
-    <br/><br/>
-
-    <p><img class='borderless' src='<?= cdn('/img/keyman-kmw.png') ?>'
-      alt='Create Keyboards for Keyman on all major platforms '/></p>
     <br/><br/>
 
     <hr />
