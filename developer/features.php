@@ -87,7 +87,7 @@
     <br/><br/>
 
     <h3 class="red">Smart Character Map</h3>
-    <p>Fully Unicode 12.0: access every character in the newest version of the Unicode Standard from the Keyman Character
+    <p>Fully Unicode 13.0: access every character in the newest version of the Unicode Standard from the Keyman Character
       Map. </p>
     <p>Double-Click Insert: insert over 136,000 letters and symbols with a double-click. Say goodbye to multi-step
       clipboard actions.</p>

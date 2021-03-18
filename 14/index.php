@@ -125,7 +125,7 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'stab
 </ul>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-stable
+<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt upgrade
 sudo apt install keyman onboard-keyman</code></pre></blockquote>
 
@@ -174,7 +174,7 @@ downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stab
 
 
 <?php
-downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'beta');
+downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 14?</h3>
@@ -194,7 +194,7 @@ downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'beta');
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version.exe', 'beta');
+downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 14?</h3>
