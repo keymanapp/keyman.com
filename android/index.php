@@ -109,7 +109,7 @@
 </table>
 
 <br/>
-<h3>New in Keyman for Android 14.0 (Mar 2020)</h3>
+<h3>New in Keyman for Android 14.0 (Mar 2021)</h3>
 
 <ul>
     <li>Improved UI for installing keyboard packages</li>
