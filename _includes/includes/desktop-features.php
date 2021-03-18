@@ -3,7 +3,7 @@
 ?>
 <div class="info-left">
   <ul>
-    <li>Keyman for Windows <?php echo $stable_version; ?> Features</li>
+    <li>Keyman <?= $stable_version ?> for Windows Features</li>
     <li><a href="#setup">Easy Setup</a></li>
     <li><a href="#compatibility">Compatibility</a></li>
     <li><a href="#keyboard-list">Over 1000 Keyboards Available</a></li>

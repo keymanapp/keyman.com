@@ -44,13 +44,13 @@ END;
         <div class="phone-menu-item">
             <h3>Products</h3>
             <ul>
-                <li><a href="/windows/">Keyman for Windows <?=$fields->stable_version?></a></li>
-                <li><a href="/mac/">Keyman for macOS <?=$fields->stable_version?></a></li>
-                <li><a href="/linux/">Keyman for Linux <?=$fields->stable_version?></a></li>
+                <li><a href="/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
+                <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                <li><a href="/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
                 <li><a href="/keymanweb/">KeymanWeb.com</a></li>
-                <li><a href="/iphone/">Keyman for iPhone</a></li>
-                <li><a href="/ipad/">Keyman for iPad</a></li>
-                <li><a href="/android/">Keyman for Android</a></li>
+                <li><a href="/iphone/">Keyman <?=$fields->stable_version?> for iPhone</a></li>
+                <li><a href="/ipad/">Keyman <?=$fields->stable_version?> for iPad</a></li>
+                <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
                 <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
             </ul>
             <h3>Downloads</h3>
@@ -165,11 +165,11 @@ END;
                     <div class="menu-dropdown-inner">
                         <h4>Core Products</h4>
                         <ul>
-                            <li><a href="/windows/">Keyman for Windows <?=$fields->stable_version?></a></li>
-                            <li><a href="/mac/">Keyman for macOS <?=$fields->stable_version?></a></li>
-                            <li><a href="/linux/">Keyman for Linux <?=$fields->stable_version?></a></li>
-                            <li><a href="/iphone-and-ipad/">Keyman for iPhone and iPad <?=$fields->stable_version?></a></li>
-                            <li><a href="/android/">Keyman for Android <?=$fields->stable_version?></a></li>
+                            <li><a href="/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
+                            <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                            <li><a href="/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
+                            <li><a href="/iphone-and-ipad/">Keyman <?=$fields->stable_version?> for iPhone and iPad</a></li>
+                            <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
                             <li><a href="/keymanweb/">KeymanWeb.com</a></li>
                             <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
                         </ul>
