@@ -82,6 +82,15 @@
   </tbody>
 </table>
 
+<h2>New in Keyman 14.0 (Mar 2021)</h2>
+<ul>
+  <li>Choose associated language(s) when keyboard is installed</li>
+  <li>Improved batching of keyboard and dictionary downloads</li>
+  <li>Improved corrections and predictions</li>
+  <li>Match user input capital letters when offering suggestions</li>
+  <li>User interface now available in additional languages, including French, German and Khmer</li>
+</ul>
+
 <h2>New in Keyman 13.0 (Feb 2020)</h2>
 <ul>
   <li>App migrated to compile against iOS 13.0, now supports dark mode.</li>

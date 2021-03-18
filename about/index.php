@@ -102,6 +102,20 @@
   as a software developer.
 </p>
 
+<p style="margin-top: 32px;" class="center"><img class="inline" src="<?php echo cdn("img/eberhard.png"); ?>" /><br /><br /></p>
+<h4 class="caption">Eberhard Beilharz</h4>
+<br />
+
+<p class="people-text">I am one of the few non-native English speakers in the team, coming from
+  Germany. I have a degree in computer science from the University of Applied Sciences in
+  Karlsruhe. After working in a small software company for several years I joined SIL’s
+  language software development department where I worked on different projects with a focus on
+  maintaining cross-platform compatibility of our products. During my time with the Keyman team
+  I mainly worked on all aspects of Keyman for Linux.</p>
+<p class="people-text">
+  If I happen to have some spare time I enjoy reading, bicycling and other outdoor activities.
+</p>
+
 <p style="margin-top: 32px" class="center"><br/></p>
 <h4 class="caption">DW</h4>
 <br/>
@@ -114,8 +128,7 @@
   our users.
 </p>
 <p class="people-text">
-  My wife and I have two children. I also enjoy playing Ultimate (frisbee), learning to play
-  guitar, and gaming.
+  My wife and I have two children. I also enjoy playing Ultimate (frisbee), going to the gym, and playing boardgames.
 </p>
 
 <h2 class="red underline">Previous Contributors</h2>
@@ -147,20 +160,6 @@
   <p class="people-text">
     I enjoy audax, other non-speedy cycling, and board games.
   </p>
-
-  <p style="margin-top: 32px;" class="center"><img class="inline" src="<?php echo cdn("img/eberhard.png"); ?>" /><br /><br /></p>
-  <h4 class="caption">Eberhard Beilharz</h4>
-  <br />
-
-  <p class="people-text">I am one of the few non-native English speakers in the team, coming from
-    Germany. I have a degree in computer science from the University of Applied Sciences in
-    Karlsruhe. After working in a small software company for several years I joined SIL’s
-    language software development department where I worked on different projects with a focus on
-    maintaining cross-platform compatibility of our products. During my time with the Keyman team
-    I mainly worked on all aspects of Keyman for Linux.</p>
-  <p class="people-text">
-    If I happen to have some spare time I enjoy reading, bicycling and other outdoor activities.</p>
-</p>
 
 <h2 class="red underline">Social Media and Mailing Lists</h2>
 <p>

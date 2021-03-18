@@ -11,6 +11,10 @@
 <h2 class="red underline">What people are saying about Keyman</h2>
 
 <p class="center">
+  <span class="testimonial">"<a href="https://www.facebook.com/KeymanApp">Keyman</a>, I installed it on my PC and can write [Egyptian] in quadratic form. You guys did an amazing job. Thanks!</span>
+  <h4 class="caption">L. Cavanagh - December 2020</h4>
+</p>
+<p class="center">
   <span class="testimonial">"... I would suggest to stick with keyman and I am sure you would love the experience.<br/>
   I type #Amharic like a Pro on Keyman [winking face]"</span>
   <h4 class="caption"><a href="https://twitter.com/MekonnenAkele/status/1208281934721409025" target="_blank">@MekonnenAkele</a> - December 2019</h4>
