@@ -49,7 +49,7 @@
     <a class="download-cta-more" href="/mac/">Learn more about Keyman for macOS</a>
   </div>
 </div>
-<div id="download-cta" data-language='si' data-keyboard='helabasauni'>
+<div id="download-cta" data-language='si' data-keyboard='helabasauni'> <!-- TODO: use a better mobile version -->
   <div class="download-cta-big iPhone" id="cta-big-iPhone">
     <h3>Sinhala Keyman for iPhone</h3>
     <div class="download-cta-button">
