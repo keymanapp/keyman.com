@@ -21,7 +21,7 @@
 	වෙබ් බ්‍රවුසර්, ඊ-මේල්, වර්ඩ්, එක්සෙල්, අවුට්ලුක් සහ තවත් බොහෝ ප්‍රියතම පරිගණක වැඩසටහන් මත සිංහල පහසුවෙන් යතුරු ලියනය කරන්න. ඔබගේ පරිගණකයේ දෘඩාංග වල කිසිදු වෙනසක් සිදු නොකර මෙම යතුරු පුවරු සහ යෙදුම් භාවිතයෙන් සිංහල යතුරු ලියනය කල හැකිය. සියලුම යතුරු පුවරු <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> නීති වලින් සමන්විත වේ.
 </p>
 
-<div id="download-cta" data-language='si' data-keyboard='sipon phonetic'>
+<div id="download-cta" data-language='si' data-keyboard='sipon%20phonetic%20sinhala'>
   <div class="download-cta-big" id="cta-big-Holder">
     <img src="<?php echo cdn('img/wait.gif'); ?>" alt="." />
   </div>
@@ -49,7 +49,7 @@
     <a class="download-cta-more" href="/mac/">Learn more about Keyman for macOS</a>
   </div>
 </div>
-<div id="download-cta" data-language='si' data-keyboard='helabasauni'>
+<div id="download-cta" data-language='si' data-keyboard='helabasauni'> <!-- Is this basic_kbdsn1 ? -->
   <div class="download-cta-big iPhone" id="cta-big-iPhone">
     <h3>Sinhala Keyman for iPhone</h3>
     <div class="download-cta-button">

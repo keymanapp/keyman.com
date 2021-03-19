@@ -17,7 +17,7 @@
 <p>
     <a href='<?= KeymanHosts::Instance()->blog_keyman_com ?>/2015/01/an-urdu-keyboard-layout-optimised-for-small-touch-devices/'>Read more on our blog</a>
 </p>
-<div id="download-cta" data-language='ur' data-keyboard='kbdurdu'>
+<div id="download-cta" data-language='ur' data-keyboard='basic_kbdurdu'>
   <div class="download-cta-big" id="cta-big-Holder">
     <img src="<?php echo cdn('img/wait.gif'); ?>" />
   </div>
