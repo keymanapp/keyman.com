@@ -207,6 +207,8 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
   <li><a href="https://help.keyman.com/developer/language/reference/casedkeys">&amp;CasedKeys store</a> (#4586)</li>
 </ul>
 
+<br>
+
 <h3>Breaking changes for keyboard developers</h3>
 
 <p>We work hard to minimize the potential for breaking changes to Keyman. We sometimes must make a change which may
@@ -220,6 +222,8 @@ known breaking changes in Keyman 14.0:</p>
   <li>Windows: Keyman Engine no longer supports the keyboard usage page (usage.htm)</li>
   <li>Windows: the bootstrap installer has been sigificantly rewritten. Some install scripts may need to be adjusted.</li>
 </ul>
+
+<br>
 
 <h3>Changes for Keyman Engine</h3>
 
