@@ -16,7 +16,7 @@ head([
   'showMenu' => true,
   'banner' => [
   'title' => 'Keyman 14.0 is now available!',
-    'image' => 'screenshots/14/typewriter.png',
+    'image' => 'screenshots/14/typewriter.jpg',
     'background' => 'black'
   ]
 ]);
