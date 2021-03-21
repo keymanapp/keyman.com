@@ -88,7 +88,6 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
   <li>Improved user experience when many keyboards installed (#3626, #3627)</li>
   <li>Improved bootstrap installer</li>
   <li>Now uses Chromium to host all web-based UI (e.g. Keyman Configuration)</li>
-  <li>Breaking: Keyman Engine no longer supports the keyboard usage page (usage.htm)</li>
 </ul>
 
 
@@ -208,6 +207,23 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
   <li><a href="https://help.keyman.com/developer/language/reference/casedkeys">&amp;CasedKeys store</a> (#4586)</li>
 </ul>
 
+<h3>Breaking changes for keyboard developers</h3>
+
+<p>We work hard to minimize the potential for breaking changes to Keyman. We sometimes must make a change which may
+not be 100% backwardly compatible, either to correct a bug, or to address security issues. The following issues are
+known breaking changes in Keyman 14.0:</p>
+
+<ul>
+  <li>Web: the element IDs for keys in the OSK, where a modifier does match the display layer, have changed. This may
+      impact custom CSS rules for your keyboard. See <a href='https://github.com/keymanapp/keyman/issues/4703'>#4703</a>
+      for more details.</li>
+  <li>Windows: Keyman Engine no longer supports the keyboard usage page (usage.htm)</li>
+  <li>Windows: the bootstrap installer has been sigificantly rewritten. Some install scripts may need to be adjusted.</li>
+</ul>
+
+<h3>Changes for Keyman Engine</h3>
+
+<p><a href='keyman-engine-changes'>Changes for Keyman Engine</a></p>
 
 <h2>Get Involved</h2>
 <p>There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!
