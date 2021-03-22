@@ -28,18 +28,18 @@ sudo apt install keyman onboard-keyman</code></pre>
 <h3 class='red underline'>Debian</h3>
 
 <p>
-  Keyman for Linux packages are also available in any current Debian at:
+  An older version of Keyman for Linux is also available in any current Debian at:
   <a href='https://packages.debian.org/keyman'>https://packages.debian.org/keyman</a>
 </p>
 
+<br />
 <h3 class='red underline'>Compile from source</h3>
 
 <p>
   The source for Keyman <?php echo $stable_version; ?> for Linux can be cloned from <a href='https://github.com/keymanapp/keyman'>GitHub</a> and once cloned,
-  follow the instructions at <a href='https://github.com/keymanapp/tree/master/linux/README.md'>README.md</a> to build and install on your system.
+  follow the instructions at <a href='https://github.com/keymanapp/keyman/blob/master/linux/README.md'>README.md</a> to build and install on your system.
 </p>
 
 <ul>
   <li><a href='<?= KeymanHosts::Instance()->downloads_keyman_com ?>/linux'>All Linux downloads</a>
-  <li>apt install ...
 </ul>
