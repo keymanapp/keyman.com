@@ -23,13 +23,13 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 14.0</h2>
-<p class="red">22 March 2021</p>
+<p class="red">24 March 2021</p>
 <p>We are pleased to announce that Keyman 14.0 is now available for download!</p>
 
 <br>
 
 <p><a href='https://blog.keyman.com/2021/03/keyman-14-0/'>Read our Keyman 14 launch blog post</a></p>
-<p><a href='https://www.surveymonkey.com/r/QH2CL93'>Register to join a Keyman 14 launch webinar</a> (scheduled late March/early April 2021)</p>
+<p><a href='webinar'>Register to attend the Keyman 14 Launch webinar series</a> (late March/early April 2021)</p>
 
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
