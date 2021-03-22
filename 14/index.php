@@ -29,6 +29,7 @@ head([
 <br>
 
 <p><a href='https://blog.keyman.com/2021/03/keyman-14-0/'>Read our Keyman 14 launch blog post</a></p>
+<p><a href='https://www.surveymonkey.com/r/QH2CL93'>Register to join a Keyman 14 launch webinar</a> (scheduled late March/early April 2021)</p>
 
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
@@ -154,7 +155,7 @@ downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stab
   <li>Added new menu to change the display language (#4261)</li>
 </ul>
 
-<h2 class="red underline">Keyman 14 for iPhone and iPad</h2>
+<h2 id='ios' class="red underline">Keyman 14 for iPhone and iPad</h2>
 
 <?= $appstoreTable ?>
 
@@ -204,7 +205,7 @@ downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version
     These will allow predictive-text suggestions to detect and preserve capitalization when appropriate (#4291, 4299).</li>
   <li>Add support for notany() and context() (#3816)</li>
   <li>Remove IE dependency from Developer setup (#3839)</li>
-  <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWSP*, ... (#3878)</li>
+  <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWNJ*, ... (#3878)</li>
   <li>Improved BCP 47 support and script mapping (#3818, #4563)</li>
   <li>Model compiler merges duplicate words and normalizes when compiling (#3338)</li>
   <li>Support ISO9995 key identifiers (e.g. E01) (#2741)</li>
