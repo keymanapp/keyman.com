@@ -201,7 +201,7 @@ sudo apt install ibus-kmfl</code></pre>
     <span class="red">Q.</span> What languages does Keyman support?
 </p>
 <p>
-    <span class="red">A.</span> The short answer is a lot! With keyboards for over 1000 languages,
+    <span class="red">A.</span> The short answer is a lot! With keyboards for over 2000 languages,
     there's a very good chance we have yours covered. You can search for a keyboard for your language
     <a href="/keyboards">here</a>. If we don't already have a keyboard available, you can use
     <a href="/developer/">Keyman Developer <?php echo $beta_version; ?></a> to build one!
