@@ -1,6 +1,8 @@
 <?php
   require_once('includes/template.php');
-  
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
+
   // Required
   head([
     'title' =>'Keyman ' . $stable_version . ' for Linux',
@@ -14,9 +16,9 @@
       'background' => 'water'
     ]
   ]);
-  
+
   $tick = '<img class="table-tick" src="'.cdn("img/table-tick.png").'"/>';
-  
+
 ?>
 <br/>
 <h2 class="red underline">Introducing Keyman for Linux</h2>
@@ -43,7 +45,7 @@
 ?>
 
 <p>
-    As with all Keyman products, Keyman for Linux is completely free and open-source. The feature grid below details the technical differences in functionality between Keyman Desktop for Windows, and the current version of Keyman for Linux:
+    As with all Keyman products, Keyman for Linux is completely free and open-source. The feature grid below details the technical differences in functionality between Keyman for Windows, and the current version of Keyman for Linux:
 </p>
 <table class='feature-grid'>
   <thead>
@@ -70,22 +72,22 @@
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/language/reference/baselayout'><code>baselayout()</code> statement</a></td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/reference/baselayout'><code>baselayout()</code> statement</a></td>
       <td><?=$tick;?></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/language/reference/if'><code>if()</code> statement</a></td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/reference/if'><code>if()</code> statement</a></td>
       <td><?=$tick;?></td>
       <td><?=$tick;?><br></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/language/reference/mnemoniclayout'>mnemonic layouts</a> (always US base layout)</td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/reference/mnemoniclayout'>mnemonic layouts</a> (always US base layout)</td>
       <td><?=$tick;?></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href='http://help.keyman.com/developer/<?= $stable_version; ?>/guides/develop/imx' target='_blank'>IMX support (e.g. Chinese keyboard)</a></td>
+      <td><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?= $stable_version; ?>/guides/develop/imx' target='_blank'>IMX support (e.g. Chinese keyboard)</a></td>
       <td><?=$tick;?></td>
       <td></td>
     </tr>
@@ -113,9 +115,7 @@
 <p>
     <span class="red">A.</span> Ubuntu: Keyman for Linux can be installed via launchpad:
 <pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install keyman ibus-keyman onboard</code></pre>
+sudo apt install keyman onboard-keyman</code></pre>
 </p>
 
 <br/>
@@ -128,8 +128,8 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre>
 <p>
     This brings up a configuration panel where you can "Download" Keyman keyboards from the cloud repository. You can also "Install"
     keyboards via local .kmp keyboard packages. In some keyboard packages, you might need to add the keyboard to
-    IBus by adding an "Other" input source. See <a href='https://help.keyman.com/products/linux/<?= $stable_version; ?>/guide/installing-keyboard.php'>
-    help.keyman.com</a> for more details on installing a keyboard.
+    IBus by adding an "Other" input source. See <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/products/linux/<?= $stable_version; ?>/guide/installing-keyboard.php'>
+    <?= KeymanHosts::Instance()->help_keyman_com_host ?></a> for more details on installing a keyboard.
 </p>
 
 <br/>
@@ -138,6 +138,15 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre>
 </p>
 <p>
     <span class="red">A.</span> From the launcher, enter: <code class='language-bash'>onboard</code>
+</p>
+
+<br/>
+<p>
+  <span class="red">Q.</span>Does Keyman for Linux work with Wayland?
+</p>
+<p>
+  <span class="red">A.</span>Currently, there's <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
+  to add support for Wayland. As a workaround, use X11.
 </p>
 
 <br/>
@@ -157,9 +166,7 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre>
 <p>
     <span class="red">A.</span> Yes. To install KMFL on Ubuntu:
 <pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install ibus-kmfl</code></pre>
+sudo apt install ibus-kmfl</code></pre>
 </p>
 
 <br/>
@@ -194,7 +201,7 @@ sudo apt-get install ibus-kmfl</code></pre>
     <span class="red">Q.</span> What languages does Keyman support?
 </p>
 <p>
-    <span class="red">A.</span> The short answer is a lot! With keyboards for over 1000 languages,
+    <span class="red">A.</span> The short answer is a lot! With keyboards for over 2000 languages,
     there's a very good chance we have yours covered. You can search for a keyboard for your language
     <a href="/keyboards">here</a>. If we don't already have a keyboard available, you can use
     <a href="/developer/">Keyman Developer <?php echo $beta_version; ?></a> to build one!

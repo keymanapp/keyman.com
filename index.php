@@ -13,14 +13,14 @@
 </div>
     <div class="main1">
         <h1>Type to the world<br/> in your language</h1>
-        <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 1000 languages supported' />
+        <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 2000 languages supported' />
     </div>
     <div class="main2">
 
         <!-- event banner: uncomment this section when we have an event or promotion -->
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p style='font-size:2em'><a href='/14/'>New (15 Dec 2020): Keyman 14.0 is now in beta!</a></p>
+            <p style='font-size:2em'><a href='/14/'>New (23 Mar 2021): Keyman 14.0 is now available to download!</a></p>
           </div>
         </div>
         <!-- -->
@@ -33,7 +33,7 @@
                 <?php require_once('includes/ui/download-links.php'); ?>
 
                 <form name="fsearch" action="/keyboards" method="get">
-                    <h4>Search over 1000 languages</h4>
+                    <h4>Search over 2000 languages</h4>
                     <input type="text" name="q" id="language-search3" placeholder="Enter your language" />
                     <input id="search-submit3" type="image" onclick="if(document.getElementById('language-search3').value==''){return false;}" value="Search" src="<?php echo cdn("img/search-button.png"); ?>">
                 </form>
@@ -47,11 +47,11 @@
                   With the world’s most powerful keyboarding engine, intuitive and rapid text input is now possible in
                   your language, and for over 99% of the global population’s mother tongues!</p>
                 <div class="product" id="product-desktop">
-                    <a href="/desktop">
+                    <a href="/windows">
                         <img src="<?php echo cdn("img/icon-desktop.png"); ?>" />
-                        <h3>Keyman Desktop <?php echo $stable_version; ?></h3>
+                        <h3>Keyman for Windows</h3>
                         <p>
-                            Type in your language in all your favourite software applications for Windows.  Keyman Desktop will automatically configure your system for your language.
+                            Type in your language in all your favourite software applications for Windows.  Keyman for Windows will automatically configure your system for your language.
                         </p>
                     </a>
                 </div>
@@ -73,12 +73,12 @@
                         </p>
                     </a>
                 </div>
-                <div class="product" id="product-web">
-                    <a href="/web">
-                        <img src="<?php echo cdn("img/icon-web.png"); ?>" />
-                        <h3>keymanweb.com</h3>
+                <div class="product" id="product-android">
+                    <a href="/android">
+                        <img src="<?php echo cdn("img/icon-android2.png"); ?>" />
+                        <h3>Keyman for Android</h3>
                         <p>
-                            Type instantly in your web browser and post to Facebook, Google and more, or copy and paste to use the text anywhere!  No download or configuration is required.
+                            Type in over 600 languages on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
                         </p>
                     </a>
                 </div>
@@ -91,12 +91,12 @@
                         </p>
                     </a>
                 </div>
-                <div class="product" id="product-android">
-                    <a href="/android">
-                        <img src="<?php echo cdn("img/icon-android2.png"); ?>" />
-                        <h3>Keyman for Android</h3>
+                <div class="product" id="product-web">
+                    <a href="/web">
+                        <img src="<?php echo cdn("img/icon-web.png"); ?>" />
+                        <h3>keymanweb.com</h3>
                         <p>
-                            Type in over 600 languages on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
+                            Type instantly in your web browser and post to Facebook, Google and more, or copy and paste to use the text anywhere!  No download or configuration is required.
                         </p>
                     </a>
                 </div>
@@ -115,13 +115,11 @@
             <div class="section section-testimonials">
                 <div>“</div>
                 <p id="testimonial">
-                    <!-- https://twitter.com/ibrahimasaar/status/1161753102527193088 -->
-                    Both Ukelele and MSKLC are useful in allowing quick and easy creation of keyboards but I really
-                    think #keyman is a much more complex tool in that it allows to develop for multiple platforms
-                    especially mobile.
+                    <!-- https://twitter.com/enablelanguages/status/1355786787273154563 -->
+                    Most people who develop in @keyman only use a fraction of its capabilities.
                 </p>
                 <p id="twitter-testimonial">
-                  <span>&mdash; @ibrahimasaar - Le Havre</span>
+                  <span>&mdash; @enablelanguages - Enabling Languages, 31 Jan 2021</span>
                 </p>
             </div>
         </div>

@@ -1,5 +1,7 @@
 <?php
   require_once('includes/template.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
 
   // Required
   head([
@@ -14,7 +16,7 @@
 </p>
 
 <ul>
-  <li><a href="http://help.keyman.com">help.keyman.com</a> - online documentation</li>
+  <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><?= KeymanHosts::Instance()->help_keyman_com_host ?></a> - online documentation</li>
   <li><a href='https://community.software.sil.org/c/keyman'>SIL Keyman Community</a> - for general Keyman technical support</li>
   <li><a href='https://stackoverflow.com/search?q=%5Bkeyman%5D'>Stack Overflow</a> - for support on creating keyboard layouts with Keyman Developer (<a href='https://stackoverflow.com/questions/ask?tags=keyman,keyman-developer,keyboard,unicode'>ask a question</a>)</li>
   <li><a href="https://secure.tavultesoft.com/forums/">Old Keyman Forums</a> - read only, for reference</li>

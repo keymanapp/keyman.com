@@ -78,7 +78,7 @@ function loaded(){
   }
 
   $('#show-phone-menu').click(function(event) {
-    $("#phone-menu").toggle();
+    $("#phone-menu").toggleClass('menu-visible');
   });
 
   // Downloads
@@ -170,67 +170,6 @@ function loaded(){
     return false;
   });
 
-  function show_download_popup(language,keyboard){
-    var promo = getCookie('promotion');
-    if (promo != '') {
-      $('#download-special').remove();
-    }
-    var downloadCookie = getCookie('signup');
-    if (downloadCookie != '') {
-      $('#download-signup').remove();
-    }
-    if (language == 'amh') {
-      language = 'for Amharic';
-    }
-    if (language == 'tam') {
-      language = 'for Tamil';
-    }
-    var d = new Date();
-    d.setTime(d.getTime() + (60*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
-    document.cookie="promotion=true;path=/;"+ expires;
-    $('#product-download-popup-name').text('Keyman Desktop '+language);
-    $('#product-download-popup, #install-modal').fadeIn();
-    // Google Analytics event
-    ga('send', 'event', 'Keyboard Download', 'Start', keyboard);
-  }
-
-  $('#product-download-popup-close').click(function(){
-    $('#product-download-popup, #install-modal').fadeOut();
-    $('#download-signup-response').text('');
-  });
-
-  $('#download-signup .button').click(function(){
-    var email = $('#download-signup').children('input').val();
-    var keyboard = $('#download-cta').data('keyboard');
-    var url = '/prog/download-log.php';
-    if (email != '') {
-      //submit to serverside
-      $.ajax({
-	type: "POST",
-	url: url,
-	data:
-	{
-	  "Keyboard" : keyboard,
-	  "Email" : email
-	}
-      }).done(function( data ) {
-	data = jQuery.parseJSON(data);
-	if (data['result'] == 'success') {
-	  var d = new Date();
-	  d.setTime(d.getTime() + (60*24*60*60*1000));
-	  var expires = "expires="+d.toGMTString();
-	  document.cookie="signup=true;path=/;"+ expires;
-	  $('#download-signup-response').text('Signup Success!');
-	  // Google Analytics event
-	  ga('send', 'event', 'Mailing List', 'Signup (no incentive)', keyboard);
-	}else{
-	  alert(data['error']);
-	}
-      });
-    }
-  });
-
   function getCookie(cname)
   {
     var name = cname + "=";
@@ -295,12 +234,6 @@ function loaded(){
 
   // GA event listeners
 
-  // Click through download discount
-  $('#discount-purchase-button a').on('click', function() {
-    var keyboard = $('#download-cta').data('keyboard');
-    ga('send', 'event', 'Keyboard Download Promotion (25%)', 'Click (step 1)', keyboard);
-  });
-
   // Install keyboard into Keyman for iOS (already installed)
   $('#ios-installed').on('click', function() {
     var keyboard = $('#download-cta').data('keyboard');
@@ -349,6 +282,14 @@ function loaded(){
         }
     });
   });
+
+  /* While search box in Keyboards menu is focused, make its parent always visible */
+
+  $("#language-search").on('focus', function() {
+    $('#keyboards').addClass('menu-item-force');
+  }).on('blur', function() {
+    $('#keyboards').removeClass('menu-item-force');
+  });
 }
 
 /* Handling deprecated keyboards */
@@ -357,4 +298,4 @@ function toggleDeprecatedVersionDetails() {
   $('#deprecated-old').toggle();
 }
 
-loaded();
+$(loaded);

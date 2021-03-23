@@ -3,10 +3,10 @@
 ?>
 <div class="info-left">
   <ul>
-    <li>Keyman Desktop <?php echo $stable_version; ?> Features</li>
+    <li>Keyman <?= $stable_version ?> for Windows Features</li>
     <li><a href="#setup">Easy Setup</a></li>
     <li><a href="#compatibility">Compatibility</a></li>
-    <li><a href="#keyboard-list">Over 1000 Keyboards Available</a></li>
+    <li><a href="#keyboard-list">Keyboards for over 2000 Languages Available</a></li>
     <li><a href="#keyman-dev">Build Custom Keyboard Layouts</a></li>
     <li><a href="#unicode">Unicode Compliant</a></li>
     <li><a href="#keyboard-limit">Keyboard Limit</a></li>
@@ -21,6 +21,6 @@
     <li><a href="#customers">Used By Biggest</a></li>
   </ul>
   <div class="button-dl9">
-    <a href="<?php echo $dl9Link; ?>">Download for Free</a>
+    <a href="/windows/download">Download for Free</a>
   </div>
 </div>

@@ -1,6 +1,6 @@
 **/.idea
+/.vscode
 cdn/deploy/
 
 /vendor/
 /node_modules/
-.vscode/

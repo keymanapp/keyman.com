@@ -20,7 +20,7 @@
   for your language. See also the <a href='pre-release'>pre-release download page</a> and the <a href='archive'>old versions download page</a>.
 </p>
 
-<p><a href='<?=$helphost?>/version-history'>Keyman version history</a> (all products)</p>
+<p><a href='<?=$KeymanHosts->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
 
 <?php
   require_once('./_downloads.php');

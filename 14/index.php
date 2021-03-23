@@ -5,28 +5,31 @@ require_once('includes/ui/downloads.php');
 require_once('includes/appstore.php');
 require_once('includes/playstore.php');
 
+use Keyman\Site\Common\KeymanHosts;
+
 // Required
 head([
   'class' => 'keyman11',
-  'title' => 'Keyman 14 is now in Beta!',
+  'title' => 'Keyman 14 is now available!',
   'css' => ['template.css', 'dev.css', 'app-store-links.css', 'prism.css'],
   'js' => ['prism.js'],
   'showMenu' => true,
   'banner' => [
-    'title' => 'Keyman 14.0 Beta',
-    'image' => 'world.png',
-    'background' => 'water'
+  'title' => 'Keyman 14.0 is now available!',
+    'image' => 'screenshots/14/typewriter.jpg',
+    'background' => 'black'
   ]
 ]);
 ?>
 
-<h2>Announcing the release of Keyman 14.0 Beta</h2>
-<p class="red">15 December 2020</p>
-<p>We are pleased to announce that Keyman 14.0 is now in beta!</p>
-<p style='border: solid 1px #B92034; padding: 4px; border-radius: 6px; margin: 8px'><b class='red' style='font-weight:bold'>Note:</b> A beta version of Keyman is a version that is nearing full 'stable' release. It will still have bugs, but it will be essentially feature-complete. This version is great for getting the latest features if you are willing to risk occasionally running into problems.</p>
+<h2>Announcing the release of Keyman 14.0</h2>
+<p class="red">23 March 2021</p>
+<p>We are pleased to announce that Keyman 14.0 is now available for download!</p>
+
 <br>
 
-<p><a href='https://blog.keyman.com/2020/12/keyman-14-0-beta/'>Read our blog post</a></p>
+<p><a href='https://blog.keyman.com/2021/03/keyman-14-0/'>Read our Keyman 14 launch blog post</a></p>
+<p><a href='webinar'>Attend the Keyman 14 Launch webinar series</a> (29 March - 1 April 2021)</p>
 
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
@@ -36,16 +39,16 @@ head([
     <img alt='Search for Khmer Keyboard' src='keyboard_search_khmer.png'>
   </li>
   <li>
-    Localizable UI through <a href="https://translate.keyman.com/">translate.keyman.com</a> (not yet available for macOS).
+    Localizable UI through <a href="<?= KeymanHosts::Instance()->translate_keyman_com ?>">translate.keyman.com</a> (not yet available for macOS).
   </li>
   <li>
     Mobile apps download and install keyboard packages from keyman.com
   </li>
   <li>
-    Consolidated crash reporting to <a href="https://sentry.keyman.com/">sentry.keyman.com</a>
+    Consolidated crash reporting to <a href="<?= KeymanHosts::Instance()->sentry_keyman_com ?>">sentry.keyman.com</a>
   </li>
   <li>
-    Many bug fixes and improvements (see the <a href="https://help.keyman.com/version-history">version history</a>)
+    Many bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>)
   </li>
 </ul>
 <br>
@@ -58,10 +61,10 @@ head([
 </ul>
 <br>
 
-<h3>14.0 Beta Feedback</h3>
+<h3>Keyman 14.0 Feedback</h3>
 <ul>
   <li>Please send feedback about Keyman 14 to the
-    <a href="https://community.software.sil.org/t/keyman-14-beta-feedback/4115">Keyman Community site</a> or submit bugs and feature requests to our
+    <a href="https://community.software.sil.org/c/keyman">Keyman Community site</a> or submit bugs and feature requests to our
     <a href="https://github.com/keymanapp/keyman/issues/new/choose">Issue Tracker</a></li>
 </ul>
 <br>
@@ -69,14 +72,16 @@ head([
 <h1 class='red underline'>User Software</h1>
 
 <?php
-downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe', 'beta');
+downloadSection('Keyman 14 for Windows',   'windows',     'keyman-$version.exe', 'stable');
 ?>
 
-<h3>What's New in Keyman for Windows 14?</h3>
+<h3>What's New in Keyman 14 for Windows?</h3>
 
 <ul>
   <li>Renamed from <strong class="red">Keyman Desktop</strong> to <strong class="red">Keyman for Windows</strong></li>
+  <li>Updated for latest release of Windows 10</li>
   <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. (This helps maintain input method language tag stability.)</li>
+  <li>On Screen Keyboard loads much faster</li>
   <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
   <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
   <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
@@ -93,7 +98,7 @@ downloadSection('Keyman for Windows 14',   'windows',     'keyman-$version.exe',
 
 
 <?php
-downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta');
+downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 14 for macOS?</h3>
@@ -120,19 +125,18 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'beta
 </ul>
 
 <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman-beta
+<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt upgrade
 sudo apt install keyman onboard-keyman</code></pre></blockquote>
 
 
 <?php
-downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta');
+downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stable');
 ?>
 
-<p>You can also <a href=<?= $playstore_signup_link ?>>sign up</a> to access pre-release versions through Google Play.</p>
 <?= $playstoreTable ?>
 
-<h3>What's new in Keyman for Android 14?</h3>
+<h3>What's new in Keyman 14 for Android?</h3>
 
 <ul>
   <li>Improved UI for installing keyboard packages (#3498)</li>
@@ -146,18 +150,16 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
   <li>Add system globe action to show system keyboards (#3197)</li>
   <li>Improved corrections and predictions (#3555)</li>
   <li>Match user input capital letters when offering suggestions (#3845)</li>
-  <li> Update minimum Android SDK to 21 (Android 5.0 Lollipop) (#2993)</li>
+  <li>Update minimum Android SDK to 21 (Android 5.0 Lollipop) (#2993)</li>
+  <li>Keyman now works more reliably with WeChat and Telegram (#4254)</li>
+  <li>Added new menu to change the display language (#4261)</li>
 </ul>
 
-<h2 class="red underline">Keyman for iPhone and iPad 14</h2>
-<h3>Beta</h3>
-<p>Please register for the pre-release version through the links below for Keyman <a href=<?= $testflight_beta_link ?>>beta</a>
-  pre-releases on your iOS device. This will grant access to the app through <a  href="https://developer.apple.com/testflight/testers/">Apple's
-    Testflight app</a>, which facilitates direct installation on iOS devices.</p>
+<h2 id='ios' class="red underline">Keyman 14 for iPhone and iPad</h2>
 
-<?= iosTestFlightTable(); ?>
+<?= $appstoreTable ?>
 
-<h3>What's new in Keyman for iPhone and iPad 14?</h3>
+<h3>What's new in Keyman 14 for iPhone and iPad?</h3>
 
 <ul>
   <li>Choose associated language(s) when keyboard is installed (#3437)</li>
@@ -172,7 +174,7 @@ downloadSection('Keyman for Android 14', 'android', 'keyman-$version.apk', 'beta
 
 
 <?php
-downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'beta');
+downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 14?</h3>
@@ -183,6 +185,8 @@ downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'beta');
   <li>Sourcemap improvements (#2809)</li>
   <li>Fixes issues with keyboard rules involving system stores (#2884)</li>
   <li>Fixes issues with keyboard rules involving both 'notany' and 'context' (#3817)</li>
+  <li>The OSK for KeymanWeb, Keyman for Android, and Keyman for iPhone and iPad now load more quickly (#4279)</li>
+  <li>Improved OSK handling of large fonts for key text (#4270, #4255)</li>
 </ul>
 
 
@@ -190,16 +194,18 @@ downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'beta');
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version.exe', 'beta');
+downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 14?</h3>
 
 <ul>
   <li>Improve how casing is handled for lexical-models (#3770)</li>
+  <li>Lexical models may now specify the '<code>languageUsesCasing</code>' flag (and, optionally, an '<code>applyCasing()</code>' function).
+    These will allow predictive-text suggestions to detect and preserve capitalization when appropriate (#4291, 4299).</li>
   <li>Add support for notany() and context() (#3816)</li>
   <li>Remove IE dependency from Developer setup (#3839)</li>
-  <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWSP*, ... (#3878)</li>
+  <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWNJ*, ... (#3878)</li>
   <li>Improved BCP 47 support and script mapping (#3818, #4563)</li>
   <li>Model compiler merges duplicate words and normalizes when compiling (#3338)</li>
   <li>Support ISO9995 key identifiers (e.g. E01) (#2741)</li>
