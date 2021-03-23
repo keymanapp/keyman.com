@@ -42,7 +42,7 @@
 <h2 class="red underline">Keyman Engine for Web</h2>
 <p>
   Let Keyman power all your typing needs for your new or existing web application or website. With the full-featured
-  standalone Keyman Engine for Web (KeymanWeb), you can integrate over 600 languages to give you and your users the
+  standalone Keyman Engine for Web (KeymanWeb), you can integrate over 2000 languages to give you and your users the
   simplest solution to typing on your site possible.
   <br/><br/>
   You can of course build your own keyboard layouts using <a href='/developer/'>Keyman Developer</a>, as well as
@@ -56,7 +56,7 @@
 <h2 class="red underline">Keyman Engine for iOS</h2>
 <p>
   Keyman Engine for iOS is our programming interface to integrate Keyman keyboards into your iPhone and iPad
-  applications. Bringing with it over 600 languages and multiple keyboards for many of those languages, as well as
+  applications. Bringing with it over 2000 languages and multiple keyboards for many of those languages, as well as
   automatic embedded font support, Keyman Engine for iOS makes it straightforward to take your app to
   the world!
   <br/><br/>
@@ -72,7 +72,7 @@
 <h2 class="red underline">Keyman Engine for Android</h2>
 <p>
   Keyman Engine for Android is our programming interface to integrate Keyman keyboards into your Android
-  applications. Bringing with it over 600 languages and multiple keyboards for many of those languages,
+  applications. Bringing with it over 2000 languages and multiple keyboards for many of those languages,
   Keyman Engine for Android makes it straightforward to take your app to the world!
   <br/><br/>
   You can develop your own keyboard layouts for Keyman for Android with

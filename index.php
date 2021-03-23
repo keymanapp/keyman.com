@@ -42,7 +42,7 @@
         <div class="section section-products">
             <div class="wrapper">
                 <h2 class="section-heading">Core products</h2>
-                <p class="section-explainer">Keyman makes it possible for you to type in over 1,000 languages on
+                <p class="section-explainer">Keyman makes it possible for you to type in over 2000 languages on
                   Windows, macOS, Linux, iPhone, iPad, Android tablets and phones, and even instantly in your web browser.
                   With the world’s most powerful keyboarding engine, intuitive and rapid text input is now possible in
                   your language, and for over 99% of the global population’s mother tongues!</p>
@@ -78,7 +78,7 @@
                         <img src="<?php echo cdn("img/icon-android2.png"); ?>" />
                         <h3>Keyman for Android</h3>
                         <p>
-                            Type in over 600 languages on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
+                            Type in over 2000 languages on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
                         </p>
                     </a>
                 </div>

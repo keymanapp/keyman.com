@@ -23,7 +23,7 @@
 <br/>
 <h2 class="red underline">Introducing Keyman for Linux</h2>
 <p>
-    Keyman for Linux makes it possible to type in over 1,000 languages in any Linux application. Create your own custom
+    Keyman for Linux makes it possible to type in over 2000 languages in any Linux application. Create your own custom
     keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>*.
 </p>
 <p>

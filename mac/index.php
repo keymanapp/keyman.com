@@ -22,7 +22,7 @@
 <br/>
 <h2 class="red underline">Introducing Keyman for macOS</h2>
 <p>
-    Keyman for macOS brings an extensive library of keyboards for over 1,000 languages to macOS.
+    Keyman for macOS brings an extensive library of keyboards for over 2000 languages to macOS.
     You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a> (a Windows product).
 </p>
 <p>
