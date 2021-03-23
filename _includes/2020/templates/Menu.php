@@ -135,7 +135,7 @@ END;
                 <h3>Keyboards<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
-                        <h4>Find a Keyboard (1000+)</h4>
+                        <h4>(2000+ languages)</h4>
                         <form method="get" action="/keyboards" name="fsearch">
                             <input id="language-search" type="text" placeholder="Enter language" name="q">
                             <input id="search-submit" type="image" src="<?php echo Util::cdn('img/search-button.png'); ?>" value="Search" onclick="if(document.getElementById('language-search').value==''){return false;}">

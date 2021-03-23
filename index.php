@@ -13,7 +13,7 @@
 </div>
     <div class="main1">
         <h1>Type to the world<br/> in your language</h1>
-        <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 1000 languages supported' />
+        <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 2000 languages supported' />
     </div>
     <div class="main2">
 
@@ -33,7 +33,7 @@
                 <?php require_once('includes/ui/download-links.php'); ?>
 
                 <form name="fsearch" action="/keyboards" method="get">
-                    <h4>Search over 1000 languages</h4>
+                    <h4>Search over 2000 languages</h4>
                     <input type="text" name="q" id="language-search3" placeholder="Enter your language" />
                     <input id="search-submit3" type="image" onclick="if(document.getElementById('language-search3').value==''){return false;}" value="Search" src="<?php echo cdn("img/search-button.png"); ?>">
                 </form>
