@@ -23,7 +23,7 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 14.0</h2>
-<p class="red">24 March 2021</p>
+<p class="red">23 March 2021</p>
 <p>We are pleased to announce that Keyman 14.0 is now available for download!</p>
 
 <br>
