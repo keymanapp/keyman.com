@@ -128,7 +128,7 @@ sudo apt install keyman onboard-keyman</code></pre>
 <p>
     This brings up a configuration panel where you can "Download" Keyman keyboards from the cloud repository. You can also "Install"
     keyboards via local .kmp keyboard packages. In some keyboard packages, you might need to add the keyboard to
-    IBus by adding an "Other" input source. See <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/products/linux/<?= $stable_version; ?>/guide/installing-keyboard.php'>
+    IBus by adding an "Other" input source. See <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/products/linux/<?= $stable_version; ?>/start/installing-keyboard'>
     <?= KeymanHosts::Instance()->help_keyman_com_host ?></a> for more details on installing a keyboard.
 </p>
 

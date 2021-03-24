@@ -50,7 +50,7 @@
             <div>
               <a href="https://facebook.com/KeymanApp" target="_blank" data-icon='&#xf203;'>Facebook</a>
               <a href="https://twitter.com/keyman" target="_blank" data-icon='&#xf202;'>Twitter</a>
-              <a href="https://<?= KeymanHosts::Instance()->blog_keyman_com ?>/" target="_blank" data-icon='&#xf413;'>Keyman blog</a>
+              <a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>/" target="_blank" data-icon='&#xf413;'>Keyman blog</a>
               <a href="https://github.com/keymanapp" target="_blank" data-icon='&#xf200;'>GitHub</a>
               <a href="https://community.software.sil.org/c/keyman" target="_blank" id='footer-community'>Keyman Community</a>
             </div>
