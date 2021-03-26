@@ -118,7 +118,21 @@
 sudo apt install keyman onboard-keyman</code></pre>
 </p>
 
-<br/>
+<br />
+<p>
+  Keyman for Linux can also be installed from <a href="http://packages.sil.org/">packages.sil.org</a>:
+</p>
+
+<pre><code class='language-bash'>
+(wget -O- https://packages.sil.org/keys/pso-keyring-2016.gpg | \
+  sudo tee /etc/apt/trusted.gpg.d/pso-keyring-2016.gpg)&>/dev/null
+(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list >/dev/null \
+  <<< "deb http://packages.sil.org/ubuntu $UBUNTU_CODENAME main")
+sudo apt update
+sudo apt install keyman onboard-keyman
+</code></pre>
+
+<br />
 <p>
     <span class="red">Q.</span> How do I install a Keyman keyboard?
 </p>
@@ -142,10 +156,10 @@ sudo apt install keyman onboard-keyman</code></pre>
 
 <br/>
 <p>
-  <span class="red">Q.</span>Does Keyman for Linux work with Wayland?
+  <span class="red">Q.</span> Does Keyman for Linux work with Wayland?
 </p>
 <p>
-  <span class="red">A.</span>Currently, there's <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
+  <span class="red">A.</span> Currently, there's <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
   to add support for Wayland. As a workaround, use X11.
 </p>
 
