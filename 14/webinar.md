@@ -29,6 +29,7 @@ individual product webinars.
     <th>Length<br>(mins)</th>
     <th>Your local time</th>
     <th>Time (UTC)</th>
+    <th>Calendar Links</th>
   </tr>
 </thead>
 <tbody id='webinar-tbody'></tbody>
@@ -53,13 +54,23 @@ individual product webinars.
     ['JH', 'Keyman lexical models', 45, 3,  1,  9, 0]
   ];
 
+  function icalDate(date) {
+    return date.toISOString().replace(/[-:.]/g, '').substr(0, 15)+'Z';
+  }
+
+  function uuidv4() { // https://stackoverflow.com/a/2117523/1836776
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+  }
+
   var tbody = document.getElementById('webinar-tbody');
   for(var i in webinars) {
     var webinar = webinars[i];
     var tr = document.createElement('tr');
     if(typeof webinar == 'string') {
       var td0 = document.createElement('th');
-      td0.colSpan = 4;
+      td0.colSpan = 5;
       td0.innerText = webinar;
       tr.appendChild(td0);
     } else {
@@ -67,32 +78,88 @@ individual product webinars.
       var td1 = document.createElement('td');
       var td2 = document.createElement('td');
       var td3 = document.createElement('td');
+      var td4 = document.createElement('td');
       var dt = new Date(Date.UTC(2021, webinar[3], webinar[4], webinar[5], webinar[6]));
+      var dtEnd = new Date(dt.valueOf() + parseInt(webinar[2], 10) * 60 * 1000);
       td0.innerText = webinar[1];
       td1.innerText = webinar[2];
-      td2.innerText = dt.toLocaleString([], {
-          timeZoneName: 'short',
+      var span0 = document.createElement('span');
+      span0.innerText = dt.toLocaleString([], {
           weekday: 'short',
           year: 'numeric',
           month: 'short',
           day: 'numeric',
+        });
+      td2.appendChild(span0);
+      td2.appendChild(document.createElement('br'));
+      span0 = document.createElement('span');
+      span0.innerText = dt.toLocaleString([], {
+          timeZoneName: 'short',
           hour: '2-digit',
           minute:'2-digit'
         });
-      td3.innerText = dt.toLocaleString([], {
+      td2.appendChild(span0);
+
+      span0 = document.createElement('span');
+      span0.innerText = dt.toLocaleString([], {
         timeZone: 'UTC',
-        timeZoneName: 'short',
         weekday: 'short',
         year: 'numeric',
         month: 'short',
-        day: 'numeric',
+        day: 'numeric'
+      });
+      td3.appendChild(span0);
+      td3.appendChild(document.createElement('br'));
+      span0 = document.createElement('span');
+      span0.innerText = dt.toLocaleString([], {
+        timeZone: 'UTC',
+        timeZoneName: 'short',
         hour: '2-digit',
         minute:'2-digit'
       });
+      td3.appendChild(span0);
+
+      var a0 = document.createElement('a');
+      a0.innerHTML = 'Google&nbsp;Calendar';
+      a0.href = 'https://www.google.com/calendar/render?action=TEMPLATE'+
+                '&text='+encodeURIComponent(webinar[1]+' webinar')+
+                '&details='+encodeURIComponent('Keyman 14 Webinar Series')+
+                '&location=https%3A%2F%2Fkeyman.com%2F14%2Fwebinar'+
+                '&dates='+icalDate(dt)+'%2F'+icalDate(dtEnd);
+      a0.target = '_blank';
+      td4.appendChild(a0);
+      td4.appendChild(document.createElement('br'));
+
+      var a0 = document.createElement('a');
+
+      var ics = [
+        'BEGIN:VCALENDAR',
+        'PRODID:Keyman.com',
+        'VERSION:2.0',
+        'BEGIN:VEVENT',
+        'DTSTAMP:'+icalDate(new Date()),
+        'UID:'+uuidv4(),
+        'SUMMARY:'+webinar[1]+' webinar',
+        'DTSTART:'+icalDate(dt),
+        'DTEND:'+icalDate(dtEnd),
+        'DESCRIPTION:Keyman 14 Webinar Series',
+        'LOCATION:https://keyman.com/webinar',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      a0.innerHTML = '.ics&nbsp;download';
+      a0.href = 'data:text/calendar;charset=utf-8;base64,'+window.btoa(ics);
+      a0.download = webinar[1]+'.ics';
+      a0.target = '_blank';
+      td4.appendChild(a0);
+
+
       tr.appendChild(td0);
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
+      tr.appendChild(td4);
     }
     tbody.appendChild(tr);
   }
