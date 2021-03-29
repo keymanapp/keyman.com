@@ -9,7 +9,7 @@ March and 1 April 2021.
 
 A link will be published here for access to the webinars shortly before they go
 live. All webinars will be recorded and the recordings will be added here when
-they are available, shortly after the webinar.
+they are available.
 
 We will also announce the webinars on [Twitter](https://twitter.com/keyman) and
 [Facebook](https://facebook.com/keymanapp) before they go live.
@@ -18,6 +18,8 @@ We will have some time for questions in each webinar. The 'Welcome to Keyman 14'
 webinar will have an overview of the major new features in Keyman 14, and then
 we'll go into a more detailed walk through the changes in each product in the
 individual product webinars.
+
+<p><span id='webinar-cta'></span></p>
 
 <style>
   @import '/cdn/dev/css/product-grid.css';
@@ -160,6 +162,25 @@ individual product webinars.
       tr.appendChild(td2);
       tr.appendChild(td3);
       tr.appendChild(td4);
+
+      var startOffset = Date.now() - dt.valueOf();
+      var endOffset = Date.now() - dtEnd.valueOf();
+      if(startOffset >= -5 * 60 * 1000 && endOffset < 0) {
+        var cta = document.getElementById('webinar-cta');
+        var a = document.createElement('a');
+        a.href="https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09";
+        a.className="generic-cta-button";
+        a.innerText = 'Join the webinar now!';
+        a.target = "_blank";
+        cta.appendChild(a);
+        td0.appendChild(document.createElement('br'));
+        a = document.createElement('a');
+        a.style.color = 'red';
+        a.href="https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09";
+        a.innerText = 'Running now - join here!';
+        a.target = "_blank";
+        td0.appendChild(a);
+      }
     }
     tbody.appendChild(tr);
   }
