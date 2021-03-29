@@ -2,13 +2,18 @@
   require_once('includes/template.php');
   require_once('./session.php');
   require_once __DIR__ . '/../_includes/autoload.php';
-  use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\templates\Head;
+  use Keyman\Site\com\keyman\templates\Menu;
+  use Keyman\Site\com\keyman\templates\Body;
+  use Keyman\Site\com\keyman\templates\Foot;
 
   $head_options = [
     'title' =>'Keyboard Search',
-    'css' => ['template.css', '../keyboard-search/search.css'],
-    'js' => ['../keyboard-search/jquery.mark.js', '../keyboard-search/dedicated-landing-pages.js', '../keyboard-search/search.js']
-];
+    'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
+    'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
+      Util::cdn('keyboard-search/search.js')]
+  ];
 
   if($embed != 'none') {
     $head_options += [
@@ -16,10 +21,12 @@
       'showHeader' => false,
       'foot' => false
     ];
-    array_push($head_options['css'], '../keyboard-search/embed.css');
+    array_push($head_options['css'], Util::cdn('keyboard-search/embed.css'));
   }
-
-  head($head_options);
+  Head::render($head_options);
+  if($embed == 'none')
+    Menu::render([]); // we'll be doing client-side os detection now
+  Body::render();
 ?>
 
 <script>
@@ -55,3 +62,7 @@
     </ul>
   </div>
 </div>
+
+<?php
+  if($embed == 'none')
+    Foot::render();
