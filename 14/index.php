@@ -122,13 +122,26 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'stab
   <li>Now supports Ubuntu 20.10 (Groovy) (#3876)</li>
   <li>Improved user interface</li>
   <li>Improved support for KDE, Gnome, Arch Linux</li>
-</ul>
 
-<li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
+  <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
+  <blockquote>
+    <pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt upgrade
-sudo apt install keyman onboard-keyman</code></pre></blockquote>
+sudo apt install keyman onboard-keyman</code></pre>
+  </blockquote>
+  <li>Alternatively Keyman for Linux can be installed from <a href="http://packages.sil.org/">packages.sil.org</a>:</li>
 
+  <blockquote>
+    <pre><code class='language-bash'>
+(wget -O- https://packages.sil.org/keys/pso-keyring-2016.gpg | \
+  sudo tee /etc/apt/trusted.gpg.d/pso-keyring-2016.gpg)&>/dev/null
+(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list >/dev/null \
+  <<< "deb http://packages.sil.org/ubuntu $UBUNTU_CODENAME main")
+sudo apt update
+sudo apt install keyman onboard-keyman
+    </code></pre>
+  </blockquote>>
+</ul>
 
 <?php
 downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stable');
