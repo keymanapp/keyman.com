@@ -19,7 +19,9 @@ webinar will have an overview of the major new features in Keyman 14, and then
 we'll go into a more detailed walk through the changes in each product in the
 individual product webinars.
 
-<p><span id='webinar-cta'></span></p>
+<p style='display: none' id='webinar-cta'>
+<a href='https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09'
+class="generic-cta-button" target='_blank'>Join the webinar now!</a></p>
 
 <style>
   @import '/cdn/dev/css/product-grid.css';
@@ -84,6 +86,18 @@ individual product webinars.
       var dt = new Date(Date.UTC(2021, webinar[3], webinar[4], webinar[5], webinar[6]));
       var dtEnd = new Date(dt.valueOf() + parseInt(webinar[2], 10) * 60 * 1000);
       td0.innerText = webinar[1];
+      var span = document.createElement('span');
+      span.id = 'webinar-cta-'+i;
+      span.style.display = 'none';
+      span.appendChild(document.createElement('br'));
+      a = document.createElement('a');
+      a.style.color = 'red';
+      a.href="https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09";
+      a.innerText = 'Running now - join here!';
+      a.target = "_blank";
+      span.appendChild(a);
+      td0.appendChild(span);
+
       td1.innerText = webinar[2];
       var span0 = document.createElement('span');
       span0.innerText = dt.toLocaleString([], {
@@ -156,33 +170,37 @@ individual product webinars.
       a0.target = '_blank';
       td4.appendChild(a0);
 
-
       tr.appendChild(td0);
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
       tr.appendChild(td4);
-
-      var startOffset = Date.now() - dt.valueOf();
-      var endOffset = Date.now() - dtEnd.valueOf();
-      if(startOffset >= -5 * 60 * 1000 && endOffset < 0) {
-        var cta = document.getElementById('webinar-cta');
-        var a = document.createElement('a');
-        a.href="https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09";
-        a.className="generic-cta-button";
-        a.innerText = 'Join the webinar now!';
-        a.target = "_blank";
-        cta.appendChild(a);
-        td0.appendChild(document.createElement('br'));
-        a = document.createElement('a');
-        a.style.color = 'red';
-        a.href="https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09";
-        a.innerText = 'Running now - join here!';
-        a.target = "_blank";
-        td0.appendChild(a);
-      }
     }
     tbody.appendChild(tr);
+  }
+
+  window.setInterval(showWebinarLink, 5000);
+  showWebinarLink();
+  function showWebinarLink() {
+    var found = false;
+    for(var i in webinars) {
+      var webinar = webinars[i];
+      if(typeof webinar == 'string') continue;
+      var dt = new Date(Date.UTC(2021, webinar[3], webinar[4], webinar[5], webinar[6]));
+      var dtEnd = new Date(dt.valueOf() + parseInt(webinar[2], 10) * 60 * 1000);
+      var startOffset = Date.now() - dt.valueOf();
+      var endOffset = Date.now() - dtEnd.valueOf();
+      var cta = document.getElementById('webinar-cta-'+i);
+      // Start showing the webinar link 10 minutes before and hide it at the end
+      if(startOffset >= -10 * 60 * 1000 && endOffset < 0) {
+        found = true;
+        cta.style.display='block';
+      } else {
+        cta.style.display='none';
+      }
+    }
+
+    document.getElementById('webinar-cta').style.display=found?'block':'none';
   }
 </script>
 
