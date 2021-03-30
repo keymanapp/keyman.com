@@ -51,14 +51,7 @@ function startAfterPageLoad_Windows(data) {
         data.id, data.bcp47
       );
 
-      var firefoxVersion = 0;
-      if(browser == "Firefox") {
-        var match = /Firefox\/(\d+\.\d+)/.exec(navigator.userAgent);
-        firefoxVersion = match ? parseFloat(match[1]) : 0;
-      }
-
-      if(browser != "Internet Explorer" && browser != "Microsoft Edge Legacy" &&
-        (browser != "Firefox" || firefoxVersion > 86)) {
+      if(browser != "Internet Explorer" && browser != "Microsoft Edge Legacy" && !isLegacyFirefoxVersion()) {
         // On IE and Edge Legacy, we will never try the keyman: protocol because
         // it gives a poor user experience. Also older versions of Firefox cause
         // nasty reload behaviour too (< 64 gives a reportable error; < 80-something
@@ -85,6 +78,16 @@ function startAfterPageLoad_Windows(data) {
   }, 10);
 }
 
+function isLegacyFirefoxVersion() {
+  const browser = document.documentElement.getAttribute('data-browser');
+  if(browser != "Firefox") return false;
+
+  var match = /Firefox\/(\d+\.\d+)/.exec(navigator.userAgent);
+  firefoxVersion = match ? parseFloat(match[1]) : 0;
+
+  return firefoxVersion < 87;
+}
+
 /**
  * Redirects to keyman:// to trigger Keyman Configuration, and if that fails,
  * to the standard download url for the package to install. This currently only
@@ -100,7 +103,8 @@ function startAfterPageLoad_Linux(data) {
         data.id, data.bcp47
       );
 
-      location.href = keymanUrl;
+      if(!isLegacyFirefoxVersion())
+        location.href = keymanUrl;
 
       /*
       Disabled, see https://github.com/keymanapp/keyman.com/issues/200
