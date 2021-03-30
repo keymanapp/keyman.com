@@ -1,9 +1,11 @@
 <?php
   require_once('includes/template.php');
 
+  $UninstallID='';
+  $Token='';
   if(isset($_REQUEST['id'])){
     $UninstallID = $_REQUEST['id'];
-  }
+  } else
   if(isset($_REQUEST['token'])){
     $Token = $_REQUEST['token'];
   }
