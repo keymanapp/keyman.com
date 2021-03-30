@@ -41,7 +41,7 @@ class="generic-cta-button" target='_blank'>Join the webinar now!</a></p>
 
 <script>
   var webinars = [
-    ['MD', 'Welcome to Keyman 14',  45, 2, 29, 19, 0, '1uzOmQSA2oemkwD0N8QiUMx-Q8WwfRuw2UWsfdipEGfc', ''],
+    ['MD', 'Welcome to Keyman 14',  45, 2, 29, 19, 0, '1uzOmQSA2oemkwD0N8QiUMx-Q8WwfRuw2UWsfdipEGfc', 'OwiZdkjH1Dg'],
     ['MD', 'Welcome to Keyman 14 (repeat)',  45, 2, 30,  8, 0, '1uzOmQSA2oemkwD0N8QiUMx-Q8WwfRuw2UWsfdipEGfc'],
 
     'Product webinars',
@@ -148,7 +148,7 @@ class="generic-cta-button" target='_blank'>Join the webinar now!</a></p>
           td4.appendChild(document.createElement('br'));
           a0 = document.createElement('a');
           a0.innerHTML = '<img src="video.png" style="width:16px; margin: 3px 4px 0; vertical-align: top" />  Watch video';
-          a0.href = webinar[8];;
+          a0.href = 'https://youtu.be/'+webinar[8];
           a0.style.color = 'blue';
           a0.target = '_blank';
           td4.appendChild(a0);
