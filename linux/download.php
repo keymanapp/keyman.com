@@ -31,8 +31,10 @@ sudo apt install keyman onboard-keyman</code></pre>
 </p>
 
 <pre><code class='language-bash'>
-(wget -O- https://packages.sil.org/keys/pso-keyring-2016.gpg | sudo tee /etc/apt/trusted.gpg.d/pso-keyring-2016.gpg)&>/dev/null
-(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list>/dev/null <<< "deb http://packages.sil.org/ubuntu $UBUNTU_CODENAME main")
+(wget -O- https://packages.sil.org/keys/pso-keyring-2016.gpg | \
+  sudo tee /etc/apt/trusted.gpg.d/pso-keyring-2016.gpg)&>/dev/null
+(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list >/dev/null \
+  <<< "deb http://packages.sil.org/ubuntu $UBUNTU_CODENAME main")
 sudo apt update
 sudo apt install keyman onboard-keyman
 </code></pre>

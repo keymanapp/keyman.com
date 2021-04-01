@@ -23,7 +23,7 @@
 <br/>
 <h2 class="red underline">Introducing Keyman for Linux</h2>
 <p>
-    Keyman for Linux makes it possible to type in over 1,000 languages in any Linux application. Create your own custom
+    Keyman for Linux makes it possible to type in over 2000 languages in any Linux application. Create your own custom
     keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>*.
 </p>
 <p>
@@ -118,7 +118,21 @@
 sudo apt install keyman onboard-keyman</code></pre>
 </p>
 
-<br/>
+<br />
+<p>
+  Keyman for Linux can also be installed from <a href="http://packages.sil.org/">packages.sil.org</a>:
+</p>
+
+<pre><code class='language-bash'>
+(wget -O- https://packages.sil.org/keys/pso-keyring-2016.gpg | \
+  sudo tee /etc/apt/trusted.gpg.d/pso-keyring-2016.gpg)&>/dev/null
+(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list >/dev/null \
+  <<< "deb http://packages.sil.org/ubuntu $UBUNTU_CODENAME main")
+sudo apt update
+sudo apt install keyman onboard-keyman
+</code></pre>
+
+<br />
 <p>
     <span class="red">Q.</span> How do I install a Keyman keyboard?
 </p>
@@ -128,7 +142,7 @@ sudo apt install keyman onboard-keyman</code></pre>
 <p>
     This brings up a configuration panel where you can "Download" Keyman keyboards from the cloud repository. You can also "Install"
     keyboards via local .kmp keyboard packages. In some keyboard packages, you might need to add the keyboard to
-    IBus by adding an "Other" input source. See <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/products/linux/<?= $stable_version; ?>/guide/installing-keyboard.php'>
+    IBus by adding an "Other" input source. See <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/products/linux/<?= $stable_version; ?>/start/installing-keyboard'>
     <?= KeymanHosts::Instance()->help_keyman_com_host ?></a> for more details on installing a keyboard.
 </p>
 
@@ -142,10 +156,10 @@ sudo apt install keyman onboard-keyman</code></pre>
 
 <br/>
 <p>
-  <span class="red">Q.</span>Does Keyman for Linux work with Wayland?
+  <span class="red">Q.</span> Does Keyman for Linux work with Wayland?
 </p>
 <p>
-  <span class="red">A.</span>Currently, there's <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
+  <span class="red">A.</span> Currently, there's <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
   to add support for Wayland. As a workaround, use X11.
 </p>
 
@@ -201,7 +215,7 @@ sudo apt install ibus-kmfl</code></pre>
     <span class="red">Q.</span> What languages does Keyman support?
 </p>
 <p>
-    <span class="red">A.</span> The short answer is a lot! With keyboards for over 1000 languages,
+    <span class="red">A.</span> The short answer is a lot! With keyboards for over 2000 languages,
     there's a very good chance we have yours covered. You can search for a keyboard for your language
     <a href="/keyboards">here</a>. If we don't already have a keyboard available, you can use
     <a href="/developer/">Keyman Developer <?php echo $beta_version; ?></a> to build one!

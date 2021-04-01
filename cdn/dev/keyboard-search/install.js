@@ -51,10 +51,17 @@ function startAfterPageLoad_Windows(data) {
         data.id, data.bcp47
       );
 
-      if(browser != "Internet Explorer" && browser != "Microsoft Edge Legacy") {
+      if(browser != "Internet Explorer" && browser != "Microsoft Edge Legacy" && !isLegacyFirefoxVersion()) {
         // On IE and Edge Legacy, we will never try the keyman: protocol because
-        // it gives a poor user experience.
-        location.href = keymanUrl;
+        // it gives a poor user experience. Also older versions of Firefox cause
+        // nasty reload behaviour too (< 64 gives a reportable error; < 80-something
+        // navigates to an error page).
+        try {
+          self.location = keymanUrl;
+        } catch(e) {
+          // ignore errors here; they'll be protocol errors on very old browsers
+          console.log(e);
+        }
       }
 
       /*
@@ -69,6 +76,16 @@ function startAfterPageLoad_Windows(data) {
       */
     }
   }, 10);
+}
+
+function isLegacyFirefoxVersion() {
+  const browser = document.documentElement.getAttribute('data-browser');
+  if(browser != "Firefox") return false;
+
+  var match = /Firefox\/(\d+\.\d+)/.exec(navigator.userAgent);
+  firefoxVersion = match ? parseFloat(match[1]) : 0;
+
+  return firefoxVersion < 87;
 }
 
 /**
@@ -86,7 +103,8 @@ function startAfterPageLoad_Linux(data) {
         data.id, data.bcp47
       );
 
-      location.href = keymanUrl;
+      if(!isLegacyFirefoxVersion())
+        location.href = keymanUrl;
 
       /*
       Disabled, see https://github.com/keymanapp/keyman.com/issues/200

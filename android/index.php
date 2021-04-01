@@ -30,7 +30,7 @@
 ?>
 
 <p>
-  Keyman is available for Android devices. Keyman for Android makes it possible to type in over 600 different languages on
+  Keyman is available for Android devices. Keyman for Android makes it possible to type in over 2000 different languages on
   your Android device, and share the content you enter with friends on Facebook or Twitter, via email or instant messaging!
 </p>
 
@@ -254,7 +254,7 @@
 <h2 class="red underline">Keyman Engine for Android</h2>
 
 <p>
-  As always, we make our technology available to app developers! Keyman Engine for Android is our programming interface for Keyman for Android. Bringing with it over 600 languages and multiple keyboards for many of those languages, as well as automatic embedded font support, Keyman Engine for Android makes it straightforward to take your app to the world!
+  As always, we make our technology available to app developers! Keyman Engine for Android is our programming interface for Keyman for Android. Bringing with it over 2000 languages and multiple keyboards for many of those languages, as well as automatic embedded font support, Keyman Engine for Android makes it straightforward to take your app to the world!
 </p>
 <br/>
 <p>

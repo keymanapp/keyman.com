@@ -1,5 +1,5 @@
 <?php
-  downloadSection('Keyman for Windows',         'windows', 'keymand-$version.exe', 'stable');
+  downloadSection('Keyman for Windows',         'windows', 'keyman-$version.exe', 'stable');
   downloadSection('Keyman for macOS',           'mac',     'keyman-$version.dmg', 'stable');
   downloadSection('Keyman for Android',         'android', 'keyman-$version.apk', 'stable');
 ?>

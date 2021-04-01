@@ -17,18 +17,19 @@
   function head($args=[]){
     // Args are title='My Page Title', css='page.css' showMenu=true/false, showHeader=true/false, foot=true/false
 
+    $agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
     // Get device
-    if (strstr($_SERVER['HTTP_USER_AGENT'],'Windows')) {
+    if (strstr($agent,'Windows')) {
         $device = 'Windows';
-    }elseif(strstr($_SERVER['HTTP_USER_AGENT'],'Macintosh')){
+    }elseif(strstr($agent,'Macintosh')){
         $device = 'mac';
-    }elseif(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone')){
+    }elseif(strstr($agent,'iPhone')){
         $device = 'iPhone';
-    }elseif(strstr($_SERVER['HTTP_USER_AGENT'],'iPad')){
+    }elseif(strstr($agent,'iPad')){
         $device = 'iPad';
-    }elseif(strstr($_SERVER['HTTP_USER_AGENT'],'Android')){
+    }elseif(strstr($agent,'Android')){
         $device = 'Android';
-    }elseif(strstr($_SERVER['HTTP_USER_AGENT'],'Linux')){
+    }elseif(strstr($agent,'Linux')){
         $device = 'Linux';
     }else{
         $device = 'Unknown';

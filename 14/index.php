@@ -23,13 +23,13 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 14.0</h2>
-<p class="red">24 March 2021</p>
+<p class="red">23 March 2021</p>
 <p>We are pleased to announce that Keyman 14.0 is now available for download!</p>
 
 <br>
 
 <p><a href='https://blog.keyman.com/2021/03/keyman-14-0/'>Read our Keyman 14 launch blog post</a></p>
-<p><a href='webinar'>Register to attend the Keyman 14 Launch webinar series</a> (late March/early April 2021)</p>
+<p><a href='webinar'>Attend the Keyman 14 Launch webinar series</a> (29 March - 1 April 2021)</p>
 
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
@@ -122,13 +122,26 @@ downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'stab
   <li>Now supports Ubuntu 20.10 (Groovy) (#3876)</li>
   <li>Improved user interface</li>
   <li>Improved support for KDE, Gnome, Arch Linux</li>
-</ul>
 
-<li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
+  <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
+  <blockquote>
+    <pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt upgrade
-sudo apt install keyman onboard-keyman</code></pre></blockquote>
+sudo apt install keyman onboard-keyman</code></pre>
+  </blockquote>
+  <li>Alternatively Keyman for Linux can be installed from <a href="http://packages.sil.org/">packages.sil.org</a>:</li>
 
+  <blockquote>
+    <pre><code class='language-bash'>
+(wget -O- https://packages.sil.org/keys/pso-keyring-2016.gpg | \
+  sudo tee /etc/apt/trusted.gpg.d/pso-keyring-2016.gpg)&>/dev/null
+(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list >/dev/null \
+  <<< "deb http://packages.sil.org/ubuntu $UBUNTU_CODENAME main")
+sudo apt update
+sudo apt install keyman onboard-keyman
+    </code></pre>
+  </blockquote>>
+</ul>
 
 <?php
 downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stable');
