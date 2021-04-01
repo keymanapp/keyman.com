@@ -51,9 +51,9 @@ Part of the Keyman 14 Launch Event - Webinar #3
     ['MD', 'Keyman 14 for macOS',   30, 2, 30,  9, 30, '1TM2nNYaDpa8IgkRfiSEQe8dCytw5jBi8NAYTzCRJJiQ', 'YBE7s07bmBM'],
 
     ['MD', 'Keyman 14 for Windows', 30, 2, 30, 19, 0, '1iCmRRq_eDBMTIetZNnPg6pPXqsBzpM72cNJV7_Liyd8', 'bu7pBcrS0u8'],
-    ['JH', 'Keyman 14 for iOS',     30, 2, 31,  8, 0, '1w3EfFny_XPHS7BV9VyUwXE3MCx_hsp5NMfB7jzWAbJo'],
-    ['JH', 'keymanweb.com and KeymanWeb Bookmarklet', 30, 2, 31, 8, 30, '1W4JPfWqjCGg3S40_peWmYmbqakyir3xCXUKyADCwazY'],
-    ['EB', 'Keyman 14 for Linux',   30, 2, 31,  9, 0, '1V4tziNcu_y2ZbUjIqaj-c35PKn2t6ulbXo1Qv0zmgk4'],
+    ['JH', 'Keyman 14 for iOS',     30, 2, 31,  8, 0, '1w3EfFny_XPHS7BV9VyUwXE3MCx_hsp5NMfB7jzWAbJo', 'Tm-7Rvs-6Ig'],
+    ['JH', 'keymanweb.com and KeymanWeb Bookmarklet', 30, 2, 31, 8, 30, '1W4JPfWqjCGg3S40_peWmYmbqakyir3xCXUKyADCwazY', 'CESHhnJf8P8'],
+    ['EB', 'Keyman 14 for Linux',   30, 2, 31,  9, 0, '1V4tziNcu_y2ZbUjIqaj-c35PKn2t6ulbXo1Qv0zmgk4', '4W9Z9_IFUII'],
 
     'For keyboard developers',
     ['MD', 'Keyman Developer 14',   45, 3,  1,  8, 0, '1oEZzGPwXKw22fljs8fqjQI6Iie_el9eGskx-HRi7SV8'],
