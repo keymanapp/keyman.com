@@ -39,8 +39,6 @@ class="generic-cta-button" target='_blank'>Join the webinar now!</a></p>
 <tbody id='webinar-tbody'></tbody>
 </table>
 
-Part of the Keyman 14 Launch Event - Webinar #3
-
 <script>
   var webinars = [
     ['MD', 'Welcome to Keyman 14',  45, 2, 29, 19, 0, '1uzOmQSA2oemkwD0N8QiUMx-Q8WwfRuw2UWsfdipEGfc', 'OwiZdkjH1Dg'],
