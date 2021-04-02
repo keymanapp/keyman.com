@@ -54,8 +54,8 @@ class="generic-cta-button" target='_blank'>Join the webinar now!</a></p>
     ['EB', 'Keyman 14 for Linux',   30, 2, 31,  9, 0, '1V4tziNcu_y2ZbUjIqaj-c35PKn2t6ulbXo1Qv0zmgk4', '4W9Z9_IFUII'],
 
     'For keyboard developers',
-    ['MD', 'Keyman Developer 14',   45, 3,  1,  8, 0, '1oEZzGPwXKw22fljs8fqjQI6Iie_el9eGskx-HRi7SV8'],
-    ['JH', 'Keyman lexical models', 45, 3,  1,  9, 0, '1RiRdLl9uCouAgqO1XLs2a0QjpIFXPYKknh-b3GPo84E']
+    ['MD', 'Keyman Developer 14',   45, 3,  1,  8, 0, '1oEZzGPwXKw22fljs8fqjQI6Iie_el9eGskx-HRi7SV8', 'kwhgx_eX4Es'],
+    ['JH', 'Keyman lexical models', 45, 3,  1,  9, 0, '1RiRdLl9uCouAgqO1XLs2a0QjpIFXPYKknh-b3GPo84E', 'k_njmw5jPYM']
   ];
 
   function icalDate(date) {
