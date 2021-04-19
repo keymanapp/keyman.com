@@ -4,20 +4,17 @@ title: Keyman 14 Launch Webinar Series
 
 [< Back to Keyman 14.0 Home](/14)
 
-We will be holding a series of webinars all about Keyman 14 running between 29
-March and 1 April 2021.
+We held a series of webinars all about Keyman 14 between 29 March and 1 April
+2021.
 
-A link will be published here for access to the webinars shortly before they go
-live. All webinars will be recorded and the recordings will be added here when
-they are available.
+All the webinars were recorded and the recordings can be viewed by visiting the
+links below. The slides accompanying the videos contain links which may also be
+helpful.
 
-We will also announce the webinars on [Twitter](https://twitter.com/keyman) and
-[Facebook](https://facebook.com/keymanapp) before they go live.
-
-We will have some time for questions in each webinar. The 'Welcome to Keyman 14'
-webinar will have an overview of the major new features in Keyman 14, and then
-we'll go into a more detailed walk through the changes in each product in the
-individual product webinars.
+The recorded webinars include questions from some attendees. If you have any
+further questions, please visit the [SIL Language Software
+Community](https://community.software.sil.org/c/keyman) where we would be glad
+to answer any questions!
 
 <p style='display: none' id='webinar-cta'>
 <a href='https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09'
