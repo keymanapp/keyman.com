@@ -127,7 +127,7 @@
     <h3 class="red" id="desktop">For desktops</h3>
     <p>Keyman Developer <?php echo $stable_version_int; ?> supports every version of Windows since Windows 7.
         Run Keyman Developer in your Windows OS and build Keyman keyboards that work for your users on their systems.
-        These keyboards can also be run on macOS.</p>
+        These keyboards can also be run on macOS and Linux.</p>
     <br><br>
 
     <h3 class="red" id="mobile">For mobile devices</h3>
@@ -144,7 +144,7 @@
       <dt>Universal Compatibility</dt>
       <dd>With Developer, you can create JavaScript keyboards that can be used in any standards compliant browser,
         including Firefox, Edge, Chrome and Safari. Because the keyboards run in a browser, they'll work just
-        as well on Mac and Linux as they do in Windows.<a href='/developer/keymanweb'>Learn more…</a></dd>
+        as well on Mac and Linux as they do in Windows. <a href='/developer/keymanweb'>Learn more…</a></dd>
       <dd><img class='borderless' src='<?=cdn('/img/compat-browser.png')?>' alt='Develop KeymanWeb Keyboards that
         Run on Any Major Browser, in Windows, Mac and Linux ' /></dd>
 
@@ -190,11 +190,15 @@
     <p><img src='<?= cdn('/img/package-help.png') ?>' alt='Add Documentation '/></p>
     <br/><br/>
 
-    <h3 class="red">Create keyboards to share</h3>
+    <h3 class="red">Create keyboards and dictionaries to share</h3>
     <p>We now have a single source for open source keyboards on github.com.</p>
     <p><a href="https://github.com/keymanapp/keyboards">https://github.com/keymanapp/keyboards</a></p>
-    <p>After you create your keyboard with Developer, you can submit the keyboard so that the Keyman community can work
-        with you to support and maintain your keyboard layout into the future.</p>
+    <p>The open source wordlist dictionaries are on also on github.com.</p>
+    <p><a href="https://github.com/keymanapp/lexical-models">https://github.com/keymanapp/lexical-models</a></p>
+
+    <p>After you create your keyboard or dictionary with Developer, you can submit it so that the Keyman community can work
+        with you to support and maintain your keyboard layout or dictionary into the future.</p>
+
     <a href='#host'><img width="25%" src='<?= cdn("/img/keyman-logo.png") ?>' alt="Keyman Logo "/></a>
   </div>
 
