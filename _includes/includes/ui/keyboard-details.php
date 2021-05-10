@@ -223,6 +223,8 @@ END;
           $s = json_decode($s);
           if(is_object($s) && !empty($s->keyboards[0]->match->downloads)) {
             self::$downloadCount = $s->keyboards[0]->match->downloads;
+          }
+          if(is_object($s) && !empty($s->keyboards[0]->match->totalDownloads)) {
             self::$totalDownloadCount = $s->keyboards[0]->match->totalDownloads;
           }
         }
