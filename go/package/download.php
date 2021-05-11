@@ -132,7 +132,7 @@
         if(KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_DEVELOPMENT)
           $key = 'local';
         else
-          $key = $_ENV['API_KEYMAN_COM_INCREMENT_DOWNLOAD_KEY'];
+          $key = $_SERVER['API_KEYMAN_COM_INCREMENT_DOWNLOAD_KEY'];
 
         $c = curl_init($url);
         curl_setopt($c, CURLOPT_HEADER, 0);
