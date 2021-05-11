@@ -71,13 +71,14 @@
 
       if(DEBUG) {
         header('Content-Type: text/plain');
-        echo "\n\nLocation: $url\n";
-        exit;
       }
 
       if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
-        if(KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_PRODUCTION) {
-          self::report_download_event($ga_cookie, $id . ($type === "model" ? ".$type" : ""), $platform, $tier, $bcp47, $update);
+        self::report_download_event($ga_cookie, $id . ($type === "model" ? ".$type" : ""), $platform, $tier, $bcp47, $update);
+
+        if(DEBUG) {
+          echo "\n\nLocation: $url\n";
+          exit;
         }
 
         // We don't do a redirect for Test tier because a test instance of the
@@ -115,12 +116,38 @@
       $label = rawurlencode($id);
 
       $gaurl = "$gabaseurl?v=1&t=event&tid=UA-249828-1&$gauser&ds=server&ec=$category&ea=$action&el=$label";
-      $result = @file_get_contents($gaurl);
+      if(DEBUG || KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_PRODUCTION) {
+        // Only actually call Google Analytics if we are in production or debugging
+        $result = @file_get_contents($gaurl);
+      } else {
+        $result = TRUE;
+      }
       if(DEBUG) {
         var_dump("Google Analytics response for $gaurl: ".print_r($http_response_header, true));
       }
 
-      return !($result === FALSE);
+      $url = KeymanHosts::Instance()->api_keyman_com . "/increment-download/".rawurlencode($id);
+
+      if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
+        if(KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_DEVELOPMENT)
+          $key = 'local';
+        else
+          $key = $_SERVER['API_KEYMAN_COM_INCREMENT_DOWNLOAD_KEY'];
+
+        $c = curl_init($url);
+        curl_setopt($c, CURLOPT_HEADER, 0);
+        curl_setopt($c, CURLOPT_POSTFIELDS, 'key='.rawurlencode($key));
+        curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($c, CURLOPT_USERAGENT , "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)");
+        $data = curl_exec($c);
+        curl_close($c);
+
+        if(DEBUG) {
+          var_dump("increment-download ($url):",$data);
+        }
+      } else
+        $data = TRUE;
+      return ($result !== FALSE) && ($data !== FALSE);
     }
   }
 
