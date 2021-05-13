@@ -445,7 +445,7 @@ END;
 ?>
             <tr>
               <th>Package Download</th>
-              <td><a href="<?= self::$kmpDownloadUrl ?>"><?= self::$keyboard->id ?>.kmp</a></td>
+              <td><a href="<?= self::$kmpDownloadUrl ?>" rel="nofollow"><?= self::$keyboard->id ?>.kmp</a></td>
             </tr>
 <?php
               }

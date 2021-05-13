@@ -168,7 +168,7 @@ END;
             <p>If you have not yet installed Keyman for macOS, please install it first before installing the keyboard.</p>
             <ol>
               <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for macOS</a></li>
-              <li id='step2'><a class='download-link binary-download' href='$downloadLink'>
+              <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
                 <span>Install keyboard</span></a>
                 <div class='download-description'>Downloads {$h['name']} for macOS.</div>
               </li>
@@ -223,7 +223,7 @@ END;
             <p>If you have not yet installed Keyman for Linux, please install it first before installing the keyboard.</p>
             <ol>
               <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for Linux</a></li>
-              <li id='step2'><a class='download-link binary-download' href='$downloadLink'>
+              <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
                 <span>Install keyboard</span></a>
               </li>
             </ol>
@@ -276,7 +276,7 @@ END;
             <p>If you have not yet installed Keyman for Android, please install it first before installing the keyboard.</p>
             <ol>
               <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for Android</a></li>
-              <li id='step2'><a class='download-link binary-download' href='$downloadLink'>
+              <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
                 <span>Install keyboard</span></a>
                 <div class='download-description'>Downloads {$h['name']} for Android.</div>
               </li>
@@ -329,7 +329,7 @@ END;
             <p>If you have not yet installed Keyman for iPhone and iPad, please install it first before installing the keyboard.</p>
             <ol>
               <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for iPhone and iPad</a></li>
-              <li id='step2'><a class='download-link binary-download' href='$downloadLink'>
+              <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
                 <span>Install keyboard</span></a>
                 <div class='download-description'>Downloads {$h['name']} for iPhone and iPad.</div>
               </li>
