@@ -96,7 +96,7 @@
 <p>
     <span class="red">A.</span> Visit <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/products/mac/current-version/start/install-keyman'>Keyman for macOS help</a>
     to learn how to install and start using Keyman on macOS.
-    <a href='https://youtu.be/35FAFlZq06I'><img src="<?php echo cdn('img/video.png'); ?>" style="width:16px; margin: 3px 4px 0; vertical-align: top" />Watch video</a>
+    <a href='https://youtu.be/7Ax71QeUNfo'><img src="<?php echo cdn('img/video.png'); ?>" style="width:16px; margin: 3px 4px 0; vertical-align: top" />Watch video</a>
 </p>
 
 <br/>
