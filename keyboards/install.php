@@ -263,7 +263,7 @@ END;
         "?platform=android&amp;version={$hu['version']}&amp;tier={$hu['tier']}" .
         (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
-      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/android/current-version/installing-keyboards";
+      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/android/current-version/start/installing-keyboards";
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
@@ -316,7 +316,7 @@ END;
         "?platform=ios&amp;version={$hu['keyboardversion']}&amp;tier={$hu['tier']}" .
         (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
-      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/iphone-and-ipad/current-version/installing-keyboards";
+      $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/iphone-and-ipad/current-version/start/installing-keyboards";
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);

@@ -103,7 +103,7 @@
     <span class="red">Q.</span> What versions of macOS will Keyman work with?
 </p>
 <p>
-    <span class="red">A.</span> Keyman is compatible with OS X Lion (10.7) and later.
+    <span class="red">A.</span> Keyman is compatible with OS X Yosemite (10.10) and later.
 </p>
 
 <br/>
