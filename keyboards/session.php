@@ -1,5 +1,9 @@
 <?php
-  if(!isset($_SESSION)) session_start();
+  if(!isset($_SESSION)) {
+    session_set_cookie_params(["SameSite" => "None"]);   // Allow use in iframe, needed for Download Keyboards dialog
+    session_set_cookie_params(["Secure" => "true"]);     // None requires Secure to be set
+    session_start();
+  }
 
   if(isset($_REQUEST['embed'])) {
     $embed = $_REQUEST['embed'];
@@ -20,13 +24,13 @@
   }
   $_SESSION['embed'] = $embed;
   $_SESSION['embed_version'] = $embed_version;
-  
+
   $embed_win = $embed == 'windows';
   $embed_mac = $embed == 'macos';
   $embed_linux = $embed == 'linux';
   $embed_android = $embed == 'android';
   $embed_ios = $embed == 'ios';
-  
+
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
     // default, including in existing versions of Keyman.
@@ -40,7 +44,7 @@
     $session_query_q = '';
   }
 
-  // We'd like to show the search box. But, we have a bug in the IE embedded dialog 
+  // We'd like to show the search box. But, we have a bug in the IE embedded dialog
   // that forces us to show a list of languages and disable input boxes...
   // $embed_uselist = $embed_win && version_compare($embed_version, '10.0.699.0') < 0;
 ?>
