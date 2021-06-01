@@ -32,6 +32,15 @@
 <script>
   var embed='<?=$embed?>';
   var embed_query='<?=$session_query?>';
+
+  if(embed != 'none') {
+    // For an iframe hosted in Download Keyboards dialog, we cannot use
+    // autofocus because it is cross-origin. However, setting focus
+    // programatically works here.
+    window.addEventListener('load', function() {
+      document.getElementById('search-q').focus();
+    });
+  }
 </script>
 
 <div class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>'>
@@ -40,7 +49,8 @@
 
   <div id='search-box'>
     <form method='get' action='/keyboards' name='f'>
-      <label for="search-q">Keyboard search:</label><input id="search-q" type="text" placeholder="Enter language or keyboard" name="q" autofocus>
+      <label for="search-q">Keyboard search:</label><input id="search-q" type="text" placeholder="Enter language or keyboard" name="q"
+      <?php if($embed == 'none') echo 'autofocus'; ?>>
       <input id="search-f" type="image" src="<?= cdn('img/search-button.png"') ?>" value="Search" onclick="return do_search()">
       <label id="search-new"><a href='/keyboards<?=$session_query_q?>'>New search</a></label>
       <input id="search-obsolete" type="hidden" name="obsolete" value="0">
