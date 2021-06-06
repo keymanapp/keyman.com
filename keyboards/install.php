@@ -163,7 +163,7 @@ END;
       $downloadKeymanUrl = KeymanHosts::Instance()->keyman_com . '/mac/download';
 
       $result = <<<END
-        <div id='content' class='download download-macos'>
+        <div class='download download-macos'>
           <div>
             <p>If you have not yet installed Keyman for macOS, please install it first before installing the keyboard.</p>
             <ol>
@@ -215,7 +215,7 @@ END;
       $downloadKeymanUrl = KeymanHosts::Instance()->keyman_com . '/linux/download';
 
       $result = <<<END
-        <div id='content' class='download download-linux'>
+        <div class='download download-linux'>
           <script data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
             startAfterPageLoad_Linux(document.currentScript.dataset);
           </script>
@@ -227,12 +227,12 @@ END;
                 <span>Install keyboard</span></a>
               </li>
             </ol>
-          </div>
-          <br>
-          <ul>
-            <li><a href='$helpLink'>Help on installing a keyboard</a></li>
-            <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
-          </ul>
+
+            <br>
+            <ul>
+              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+            </ul>
           </div>
         </div>
 END;
@@ -268,19 +268,23 @@ END;
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
 
-      $downloadKeymanUrl = PlayStore::url;
+      // Build a Google Play Install Referrer URL parameter; this will be passed
+      // in to Keyman on its first start. Note that the double-encoding is intentional.
+      $referrer = "source=keyman&package={$u['id']}";
+      if(!empty($u['bcp47'])) $referrer .= "&bcp47={$u['bcp47']}";
+
+      $downloadKeymanUrl = PlayStore::url . "&referrer=" . rawurlencode($referrer);
 
       $result = <<<END
-        <div id='content' class='download download-android'>
+        <div class='download download-android'>
+          <p></p>
           <div>
-            <p>If you have not yet installed Keyman for Android, please install it first before installing the keyboard.</p>
-            <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for Android</a></li>
-              <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>Install keyboard</span></a>
-                <div class='download-description'>Downloads {$h['name']} for Android.</div>
-              </li>
-            </ol>
+            <p>Install Keyman together with {$h['name']} keyboard through the Google Play Store:</p>
+            <a class='download-link binary-download' href='$downloadKeymanUrl' title='Download and install Keyman'><span>Install from Play Store</span></a>
+            <div class='download-description'>Installs Keyman and {$h['name']} keyboard for Android</div>
+            <br>
+            <p>Keyman already installed? <a rel="nofollow" href='$downloadLink'>Download just this keyboard</a> and then install in the app.
+            </p>
             <ul>
               <li><a href='$helpLink'>Help on installing a keyboard</a></li>
               <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
@@ -324,7 +328,7 @@ END;
       $downloadKeymanUrl = AppStore::url;
 
       $result = <<<END
-        <div id='content' class='download download-ios'>
+        <div class='download download-ios'>
           <div>
             <p>If you have not yet installed Keyman for iPhone and iPad, please install it first before installing the keyboard.</p>
             <ol>

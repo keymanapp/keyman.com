@@ -3,8 +3,14 @@
  * so that we can use it for CSS selectors to display the appropriate content.
  */
 (function() {
+  // Allow for a platform-override parameter for testing of
+  // the keyboard install page.
+  const params = typeof URLSearchParams == 'function' ?
+    new URLSearchParams(location.search) : null;
   const bowserParser = bowser.getParser(window.navigator.userAgent);
-  const platform = bowserParser.getOSName({toLowerCase: true});
+  const platform = params && params.get('platform-override') ?
+    params.get('platform-override') :
+    bowserParser.getOSName({toLowerCase: true});
   const browser = bowserParser.getBrowser();
   const engine = bowserParser.getEngine();
 

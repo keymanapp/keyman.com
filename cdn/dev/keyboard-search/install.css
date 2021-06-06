@@ -10,7 +10,7 @@ ol {
   font-size: 16pt;
 }
 
-#section2 ol li a.download-link {
+#section2 a.download-link {
   padding-top: 6px;
   height: 40px;
 }
@@ -34,28 +34,33 @@ ol li a {
   display: none;
 }
 
+html .download a.download-link {
+  margin: 0;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+html .download a.download-link span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1em;
+  margin-top: 0.33em;
+}
+
 @media only screen and (max-width: 640px) {
   #section2 ol li {
     margin-left: 0;
     font-size: 24pt;
   }
 
-  ol li a {
-    font-size: 12pt;
+  /* Make the link text slightly smaller to fit longer string */
+  html .download a.download-link {
     margin-left: 8px;
+    font-size: 15pt;
   }
 
-  html .download a.download-link {
-      margin: 0;
-      display: inline-block;
-      float: none;
-      vertical-align: top;
-  }  
-
-  html .download a.download-link span {
-    display: inline-block;
-    vertical-align: top;
-    line-height: 1em;
-    margin-top: 0.33em;
+  .download div.download-description {
+    margin: 8px 0 8px 10px;
   }
 }
