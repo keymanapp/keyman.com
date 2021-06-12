@@ -2176,7 +2176,7 @@ button.feedback{
 
 @media all and (min-width: 10px) and (max-width: 600px){
 	.wrapper{
-		width: 320px;
+		width: auto;
 	}
 	/* Header */
 	#top-menu-bg{

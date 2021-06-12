@@ -301,8 +301,7 @@ END;
 
         <div id='search-box'>
           <form method='get' action='/keyboards' name='f'>
-            <div id='search-title'><a href='/keyboards'>Keyboard Search</a>:</div>
-            <input id="search-q" type="text" placeholder="(new search)" name="q">
+            <input id="search-q" type="text" placeholder="New keyboard search" name="q">
             <input id='search-page' type='hidden' name='page'>
             <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="Search">
           </form>
