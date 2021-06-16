@@ -30,7 +30,7 @@
 
 <h2 class='red underline'>Keyman Developer Command Line Tools</h2>
 
-<p>The Keyman Developer command line tools can be run on Windows, or using WINE on Linux and macOS. <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?= $stable_version ?>/guides/develop/kmcomp'>Command line tool guide</a>. This download is
+<p>The Keyman Developer command line tools can be run on Windows, or using WINE on Linux and macOS. <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?= $stable_version ?>/guides/command-line'>Command line tool guide</a>. This download is
 provided separately primarily for users on non-Windows platforms.</p>
 
 <?php
