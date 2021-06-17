@@ -152,6 +152,7 @@ downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stab
 <h3>What's new in Keyman 14 for Android?</h3>
 
 <ul>
+  <li>Install Keyman and keyboard together in single step from Play Store (#5231)</li>
   <li>Improved UI for installing keyboard packages (#3498)</li>
   <li>
     Select a language during keyboard package installation (#3481)<br>
