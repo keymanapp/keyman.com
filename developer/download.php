@@ -44,6 +44,6 @@ provided separately primarily for users on non-Windows platforms.</p>
 <pre class="language-markup code"><code>
 mkdir kmcomp
 cd kmcomp
-curl https://keyman.com/go/download/kmcomp -o kmcomp.zip
+curl -L https://keyman.com/go/download/kmcomp -o kmcomp.zip
 unzip kmcomp.zip
 </code></pre>
