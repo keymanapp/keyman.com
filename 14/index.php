@@ -29,7 +29,7 @@ head([
 <br>
 
 <p><a href='https://blog.keyman.com/2021/03/keyman-14-0/'>Read our Keyman 14 launch blog post</a></p>
-<p><a href='webinar'>Attend the Keyman 14 Launch webinar series</a> (29 March - 1 April 2021)</p>
+<p><a href='webinar'>View Keyman 14 Launch webinar series recordings</a> (recorded 29 March - 1 April 2021)</p>
 
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
@@ -152,6 +152,7 @@ downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stab
 <h3>What's new in Keyman 14 for Android?</h3>
 
 <ul>
+  <li>Install Keyman and keyboard together in single step from Play Store (#5231)</li>
   <li>Improved UI for installing keyboard packages (#3498)</li>
   <li>
     Select a language during keyboard package installation (#3481)<br>

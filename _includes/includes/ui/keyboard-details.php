@@ -48,6 +48,7 @@
     static private $keyboardPlatforms;
     static private $kmpDownloadUrl;
     static private $downloadCount;
+    static private $totalDownloadCount;
 
     static private $deprecatedBy;
 
@@ -216,11 +217,15 @@ END;
           (empty(self::$bcp47) ? "" : "&bcp47=" . rawurlencode(self::$bcp47));
 
         self::$downloadCount = 0;
+        self::$totalDownloadCount = 0;
         $s = @file_get_contents($KeymanHosts->api_keyman_com . '/search/2.0?q=k:id:' . rawurlencode(self::$id));
         if ($s !== FALSE) {
           $s = json_decode($s);
           if(is_object($s) && !empty($s->keyboards[0]->match->downloads)) {
             self::$downloadCount = $s->keyboards[0]->match->downloads;
+          }
+          if(is_object($s) && !empty($s->keyboards[0]->match->totalDownloads)) {
+            self::$totalDownloadCount = $s->keyboards[0]->match->totalDownloads;
           }
         }
       }
@@ -296,8 +301,7 @@ END;
 
         <div id='search-box'>
           <form method='get' action='/keyboards' name='f'>
-            <div id='search-title'><a href='/keyboards'>Keyboard Search</a>:</div>
-            <input id="search-q" type="text" placeholder="(new search)" name="q">
+            <input id="search-q" type="text" placeholder="New keyboard search" name="q">
             <input id='search-page' type='hidden' name='page'>
             <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="Search">
           </form>
@@ -440,14 +444,18 @@ END;
 ?>
             <tr>
               <th>Package Download</th>
-              <td><a href="<?= self::$kmpDownloadUrl ?>"><?= self::$keyboard->id ?>.kmp</a></td>
+              <td><a href="<?= self::$kmpDownloadUrl ?>" rel="nofollow"><?= self::$keyboard->id ?>.kmp</a></td>
             </tr>
 <?php
               }
 ?>
             <tr>
               <th>Monthly Downloads</th>
-              <td><?= self::$downloadCount ?></td>
+              <td><?= number_format(self::$downloadCount) ?></td>
+            </tr>
+            <tr>
+              <th>Total Downloads</th>
+              <td title='Downloads since October 2019'><?= number_format(self::$totalDownloadCount) ?></td>
             </tr>
             <tr>
               <th>Encoding</th>

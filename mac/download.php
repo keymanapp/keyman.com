@@ -1,7 +1,7 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
-  
+
   // Required
   head([
     'title' =>'Download Keyman for macOS',
@@ -15,7 +15,7 @@
     Keyman is a program that reconfigures your keyboard to type in another language. This download provides a simple installer for Keyman.
 </p>
 <p>
-    Keyman <?php echo $stable_version; ?> for macOS is compatible with OS X Lion (10.7) and later.
+    Keyman <?php echo $stable_version; ?> for macOS is compatible with OS X Yosemite (10.10) and later.
 </p>
 
 <?php

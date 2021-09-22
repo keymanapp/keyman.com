@@ -7,7 +7,7 @@
   // Required
   head([
     'title' =>'Download Keyman Developer ' . $stable_version,
-    'css' => ['template.css','feature-grid.css','index.css','desktop-download.css'],
+    'css' => ['template.css','feature-grid.css','index.css','desktop-download.css','prism.css'],
     'js' => ['download.js'],
     'showMenu' => true
   ]);
@@ -28,11 +28,22 @@
   downloadLargeCTA('Keyman Developer', 'developer', 'stable', 'keymandeveloper-$version.exe');
 ?>
 
-<h2 class='red underline'>kmcomp Keyboard Compiler</h2>
+<h2 class='red underline'>Keyman Developer Command Line Tools</h2>
 
-<p>The kmcomp compiler is a command line tool that can be run on Windows, or using WINE on Linux and macOS. <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?= $stable_version ?>/context/kmcomp'>kmcomp reference</a>. This download is
+<p>The Keyman Developer command line tools can be run on Windows, or using WINE on Linux and macOS. <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?= $stable_version ?>/guides/command-line'>Command line tool guide</a>. This download is
 provided separately primarily for users on non-Windows platforms.</p>
+
 
 <?php
   downloadLargeCTA('kmcomp Compiler', 'developer', 'stable', 'kmcomp-$version.zip');
-?>
+  ?>
+
+<p>Command-line install:</p>
+
+<script src='<?=cdn('js/prism.js')?>'></script>
+<pre class="language-markup code"><code>
+mkdir kmcomp
+cd kmcomp
+curl -L https://keyman.com/go/download/kmcomp -o kmcomp.zip
+unzip kmcomp.zip
+</code></pre>

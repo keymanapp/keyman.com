@@ -2176,7 +2176,7 @@ button.feedback{
 
 @media all and (min-width: 10px) and (max-width: 600px){
 	.wrapper{
-		width: 320px;
+		width: auto;
 	}
 	/* Header */
 	#top-menu-bg{
@@ -2416,7 +2416,7 @@ ul.beta-link a {
 .qrcode-host {
 	float: right;
 	border: solid 1px #B92034;
-	padding: 0 0 10px 0;
+	padding: 10px 0 10px 0;
 	background: white;
 	max-width: 148px;
 	text-align: center;

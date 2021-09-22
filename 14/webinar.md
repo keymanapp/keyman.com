@@ -4,20 +4,17 @@ title: Keyman 14 Launch Webinar Series
 
 [< Back to Keyman 14.0 Home](/14)
 
-We will be holding a series of webinars all about Keyman 14 running between 29
-March and 1 April 2021.
+We held a series of webinars all about Keyman 14 between 29 March and 1 April
+2021.
 
-A link will be published here for access to the webinars shortly before they go
-live. All webinars will be recorded and the recordings will be added here when
-they are available.
+All the webinars were recorded and the recordings can be viewed by visiting the
+links below. The slides accompanying the videos contain links which may also be
+helpful.
 
-We will also announce the webinars on [Twitter](https://twitter.com/keyman) and
-[Facebook](https://facebook.com/keymanapp) before they go live.
-
-We will have some time for questions in each webinar. The 'Welcome to Keyman 14'
-webinar will have an overview of the major new features in Keyman 14, and then
-we'll go into a more detailed walk through the changes in each product in the
-individual product webinars.
+The recorded webinars include questions from some attendees. If you have any
+further questions, please visit the [SIL Language Software
+Community](https://community.software.sil.org/c/keyman) where we would be glad
+to answer any questions!
 
 <p style='display: none' id='webinar-cta'>
 <a href='https://sil.zoom.us/j/97219405404?pwd=SDY5VDdKRjA3UEtxd2xjeUdUR20wZz09'
@@ -39,8 +36,6 @@ class="generic-cta-button" target='_blank'>Join the webinar now!</a></p>
 <tbody id='webinar-tbody'></tbody>
 </table>
 
-Part of the Keyman 14 Launch Event - Webinar #3
-
 <script>
   var webinars = [
     ['MD', 'Welcome to Keyman 14',  45, 2, 29, 19, 0, '1uzOmQSA2oemkwD0N8QiUMx-Q8WwfRuw2UWsfdipEGfc', 'OwiZdkjH1Dg'],
@@ -51,13 +46,13 @@ Part of the Keyman 14 Launch Event - Webinar #3
     ['MD', 'Keyman 14 for macOS',   30, 2, 30,  9, 30, '1TM2nNYaDpa8IgkRfiSEQe8dCytw5jBi8NAYTzCRJJiQ', 'YBE7s07bmBM'],
 
     ['MD', 'Keyman 14 for Windows', 30, 2, 30, 19, 0, '1iCmRRq_eDBMTIetZNnPg6pPXqsBzpM72cNJV7_Liyd8', 'bu7pBcrS0u8'],
-    ['JH', 'Keyman 14 for iOS',     30, 2, 31,  8, 0, '1w3EfFny_XPHS7BV9VyUwXE3MCx_hsp5NMfB7jzWAbJo'],
-    ['JH', 'keymanweb.com and KeymanWeb Bookmarklet', 30, 2, 31, 8, 30, '1W4JPfWqjCGg3S40_peWmYmbqakyir3xCXUKyADCwazY'],
-    ['EB', 'Keyman 14 for Linux',   30, 2, 31,  9, 0, '1V4tziNcu_y2ZbUjIqaj-c35PKn2t6ulbXo1Qv0zmgk4'],
+    ['JH', 'Keyman 14 for iOS',     30, 2, 31,  8, 0, '1w3EfFny_XPHS7BV9VyUwXE3MCx_hsp5NMfB7jzWAbJo', 'Tm-7Rvs-6Ig'],
+    ['JH', 'keymanweb.com and KeymanWeb Bookmarklet', 30, 2, 31, 8, 30, '1W4JPfWqjCGg3S40_peWmYmbqakyir3xCXUKyADCwazY', 'CESHhnJf8P8'],
+    ['EB', 'Keyman 14 for Linux',   30, 2, 31,  9, 0, '1V4tziNcu_y2ZbUjIqaj-c35PKn2t6ulbXo1Qv0zmgk4', '4W9Z9_IFUII'],
 
     'For keyboard developers',
-    ['MD', 'Keyman Developer 14',   45, 3,  1,  8, 0, '1oEZzGPwXKw22fljs8fqjQI6Iie_el9eGskx-HRi7SV8'],
-    ['JH', 'Keyman lexical models', 45, 3,  1,  9, 0, '1RiRdLl9uCouAgqO1XLs2a0QjpIFXPYKknh-b3GPo84E']
+    ['MD', 'Keyman Developer 14',   45, 3,  1,  8, 0, '1oEZzGPwXKw22fljs8fqjQI6Iie_el9eGskx-HRi7SV8', 'kwhgx_eX4Es'],
+    ['JH', 'Keyman lexical models', 45, 3,  1,  9, 0, '1RiRdLl9uCouAgqO1XLs2a0QjpIFXPYKknh-b3GPo84E', 'k_njmw5jPYM']
   ];
 
   function icalDate(date) {

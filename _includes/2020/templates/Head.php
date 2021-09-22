@@ -27,10 +27,10 @@ class Head {
 <head>
   <meta charset="utf-8">
   <?php
-    if(KeymanHosts::Instance()->Tier() != KeymanHosts::TIER_PRODUCTION) {
-      echo '    <meta name="robots" content="none">';
-    }
-  ?>
+  if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_STAGING) {
+    echo '    <meta name="robots" content="none">';
+  }
+?>
   <title><?= $fields->title; ?></title>
   <?php
 /* Our local CDN version is identical to this file:
