@@ -295,7 +295,7 @@ h2 a {
 
   #keyboard-details-col .col {
     float: none;
-    max-width: unset;
+    max-width: initial;
   }
 
   table#keyboard-details,
@@ -439,7 +439,7 @@ html[data-platform='unknown'] .download.download-unknown {
 }
 
 #search-results:empty + #search-results-empty {
-  display: unset;
+  display: initial;
 }
 
 /* Embedded formatting */
