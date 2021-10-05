@@ -43,7 +43,7 @@ class Head {
   <script src="<?= Util::cdn('js/sentry.bundle.5.28.0.min.js'); ?>"></script>
   <script>
     Sentry.init({
-      dsn: "https://44d5544d7c45466ba1928b9196faf67e@sentry.keyman.com/3",
+      dsn: "https://44d5544d7c45466ba1928b9196faf67e@o1005580.ingest.sentry.io/5983516",
       environment: location.host.match(/\.local$/) ? 'development' : location.host.match(/(^|\.)keyman-staging\.com$/) ? 'staging' : 'production',
     });
   </script>
