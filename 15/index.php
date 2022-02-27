@@ -23,16 +23,13 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 15.0 Beta</h2>
-<p class="red">TBD 2022</p>
+<p class="red">1 March 2022</p>
 <p>We are pleased to announce that Keyman 15.0 is now in beta!</p>
 <br>
 
 <h3>What's New?</h3>
 <p>These major features are in all supported platforms:</p>
 <ul>
-  <li>
-    Infrastructure for Rust - for future LDML keyboard support (#5162)
-  </li>
   <li>
     Infrastructure for WASM - for future LDML keyboard support (#5233)
   </li>
@@ -94,7 +91,7 @@ head([
 <h3>What's Next?</h3>
 <ul>
   <li>
-    Check the <a href="https://blog.keyman.com/2020/03/keyman-roadmap-march-2020/">Keyman Roadmap</a> for upcoming features.
+    Check the <a href="https://blog.keyman.com/2022/02/keyman-roadmap-march-2022/">Keyman Roadmap - March 2022</a> for upcoming features.
   </li>
 </ul>
 <br>
@@ -188,9 +185,6 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'beta
 </ul>
 
 
-
-
-
 <?php
 downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'beta');
 ?>
@@ -202,14 +196,6 @@ downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'beta');
   <li>Promise-based API (#5389, #5260, #5121)</li>
   <li>Improve keyboard switch performance (#5958)</li>
   <li>Enable mouse interaction for the predictive banner (#5739)</li>
-</ul>
-<br>
-
-<h3>What's New in Infrastructure and Build?</h3>
-<ul>
-  <li>Many incremental improvements to status.keyman.com</li>
-  <li>Gradual update of <a href='https://help.keyman.com/'>help site</a> to Markdown</li>
-  <li>Various other bug fixes, polish</li>
 </ul>
 <br>
 
@@ -228,8 +214,8 @@ downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version
   <li>Improved native-mode debugger (#5696, #5640, #5647)</li>
   <li>Web test no longer needs Developer tools for touch testing (#5723)</li>
   <li>
-    Add support for <code class='language-java'>U_xxxx_yyyy_...</code> 
-    indentifiers so you can emit more than a single Unicode character with 
+    Add support for <code class='language-java'>U_xxxx_yyyy_...</code>
+    identifiers so you can emit more than a single Unicode character with
     touch keys without additional kmn code (#5894)
   </li>
   <li>Keyman Developer debugger no longer depends on Keyman for Windows (#5588)</li>
@@ -253,7 +239,9 @@ known breaking changes in Keyman 15.0:</p>
 
 <h3>Changes for Keyman Engine</h3>
 
-<!--p><a href='keyman-engine-changes'>Changes for Keyman Engine</a></p-->
+<ul>
+  <li>Keyman Engine for Android no longer needs internet access</li>
+</ul>
 
 <h2>Get Involved</h2>
 <p>There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!
