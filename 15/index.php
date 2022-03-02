@@ -23,37 +23,24 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 15.0 Beta</h2>
-<p class="red">1 March 2022</p>
+<p class="red">2 March 2022</p>
 <p>We are pleased to announce that Keyman 15.0 is now in beta!</p>
 <br>
 
 <h3>What's New?</h3>
-<p>These major features are in all supported platforms:</p>
+<p>Two major features have been added to our iOS, Android and Web platforms:</p>
 <ul>
   <li>
-    Infrastructure for WASM - for future LDML keyboard support (#5233)
+    <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/guide/casing-support">Caps Lock Layer + double-tap gesture</a> (#5988, #5989)
   </li>
   <li>
-    Caps Lock Layer + double-tap gesture - touch platforms (#5988, #5989)
-  </li>
-  <li>
-    Support for Caps-lock stores (capsAlwaysOff, shiftFreesCaps, capsOnOnly) (#5432, #5519)
-  </li>
-  <li>
-    Start of Sentence detection - touch platforms (#5963)
-  </li>
-  <li>
-    Inline On Screen Keyboard (#5665)
-  </li>
-  <li>
-    Improved security in incxstr / decxstr
-  </li>
-  <li>
-    Many bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>)
+    <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/guide/casing-support">Start of Sentence detection</a> (#5963)
   </li>
 </ul>
-<br>
-<p>New Localizations - Many Nigerian languages provided by <a href='https://translatorswithoutborders.org/'>Translators Without Borders</a></p>
+<p>We've made many additional bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>,
+and are highlighting just a few of them here.</p>
+
+<p>New Localizations - Many Nigerian languages provided by <a href='https://translatorswithoutborders.org/'>Translators Without Borders</a>:</p>
 <ul>
   <li>
     Bura-Pabir
@@ -241,6 +228,15 @@ known breaking changes in Keyman 15.0:</p>
 
 <ul>
   <li>Keyman Engine for Android no longer needs internet access</li>
+  <li>
+    Infrastructure for WASM - for future LDML keyboard support (#5233)
+  </li>
+  <li>
+    Inline On Screen Keyboard (#5665)
+  </li>
+  <li>
+    Improved security in incxstr / decxstr
+  </li>
 </ul>
 
 <h2>Get Involved</h2>
