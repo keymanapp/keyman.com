@@ -20,7 +20,7 @@
         <!-- event banner: uncomment this section when we have an event or promotion -->
         <div class="section section-announcement">
           <div class='wrapper'>
-            <p style='font-size:2em'><a href='/14/'>New (23 Mar 2021): Keyman 14.0 is now available to download!</a></p>
+            <p style='font-size:2em'><a href='/15'>New: Keyman 15 is now in Beta!!</a></p>
           </div>
         </div>
         <!-- -->
