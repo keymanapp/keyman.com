@@ -37,7 +37,7 @@ head([
     <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/guide/casing-support">Start of Sentence detection</a> (#5963)
   </li>
 </ul>
-<p>We've made many additional bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>,
+<p>We've made many additional bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>),
 and are highlighting just a few of them here.</p>
 
 <p>New Localizations - Many Nigerian languages provided by <a href='https://translatorswithoutborders.org/'>Translators Without Borders</a>:</p>
@@ -86,8 +86,7 @@ and are highlighting just a few of them here.</p>
 <h3>Keyman 15.0 Feedback</h3>
 <ul>
   <li>Please send feedback about Keyman 15 to the
-    <a href="https://community.software.sil.org/t/keyman-15-beta-feedback/5755">Keyman Community site</a> or submit bugs and feature requests to our
-    <a href="https://github.com/keymanapp/keyman/issues/new/choose">Issue Tracker</a></li>
+    <a href="https://community.software.sil.org/t/keyman-15-beta-feedback/5755">Keyman Community site</a>.</li>
 </ul>
 <br>
 
