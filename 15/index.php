@@ -10,22 +10,24 @@ use Keyman\Site\Common\KeymanHosts;
 // Required
 head([
   'class' => 'keyman11',
-  'title' => 'Keyman 15 is now in Beta!',
+  'title' => 'Keyman 15 is now available!',
   'css' => ['template.css', 'dev.css', 'app-store-links.css', 'prism.css'],
   'js' => ['prism.js'],
   'showMenu' => true,
   'banner' => [
-  'title' => 'Keyman 15.0 Beta',
+  'title' => 'Keyman 15.0 is now available!',
     'image' => 'screenshots/14/typewriter.jpg',
     'background' => 'black'
   ]
 ]);
 ?>
 
-<h2>Announcing the release of Keyman 15.0 Beta</h2>
-<p class="red">2 March 2022</p>
-<p>We are pleased to announce that Keyman 15.0 is now in beta!</p>
+<h2>Announcing the release of Keyman 15.0</h2>
+<p class="red">18 April, 2022</p>
+<p>We are pleased to announce that Keyman 15.0 is now available for download!</p>
 <br>
+
+<a href="">Read our Keyman 15 launch blog post</a><br>
 
 <h3>What's New?</h3>
 <p>Two major features have been added to our iOS, Android and Web platforms:</p>
@@ -86,14 +88,16 @@ and are highlighting just a few of them here.</p>
 <h3>Keyman 15.0 Feedback</h3>
 <ul>
   <li>Please send feedback about Keyman 15 to the
-    <a href="https://community.software.sil.org/t/keyman-15-beta-feedback/5755">Keyman Community site</a>.</li>
+    <a href="https://community.software.sil.org/t/c/keyman">Keyman Community site</a> or submit bugs and feature requests to our
+    <a href="https://github.com/keymanapp/keyman/issues/new/choose">Issue Tracker</a>
+  </li>
 </ul>
 <br>
 
 <h1 class='red underline'>User Software</h1>
 
 <?php
-downloadSection('Keyman 15 for Windows',   'windows',     'keyman-$version.exe', 'beta');
+downloadSection('Keyman 15 for Windows',   'windows',     'keyman-$version.exe', 'stable');
 ?>
 
 <h3>What's New in Keyman 15 for Windows?</h3>
@@ -105,7 +109,7 @@ downloadSection('Keyman 15 for Windows',   'windows',     'keyman-$version.exe',
 
 
 <?php
-downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'beta');
+downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 15 for macOS?</h3>
@@ -135,8 +139,13 @@ downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'beta
   <li>Lots of bugfixes</li>
 </ul>
 
+<li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
+<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
+sudo apt upgrade
+sudo apt install keyman</code></pre></blockquote>
+
 <?php
-downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'beta');
+downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stable');
 ?>
 
 <?= $playstoreTable ?>
@@ -172,7 +181,7 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'beta
 
 
 <?php
-downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'beta');
+downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 15?</h3>
@@ -189,7 +198,7 @@ downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'beta');
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version.exe', 'beta');
+downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 15?</h3>
