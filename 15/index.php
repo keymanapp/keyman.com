@@ -134,7 +134,6 @@ downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'stab
   <li>Support for Ubuntu Jammy 22.04 (#6037) and Impish 21.10 (#5334)</li>
   <li>fcitx5 integration (#5215)</li>
   <li>Improve installation of packages in shared location (#6015)</li>
-  <li>Improvements in Debian packaging</li>
   <li>Automated integration tests with Keyman Core</li>
   <li>Lots of bugfixes</li>
 </ul>
@@ -175,7 +174,7 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stab
 <h3>What's new in Keyman 15 for iPhone and iPad?</h3>
 
 <ul>
-  <li>General polish, bug fixes, and performance improvments</li>
+  <li>General polish, bug fixes, and performance improvements</li>
   <li>Update minimum iOS version to 12.1 (#5165)</li>
 </ul>
 
@@ -207,6 +206,7 @@ downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version
   <li>Core-based debugger (#5425, #5448, #5513)</li>
   <li>Keyman Developer Server (#6033,#6034,#6035,#6036)</li>
   <li>Improved native-mode debugger (#5696, #5640, #5647)</li>
+  <li>Improve drag+drop integration of keys with the Touch Layout Editor (#6435)</li>
   <li>Web test no longer needs Developer tools for touch testing (#5723)</li>
   <li>
     Add support for <code class='language-java'>U_xxxx_yyyy_...</code>
