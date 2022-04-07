@@ -117,6 +117,7 @@ downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'stab
 <ul>
   <li>Localizable UI through <a href="<?= KeymanHosts::Instance()->translate_keyman_com ?>">translate.keyman.com</a> (#5869)</li>
   <li>Display Unicode package name correctly instead of '????' (#6016)</li>
+  <li>Increase OSK chracter size by 50%
   <li>Add support for M1 processor (#5701)</li>
 </ul>
 

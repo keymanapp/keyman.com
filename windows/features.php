@@ -31,21 +31,7 @@
         <br/><br/><br/>
         <h2 class="red center">What's New</h2>
         <ul>
-            <li>Updated for latest release of Windows 10</li>
-            <li>Keyman keyboards are no longer hidden from the Windows language picker when you exit Keyman. (This helps maintain input method language tag stability.)</li>
-            <li>On Screen Keyboard loads much faster</li>
-            <li>Added user interface for configuring all Keyman system-level options (#3733)</li>
-            <li>Refreshed user interface no longer depends on Internet Explorer (#1720)</li>
-            <li>Smoother and more reliable installation of keyboard languages (#3509)</li>
-            <li>Choose associated language when keyboard is installed (#3524)</li>
-            <li>Much improved keyboard download experience (#3326)</li>
-            <li>Improved BCP 47 tag support (#3529)</li>
-            <li>Much improved initial download and installation experience including bundled keyboards (#3304)</li>
-            <li>Keyman Configuration changes now apply instantly (#3753)</li>
-            <li>Improved user experience when many keyboards installed (#3626, #3627)</li>
-            <li>Improved bootstrap installer</li>
-            <li>Now uses Chromium to host all web-based UI (e.g. Keyman Configuration)</li>
-            <li>Breaking: Keyman Engine no longer supports the keyboard usage page (usage.htm)</li>
+          <li>Use Keyman Core internally (#5443)</li>
         </ul>
     </div>
     <div class="section" id="setup">
@@ -352,9 +338,9 @@
         <img src="<?php echo cdn("img/developer9.png"); ?>"/>
     </div>
     <div class="section" id="unicode">
-        <h2 class="red underline">Unicode 13.0 Compliant</h2>
+        <h2 class="red underline">Unicode <?= $unicode_version; ?> Compliant</h2>
         <p>
-            Keyman <?= $stable_version; ?> for Windows complies with Unicode 13.0 – the international standard
+            Keyman <?= $stable_version; ?> for Windows complies with Unicode <?= $unicode_version ?> – the international standard
             for language encoding. Everything you type with our Unicode keyboards will be readable to anyone.
         </p>
         <p>

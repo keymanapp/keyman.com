@@ -10,6 +10,8 @@
     public const stable_version = '15.0';
     public const beta_version = '15.0';
 
+    public const unicode_version = '14.0';
+
     static function IsBetaTier(): bool {
       return self::beta_version_int > self::stable_version_int;
     }
