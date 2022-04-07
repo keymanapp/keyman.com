@@ -90,7 +90,7 @@
     <h3 class="red">Smart Character Map</h3>
     <p>Fully Unicode <?= $unicode_version; ?>: access every character in the newest version of the Unicode Standard from the Keyman Character
       Map. </p>
-    <p>Double-Click Insert: insert over 136,000 letters and symbols with a double-click. Say goodbye to multi-step
+    <p>Double-Click Insert: insert over 144,000 letters and symbols with a double-click. Say goodbye to multi-step
       clipboard actions.</p>
     <p>Intelligent Search: With so many Unicode characters available, there's several ways to search and filter for the
         characters in your language: partial name match, by Unicode range, block, font, or code point,
