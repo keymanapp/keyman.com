@@ -27,7 +27,8 @@ head([
 <p>We are pleased to announce that Keyman 15.0 is now available for download!</p>
 <br>
 
-<a href="">Read our Keyman 15 launch blog post</a><br>
+<p><a href="">Read our Keyman 15 launch blog post</a></p>
+<br>
 
 <h3>What's New?</h3>
 <p>Two major features have been added to our iOS, Android and Web platforms:</p>
@@ -39,6 +40,7 @@ head([
     <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/guide/casing-support">Start of Sentence detection</a> (#5963)
   </li>
 </ul>
+<br/>
 <p>We've made many additional bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>),
 and are highlighting just a few of them here.</p>
 
@@ -137,12 +139,11 @@ downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'stab
   <li>Improve installation of packages in shared location (#6015)</li>
   <li>Automated integration tests with Keyman Core</li>
   <li>Lots of bugfixes</li>
-</ul>
-
-<li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
-<blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
+  <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
+  <blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
 sudo apt upgrade
 sudo apt install keyman</code></pre></blockquote>
+</ul>
 
 <?php
 downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stable');
@@ -153,7 +154,6 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stab
 <h3>What's new in Keyman 15 for Android?</h3>
 
 <ul>
-  <li>Keyman Engine no longer needs internet access </li>
   <li>English keyboard can now be removed (#5838)</li>
   <li>Add a menu to adjust keyboard height (#5606)</li>
   <li>Add a settings option to change the displayed keyboard name on the spacebar</li>
@@ -176,6 +176,8 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stab
 
 <ul>
   <li>General polish, bug fixes, and performance improvements</li>
+  <li>Fix popup key style and positioning (#6383)</li>
+  <li>Prevent installation of packages that don't contain JS file (#5698)</li>
   <li>Update minimum iOS version to 12.1 (#5165)</li>
 </ul>
 

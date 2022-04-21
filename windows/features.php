@@ -39,9 +39,9 @@
         <p>
             Keyman <?= $stable_version; ?> for Windows installs in just three steps:
         </p>
-        <img src="<?php echo cdn("img/screenshots/14/windows/setup-click1.png"); ?>"/>
-        <img src="<?php echo cdn("img/screenshots/14/windows/setup-click2.png"); ?>"/>
-        <img src="<?php echo cdn("img/screenshots/14/windows/setup-click3.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/15/windows/setup-click1.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/15/windows/setup-click2.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/15/windows/setup-click3.png"); ?>"/>
         <br/>
         <p>
             Installing Keyboards is even easier. Simply download and open the file, and Keyman will do the rest.
@@ -406,7 +406,7 @@
         <p>
             Search with instant feedback, by name, range, block, font, or code point, using standard wildcards.
         </p>
-        <img src="<?php echo cdn("img/screenshots/14/windows/charmap-big.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/15/windows/charmap-big.png"); ?>"/>
     </div>
     <div class="section" id="font-helper">
         <h2 class="red underline">Font Helper</h2>
