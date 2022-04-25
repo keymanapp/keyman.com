@@ -445,7 +445,7 @@
         <p>
             All users have full access to the built-in and online help documents, deep Keyman diagnostic tools, as well as the Keyman Community Forums.
         </p>
-        <img src="<?php echo cdn("img/screenshots/14/windows/tab-support.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/15/windows/tab-support.png"); ?>"/>
     </div>
     <div class="section" id="customers">
         <h2 class="red underline">Used By The Biggest</h2>
