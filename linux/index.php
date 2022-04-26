@@ -104,9 +104,6 @@
   <span class="red">A.</span> Keyman is built for amd64 architecture and runs on Debian, Ubuntu, Wasta Linux.
   It can be compiled to run from source in most distributions.
 </p>
-<p>
-  Note: Keyman packages are unavailable on the Xenial ppa.
-</p>
 
 <br/>
 <p>
