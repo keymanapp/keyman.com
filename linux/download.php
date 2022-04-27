@@ -42,8 +42,8 @@ sudo apt install keyman onboard-keyman
 <h3 class='red underline'>Debian</h3>
 
 <p>
-  An older version of Keyman for Linux is also available in any current Debian at:
-  <a href='https://packages.debian.org/keyman'>https://packages.debian.org/keyman</a>
+  Keyman for Linux is also available in any current Debian at:
+  <a href='https://packages.debian.org/keyman'>https://packages.debian.org/keyman</a>.
 </p>
 
 <br />
