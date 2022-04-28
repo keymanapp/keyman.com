@@ -11,7 +11,7 @@
     'banner' => [
       'title' => 'Keyman for macOS<br/><span id="title-small">Type in your language</span>',
       'button' => '<div id="banner-buttons"><a class="banner-button" href="download.php"><img src="'.cdn('img/download_button.png').'" /></a></div>',
-      'image' => 'mac-osk-amharic.png',
+      'image' => 'mac-osk-hebrew.png',
       'background' => 'water'
     ]
   ]);
