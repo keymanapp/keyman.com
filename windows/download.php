@@ -22,7 +22,7 @@
     Keyman is a program that reconfigures your keyboard to type in another language. This download provides a simple installer for Keyman for your language. Start by typing the name of your language and clicking the Search button.
 </p>
 <p>
-    Keyman <?= $stable_version ?> for Windows is compatible with Windows 7, Windows 8, Windows 8.1 and Windows 10. If you have an older version of Windows, please download Keyman Desktop 8.0 from our <a href="/downloads/archive/">archived downloads page</a>.
+    Keyman <?= $stable_version ?> for Windows is compatible with Windows 7 and later. If you have an older version of Windows, please download Keyman Desktop 8.0 from our <a href="/downloads/archive/">archived downloads page</a>.
 </p>
 <div class="download-stable" id="download-with-language">
     <h3>Keyman <?= $stable_version ?> for Windows for your language</h3>
