@@ -205,6 +205,19 @@ downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version
 
 <h3>What's new in Keyman Developer 15?</h3>
 
+<h3>Breaking changes for keyboard developers</h3>
+
+<p>We work hard to minimize the potential for breaking changes to Keyman. We sometimes must make a change which may
+not be 100% backwardly compatible, either to correct a bug, or to address security issues. Breaking changes are changes
+which may prevent an existing keyboard from building without modification with the new compiler. The following issues are
+known breaking changes in Keyman 15.0 for keyboard developers:</p>
+
+<ul>
+  <li>Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use (#6347)</li>
+</ul>
+
+<p>Other changes for Keyman Developer:</p>
+
 <ul>
   <li>Core-based debugger (#5425, #5448, #5513)</li>
   <li>Keyman Developer Server (#6033,#6034,#6035,#6036)</li>
@@ -222,32 +235,24 @@ downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version
 
 <br>
 
-<h3>Breaking changes for keyboard developers</h3>
+<h3>Changes for Keyman Engine</h3>
 
 <p>We work hard to minimize the potential for breaking changes to Keyman. We sometimes must make a change which may
 not be 100% backwardly compatible, either to correct a bug, or to address security issues. The following issues are
-known breaking changes in Keyman 15.0:</p>
+known breaking changes in Keyman Engine 15.0:</p>
 
 <ul>
-  <li>Keyman for Android now enforces minimum Chrome version 37.0 (#5017)</li>
-  <li>KeymanWeb's OSK field (keyman.osk) is now only available after the promise returned from keyman.init is fulfilled (#5412)
+  <li>Breaking: Keyman for Android now enforces minimum Chrome version 37.0 (#5017)</li>
+  <li>Breaking: KeymanWeb's OSK property (keyman.osk) is now only available after the promise returned from keyman.init is fulfilled (#5412)
 </ul>
 
-<br>
-
-<h3>Changes for Keyman Engine</h3>
+<p>Other changes for Keyman Engine 15.0:</p>
 
 <ul>
   <li>Keyman Engine for Android no longer needs internet access</li>
-  <li>
-    Infrastructure for WASM - for future LDML keyboard support (#5233)
-  </li>
-  <li>
-    Inline On Screen Keyboard (#5665)
-  </li>
-  <li>
-    Improved security in incxstr / decxstr
-  </li>
+  <li>Infrastructure for WASM - for future LDML keyboard support (#5233)</li>
+  <li>Inline On Screen Keyboard (#5665)</li>
+  <li>Improved security in incxstr / decxstr</li>
 </ul>
 
 <h2>Get Involved</h2>
