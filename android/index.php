@@ -115,6 +115,7 @@
   <li>Keyman Engine no longer needs internet access </li>
   <li>English keyboard can now be removed</li>
   <li>Add a menu to adjust keyboard height</li>
+  <li>Add support for haptic feedback (vibration) when typing</li>
   <li>Add a settings option to change the displayed keyboard name on the spacebar</li>
   <li>Improve the globe key experience for switching keyboards:
     <ol>
