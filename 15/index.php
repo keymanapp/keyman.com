@@ -23,11 +23,11 @@ head([
 ?>
 
 <h2>Announcing the release of Keyman 15.0</h2>
-<p class="red">9 May, 2022</p>
+<p class="red">15 June, 2022</p>
 <p>We are pleased to announce that Keyman 15.0 is now available for download!</p>
 <br>
 
-<p><a href="">Read our Keyman 15 launch blog post</a></p>
+<p><a href="https://blog.keyman.com/2022/06/keyman-15-0-now-available/">Read our Keyman 15 launch blog post</a></p>
 <br>
 
 <h3>What's New?</h3>
@@ -41,7 +41,7 @@ head([
   </li>
 </ul>
 <br/>
-<p>We've made many additional bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>),
+<p>We've made many bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>),
 and are highlighting just a few of them here.</p>
 
 <p>New Localizations - Many Nigerian languages provided by <a href='https://translatorswithoutborders.org/'>Translators Without Borders</a>:</p>
@@ -156,6 +156,7 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stab
 <ul>
   <li>English keyboard can now be removed (#5838)</li>
   <li>Add a menu to adjust keyboard height (#5606)</li>
+  <li>Add support for haptic feedback (vibration) when typing (#6626)</li>
   <li>Add a settings option to change the displayed keyboard name on the spacebar</li>
   <li>Improve the globe key experience for switching keyboards (#5437, #5973):
     <ol>
@@ -175,9 +176,9 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stab
 <h3>What's new in Keyman 15 for iPhone and iPad?</h3>
 
 <ul>
-  <li>General polish, bug fixes, and performance improvements</li>
+  <li>Various tweaks, bug fixes, and performance improvements</li>
   <li>Fix popup key style and positioning (#6383)</li>
-  <li>Prevent installation of packages that don't contain JS file (#5698)</li>
+  <li>Prevent installation of packages that don't contain a compatible keyboard file (#5698)</li>
   <li>Update minimum iOS version to 12.1 (#5165)</li>
 </ul>
 
@@ -213,7 +214,7 @@ which may prevent an existing keyboard from building without modification with t
 known breaking changes in Keyman 15.0 for keyboard developers:</p>
 
 <ul>
-  <li>Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use (#6347)</li>
+  <li>Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use -- [blog post](https://blog.keyman.com/2022/04/how-to-resolve-caps-and-ncaps-ambiguity-in-keyman-keyboards/) (#6347)</li>
 </ul>
 
 <p>Other changes for Keyman Developer:</p>
@@ -221,6 +222,7 @@ known breaking changes in Keyman 15.0 for keyboard developers:</p>
 <ul>
   <li>Core-based debugger (#5425, #5448, #5513)</li>
   <li>Keyman Developer Server (#6033,#6034,#6035,#6036)</li>
+  <li>Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use (#6347)</li>
   <li>Improved native-mode debugger (#5696, #5640, #5647)</li>
   <li>Improve drag+drop integration of keys with the Touch Layout Editor (#6435)</li>
   <li>Web test no longer needs Developer tools for touch testing (#5723)</li>

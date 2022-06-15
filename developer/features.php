@@ -41,6 +41,7 @@
       </li>
       <li>Keyman Developer debugger no longer depends on Keyman for Windows (#5588)</li>
       <li>live reload of web debugger (#6035)</li>
+      <li>Breaking Change: Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use -- [blog post](https://blog.keyman.com/2022/04/how-to-resolve-caps-and-ncaps-ambiguity-in-keyman-keyboards/) (#6347)</li>
     </ul>
 
   </div>

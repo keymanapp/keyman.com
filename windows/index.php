@@ -145,7 +145,7 @@
     <span class="red">Q.</span> What versions of Windows will Keyman <?= $stable_version; ?> work with?
 </p>
 <p>
-    <span class="red">A.</span> Keyman <?= $stable_version; ?> for Windows is compatible with Windows 7, 8, 8.1, 10, 11, and Server 2008, 2008 R2, 2012 and 2012 R2. If you're using an older version of Windows, Keyman Desktop 8.0 is still available for download at our archive page <a href="/downloads/archive/">here</a>.
+    <span class="red">A.</span> Keyman <?= $stable_version; ?> for Windows is compatible with Windows 7, 8, 8.1, 10, 11, and Server 2008 and all later versions. If you're using an older version of Windows, Keyman Desktop 8.0 is still available for download at our archive page <a href="/downloads/archive/">here</a>.
 </p>
 <br/>
 <p>

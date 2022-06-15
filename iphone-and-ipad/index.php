@@ -84,7 +84,9 @@
 
 <h2>New in Keyman 15.0 (Apr 2022)</h2>
 <ul>
-  <li>General polish, bug fixes, and performance improvements</li>
+  <li>Various tweaks, bug fixes, and performance improvements</li>
+  <li>Fix popup key style and positioning</li>
+  <li>Prevent installation of packages that don't contain compatible keyboard file (#5698)</li>
   <li>Update minimum iOS version to 12.1</li>
 </ul>
 
