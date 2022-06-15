@@ -10,21 +10,24 @@ use Keyman\Site\Common\KeymanHosts;
 // Required
 head([
   'class' => 'keyman11',
-  'title' => 'Keyman 15 is now in Beta!',
+  'title' => 'Keyman 15 is now available!',
   'css' => ['template.css', 'dev.css', 'app-store-links.css', 'prism.css'],
   'js' => ['prism.js'],
   'showMenu' => true,
   'banner' => [
-  'title' => 'Keyman 15.0 Beta',
+  'title' => 'Keyman 15.0 is now available!',
     'image' => 'screenshots/14/typewriter.jpg',
     'background' => 'black'
   ]
 ]);
 ?>
 
-<h2>Announcing the release of Keyman 15.0 Beta</h2>
-<p class="red">2 March 2022</p>
-<p>We are pleased to announce that Keyman 15.0 is now in beta!</p>
+<h2>Announcing the release of Keyman 15.0</h2>
+<p class="red">15 June, 2022</p>
+<p>We are pleased to announce that Keyman 15.0 is now available for download!</p>
+<br>
+
+<p><a href="https://blog.keyman.com/2022/06/keyman-15-0-now-available/">Read our Keyman 15 launch blog post</a></p>
 <br>
 
 <h3>What's New?</h3>
@@ -37,7 +40,8 @@ head([
     <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/language/guide/casing-support">Start of Sentence detection</a> (#5963)
   </li>
 </ul>
-<p>We've made many additional bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>),
+<br/>
+<p>We've made many bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>),
 and are highlighting just a few of them here.</p>
 
 <p>New Localizations - Many Nigerian languages provided by <a href='https://translatorswithoutborders.org/'>Translators Without Borders</a>:</p>
@@ -86,14 +90,16 @@ and are highlighting just a few of them here.</p>
 <h3>Keyman 15.0 Feedback</h3>
 <ul>
   <li>Please send feedback about Keyman 15 to the
-    <a href="https://community.software.sil.org/t/keyman-15-beta-feedback/5755">Keyman Community site</a>.</li>
+    <a href="https://community.software.sil.org/t/c/keyman">Keyman Community site</a> or submit bugs and feature requests to our
+    <a href="https://github.com/keymanapp/keyman/issues/new/choose">Issue Tracker</a>
+  </li>
 </ul>
 <br>
 
 <h1 class='red underline'>User Software</h1>
 
 <?php
-downloadSection('Keyman 15 for Windows',   'windows',     'keyman-$version.exe', 'beta');
+downloadSection('Keyman 15 for Windows',   'windows',     'keyman-$version.exe', 'stable');
 ?>
 
 <h3>What's New in Keyman 15 for Windows?</h3>
@@ -105,7 +111,7 @@ downloadSection('Keyman 15 for Windows',   'windows',     'keyman-$version.exe',
 
 
 <?php
-downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'beta');
+downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 15 for macOS?</h3>
@@ -113,6 +119,7 @@ downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'beta
 <ul>
   <li>Localizable UI through <a href="<?= KeymanHosts::Instance()->translate_keyman_com ?>">translate.keyman.com</a> (#5869)</li>
   <li>Display Unicode package name correctly instead of '????' (#6016)</li>
+  <li>Increase OSK chracter size by 50%
   <li>Add support for M1 processor (#5701)</li>
 </ul>
 
@@ -130,13 +137,16 @@ downloadSection('Keyman 15 for macOS',   'mac',     'keyman-$version.dmg', 'beta
   <li>Support for Ubuntu Jammy 22.04 (#6037) and Impish 21.10 (#5334)</li>
   <li>fcitx5 integration (#5215)</li>
   <li>Improve installation of packages in shared location (#6015)</li>
-  <li>Improvements in Debian packaging</li>
   <li>Automated integration tests with Keyman Core</li>
   <li>Lots of bugfixes</li>
+  <li>Ubuntu, Wasta-Linux: Keyman for Linux can be installed via launchpad:</li>
+  <blockquote><pre class='language-bash code'><code>sudo add-apt-repository ppa:keymanapp/keyman
+sudo apt upgrade
+sudo apt install keyman</code></pre></blockquote>
 </ul>
 
 <?php
-downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'beta');
+downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'stable');
 ?>
 
 <?= $playstoreTable ?>
@@ -144,9 +154,9 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'beta
 <h3>What's new in Keyman 15 for Android?</h3>
 
 <ul>
-  <li>Keyman Engine no longer needs internet access </li>
   <li>English keyboard can now be removed (#5838)</li>
   <li>Add a menu to adjust keyboard height (#5606)</li>
+  <li>Add support for haptic feedback (vibration) when typing (#6626)</li>
   <li>Add a settings option to change the displayed keyboard name on the spacebar</li>
   <li>Improve the globe key experience for switching keyboards (#5437, #5973):
     <ol>
@@ -166,13 +176,15 @@ downloadSection('Keyman 15 for Android', 'android', 'keyman-$version.apk', 'beta
 <h3>What's new in Keyman 15 for iPhone and iPad?</h3>
 
 <ul>
-  <li>General polish, bug fixes, and performance improvments</li>
+  <li>Various tweaks, bug fixes, and performance improvements</li>
+  <li>Fix popup key style and positioning (#6383)</li>
+  <li>Prevent installation of packages that don't contain a compatible keyboard file (#5698)</li>
   <li>Update minimum iOS version to 12.1 (#5165)</li>
 </ul>
 
 
 <?php
-downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'beta');
+downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 15?</h3>
@@ -189,15 +201,30 @@ downloadSection('KeymanWeb 15', 'web', 'keymanweb-$version.zip', 'beta');
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version.exe', 'beta');
+downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 15?</h3>
 
+<h3>Breaking changes for keyboard developers</h3>
+
+<p>We work hard to minimize the potential for breaking changes to Keyman. We sometimes must make a change which may
+not be 100% backwardly compatible, either to correct a bug, or to address security issues. Breaking changes are changes
+which may prevent an existing keyboard from building without modification with the new compiler. The following issues are
+known breaking changes in Keyman 15.0 for keyboard developers:</p>
+
+<ul>
+  <li>Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use -- [blog post](https://blog.keyman.com/2022/04/how-to-resolve-caps-and-ncaps-ambiguity-in-keyman-keyboards/) (#6347)</li>
+</ul>
+
+<p>Other changes for Keyman Developer:</p>
+
 <ul>
   <li>Core-based debugger (#5425, #5448, #5513)</li>
   <li>Keyman Developer Server (#6033,#6034,#6035,#6036)</li>
+  <li>Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use (#6347)</li>
   <li>Improved native-mode debugger (#5696, #5640, #5647)</li>
+  <li>Improve drag+drop integration of keys with the Touch Layout Editor (#6435)</li>
   <li>Web test no longer needs Developer tools for touch testing (#5723)</li>
   <li>
     Add support for <code class='language-java'>U_xxxx_yyyy_...</code>
@@ -210,32 +237,24 @@ downloadSection('Keyman Developer 15',    'developer', 'keymandeveloper-$version
 
 <br>
 
-<h3>Breaking changes for keyboard developers</h3>
+<h3>Changes for Keyman Engine</h3>
 
 <p>We work hard to minimize the potential for breaking changes to Keyman. We sometimes must make a change which may
 not be 100% backwardly compatible, either to correct a bug, or to address security issues. The following issues are
-known breaking changes in Keyman 15.0:</p>
+known breaking changes in Keyman Engine 15.0:</p>
 
 <ul>
-  <li>Keyman for Android now enforces minimum Chrome version 37.0 (#5017)</li>
-  <li>KeymanWeb's OSK field (keyman.osk) is now only available after the promise returned from keyman.init is fulfilled (#5412)
+  <li>Breaking: Keyman for Android now enforces minimum Chrome version 37.0 (#5017)</li>
+  <li>Breaking: KeymanWeb's OSK property (keyman.osk) is now only available after the promise returned from keyman.init is fulfilled (#5412)
 </ul>
 
-<br>
-
-<h3>Changes for Keyman Engine</h3>
+<p>Other changes for Keyman Engine 15.0:</p>
 
 <ul>
   <li>Keyman Engine for Android no longer needs internet access</li>
-  <li>
-    Infrastructure for WASM - for future LDML keyboard support (#5233)
-  </li>
-  <li>
-    Inline On Screen Keyboard (#5665)
-  </li>
-  <li>
-    Improved security in incxstr / decxstr
-  </li>
+  <li>Infrastructure for WASM - for future LDML keyboard support (#5233)</li>
+  <li>Inline On Screen Keyboard (#5665)</li>
+  <li>Improved security in incxstr / decxstr</li>
 </ul>
 
 <h2>Get Involved</h2>

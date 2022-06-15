@@ -109,6 +109,25 @@
 </table>
 
 <br/>
+<h3>New in Keyman for Android 15.0 (Apr 2022)</h3>
+
+<ul>
+  <li>Keyman Engine no longer needs internet access </li>
+  <li>English keyboard can now be removed</li>
+  <li>Add a menu to adjust keyboard height</li>
+  <li>Add support for haptic feedback (vibration) when typing</li>
+  <li>Add a settings option to change the displayed keyboard name on the spacebar</li>
+  <li>Improve the globe key experience for switching keyboards:
+    <ol>
+      <li>Short press and release the globe key to immediately switch to next keyboard</li>
+      <li>Long press and release the globe key to bring up the keyboard picker menu</li>
+      <li>Allow switching to other system IME's in the keyboard picker menu</li>
+    </ol>
+  </li>
+  <li>Select numeric layer when entering a number field</li>
+</ul>
+
+<br/>
 <h3>New in Keyman for Android 14.0 (Mar 2021)</h3>
 
 <ul>
