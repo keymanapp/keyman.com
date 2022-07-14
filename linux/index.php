@@ -232,6 +232,6 @@ sudo apt install ibus-kmfl</code></pre>
     <span class="red">Q.</span> Are there any known issues?
 </p>
 <p>
-    <span class="red">A.</span> All known issues are listed in our <a href='https://github.com/keymanapp/keyman/issues?q=is%3Aopen+is%3Aissue+label%3Alinux'>GitHub repository</a>.
+    <span class="red">A.</span> All known issues are listed in our <a href='https://github.com/keymanapp/keyman/issues?q=is%3Aopen+is%3Aissue+label%3Alinux/'>GitHub repository</a>.
 </p>
 <br/>
