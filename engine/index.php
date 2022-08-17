@@ -85,7 +85,9 @@
   <a href='/downloads/#android-engine'>Get the Keyman Engine for Android SDK now</a>
 </p>
 <br/>
-<h3 class='red underline'>Keyboard App Builder</h3>
+
+<hr>
+<h2 class='red underline'>Keyboard App Builder</h2>
 <p>
   <a href='https://software.sil.org/keyboardappbuilder/' target='_blank'>Keyboard App Builder</a> (KAB) provides a zero-code
   method of distributing a Keyman keyboard bundled as an app for Android devices. KAB provides a wizard to build a simple app

@@ -193,6 +193,13 @@
   support for various languages and scripts. BrowserStack is an awesome tool to automatically test your website across
   thousands of different devices and browsers, instantly. They have kindly sponsored us with
   a free plan as a way of supporting the open source development of KeymanWeb! Many thanks, BrowserStack :)
+
+  <br />
+  <img src="<?= cdn("img/sentry-wordmark-dark-400x119.svg"); ?>" />
+  <br />
+  Keyman uses <a href='https://sentry.io'>Sentry</a> for error monitoring. Thank you to Sentry for sponsoring the Keyman
+  project with a free plan!
+
 </p>
 
 <br style="clear:both" />

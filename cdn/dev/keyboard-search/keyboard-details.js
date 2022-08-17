@@ -8,11 +8,15 @@
   const params = typeof URLSearchParams == 'function' ?
     new URLSearchParams(location.search) : null;
   const bowserParser = bowser.getParser(window.navigator.userAgent);
-  const platform = params && params.get('platform-override') ?
-    params.get('platform-override') :
-    bowserParser.getOSName({toLowerCase: true});
   const browser = bowserParser.getBrowser();
   const engine = bowserParser.getEngine();
+  const os = bowserParser.getOSName({toLowerCase: true});
+  const platform = params && params.get('platform-override') ?
+    params.get('platform-override') :
+    (
+      // Detect iOS Safari in 'Desktop Mode' -- we still want iOS downloads!
+      os == 'macos' && navigator.maxTouchPoints > 1 && browser == 'Safari' ? 'ios' : os
+    );
 
   document.documentElement.setAttribute("data-platform",
     platform === 'chrome os' ? 'android' : // This is not ideal but works on most Chromebooks for now
