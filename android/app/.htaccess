@@ -1,0 +1,3 @@
+
+# Redirect /android/app to help.keyman.com
+RedirectMatch ".*" "https://help.keyman.com/products/android/"

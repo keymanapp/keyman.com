@@ -1,0 +1,4 @@
+
+# Redirect /archive/downloads.php"
+# TODO: Permanent
+RedirectMatch "/archive/downloads.php" "/downloads/archive/"

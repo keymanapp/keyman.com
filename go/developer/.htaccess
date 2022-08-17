@@ -1,0 +1,53 @@
+
+# Links for Developer 10.0 onward
+
+# "/go/developer/X.Y/help-keyboards"
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/help-keyboards" "https://help.keyman.com/developer/keyboards/"
+
+
+# Direct help to the major version
+# "/go/developer/X.Y/help-(mobile|packages)"
+RedirectMatch "/go/developer/([1-9][0-9])\.([0-9])/help-(mobile|packages)" "https://help.keyman.com/developer/$1.0/guides/distribute/packages"
+
+# "/go/developer/X.Y/keymanweb"
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/keymanweb" "/developer/keymanweb/"
+
+# "/go/developer/X.Y/keyman-engine-home"
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/keyman-engine-home" "/engine/"
+
+                
+# "/go/developer/X.Y/language-lookup"
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/language-lookup" "https://www.ethnologue.com/"
+
+
+# "/go/developer/X.Y/view-exception/ to /contact/exception"
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/view-exception(/)?$" "/contact/exception.php"
+
+
+# "/go/developer/X.Y/view-exception?id="
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/view-exception?id=(.+)$" "/contact/exception.php?id=$2"
+
+
+# Context-sensitive help in Keyman Developer
+
+# "/go/developer/X.Y/docs/language" <!-- kmn language redirect -->
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/docs/language(\/?(.*))" "https://help.keyman.com/developer/language/$3"
+
+
+# All other context help, direct to the major version
+# "/go/developer/X.Y/docs"
+RedirectMatch "/go/developer/([1-9][0-9])\.[0-9]/docs(\/?(.*))" "https://help.keyman.com/developer/$1.0/$3"
+
+
+# "/go/developer/X.Y/home"
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/home" "/developer/"
+
+                
+# "/go/developer/X.Y/ios-app"
+# see includes/appstore.php
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/ios-app" "https://itunes.apple.com/us/app/keyman/id933676545?ls=1&amp;mt=8"
+
+
+# "/go/developer/X.Y/android-app"
+# see includes/playstore.php
+RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/android-app" "https://play.google.com/store/apps/details?id=com.tavultesoft.kmapro"

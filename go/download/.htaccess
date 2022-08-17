@@ -1,0 +1,5 @@
+
+# Links for Developer 10.0 onward
+
+# /go/download/program
+RedirectMatch "/go/download/(?!_download.php)(.+)" "/go/download/_download.php?object=$1"

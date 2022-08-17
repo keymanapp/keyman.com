@@ -5,7 +5,7 @@ php_value include_path "/var/www/html/_includes:."
 
 RewriteEngine on
 
-# TODO: SSL
+# TODO: SSL and WWW
 
 
 # TODO: Add 301 permanent redirects, append query strings
@@ -30,12 +30,55 @@ RedirectMatch "(?i)desktop(\/.*)?" "/windows$1"
 # Keyboard landing pages (TODO)
 #
 
+# Cleanup various URLS with permanent redirects
+
+# /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
+RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "keyboards/$1/$2"
+
+# /keyboards/{id}/ to /keyboards/id
+RedirectMatch "^keyboards/([^/]+)/$" "keyboards/$1"
+
+# /keyboards/ to /keyboards
+RedirectMatch "^keyboards/$" "keyboards"
+
+# Old share url /keyboards/{id}/share[/] to /keyboards/share/id
+RedirectMatch "^keyboards/(?!install|download|share)/share(/?)$" "/keyboards/share/$1"
+
+# /keyboard/{content} to /keyboards/...
+RedirectMatch "/keyboard(/.*)$" "/keyboards$1"
+
+#
+# Install | Download | Share | bare | .json -->
+#
+
+# /keyboards/install/[id] to /keyboards/install.php
+#RewriteRule "^keyboards/install/([^/]+)$" "https://keyman.com/keyboards/install.php?id=$1"
+
+
+#
+# Search
+#
+
+# /keyboards?q=... to /keyboards/index.php
+RewriteRule "^keyboards$" "keyboards/index.php" [L]
+
+# /keyboards/languages to /keyboards/index.php
+RewriteRule "^keyboards/languages/(.*)" "keyboards/index.php?q=l:id:$1" [L]
+
+# /keyboards/download to /keyboards/download.php
+RewriteRule "^keyboards/download(.php)?" "keyboards/download.php" [L]
+
+# /keyboards/legacy to /keyboards/keyboard.php
+RewriteRule "^keyboards/legacy/(.*)" "keyboards/keyboard.php?legacy=$1" [L]
+
+# /keyboards/countries to /keyboards/index.php
+RewriteRule "^keyboards/countries/(.*)" "keyboards/index.php?q=c:id:$1" [L]
 
 # Synonym paths
 
 # 10.0 to 15.0 
 # /1X.0 to /1X landing page
-RedirectMatch "/1([0-5])(\.0)\/?" "/1$1/"
+RedirectMatch "^/1([0-5])(\.0)\/?" "/1$1/"
 
 # ios
 RedirectMatch "/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$2"
