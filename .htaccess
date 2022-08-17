@@ -1,0 +1,126 @@
+# This file is used when running with Apache. Adapted from web.config.
+# NOTE: this is not very well tested...
+
+php_value include_path "/var/www/html/_includes:."
+
+RewriteEngine on
+
+# TODO: SSL
+
+
+# TODO: Add 301 permanent redirects, append query strings
+
+# macosx and macos to mac" (ignore case)
+RedirectMatch "(?i)/(macosx|macos)\b(.*)$" "/mac$2"
+
+# Redirect deprecated Google Plus link
+RedirectMatch "(?i)/plus.*" "/"
+
+# /donate -> donate.keyman.com
+RedirectMatch "(?i)/donate(\/.*)?" "https://donate.keyman.com"
+
+# /privacy -> SIL Privacy policy
+RedirectMatch "(?i)/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
+
+# desktop to windows
+RedirectMatch "(?i)desktop(\/.*)?" "/windows$1"
+
+
+#
+# Keyboard landing pages (TODO)
+#
+
+
+# Synonym paths
+
+# 10.0 to 15.0 
+# /1X.0 to /1X landing page
+RedirectMatch "/1([0-5])(\.0)\/?" "/1$1/"
+
+# ios
+RedirectMatch "/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$2"
+
+# Connect With Art landing page
+RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
+
+# per-language landing pages
+RedirectMatch "/albanian(\/?)$"         "/keyboards/basic_kbdal"
+RedirectMatch "/ancient-egyptian(\/?)$" "/keyboards/hieroglyphic"
+RedirectMatch "/ancient-hebrew(\/?)$"   "/keyboards/galaxie_greek_hebrew_mnemonic"
+RedirectMatch "/arabic(\/?)$"           "/keyboards/basic_kbda1"
+RedirectMatch "/assamese(\/?)$"         "/keyboards/isis_bangla"
+RedirectMatch "/basic_kbdsn1(\/?)$"     "/keyboards/basic_kbdsn1"
+RedirectMatch "/bengali(\/?)$"          "/keyboards/basic_kbdinbe2"
+RedirectMatch "/cherokee(\/?)$"         "/keyboards/cherokee6"
+RedirectMatch "/cheyenne(\/?)$"         "/keyboards/sil_cheyenne"
+RedirectMatch "/dinka(\/?)$"            "/keyboards/el_dinka"
+RedirectMatch "/dutch(\/?)$"            "/keyboards/basic_kbdne"
+RedirectMatch "/farsi(\/?)$"            "/keyboards/farsi_unicode"
+RedirectMatch "/hebrew(\/?)$"           "/keyboards/basic_kbdheb"
+RedirectMatch "/hindi(\/?)$"           "/keyboards/basic_kbdindev"
+RedirectMatch "/igbo(\/?)$"            "/keyboards/sil_nigeria_dot"
+RedirectMatch "/khmer(\/?)$"           "/keyboards/khmer_angkor"
+RedirectMatch "/lao(\/?)$"             "/keyboards/basic_kbdlao"
+RedirectMatch "/malayalam(\/?)$"       "/keyboards/basic_kbdinmal"
+RedirectMatch "/maltese(\/?)$"         "/keyboards/maltese"
+RedirectMatch "/marathi(\/?)$"         "/keyboards/basic_kbdinmar"
+RedirectMatch "/mongolian(\/?)$"       "/keyboards/basic_kbdmon"
+RedirectMatch "/nepali(\/?)$"          "/keyboards/basic_kbdnepr"
+RedirectMatch "/oriya(\/?)$"           "/keyboards/basic_kbdinori"
+RedirectMatch "/rawang(\/?)$"          "/keyboards/rawang"
+RedirectMatch "/russian(\/?)$"         "/keyboards/basic_kbdru"
+RedirectMatch "/serbian(\/?)$"         "/keyboards/basic_kbdycc"
+RedirectMatch "/sindhi(\/?)$"          "/keyboards/mbsindhi"
+RedirectMatch "/thai(\/?)$"            "/keyboards/thai-uni"
+RedirectMatch "/yiddish(\/?)$"         "/keyboards/yiddish_pasekh"
+RedirectMatch "/yoruba(\/?)$"          "/keyboards/sil_yoruba8"
+
+RedirectMatch "/ancient-greek(\/?)$"    "/keyboards/h/greek"
+RedirectMatch "/(french|german|italian|spanish|swedish)(\/?)$"       "/keyboards/h/eurolatin"
+
+# dedicated-keyboard-landing pages
+RedirectMatch "/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(\/.*)?$" "/keyboards/h/$1$2"
+
+#
+# PHP and Markdown rewriting
+#
+
+# Remove index or index.php and redirect (and stop processing)
+RewriteRule "^((.+)/)?index(\.php)?$" "$1" [R,L]
+
+# Remove .php extension and redirect
+RewriteCond "%{DOCUMENT_ROOT}/$1" -f
+RewriteRule "^(.+)\.php$" "$1" [R,L]
+
+
+# Redirect folder without / to include /
+RewriteCond "$1" -d
+RewriteCond "%{DOCUMENT_ROOT}/$1.php" !-f
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
+RewriteRule "^(.+[^/])$" "$1/" [R,L]
+
+#
+# PHP rewriting
+#
+
+# Rewrite file to file.md
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
+RewriteRule "^(.+)$" "/_includes/md/mdhost.php?file=$1.md"
+
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
+RewriteRule "^(.+)\.md$" "/_includes/md/mdhost.php?file=$1.md"
+
+# Rewrite file to file.php
+RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
+RewriteRule "^(.+)$" "$1.php"
+
+# Rewrite folder/ to folder/index.md
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
+#RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" !-f # not needed?
+RewriteRule "^(.+)/$" "/_includes/md/mdhost.php?file=$1/index.md"
+
+# Rewrite folder/ to folder/index.php - Infinite redirection?
+#RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
+#RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" !-f
+#RewriteRule "^(.+)/$" "$1/index.php"
