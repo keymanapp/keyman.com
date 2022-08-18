@@ -73,7 +73,7 @@
 
 <p dir="ltr">The Tavultesoft mailing list has now been closed down. If you would like to keep in touch, here are some options:</p>
 
-<ol>
+<ul>
   <li>Keep in touch with the Durdins through&nbsp;<a href="https://durdin.net/">https://durdin.net/</a></li>
   <li>Sign up with the SIL Keyman mailing list at&nbsp;<a href="<?= KeymanHosts::Instance()->keyman_com ?>/about/list.php"><?= KeymanHosts::Instance()->keyman_com_host ?>/about/list.php</a></li>
   <li>Be a part of the communities on
@@ -81,4 +81,4 @@
     <a href='https://twitter.com/keyman'>Twitter</a>,
     <a href='https://community.software.sil.org/c/keyman'>SIL Language Software Community</a>.
   </li>
-</ol>
+</ul>

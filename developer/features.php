@@ -29,17 +29,19 @@
     <h2 class="red underline">What's New</h2>
 
     <ul>
-      <li>Improve how casing is handled for lexical-models (#3770)</li>
-      <li>Lexical models may now specify the '<code>languageUsesCasing</code>' flag (and, optionally, an '<code>applyCasing()</code>' function).
-        These will allow predictive-text suggestions to detect and preserve capitalization when appropriate (#4291, 4299).</li>
-      <li>Add support for notany() and context() (#3816)</li>
-      <li>Remove IE dependency from Developer setup (#3839)</li>
-      <li>New touch layout special key caps *RTLEnter*, *RTLBkSp*, *ZWNJ*, ... (#3878)</li>
-      <li>Improved BCP 47 support and script mapping (#3818, #4563)</li>
-      <li>Model compiler merges duplicate words and normalizes when compiling (#3338)</li>
-      <li>Support ISO9995 key identifiers (e.g. E01) (#2741)</li>
-      <li><a href="https://help.keyman.com/developer/language/guide/expansions">Range expansions</a> (#4584)</li>
-      <li><a href="https://help.keyman.com/developer/language/reference/casedkeys">&amp;CasedKeys store</a> (#4586)</li>
+      <li>Core-based debugger (#5425, #5448, #5513)</li>
+      <li>Keyman Developer Server (#6033,#6034,#6035,#6036)</li>
+      <li>Improved native-mode debugger (#5696, #5640, #5647)</li>
+      <li>Improve drag+drop integration of keys with the Touch Layout Editor (#6435)</li>
+      <li>Web test no longer needs Developer tools for touch testing (#5723)</li>
+      <li>
+        Add support for <code class='language-java'>U_xxxx_yyyy_...</code>
+        identifiers so you can emit more than a single Unicode character with
+        touch keys without additional kmn code (#5894)
+      </li>
+      <li>Keyman Developer debugger no longer depends on Keyman for Windows (#5588)</li>
+      <li>live reload of web debugger (#6035)</li>
+      <li>Breaking Change: Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use -- [blog post](https://blog.keyman.com/2022/04/how-to-resolve-caps-and-ncaps-ambiguity-in-keyman-keyboards/) (#6347)</li>
     </ul>
 
   </div>
@@ -87,9 +89,9 @@
     <br/><br/>
 
     <h3 class="red">Smart Character Map</h3>
-    <p>Fully Unicode 13.0: access every character in the newest version of the Unicode Standard from the Keyman Character
+    <p>Fully Unicode <?= $unicode_version; ?>: access every character in the newest version of the Unicode Standard from the Keyman Character
       Map. </p>
-    <p>Double-Click Insert: insert over 136,000 letters and symbols with a double-click. Say goodbye to multi-step
+    <p>Double-Click Insert: insert over 144,000 letters and symbols with a double-click. Say goodbye to multi-step
       clipboard actions.</p>
     <p>Intelligent Search: With so many Unicode characters available, there's several ways to search and filter for the
         characters in your language: partial name match, by Unicode range, block, font, or code point,

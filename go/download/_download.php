@@ -22,14 +22,17 @@
     Util::Fail("Error: tier must be alpha, beta or stable");
   }
 
-  $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->downloads_keyman_com . '/api/version/2.0'));
+  if(isset($_REQUEST['version'])) {
+    $DEVELOPER_VERSION = $_REQUEST['version'];
+    $WINDOWS_VERSION = $_REQUEST['version'];
+    $MAC_VERSION = $_REQUEST['version'];
+  } else {
+    $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->downloads_keyman_com . '/api/version/2.0'));
 
-  $DEVELOPER_VERSION = $versions->developer->$TIER->version;
-  $WINDOWS_VERSION = $versions->windows->$TIER->version;
-  $MAC_VERSION = $versions->mac->$TIER->version;
-
-  $kmcompVersion = 'kmcomp-$VERSION.zip';
-  $keymandeveloperVersion = 'keymandeveloper-$VERSION.exe';
+    $DEVELOPER_VERSION = $versions->developer->$TIER->version;
+    $WINDOWS_VERSION = $versions->windows->$TIER->version;
+    $MAC_VERSION = $versions->mac->$TIER->version;
+  }
 
   $packages = [
     "kmcomp" => ["developer", $DEVELOPER_VERSION, "kmcomp-$DEVELOPER_VERSION.zip"],

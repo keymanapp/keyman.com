@@ -40,6 +40,9 @@
   $stable_version = KeymanVersion::stable_version;
   $beta_version = KeymanVersion::beta_version;
 
+  global $unicode_version;
+  $unicode_version = KeymanVersion::unicode_version;
+
   function betaTier() {
     return KeymanVersion::IsBetaTier();
   }
