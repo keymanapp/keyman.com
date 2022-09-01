@@ -5,7 +5,15 @@ php_value include_path "/var/www/html/_includes:."
 
 RewriteEngine on
 
-# TODO: SSL and WWW
+# Redirect http://keyman.com to https://keyman.com,
+# but only if on a live site (keyman.com) and not
+# matching `/.well-known/(.*)$` (for Let's Encrypt)
+<If "%{REQUEST_SCHEME} == 'http' && %{HTTP_HOST} == 'keyman.com' && %{REQUEST_URI} !~ m#^/.well-known/(.*)$#" >
+    Redirect "/" "https://keyman.com"
+</If>
+
+# Custom error messages
+# ErrorDocument 404 /_includes/errors/404.php
 
 
 # TODO: Add 301 permanent redirects, append query strings
@@ -32,14 +40,21 @@ RedirectMatch "(?i)desktop(\/.*)?" "/windows$1"
 
 # Cleanup various URLS with permanent redirects
 
+# TODO: Permanent redirects 301?
+
+
+# Stop processing dedicated keyboard landing pages
+#RewriteRule "^keyboards/h/.*$" - [L] 
+
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
-RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "keyboards/$1/$2"
+#RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
+RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R,L]
 
 # /keyboards/{id}/ to /keyboards/id
-RedirectMatch "^keyboards/([^/]+)/$" "keyboards/$1"
+RedirectMatch "^keyboards/([^/]+)/$" "/keyboards/$1"
 
 # /keyboards/ to /keyboards
-RedirectMatch "^keyboards/$" "keyboards"
+RedirectMatch "^keyboards/$" "/keyboards"
 
 # Old share url /keyboards/{id}/share[/] to /keyboards/share/id
 RedirectMatch "^keyboards/(?!install|download|share)/share(/?)$" "/keyboards/share/$1"
@@ -52,7 +67,22 @@ RedirectMatch "/keyboard(/.*)$" "/keyboards$1"
 #
 
 # /keyboards/install/[id] to /keyboards/install.php
-#RewriteRule "^keyboards/install/([^/]+)$" "https://keyman.com/keyboards/install.php?id=$1"
+RewriteRule "^keyboards/install/([^/]+)$" "/keyboards/install.php?id=$1" [L]
+
+# /keyboards/download/[id] to /keyboards/keyboard.php
+# This formerly redirected to a download, but we no longer need it; keep it for
+# legacy links
+RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
+
+# /keyboards/share/[id] to /keyboards/share.php
+# if the keyboard exists in the repo, then share.php will redirecct to /keyboards/<id>
+RewriteRule "^keyboards/share/(^/]+)$" "/keyboards/share.php?id=$1" [L]
+
+# /keyboards/{id}.json to /keyboards/keyboard.json.php
+RewriteRule "^keyboards/(.*)\.json$" "/keyboards/keyboard.json.php?id=$1"
+
+# /keyboards/{id} to /keyboards/keyboard.php
+RewriteRule "^keyboards/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
 
 
 #
@@ -60,19 +90,19 @@ RedirectMatch "/keyboard(/.*)$" "/keyboards$1"
 #
 
 # /keyboards?q=... to /keyboards/index.php
-RewriteRule "^keyboards$" "keyboards/index.php" [L]
+RewriteRule "^keyboards$" "/keyboards/index.php" [L]
 
 # /keyboards/languages to /keyboards/index.php
-RewriteRule "^keyboards/languages/(.*)" "keyboards/index.php?q=l:id:$1" [L]
+RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [L]
 
 # /keyboards/download to /keyboards/download.php
-RewriteRule "^keyboards/download(.php)?" "keyboards/download.php" [L]
+RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [L]
 
 # /keyboards/legacy to /keyboards/keyboard.php
-RewriteRule "^keyboards/legacy/(.*)" "keyboards/keyboard.php?legacy=$1" [L]
+RewriteRule "^keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1" [L]
 
 # /keyboards/countries to /keyboards/index.php
-RewriteRule "^keyboards/countries/(.*)" "keyboards/index.php?q=c:id:$1" [L]
+RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [L]
 
 # Synonym paths
 
@@ -129,39 +159,42 @@ RedirectMatch "/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|t
 #
 
 # Remove index or index.php and redirect (and stop processing)
-RewriteRule "^((.+)/)?index(\.php)?$" "$1" [R,L]
+RewriteCond "$1/index" -f [OR]
+RewriteCond "$1/index.php" -f
+RewriteRule "^((.+)/)?index(\.php)?$" "/$1" [R,L]
 
 # Remove .php extension and redirect
-RewriteCond "%{DOCUMENT_ROOT}/$1" -f
+RewriteCond "$1.php" -f
 RewriteRule "^(.+)\.php$" "$1" [R,L]
 
 
 # Redirect folder without / to include /
 RewriteCond "$1" -d
-RewriteCond "%{DOCUMENT_ROOT}/$1.php" !-f
-RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
+RewriteCond "$1.php" !-f
+RewriteCond "$1.md" !-f
 RewriteRule "^(.+[^/])$" "$1/" [R,L]
 
 #
 # PHP rewriting
 #
 
+# TODO: mdhost currently in a different path than help.keyman
+
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
-RewriteRule "^(.+)$" "/_includes/md/mdhost.php?file=$1.md"
+RewriteRule "^(.+)$" "/_includes/includes/md/mdhost.php?file=$1.md"
 
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
-RewriteRule "^(.+)\.md$" "/_includes/md/mdhost.php?file=$1.md"
+RewriteRule "^(.+)\.md$" "/_includes/includes/md/mdhost.php?file=$1.md"
 
 # Rewrite file to file.php
 RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
-RewriteRule "^(.+)$" "$1.php"
 
 # Rewrite folder/ to folder/index.md
 RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
 #RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" !-f # not needed?
-RewriteRule "^(.+)/$" "/_includes/md/mdhost.php?file=$1/index.md"
+RewriteRule "^(.+)/$" "/_includes/includes/md/mdhost.php?file=$1/index.md"
 
 # Rewrite folder/ to folder/index.php - Infinite redirection?
 #RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
