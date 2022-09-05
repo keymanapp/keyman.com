@@ -9,7 +9,7 @@
         "phpunit/phpunit": "^9.2"
     },
     "scripts": {
-      "test": "vendor\\bin\\phpunit --testdox",
+      "test": "vendor/bin/phpunit --testdox",
       "check-links": [
         "Composer\\Config::disableProcessTimeout",
         "npx broken-link-checker http://keyman.com.local --ordered --recursive --host-requests 10 -e --filter-level 3"
