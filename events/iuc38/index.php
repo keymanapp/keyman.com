@@ -1,5 +1,13 @@
-<html>
-<body>
+<?php
+  require_once('includes/template.php');
+
+  // Required
+  head([
+    'title' => 'Unicode Conference IUC38 - Keyboard Futures presentation and demos',
+    'showMenu' => false
+  ]);
+?>
+
  <h1>Unicode Conference IUC38 - Keyboard Futures presentation and demos</h1>
  
  <p><a href='keyboardfutures_iuc38.pdf'>Keyboard Futures Presentation (PDF)</a></p>
@@ -13,5 +21,3 @@
  <a href='Thai Satellite/thai-satellite-mockup.html'>Thai Satellite (cut down)</a><br>
  <hr>
  <p>9 November 2014</p>
-</body>
-</html>
