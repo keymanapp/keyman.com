@@ -4,6 +4,7 @@
 php_value include_path "/var/www/html/_includes:."
 
 RewriteEngine on
+RewriteBase /
 
 # Redirect http://keyman.com to https://keyman.com,
 # but only if on a live site (keyman.com) and not
@@ -43,24 +44,23 @@ RedirectMatch "^(?i)/desktop(/.*)?" "/windows$1"
 # TODO: Permanent redirects 301?
 
 
-# Stop processing dedicated keyboard landing pages
-#RewriteRule "^keyboards/h/.*$" - [L] 
-
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
 #RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
 RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R,L]
 
 # /keyboards/{id}/ to /keyboards/id
-RedirectMatch "^keyboards/([^/]+)/$" "/keyboards/$1"
+# Remove final /
+RedirectMatch "^keyboards/(?!h/|keyboard.php)([^/]+)/$" "/keyboards/$1"
 
 # /keyboards/ to /keyboards
+# Remove final /
 RedirectMatch "^keyboards/$" "/keyboards"
 
 # Old share url /keyboards/{id}/share[/] to /keyboards/share/id
 RedirectMatch "^keyboards/(?!install|download|share)/share(/?)$" "/keyboards/share/$1"
 
 # /keyboard/{content} to /keyboards/...
-RedirectMatch "/keyboard(/.*)$" "/keyboards$1"
+RedirectMatch "^/keyboard(/.*)$" "/keyboards$1"
 
 #
 # Install | Download | Share | bare | .json -->
@@ -82,7 +82,7 @@ RewriteRule "^keyboards/share/(^/]+)$" "/keyboards/share.php?id=$1" [L]
 RewriteRule "^keyboards/(.*)\.json$" "/keyboards/keyboard.json.php?id=$1"
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteRule "^keyboards/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
+RewriteRule "^keyboards/(?!h/|index.php|keyboard.php|share.php)([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
 
 
 #
@@ -104,6 +104,7 @@ RewriteRule "^keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1" [L]
 # /keyboards/countries to /keyboards/index.php
 RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [L]
 
+
 # Synonym paths
 
 # 10.0 to 15.0 
@@ -117,42 +118,42 @@ RedirectMatch "/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$2
 RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
 
 # per-language landing pages
-RedirectMatch "/albanian(\/?)$"         "/keyboards/basic_kbdal"
-RedirectMatch "/ancient-egyptian(\/?)$" "/keyboards/hieroglyphic"
-RedirectMatch "/ancient-hebrew(\/?)$"   "/keyboards/galaxie_greek_hebrew_mnemonic"
-RedirectMatch "/arabic(\/?)$"           "/keyboards/basic_kbda1"
-RedirectMatch "/assamese(\/?)$"         "/keyboards/isis_bangla"
-RedirectMatch "/basic_kbdsn1(\/?)$"     "/keyboards/basic_kbdsn1"
-RedirectMatch "/bengali(\/?)$"          "/keyboards/basic_kbdinbe2"
-RedirectMatch "/cherokee(\/?)$"         "/keyboards/cherokee6"
-RedirectMatch "/cheyenne(\/?)$"         "/keyboards/sil_cheyenne"
-RedirectMatch "/dinka(\/?)$"            "/keyboards/el_dinka"
-RedirectMatch "/dutch(\/?)$"            "/keyboards/basic_kbdne"
-RedirectMatch "/farsi(\/?)$"            "/keyboards/farsi_unicode"
-RedirectMatch "/hebrew(\/?)$"           "/keyboards/basic_kbdheb"
-RedirectMatch "/hindi(\/?)$"           "/keyboards/basic_kbdindev"
-RedirectMatch "/igbo(\/?)$"            "/keyboards/sil_nigeria_dot"
-RedirectMatch "/khmer(\/?)$"           "/keyboards/khmer_angkor"
-RedirectMatch "/lao(\/?)$"             "/keyboards/basic_kbdlao"
-RedirectMatch "/malayalam(\/?)$"       "/keyboards/basic_kbdinmal"
-RedirectMatch "/maltese(\/?)$"         "/keyboards/maltese"
-RedirectMatch "/marathi(\/?)$"         "/keyboards/basic_kbdinmar"
-RedirectMatch "/mongolian(\/?)$"       "/keyboards/basic_kbdmon"
-RedirectMatch "/nepali(\/?)$"          "/keyboards/basic_kbdnepr"
-RedirectMatch "/oriya(\/?)$"           "/keyboards/basic_kbdinori"
-RedirectMatch "/rawang(\/?)$"          "/keyboards/rawang"
-RedirectMatch "/russian(\/?)$"         "/keyboards/basic_kbdru"
-RedirectMatch "/serbian(\/?)$"         "/keyboards/basic_kbdycc"
-RedirectMatch "/sindhi(\/?)$"          "/keyboards/mbsindhi"
-RedirectMatch "/thai(\/?)$"            "/keyboards/thai-uni"
-RedirectMatch "/yiddish(\/?)$"         "/keyboards/yiddish_pasekh"
-RedirectMatch "/yoruba(\/?)$"          "/keyboards/sil_yoruba8"
+RedirectMatch "^/albanian(/?)$"         "/keyboards/basic_kbdal"
+RedirectMatch "^/ancient-egyptian(/?)$" "/keyboards/hieroglyphic"
+RedirectMatch "^/ancient-hebrew(/?)$"   "/keyboards/galaxie_greek_hebrew_mnemonic"
+RedirectMatch "^/arabic(/?)$"           "/keyboards/basic_kbda1"
+RedirectMatch "^/assamese(/?)$"         "/keyboards/isis_bangla"
+RedirectMatch "^/basic_kbdsn1(/?)$"     "/keyboards/basic_kbdsn1"
+RedirectMatch "^/bengali(/?)$"          "/keyboards/basic_kbdinbe2"
+RedirectMatch "^/cherokee(/?)$"         "/keyboards/cherokee6"
+RedirectMatch "^/cheyenne(/?)$"         "/keyboards/sil_cheyenne"
+RedirectMatch "^/dinka(/?)$"            "/keyboards/el_dinka"
+RedirectMatch "^/dutch(/?)$"            "/keyboards/basic_kbdne"
+RedirectMatch "^/farsi(/?)$"            "/keyboards/farsi_unicode"
+RedirectMatch "^/hebrew(/?)$"           "/keyboards/basic_kbdheb"
+RedirectMatch "^/hindi(/?)$"           "/keyboards/basic_kbdindev"
+RedirectMatch "^/igbo(/?)$"            "/keyboards/sil_nigeria_dot"
+RedirectMatch "^/khmer(/?)$"           "/keyboards/khmer_angkor"
+RedirectMatch "^/lao(/?)$"             "/keyboards/basic_kbdlao"
+RedirectMatch "^/malayalam(/?)$"       "/keyboards/basic_kbdinmal"
+RedirectMatch "^/maltese(/?)$"         "/keyboards/maltese"
+RedirectMatch "^/marathi(/?)$"         "/keyboards/basic_kbdinmar"
+RedirectMatch "^/mongolian(/?)$"       "/keyboards/basic_kbdmon"
+RedirectMatch "^/nepali(/?)$"          "/keyboards/basic_kbdnepr"
+RedirectMatch "^/oriya(/?)$"           "/keyboards/basic_kbdinori"
+RedirectMatch "^/rawang(/?)$"          "/keyboards/rawang"
+RedirectMatch "^/russian(/?)$"         "/keyboards/basic_kbdru"
+RedirectMatch "^/serbian(/?)$"         "/keyboards/basic_kbdycc"
+RedirectMatch "^/sindhi(/?)$"          "/keyboards/mbsindhi"
+RedirectMatch "^/thai(/?)$"            "/keyboards/thai-uni"
+RedirectMatch "^/yiddish(/?)$"         "/keyboards/yiddish_pasekh"
+RedirectMatch "^/yoruba(/?)$"          "/keyboards/sil_yoruba8"
 
-RedirectMatch "/ancient-greek(\/?)$"    "/keyboards/h/greek"
-RedirectMatch "/(french|german|italian|spanish|swedish)(\/?)$"       "/keyboards/h/eurolatin"
+RedirectMatch "^/ancient-greek(/?)$"    "/keyboards/h/greek"
+RedirectMatch "^/(french|german|italian|spanish|swedish)(/?)$"       "/keyboards/h/eurolatin"
 
 # dedicated-keyboard-landing pages
-RedirectMatch "/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(\/.*)?$" "/keyboards/h/$1$2"
+RedirectMatch "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(/.*)?$" "/keyboards/h/$1$2"
 
 #
 # PHP and Markdown rewriting
