@@ -3,12 +3,20 @@
 
   spl_autoload_register(function ($class_name) {
     if(preg_match('/^Keyman\\\\Site\\\\com\\\\keyman\\\\(.+)/', $class_name, $matches)) {
-      include(__DIR__ . "/2020/{$matches[1]}.php");
+      $success = @include(__DIR__ . "/2020/{$matches[1]}.php");
+      if($success === FALSE) {
+        debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+        die("Unable to find class " . __DIR__ . "/2020/ {$matches[1]}.php $class_name");
+      }
     }
   });
 
   spl_autoload_register(function ($class_name) {
     if(preg_match('/^Keyman\\\\Site\\\\Common\\\\(.+)/', $class_name, $matches)) {
-      include(__DIR__ . "/../_common/{$matches[1]}.php");
+      $success = @include(__DIR__ . "/../_common/{$matches[1]}.php");
+      if($success === FALSE) {
+        debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+        die("Unable to find class $class_name");
+      }
     }
   });
