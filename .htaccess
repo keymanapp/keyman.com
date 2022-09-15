@@ -2,6 +2,7 @@
 # NOTE: this is not very well tested...
 
 php_value include_path "/var/www/html/_includes:."
+#Not needed if local apache.conf includes this
 
 RewriteEngine on
 RewriteBase /
@@ -45,12 +46,12 @@ RedirectMatch "^(?i)/desktop(/.*)?" "/windows$1"
 
 
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
-#RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
-RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R,L]
+RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
+#RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R,L]
 
 # /keyboards/{id}/ to /keyboards/id
 # Remove final /
-RedirectMatch "^keyboards/(?!h/|keyboard.php)([^/]+)/$" "/keyboards/$1"
+RedirectMatch "^keyboards/(?!h/|keyboard.php|countries)([^/]+)/$" "/keyboards/$1"
 
 # /keyboards/ to /keyboards
 # Remove final /
@@ -160,19 +161,17 @@ RedirectMatch "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|
 #
 
 # Remove index or index.php and redirect (and stop processing)
-RewriteCond "$1/index" -f [OR]
-RewriteCond "$1/index.php" -f
 RewriteRule "^((.+)/)?index(\.php)?$" "/$1" [R,L]
 
 # Remove .php extension and redirect
-RewriteCond "$1.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
 RewriteRule "^(.+)\.php$" "$1" [R,L]
 
 
 # Redirect folder without / to include /
-RewriteCond "$1" -d
-RewriteCond "$1.php" !-f
-RewriteCond "$1.md" !-f
+RewriteCond "%{DOCUMENT_ROOT}/$1" -d
+RewriteCond "%{DOCUMENT_ROOT}/$1.php" !-f
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
 RewriteRule "^(.+[^/])$" "$1/" [R,L]
 
 #
@@ -183,22 +182,21 @@ RewriteRule "^(.+[^/])$" "$1/" [R,L]
 
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
-RewriteRule "^(.+)$" "/_includes/includes/md/mdhost.php?file=$1.md"
+RewriteRule "^(.+)$" "/_includes/includes/md/mdhost.php?file=$1.md" [END]
 
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
-RewriteRule "^(.+)\.md$" "/_includes/includes/md/mdhost.php?file=$1.md"
+RewriteRule "^(.+)\.md$" "/_includes/includes/md/mdhost.php?file=$1.md" [END]
 
 # Rewrite file to file.php
 RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
-RewriteRule "^(.+)$" "$1.php"
+RewriteRule "^(.+)$" "$1.php" [END]
 
 # Rewrite folder/ to folder/index.md
 RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
-#RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" !-f # not needed?
-RewriteRule "^(.+)/$" "/_includes/includes/md/mdhost.php?file=$1/index.md"
+RewriteRule "^(.+)/$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
 
-# Rewrite folder/ to folder/index.php - Infinite redirection?
-#RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
-#RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" !-f
-#RewriteRule "^(.+)/$" "$1/index.php"
+# Rewrite folder/ to folder/index.php
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" !-f
+RewriteRule "^(.+)/$" "$1/index.php" [END]
