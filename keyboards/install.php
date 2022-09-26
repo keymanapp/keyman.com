@@ -3,7 +3,7 @@
 
   namespace Keyman\Site\com\keyman;
 
-  require __DIR__ . '/../_includes/autoload.php';
+  require_once __DIR__ . '/../_includes/autoload.php';
 
   use Keyman\Site\com\keyman\templates\Head;
   use Keyman\Site\com\keyman\templates\Menu;
