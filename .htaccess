@@ -161,18 +161,19 @@ RedirectMatch "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|
 #
 
 # Remove index or index.php and redirect (and stop processing)
-RewriteRule "^((.+)/)?index(\.php)?$" "/$1" [R,L]
+RewriteCond "{DOCUMENT_ROOT}/$1" -d
+RewriteRule "^((.+)/)?index(\.php)?$" "$1" [R,L]
 
 # Remove .php extension and redirect
-RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
+RewriteCond "$1.php" -f
+RewriteCond "$1" !-d
 RewriteRule "^(.+)\.php$" "$1" [R,L]
 
-
 # Redirect folder without / to include /
-RewriteCond "%{DOCUMENT_ROOT}/$1" -d
-RewriteCond "%{DOCUMENT_ROOT}/$1.php" !-f
-RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
-RewriteRule "^(.+[^/])$" "$1/" [R,L]
+RewriteCond "{DOCUMENT_ROOT}/$1" -d
+RewriteCond "{DOCUMENT_ROOT}/$1.php" !-f
+RewriteCond "{DOCUMENT_ROOT}/$1.md" !-f
+RewriteRule "^(.+[^/])$" "$1/" [R,END]
 
 #
 # PHP rewriting
@@ -183,9 +184,6 @@ RewriteRule "^(.+[^/])$" "$1/" [R,L]
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
 RewriteRule "^(.+)$" "/_includes/includes/md/mdhost.php?file=$1.md" [END]
-
-RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
-RewriteRule "^(.+)\.md$" "/_includes/includes/md/mdhost.php?file=$1.md" [END]
 
 # Rewrite file to file.php
 RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
