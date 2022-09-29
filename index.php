@@ -11,23 +11,31 @@ head([
 ?>
 </div>
 </div>
-<!--
-    Replacing main banner with the Keyman video.
-    <div class="main1">
-        <h1>Type to the world<br/> in your language</h1>
-        <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 2000 languages supported' />
-    </div>
--->
+<div class="main1">
+    <h1>Type to the world<br/> in your language</h1>
+    <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 2000 languages supported' />
+</div>
 <div class="main2">
+<!--
     <div class="home-page-video">
         <div class="home-page-video-container">
-            <div style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/708800585?h=0c119bfc6b&byline=0&title=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
+            <div id="splash-video"></div>
         </div>
     </div>
     <script src="https://player.vimeo.com/api/player.js"></script>
-
+    <script>
+        var options={
+            url: 'https://player.vimeo.com/video/708800585?h=0c119bfc6b',
+            title: false,
+            pip: false,
+            byline: false,
+            responsive: true,
+            portrait: false,
+            // controls: false,
+        };
+        var videoPlayer = new Vimeo.Player('splash-video', options);
+    </script>
+-->
     <div class="section section-blurb">
         <div class='wrapper'>
             <p>
@@ -37,13 +45,13 @@ head([
         </div>
     </div>
 
-    <!-- event banner: uncomment this section when we have an event or promotion -->
+    <!-- event banner: uncomment this section when we have an event or promotion -
     <div class="section section-announcement">
           <div class='wrapper'>
             <p style='font-size:2em'><a href='/15'>New: Keyman 15 is released!!</a></p>
           </div>
         </div>
-    <!-- -->
+    -->
 
     <div class="section section-languages">
         <div class="wrapper">
