@@ -11,6 +11,10 @@
 <h2 class="red underline">What people are saying about Keyman</h2>
 
 <p class="center">
+  <span class="testimonial">"Such great software. Thanks for supporting those who need to enter text in 100’s of less-widely-supported languages."</span>
+  <h4 class="caption"><a href="https://twitter.com/simoncaudwell/status/1372154283613884425" target="_blank">@simoncaudwell</a> - March 2021</h4>
+</p>
+<p class="center">
   <span class="testimonial">"<a href="https://www.facebook.com/KeymanApp">Keyman</a>, I installed it on my PC and can write [Egyptian] in quadratic form. You guys did an amazing job. Thanks!</span>
   <h4 class="caption">L. Cavanagh - December 2020</h4>
 </p>
@@ -86,13 +90,23 @@
   <span class="testimonial">"The solution offered by you indeed is the best which is free, easy to use and readily accessible too. Congraulations and thank you."</span>
   <h4 class="caption">Abdul-Majid Bhurgri - July 2010</h4>
 </p>
+
+
+
 <h2 class="red underline">What people are saying about Keyman Developer</h2>
+
+<p class="center">
+  <span class="testimonial">"Most people who develop in @keyman only use a fraction of its capabilities."</span>
+</p>
+<h4 class="caption"><a href="https://twitter.com/enablelanguages/status/1355786787273154563" target="_blank">@enablelanguages</a> - Jan 2021</h4>
+
 <p class="center">
   <span class="testimonial">"had a blast at the @keyman 2020 Workshop last week, great lectures, great trainers, and
     great fun hanging out with keyboard enthusiasts -not to mention a great price!  After years of day dreaming about it,
     I made a #Musnad:  https://keyman.com/keyboards/gff_musnad"</span>
-<h4 class="caption"><a href="https://twitter.com/ethiopic/status/1235564088341774338" target="_blank">@ethiopic</a> - March 2020</h4>
 </p>
+<h4 class="caption"><a href="https://twitter.com/ethiopic/status/1235564088341774338" target="_blank">@ethiopic</a> - March 2020</h4>
+
 <p class="center">
   <span class="testimonial">"Thanks to @keyman, just finished a Taiwanese Pe̍h-ōe-jī keyboard for all platforms just the
     3rd day of the 1-week workshop. Can't wait to publish it! https://pic.twitter.com/BE4PRpkUsm"

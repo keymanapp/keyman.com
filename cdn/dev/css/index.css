@@ -190,10 +190,10 @@
     font-family: LaoWeb;
     font-style:  normal;
     font-weight: normal;
-    src: url('//s.keyman.com/font/deploy/SAYSETT0.eot'); 
-    src: url('//s.keyman.com/font/deploy/SAYSETT0.eot?#iefix') format('embedded-opentype'), 
-    url('//s.keyman.com/font/deploy/saysettha_web.woff') format('woff'), 
-    url('//s.keyman.com/font/deploy/saysettha_ot.ttf') format('truetype');         
+    src: url('//s.keyman.com/font/deploy/SAYSETT0.eot');
+    src: url('//s.keyman.com/font/deploy/SAYSETT0.eot?#iefix') format('embedded-opentype'),
+    url('//s.keyman.com/font/deploy/saysettha_web.woff') format('woff'),
+    url('//s.keyman.com/font/deploy/saysettha_ot.ttf') format('truetype');
 }
 @font-face {
     font-family: PashtoWeb;
@@ -247,7 +247,7 @@
 .section-announcement p a {
   color: #B92034;
   text-decoration: none;
-  padding: 4px; 
+  padding: 4px;
   display: inline-block;
 }
 
@@ -431,14 +431,14 @@
 /**************************************
  * Testimonial
  * ***********************************/
- 
+
 .section-testimonials{
     float: left;
     width: 100%;
     color: #888888;
     padding: 20px 0px 30px 0px;
-  }  
-  
+  }
+
 .section-testimonials div {
   color: #AAAAAA;
   float: left;
@@ -455,8 +455,8 @@
   line-height: 1.2em;
   font-weight: 400;
   font-style: italic;
-  font-family: 'Cabin'; 
-  font-size: 24px; 
+  font-family: 'Cabin';
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -592,7 +592,7 @@
 		margin-top: 30px;
 	}
 	#main-banner{
-		top: 170px;	
+		top: 170px;
 	}
 	.section-testimonials{
 		width: 700px;
@@ -621,7 +621,7 @@
 		margin-left: 45px;
 	}
 	.windows-only{
-	    display: none;    
+	    display: none;
 	}
 }
 
@@ -649,14 +649,14 @@
 	}
 	.main1 h1{
 		float: none;
-		width: 320px;
+		max-width: initial;
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 10px;
 		padding: 0px;
-		font-size: 28pt;
-		text-shadow: 1px 1px #000;
+		font-size: 52pt;
+		text-shadow: 2px 2px #000;
 	}
 	#main-banner{
 		width: 140px;
@@ -666,6 +666,7 @@
 		left: 50%;
 		margin: 0px 0px 0px -70px;
 		z-index: 0;
+		display: none;
 	}
 	.section-languages .section-heading{
 		margin-top: 60px;
@@ -673,20 +674,20 @@
 	.section-heading{
 		text-align: center;
 	}
-	
+
 	.section-explainer{
 		text-align: justify;
 		padding: 0px 10px;
 		width: 300px;
 	}
-	
+
 	.section-languages form{
 		margin: 20px 0px 10px 0px;
 	}
 	.language.desktop{
 		display: none;
 	}
-	
+
 	.lang-example.desktop{
 	    display: none;
 	}
@@ -719,7 +720,7 @@
 		margin-left: 0px;
 	}
 	.section-testimonial p {
-	  font-size: 20px; 
+	  font-size: 20px;
 	}
 	.developer-half{
 		width: 300px;
@@ -728,13 +729,13 @@
 		margin-left: 0px;
 	}
 	.windows-only{
-	    display: none;    
+	    display: none;
 	}
 }
 
 @media all and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait){
 	#main-banner{
-		top: 170px;	
+		top: 170px;
 	}
 }
 
@@ -763,14 +764,14 @@
 	}
 	.main1 h1{
 		float: none;
-		width: 320px;
+		max-width: initial;
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 10px;
 		padding: 0px;
-		font-size: 28pt;
-		text-shadow: 1px 1px #000;
+		font-size: 50pt;
+		text-shadow: 2px 2px #000;
 	}
 	#main-banner{
 		width: 140px;
@@ -780,6 +781,7 @@
 		left: 50%;
 		margin: 0px 0px 0px -70px;
 		z-index: 0;
+		display: none;
 	}
 	.section-languages .section-heading{
 		margin-top: 60px;
@@ -787,20 +789,20 @@
 	.section-heading{
 		text-align: center;
 	}
-	
+
 	.section-explainer{
 		text-align: justify;
 		padding: 0px 10px;
 		width: 300px;
 	}
-	
+
 	.section-languages form{
 		margin: 20px 0px 10px 0px;
 	}
 	.language.desktop{
 		display: none;
 	}
-	
+
 	.lang-example.desktop{
 	    display: none;
 	}
@@ -833,7 +835,7 @@
 		margin-left: 0px;
 	}
 	.section-testimonial p {
-	  font-size: 20px; 
+	  font-size: 20px;
 	}
 	.developer-half{
 		width: 300px;
@@ -842,7 +844,7 @@
 		margin-left: 0px;
 	}
 	.windows-only{
-	    display: none;    
+	    display: none;
 	}
 }
 /* Landscape mode */
@@ -888,8 +890,33 @@
 	}
 	.main2 .wrapper{
 		width: 480px;
-	}  
+	}
 	.product{
 		margin-left: 80px;
 	}
+}
+
+/* Home Page Video -- responsive so only need a max size */
+
+.home-page-video {
+	display: flex;
+	justify-content: center;
+	background: black;
+	height: fit-content;
+}
+
+.home-page-video-container {
+	width: 720px;
+	height: 100%;
+}
+
+.section-blurb {
+	font-size:1.2em;
+	line-height: 1.4em;
+  background: white;
+}
+
+.section-blurb p {
+  padding: 16px 12px;
+  text-align: center;
 }

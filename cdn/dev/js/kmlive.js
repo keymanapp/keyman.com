@@ -13,19 +13,12 @@ function loaded(){
     return;
   }
 
-  $('#open-sales-form').click(function(e){
-    window.open("http://tavultesoft.com/sendmessage.php","_blank","width=660,height=600,resizable=no,scrollbars=yes");
-    e.preventDefault();
-    e.stopPropagation();
-  });
-
-
   $('#testimonial').click(function(){
-    location.href="http://www.tavultesoft.com/testimonials.php";
+    location.href="/testimonials/";
   });
 
   $('#twitter-testimonial').click(function() {
-      location.href="https://twitter.com/ibrahimasaar/status/1161753102527193088";
+      location.href=this.dataset.href;//"https://twitter.com/ibrahimasaar/status/1161753102527193088";
   });
 
   // Email subscribe form
