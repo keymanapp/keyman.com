@@ -649,14 +649,14 @@
 	}
 	.main1 h1{
 		float: none;
-		width: 320px;
+		max-width: initial;
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 10px;
 		padding: 0px;
-		font-size: 28pt;
-		text-shadow: 1px 1px #000;
+		font-size: 52pt;
+		text-shadow: 2px 2px #000;
 	}
 	#main-banner{
 		width: 140px;
@@ -666,6 +666,7 @@
 		left: 50%;
 		margin: 0px 0px 0px -70px;
 		z-index: 0;
+		display: none;
 	}
 	.section-languages .section-heading{
 		margin-top: 60px;
@@ -763,14 +764,14 @@
 	}
 	.main1 h1{
 		float: none;
-		width: 320px;
+		max-width: initial;
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 10px;
 		padding: 0px;
-		font-size: 28pt;
-		text-shadow: 1px 1px #000;
+		font-size: 50pt;
+		text-shadow: 2px 2px #000;
 	}
 	#main-banner{
 		width: 140px;
@@ -780,6 +781,7 @@
 		left: 50%;
 		margin: 0px 0px 0px -70px;
 		z-index: 0;
+		display: none;
 	}
 	.section-languages .section-heading{
 		margin-top: 60px;
