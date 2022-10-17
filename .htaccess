@@ -31,7 +31,7 @@ RedirectMatch "(?i)/donate(\/.*)?" "https://donate.keyman.com"
 RedirectMatch "(?i)/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
 
 # desktop to windows
-RedirectMatch "(?i)desktop(\/.*)?" "/windows$1"
+RedirectMatch "(?i)/desktop(\/.*)?" "/windows$1"
 
 
 #
