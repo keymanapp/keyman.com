@@ -39,7 +39,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for Linux <?php echo $beta_version ?> Beta? <a href="/<?= $beta_version ?>/">Learn more</a></p>
+        <p>Want to try the Keyman for Linux <?php echo $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
 <?php
     }
 ?>
@@ -215,7 +215,7 @@ sudo apt install ibus-kmfl</code></pre>
     <span class="red">A.</span> The short answer is a lot! With keyboards for over 2000 languages,
     there's a very good chance we have yours covered. You can search for a keyboard for your language
     <a href="/keyboards">here</a>. If we don't already have a keyboard available, you can use
-    <a href="/developer/">Keyman Developer <?php echo $beta_version; ?></a> to build one!
+    <a href="/developer/">Keyman Developer</a> to build one!
 </p>
 
 <br/>
