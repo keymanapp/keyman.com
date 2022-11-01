@@ -44,6 +44,7 @@
       // source: https://yaml.org/spec/1.2/spec.html#id2760395
       // source: https://pandoc.org/MANUAL.html#extension-yaml_metadata_block
       //
+
       $lines = explode("\n", $contents);
 
       $found = count($lines) > 3 && rtrim($lines[0]) == '---';
