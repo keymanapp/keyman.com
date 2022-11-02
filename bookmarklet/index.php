@@ -23,6 +23,7 @@
     languageId: <?= $lang ?>
   };
 </script>
+<script type='text/javascript' src="https://r.keymanweb.com/code/bml_builder.js"></script>
 <script type='text/javascript' src='install-bookmarklet.js'></script>
 
 <h2 class="red underline">Keyman Bookmarklet</h2>
@@ -32,7 +33,7 @@
 
 <div id='bookmarklet'>
     <h3>Keyman Bookmarklet</h3>
-    <div><a href='#'></a></div>
+    <div class='keyman-bookmarklet'><a href='#'></a></div>
     <p>
         Drag this button to your Bookmarks toolbar to install this keyboard to your web browser.
         <a target="_blank" href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/bookmarklet/">Learn more</a>
