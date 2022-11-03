@@ -23,7 +23,8 @@
     languageId: <?= $lang ?>
   };
 </script>
-<script type='text/javascript' src="https://r.keymanweb.com/code/bookmarklet_builder.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo KeymanHosts::Instance()->r_keymanweb_com ?>/code/bookmarklet_ui.css"/>
+<script type='text/javascript' src="<?php echo KeymanHosts::Instance()->r_keymanweb_com ?>/code/bookmarklet_builder.js"></script>
 <script type='text/javascript' src='install-bookmarklet.js'></script>
 
 <h2 class="red underline">Keyman Bookmarklet</h2>
