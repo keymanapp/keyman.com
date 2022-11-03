@@ -23,7 +23,7 @@
     languageId: <?= $lang ?>
   };
 </script>
-<script type='text/javascript' src="https://r.keymanweb.com/code/bml_builder.js"></script>
+<script type='text/javascript' src="https://r.keymanweb.com/code/bookmarklet_builder.js"></script>
 <script type='text/javascript' src='install-bookmarklet.js'></script>
 
 <h2 class="red underline">Keyman Bookmarklet</h2>

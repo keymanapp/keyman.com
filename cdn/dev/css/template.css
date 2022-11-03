@@ -1542,6 +1542,10 @@ span.no_keyboard_details {
 	margin: 10px 10px 0px 10px;
 }
 
+.keyman-bookmarklet a {
+	font-size: 12pt;
+}
+
 #ios-install, #android-install{
 	position: fixed;
 	width: 300px;
