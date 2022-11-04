@@ -1,28 +1,28 @@
 var loaded = false;
 
 function createSingleBookmarklet(lang, kbd) {
-  let bml_element_old = document.getElementsByClassName('keyman-bookmarklet').item(0);
-  let bml_parent = bml_element_old.parentElement;
+  var bml_element_old = document.getElementsByClassName('keyman-bookmarklet').item(0);
+  var bml_parent = bml_element_old.parentElement;
 
-  let label = kbd.name + ' Keyboard';
-  let bml_element_new = construct_bookmarklet(bookmarkletParameters.resourceBase, kbd.id, lang.id, kbd.name, label);
+  var label = kbd.name + ' Keyboard';
+  var bml_element_new = construct_bookmarklet(bookmarkletParameters.resourceBase, kbd.id, lang.id, kbd.name, label);
 
   bml_parent.replaceChild(bml_element_new, bml_element_old); // unusual order:  needs 'new' before 'old'.
   $('#bookmarklet').show();
 }
 
 function addBookmarkletToList(lang, kbd) {
-  let label = lang.name;
+  var label = lang.name;
   if(label != kbd.name) {
     label += ' ('+kbd.name+')';
   }
 
-  let kbd_bml = construct_bookmarklet(bookmarkletParameters.resourceBase, kbd.id, lang.id, kbd.name, label);
+  var kbd_bml = construct_bookmarklet(bookmarkletParameters.resourceBase, kbd.id, lang.id, kbd.name, label);
 
   var searchkey = lang.id.toLowerCase()+' '+kbd.id.toLowerCase()+' ' + label.toLowerCase().normalize('NFKC');
   kbd_bml.setAttribute('bml-search-key', searchkey);
 
-  let list_inner = document.getElementById('bookmarklet-list-inner');
+  var list_inner = document.getElementById('bookmarklet-list-inner');
   list_inner.appendChild(kbd_bml);
 }
 
