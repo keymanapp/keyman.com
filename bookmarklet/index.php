@@ -13,18 +13,25 @@
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
+
+  // Change the URL here for debugging & development of bookmarklet-related code.
+  $bookmarklet_script_base = KeymanHosts::Instance()->r_keymanweb_com;
 ?>
 
 <script type="text/javascript">
+  // resourceBase:  works against the base files for r.keymanweb.com
+  // queryBase:  requires a live, fully-loaded r.keymanweb.com server; it calls against URLs
+  //             not found in the repo
   const bookmarkletParameters = {
     keymanVersion: "<?= KeymanVersion::stable_version ?>",
-    resourceBase: "<?= KeymanHosts::Instance()->r_keymanweb_com ?>",
+    resourceBase: "<?= $bookmarklet_script_base ?>",
+    queryBase: "<?= KeymanHosts::Instance()->r_keymanweb_com ?>",
     keyboardId: <?= $kbd ?>,
     languageId: <?= $lang ?>
   };
 </script>
-<link rel="stylesheet" type="text/css" href="<?php echo KeymanHosts::Instance()->r_keymanweb_com ?>/code/bookmarklet_ui.css"/>
-<script type='text/javascript' src="<?php echo KeymanHosts::Instance()->r_keymanweb_com ?>/code/bookmarklet_builder.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $bookmarklet_script_base ?>/code/bookmarklet_ui.css"/>
+<script type='text/javascript' src="<?php echo $bookmarklet_script_base ?>/code/bookmarklet_builder.js"></script>
 <script type='text/javascript' src='install-bookmarklet.js'></script>
 
 <h2 class="red underline">Keyman Bookmarklet</h2>

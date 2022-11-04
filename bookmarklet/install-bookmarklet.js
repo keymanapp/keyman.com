@@ -5,7 +5,7 @@ function createSingleBookmarklet(lang, kbd) {
   let bml_parent = bml_element_old.parentElement;
 
   let label = kbd.name + ' Keyboard';
-  let bml_element_new = construct_bookmarklet(kbd.id, lang.id, kbd.name, label);
+  let bml_element_new = construct_bookmarklet(bookmarkletParameters.resourceBase, kbd.id, lang.id, kbd.name, label);
 
   bml_parent.replaceChild(bml_element_new, bml_element_old); // unusual order:  needs 'new' before 'old'.
   $('#bookmarklet').show();
@@ -17,7 +17,7 @@ function addBookmarkletToList(lang, kbd) {
     label += ' ('+kbd.name+')';
   }
 
-  let kbd_bml = construct_bookmarklet(kbd.id, lang.id, kbd.name, label);
+  let kbd_bml = construct_bookmarklet(bookmarkletParameters.resourceBase, kbd.id, lang.id, kbd.name, label);
 
   var searchkey = lang.id.toLowerCase()+' '+kbd.id.toLowerCase()+' ' + label.toLowerCase().normalize('NFKC');
   kbd_bml.setAttribute('bml-search-key', searchkey);
@@ -42,7 +42,7 @@ window.addEventListener('load', function() {
     .on('change', filterList);
 
   if (bookmarkletParameters.languageId == '' || bookmarkletParameters.keyboardId == '') {
-    $.get(bookmarkletParameters.resourceBase+'/api/4.0/languages?version='+bookmarkletParameters.keymanVersion+'&languageidtype=bcp47', function(data) {
+    $.get(bookmarkletParameters.queryBase+'/api/4.0/languages?version='+bookmarkletParameters.keymanVersion+'&languageidtype=bcp47', function(data) {
       $('#bookmarklet-search #spinner').hide();
       data.languages.languages.forEach(function(lang) {
         lang.keyboards.forEach(function(kbd) {
@@ -54,7 +54,7 @@ window.addEventListener('load', function() {
     });
   } else {
     $('#bookmarklet-search').hide();
-    $.get(bookmarkletParameters.resourceBase+'/api/4.0/languages/'+bookmarkletParameters.languageId+'/'+bookmarkletParameters.keyboardId+'?version='+bookmarkletParameters.keymanVersion+'&languageidtype=bcp47', function(data) {
+    $.get(bookmarkletParameters.queryBase+'/api/4.0/languages/'+bookmarkletParameters.languageId+'/'+bookmarkletParameters.keyboardId+'?version='+bookmarkletParameters.keymanVersion+'&languageidtype=bcp47', function(data) {
       createSingleBookmarklet(data.language, data.language.keyboards[0]);
     });
   }
