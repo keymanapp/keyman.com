@@ -26,7 +26,7 @@
             Keyman <?= $stable_version; ?> for Windows takes typing in your language everywhere. Use it across your desktop and online, in all your favourite programs for text and image editing, Web browsing, email, IM and so much more.
         </p>
         <p>
-            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10.
         </p>
         <br/><br/><br/>
         <h2 class="red center">What's New</h2>
@@ -50,7 +50,7 @@
     <div class="section" id="compatibility">
         <h2 class="red underline">Compatibility</h2>
         <p>
-            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10.
         </p>
     </div>
     <div class="section" id="keyboard-list">

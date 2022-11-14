@@ -109,6 +109,12 @@
 </table>
 
 <br/>
+<h3>New in Keyman for Android 16.0 (Nov 2022)</h3>
+<ul>
+  <li>Removed the help bubble tooltip, pending a redesign (#7473)</li>
+</ul>
+
+<br/>
 <h3>New in Keyman for Android 15.0 (Apr 2022)</h3>
 
 <ul>

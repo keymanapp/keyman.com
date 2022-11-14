@@ -29,19 +29,18 @@
     <h2 class="red underline">What's New</h2>
 
     <ul>
-      <li>Core-based debugger (#5425, #5448, #5513)</li>
-      <li>Keyman Developer Server (#6033,#6034,#6035,#6036)</li>
-      <li>Improved native-mode debugger (#5696, #5640, #5647)</li>
-      <li>Improve drag+drop integration of keys with the Touch Layout Editor (#6435)</li>
-      <li>Web test no longer needs Developer tools for touch testing (#5723)</li>
-      <li>
-        Add support for <code class='language-java'>U_xxxx_yyyy_...</code>
-        identifiers so you can emit more than a single Unicode character with
-        touch keys without additional kmn code (#5894)
+      <li>Redesigned Touch Layout Editor and introduced support for Flicks and Multitap (#6884)
+        <ul>
+          <li>Note: these gestures will be supported for use in Keyman 17.0</li>
+        </ul>
       </li>
-      <li>Keyman Developer debugger no longer depends on Keyman for Windows (#5588)</li>
-      <li>live reload of web debugger (#6035)</li>
-      <li>Breaking Change: Keyboard compiler now warns on inconsistent use of Caps Lock to prevent unexpected behavior of the keyboard in use -- [blog post](https://blog.keyman.com/2022/04/how-to-resolve-caps-and-ncaps-ambiguity-in-keyman-keyboards/) (#6347)</li>
+      <li>Introduced support for Hints to the Touch Layout Editor (#6936)
+        <ul>
+          <li>Note: hints will be supported for use in Keyman 17.0</li>
+        </ul>
+      </li>
+      <li>It is now possible to set the "languageUsesCasing" flag from the Model Editor UI (#7008)</li>
+      <li>We have added the ability to provide extensions and customizations to the Unicode-spec based wordbreaker for lexical-models (#7279)</li>
     </ul>
 
   </div>
@@ -134,7 +133,7 @@
 
     <h3 class="red" id="mobile">For mobile devices</h3>
     <p>Keyman Developer <?php echo $stable_version_int; ?> lets you create touch layout keyboards and distribute them
-      to your iPhones, iPads (iOS 9+), Android phones, and Android tablets.</p>
+      to your iPhones, iPads (iOS 12.1+), Android phones, and Android tablets.</p>
     <br/><br/>
 
     <h3 class="red" id="kmw">For the Web</h3>
