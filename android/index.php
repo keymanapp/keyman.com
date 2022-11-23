@@ -111,7 +111,9 @@
 <br/>
 <h3>New in Keyman for Android 16.0 (Nov 2022)</h3>
 <ul>
-  <li>Removed the help bubble tooltip, pending a redesign (#7473)</li>
+  <li>Dismiss long-press keys on multi-touch (#7388, #7472)</li>
+  <li>Don't show "Get Started" after setting Keyman as default system keyboard (#7587)</li>
+  <li>Add localization for Dutch</li>
 </ul>
 
 <br/>
