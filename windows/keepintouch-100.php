@@ -95,6 +95,7 @@
     
     html.embed.frame p.message {
       display: none;
+      user-select: none;
     }
     
     html.embed.frame #ribbon {
@@ -106,6 +107,11 @@
       padding: 4px 0 8px 60px;
       background: url('/cdn/dev/img/keyman-48.png') 8px 8px no-repeat;
       background-color: #D6D6D6;
+      user-select: none;
+    }
+    
+    html.embed.frame .content {
+      user-select: none;
     }
     
     /* Formatting */
