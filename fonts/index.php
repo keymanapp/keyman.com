@@ -71,5 +71,5 @@
 <p>
   Many Keyman keyboards type out letters that need special fonts. Without the right font, these letters may turn into square boxes or become unreadable. Keyman keyboards that require a special font will generally come packaged with the font. You can also use the Keyman Font Helper tool to find suitable fonts for your keyboard.
   <br/><br/>
-  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/windows/<?php echo $stable_version; ?>/docs/basic_fonthelper.php">Learn more about the Font Helper tool.</a>
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/windows/<?php echo $stable_version; ?>/basic/toolbox/font-helper">Learn more about the Font Helper tool.</a>
 </p>

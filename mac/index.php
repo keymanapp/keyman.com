@@ -36,7 +36,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for macOS <?php echo $beta_version ?> Beta? <a href="/<?= $beta_version ?>/">Learn more</a></p>
+        <p>Want to try the Keyman for macOS <?php echo $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
 <?php
     }
 ?>
