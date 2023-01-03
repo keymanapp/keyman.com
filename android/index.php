@@ -109,7 +109,7 @@
 </table>
 
 <br/>
-<h3>New in Keyman for Android 16.0 (Nov 2022)</h3>
+<h3>New in Keyman for Android 16.0 (Jan 2023)</h3>
 <ul>
   <li>Dismiss long-press keys on multi-touch (#7388, #7472)</li>
   <li>Don't show "Get Started" after setting Keyman as default system keyboard (#7587)</li>
