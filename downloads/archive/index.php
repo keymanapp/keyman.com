@@ -14,7 +14,7 @@
 
   // These variables should be progressively added if we update older versions.
   // 14.0 onward uses 3 numbers instead of 4
-  $ver_windows_15 = "15.0.272";
+  $ver_windows_15 = "15.0.274";
   $ver_windows_14 = "14.0.294";
   $ver_windows_13 = "13.0.118.0";
   $ver_windows_12 = "12.0.66.0";
