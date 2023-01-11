@@ -1533,24 +1533,17 @@ span.no_keyboard_details {
     text-align: center;
 }
 
-#bookmarklet div a, #bookmarklet-list div a{
-	background: url("../img/keymanweb-icon-16.png") no-repeat scroll 4px 4px #D3DAED;
-    box-shadow: 3px 3px 6px rgba(50, 52, 56, 0.3);
-    color: #000000;
-    display: inline-block;
-    font-size: 11px;
-    height: 16px;
-    overflow: hidden;
-    padding: 4px 4px 4px 24px;
-    text-align: left;
-    text-decoration: none;
-    white-space: nowrap;
+#bookmarklet div a {
     margin: 20px 0px;
-    font-size: 12pt;
 }
 
-#bookmarklet-list div a{
+/* The bookmarklet-list element contains a top-level div containing many bookmarklets (div a) */
+#bookmarklet-list div div a{
 	margin: 10px 10px 0px 10px;
+}
+
+.keyman-bookmarklet a {
+	font-size: 12pt;
 }
 
 #ios-install, #android-install{
