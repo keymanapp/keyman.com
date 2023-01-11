@@ -1,8 +1,6 @@
 # This file is used when running with Apache. Adapted from web.config.
 # NOTE: this is not very well tested...
 
-php_value include_path "/var/www/html/_includes:."
-
 RewriteEngine on
 
 # Redirect http://keyman.com to https://keyman.com,
