@@ -109,7 +109,7 @@ RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [L]
 RedirectMatch "^/1([0-5])(\.0)\/?" "/1$1/"
 
 # ios
-RedirectMatch "/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$2"
+RedirectMatch "^/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$2"
 
 # Connect With Art landing page
 RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
