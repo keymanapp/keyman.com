@@ -44,18 +44,7 @@ builder_parse "$@"
 cd "$REPO_ROOT"
 
 if builder_start_action configure; then
-  # Skip if link already exists
-  if [ -L vendor ]; then
-    echo "Skipping because vendor already exists"
-  else
-    # Create link to vendor/ folder
-    KEYMAN_CONTAINER=$(_get_docker_container_id)
-    if [ ! -z "$KEYMAN_CONTAINER" ]; then
-      docker exec -i $KEYMAN_CONTAINER sh -c "ln -s /var/www/vendor vendor && chown -R www-data:www-data vendor"
-    else
-      echo "No Docker container to configure"
-    fi
-  fi
+  # Nothing to do
   builder_finish_action success configure
 fi
 
@@ -96,7 +85,6 @@ fi
 if builder_start_action start; then
   # Start the Docker container
   if [ ! -z $(_get_docker_image_id) ]; then
-    # TODO: What port to use?
     if [[ $OSTYPE =~ msys|cygwin ]]; then
       # Windows needs leading slashes for path
       docker run -d -p 8053:80 -v //$(pwd):/var/www/html/ -e S_KEYMAN_COM=localhost:8054 keyman-website
@@ -106,6 +94,19 @@ if builder_start_action start; then
   else
     echo "${COLOR_RED}ERROR: Docker container doesn't exist. Run ./build.sh build first${COLOR_RESET}"
     builder_finish_action fail start
+  fi
+
+  # Skip if link already exists
+  if [ -L vendor ]; then
+    echo "Link to vendor/ already exists"
+  else
+    # Create link to vendor/ folder
+    KEYMAN_CONTAINER=$(_get_docker_container_id)
+    if [ ! -z "$KEYMAN_CONTAINER" ]; then
+      docker exec -i $KEYMAN_CONTAINER sh -c "ln -s /var/www/vendor vendor && chown -R www-data:www-data vendor"
+    else
+      echo "No Docker container running to create link to vendor/"
+    fi
   fi
 
   builder_finish_action success start
