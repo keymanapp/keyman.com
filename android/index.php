@@ -113,7 +113,15 @@
 <ul>
   <li>Dismiss long-press keys on multi-touch (#7388, #7472)</li>
   <li>Don't show "Get Started" after setting Keyman as default system keyboard (#7587)</li>
-  <li>Add localization for Dutch</li>
+  <li>Add localizations for:
+    <ol>
+      <li>Czech</li>
+      <li>Dutch</li>
+      <li>Russian</li>
+      <li>Swedish</li>
+      <li>Ukrainian</li>
+    </ol>
+  </li>
 </ul>
 
 <br/>
