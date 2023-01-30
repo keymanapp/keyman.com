@@ -82,7 +82,7 @@
   </tbody>
 </table>
 
-<h2>New in Keyman 16.0 (Jan 2023)</h2>
+<h2>New in Keyman 16.0 (Feb 2023)</h2>
 <ul>
   <li>Fix recognition of iPad as table device for styling (#7563)</li>
 </ul>
