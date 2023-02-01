@@ -117,6 +117,7 @@
     <ol>
       <li>Czech</li>
       <li>Dutch</li>
+      <li>Kannada</li>
       <li>Russian</li>
       <li>Swedish</li>
       <li>Ukrainian</li>
