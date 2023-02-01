@@ -26,12 +26,12 @@
             Keyman <?= $stable_version; ?> for Windows takes typing in your language everywhere. Use it across your desktop and online, in all your favourite programs for text and image editing, Web browsing, email, IM and so much more.
         </p>
         <p>
-            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10.
         </p>
         <br/><br/><br/>
         <h2 class="red center">What's New</h2>
         <ul>
-          <li>Use Keyman Core internally (#5443)</li>
+          <li>Revamp Configuration UI (#7206)</li>
         </ul>
     </div>
     <div class="section" id="setup">
@@ -40,8 +40,8 @@
             Keyman <?= $stable_version; ?> for Windows installs in just three steps:
         </p>
         <img src="<?php echo cdn("img/screenshots/15/windows/setup-click1.png"); ?>"/>
-        <img src="<?php echo cdn("img/screenshots/15/windows/setup-click2.png"); ?>"/>
-        <img src="<?php echo cdn("img/screenshots/15/windows/setup-click3.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/16/windows/setup-click2.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/16/windows/setup-click3.png"); ?>"/>
         <br/>
         <p>
             Installing Keyboards is even easier. Simply download and open the file, and Keyman will do the rest.
@@ -50,7 +50,7 @@
     <div class="section" id="compatibility">
         <h2 class="red underline">Compatibility</h2>
         <p>
-            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10 as 32-bit Windows 7 and everything in between.
+            Keyman <?= $stable_version; ?> for Windows runs just as smoothly in 64-bit Windows 10.
         </p>
     </div>
     <div class="section" id="keyboard-list">
@@ -357,7 +357,7 @@
         <p>
             With Keyman for Windows, you can install and enable as many keyboards as you need.
         </p>
-        <img src="<?php echo cdn("img/screenshots/14/windows/tab-keyboards.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/16/windows/tab-keyboards.png"); ?>"/>
     </div>
     <div class="section" id="language-association">
         <h2 class="red underline">Associate Keyboards With Windows Languages</h2>
@@ -367,21 +367,21 @@
         <p>
             Keyman <?= $stable_version ?> for Windows allows you to associate a keyboard with multiple Windows languages.
         </p>
-        <img src="<?php echo cdn("img/screenshots/14/windows/tab-layout.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/16/windows/tab-layout.png"); ?>"/>
     </div>
     <div class="section" id="keyboard-information">
         <h2 class="red underline">Keyboard Information</h2>
         <p>
             Access advanced keyboard information such as Keyboard filename, version number, encodings, layout type and more.
         </p>
-        <img src="<?php echo cdn("img/screenshots/14/windows/tab-layout.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/16/windows/tab-layout.png"); ?>"/>
     </div>
     <div class="section" id="hotkeys">
         <h2 class="red underline">Hotkeys For Everything</h2>
         <p>
             Set hotkeys for Keyman keyboards, Keyman features and even Windows languages from the Hotkeys tab of Keyman Configuration.
         </p>
-        <img src="<?php echo cdn("img/screenshots/14/windows/tab-hotkeys.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/16/windows/tab-hotkeys.png"); ?>"/>
     </div>
     <div class="section" id="language-switcher">
         <h2 class="red underline">Language Switcher</h2>
@@ -445,7 +445,7 @@
         <p>
             All users have full access to the built-in and online help documents, deep Keyman diagnostic tools, as well as the Keyman Community Forums.
         </p>
-        <img src="<?php echo cdn("img/screenshots/15/windows/tab-support.png"); ?>"/>
+        <img src="<?php echo cdn("img/screenshots/16/windows/tab-support.png"); ?>"/>
     </div>
     <div class="section" id="customers">
         <h2 class="red underline">Used By The Biggest</h2>
