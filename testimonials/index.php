@@ -11,6 +11,10 @@
 <h2 class="red underline">What people are saying about Keyman</h2>
 
 <p class="center">
+  <span class="testimonial">"<a href="https://twitter.com/keyman">@Keyman</a> is the best and works efficiently with windows 10. Download the power geez keyboard and Amharic on too."</span>
+  <h4 class="caption"><a href="https://twitter.com/fegabuti/status/1405762146835652621" target="_blank">@fegabuti</a> - June 2021</a></hr>
+</p>
+<p class="center">
   <span class="testimonial">"Such great software. Thanks for supporting those who need to enter text in 100’s of less-widely-supported languages."</span>
   <h4 class="caption"><a href="https://twitter.com/simoncaudwell/status/1372154283613884425" target="_blank">@simoncaudwell</a> - March 2021</h4>
 </p>

@@ -53,10 +53,6 @@ END;
                 <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
                 <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
             </ul>
-            <h3>About Keyman 15</h3>
-            <ul>
-                <li><a href="/15">About Keyman 15</a></li>
-            </ul>
             <h3>Downloads</h3>
             <ul>
                 <li><a href='/downloads/'>Current release versions</a></li>
@@ -176,10 +172,6 @@ END;
                             <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
                             <li><a href="/keymanweb/">KeymanWeb.com</a></li>
                             <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
-                        </ul>
-                        <h4>About Keyman 15</h4>
-                        <ul>
-                            <li><a href="/15">About Keyman 15</a></li>
                         </ul>
                         <h4>Downloads</h4>
                         <ul>

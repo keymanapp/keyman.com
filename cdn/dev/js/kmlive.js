@@ -1,6 +1,10 @@
 var loadedCount = 50;
 
 function loaded(){
+  // keymanapp/keyman#7915: Fix for iPadOS fudging its user-agent into 'mac' when running in 'desktop' mode
+  if(document.body && document.body.dataset.device == 'mac' && navigator.maxTouchPoints > 0) {
+    document.body.dataset.device = 'iPad';
+  }
 
   if(typeof($) == 'undefined') {
     if(--loadedCount <= 0) return;
