@@ -185,7 +185,7 @@
         </tr>
       </tbody>
     </table>
-    <span class="answer">Find other supported Ge'ez fonts on your computer by <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/10.0/docs/start_font.php">using the Font Helper tool.</a></span>
+    <span class="answer">Find other supported Ge'ez fonts on your computer by <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/windows/current-version/basic/toolbox/font-helper">using the Font Helper tool.</a></span>
   </li>
   <li>
     <span class="question">What transcription method do the keyboards use?</span>

@@ -130,7 +130,7 @@
         </tr>
       </tbody>
     </table>
-    <span class="answer">The Noto Nastaliq Urdu Draft font is included in the Urdu keyboard download for Keyman for Windows. Find other supported Urdu fonts on your computer by <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/desktop/10.0/docs/start_font.php">using the Font Helper tool.</a></span>
+    <span class="answer">The Noto Nastaliq Urdu Draft font is included in the Urdu keyboard download for Keyman for Windows. Find other supported Urdu fonts on your computer by <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/windows/current-version/basic/toolbox/font-helper">using the Font Helper tool.</a></span>
   </li>
   <li>
     <span class="question">What layout does this keyboard use?</span><br>

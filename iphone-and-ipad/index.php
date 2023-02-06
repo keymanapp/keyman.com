@@ -82,6 +82,21 @@
   </tbody>
 </table>
 
+<h2>New in Keyman 16.0 (Feb 2023)</h2>
+<ul>
+  <li>Fix recognition of iPad as tablet device for styling (#7563)</li>
+  <li>Add localizations for:
+    <ol>
+      <li>Czech</li>
+      <li>Dutch</li>
+      <li>Kannada</li>
+      <li>Russian</li>
+      <li>Swedish</li>
+      <li>Ukrainian</li>
+    </ol>
+  </li>
+</ul>
+
 <h2>New in Keyman 15.0 (Apr 2022)</h2>
 <ul>
   <li>Various tweaks, bug fixes, and performance improvements</li>
