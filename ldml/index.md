@@ -24,23 +24,23 @@ The LDML support is being developed in our cross-platform Keyman Core component,
 ## Frequently Asked Questions for Keyman LDML Support
 
 
-- *How will the LDML format be supported with Keyman?*
+- **How will the LDML format be supported with Keyman?**
 
-  From a technical perspective, the LDML format will be a newly supported input to the Keyman Command Line Compiler. The XML file will be compiled into a <a href="https://help.keyman.com/developer/16.0/reference/file-types/kmx">KMX compiled keyboard file</a>. The .kmx file will be read and used by the Keyman Core component, starting in version 17.0</dd>
+  From a technical perspective, the LDML format will be a newly supported input to the Keyman Command Line Compiler. The XML file will be compiled into a <a href="https://help.keyman.com/developer/16.0/reference/file-types/kmx">KMX compiled keyboard file</a>, and can be used just as `.kmn` files which are compiled to `.kmx`.
 
-- *How will the LDML format be supported with Keyman Developer?*
+- **How will the LDML format be supported with Keyman Developer?**
 
     LDML support in Keyman Developer is still in the planning stages, but is being planned for Keyman 18.0
 
-- *What is the impact on existing developed keyboards in .kmn format?*
+- **What is the impact on existing developed keyboards in .kmn format?**
 
   None. Keyman and Keyman Developer continues to support the thousands of languages in .kmn files and the .kmn format.
 
-- *Will there be a facility available to automatically convert .kmn to LDML or vice versa?*
+- **Will there be a facility available to automatically convert .kmn to LDML or vice versa?**
 
   The LDML specification is designed primarily to support new keyboard layouts. At a later stage, we would like to make available software to assist developers in migrating keyboards to the new format, including tooling to compare and verify the capabilities of a .kmn versus a similar LDML keyboard definition.
 
-- *I have other questions. Who should I ask?*
+- **I have other questions. Who should I ask?**
 
   Please direct any other questions regarding LDML to the [SIL Keyman Community](https://community.software.sil.org/c/keyman).
 
