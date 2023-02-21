@@ -38,7 +38,7 @@ The LDML support is being developed in our cross-platform Keyman Core component,
 
 - *Will there be a facility available to automatically convert .kmn to LDML or vice versa?*
 
-  The LDML specification is designed primarily to support new keyboard layouts. At a later stage, we would like to make available software to assist developers in migrating keyboards to the new format, including tooling to compare and verify the capabilities of a .kmn versus a similar LDML keyboard definition.</dd>
+  The LDML specification is designed primarily to support new keyboard layouts. At a later stage, we would like to make available software to assist developers in migrating keyboards to the new format, including tooling to compare and verify the capabilities of a .kmn versus a similar LDML keyboard definition.
 
 - *I have other questions. Who should I ask?*
 
