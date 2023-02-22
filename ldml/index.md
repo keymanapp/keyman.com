@@ -13,13 +13,17 @@ LDML is the Locale Data Markup Language. It it an XML-based format specified as 
 
 Like the [Keyman Keyboard Language](https://help.keyman.com/developer/language/) (`.kmn`) format, the LDML Keyboard format defines how keystrokes are interpreted and how keys are laid out in a virtual keyboard.  The LDML format has been defined from the beginning to become a cross-platform industry standard, with active participation from several Unicode member organizations including SIL International.  The intention is to provide a draft specification as a technical preview for public review in mid-2023, with a first release later in 2023.
 
+![Example XML code defining a French keyboard](/cdn/dev/img/ldml-example-azerty.png)
+
 ### Keyman and LDML
 
 As was announced in the [March 2022](https://blog.keyman.com/2022/03/keyman-roadmap-march-2022/) [February 2023](https://blog.keyman.com/2023/02/keyman-roadmap-february-2023/) roadmaps, the Keyman team has been working in anticipation of LDML support in Keyman and Keyman Developer.  We plan to provide initial support for the LDML technical preview version in desktop devices in the Keyman 17.0 release and some supporting tools, with Keyman Developer support and touch platforms coming in version 18.0.
 
 The LDML support is being developed in our cross-platform Keyman Core component, which will enable a consistent feature set across all platforms including web by version 19.0, with a common code base.
 
-![Movie: Keyman on Linux, typing using an LDML keyboard](/cdn/dev/img/ldml-keyman-linux.gif)
+_Below is a screen capture showing the use of an LDML keyboard via a development version of Keyman for Linux._
+
+![Movie: typing characters using an LDML keyboard](/cdn/dev/img/ldml-keyman-linux.gif)
 
 ## Frequently Asked Questions for Keyman LDML Support
 
