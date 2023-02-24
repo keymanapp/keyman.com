@@ -192,6 +192,7 @@ END;
                             <li><a href="/about/get-involved">Get Involved</a></li>
                             <li><a href="/training">Training Events</a></li>
                             <li><a href="/free/">Free on all Platforms</a></li>
+                            <li><a href="/ldml/">LDML Support</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
                             <li><a href="/contact/">Contact Us</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
