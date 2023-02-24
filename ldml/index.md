@@ -13,7 +13,16 @@ LDML is the Locale Data Markup Language. It it an XML-based format specified as 
 
 Like the [Keyman Keyboard Language](https://help.keyman.com/developer/language/) (`.kmn`) format, the LDML Keyboard format defines how keystrokes are interpreted and how keys are laid out in a virtual keyboard.  The LDML format has been defined from the beginning to become a cross-platform industry standard, with active participation from several Unicode member organizations including SIL International.  The intention is to provide a draft specification as a technical preview for public review in mid-2023, with a first release later in 2023.
 
-![Example XML code defining a French keyboard](/cdn/dev/img/ldml-example-azerty.png)
+```xml
+<!-- Example: French AZERTY Keyboard in LDML format -->
+<layer modifier="shift">
+  <row keys="1 2 3 4 5 6 7 8 9 0 degree plus" />
+  <row keys="A Z E R T Y U I O P umlaut pound" />
+  <row keys="Q S D F G H J K L M percent micro" />
+  <row keys="close-angle W X C V B N question period slash section" />
+  <row keys="space" />
+</layer>
+```
 
 ### Keyman and LDML
 
