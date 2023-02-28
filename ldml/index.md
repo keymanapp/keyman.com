@@ -47,7 +47,7 @@ _Below is a screen capture showing the use of an LDML keyboard via a development
 
 - **What is the impact on existing developed keyboards in .kmn format?**
 
-  None. Keyman and Keyman Developer continues to support the thousands of languages in .kmn files and the .kmn format.
+  None. Keyman and Keyman Developer continue to support the thousands of languages in .kmn files and the .kmn format.
 
 - **Will there be a facility available to automatically convert .kmn to LDML or vice versa?**
 
