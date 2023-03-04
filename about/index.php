@@ -130,6 +130,13 @@
 <p class="people-text">
   My wife and I have two children. I also enjoy playing Ultimate (frisbee), going to the gym, and playing boardgames.
 </p>
+<h4 class="caption">Nathan Harvey</h4>
+<br/>
+
+<p class="people-text">
+  I'm a sort of jack-of-all-trades, with a degree in chemistry, and experience as "random" as SolidWorks (3D part modeling), Music, Software Engineering, and even a little at a sawmill.
+  A husband to a gorgeous, loving wife and father of a fun, rambunctious boy and a beautiful little girl, I love to praise the Lord for his goodness, and for his wonderful acts to the children of men (what we are encouraged to do after each parable in Ps 107)!
+</p>
 
 <h2 class="red underline">Previous Contributors</h2>
 
