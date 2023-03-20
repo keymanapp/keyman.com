@@ -2,5 +2,5 @@
 /.vscode
 cdn/deploy/
 
-/vendor/
+vendor*
 /node_modules/
