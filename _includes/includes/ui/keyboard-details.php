@@ -221,14 +221,27 @@ END;
         $s = @file_get_contents($KeymanHosts->api_keyman_com . '/search/2.0?q=k:id:' . rawurlencode(self::$id));
         if ($s !== FALSE) {
           $s = json_decode($s);
-          if(is_object($s) && !empty($s->keyboards[0]->match->downloads)) {
-            self::$downloadCount = $s->keyboards[0]->match->downloads;
-          }
-          if(is_object($s) && !empty($s->keyboards[0]->match->totalDownloads)) {
-            self::$totalDownloadCount = $s->keyboards[0]->match->totalDownloads;
+          if(is_object($s) && is_array(($s->keyboards))) {
+            $sk = self::array_find($s->keyboards, function($x) { return $x->id === self::$id; });
+            if($sk) {
+              if(!empty($sk->match->downloads)) {
+                self::$downloadCount = $sk->match->downloads;
+              }
+              if(!empty($sk->match->totalDownloads)) {
+                self::$totalDownloadCount = $sk->match->totalDownloads;
+              }
+            }
           }
         }
       }
+    }
+
+    private static function array_find($xs, $f) {
+      foreach ($xs as $x) {
+        if (call_user_func($f, $x) === true)
+          return $x;
+      }
+      return null;
     }
 
     protected static function WriteTitle() {

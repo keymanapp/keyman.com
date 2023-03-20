@@ -11,7 +11,9 @@
   $md = new MarkdownHost($_REQUEST['file']);
 
   head([
-    'title' => $md->PageTitle()
+    'title' => $md->PageTitle(),
+    'css' => ['template.css','prism.css'],
+    'js' => ['prism.js']
   ]);
 
   echo $md->Content();

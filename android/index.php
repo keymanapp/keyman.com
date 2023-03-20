@@ -109,6 +109,23 @@
 </table>
 
 <br/>
+<h3>New in Keyman for Android 16.0 (Feb 2023)</h3>
+<ul>
+  <li>Dismiss long-press keys on multi-touch (#7388, #7472)</li>
+  <li>Don't show "Get Started" after setting Keyman as default system keyboard (#7587)</li>
+  <li>Add localizations for:
+    <ol>
+      <li>Czech</li>
+      <li>Dutch</li>
+      <li>Kannada</li>
+      <li>Russian</li>
+      <li>Swedish</li>
+      <li>Ukrainian</li>
+    </ol>
+  </li>
+</ul>
+
+<br/>
 <h3>New in Keyman for Android 15.0 (Apr 2022)</h3>
 
 <ul>

@@ -53,10 +53,6 @@ END;
                 <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
                 <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
             </ul>
-            <h3>About Keyman 15</h3>
-            <ul>
-                <li><a href="/15">About Keyman 15</a></li>
-            </ul>
             <h3>Downloads</h3>
             <ul>
                 <li><a href='/downloads/'>Current release versions</a></li>
@@ -81,6 +77,7 @@ END;
               <li><a href="/about/get-involved">Get Involved</a></li>
               <li><a href="/training">Training Events</a></li>
               <li><a href="/free/">Free on all Platforms</a></li>
+              <li><a href="/ldml/">LDML Support</a></li>
               <li><a href="/contact/">Contact Us</a></li>
               <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
               <li><a href="/testimonials/">Testimonials</a></li>
@@ -177,10 +174,6 @@ END;
                             <li><a href="/keymanweb/">KeymanWeb.com</a></li>
                             <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
                         </ul>
-                        <h4>About Keyman 15</h4>
-                        <ul>
-                            <li><a href="/15">About Keyman 15</a></li>
-                        </ul>
                         <h4>Downloads</h4>
                         <ul>
                             <li><a href='/downloads/'>Current release versions</a></li>
@@ -199,6 +192,7 @@ END;
                             <li><a href="/about/get-involved">Get Involved</a></li>
                             <li><a href="/training">Training Events</a></li>
                             <li><a href="/free/">Free on all Platforms</a></li>
+                            <li><a href="/ldml/">LDML Support</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
                             <li><a href="/contact/">Contact Us</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
