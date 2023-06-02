@@ -37,26 +37,6 @@
 
     static private $deprecatedBy;
 
-    private static function WriteLinkAnnotator() {
-      echo '<script>
-        var binaryFileClientId = null;
-        function downloadBinaryFile(a) {
-          if(!a.href.match(/cid=/) && binaryFileClientId) {
-            a.href = a.href + "&cid="+binaryFileClientId;
-          }
-          //alert(a.href);
-          return true;
-        }
-
-        try {
-          if(ga) ga(function(tracker) {
-            binaryFileClientId = tracker.get("clientId");
-          });
-        } catch(error) {
-        }
-      </script>';
-    }
-
     /**
      * render_keyboard_details - display keyboard download boxes and details
      * @param $id - keyboard ID
@@ -73,7 +53,6 @@
       self::WriteDownloadBoxes();
       self::WriteKeyboardDetails();
       if(!empty(self::$deprecatedBy)) echo "</div></div>";
-      self::WriteLinkAnnotator();
     }
 
     /**
