@@ -93,7 +93,7 @@
         $url = "/_legacy/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
       }
       $url = htmlspecialchars($url);
-      $downloadlink = "<a class='download-link binary-download' href='$url' onclick='return downloadBinaryFile(this);'><span>$linktitle</span></a>";
+      $downloadlink = "<a class='download-link binary-download' href='$url'><span>$linktitle</span></a>";
       return <<<END
       <div class='download $class'>
         $downloadlink
