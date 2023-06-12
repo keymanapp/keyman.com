@@ -21,13 +21,12 @@
     isset($_REQUEST['platform']) ? $_REQUEST['platform'] : null,
     isset($_REQUEST['tier']) ? $_REQUEST['tier'] : null,
     isset($_REQUEST['bcp47']) ? $_REQUEST['bcp47'] : null,
-    isset($_REQUEST['update']) ? $_REQUEST['update'] : null,
-    isset($_COOKIE['_ga']) ? $_COOKIE['_ga'] : null
+    isset($_REQUEST['update']) ? $_REQUEST['update'] : null
   );
 
   class PackageDownloadPage {
 
-    public static function redirect_to_file($type, $id, $version, $platform, $tier, $bcp47, $update, $ga_cookie) {
+    public static function redirect_to_file($type, $id, $version, $platform, $tier, $bcp47, $update) {
       if(empty($type)) {
         $type = 'keyboard';
       }
@@ -74,7 +73,7 @@
       }
 
       if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
-        self::report_download_event($ga_cookie, $id . ($type === "model" ? ".$type" : ""), $platform, $tier, $bcp47, $update);
+        self::report_download_event($id . ($type === "model" ? ".$type" : ""), $platform, $tier, $bcp47, $update);
 
         if(DEBUG) {
           echo "\n\nLocation: $url\n";
@@ -91,41 +90,7 @@
       echo "<a href='$url_e'>Download Link</a>";
     }
 
-    private static function report_download_event($ga_cookie, $id, $platform, $tier, $bcp47, $update) {
-      $cid = '';
-      if(empty($ga_cookie)) $ga_cookie = '';
-
-      if(preg_match('/^GA\d+\.\d\.(.+)$/', $ga_cookie, $matches)) {
-        $cid = rawurlencode($matches[1]);
-        $gauser = "cid={$cid}";
-      } else {
-        $uid = GUIDv4(true);
-        $gauser = "uid={$uid}";
-      }
-
-      if(DEBUG) {
-        $gabaseurl = "https://www.google-analytics.com/debug/collect";
-      } else {
-        $gabaseurl = "https://www.google-analytics.com/collect";
-      }
-
-      $update = $update ? "update" : "install";
-
-      $category = 'keyboard';
-      $action = rawurlencode("download-$platform-$tier-$update" . (empty($bcp47) ? "" : "-$bcp47"));
-      $label = rawurlencode($id);
-
-      $gaurl = "$gabaseurl?v=1&t=event&tid=UA-249828-1&$gauser&ds=server&ec=$category&ea=$action&el=$label";
-      if(DEBUG || KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_PRODUCTION) {
-        // Only actually call Google Analytics if we are in production or debugging
-        $result = @file_get_contents($gaurl);
-      } else {
-        $result = TRUE;
-      }
-      if(DEBUG) {
-        var_dump("Google Analytics response for $gaurl: ".print_r($http_response_header, true));
-      }
-
+    private static function report_download_event($id, $platform, $tier, $bcp47, $update) {
       $url = KeymanHosts::Instance()->api_keyman_com . "/increment-download/".rawurlencode($id);
 
       if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
