@@ -2,14 +2,12 @@
   define('DEBUG', false);
 
   // Redirects download to the appropriate file on downloads.keyman.com
-  // On the way, captures some statistics on the download for GA with a 'keyboard' event
-  // If necessary, triggers a rebuild for a bundled installer upgrade
+  // On the way, captures some statistics on the download to api.keyman.com
   //
   // Parameters:
   //   id        string identifier of keyboard to download
   //   platform  one of windows,macos,linux,ios,android,web
   //   mode:     optional, either bundle or standalone (for now, supported only for Windows)
-  //   cid:      optional, adds client id for Google Analytics tracking
 
   require_once('includes/servervars.php');
 
@@ -23,28 +21,25 @@
     exit;
   }
 
-  if(!validateParameters($id, $platform, $mode, $cid, $target)) {
+  if(!validateParameters($id, $platform, $mode, $target)) {
     fail('Invalid parameters');
   }
 
   $downloads = getKeyboardDownloadData($id);
-
-  triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode);
 
   redirectToDownload($downloads, $target);
 
   /**
    * Validate that input parameters are correct
    */
-  function validateParameters(&$id, &$platform, &$mode, &$cid, &$target) {
+  function validateParameters(&$id, &$platform, &$mode, &$target) {
     if(!isset($_REQUEST['id']) || !isset($_REQUEST['platform'])) {
-      fail("Usage: download.php?id=<keyboard_id>&platform=<platform>[&mode=<bundle|standalone>][&cid=xxxx]");
+      fail("Usage: download.php?id=<keyboard_id>&platform=<platform>[&mode=<bundle|standalone>]");
     }
 
     $id = $_REQUEST['id'];
     $platform = $_REQUEST['platform'];
     if(isset($_REQUEST['mode'])) $mode = $_REQUEST['mode']; else $mode = 'standalone';
-    if(isset($_REQUEST['cid'])) $cid = $_REQUEST['cid'];
 
     if(!in_array($platform, ['windows','macos','linux','ios','android','web'])) {
       fail("Invalid platform parameter");
@@ -71,38 +66,6 @@
     }
     return true;
   }
-
-  /**
-   * Start a background PHP process to do the async work so we don't block the user
-   */
-  function triggerDownloadBackgroundProcesses($cid, $id, $platform, $mode) {
-    $bearer_token = getenv('TEAMCITY_TOKEN');
-    if($bearer_token === FALSE) {
-      error_log("ERROR: [download.php] TEAMCITY_TOKEN is not configured.");
-      return false;
-    }
-
-    execInBackground("php ../_includes/async/keyboard-download.php " .
-      escapeshellarg($cid) . " " .
-      escapeshellarg($id) . " " .
-      escapeshellarg($platform) . " " .
-      escapeshellarg($mode) . " " .
-      escapeshellarg($bearer_token)
-    );
-  }
-
-  /**
-   * Run in background, cross platform
-   * https://www.php.net/manual/en/function.exec.php#86329
-   */
-  function execInBackground($cmd) {
-    if (substr(php_uname(), 0, 7) == "Windows"){
-        pclose(popen("start /B ". $cmd, "r"));
-    }
-    else {
-        exec($cmd . " > /dev/null &");
-    }
-}
 
   /**
    * Get metadata on the downloadable files from the download server for the keyboard in question

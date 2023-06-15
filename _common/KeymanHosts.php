@@ -97,7 +97,7 @@
       $this->translate_keyman_com = "https://translate.keyman.com";
       $this->sentry_keyman_com = "https://sentry.keyman.com";
 
-      if(in_array($this->tier, [KeymanHosts::TIER_STAGING, KeymanHosts::TIER_TEST])) {
+      if($this->tier == KeymanHosts::TIER_STAGING) {
         // As we build more staging areas, change these over as well. Assumption that we'll stage across multiple sites is a
         // little presumptuous but we can live with it.
         $this->s_keyman_com = "https://s.keyman.com";
@@ -107,12 +107,22 @@
         $this->keyman_com = "https://keyman-staging.com";
         $this->keymanweb_com = "https://keymanweb.com";
         $this->r_keymanweb_com = "https://r.keymanweb.com";
+      } else if($this->tier == KeymanHosts::TIER_TEST) {
+        $this->s_keyman_com = "https://s.keyman.com";
+        $this->api_keyman_com = "https://api.keyman.com";
+        $this->help_keyman_com = "https://help.keyman.com";
+        $this->downloads_keyman_com = "https://downloads.keyman.com";
+        $this->keyman_com = "https://keyman.com";
+        $this->keymanweb_com = "https://keymanweb.com";
+        $this->r_keymanweb_com = "https://r.keymanweb.com";
       } else {
         // TODO: allow override of these with e.g. KEYMANHOSTS_API_KEYMAN_COM='https://api.keyman.com';
         $this->s_keyman_com = "{$site_protocol}s.keyman.com{$site_suffix}";
         $this->api_keyman_com = "{$site_protocol}api.keyman.com{$site_suffix}";
+        // $this->api_keyman_com = "{$site_protocol}api.keyman.com"; //{$site_suffix}";
         $this->help_keyman_com = "{$site_protocol}help.keyman.com{$site_suffix}";
         $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com{$site_suffix}";
+        // $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}";
         $this->keyman_com = "{$site_protocol}keyman.com{$site_suffix}";
         $this->keymanweb_com = "{$site_protocol}keymanweb.com{$site_suffix}";
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available

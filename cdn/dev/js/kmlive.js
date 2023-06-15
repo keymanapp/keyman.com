@@ -228,39 +228,6 @@ function loaded(){
     });
   });
 
-
-  // GA event listeners
-
-  // Install keyboard into Keyman for iOS (already installed)
-  $('#ios-installed').on('click', function() {
-    var keyboard = $('#download-cta').data('keyboard');
-    ga('send', 'event', 'Keyman for iOS', 'Keyboard Download', keyboard);
-  });
-
-  // Download Keyman for iOS
-  $('#ios-install-confirm').on('click', function() {
-    var keyboard = $('#download-cta').data('keyboard');
-    ga('send', 'event', 'Keyman for iOS', 'App Store Link Click', keyboard);
-  });
-
-  // Install keyboard into Keyman for Android (already installed)
-  $('#android-installed').on('touchend', function() {
-    var keyboard = $('#download-cta').data('keyboard');
-    ga('send', 'event', 'Keyman for Android', 'Keyboard Download', keyboard);
-  });
-
-  // Download Keyman for Android
-  $('#android-install-confirm').on('click', function() {
-    var keyboard = $('#download-cta').data('keyboard');
-    ga('send', 'event', 'Keyman for Android', 'App Store Link Click', keyboard);
-  });
-
-  // Mailchimp form signup
-  $('#mc-embedded-subscribe-form').on('submit', function() {
-    var keyboard = $('#download-cta').data('keyboard');
-    ga('send', 'event', 'Mailing List', 'Signup (footer)', keyboard);
-  });
-
   // Desktop features clicker
   $('.info-left li').click(function(){
     $('.info-left>ul>li.active').removeClass('active');
