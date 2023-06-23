@@ -112,7 +112,7 @@
         }
       } else
         $data = TRUE;
-      return ($result !== FALSE) && ($data !== FALSE);
+      return $data !== FALSE;
     }
   }
 
