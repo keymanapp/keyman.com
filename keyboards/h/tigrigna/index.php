@@ -12,7 +12,7 @@
 ?>
 <h2 class="red underline large">Keyman for Tigrigna (Ethiopia)<span lang="ti" class="lang-example large"></span></h2>
 <p>
-    Type in Tigrigna on iPhone, IPad, Windows, macOS, Linux, and Android. Our Tigrigna keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
+    Type in Tigrigna on iPhone, iPad, Windows, macOS, Linux, and Android. Our Tigrigna keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <p>
   <a href="eritrean.php">Click here</a> for Tigirigna (Eritrea)

@@ -12,7 +12,7 @@
 ?>
 <h2 class="red underline large">Keyman for Amharic | <span lang="am" class="lang-example large">አማርኛ ይጻፉ</span></h2>
 <p>
-  Type in Amharic on iPhone, IPad, Windows, macOS, Linux, and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
+  Type in Amharic on iPhone, iPad, Windows, macOS, Linux, and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div id="download-cta" data-language='am' data-keyboard='gff_amharic'>
