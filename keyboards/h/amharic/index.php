@@ -12,7 +12,7 @@
 ?>
 <h2 class="red underline large">Keyman for Amharic | <span lang="am" class="lang-example large">አማርኛ ይጻፉ</span></h2>
 <p>
-  Type in Amharic on iPhone, Windows and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
+  Type in Amharic on iPhone, IPad, Windows, macOS, Linux, and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div id="download-cta" data-language='am' data-keyboard='gff_amharic'>
@@ -124,18 +124,19 @@
   <ul>
     <li><a href="/keyboards/sil_ethiopic_power_g">SIL Ethiopic Power-G</a> - compatible with Power Geez</li>
     <li><a href="/keyboards/sil_ethiopic">SIL Ethiopic</a></li>
+    <li><a href="/keyboards/gff_ethiopic">GFF Ethiopic</a></li>
   </ul>
 
 <p>
   Type in other Ethiopic languages such as:
   <ul>
-      <li><a href="/keyboards/gff-awn-powerpack-7">Awngi</a></li>
-      <li><a href="/keyboards/gff-bcq-powerpack-7">Bench</a></li>
+      <li><a href="/keyboards/gff_awngi_xamtanga">Awngi & Xamtanga</a></li>
       <li><a href="/keyboards/gff_blin">Blin</a></li>
       <li><a href="/keyboards/gff_geez">Ge'ez</a></li>
-      <li><a href="/keyboards/gff-mym-powerpack-7">Me'en-Mursi-Suri-Dizi</a></li>
       <li><a href="/keyboards/gff_gurage">Gurage</a></li>
       <li><a href="/keyboards/gff_gurage_legacy">Gurage Legacy</a></li>
+      <li><a href="/keyboards/gff_harari">Harari</a></li>
+      <li><a href="/keyboards/gff_tigre">Tigre</a></li>
       <li><a href="/tigrigna/eritrean.php">Tigrigna (Eritrea)</a></li>
       <li><a href="/tigrigna/">Tigrigna (Ethiopia)</a></li>
   </ul>
