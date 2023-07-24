@@ -12,7 +12,7 @@
 ?>
 <h2 class="red underline large">Keyman for Tigrigna (Eritrea)<span lang="ti" class="lang-example large"></span></h2>
 <p>
-    Type in Tigrigna on iPhone, Windows and Android. Our Tigrigna keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
+    Type in Tigrigna on iPhone, iPad, Windows, macOS, Linux, and Android. Our Tigrigna keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <p>
   <a href="/tigrigna/">Click here</a> for Tigirigna (Ethiopia)
@@ -115,13 +115,13 @@
     Type in other Ethiopic languages such as:
     <ul>
         <li><a href="/tigrigna/">Tigrigna (Ethiopia)</a></li>
-        <li><a href="/keyboards/gff-awn-powerpack-7">Awngi</a></li>
-        <li><a href="/keyboards/gff-bcq-powerpack-7">Bench</a></li>
+        <li><a href="/keyboards/gff_awngi_xamtanga">Awngi & Xamtanga</a></li>
         <li><a href="/keyboards/gff_blin">Blin</a></li>
         <li><a href="/keyboards/gff_geez">Ge'ez</a></li>
-        <li><a href="/keyboards/gff-mym-powerpack-7">Me'en-Mursi-Suri-Dizi</a></li>
         <li><a href="/keyboards/gff_gurage">Gurage</a></li>
         <li><a href="/keyboards/gff_gurage_legacy">Gurage Legacy</a></li>
+        <li><a href="/keyboards/gff_harari">Harari</a></li>
+        <li><a href="/keyboards/gff_tigre">Tigre</a></li>
         <li><a href="/amharic/">Amharic</a></li>
     </ul>
 </p>
