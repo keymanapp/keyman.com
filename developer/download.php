@@ -21,7 +21,7 @@
 
 <h2 class="red underline">Download Keyman Developer <?php echo $stable_version; ?></h2>
 <p>
-    Keyman Developer <?php echo $stable_version; ?> is compatible with Windows 7, Windows 8, Windows 8.1 and Windows 10. If you have an older version of Windows, please download Keyman Developer 8.0 from our <a href="/downloads/archive/">archived downloads page</a>.
+    Keyman Developer <?php echo $stable_version; ?> is compatible with Windows 10 and Windows 11. If you have an older version of Windows, please download an earlier version of Keyman Developer from our <a href="/downloads/archive/">archived downloads page</a>.
 </p>
 
 <?php
