@@ -65,7 +65,6 @@ class Head {
     foreach($fields->js as $jsFile) { ?>
     <script src='<?=$jsFile?>'></script>
   <?php } ?>
-  <?php require_once('includes/analytics.php'); // TODO: refactor to a class include ?>
 </head>
 
 <?php
