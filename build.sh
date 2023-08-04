@@ -69,11 +69,8 @@ if builder_start_action clean; then
   builder_finish_action success clean
 fi
 
-if builder_start_action stop; then
-  # Stop the Docker container
-  _stop_docker_container
-  builder_finish_action success stop
-fi
+# Stop the Docker container
+builder_run_action stop _stop_docker_container
 
 if builder_start_action build; then
   # Download docker image. --mount option requires BuildKit  
