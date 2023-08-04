@@ -1,6 +1,12 @@
 # This file is used when running with Apache. Adapted from web.config.
 # NOTE: this is not very well tested...
 
+# We turn off automatic addition of slashes for directories because it
+# interferes with the file extension removal for .php files. At the bottom of
+# this file, we have a redirect rule to mimic the same behaviour, _after_ the
+# relevant rewrite rules have been applied
+DirectorySlash off
+
 RewriteEngine on
 
 # Redirect http://keyman.com to https://keyman.com,

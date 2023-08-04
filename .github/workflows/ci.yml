@@ -13,26 +13,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3.5.2
 
-    - name: Setup PHP 7.4
-      uses: shivammathur/setup-php@6972aed899fa2dd4016a7e314c46e6902bcafb7b
-      with:
-        php-version: '7.4'
-        extensions: curl, intl, mbstring, openssl
-        coverage: none
-      env:
-        fail-fast: true
-
-    - name: Build the Docker image
+    - name: Build the Docker image and create link to vendor/ dependencies
       shell: bash
-      # --mount option requires BuildKit
       run: |
         ./build.sh build start
       env:
         fail-fast: true
-
-    #
-    # link to vendor/ dependencies already created in ./build.sh start
-    #
 
     #
     # Finally, run the tests
@@ -55,21 +41,12 @@ jobs:
     - name: Check PHP errors
       shell: bash
       run: |
-        ( set +e; set +o pipefail; [ -f php_errors.log ] && echo 'PHP reported errors or warnings; see log below' && exit 1 || ( echo 'No PHP errors found' && exit 0 ) )
-    #
-    # If any of the tests fail, let's grab a bit more detail on the environment
-    #
-    - name: Report errors
-      if: ${{ failure() }}
-      shell: bash
-      run: |
-        echo "--- tier.txt ---"
-        cat tier.txt
-        echo "--- Docker log ---"
-        docker container logs `docker container ls -l -q`
-        echo "--- PHP Errors ---"
-        [ -f php_errors.log ] && cat php_errors.log
-        echo "--- Contents of /keyboards/khmer_angkor ---"
-        curl http://localhost:8053/keyboards/khmer_angkor
-        echo "--- PHPInfo ---"
-        php -r 'phpinfo();'
+        CONTAINER=`docker container ls -l -q`
+        if docker container logs $CONTAINER 2>&1 | grep -q 'php7'; then
+          echo 'PHP reported errors or warnings:'
+          docker container logs $CONTAINER 2>&1 | grep 'php7'
+          exit 1
+        else
+          echo 'No PHP errors found'
+          exit 0
+        fi
