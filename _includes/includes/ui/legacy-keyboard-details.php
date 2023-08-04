@@ -37,26 +37,6 @@
 
     static private $deprecatedBy;
 
-    private static function WriteLinkAnnotator() {
-      echo '<script>
-        var binaryFileClientId = null;
-        function downloadBinaryFile(a) {
-          if(!a.href.match(/cid=/) && binaryFileClientId) {
-            a.href = a.href + "&cid="+binaryFileClientId;
-          }
-          //alert(a.href);
-          return true;
-        }
-
-        try {
-          if(ga) ga(function(tracker) {
-            binaryFileClientId = tracker.get("clientId");
-          });
-        } catch(error) {
-        }
-      </script>';
-    }
-
     /**
      * render_keyboard_details - display keyboard download boxes and details
      * @param $id - keyboard ID
@@ -73,7 +53,6 @@
       self::WriteDownloadBoxes();
       self::WriteKeyboardDetails();
       if(!empty(self::$deprecatedBy)) echo "</div></div>";
-      self::WriteLinkAnnotator();
     }
 
     /**
@@ -114,7 +93,7 @@
         $url = "/_legacy/keyboard/download?id=$e_id&platform=$platform&mode=$mode";
       }
       $url = htmlspecialchars($url);
-      $downloadlink = "<a class='download-link binary-download' href='$url' onclick='return downloadBinaryFile(this);'><span>$linktitle</span></a>";
+      $downloadlink = "<a class='download-link binary-download' href='$url'><span>$linktitle</span></a>";
       return <<<END
       <div class='download $class'>
         $downloadlink
