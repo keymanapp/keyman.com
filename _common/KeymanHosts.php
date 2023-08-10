@@ -119,7 +119,6 @@
         // TODO: allow override of these with e.g. KEYMANHOSTS_API_KEYMAN_COM='https://api.keyman.com';
         $this->s_keyman_com = "{$site_protocol}s.keyman.com{$site_suffix}";
         $this->api_keyman_com = "{$site_protocol}api.keyman.com{$site_suffix}";
-        // $this->api_keyman_com = "{$site_protocol}api.keyman.com"; //{$site_suffix}";
         $this->help_keyman_com = "{$site_protocol}help.keyman.com{$site_suffix}";
         $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com{$site_suffix}";
         // $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}";
@@ -127,6 +126,9 @@
         $this->keymanweb_com = "{$site_protocol}keymanweb.com{$site_suffix}";
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available
       }
+      // temp overrides
+      $this->api_keyman_com = "http://localhost:8098";
+      $this->downloads_keyman_com = "https://downloads.keyman.com";
 
       $this->blog_keyman_com_host = preg_replace('/^http(s)?:\/\/(.+)$/', '$2', $this->blog_keyman_com);
       $this->s_keyman_com_host  = preg_replace('/^http(s)?:\/\/(.+)$/', '$2', $this->s_keyman_com);
