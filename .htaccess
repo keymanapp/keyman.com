@@ -83,7 +83,7 @@ RewriteRule "^keyboards/share/(^/]+)$" "/keyboards/share.php?id=$1" [L]
 RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [L]
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteRule "^keyboards/(?!install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [L,QSA]
+RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [L,QSA]
 
 
 #
