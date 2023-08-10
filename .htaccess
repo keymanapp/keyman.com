@@ -1,7 +1,14 @@
 # This file is used when running with Apache. Adapted from web.config.
 # NOTE: this is not very well tested...
 
+# We turn off automatic addition of slashes for directories because it
+# interferes with the file extension removal for .php files. At the bottom of
+# this file, we have a redirect rule to mimic the same behaviour, _after_ the
+# relevant rewrite rules have been applied
+DirectorySlash off
+
 RewriteEngine on
+RewriteBase /
 
 # Redirect http://keyman.com to https://keyman.com,
 # but only if on a live site (keyman.com) and not
@@ -40,12 +47,8 @@ RedirectMatch "(?i)^/desktop(\/.*)?" "/windows$1"
 
 # TODO: Permanent redirects 301?
 
-
-# Stop processing dedicated keyboard landing pages
-#RewriteRule "^keyboards/h/.*$" - [L] 
-
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
-#RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
+# RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
 RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R,L]
 
 # /keyboards/{id}/ to /keyboards/id
@@ -184,7 +187,7 @@ RewriteRule "^(.+)$" "/_includes/includes/md/mdhost.php?file=$1.md" [END]
 # Rewrite file to file.php
 RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
 RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
-RewriteRule ="^(.+)$" "$1.php" [END]
+RewriteRule "^(.+)$" "$1.php" [END]
 
 # Rewrite folder/ to folder/index.md
 RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
@@ -194,3 +197,8 @@ RewriteRule "^(.+)/$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
 RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
 RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" !-f
 RewriteRule "^(.+)/$" "$1/index.php" [END]
+
+# Finally, append the terminating slash for folders, given it is no longer
+# done automatically because we put DirectorySlash off
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule "^(.*)([^/])$" "$1$2/" [R]
