@@ -80,10 +80,10 @@ RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
 RewriteRule "^keyboards/share/(^/]+)$" "/keyboards/share.php?id=$1" [L]
 
 # /keyboards/{id}.json to /keyboards/keyboard.json.php
-RewriteRule "^keyboards/(.*)\.json$" "/keyboards/keyboard.json.php?id=$1"
+RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [L]
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteRule "^keyboards/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
+RewriteRule "^keyboards/(?!install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [L,QSA]
 
 
 #
@@ -91,7 +91,7 @@ RewriteRule "^keyboards/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
 #
 
 # /keyboards?q=... to /keyboards/index.php
-RewriteRule "^keyboards$" "/keyboards/index.php" [L]
+# RewriteRule "^keyboards$" "/keyboards/index.php" [L]
 
 # /keyboards/languages to /keyboards/index.php
 RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [L]

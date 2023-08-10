@@ -127,7 +127,8 @@
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available
       }
       // temp overrides
-      $this->api_keyman_com = "http://localhost:8098";
+      // https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms
+      $this->api_keyman_com = "http://host.docker.internal:8098";
       $this->downloads_keyman_com = "https://downloads.keyman.com";
 
       $this->blog_keyman_com_host = preg_replace('/^http(s)?:\/\/(.+)$/', '$2', $this->blog_keyman_com);
