@@ -117,7 +117,7 @@ RedirectMatch "^/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$
 # Connect With Art landing page
 RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
 
-# per-language landing pages
+# per-language landing pages (maltese and rawang)
 RedirectMatch "/albanian(\/?)$"         "/keyboards/basic_kbdal"
 RedirectMatch "/ancient-egyptian(\/?)$" "/keyboards/hieroglyphic"
 RedirectMatch "/ancient-hebrew(\/?)$"   "/keyboards/galaxie_greek_hebrew_mnemonic"
@@ -136,12 +136,12 @@ RedirectMatch "/igbo(\/?)$"            "/keyboards/sil_nigeria_dot"
 RedirectMatch "/khmer(\/?)$"           "/keyboards/khmer_angkor"
 RedirectMatch "/lao(\/?)$"             "/keyboards/basic_kbdlao"
 RedirectMatch "/malayalam(\/?)$"       "/keyboards/basic_kbdinmal"
-RedirectMatch "/maltese(\/?)$"         "/keyboards/maltese"
+RedirectMatch "^/maltese(\/?)$"         "/keyboards/maltese"
 RedirectMatch "/marathi(\/?)$"         "/keyboards/basic_kbdinmar"
 RedirectMatch "/mongolian(\/?)$"       "/keyboards/basic_kbdmon"
 RedirectMatch "/nepali(\/?)$"          "/keyboards/basic_kbdnepr"
 RedirectMatch "/oriya(\/?)$"           "/keyboards/basic_kbdinori"
-RedirectMatch "/rawang(\/?)$"          "/keyboards/rawang"
+RedirectMatch "^/rawang(\/?)$"          "/keyboards/rawang"
 RedirectMatch "/russian(\/?)$"         "/keyboards/basic_kbdru"
 RedirectMatch "/serbian(\/?)$"         "/keyboards/basic_kbdycc"
 RedirectMatch "/sindhi(\/?)$"          "/keyboards/mbsindhi"
