@@ -23,20 +23,20 @@ RewriteBase /
 
 # TODO: Add 301 permanent redirects, append query strings
 
-# macosx and macos to mac" (ignore case)
-RedirectMatch "(?i)^/(macosx|macos)\b(.*)$" "/mac$2"
+# macosx and macos to mac (ignore case)
+RedirectMatch "^(?i)/(macosx|macos)\b(.*)$" "/mac$2"
 
 # Redirect deprecated Google Plus link
-RedirectMatch "(?i)^/plus.*" "/"
+RedirectMatch "^(?i)/plus.*" "/"
 
 # /donate -> donate.keyman.com
-RedirectMatch "(?i)^/donate(\/.*)?" "https://donate.keyman.com"
+RedirectMatch "^(?i)/donate(\/.*)?" "https://donate.keyman.com"
 
 # /privacy -> SIL Privacy policy
-RedirectMatch "(?i)^/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
+RedirectMatch "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
 
 # desktop to windows
-RedirectMatch "(?i)^/desktop(\/.*)?" "/windows$1"
+RedirectMatch "^(?i)/desktop(\/.*)?" "/windows$1"
 
 
 #
@@ -152,8 +152,8 @@ RedirectMatch "/yoruba(\/?)$"          "/keyboards/sil_yoruba8"
 RedirectMatch "/ancient-greek(\/?)$"    "/keyboards/h/greek"
 RedirectMatch "/(french|german|italian|spanish|swedish)(\/?)$"       "/keyboards/h/eurolatin"
 
-# dedicated-keyboard-landing pages
-RedirectMatch "/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(\/.*)?$" "/keyboards/h/$1$2"
+# dedicated-keyboard-landing pages TODO: [R=301]
+RewriteRule "^(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(/.*)?$" "/keyboards/h/$1$2"
 
 #
 # PHP and Markdown rewriting
