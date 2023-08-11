@@ -2,7 +2,7 @@
 # Links for iOS 14.0 onward
 
 # "/go/ios/X.Y/download-keyboards/languages"
-RedirectMatch "/go/ios/([1-9][0-9]\.[0-9])/download-keyboards/languages/(.*)" "/keyboards/languages/$2?embed=ios&amp;embed_version=$1"
+RedirectMatch "/go/ios/([1-9][0-9]\.[0-9])/download-keyboards/languages/(.*)" "/keyboards/languages/$2?embed=ios&embed_version=$1"
 
 # "/go/ios/X.Y/download-keyboards"
-RedirectMatch "/go/ios/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=ios&amp;embed_version=$1"
+RedirectMatch "/go/ios/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=ios&embed_version=$1"
