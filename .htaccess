@@ -38,6 +38,16 @@ RedirectMatch "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-software
 # desktop to windows
 RedirectMatch "^(?i)/desktop(\/.*)?" "/windows$1"
 
+# releases-tier/download"
+# note: the tier is currently ignored
+RewriteRule "^downloads/releases/(alpha|beta|stable)/(.+)$" "/downloads/releases/_version_downloads.php?tier=$1&version=$2" [R,END]
+
+# "releases-download"
+RewriteRule ^downloads/releases/(?!_version_downloads\b)(.+)$ /downloads/releases/_version_downloads.php?version=$1 [R,END]
+
+# index"
+RedirectMatch "^downloads/releases/?$" "/downloads"
+
 
 #
 # Keyboard landing pages (TODO)
