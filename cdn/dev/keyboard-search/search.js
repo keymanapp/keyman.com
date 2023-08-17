@@ -85,9 +85,7 @@ function wrapSearch(localCounter, updateHistory) {
     return false;
   }
 
-  // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"  
-  var base = (location.hostname != 'localhost') ? location.protocol+'//api.'+location.host : 
-    'http://localhost:8098';
+  var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.local]"
   var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(stripCommonWords(q));
 
   if(embed) {
