@@ -38,14 +38,14 @@ RedirectMatch "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-software
 # desktop to windows
 RedirectMatch "^(?i)/desktop(\/.*)?" "/windows$1"
 
-# releases-tier/download"
+# releases-tier/download
 # note: the tier is currently ignored
 RewriteRule "^downloads/releases/(alpha|beta|stable)/(.+)$" "/downloads/releases/_version_downloads.php?tier=$1&version=$2" [R,END]
 
-# "releases-download"
-RewriteRule ^downloads/releases/(?!_version_downloads\b)(.+)$ /downloads/releases/_version_downloads.php?version=$1 [R,END]
+# releases-download
+RewriteRule "^downloads/releases/(?!_version_downloads\b)(.+)$" "/downloads/releases/_version_downloads.php?version=$1" [R,END]
 
-# index"
+# index
 RedirectMatch "^downloads/releases/?$" "/downloads"
 
 
@@ -71,7 +71,7 @@ RedirectMatch "^keyboards/$" "/keyboards"
 RedirectMatch "^keyboards/(?!install|download|share)/share(/?)$" "/keyboards/share/$1"
 
 # /keyboard/{content} to /keyboards/...
-RedirectMatch "/keyboard(/.*)$" "/keyboards$1"
+RewriteRule "^keyboard(/.*)$" "/keyboards$1" [L]
 
 #
 # Install | Download | Share | bare | .json -->
