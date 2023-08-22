@@ -90,6 +90,8 @@
         $site_suffix = '.localhost';
         $site_protocol = 'http://';
         break;
+      default:
+        die("tier is '$this->tier' which is invalid\n");
       }
 
       $this->blog_keyman_com = "https://blog.keyman.com";
