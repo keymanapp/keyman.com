@@ -5,7 +5,7 @@
 
   class KeymanHosts {
     // Four tiers. These use the following rough patterns:
-    // * development = [x.]keyman.com.local
+    // * development = [x.]keyman.com.localhost
     // * Staging = [x.]keyman-staging.com
     // * Production = [x.]keyman.com
     // * Test = GitHub actions, localhost:8888 (uses staging tier for other hosts)
@@ -87,7 +87,7 @@
         $site_protocol = 'http://';
         break;
       case KeymanHosts::TIER_DEVELOPMENT:
-        $site_suffix = '.local';
+        $site_suffix = '.localhost';
         $site_protocol = 'http://';
         break;
       }
