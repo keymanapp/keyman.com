@@ -119,7 +119,7 @@
         $this->api_keyman_com = "https://api.keyman.com";
         $this->help_keyman_com = "https://help.keyman.com";
         $this->downloads_keyman_com = "https://downloads.keyman.com";
-        $this->keyman_com = "https://keyman.com";
+        $this->keyman_com = "http://host.docker.internal:8053"; // Unique for keyman.com
         $this->keymanweb_com = "https://keymanweb.com";
         $this->r_keymanweb_com = "https://r.keymanweb.com";
       } else if($this->tier == KeymanHosts::TIER_DEVELOPMENT) {

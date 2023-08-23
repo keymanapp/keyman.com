@@ -69,11 +69,8 @@ if builder_start_action clean; then
   builder_finish_action success clean
 fi
 
-if builder_start_action stop; then
-  # Stop the Docker container
-  _stop_docker_container
-  builder_finish_action success stop
-fi
+# Stop the Docker container
+builder_run_action stop _stop_docker_container
 
 if builder_start_action build; then
   # Download docker image. --mount option requires BuildKit  
@@ -125,7 +122,10 @@ fi
 if builder_start_action test; then
   # TODO: lint tests
 
-  composer check-docker-links
-
+  set +e; \
+  set +o pipefail; \
+  npx broken-link-checker http://localhost:8053 --ordered --recursive --host-requests 50 -e --filter-level 3 | \
+    grep -E "BROKEN|Getting links from" | \
+    grep -B 1 "BROKEN";
   builder_finish_action success test
 fi
