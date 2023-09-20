@@ -84,13 +84,23 @@ fi
 
 if builder_start_action start; then
   # Start the Docker container
+
+  if [ -d vendor ]; then
+    builder_die "vendor folder is in the way. Please delete it"
+  fi
+
   if [ ! -z $(_get_docker_image_id) ]; then
     if [[ $OSTYPE =~ msys|cygwin ]]; then
       # Windows needs leading slashes for path
-      docker run -d -p 8053:80 -v //$(pwd):/var/www/html/ -e S_KEYMAN_COM=localhost:8054 keyman-website
+      SITE_HTML="//$(pwd):/var/www/html/"
     else
-      docker run -d -p 8053:80 -v $(pwd):/var/www/html/ -e S_KEYMAN_COM=localhost:8054 keyman-website
+      SITE_HTML="$(pwd):/var/www/html/"
     fi
+
+    docker run --rm -d -p 8053:80 -v ${SITE_HTML} \
+      -e S_KEYMAN_COM=localhost:8054 \
+      --name keyman-com-app \
+      keyman-website
   else
     echo "${COLOR_RED}ERROR: Docker container doesn't exist. Run ./build.sh build first${COLOR_RESET}"
     builder_finish_action fail start
@@ -98,7 +108,7 @@ if builder_start_action start; then
 
   # Skip if link already exists
   if [ -L vendor ]; then
-    echo "Link to vendor/ already exists"
+    builder_echo "\nLink to vendor/ already exists"
   else
     # Create link to vendor/ folder
     KEYMAN_CONTAINER=$(_get_docker_container_id)
