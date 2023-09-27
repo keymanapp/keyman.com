@@ -162,15 +162,8 @@
   </p>
 
 <h2 class="red underline">Social Media and Mailing Lists</h2>
-<p>
-  <a href="https://twitter.com/keyman"><img class="contact-social" src="<?php echo cdn("img/twitter2.png"); ?>"/>Twitter</a>
-  <br/>
-  <a href="https://www.facebook.com/KeymanApp"><img class="contact-social" src="<?php echo cdn("img/facebook2.png"); ?>"/>Facebook</a>
-  <br/>
-  <a href="https://community.software.sil.org/c/keyman"><img class="contact-social" src="<?php echo cdn("img/discourse-16.png"); ?>"/>SIL Keyman Community Forum</a>
-  <br/>
-  <a href="/about/list"><img class="contact-social" src="<?php echo cdn("img/email-16.png"); ?>"/>Keyman Announcements by Email</a>
-</p>
+
+<?php require_once('includes/ui/contact-social.php'); ?>
 
 <h2 class="red underline">Open Source Credits and Kudos</h2>
 

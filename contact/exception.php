@@ -42,9 +42,5 @@ require_once('includes/template.php');
 </p>
 
 <h2 class="red underline">Online Community</h2>
-<p>
-    <a href="https://twitter.com/keyman"><img class="contact-social" src="<?php echo cdn("img/twitter2.png"); ?>"/>Twitter</a>
-    <br/>
-    <a href="https://www.facebook.com/KeymanApp"><img class="contact-social" src="<?php echo cdn("img/facebook2.png"); ?>"/>Facebook</a>
-</p>
 
+<?php require_once('includes/ui/contact-social.php'); ?>
