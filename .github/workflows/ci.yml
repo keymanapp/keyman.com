@@ -19,7 +19,7 @@ jobs:
         echo "TIER_TEST" > tier.txt
         ./build.sh build start
       env:
-        fail-fast: true  
+        fail-fast: true
 
     #
     # Finally, run the tests

@@ -121,11 +121,13 @@ fi
 
 if builder_start_action test; then
   # TODO: lint tests
-
-  set +e; \
-  set +o pipefail; \
+  set +e;
+  set +o pipefail;
   npx broken-link-checker http://localhost:8053 --ordered --recursive --host-requests 50 -e --filter-level 3 | \
     grep -E "BROKEN|Getting links from" | \
     grep -B 1 "BROKEN";
+
+  echo "Done checking links"
+
   builder_finish_action success test
 fi
