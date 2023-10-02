@@ -25,5 +25,3 @@ RUN chown -R www-data:www-data /var/www/html/
 
 COPY --from=composer-builder /composer/vendor /var/www/vendor
 RUN a2enmod rewrite headers; a2enconf keyman-site
-
-# build.sh configure later needed to create link to vendor/
