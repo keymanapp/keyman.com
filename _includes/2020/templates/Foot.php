@@ -48,10 +48,12 @@
         <div class="footer-third" id="footer-social">
             <h2 class="footer-third-title">Keep in touch</h2>
             <div>
-              <a href="https://facebook.com/KeymanApp" target="_blank" data-icon='&#xf203;'>Facebook</a>
-              <a href="https://twitter.com/keyman" target="_blank" data-icon='&#xf202;'>Twitter</a>
+              <a rel="me" href="https://facebook.com/KeymanApp" target="_blank" data-icon='&#xf203;'>Facebook</a>
+              <a rel="me" href="https://twitter.com/keyman" target="_blank" data-icon='&#xf10e;'>X/Twitter</a>
+              <a rel="me" href="https://typo.social/@keyman" target="_blank" data-icon='&#xf10a;'>Mastodon</a>
+              <a rel="me" href="https://youtube.com/@KeymanApp" target="_blank" data-icon='&#xf213;'>YouTube</a>
               <a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>/" target="_blank" data-icon='&#xf413;'>Keyman blog</a>
-              <a href="https://github.com/keymanapp" target="_blank" data-icon='&#xf200;'>GitHub</a>
+              <a rel="me" href="https://github.com/keymanapp" target="_blank" data-icon='&#xf200;'>GitHub</a>
               <a href="https://community.software.sil.org/c/keyman" target="_blank" id='footer-community'>Keyman Community</a>
             </div>
         </div>

@@ -309,9 +309,10 @@ html{
 	color: #B92034;
 }
 
-.contact-social{
+.contact-social {
 	position: relative;
 	top: 12px;
+	height: 18px;
 }
 
 /**********************************
@@ -773,7 +774,9 @@ input[type="search"] {
   speak: none;
   padding-right: 4px;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+	vertical-align: top;
+}
 
 #footer-social {
   text-align: center;
