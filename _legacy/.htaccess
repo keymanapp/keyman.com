@@ -4,7 +4,7 @@
 RedirectMatch "/_legacy/keyboards" "/keyboards/index.php"
 
 # legacy /keyboards/ to /keyboards
-RedirectMatch "/_legacy/keyboards/" "/keyboards"
+RedirectMatch 301 "/_legacy/keyboards/" "/keyboards"
 
 # legacy /keyboards/languages to /keyboards/index.php
 RedirectMatch "/_legacy/keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1"

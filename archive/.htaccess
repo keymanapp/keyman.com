@@ -1,4 +1,3 @@
 
 # Redirect /archive/downloads.php"
-# TODO: Permanent
-RedirectMatch "/archive/downloads.php" "/downloads/archive/"
+RedirectMatch 301 "/archive/downloads.php" "/downloads/archive/"
