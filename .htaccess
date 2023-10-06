@@ -14,29 +14,29 @@ RewriteBase /
 # but only if on a live site (keyman.com) and not
 # matching `/.well-known/(.*)$` (for Let's Encrypt)
 <If "%{REQUEST_SCHEME} == 'http' && %{HTTP_HOST} == 'keyman.com' && %{REQUEST_URI} !~ m#^/.well-known/(.*)$#" >
-    Redirect "/" "https://keyman.com"
+    Redirect 301 "/" "https://keyman.com"
 </If>
 
 # Custom error messages
 # ErrorDocument 404 /_includes/errors/404.php
 
 
-# TODO: Add 301 permanent redirects, append query strings
+# TODO: Append query strings 12x [QSA]
 
 # macosx and macos to mac (ignore case)
-RedirectMatch "^(?i)/(macosx|macos)\b(.*)$" "/mac$2"
+RedirectMatch 301 "^(?i)/(macosx|macos)\b(.*)$" "/mac$2"
 
 # Redirect deprecated Google Plus link
-RedirectMatch "^(?i)/plus.*" "/"
+RedirectMatch 301 "^(?i)/plus.*" "/"
 
 # /donate -> donate.keyman.com
-RedirectMatch "^(?i)/donate(\/.*)?" "https://donate.keyman.com"
+RedirectMatch 301 "^(?i)/donate(\/.*)?" "https://donate.keyman.com"
 
 # /privacy -> SIL Privacy policy
-RedirectMatch "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
+RedirectMatch 301 "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
 
 # desktop to windows
-RedirectMatch "^(?i)/desktop(\/.*)?" "/windows$1"
+RedirectMatch 301 "^(?i)/desktop(\/.*)?" "/windows$1"
 
 # releases-tier/download
 # note: the tier is currently ignored
@@ -55,17 +55,15 @@ RedirectMatch "^downloads/releases/?$" "/downloads"
 
 # Cleanup various URLS with permanent redirects
 
-# TODO: Permanent redirects 301?
-
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
 # RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
-RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R,L]
+RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R=301,L]
 
 # /keyboards/{id}/ to /keyboards/id
-RedirectMatch "^keyboards/([^/]+)/$" "/keyboards/$1"
+RedirectMatch 301 "^keyboards/([^/]+)/$" "/keyboards/$1"
 
 # /keyboards/ to /keyboards
-RedirectMatch "^keyboards/$" "/keyboards"
+RedirectMatch 301 "^keyboards/$" "/keyboards"
 
 # Old share url /keyboards/{id}/share[/] to /keyboards/share/id
 RedirectMatch "^keyboards/(?!install|download|share)/share(/?)$" "/keyboards/share/$1"
@@ -162,8 +160,8 @@ RedirectMatch "^/yoruba(/?)$"          "/keyboards/sil_yoruba8"
 RedirectMatch "^/ancient-greek(/?)$"    "/keyboards/h/greek"
 RedirectMatch "^/(french|german|italian|spanish|swedish)(/?)$"       "/keyboards/h/eurolatin"
 
-# dedicated-keyboard-landing pages TODO: [R=301]
-RedirectMatch "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(/.*)?$" "/keyboards/h/$1$2"
+# dedicated-keyboard-landing pages
+RedirectMatch 301 "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(/.*)?$" "/keyboards/h/$1$2"
 
 #
 # PHP and Markdown rewriting

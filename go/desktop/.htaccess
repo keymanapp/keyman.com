@@ -31,7 +31,7 @@ RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/create-locale" "https://secure.ta
 
 # /go/desktop/X.Y/view-exception/ to /contact/exception"
 # This endpoint is not used in 14.0 or later
-RedirectMatch "/go/desktop/1[0123]\.0/view-exception(/)?$" "/contact/exception.php"
+RedirectMatch 301 "/go/desktop/1[0123]\.0/view-exception(/)?$" "/contact/exception.php"
 
 
 # /go/desktop/X.Y/view-exception?id="
