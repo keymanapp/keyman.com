@@ -5,7 +5,7 @@
 
   class KeymanHosts {
     // Four tiers. These use the following rough patterns:
-    // * development = [x.]keyman.com.local
+    // * development = [x.]keyman.com.localhost
     // * Staging = [x.]keyman-staging.com
     // * Production = [x.]keyman.com
     // * Test = GitHub actions, localhost:8888 (uses staging tier for other hosts)
@@ -87,9 +87,16 @@
         $site_protocol = 'http://';
         break;
       case KeymanHosts::TIER_DEVELOPMENT:
-        $site_suffix = '.local';
-        $site_protocol = 'https://';
+        $site_suffix = '.localhost';
+        $site_protocol = 'http://';
         break;
+      default:
+        die("tier is '$this->tier' which is invalid\n");
+      }
+
+      // Append reverse-proxy port
+      if (isset($_SERVER['KEYMAN_COM_PROXY_PORT'])) {
+        $site_suffix .= ':'.$_SERVER['KEYMAN_COM_PROXY_PORT'];
       }
 
       $this->blog_keyman_com = "https://blog.keyman.com";
@@ -112,17 +119,24 @@
         $this->api_keyman_com = "https://api.keyman.com";
         $this->help_keyman_com = "https://help.keyman.com";
         $this->downloads_keyman_com = "https://downloads.keyman.com";
-        $this->keyman_com = "https://keyman.com";
+        $this->keyman_com = "http://host.docker.internal:8053"; // Unique for keyman.com
         $this->keymanweb_com = "https://keymanweb.com";
         $this->r_keymanweb_com = "https://r.keymanweb.com";
+      } else if($this->tier == KeymanHosts::TIER_DEVELOPMENT) {
+        // Locally running sites via Docker need to access "host.docker.internal:[port]"
+        $this->s_keyman_com = "{$site_protocol}s.keyman.com{$site_suffix}";
+        $this->api_keyman_com = "http://host.docker.internal:8058";
+        $this->help_keyman_com = "http://host.docker.internal:8055";
+        $this->downloads_keyman_com = "https://downloads.keyman.com"; // local dev domain is usually not available
+        $this->keyman_com = "http://host.docker.internal:8053";
+        $this->keymanweb_com = "http://host.docker.internal:8057";
+        $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available
       } else {
         // TODO: allow override of these with e.g. KEYMANHOSTS_API_KEYMAN_COM='https://api.keyman.com';
         $this->s_keyman_com = "{$site_protocol}s.keyman.com{$site_suffix}";
         $this->api_keyman_com = "{$site_protocol}api.keyman.com{$site_suffix}";
-        // $this->api_keyman_com = "{$site_protocol}api.keyman.com"; //{$site_suffix}";
         $this->help_keyman_com = "{$site_protocol}help.keyman.com{$site_suffix}";
-        $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com{$site_suffix}";
-        // $this->downloads_keyman_com = "{$site_protocol}downloads.keyman.com"; //{$site_suffix}";
+        $this->downloads_keyman_com = "https://downloads.keyman.com"; // local dev domain is usually not available
         $this->keyman_com = "{$site_protocol}keyman.com{$site_suffix}";
         $this->keymanweb_com = "{$site_protocol}keymanweb.com{$site_suffix}";
         $this->r_keymanweb_com = "https://r.keymanweb.com"; /// local dev domain is usually not available

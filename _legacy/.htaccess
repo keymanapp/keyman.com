@@ -1,0 +1,31 @@
+
+# Keyboard search
+# legacy /keyboards?q=... to /keyboards/index.php
+RedirectMatch "/_legacy/keyboards" "/keyboards/index.php"
+
+# legacy /keyboards/ to /keyboards
+RedirectMatch 301 "/_legacy/keyboards/" "/keyboards"
+
+# legacy /keyboards/languages to /keyboards/index.php
+RedirectMatch "/_legacy/keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1"
+
+# "legacy /keyboards/download to /keyboards/download.php"
+RedirectMatch "/_legacy/keyboards/download(\.php)?" "/keyboards/download.php"
+
+# "legacy /keyboards/legacy to /keyboards/keyboard.php"
+RedirectMatch "/_legacy/keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1"
+
+# "legacy /keyboards/countries to /keyboards/index.php"
+RedirectMatch "/_legacy/keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1"
+
+# "legacy /keyboards/{name}/share to /keyboards/share.php"
+RedirectMatch "/_legacy/keyboards/([^/]+)/share" "/keyboards/share.php?id=$1"
+
+# "legacy /keyboards/{name}.json to /keyboards/keyboard.json.php"
+RedirectMatch "/_legacy/keyboards/(.*)\.json$" "/keyboards/keyboard.json.php?id=$1"
+
+# "legacy /keyboards/{name} to /keyboards/keyboard.php"
+RedirectMatch "/_legacy/keyboards/(.*)" "/keyboards/keyboard.php?id=$1"
+
+# "legacy /keyboard/{name} to /keyboards/..." stopProcessing="true">
+RedirectMatch "/_legacy/keyboard/(.*)$" "/keyboards/$1"

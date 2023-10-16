@@ -1,0 +1,212 @@
+# This file is used when running with Apache. Adapted from web.config.
+# NOTE: this is not very well tested...
+
+# We turn off automatic addition of slashes for directories because it
+# interferes with the file extension removal for .php files. At the bottom of
+# this file, we have a redirect rule to mimic the same behaviour, _after_ the
+# relevant rewrite rules have been applied
+DirectorySlash off
+
+RewriteEngine on
+RewriteBase /
+
+# Redirect http://keyman.com to https://keyman.com,
+# but only if on a live site (keyman.com) and not
+# matching `/.well-known/(.*)$` (for Let's Encrypt)
+<If "%{REQUEST_SCHEME} == 'http' && %{HTTP_HOST} == 'keyman.com' && %{REQUEST_URI} !~ m#^/.well-known/(.*)$#" >
+    Redirect 301 "/" "https://keyman.com"
+</If>
+
+# Custom error messages
+# ErrorDocument 404 /_includes/errors/404.php
+
+
+# TODO: Append query strings 12x [QSA]
+
+# macosx and macos to mac (ignore case)
+RedirectMatch 301 "^(?i)/(macosx|macos)\b(.*)$" "/mac$2"
+
+# Redirect deprecated Google Plus link
+RedirectMatch 301 "^(?i)/plus.*" "/"
+
+# /donate -> donate.keyman.com
+RedirectMatch 301 "^(?i)/donate(\/.*)?" "https://donate.keyman.com"
+
+# /privacy -> SIL Privacy policy
+RedirectMatch 301 "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
+
+# desktop to windows
+RedirectMatch 301 "^(?i)/desktop(\/.*)?" "/windows$1"
+
+# releases-tier/download
+# note: the tier is currently ignored
+RewriteRule "^downloads/releases/(alpha|beta|stable)/(.+)$" "/downloads/releases/_version_downloads.php?tier=$1&version=$2" [R,END]
+
+# releases-download
+RewriteRule "^downloads/releases/(?!_version_downloads\b)(.+)$" "/downloads/releases/_version_downloads.php?version=$1" [R,END]
+
+# index
+RedirectMatch "^downloads/releases/?$" "/downloads"
+
+
+#
+# Keyboard landing pages (TODO)
+#
+
+# Cleanup various URLS with permanent redirects
+
+# /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
+# RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
+RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R=301,L]
+
+# /keyboards/{id}/ to /keyboards/id
+RedirectMatch 301 "^keyboards/([^/]+)/$" "/keyboards/$1"
+
+# /keyboards/ to /keyboards
+RedirectMatch 301 "^keyboards/$" "/keyboards"
+
+# Old share url /keyboards/{id}/share[/] to /keyboards/share/id
+RedirectMatch "^keyboards/(?!install|download|share)/share(/?)$" "/keyboards/share/$1"
+
+# /keyboard/{content} to /keyboards/...
+RewriteRule "^keyboard(/.*)$" "/keyboards$1" [L]
+
+#
+# Install | Download | Share | bare | .json -->
+#
+
+# /keyboards/install/[id] to /keyboards/install.php
+RewriteRule "^keyboards/install/([^/]+)$" "/keyboards/install.php?id=$1" [L]
+
+# /keyboards/download/[id] to /keyboards/keyboard.php
+# This formerly redirected to a download, but we no longer need it; keep it for
+# legacy links
+RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
+
+# /keyboards/share/[id] to /keyboards/share.php
+# if the keyboard exists in the repo, then share.php will redirecct to /keyboards/<id>
+RewriteRule "^keyboards/share/(^/]+)$" "/keyboards/share.php?id=$1" [L]
+
+# /keyboards/{id}.json to /keyboards/keyboard.json.php
+RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [L]
+
+# /keyboards/{id} to /keyboards/keyboard.php
+RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [L,QSA]
+
+
+#
+# Search
+#
+
+# /keyboards?q=... to /keyboards/index.php
+# RewriteRule "^keyboards$" "/keyboards/index.php" [L]
+
+# /keyboards/languages to /keyboards/index.php
+RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [L]
+
+# /keyboards/download to /keyboards/download.php
+RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [L]
+
+# /keyboards/legacy to /keyboards/keyboard.php
+RewriteRule "^keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1" [L]
+
+# /keyboards/countries to /keyboards/index.php
+RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [L]
+
+# Synonym paths
+
+# 10.0 to 15.0 
+# /1X.0 to /1X landing page
+RedirectMatch "^/1([0-5])(\.0)\/?" "/1$1/"
+
+# ios
+RedirectMatch "^/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$2"
+
+# Connect With Art landing page
+RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
+
+# per-language landing pages
+RedirectMatch "^/albanian(/?)$"         "/keyboards/basic_kbdal"
+RedirectMatch "^/ancient-egyptian(/?)$" "/keyboards/hieroglyphic"
+RedirectMatch "^/ancient-hebrew(/?)$"   "/keyboards/galaxie_greek_hebrew_mnemonic"
+RedirectMatch "^/arabic(/?)$"           "/keyboards/basic_kbda1"
+RedirectMatch "^/assamese(/?)$"         "/keyboards/isis_bangla"
+RedirectMatch "^/basic_kbdsn1(/?)$"     "/keyboards/basic_kbdsn1"
+RedirectMatch "^/bengali(/?)$"          "/keyboards/basic_kbdinbe2"
+RedirectMatch "^/cherokee(/?)$"         "/keyboards/cherokee6"
+RedirectMatch "^/cheyenne(/?)$"         "/keyboards/sil_cheyenne"
+RedirectMatch "^/dinka(/?)$"            "/keyboards/el_dinka"
+RedirectMatch "^/dutch(/?)$"            "/keyboards/basic_kbdne"
+RedirectMatch "^/farsi(/?)$"            "/keyboards/farsi_unicode"
+RedirectMatch "^/hebrew(/?)$"           "/keyboards/basic_kbdheb"
+RedirectMatch "^/hindi(/?)$"           "/keyboards/basic_kbdindev"
+RedirectMatch "^/igbo(/?)$"            "/keyboards/sil_nigeria_dot"
+RedirectMatch "^/khmer(/?)$"           "/keyboards/khmer_angkor"
+RedirectMatch "^/lao(/?)$"             "/keyboards/basic_kbdlao"
+RedirectMatch "^/malayalam(/?)$"       "/keyboards/basic_kbdinmal"
+RedirectMatch "^/maltese(/?)$"         "/keyboards/maltese"
+RedirectMatch "^/marathi(/?)$"         "/keyboards/basic_kbdinmar"
+RedirectMatch "^/mongolian(/?)$"       "/keyboards/basic_kbdmon"
+RedirectMatch "^/nepali(/?)$"          "/keyboards/basic_kbdnepr"
+RedirectMatch "^/oriya(/?)$"           "/keyboards/basic_kbdinori"
+RedirectMatch "^/rawang(/?)$"          "/keyboards/rawang"
+RedirectMatch "^/russian(/?)$"         "/keyboards/basic_kbdru"
+RedirectMatch "^/serbian(/?)$"         "/keyboards/basic_kbdycc"
+RedirectMatch "^/sindhi(/?)$"          "/keyboards/mbsindhi"
+RedirectMatch "^/thai(/?)$"            "/keyboards/thai-uni"
+RedirectMatch "^/yiddish(/?)$"         "/keyboards/yiddish_pasekh"
+RedirectMatch "^/yoruba(/?)$"          "/keyboards/sil_yoruba8"
+
+RedirectMatch "^/ancient-greek(/?)$"    "/keyboards/h/greek"
+RedirectMatch "^/(french|german|italian|spanish|swedish)(/?)$"       "/keyboards/h/eurolatin"
+
+# dedicated-keyboard-landing pages
+RedirectMatch 301 "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(/.*)?$" "/keyboards/h/$1$2"
+
+#
+# PHP and Markdown rewriting
+#
+
+# Remove index or index.php and redirect (and stop processing)
+RewriteCond "$1" -d
+RewriteRule "^((.+)/)?index(\.php)?$" "$1" [R,L]
+
+# Remove .php extension and redirect
+RewriteCond "$1.php" -f
+RewriteCond "$1" !-d
+RewriteRule "^(.+)\.php$" "$1" [R,L]
+
+# Redirect folder without / to include /
+RewriteCond "{DOCUMENT_ROOT}/$1" -d
+RewriteCond "{DOCUMENT_ROOT}/$1.php" !-f
+RewriteCond "{DOCUMENT_ROOT}/$1.md" !-f
+RewriteRule "^(.+[^/])$" "$1/" [R,END]
+
+#
+# PHP rewriting
+#
+
+# TODO: mdhost currently in a different path than help.keyman
+
+# Rewrite file to file.md
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
+RewriteRule "^(.+)$" "/_includes/includes/md/mdhost.php?file=$1.md" [END]
+
+# Rewrite file to file.php
+RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
+RewriteRule "^(.+)$" "$1.php" [END]
+
+# Rewrite folder/ to folder/index.md
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
+RewriteRule "^(.+)/$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
+
+# Rewrite folder/ to folder/index.php
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" !-f
+RewriteRule "^(.+)/$" "$1/index.php" [END]
+
+# Finally, append the terminating slash for folders, given it is no longer
+# done automatically because we put DirectorySlash off
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule "^(.*)([^/])$" "$1$2/" [R]
