@@ -17,9 +17,14 @@ RewriteBase /
     Redirect 301 "/" "https://keyman.com"
 </If>
 
+AddType application/json apple-app-site-association
+
 # Custom error messages
 # ErrorDocument 404 /_includes/errors/404.php
 
+# apple-app-site-association
+RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
+RewriteRule "^apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
 
 # TODO: Append query strings 12x [QSA]
 
