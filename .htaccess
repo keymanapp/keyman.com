@@ -46,7 +46,7 @@ RewriteRule "^downloads/releases/(alpha|beta|stable)/(.+)$" "/downloads/releases
 RewriteRule "^downloads/releases/(?!_version_downloads\b)(.+)$" "/downloads/releases/_version_downloads.php?version=$1" [R,END]
 
 # index
-RedirectMatch "^downloads/releases/?$" "/downloads"
+RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
 
 
 #
