@@ -1,33 +1,20 @@
 #!/usr/bin/env bash
-#
-# Setup keyman.com site to run via Docker.
-#
-set -eu
+## START STANDARD SITE BUILD SCRIPT INCLUDE
+readonly THIS_SCRIPT="$(readlink -f "${BASH_SOURCE[0]}")"
+readonly BOOTSTRAP="$(dirname "$THIS_SCRIPT")/resources/bootstrap.inc.sh"
+readonly BOOTSTRAP_VERSION=chore/v0.4
+[ -f "$BOOTSTRAP" ] && source "$BOOTSTRAP" || source <(curl -fs https://raw.githubusercontent.com/keymanapp/shared-sites/$BOOTSTRAP_VERSION/bootstrap.inc.sh)
+## END STANDARD SITE BUILD SCRIPT INCLUDE
 
-## START STANDARD BUILD SCRIPT INCLUDE
-# adjust relative paths as necessary
-THIS_SCRIPT="$(greadlink -f "${BASH_SOURCE[0]}" 2>/dev/null || readlink -f "${BASH_SOURCE[0]}")"
-. "$(dirname "$THIS_SCRIPT")/resources/builder.inc.sh"
-## END STANDARD BUILD SCRIPT INCLUDE
+readonly KEYMAN_CONTAINER_NAME=keyman-website
+readonly KEYMAN_CONTAINER_DESC=keyman-com-app
+readonly KEYMAN_IMAGE_NAME=keyman-website
+readonly HOST_KEYMAN_COM=keyman.com.localhost
+
+source _common/keyman-local-ports.inc.sh
+source _common/docker.inc.sh
 
 ################################ Main script ################################
-
-function _get_docker_image_id() {
-  echo "$(docker images -q keyman-website)"
-}
-
-function _get_docker_container_id() {
-  echo "$(docker ps -a -q --filter ancestor=keyman-website)"
-}
-
-function _stop_docker_container() {
-  KEYMAN_CONTAINER=$(_get_docker_container_id)
-  if [ ! -z "$KEYMAN_CONTAINER" ]; then
-    docker container stop $KEYMAN_CONTAINER
-  else
-    echo "No Docker container to stop"
-  fi
-}
 
 builder_describe \
   "Setup keyman.com site to run via Docker." \
@@ -40,86 +27,7 @@ builder_describe \
 
 builder_parse "$@"
 
-# This script runs from its own folder
-cd "$REPO_ROOT"
-
-if builder_start_action configure; then
-  # Nothing to do
-  builder_finish_action success configure
-fi
-
-if builder_start_action clean; then
-  # Stop and cleanup Docker containers and images used for the site
-  _stop_docker_container
-
-  KEYMAN_CONTAINER=$(_get_docker_container_id)
-  if [ ! -z "$KEYMAN_CONTAINER" ]; then
-    docker container rm $KEYMAN_CONTAINER
-  else
-    echo "No Docker container to clean"
-  fi
-    
-  KEYMAN_IMAGE=$(_get_docker_image_id)
-  if [ ! -z "$KEYMAN_IMAGE" ]; then
-    docker rmi keyman-website
-  else 
-    echo "No Docker image to clean"
-  fi
-
-  builder_finish_action success clean
-fi
-
-# Stop the Docker container
-builder_run_action stop _stop_docker_container
-
-if builder_start_action build; then
-  # Download docker image. --mount option requires BuildKit  
-  DOCKER_BUILDKIT=1 docker build -t keyman-website .
-
-  builder_finish_action success build
-fi
-
-if builder_start_action start; then
-  # Start the Docker container
-
-  if [ -d vendor ]; then
-    builder_die "vendor folder is in the way. Please delete it"
-  fi
-
-  if [ ! -z $(_get_docker_image_id) ]; then
-    if [[ $OSTYPE =~ msys|cygwin ]]; then
-      # Windows needs leading slashes for path
-      SITE_HTML="//$(pwd):/var/www/html/"
-    else
-      SITE_HTML="$(pwd):/var/www/html/"
-    fi
-
-    docker run --rm -d -p 8053:80 -v ${SITE_HTML} \
-      -e S_KEYMAN_COM=localhost:8054 \
-      --name keyman-com-app \
-      keyman-website
-  else
-    echo "${COLOR_RED}ERROR: Docker container doesn't exist. Run ./build.sh build first${COLOR_RESET}"
-    builder_finish_action fail start
-  fi
-
-  # Skip if link already exists
-  if [ -L vendor ]; then
-    builder_echo "\nLink to vendor/ already exists"
-  else
-    # Create link to vendor/ folder
-    KEYMAN_CONTAINER=$(_get_docker_container_id)
-    if [ ! -z "$KEYMAN_CONTAINER" ]; then
-      docker exec -i $KEYMAN_CONTAINER sh -c "ln -s /var/www/vendor vendor && chown -R www-data:www-data vendor"
-    else
-      echo "No Docker container running to create link to vendor/"
-    fi
-  fi
-
-  builder_finish_action success start
-fi
-
-if builder_start_action test; then
+function test_docker_container() {
   # TODO: lint tests
   set +e;
   set +o pipefail;
@@ -128,6 +36,12 @@ if builder_start_action test; then
     grep -B 1 "BROKEN";
 
   echo "Done checking links"
+}
 
-  builder_finish_action success test
-fi
+builder_run_action configure  bootstrap_configure
+builder_run_action clean      clean_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
+builder_run_action stop       stop_docker_container  $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
+builder_run_action build      build_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
+builder_run_action start      start_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME $KEYMAN_CONTAINER_DESC $HOST_KEYMAN_COM $PORT_KEYMAN_COM
+
+builder_run_action test       test_docker_container
