@@ -15,7 +15,7 @@
     $d = opendir($folder);
     while(($f = readdir($d)) !== false) {
       if($f == '.' || $f == '..') continue;
-      $f = "$folder\\$f";
+      $f = "$folder" . DIRECTORY_SEPARATOR . "$f";
       if(is_dir($f)) {
         generate_hashed_version_dir($source, $deploy, $f);
       } else {
@@ -36,7 +36,7 @@
       $dest_file = $source_file_short;
     }
     if(!file_exists($deploy . $dest_file)) {
-      echo $source_file . " => " . $deploy . $dest_file . "\n";
+      echo $source_file . " => " . $deploy . $dest_file . "<br/>";
      
       // Copy the new hashed filename into the deploy folder
       copy($source_file, $deploy . $dest_file);
@@ -53,8 +53,8 @@
     global $resource_list;
     $resource_list = array();
     
-    $deploy = $root . "\\deploy";
-    $source = $root . "\\dev";
+    $deploy = $root . DIRECTORY_SEPARATOR . "deploy";
+    $source = $root . DIRECTORY_SEPARATOR . "dev";
 
     if(!file_exists($deploy)) {
       mkdir($deploy);
