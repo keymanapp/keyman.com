@@ -38,16 +38,8 @@ function test_docker_container() {
   echo "Done checking links"
 }
 
-# Custom cleanup of CDN
-function clean_docker_container_cdn() {
-  clean_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
-
-  # Cleanup CDN
-  rm -rf cdn/deploy
-}
-
 builder_run_action configure  bootstrap_configure
-builder_run_action clean      clean_docker_container_cdn
+builder_run_action clean      clean_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
 builder_run_action stop       stop_docker_container  $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
 builder_run_action build      build_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
 builder_run_action start      start_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME $KEYMAN_CONTAINER_DESC $HOST_KEYMAN_COM $PORT_KEYMAN_COM

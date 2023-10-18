@@ -36,7 +36,7 @@
       $dest_file = $source_file_short;
     }
     if(!file_exists($deploy . $dest_file)) {
-      echo $source_file . " => " . $deploy . $dest_file . "<br/>";
+      echo $source_file . " => " . $deploy . $dest_file . "\n";
      
       // Copy the new hashed filename into the deploy folder
       copy($source_file, $deploy . $dest_file);
