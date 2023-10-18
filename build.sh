@@ -29,6 +29,8 @@ builder_parse "$@"
 
 function test_docker_container() {
   # TODO: lint tests
+  echo "TIER_TEST" > tier.txt
+  echo "---- Testing links ----"
   set +e;
   set +o pipefail;
   npx broken-link-checker http://localhost:8053 --ordered --recursive --host-requests 50 -e --filter-level 3 | \
@@ -36,6 +38,7 @@ function test_docker_container() {
     grep -B 1 "BROKEN";
 
   echo "Done checking links"
+  rm tier.txt
 }
 
 builder_run_action configure  bootstrap_configure
