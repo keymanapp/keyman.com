@@ -2,6 +2,8 @@
 /.vscode
 cdn/deploy/
 
+tier.txt
+
 vendor*
 /node_modules/
 
