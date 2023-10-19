@@ -3,6 +3,70 @@ title: Go Test Links
 description: Test page for links
 ---
 
+[why](/go/why)
+
+[live: why](https://keyman.com/go/why)
+
+
+### Developer 10.0 onward redirects for package guide
+[developer-help-mobile](/go/16.0/developer-help-mobile)
+
+[live: developer-help-mobile](https://keyman.com/go/16.0/developer-help-mobile)
+
+[developer-help-mobile](/go/16.0/developer-help-packages)
+
+[live: developer-help-mobile](https://keyman.com/go/16.0/developer-help-packages)
+
+----
+
+## package/download
+
+
+### download-model/keyboard package
+
+[package/download/model/nrc.en.mtnt](/go/package/download/model/nrc.en.mtnt)
+
+[live: package/download/model/nrc.en.mtnt](https://keyman.com/go/package/download/model/nrc.en.mtnt)
+
+[package/download/keyboard/sil_ipa](/go/package/download/keyboard/sil_ipa)
+
+[live: package/download/keyboard/sil_ipa](https://keyman.com/go/package/download/keyboard/sil_ipa)
+
+
+
+### keyboard/id/share
+
+[keyboard/sil_ipa/share](/go/keyboard/sil_ipa/share)
+
+[live: keyboard/sil_ipa/share](https://keyman.com/go/keyboard/sil_ipa/share)
+
+
+## Non-app-specific endpoints
+
+
+### go/support
+
+[support](/go/16.0/support)
+
+[live: support](https://keyman.com/go/16.0/support)
+
+
+### go/privacy
+
+[privacy](/go/16.0/privacy)
+
+[live: privacy](https://keyman.com/go/16.0/privacy)
+
+
+### go/community
+
+[community](/go/16.0/community)
+
+[live: community](https://keyman.com/go/16.0/community)
+
+
+----
+
 ## android
 
 ### /go/android/X.Y/download-keyboards/languages
@@ -299,7 +363,7 @@ Links for Keyman for Windows 14.0 onward
 
 [download-keyboards](/go/windows/16.0/download-keyboards)
 
-[live: download-keyboards](/go/windows/16.0/download-keyboards)
+[live: download-keyboards](https://keyman.com/go/windows/16.0/download-keyboards)
 
 
 ### /go/windows/X.Y/keep-in-touch

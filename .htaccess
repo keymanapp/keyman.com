@@ -90,7 +90,7 @@ RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
 
 # /keyboards/share/[id] to /keyboards/share.php
 # if the keyboard exists in the repo, then share.php will redirecct to /keyboards/<id>
-RewriteRule "^keyboards/share/(^/]+)$" "/keyboards/share.php?id=$1" [L]
+RewriteRule "^keyboards/share/([^/]+)$" "/keyboards/share.php?id=$1" [L]
 
 # /keyboards/{id}.json to /keyboards/keyboard.json.php
 RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [L]
