@@ -1,0 +1,31 @@
+
+# why
+RedirectMatch "/go/why\/?$" "https://marc.durdin.net/2018/03/the-case-for-keyman/"
+
+# Developer 10.0 onward redirects for package guide
+RedirectMatch "/go/(([1-9][0-9])([.]?)([0-9]))/developer-help-(mobile|packages)(/)?" "https://help.keyman.com/developer/$1/guides/distribute/packages"
+
+# TODO: Download redirects for keyboard permalinks (these three rules need refresh)
+
+#
+# go/package/download
+#
+
+# download-model/keyboard package
+RedirectMatch "/go/package/download/(model|keyboard)/([^/]+)\/?$" "https://keyman.com/go/package/download.php?type=$1&id=$2"
+
+# keyboard/id/share
+RedirectMatch "/go/keyboard/([^/?]+)/share$" "/keyboards/share/$1"
+
+#
+# Non-app-specific endpoints
+#
+
+# go/support
+RedirectMatch "/go/([1-9][0-9]\.[0-9])/support$" "https://help.keyman.com/"
+
+# go/privacy
+RedirectMatch "/go/([1-9][0-9]\.[0-9])/privacy$" "/privacy"
+
+# go/community
+RedirectMatch "/go/([1-9][0-9]\.[0-9])/community$" "https://community.software.sil.org/c/keyman"
