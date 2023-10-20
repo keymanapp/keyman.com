@@ -1,11 +1,22 @@
 ---
 title: Go Test Links
 description: Test page for links
+showmenu: false
 ---
 
 [why](/go/why)
 
 [live: why](https://keyman.com/go/why)
+
+## Products
+
+[macosx to mac](/macosx/download)
+
+[live: macosx to mac](https://keyman.com/macosx/download)
+
+[desktop to Windows](/desktop/download)
+
+[live: desktop to Windows](https://keyman.com/desktop/download)
 
 
 ### Developer 10.0 onward redirects for package guide
@@ -31,14 +42,6 @@ description: Test page for links
 [package/download/keyboard/sil_ipa](/go/package/download/keyboard/sil_ipa)
 
 [live: package/download/keyboard/sil_ipa](https://keyman.com/go/package/download/keyboard/sil_ipa)
-
-
-
-### keyboard/id/share
-
-[keyboard/sil_ipa/share](/go/keyboard/sil_ipa/share)
-
-[live: keyboard/sil_ipa/share](https://keyman.com/go/keyboard/sil_ipa/share)
 
 
 ## Non-app-specific endpoints
