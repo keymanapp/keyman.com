@@ -62,7 +62,7 @@ RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
 
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
 # RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
-RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R=301,L]
+RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R=301,END,QSA]
 
 # /keyboards/{id}/ to /keyboards/id
 RedirectMatch 301 "^keyboards/([^/]+)/$" "/keyboards/$1"
@@ -81,22 +81,22 @@ RewriteRule "^keyboard(/.*)$" "/keyboards$1" [L]
 #
 
 # /keyboards/install/[id] to /keyboards/install.php
-RewriteRule "^keyboards/install/([^/]+)$" "/keyboards/install.php?id=$1" [L]
+RewriteRule "^keyboards/install/([^/]+)$" "/keyboards/install.php?id=$1" [END,QSA]
 
 # /keyboards/download/[id] to /keyboards/keyboard.php
 # This formerly redirected to a download, but we no longer need it; keep it for
 # legacy links
-RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [L]
+RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [END,QSA]
 
 # /keyboards/share/[id] to /keyboards/share.php
-# if the keyboard exists in the repo, then share.php will redirecct to /keyboards/<id>
+# if the keyboard exists in the repo, then share.php will redirect to /keyboards/<id>
 RewriteRule "^keyboards/share/([^/]+)$" "/keyboards/share.php?id=$1" [L]
 
 # /keyboards/{id}.json to /keyboards/keyboard.json.php
-RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [L]
+RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [END]
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [L,QSA]
+RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [END,QSA]
 
 
 #
@@ -110,13 +110,13 @@ RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "
 RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [L]
 
 # /keyboards/download to /keyboards/download.php
-RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [L]
+RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [L,QSA]
 
 # /keyboards/legacy to /keyboards/keyboard.php
 RewriteRule "^keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1" [L]
 
 # /keyboards/countries to /keyboards/index.php
-RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [L]
+RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [END]
 
 # Synonym paths
 
