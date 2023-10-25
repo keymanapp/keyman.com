@@ -395,3 +395,9 @@ Links for Keyman for Windows 14.0 onward
 
 
 ----
+
+### /go/keyboard/id/share
+
+[keyboard/sil_ipa/share](/go/keyboard/sil_ipa/share)
+
+[live: keyboard/sil_ipa/share](https://keyman.com/go/keyboard/sil_ipa/share)

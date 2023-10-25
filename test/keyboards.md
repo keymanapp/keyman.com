@@ -4,13 +4,8 @@ description: Test page for keyboard links
 showmenu: false
 ---
 
-## Keyboards
 
-### keyboard/id/share
-
-[keyboard/sil_ipa/share](/go/keyboard/sil_ipa/share)
-
-[live: keyboard/sil_ipa/share](https://keyman.com/go/keyboard/sil_ipa/share)
+## keyboards/{install|download|share}/id
 
 ### keyboards/install/id
 
@@ -24,75 +19,72 @@ showmenu: false
 
 [live: keyboards/download/sil_ipa](https://keyman.com/keyboards/download/sil_ipa)
 
+### keyboards/share/id
+
+[keyboards/share/sil_ipa](/keyboards/share/sil_ipa)
+
+[live: keyboards/share/sil_ipa](https://keyman.com/keyboards/share/sil_ipa)
+
+----
+
+### keyboards/id/
+
+[keyboards/sil_ipa/](/keyboards/sil_ipa/)
+
+[live: keyboards/sil_ipa/](https://keyman.com/keyboards/sil_ipa/)
+
+### keyboards/
+
+[keyboards/](/keyboards/)
+
+[live: keyboards/](https://keyman.com/keyboards/)
+
+### Old share keyboards/id/share
+
+[keyboards/sil_ipa/share](/keyboards/sil_ipa/share)
+
+[live: keyboards/sil_ipa/share](https://keyman.com/keyboards/sil_ipa/share)
+
+
+### keyboard/{content}
+
+[keyboard/sil_ipa](/keyboard/sil_ipa)
+
+[live: keyboard/sil_ipa](https://keyman.com/keyboard/sil_ipa)
+
+
+## Install | Download | Share | bare | .json
+
 ### keyboards/id.json
 
 [keyboards/sil_ipa.json](/keyboards/sil_ipa.json)
 
 [live: keyboards/sil_ipa.json](https://keyman.com/keyboards/sil_ipa.json)
 
+----
+
+## Search
+
+### keyboards/languages/id
+
+[keyboards/languages/km](/keyboards/languages/km)
+
+[live: keyboards/languages/km](https://keyman.com/keyboards/languages/km)
+
+### keyboards/download.php
+
+[keyboards/download.php?id=sil_ipa](/keyboards/download.php?id=sil_ipa)
+
+[live: keyboards/download.php?id=sil_ipa](https://keyman.com/keyboards/download.php?id=sil_ipa)
+
+### keyboards/legacy
+
+[keyboards/legacy/cameroon querty non-u kbd-fonts](/keyboards/legacy/cameroon%20qwerty%20non-u%20kbd-fonts)
+
+[live: keyboards/legacy/cameroon querty non-u kbd-fonts](https://keyman.com/keyboards/legacy/cameroon%20qwerty%20non-u%20kbd-fonts)
+
 ### keyboards/countries/id
 
 [keyboards/countries/kh](/keyboards/countries/kh)
 
 [live: keyboards/countries/kh](https://keyman.com/keyboards/countries/kh)
-
-----
-
-## legacy /keyboards
-
-[_legacy/keyboards](/_legacy/keyboards)
-
-[live: _legacy/keyboards](https://keyman.com/_legacy/keyboards)
-
-[_legacy/keyboards/](/_legacy/keyboards/)
-
-[live: _legacy/keyboards/](https://keyman.com/_legacy/keyboards/)
-
-
-### legacy /keyboards/languages/id
-
-[_legacy/keyboards/languages/km](/_legacy/keyboards/languages/km)
-
-[live: _legacy/keyboards/languages/km](https://keyman.com/_legacy/keyboards/languages/km)
-
-### legacy /keyboards/download
-
-[_legacy/keyboards/download](/_legacy/keyboards/download?id=sil_ipa&platform=windows&mode=standalone)
-
-[live: _legacy/keyboards/download](https://keyman.com/_legacy/keyboards/download?id=sil_ipa&platform=windows&mode=standalone)
-
-### legacy /keyboards/legacy
-
-[_legacy/keyboards/legacy/id](/_legacy/keyboards/legacy/sil_ipa)
-
-[live: _legacy/keyboards/legacy/id](https://keyman.com/_legacy/keyboards/legacy/sil_ipa)
-
-### legacy /keyboards/countries/id
-
-[_legacy/keyboards/countries/kh](/_legacy/keyboards/countries/kh)
-
-[live: _legacy/keyboards/countries/kh](https://keyman.com/_legacy/keyboards/countries/kh)
-
-### legacy /keyboards/id/share
-
-[_legacy/keyboards/sil_ipa/share](/_legacy/keyboards/sil_ipa/share)
-
-[live: _legacy/keyboards/sil_ipa/share](https://keyman.com/_legacy/keyboards/sil_ipa/share)
-
-### legacy /keyboards/id.json
-
-[_legacy/keyboards/sil_ipa.json](/_legacy/keyboards/sil_ipa.json)
-
-[live: _legacy/keyboards/sil_ipa.json](https://keyman.com/_legacy/keyboards/sil_ipa.json)
-
-### legacy /keyboards/id
-
-[_legacy/keyboards/sil_ipa](/_legacy/keyboards/sil_ipa)
-
-[live: _legacy/keyboards/sil_ipa](https://keyman.com/_legacy/keyboards/sil_ipa)
-
-### legacy /keyboard/id
-
-[_legacy/keyboard/sil_ipa](/_legacy/keyboard/sil_ipa)
-
-[live: _legacy/keyboard/sil_ipa](https://keyman.com/_legacy/keyboard/sil_ipa)
