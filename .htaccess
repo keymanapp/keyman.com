@@ -72,7 +72,7 @@ RewriteRule "^keyboards/([^/]+)/$" "/keyboards/$1" [R=301,END,QSA]
 # Remove final /
 
 # Old share url /keyboards/{id}/share[/] to /keyboards/share/id
-RewriteRule "^keyboards/(.*)/share(/?)$" "/keyboards/share.php?id=$1" [R=301]
+RewriteRule "^keyboards/(.*)/share(/?)$" "/keyboards/share/$1" [R=301]
 
 # /keyboard/{content} to /keyboards/...
 RewriteRule "^keyboard(/.*)$" "/keyboards$1" [R,END]
