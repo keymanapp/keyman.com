@@ -6,6 +6,8 @@
   require_once(__DIR__ . '/../2020/KeymanVersion.php');
   require_once(__DIR__ . '/../2020/templates/Head.php');
 
+  $env = getenv();
+
   function template_finish($foot) {
     //ob_end_flush();
 
@@ -16,8 +18,9 @@
 
   function head($args=[]){
     // Args are title='My Page Title', css='page.css' showMenu=true/false, showHeader=true/false, foot=true/false
+    global $env;
 
-    $agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+    $agent = isset($env['HTTP_USER_AGENT']) ? $env['HTTP_USER_AGENT'] : '';
     // Get device
     if (strstr($agent,'Windows')) {
         $device = 'Windows';
