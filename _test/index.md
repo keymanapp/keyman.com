@@ -1,6 +1,6 @@
 ---
-title: Test Links
-description: Test pages for links
+title: Internal Test Links
+description: Internal Test Pages for Checking Broken Links
 showmenu: false
 ---
 
@@ -16,10 +16,14 @@ showmenu: false
 [live: desktop to Windows](https://keyman.com/desktop/download)
 
 
-## Other Test Pages
+## Links to Other Test Pages
 
 [/go links](./go)
 
 [/keyboards links](./keyboards)
 
 [/_legacy keyboards links](./legacy)
+
+## Link to Main Page
+
+[Main Page](/)

@@ -26,8 +26,6 @@ AddType application/json apple-app-site-association
 RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
 RewriteRule "^apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
 
-# TODO: Append query strings 12x [QSA]
-
 # macosx and macos to mac (ignore case)
 RedirectMatch 301 "^(?i)/(macosx|macos)\b(.*)$" "/mac$2"
 
@@ -61,20 +59,21 @@ RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
 # Cleanup various URLS with permanent redirects
 
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
-# RedirectMatch "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2"
+# Remove final /
 RewriteRule "^keyboards/(install|download|share)/([^/]+)/$" "/keyboards/$1/$2" [R=301,END,QSA]
 
 # /keyboards/{id}/ to /keyboards/id
-RedirectMatch 301 "^keyboards/([^/]+)/$" "/keyboards/$1"
+# Remove final /
+RewriteRule "^keyboards/([^/]+)/$" "/keyboards/$1" [R=301,END,QSA]
 
-# /keyboards/ to /keyboards
-RedirectMatch 301 "^keyboards/$" "/keyboards"
+# /keyboards/ to /keyboards (Handled by other redirect)
+# Remove final /
 
 # Old share url /keyboards/{id}/share[/] to /keyboards/share/id
-RedirectMatch "^keyboards/(?!install|download|share)/share(/?)$" "/keyboards/share/$1"
+RewriteRule "^keyboards/(.*)/share(/?)$" "/keyboards/share/$1" [R=301]
 
 # /keyboard/{content} to /keyboards/...
-RewriteRule "^keyboard(/.*)$" "/keyboards$1" [L]
+RewriteRule "^keyboard(/.*)$" "/keyboards$1" [R,END]
 
 #
 # Install | Download | Share | bare | .json -->
@@ -90,7 +89,7 @@ RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [END,
 
 # /keyboards/share/[id] to /keyboards/share.php
 # if the keyboard exists in the repo, then share.php will redirect to /keyboards/<id>
-RewriteRule "^keyboards/share/([^/]+)$" "/keyboards/share.php?id=$1" [L]
+RewriteRule "^keyboards/share/([^/]+)$" "/keyboards/share.php?id=$1" [END]
 
 # /keyboards/{id}.json to /keyboards/keyboard.json.php
 RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [END]
@@ -107,13 +106,13 @@ RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "
 # RewriteRule "^keyboards$" "/keyboards/index.php" [L]
 
 # /keyboards/languages to /keyboards/index.php
-RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [L]
+RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [END]
 
 # /keyboards/download to /keyboards/download.php
-RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [L,QSA]
+RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [END,QSA]
 
 # /keyboards/legacy to /keyboards/keyboard.php
-RewriteRule "^keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1" [L]
+RewriteRule "^keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1" [END]
 
 # /keyboards/countries to /keyboards/index.php
 RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [END]

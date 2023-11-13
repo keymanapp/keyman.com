@@ -17,7 +17,7 @@ RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/keyman-engine-home" "/engine/"
 
                 
 # "/go/developer/X.Y/language-lookup"
-RedirectMatch "/go/developer/([1-9][0-9]\.[0-9])/language-lookup" "https://www.ethnologue.com/"
+RedirectMatch 301 "/go/developer/([1-9][0-9]\.[0-9])/language-lookup" "https://www.ethnologue.com/"
 
 
 # "/go/developer/X.Y/view-exception/ to /contact/exception"
