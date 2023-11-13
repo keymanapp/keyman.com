@@ -202,7 +202,7 @@ Direct help to the major version
 
 
 ### Skipping /go/developer/X.Y/language-lookup
-ethnlogue has a redirect that the link checker does not follow. BLC is returning BLC_UNKNOWN -- it gets the base link but then doesn't follow the redirect so it doesn't know if it is valid or not.
+keyman.com has a redirect to ethnologue that the link checker does not follow. BLC is returning BLC_UNKNOWN -- it gets the base link but then doesn't follow the redirect so it doesn't know if it is valid or not.
 ```
 /go/developer/16.0/language-lookup
 
