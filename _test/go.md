@@ -201,12 +201,13 @@ Direct help to the major version
 [live: keyman-engine-home](https://keyman.com/go/developer/16.0/keyman-engine-home)
 
 
-### /go/developer/X.Y/language-lookup
+### Skipping /go/developer/X.Y/language-lookup
+ethnlogue has a redirect that the link checker does not follow. BLC is returning BLC_UNKNOWN -- it gets the base link but then doesn't follow the redirect so it doesn't know if it is valid or not.
+```
+/go/developer/16.0/language-lookup
 
-[language-lookup](/go/developer/16.0/language-lookup)
-
-[live: language-lookup](https://keyman.com/go/developer/16.0/language-lookup)
-
+live: https://keyman.com/go/developer/16.0/language-lookup
+```
 
 ### /go/developer/X.Y/view-exception/ to /contact/exception
 
