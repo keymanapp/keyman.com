@@ -12,6 +12,7 @@
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\Common\JsonApiFailure;
 
+  $env = getenv();
   KeymanComSentry::init();
 
   PackageDownloadPage::redirect_to_file(
@@ -91,13 +92,14 @@
     }
 
     private static function report_download_event($id, $platform, $tier, $bcp47, $update) {
+      global $env;
       $url = KeymanHosts::Instance()->api_keyman_com . "/increment-download/".rawurlencode($id);
 
       if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
         if(KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_DEVELOPMENT)
           $key = 'local';
         else
-          $key = $_SERVER['API_KEYMAN_COM_INCREMENT_DOWNLOAD_KEY'];
+          $key = $env['API_KEYMAN_COM_INCREMENT_DOWNLOAD_KEY'];
 
         $c = curl_init($url);
         curl_setopt($c, CURLOPT_HEADER, 0);
