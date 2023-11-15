@@ -24,6 +24,8 @@ showmenu: false
 
 [/_legacy keyboards links](./legacy)
 
+[/well-known links](./well-known)
+
 ## Link to Main Page
 
 [Main Page](/)

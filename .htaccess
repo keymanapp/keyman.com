@@ -24,7 +24,6 @@ AddType application/json apple-app-site-association
 
 # apple-app-site-association
 RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
-RewriteRule "^apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
 
 # macosx and macos to mac (ignore case)
 RedirectMatch 301 "^(?i)/(macosx|macos)\b(.*)$" "/mac$2"
