@@ -4,6 +4,11 @@ description: Internal Test Pages for Checking Broken Links
 showmenu: false
 ---
 
+## Connect With Art
+
+[connectwithart](/connectwithart)
+
+[live: connectwithart](https://keyman.com/connectwithart)
 
 ## Products
 
@@ -21,6 +26,8 @@ showmenu: false
 [/go links](./go)
 
 [/keyboards links](./keyboards)
+
+[keyboard language landing links](./language-landing)
 
 [/_legacy keyboards links](./legacy)
 
