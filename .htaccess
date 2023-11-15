@@ -10,13 +10,7 @@ DirectorySlash off
 RewriteEngine on
 RewriteBase /
 
-# Redirect http://keyman.com to https://keyman.com,
-# but only if on a live site (keyman.com) and not
-# matching `/.well-known/(.*)$` (for Let's Encrypt)
-<If "%{REQUEST_SCHEME} == 'http' && %{HTTP_HOST} == 'keyman.com' && %{REQUEST_URI} !~ m#^/.well-known/(.*)$#" >
-    Redirect 301 "/" "https://keyman.com"
-</If>
-
+# Add mime type for apple-app-site-association
 AddType application/json apple-app-site-association
 
 # Custom error messages
