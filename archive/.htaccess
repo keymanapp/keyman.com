@@ -1,0 +1,3 @@
+
+# Redirect /archive/downloads.php"
+RedirectMatch 301 "/archive/downloads.php" "/downloads/archive/"

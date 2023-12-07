@@ -1,0 +1,18 @@
+
+# Redirects for Keyman for Linux 11.0 onward
+
+# "/go/linux/X.Y/download-keyboards"
+RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=linux"
+
+# "/go/linux/X.Y/forums" stopProcessing="true">
+RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/forums" "https://community.software.sil.org/c/keyman"
+
+# "/go/linux/X.Y/support" stopProcessing="true">
+RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/support" "/support"
+
+# "/go/linux/X.Y/privacy" stopProcessing="true">
+RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/privacy" "/privacy"
+
+# permanent link to screenshot of linux-configuration
+# "/go/linux/X.Y/linux-configuration.png"
+RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/linux-configuration.png" "/cdn/dev/img/linux-configuration.png"

@@ -1,0 +1,31 @@
+
+# Keyboard search
+# legacy /keyboards?q=... to keyboards/index.php
+RewriteRule "^keyboards$" "/_legacy/keyboards/index.php" [END]
+
+# legacy /keyboards/ to keyboards
+RewriteRule "^keyboards/$" "/_legacy/keyboards" [R=301,END,QSA]
+
+# legacy /keyboards/languages to keyboards/index.php
+RewriteRule "^keyboards/languages/(.*)" "/_legacy/keyboards/index.php?q=l:id:$1" [END]
+
+# "legacy /keyboards/download to keyboards/download.php
+RewriteRule "^keyboards/download(\.php)?" "/_legacy/keyboards/download.php" [END,QSA]
+
+# "legacy /keyboards/legacy to keyboards/keyboard.php
+RewriteRule "^keyboards/legacy/(.*)" "/_legacy/keyboards/keyboard.php?legacy=$1" [END]
+
+# "legacy /keyboards/countries to keyboards/index.php
+RewriteRule "^keyboards/countries/(.*)" "/_legacy/keyboards/index.php?q=c:id:$1" [END]
+
+# "legacy /keyboards/{name}/share to keyboards/share.php
+RewriteRule "^keyboards/([^/]+)/share" "/_legacy/keyboards/share.php?id=$1" [END]
+
+# "legacy /keyboards/{name}.json to keyboards/keyboard.json.php
+RewriteRule "^keyboards/(.*)\.json$" "/_legacy/keyboards/keyboard.json.php?id=$1" [END]
+
+# "legacy /keyboards/{name} to keyboards/keyboard.php
+RewriteRule "^keyboards/(.*)" "/_legacy/keyboards/keyboard.php?id=$1" [END]
+
+# "legacy /keyboard/{name} to keyboards/...
+RedirectMatch "/_legacy/keyboard/(.*)$" "/_legacy/keyboards/$1"
