@@ -1,4 +1,6 @@
 <?php
+  header("Content-Type: text/plain");
+
   // Test web server ready, and _common files, and vendor files ready
   if (!is_dir(__DIR__ . '/../cdn/deploy')) {
     die("/cdn/deploy not ready");
