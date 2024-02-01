@@ -345,8 +345,41 @@ permanent link to screenshot of linux-configuration
 
 ----
 
-## package (no .htaccess to check)
+## keyboard permalinks
 
+### download-kmp
+
+[keyboard/khmer_angkor/download/kmp](/go/keyboard/khmer_angkor/download/kmp)
+
+[live: keyboard/khmer_angkor/download/kmp](https://keyman.com/go/keyboard/khmer_angkor/download/kmp)
+
+### download-exe
+
+[keyboard/khmer_angkor/download/exe](/go/keyboard/khmer_angkor/download/exe)
+
+[live: keyboard/khmer_angkor/download/exe](https://keyman.com/go/keyboard/khmer_angkor/download/exe)
+
+### download-js
+
+[keyboard/khmer_angkor/download/js](/go/keyboard/khmer_angkor/download/js)
+
+[live: keyboard/khmer_angkor/download/js](https://keyman.com/go/keyboard/khmer_angkor/download/js)
+
+---
+
+## package/download
+
+### model
+
+[nrc.en.mtmt](/go/package/download/model/nrc.en.mtnt)
+
+[live: nrc.en.mtnt](https://keyman.com/go/package/download/model/nrc.en.mtnt)
+
+### keyboard, platform=android&tier=alpha
+
+[khmer_angkor](/go/package/download/khmer_angkor&platform=android&tier=alpha)
+
+[live: khmer_angkor](https://keyman.com/go/package/download/khmer_angkor&platform=android&tier=alpha)
 
 ----
 
