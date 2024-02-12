@@ -44,7 +44,7 @@ class Head {
   <script>
     Sentry.init({
       dsn: "https://44d5544d7c45466ba1928b9196faf67e@o1005580.ingest.sentry.io/5983516",
-      environment: location.host.match(/\.local$/) ? 'development' : location.host.match(/(^|\.)keyman-staging\.com$/) ? 'staging' : 'production',
+      environment: location.host.match(/\.localhost$/) ? 'development' : location.host.match(/(^|\.)keyman-staging\.com$/) ? 'staging' : 'production',
     });
   </script>
   <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">

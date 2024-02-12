@@ -1,0 +1,44 @@
+
+# why
+RedirectMatch "/go/why\/?$" "https://marc.durdin.net/2018/03/the-case-for-keyman/"
+
+# Developer 10.0 onward redirects for package guide
+RedirectMatch "/go/(([1-9][0-9])([.]?)([0-9]))/developer-help-(mobile|packages)(/)?" "https://help.keyman.com/developer/$1/guides/distribute/packages"
+
+# Download redirects for keyboard permalinks (TODO: these three rules need refresh)
+
+# download-kmp
+RedirectMatch "/go/keyboard/([^/?]+)/download/kmp$" "/keyboards/download?id=$1&platform=windows&mode=standalone"
+
+#download-exe
+RedirectMatch "/go/keyboard/([^/?]+)/download/exe$" "/keyboards/download?id=$1&platform=windows&mode=bundle"
+
+# download-js
+RedirectMatch "/go/keyboard/([^/?]+)/download/js$" "/keyboards/download?id=$1&platform=web&mode=standalone"
+
+
+#
+# go/package/download
+#
+
+# download-model-package
+RewriteRule "^package/download/model/([^/]+)$" "package/download.php?type=model&id=$1" [END,QSA]
+
+# download-package
+RewriteRule "^package/download/(keyboard/)?([^/]+)$" "package/download.php?type=keyboard&id=$2" [END,QSA]
+
+# keyboard/id/share
+RedirectMatch "/go/keyboard/([^/?]+)/share$" "/keyboards/share/$1"
+
+#
+# Non-app-specific endpoints
+#
+
+# go/support
+RedirectMatch "/go/([1-9][0-9]\.[0-9])/support$" "https://help.keyman.com/"
+
+# go/privacy
+RedirectMatch "/go/([1-9][0-9]\.[0-9])/privacy$" "/privacy"
+
+# go/community
+RedirectMatch "/go/([1-9][0-9]\.[0-9])/community$" "https://community.software.sil.org/c/keyman"

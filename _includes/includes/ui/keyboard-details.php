@@ -501,20 +501,6 @@ END;
                 </td>
               </tr>
             <?php } ?>
-            <?php if(isset(self::$keyboard->links) && sizeof(self::$keyboard->links) > 0) { ?>
-              <tr>
-                <th>Links</th>
-                <td class='links'>
-                  <?php
-                    foreach(self::$keyboard->links as $link) {
-                      $hurl = htmlentities($link->url);
-                      $hname = htmlentities($link->name);
-                      echo "<div><a href='$hurl'>$hname</a></div>";
-                    }
-                  ?>
-                </td>
-              </tr>
-            <?php } ?>
             <tr>
               <th>Supported Languages</th>
               <td class='supported-languages'>

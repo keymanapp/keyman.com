@@ -13,6 +13,7 @@
   head([
     'title' => $md->PageTitle(),
     'css' => ['template.css','prism.css'],
+    'showMenu' => $md->ShowMenu(),
     'js' => ['prism.js']
   ]);
 
