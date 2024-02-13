@@ -44,7 +44,8 @@ RewriteRule "^downloads/releases/(?!_version_downloads\b)(.+)$" "/downloads/rele
 # index
 RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
 
-# Ready
+# Control rules
+RewriteRule "^_control/info$" "_control/info.php" [END]
 RewriteRule "^_control/ready$" "_control/ready.php" [END]
 
 #
