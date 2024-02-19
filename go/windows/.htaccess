@@ -17,4 +17,4 @@ RewriteRule "^([1-9][0-9]\.[0-9])/create-locale" "https://translate.keyman.com/"
 RewriteRule "^([1-9][0-9]\.[0-9])/home" "/windows/" [R,QSA]
 
 # "/go/windows/X.Y/archived-downloads" stopProcessing="true">
-RewriteRule "/go/windows/([1-9][0-9]\.[0-9])/archived-downloads" "/downloads/archive" [R,QSA]
+RewriteRule "^([1-9][0-9]\.[0-9])/archived-downloads" "/downloads/archive" [R,QSA]
