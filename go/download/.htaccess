@@ -2,4 +2,4 @@
 # Links for Developer 10.0 onward
 
 # /go/download/program
-RewriteRule "^(?!_download.php)(.+)$" "/go/download/_download.php?object=$1" [END]
+RewriteRule "^(?!_download.php)(.+)$" "/go/download/_download.php?object=$1" [END,QSA]
