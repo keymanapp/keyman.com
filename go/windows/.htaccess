@@ -2,19 +2,19 @@
 # Links for Keyman for Windows 14.0 onward
 
 # "/go/windows/X.Y/download-keyboards" stopProcessing="true">
-RedirectMatch "/go/windows/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=windows"
+RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=windows" [R,QSA]
 
 # "/go/windows/X.Y/keep-in-touch" stopProcessing="true">0
-RedirectMatch "/go/windows/([1-9][0-9]\.[0-9])/keep-in-touch" "/windows/keepintouch-140"
+RewriteRule "([1-9][0-9]\.[0-9])/keep-in-touch" "/windows/keepintouch-140" [R,QSA]
 
 # "/go/windows/X.Y/issue-1285" stopProcessing="true">
-RedirectMatch "/go/windows/([1-9][0-9]\.[0-9])/issue-1285" "https://blog.keyman.com/2018/11/keyman-windows-10-1803-and-amharic-tigrinya-sinhala"
+RewriteRule "^([1-9][0-9]\.[0-9])/issue-1285" "https://blog.keyman.com/2018/11/keyman-windows-10-1803-and-amharic-tigrinya-sinhala" [R,QSA]
 
 # "/go/windows/X.Y/create-locale" stopProcessing="true">
-RedirectMatch "/go/windows/([1-9][0-9]\.[0-9])/create-locale" "https://translate.keyman.com/"
+RewriteRule "^([1-9][0-9]\.[0-9])/create-locale" "https://translate.keyman.com/" [R,QSA]
 
 # "/go/windows/X.Y/home" stopProcessing="true">
-RedirectMatch "/go/windows/([1-9][0-9]\.[0-9])/home" "/windows/"
+RewriteRule "^([1-9][0-9]\.[0-9])/home" "/windows/" [R,QSA]
 
 # "/go/windows/X.Y/archived-downloads" stopProcessing="true">
-RedirectMatch "/go/windows/([1-9][0-9]\.[0-9])/archived-downloads" "/downloads/archive"
+RewriteRule "/go/windows/([1-9][0-9]\.[0-9])/archived-downloads" "/downloads/archive" [R,QSA]

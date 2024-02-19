@@ -2,17 +2,17 @@
 # Redirects for Keyman for Linux 11.0 onward
 
 # "/go/linux/X.Y/download-keyboards"
-RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=linux"
+RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=linux" [R,QSA]
 
 # "/go/linux/X.Y/forums" stopProcessing="true">
-RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/forums" "https://community.software.sil.org/c/keyman"
+RewriteRule "^([1-9][0-9]\.[0-9])/forums" "https://community.software.sil.org/c/keyman" [R,QSA]
 
 # "/go/linux/X.Y/support" stopProcessing="true">
-RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/support" "/support"
+RewriteRule "^([1-9][0-9]\.[0-9])/support" "/support" [R,QSA]
 
 # "/go/linux/X.Y/privacy" stopProcessing="true">
-RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/privacy" "/privacy"
+RewriteRule "^([1-9][0-9]\.[0-9])/privacy" "/privacy" [R,QSA]
 
 # permanent link to screenshot of linux-configuration
 # "/go/linux/X.Y/linux-configuration.png"
-RedirectMatch "/go/linux/([1-9][0-9]\.[0-9])/linux-configuration.png" "/cdn/dev/img/linux-configuration.png"
+RewriteRule "^([1-9][0-9]\.[0-9])/linux-configuration.png" "/cdn/dev/img/linux-configuration.png" [R,QSA]
