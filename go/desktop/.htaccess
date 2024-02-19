@@ -2,50 +2,50 @@
 # Links for Desktop 10.0-13.0 (for 14.0 onward, see ../windows/web.config)
 
 # /go/desktop/13.0/download-keyboards"
-RedirectMatch "/go/desktop/(7|8|9|10|11|12|13)\.0/download-keyboards" "/_legacy/keyboards/?embed=windows"
+RewriteRule "^(7|8|9|10|11|12|13)\.0/download-keyboards" "/_legacy/keyboards/?embed=windows" [R,QSA]
 
 
 # /go/desktop/X.Y/download-keyboards"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=windows"
+RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=windows" [R,QSA]
 
 
 # /go/desktop/X.Y/keep-in-touch"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/keep-in-touch" "/desktop/keepintouch-100"
+RewriteRule "^([1-9][0-9]\.[0-9])/keep-in-touch" "/desktop/keepintouch-100" [R,QSA]
 
 
 # /go/desktop/X.Y/forums"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/forums" "https://community.software.sil.org/c/keyman"
+RewriteRule "^([1-9][0-9]\.[0-9])/forums" "https://community.software.sil.org/c/keyman" [R,QSA]
 
 
 # /go/desktop/X.Y/issue-1285"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/issue-1285" "https://blog.keyman.com/2018/11/keyman-windows-10-1803-and-amharic-tigrinya-sinhala"
+RewriteRule "^([1-9][0-9]\.[0-9])/issue-1285" "https://blog.keyman.com/2018/11/keyman-windows-10-1803-and-amharic-tigrinya-sinhala" [R,QSA]
 
 
 # /go/desktop/X.Y/support"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/support" "/support"
+RewriteRule "^([1-9][0-9]\.[0-9])/support" "/support" [R,QSA]
 
 
 # /go/desktop/X.Y/create-locale"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/create-locale" "https://secure.tavultesoft.com/keyman/support/locale/"
+RewriteRule "^([1-9][0-9]\.[0-9])/create-locale" "https://secure.tavultesoft.com/keyman/support/locale/" [R,QSA]
 
 
 # /go/desktop/X.Y/view-exception/ to /contact/exception"
 # This endpoint is not used in 14.0 or later
-RedirectMatch 301 "/go/desktop/1[0123]\.0/view-exception(/)?$" "/contact/exception.php"
+RewriteRule "^1[0123]\.0/view-exception(/)?$" "/contact/exception.php" [R=301,QSA]
 
 
 # /go/desktop/X.Y/view-exception?id="
 # This endpoint is not used in 14.0 or later -->
-RedirectMatch "/go/desktop/1[0123]\.0/view-exception?id=(.+)$" "/contact/exception.php?id=$1"
+RewriteRule "^1[0123]\.0/view-exception?id=(.+)$" "/contact/exception.php?id=$1" [R,QSA]
 
 
 # /go/desktop/X.Y/home"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/home" "/desktop/"
+RewriteRule "^([1-9][0-9]\.[0-9])/home" "/desktop/" [R,QSA]
 
 
 # /go/desktop/X.Y/archived-downloads"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/archived-downloads" "/downloads/archive"
+RewriteRule "^([1-9][0-9]\.[0-9])/archived-downloads" "/downloads/archive" [R,QSA]
 
 
 # /go/desktop/X.Y/privacy"
-RedirectMatch "/go/desktop/([1-9][0-9]\.[0-9])/privacy" "/privacy"
+RewriteRule "^([1-9][0-9]\.[0-9])/privacy" "/privacy" [R,QSA]

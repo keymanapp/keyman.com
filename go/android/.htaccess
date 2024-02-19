@@ -2,7 +2,7 @@
 # Links for Android 14.0 onward
 
 # /go/android/X.Y/download-keyboards/languages"
-RedirectMatch "/go/android/([1-9][0-9]\.[0-9])/download-keyboards/languages/(.*)" "/keyboards/languages/$2?embed=android&embed_version=$1"
+RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards/languages/(.*)" "/keyboards/languages/$2?embed=android&embed_version=$1" [R,QSA]
 
 # "/go/android/X.Y/download-keyboards"
-RedirectMatch "/go/android/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=android&embed_version=$1"
+RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=android&embed_version=$1" [R,QSA]
