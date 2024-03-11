@@ -18,7 +18,7 @@
     $build = $json->version;
   } else {
     // If the get-version API fails, we'll use the latest known stable version
-    $build = "11.0.227";
+    $build = "16.0.145";
   }
 
   $cdnUrlBase = "{$KeymanHosts->s_keyman_com}/kmw/engine/$build";
@@ -73,7 +73,7 @@ the on screen keyboard.</p>
     keyman.addKeyboards({
       name: 'Tai Nua',
       id: 'tainua',
-      filename: './tainua-1.0.js',
+      filename: './tainua.js',
       version: '1.0',
       language: [{
         name: 'Tai Nua',
