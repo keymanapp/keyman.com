@@ -36,10 +36,10 @@ RewriteRule "^desktop(/.*)?" "/windows$1" [NC,R=301,END,QSA]
 
 # releases-tier/download
 # note: the tier is currently ignored
-RewriteRule "^downloads/releases/(alpha|beta|stable)/(.+)$" "/downloads/releases/_version_downloads.php?tier=$1&version=$2" [R,END]
+RewriteRule "^downloads/releases/(alpha|beta|stable)/(.+)$" "/downloads/releases/_version_downloads.php?tier=$1&version=$2" [END]
 
 # releases-download
-RewriteRule "^downloads/releases/(?!_version_downloads\b)(.+)$" "/downloads/releases/_version_downloads.php?version=$1" [R,END]
+RewriteRule "^downloads/releases/(.+)$" "/downloads/releases/_version_downloads.php?version=$1" [END]
 
 # index
 RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
