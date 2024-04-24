@@ -61,14 +61,6 @@
     <img src='<?= cdn("img/android-kmp.png"); ?>' />
 </p>
 
-<p>The <strong class='red'>Keyman built-in browser</strong> dynamically loads your language font into each website you visit so you no longer see square boxes for your language on the web!</p>
-
-<p style='text-align:center'><img src='<?= cdn("img/android-browser.png"); ?>' /></p>
-
-<p>
-  The built-in browser feature applies your language font to websites that you browse, and includes a bookmark feature and of course supports typing your language into any website!
-</p>
-
 <h2>Keyman for Android Features</h2>
 
 <br/>
@@ -95,10 +87,6 @@
     </tr>
     <tr>
         <td>System keyboard support</td>
-        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
-    </tr>
-    <tr>
-        <td>Built in browser for full font support</td>
         <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
