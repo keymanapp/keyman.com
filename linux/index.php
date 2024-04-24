@@ -157,7 +157,7 @@ sudo apt install keyman onboard-keyman
 </p>
 <p>
   <span class="red">A.</span> Wayland is supported in Keyman 17.0 onward. See <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
-  for more information. As a workaround, use X11.
+  for more information.
 </p>
 
 <br/>
