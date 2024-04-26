@@ -59,14 +59,12 @@
     </p>
 </div>
 
-<div>
 <h2 class="red underline">Use the bookmarklet on any website</h2>
-  <ol  id="bookmarklet-use">
-      <li>Load any web page, such as a search engine</li>
-      <li>Click the Keyman Bookmarklet in your Bookmarks toolbar or menu</li>
-      <li>You may need to wait a second or two for Keyman Bookmarklet to load. Then click in the text field you wish to type into. The Keyman Bookmarklet user interface will appear and you can type in your language</li>
-  </ol>
-</div>
+<ol>
+    <li>Load any web page, such as a search engine</li>
+    <li>Click the Keyman Bookmarklet in your Bookmarks toolbar or menu</li>
+    <li>You may need to wait a second or two for Keyman Bookmarklet to load. Then click in the text field you wish to type into. The Keyman Bookmarklet user interface will appear and you can type in your language</li>
+</ol>
 
 <h2 class="red underline">Try the bookmarklet</h2>
 <p>You can try the Bookmarklet you just installed right here.  Click the bookmarklet in the toolbar once to load it.  Then
