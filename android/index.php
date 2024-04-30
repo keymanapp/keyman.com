@@ -99,17 +99,17 @@
 <br/>
 <h3>New in Keyman for Android 17.0 (May 2024)</h3>
 <ul>
-  <li>Multitap and flick gestures are now supported for Android. #7324</li>
-  <li>When suggestions aren’t enabled, displays a themed banner. This area is for displaying top row key gestures and is also reserved for future enhancements #9696</li>
-  <li>Removes in-app browser #8430</li>
-  <li>Predictive text suggestions are now handled more flexibly on the banner #7934
+  <li>Multitap and flick gestures are now supported for Android. (#7324)</li>
+  <li>When suggestions aren’t enabled, displays a themed banner. This area is for displaying top row key gestures and is also reserved for future enhancements (#9696)</li>
+  <li>Removes in-app browser (#8430)</li>
+  <li>Predictive text suggestions are now handled more flexibly on the banner (#7934)
     <ol>
       <li>Can now display up to 8 suggestions on screen</li>
       <li>Can drag the banner left and right to see more suggestions</li>
       <li>Shortens long suggestions to avoid long words overwhelming the available space.</li>
     </ol>  
   </li>
-  <li>Improves scaling of key caps for some keyboards #10506</li>
+  <li>Improves scaling of key caps for some keyboards (#10506)</li>
   <li>Add localization for:
     <ol>
       <li>Mon (Burmese script)</li>  
