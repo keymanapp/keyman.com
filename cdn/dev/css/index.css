@@ -1012,12 +1012,6 @@
 	text-align: center;
 }
 
-#bookmarklet-use {
+#bookmarklet-use ol {
 	padding: 0 5%;
-}
-
-@media all and (min-width: 10px) and (max-width: 600px) {
-	#bookmarklet-search {
-		width: 300px;
-	}
 }
