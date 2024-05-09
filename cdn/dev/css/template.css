@@ -2631,7 +2631,7 @@ button.feedback {
 	}
 }
 
-@media (min-width: 650px) and (max-width: 750px) {
+@media (min-width: 600px) and (max-width: 767px) {
 	#bookmarklet-search {
 		width: 550px;
 	}
