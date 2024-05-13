@@ -1,5 +1,5 @@
 ---
-title: Testimonials | Keyman
+title: Testimonials
 ---
 
 ## What people are saying about Keyman
