@@ -59,9 +59,9 @@
     </p>
 </div>
 
-<div>
+<div id="bookmarklet-use">
 <h2 class="red underline">Use the bookmarklet on any website</h2>
-  <ol  id="bookmarklet-use">
+  <ol>
       <li>Load any web page, such as a search engine</li>
       <li>Click the Keyman Bookmarklet in your Bookmarks toolbar or menu</li>
       <li>You may need to wait a second or two for Keyman Bookmarklet to load. Then click in the text field you wish to type into. The Keyman Bookmarklet user interface will appear and you can type in your language</li>
