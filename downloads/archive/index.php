@@ -54,6 +54,11 @@
     <li><a href="<?= KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/8.0.360.0/keymandeveloper-8.0.360.0.exe">Keyman Developer 8.0.360.0 Download</a> (Online static activation required)</li>
 </ul>
 
+<h2 class="red underline">Keyman Developer kmcomp Download Archive</h2>
+<ul>
+  <li><a href="<?=KeymanHosts::Instance()->downloads_keyman_com ?>/developer/stable/<?= $ver_windows_16 ?>/kmcomp-<?= $ver_windows_16 ?>.zip">Keyman Developer kmcomp <?= $ver_windows_16 ?> zip Download</a></li>
+</ul>
+
 <h2 class="red underline">Obsolete Keyboards</h2>
 
 <p>Keyboards that are non-Unicode or older versions may be downloaded from the following link. Generally, unless you know you have a specific
