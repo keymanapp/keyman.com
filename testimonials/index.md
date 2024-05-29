@@ -2,7 +2,7 @@
 title: Testimonials
 ---
 
-## What people are saying about Keyman
+## What people are saying about Keyman {.red}
 
 <p class="center">
   <span class="testimonial">I would earnestly like to thank you for the best multilingual keyboard, especially for us <a href="https://twitter.com/hashtag/Ethiopians?src=hashtag_click">#Ethiopians</a> using <a href="https://twitter.com/hashtag/Geez?src=hashtag_click">#Geez</a> scripts. It’s simply excellent.</span>
@@ -87,7 +87,7 @@ title: Testimonials
 </p>
   <h4 class="caption">Seumas Macdonald - <a href="http://jeltzz.blogspot.com.au/2010/07/really-slow.html" target="_blank">Compliant Subversity blog</a> - July 2010</h4>
 
-## What people are saying about KeymanWeb
+## What people are saying about KeymanWeb {.red}
 
 <p class="center">
   <span class="testimonial">"I'm quite happy to see the launch of KeymanWeb. This new web service permits academics to use any input language on any computer in a university setting, even when they do not have access to administrative privileges needed to install the software on the computer."</span>
@@ -116,7 +116,7 @@ title: Testimonials
 
 
 
-## What people are saying about Keyman Developer
+## What people are saying about Keyman Developer {.red}
 
 <p class="center">
   <span class="testimonial">"Most people who develop in @keyman only use a fraction of its capabilities."</span>
@@ -162,7 +162,7 @@ title: Testimonials
 </p>
   <h4 class="caption">Toshihide Nakayama - Japan</h4>
 
-## What people are saying about Keyman Support
+## What people are saying about Keyman Support {.red}
 
 <p class="center">
   <span class="testimonial">"You are an excellent partner with us and you excel in customer service. That is getting to be a rare quality in today's world and we greatly appreciate and value you as one of our best vendors."</span>
