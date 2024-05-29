@@ -2,7 +2,7 @@
 title: Testimonials
 ---
 
-## What people are saying about Keyman {.red}
+## What people are saying about Keyman {.red .underline}
 
 ### I would earnestly like to thank you for the best multilingual keyboard, especially for us [#Ethiopians](https://twitter.com/hashtag/Ethiopians?src=hashtag_click) using [#Geez](https://twitter.com/hashtag/Geez?src=hashtag_click) scripts. It’s simply excellent. {.testimonial}
 
@@ -106,7 +106,7 @@ title: Testimonials
 
 #### Seumas Macdonald - [Compliant Subversity blog](http://jeltzz.blogspot.com.au/2010/07/really-slow.html) - July 2010 {.caption}
 
-## What people are saying about KeymanWeb {.red}
+## What people are saying about KeymanWeb {.red .underline}
 
 <p class="center">
   <span class="testimonial">"I'm quite happy to see the launch of KeymanWeb. This new web service permits academics to use any input language on any computer in a university setting, even when they do not have access to administrative privileges needed to install the software on the computer."</span>
@@ -140,7 +140,7 @@ title: Testimonials
 
 
 
-## What people are saying about Keyman Developer {.red}
+## What people are saying about Keyman Developer {.red .underline}
 
 <p class="center">
   <span class="testimonial">"Most people who develop in @keyman only use a fraction of its capabilities."</span>
@@ -194,7 +194,7 @@ title: Testimonials
 
 #### Toshihide Nakayama - Japan {.caption}
 
-## What people are saying about Keyman Support {.red}
+## What people are saying about Keyman Support {.red .underline}
 
 <p class="center">
   <span class="testimonial">"You are an excellent partner with us and you excel in customer service. That is getting to be a rare quality in today's world and we greatly appreciate and value you as one of our best vendors."</span>
