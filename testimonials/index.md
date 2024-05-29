@@ -4,6 +4,9 @@ title: Testimonials
 
 ## What people are saying about Keyman {.red}
 
+### I would earnestly like to thank you for the best multilingual keyboard, especially for us [#Ethiopians](https://twitter.com/hashtag/Ethiopians?src=hashtag_click) using [#Geez](https://twitter.com/hashtag/Geez?src=hashtag_click) scripts. It’s simply excellent. {.testimonial}
+
+
 <p class="center">
   <span class="testimonial">I would earnestly like to thank you for the best multilingual keyboard, especially for us <a href="https://twitter.com/hashtag/Ethiopians?src=hashtag_click">#Ethiopians</a> using <a href="https://twitter.com/hashtag/Geez?src=hashtag_click">#Geez</a> scripts. It’s simply excellent.</span>
 </p>
