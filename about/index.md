@@ -60,19 +60,32 @@ More info about [previous contributors](./developers/previous)
 
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
 
-[Cloudflare](https://www.cloudflare.com) speeds up and protects millions of websites, including ours.
-Their global CDN helps ensure the Keyman keyboards remain available world-wide. Many thanks for their free
-professional plan as a way of supporting the Keyman  open source development.
+[Cloudflare](https://www.cloudflare.com) speeds up and protects millions of
+websites, including ours. Their global CDN helps ensure the Keyman keyboards
+remain available world-wide. Many thanks for their free professional plan as a
+way of supporting the Keyman  open source development.
 
-<img style="width: 40%; margin-top: 20px" src="/cdn/dev/img/browserstack.svg" />
+<hr/>
 
-We are now using [BrowserStack](https://www.browserstack.com/) to test KeymanWeb and browser and renderer
-support for various languages and scripts. BrowserStack is an awesome tool to automatically test your website across
-thousands of different devices and browsers, instantly. They have kindly sponsored us with
-a free plan as a way of supporting the open source development of KeymanWeb! Many thanks, BrowserStack :)
+<img src="../cdn/dev/img/open-source/browserstack.svg" style="width: 160px" alt="Browserstack" />
 
+We are now using [BrowserStack](https://www.browserstack.com/) to test KeymanWeb
+and browser and renderer support for various languages and scripts. BrowserStack
+is an awesome tool to automatically test your website across thousands of
+different devices and browsers, instantly. They have kindly sponsored us with a
+free plan as a way of supporting the open source development of KeymanWeb! Many
+thanks, BrowserStack :)
 
-![](/cdn/dev/img/sentry-wordmark-dark-400x119.svg)
+<hr/>
 
-Keyman uses [Sentry](https://sentry.io) for error monitoring. Thank you to Sentry for sponsoring the Keyman
-project with a free plan!
+<img src="../cdn/dev/img/open-source/sentry.svg" style="width: 160px" alt="Sentry" />
+
+Keyman uses [Sentry](https://sentry.io) for error monitoring. Thank you to
+Sentry for sponsoring the Keyman project with a free plan!
+
+<hr/>
+
+<img src="../cdn/dev/img/open-source/1password.png" style="width: 160px" alt="1Password" />
+
+Thank you to [1Password](https://1password.com) for supporting the Keyman team
+with an open source plan.
