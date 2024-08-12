@@ -321,14 +321,78 @@ html {
 	margin: 20px;
 	cursor: pointer;
 	box-shadow: 1px 1px 2px #3e3e3e;
+	text-decoration: none;
+	color:#B92034;
+	
 }
 
 .button a {
-	text-decoration: none;
+	display: flex;
+	color:#B92034;
 }
 
 .button h2 {
 	color: #fff;
+}
+
+.navigation-buttons {
+	display: flex;
+}
+
+.navigation-buttons .button {
+	width: 150px;
+	margin: 15px;
+	color: #B92034;
+	text-decoration: none;
+}
+
+span.button.disabled{
+	opacity: 0.6;
+  	cursor: not-allowed;
+}
+
+#version-container {
+	margin: 20px;
+}
+
+.version-row {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.version-row h3{
+	margin: 7px;
+}
+
+.version-type {
+	margin-bottom: 10px;
+	height: 300px;
+	width: 30%;
+	padding: 10px;
+	box-sizing: border-box; 
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	border-radius: 5px;
+	overflow-y: auto; 
+}
+
+.version-type h5{
+	opacity:0.6; 
+}
+
+.version-item {
+	margin-bottom: 5px;
+}
+
+.version-item a {
+	text-decoration: none;
+	color: #B92034;
+	display: block; 
+	width: 100%;
+}
+
+.version-item a:hover {
+	text-decoration: underline;
 }
 
 #container {
@@ -371,6 +435,12 @@ html {
 
 .red {
 	color: #B92034;
+}
+
+.download-title {
+	display: flex;
+	justify-content: space-between;
+	align-items:flex-end;
 }
 
 .underline {
