@@ -14,7 +14,7 @@ Keyboard layouts are distributed through an open catalog to all major desktop an
 ## About SIL International
 
 <!--div style=style='float:left; margin: 0 16px 0 0'-->
-![](/cdn/dev/img/sil-logo-blue-2017_1.png)
+![](/cdn/dev/img/sil-logos-2024/sil-logo-abbysinica-293-159.png)
 
 Keyman is created by SIL International. Partners in Language Development,
 SIL International is a faith-based nonprofit organization committed to serving language communities
