@@ -1,5 +1,6 @@
 ﻿<?php
 require_once('includes/template.php');
+require_once('_includes/2020/ImageRandomizer.php');
 
 // Required
 head([

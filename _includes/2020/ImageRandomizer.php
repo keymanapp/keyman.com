@@ -13,9 +13,8 @@ class ImageRandomizer {
             return str_replace($_SERVER['DOCUMENT_ROOT'], '',  $img[0]);
           }
         }
-        return "";
+        return "Not found";
       }
 }
-  
 
 ?>
