@@ -11,7 +11,7 @@ SIL Keyman is adding support for the LDML Keyboard specification.
 
 LDML is the Locale Data Markup Language. It it an XML-based format specified as the Unicode Consortium’s specification UTS#35, maintained by the Common Locale Data Repository (CLDR) Technical Commitee. Part 7 of UTS#35 pertains to keyboard layouts. This specification is currently being rewritten and further developed by the [CLDR Keyboard Subcommittee](https://cldr.unicode.org/index/keyboard-workgroup).
 
-Like the [Keyman Keyboard Language](https://help.keyman.com/developer/language/) (`.kmn`) format, the LDML Keyboard format defines how keystrokes are interpreted and how keys are laid out in a virtual keyboard.  The LDML format has been defined from the beginning to become a cross-platform industry standard, with active participation from several Unicode member organizations including SIL International.  The intention is to provide a draft specification as a technical preview for public review in mid-2023, with a first release later in 2023.
+Like the [Keyman Keyboard Language](https://help.keyman.com/developer/language/) (`.kmn`) format, the LDML Keyboard format defines how keystrokes are interpreted and how keys are laid out in a virtual keyboard.  The LDML format has been defined from the beginning to become a cross-platform industry standard, with active participation from several Unicode member organizations including SIL Global.  The intention is to provide a draft specification as a technical preview for public review in mid-2023, with a first release later in 2023.
 
 ```xml
 <!-- Example: French AZERTY Keyboard in LDML format -->
