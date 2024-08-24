@@ -1,64 +1,53 @@
 <!DOCTYPE html>
-<?php
-
-require_once("includes/servervars.php");
-
-$json = @file_get_contents("{$KeymanHosts->api_keyman_com}/version/web");
-if($json) {
-  $json = json_decode($json);
-}
-if($json && property_exists($json, 'version')) {
-  $build = $json->version;
-} else {
-  // If the get-version API fails, we'll use the latest known stable version
-  $build = "11.0.227";
-}
-
-$cdnUrlBase = "{$KeymanHosts->s_keyman_com}/kmw/engine/$build";
-?>
-
 <html lang="en">
-  <head>
-    <!-- Set the viewport width to match phone and tablet device widths -->
-    <meta name="viewport" content="width=device-width,user-scalable=no" />
+<head>
+  <meta charset="utf-8" />
 
-    <!-- Allow KeymanWeb to be saved to the iPhone home screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Set the viewport width to match phone and tablet device widths -->
+  <meta name="viewport" content="width=device-width,user-scalable=no" />
 
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Allow KeymanWeb to be saved to the iPhone home screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <title>KeymanWeb Sample 1</title>
-  </head>
-  <body>
-    <h1>KeymanWeb Sample 1</h1>
-    <textarea cols="20" rows="5"></textarea>
+  <title>KeymanWeb Sample 1</title>
+</head>
+<body>
+  <h1>KeymanWeb Sample 1</h1>
+  <textarea cols="20" rows="5"></textarea>
 
-    <!--
+  <?php
+    // We use this small piece of PHP just to find the most recent version of
+    // KeymanWeb server-side, but you may prefer to pin a specific version
+    require_once("./keymanweb-version.inc.php");
+    $cdnUrlBase = getKeymanWebHref();
+  ?>
+
+  <!--
       In this example, we are loading KeymanWeb late.  If you focus on a control early (e.g. a search box),
       you may want to place the KeymanWeb code into the head instead, to ensure it is available by the
       time the user wants to start typing.
     -->
 
-    <!-- KeymanWeb script -->
-    <script src='<?=$cdnUrlBase?>/keymanweb.js'></script>
+  <!-- KeymanWeb script -->
+  <script src='<?= $cdnUrlBase ?>/keymanweb.js'></script>
 
-    <!--
+  <!--
       For desktop browsers, a script for the user interface must be inserted here.
 
       Standard UIs are toggle, button, float and toolbar.
       The toolbar UI is best for any page designed to support keyboards for
       a large number of languages.
     -->
-    <script src='<?=$cdnUrlBase?>/kmwuitoggle.js'></script>
+  <script src='<?= $cdnUrlBase ?>/kmwuitoggle.js'></script>
 
-    <!-- Initialization: set paths to keyboards, resources and fonts as required -->
-    <script>
-      (function(kmw) {
-        kmw.init({attachType:'auto'});
-        kmw.addKeyboards('@en');
-        kmw.addKeyboards('@th');
-      })(keyman);
-    </script>
-  </body>
+  <!-- Initialization: set paths to keyboards, resources and fonts as required -->
+  <script>
+    keyman.init({
+      attachType: 'auto'
+    });
+    keyman.addKeyboards('@en');
+    keyman.addKeyboards('@th');
+  </script>
+</body>
+
 </html>
