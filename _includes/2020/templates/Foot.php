@@ -60,7 +60,7 @@
         <div class="footer-third sil-logo">
             <br>
             <a href="/about/"><img id="sil-logo" src="<?php echo Util::cdn("img/sil-logo-blue-2017_1.png"); ?>" alt='SIL' /></a>
-            <p>Created by <a href="/about/">SIL International</a></p>
+            <p>Created by <a href="/about/">SIL Global</a></p>
         </div>
     </div>
 </div>

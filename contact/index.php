@@ -35,7 +35,7 @@
 
 <h2 class="red underline">Postal Address</h2>
 <p>
-  SIL International
+  SIL Global
   <br/>
   7500 W Camp Wisdom Rd
   <br/>

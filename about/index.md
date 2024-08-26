@@ -11,17 +11,17 @@ means keyboard layouts can be intelligent and make it simple to type even the mo
 Keyboard layouts are distributed through an open catalog to all major desktop and mobile platforms.
 
 
-## About SIL International
+## About SIL Global
 
 <!--div style=style='float:left; margin: 0 16px 0 0'-->
 ![](/cdn/dev/img/sil-logo-blue-2017_1.png)
 
-Keyman is created by SIL International. Partners in Language Development,
-SIL International is a faith-based nonprofit organization committed to serving language communities
+Keyman is created by SIL Global (formerly SIL International). Partners in Language Development,
+SIL Global is a faith-based nonprofit organization committed to serving language communities
 worldwide as they build capacity for sustainable language development. SIL does this primarily
 through research, translation, training and materials development.
 
-You can learn more about SIL International on the [SIL International web site](https://www.sil.org/about).
+You can learn more about SIL Global on the [SIL Global web site](https://www.sil.org/about).
 
 ## About National Polytechnic Institute of Cambodia
 
