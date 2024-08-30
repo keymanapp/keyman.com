@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'KeymanWeb | Source Code and Development',
-    'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
+    'css' => ['template.css','dev.css','prism.css'],
     'showMenu' => true
   ]);
 

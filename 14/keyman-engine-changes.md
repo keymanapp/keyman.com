@@ -83,6 +83,7 @@ title: Keyman Engine 14.0 API changes
   5.0) with corresponding Chromium minimum release M37.
 * **BREAKING**: Replaced Fabric/Crashlytics with Sentry for crash reporting
   * build.gradle changes:
+  
     ```gradle
     android {
       compileOptions {
