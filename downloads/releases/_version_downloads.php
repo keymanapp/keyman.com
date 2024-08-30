@@ -113,7 +113,7 @@
   }
 ?>
 
-<a class ="button" href='<?=$KeymanHosts->help_keyman_com?>/version-history/all-versions.php#<?=$versionNumber?>'>View version's history</a>
+<a class ="button" href='<?=$KeymanHosts->help_keyman_com?>/version-history/all-versions.php#<?=$versionNumber?>'>View version history for <?=$versionNumber?></a>
 
 
 <?php
