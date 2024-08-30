@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'KeymanWeb | Keyboard Catalogue',
-    'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
+    'css' => ['template.css','dev.css','prism.css'],
     'showMenu' => true
   ]);
 

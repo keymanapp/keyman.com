@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'KeymanWeb | Source Code and Development',
-    'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
+    'css' => ['template.css','dev.css','prism.css'],
     'showMenu' => true
   ]);
 
@@ -54,9 +54,20 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
 <p>Upgrade Note: with KeymanWeb <?= $stable_version; ?>, the unminified version is no longer served from our CDN.
 Instead, we use source maps to make the full source available in web developer tools.</p>
 
-<p><a href='sample1.php' target='_blank'>Try it!</a></p>
+<h3>Live Examples</h3>
 
-<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the
+<ul>
+  <li>
+    <a href='sample1.php' target='_blank'>Basic Example</a>
+    (<a href="https://github.com/keymanapp/keyman.com/blob/master/developer/keymanweb/sample1.php">source code</a>)
+  </li>
+  <li>
+    <a href='sample2.php' target='_blank'>Multi-language example</a>
+    (<a href="https://github.com/keymanapp/keyman.com/blob/master/developer/keymanweb/sample2.php">source code</a>)
+  </li>
+</ul>
+
+<p>KeymanWeb has multiple user interface designs to fit into any site. The Basic Example above uses the
 Toggle User Interface for desktop browsers.  Mobile browsers all integrate the language selection into
 the on screen keyboard.</p>
 
