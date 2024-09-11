@@ -60,7 +60,7 @@ We will have time for plenty of Q&A plus nibblies and drinks. Perhaps even some 
 
 ## Located in time and space
 
-[Rosalie Church](https://www.rosaliechurch.com.au/): [97 Fernberg Rd, Paddington QLD 4064](https://maps.app.goo.gl/2xKQ2uaey35tPMKZA)
+[Rosalie Baptist Church](https://www.rosaliechurch.com.au/): [97 Fernberg Rd, Paddington QLD 4064](https://maps.app.goo.gl/2xKQ2uaey35tPMKZA)
 
 Starting at **7:00 pm**
 
