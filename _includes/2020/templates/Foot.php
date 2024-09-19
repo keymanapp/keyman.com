@@ -3,7 +3,7 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
-  use Keyman\Site\com\keyman\ImageRandomizer;
+  use Keyman\Site\Common\ImageRandomizer;
   use Keyman\Site\com\keyman\KeymanVersion;
   use Keyman\Site\Common\KeymanHosts;
 
@@ -59,7 +59,7 @@
         </div>
         <div class="footer-third sil-logo">
             <br>
-            <a href="/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer("img/sil-logos-2024/"); ?>" width="50%" alt='SIL' /></a>
+            <a href="/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
             <p>Created by <a href="/about/">SIL Global</a></p>
         </div>
     </div>

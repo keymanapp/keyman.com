@@ -1,6 +1,6 @@
 ﻿<?php
 require_once('includes/template.php');
-require_once('_includes/2020/ImageRandomizer.php');
+require_once __DIR__ . '/_includes/autoload.php';
 
 // Required
 head([
