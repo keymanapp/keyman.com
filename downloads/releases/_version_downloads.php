@@ -113,8 +113,9 @@
   }
 ?>
 
-<a class ="button" href='<?=$KeymanHosts->help_keyman_com?>/version-history/all-versions.php#<?=$versionNumber?>'>View version history for <?=$versionNumber?></a>
-
+<div class="navigation-buttons">
+  <a class ="button" href='<?=$KeymanHosts->help_keyman_com?>/version-history/all-versions.php#<?=$versionNumber?>'>View version history for <?=$versionNumber?></a>
+</div>
 
 <?php
   downloadSection('Keyman for Windows',         'windows',   ['keyman-$version.exe', 'keymandesktop-$version.exe'], $tier);
