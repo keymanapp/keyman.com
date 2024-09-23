@@ -22,9 +22,9 @@
 
 <p><a href='<?=$KeymanHosts->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
 
-<div class ="navigation-buttons">
-  <a class="button" href="all-versions">Browse all versions</a> (14.0 onwards)
-</div>
+
+  <a class="button" href="all-versions">Browse all versions (14.0 onwards)</a>
+
 
 <?php
   require_once('./_downloads.php');

@@ -5,6 +5,12 @@ title: Testimonials
 ## What people are saying about Keyman {.red .underline}
 
 <p class="center">
+  <span class="testimonial">I’m especially grateful for the hint feature, Start of Sentence detection, and the predictive text feature. These things make life very easy, and Keyman itself is a lifesaver for minority languages. Thanks for giving power to speakers of these languages.</span>
+</p>
+
+#### [katelem](https://community.software.sil.org/t/thank-you-and-more-grace/9090) - August 2024 {.caption}
+
+<p class="center">
   <span class="testimonial">I would earnestly like to thank you for the best multilingual keyboard, especially for us <a href="https://twitter.com/hashtag/Ethiopians?src=hashtag_click">#Ethiopians</a> using <a href="https://twitter.com/hashtag/Geez?src=hashtag_click">#Geez</a> scripts. It’s simply excellent.</span>
 </p>
 

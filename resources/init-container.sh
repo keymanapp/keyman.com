@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-echo "---- Generating CDN ---"
-rm -rf cdn/deploy
-cd cdn
-php -d include_path=/var/www/html/_includes:. cdnrefresh.php
-cd ..
+if [[ ! $1 =~ "debug" ]]; then
+  echo "---- Generating CDN ---"
+  rm -rf cdn/deploy
+  cd cdn
+  php -d include_path=/var/www/html/_includes:. cdnrefresh.php
+  cd ..
+else
+  echo "Skip Generating CDN"
+fi
