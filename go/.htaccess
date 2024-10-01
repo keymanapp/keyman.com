@@ -11,8 +11,9 @@ RedirectMatch "/go/(([1-9][0-9])([.]?)([0-9]))/developer-help-(mobile|packages)(
 # Modified to match download-package below
 RewriteRule "^keyboard/([^/]+)/download/kmp$" "package/download.php?type=keyboard&id=$1" [END,QSA]
 
-#download-exe
-RedirectMatch "/go/keyboard/([^/?]+)/download/exe$" "/keyboards/download?id=$1&platform=windows&mode=bundle"
+#download Windows+keyboard "bundle" that uses a name pattern
+#RedirectMatch "/go/keyboard/([^/?]+)/download/exe$" "/keyboards/download?id=$1&platform=windows&mode=bundle"
+RedirectMatch "/go/keyboard/([^/?]+)/download/exe$" "/keyboards/keyboard.php?id=$1&platform=windows"
 
 # download-js
 RedirectMatch "/go/keyboard/([^/?]+)/download/js$" "/keyboards/download?id=$1&platform=web&mode=standalone"
