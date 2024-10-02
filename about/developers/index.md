@@ -13,13 +13,12 @@ Computing degree, I worked with my wife for a year in Papua New Guinea as a volu
 International. I continued part-time development of Keyman during and after University and started working full time
 on the full suite of Keyman projects in 2005.
 
+Outside work I still ride my bike. We have two adult daughters and one son; currently, we are living in Phnom Penh,
+Cambodia where I am now the Product Owner for Keyman within SIL. I can speak, read, and write (and type!),
+to varying degrees, Khmer, Lao, Thai, and Tok Pisin, and used to speak French as a child.
 
-Outside work I still ride my bike. We have two daughters and one son. After living in Phnom Penh, Cambodia
-for two years, our family is back in Australia where I continue to lead the Keyman team within SIL.
-I can speak, read, and write, to varying degrees, Khmer, Lao, Thai and Tok Pisin, and used to speak French as a child.
-
-My personal blog can be found at [marc.durdin.net](https://marc.durdin.net/) and my Twitter account is
-[@MarcDurdin](https://www.twitter.com/MarcDurdin).
+My personal blog can be found at [marc.durdin.net](https://marc.durdin.net/);
+[@MarcDurdin](https://x.com/MarcDurdin) on x, [@marc@typo.social](https://typo.social/@marc) on Mastodon.
 
 ----
 
