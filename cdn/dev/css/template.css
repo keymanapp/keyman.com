@@ -904,7 +904,7 @@ input[type="search"] {
 }
 
 .footer-third form {
-	width: 320px;
+	width: 100%;
 }
 
 .footer-third form input {
@@ -999,7 +999,7 @@ input[type="search"] {
 }
 
 .subscribe {
-	width: 90px;
+	width: fit-content;
 	margin: 0px;
 	border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;

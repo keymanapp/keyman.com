@@ -2,6 +2,7 @@
   require_once('includes/template.php');
   require_once('includes/ui/keyboard-details.php');
   require_once('./session.php');
+  require_once __DIR__ . '/../_includes/autoload.php';
 
   if(isset($_REQUEST['legacy'])) {
     $id = find_id_by_legacy(clean_id($_REQUEST['legacy']));
