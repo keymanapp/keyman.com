@@ -58,6 +58,9 @@ RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
 # Keyboard landing pages (TODO)
 #
 
+# Don't redirect empty page
+#RewriteRule "^keyboards/empty(/?)$" "/keyboards/empty.md" [END,QSA]
+
 # Cleanup various URLS with permanent redirects
 
 # /keyboards/{install|download|share}/{id}/ to /keyboards/x/id
@@ -97,7 +100,7 @@ RewriteRule "^keyboards/share/([^/]+)$" "/keyboards/share.php?id=$1" [END]
 RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [END]
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [END,QSA]
+RewriteRule "^keyboards/(?!index\.php|empty|install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [END,QSA]
 
 
 #
