@@ -101,7 +101,7 @@ END;
 
 <div id="container" class="page-<?=$fields->pageClass?>">
     <div class="header">
-        <img id="show-phone-menu" src="<?php echo Util::cdn("img/phonehide.png"); ?>" />
+        <img id="show-phone-menu" src="<?php echo Util::cdn("img/phonehide.png"); ?>" alt="menu toggle" />
         <a id="home-link" href="/"><img id="logo" src="<?php echo Util::cdn(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION ? "img/logo2.png" : "img/logo2dev.png"); ?>" alt='Keyman Logo' /></a>
         <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
@@ -119,7 +119,7 @@ END;
     </div>
     <div id="top-menu-bg"></div>
     <div id="top-menu1">
-        <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" /></a>
+        <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" alt="Keyman logo" /></a>
         <div id='help1'>
           <form action="/search/" method="get" role="search">
             <div class="search-wrap">
