@@ -7,6 +7,7 @@
   // Required
   head([
     'title' =>'Keyman for iPhone and iPad',
+    'description' => 'Keyman for iPhone and iPad',
     'css' => ['template.css','feature-grid.css','app-store-links.css'],
     'showMenu' => true,
     'banner' => [

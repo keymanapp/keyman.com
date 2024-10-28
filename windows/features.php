@@ -4,6 +4,7 @@
   // Required
   head([
     'title' =>'Features | Keyman for Windows ' . $stable_version,
+    'description' => 'Keyman for Windows Features',
     'css' => ['template.css','feature-template.css'],
     'showMenu' => true
   ]);

@@ -7,6 +7,7 @@
   // Required
   head([
     'title' =>'Keyman for Android',
+    'description' => 'Keyman for Android',
     'css' => ['template.css','feature-grid.css','app-store-links.css'],
     'showMenu' => true,
     'banner' => [

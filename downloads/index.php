@@ -7,6 +7,7 @@
   // Required
   head([
     'title' =>'Keyman Downloads',
+    'description' => 'Keyamn stable downloads',
     'css' => ['template.css','index.css','app-store-links.css', 'prism.css'],
     'js' => ['prism.js'],
     'showMenu' => true
