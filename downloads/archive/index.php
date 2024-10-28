@@ -12,8 +12,6 @@
   ]);
 
   require_once('./static-keys.php');
-',
-    <meta name="description" content=”
   // These variables should be progressively added if we update older versions.
   // 14.0 onward uses 3 numbers instead of 4
   $ver_windows_16 = "16.0.147";
