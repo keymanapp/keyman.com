@@ -8,7 +8,7 @@
     <a class="language desktop" href="/cheyenne">Cheyenne <span class="pipe">|</span> <span lang="chy" class="lang-example">Tsėhesenėstsestotse</span></a>
     <a class="language" href="/dinka">Dinka <span class="pipe">|</span> <span lang="din" class="lang-example">Thuɔŋjäŋ</span></a>
     <a class="language desktop" href="/dutch">Dutch <span class="pipe">|</span> <span lang="nl" class="lang-example">Nederlands</span></a>
-    <a class="language desktop" href="/ancient-egyptian">Egyptian <span class="lang-ital">(Ancient)</span> <span class="pipe">|</span> <span lang="egy" class="lang-example"><img id="hiero" src="<?php echo cdn("img/hiero.png"); ?>" /></span></a>
+    <a class="language desktop" href="/ancient-egyptian">Egyptian <span class="lang-ital">(Ancient)</span> <span class="pipe">|</span> <span lang="egy" class="lang-example"><img id="hiero" src="<?php echo cdn("img/hiero.png"); ?>" alt="Hieroglyphs example" /></span></a>
     <a class="language" href="/farsi">Farsi <span class="pipe">|</span> <span lang="pes" class="lang-example">فارسی</span></a>
     <a class="language desktop" href="/french">French <span class="pipe">|</span> <span lang="fr" class="lang-example">Français</span></a>
     <a class="language desktop" href="/german">German <span class="pipe">|</span> <span lang="de" class="lang-example">Deutsch</span></a>
