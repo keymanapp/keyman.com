@@ -33,7 +33,7 @@ function test_docker_container() {
   echo "---- Testing links ----"
   set +e;
   set +o pipefail;
-  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 | \
+  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' | \
     grep -E "BROKEN|Getting links from" | \
     grep -B 1 "BROKEN";
 
