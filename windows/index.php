@@ -5,6 +5,7 @@
   // Required
   head([
     'title' =>'Keyman for Windows ' . $stable_version,
+    'description' => 'Keyman for Windows',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css'],
     'showMenu' => true,
     'banner' => [

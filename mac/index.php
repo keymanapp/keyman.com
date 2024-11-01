@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman ' . $stable_version . ' for macOS',
+    'description' => 'Keyman for macOS',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css'],
     'showMenu' => true,
     'banner' => [
