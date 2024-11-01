@@ -13,7 +13,7 @@ class Head {
       if(!isset($fields->title)) {
         $fields->title = 'Keyman | Type to the world in your language';
       }
-      if(empty($fields->language) {
+      if(empty($fields->language)) {
         $fields->language = 'en'; // Default to English
       }
       if(!isset($fields->favicon)) {
