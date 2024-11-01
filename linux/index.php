@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'Keyman ' . $stable_version . ' for Linux',
-    'description' => 'Keyman for Linux stable',
+    'description' => 'Keyman for Linux',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css', 'prism.css'],
     'js' => ['prism.js'],
     'showMenu' => true,
