@@ -1,6 +1,15 @@
 # This file is used when running with Apache. Adapted from web.config.
 # NOTE: this is not very well tested...
 
+php_value display_errors off
+php_value display_startup_errors off
+php_value include_path ".:/var/www/html/_includes/"
+
+<IfFile /var/www/html/_control/debug>
+  php_value display_startup_errors on
+  php_value display_errors stderr
+</IfFile>
+
 # We turn off automatic addition of slashes for directories because it
 # interferes with the file extension removal for .php files. At the bottom of
 # this file, we have a redirect rule to mimic the same behaviour, _after_ the
@@ -112,7 +121,7 @@ RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [END]
 
 # Synonym paths
 
-# 10.0 to 15.0 
+# 10.0 to 15.0
 # /1X.0 to /1X landing page
 RedirectMatch "^/1([0-5])(\.0)\/?" "/1$1/"
 
@@ -207,3 +216,5 @@ RewriteRule "^(.+)/$" "$1/index.php" [END]
 # done automatically because we put DirectorySlash off
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule "^(.*)([^/])$" "$1$2/" [R]
+
+
