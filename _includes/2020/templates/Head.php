@@ -27,6 +27,9 @@ class Head {
 <head>
   <meta charset="utf-8">
   <?php
+  if(isset($fields->description) && !empty($fields->description)) {
+    echo "<meta name='description' content='" . $fields->description . "'>\n";
+  }
   if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_STAGING) {
     echo '    <meta name="robots" content="none">';
   }
