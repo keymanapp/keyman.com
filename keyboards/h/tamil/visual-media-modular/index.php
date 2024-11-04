@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil Visual Media (Modular)',
-    'description' => 'Keyman keyboard for Tamil Visual Media (Modular)',
+    'description' => 'Free and open source Tamil keyboard layouts for Windows, macOS, Linux, Android, iOS and web. This follows the popular Modular layout standard.',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

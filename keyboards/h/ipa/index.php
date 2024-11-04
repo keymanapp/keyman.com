@@ -6,7 +6,7 @@
 
   $head_options = [
     'title' =>'IPA Keyboards',
-    'description' => 'Keyman keyboards for IPA - International Phonetic Alphabet'
+    'description' => 'Free and open source IPA (International Phonetic Alphabet) keyboard layouts for Windows, macOS, Linux, Android, iOS and web'
   ];
 
   if($embed != 'none') {

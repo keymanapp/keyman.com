@@ -6,7 +6,7 @@
 
   $head_options = [
     'title' =>'Tibetan Keyboards',
-    'description' => 'Keyman keyboards for Tibetan',
+    'description' => 'Free and open source Tibetan keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
   ];
 
   if($embed != 'none') {

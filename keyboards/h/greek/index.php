@@ -6,7 +6,7 @@
 
   $head_options = [
     'title' =>'Classical Greek Keyboards',
-    'description' => 'Keyman keyboards for Classical (Biblical) and Polytonic Greek'
+    'description' => 'Free and open source Classical (Biblical) and Polytonic Greek keyboard layouts for Windows, macOS, Linux, Android, iOS and web.'
   ];
 
   if($embed != 'none') {

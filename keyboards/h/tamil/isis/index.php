@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil (ISIS)',
-    'description' => 'Keyman keyboard for Tamil (ISIS)',
+    'description' => 'Free and open source Tmail keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Phonetic (Romanised) layouts that come in the ISIS keyboard package',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

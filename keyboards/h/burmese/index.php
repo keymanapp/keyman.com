@@ -6,7 +6,7 @@
 
   $head_options = [
     'title' =>'Burmese Keyboards',
-    'description' => 'Keyman keyboards for Burmese (Myanmar)'
+    'description' => 'Free and open source Burmese (Myanmar) keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Based on WinMyanmar and Myanmar3 layouts'
   ];
 
   if($embed != 'none') {

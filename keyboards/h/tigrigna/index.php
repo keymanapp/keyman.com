@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tigrigna (Ethiopia)',
-    'description' => 'Keyman keyboard for Tigrigna (Ethiopia)',
+    'description' => 'Free and open source Tigrigna (Ethiopia) keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

@@ -4,7 +4,7 @@
   // Required
   head([
     'title' =>'Keyman for Sinhala',
-    'description' => 'Keyman keyboard for Sipon Phonetic Sinhala',
+    'description' => 'Free and open source Sipon Phonetic Sinhala keyboard layouts for Windows, macOS, Linux, Android, iOS and web. For QWERTY layouts',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

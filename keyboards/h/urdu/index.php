@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Urdu',
-    'description' => 'Keyman keyboard for Urdu',
+    'description' => 'Free and open source Urdu keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

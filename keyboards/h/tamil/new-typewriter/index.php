@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil New Typewriter',
-    'description' => 'Keyman keyboard for Tamil New Typrwriter',
+    'description' => 'Free and open source Tamil keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Popularly used in eKalappai, this keyboard follows the standard Tamil typewriter layout',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
