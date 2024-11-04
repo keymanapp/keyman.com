@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Cameroon Keyboards'
+    'title' =>'Cameroon Keyboards',
+    'description' => 'Keyman keyboards for Cameroon: QWERTY or AZERTY'
   ];
 
   if($embed != 'none') {

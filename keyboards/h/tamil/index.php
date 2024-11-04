@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil99',
+    'description' => 'Keyman keyboard for Tamil that follows Tamil99 standard',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'IPA Keyboards'
+    'title' =>'IPA Keyboards',
+    'description' => 'Keyman keyboards for IPA - International Phonetic Alphabet'
   ];
 
   if($embed != 'none') {

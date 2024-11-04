@@ -4,6 +4,7 @@
   // Required
   head([
     'title' =>'Keyman for Sinhala',
+    'description' => 'Keyman keyboard for Garp Sinhala',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

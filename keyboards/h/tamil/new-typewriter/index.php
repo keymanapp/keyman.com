@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil New Typewriter',
+    'description' => 'Keyman keyboard for Tamil New Typrwriter',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

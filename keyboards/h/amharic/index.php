@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Amharic | አማርኛ ይጻፉ',
+    'description' => 'Keyman keyboards for Amharic and other Ethiopic languages',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil Anjal Paangu',
+    'description' => 'Keyman keyboard for Tamil Anjal Paangu',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil Visual Media (Modular)',
+    'description' => 'Keyman keyboard for Tamil Visual Media (Modular)',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

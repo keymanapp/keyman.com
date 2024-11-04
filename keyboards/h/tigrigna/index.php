@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tigrigna (Ethiopia)',
+    'description' => 'Keyman keyboard for Tigrigna (Ethiopia)',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

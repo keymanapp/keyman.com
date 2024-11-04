@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Classical Greek Keyboards'
+    'title' =>'Classical Greek Keyboards',
+    'description' => 'Keyman keyboards for Classical (Biblical) and Polytonic Greek'
   ];
 
   if($embed != 'none') {

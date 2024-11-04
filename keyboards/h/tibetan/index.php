@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Tibetan Keyboards'
+    'title' =>'Tibetan Keyboards',
+    'description' => 'Keyman keyboards for Tibetan',
   ];
 
   if($embed != 'none') {

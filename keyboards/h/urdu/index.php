@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Urdu',
+    'description' => 'Keyman keyboard for Urdu',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

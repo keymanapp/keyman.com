@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil (ISIS)',
+    'description' => 'Keyman keyboard for Tamil (ISIS)',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

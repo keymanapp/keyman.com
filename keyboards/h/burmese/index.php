@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Burmese Keyboards'
+    'title' =>'Burmese Keyboards',
+    'description' => 'Keyman keyboards for Burmese (Myanmar)'
   ];
 
   if($embed != 'none') {

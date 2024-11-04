@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil Suratha Bamuni',
+    'description' => 'Keyman keyboard for Tamil Suratha Bamuni',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
