@@ -52,6 +52,9 @@
     if(isset($args['description'])) {
       $description = $args['description'];
     }
+    if(isset($args['language'])) {
+      $language = $args['language'];
+    }
     if(isset($args['css'])){
       $css = array();
       foreach($args['css'] as $cssFile){
@@ -85,6 +88,7 @@
     if(isset($title)) $head['title'] = $title;
     if(isset($description)) $head['description'] = $description;
     if(isset($favicon)) $head['favicon'] = $favicon;
+    if(isset($language)) $head['language'] = $language;
     if(isset($css)) $head['css'] = $css;
     if(isset($js)) $head['js'] = $js;
     \Keyman\Site\com\keyman\templates\Head::render($head);

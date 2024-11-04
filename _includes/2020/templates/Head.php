@@ -26,7 +26,13 @@ class Head {
         $fields->js = [];
       }
 ?><!DOCTYPE html>
-<html lang="<?= $fields->language ?>">
+<?php
+  if (!empty($fields->language)) {
+    echo "<html lang='$fields->language'>";
+  } else {
+    echo "<html>";
+  }
+?>
 <head>
   <meta charset="utf-8">
   <?php
