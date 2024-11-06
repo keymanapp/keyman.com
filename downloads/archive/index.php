@@ -6,12 +6,12 @@
   // Required
   head([
     'title' =>'Download Archives',
+    'description' => 'Keyman download archive: static activation license keys',
     'css' => ['template.css', 'feature-grid.css'],
     'showMenu' => true
   ]);
 
   require_once('./static-keys.php');
-
   // These variables should be progressively added if we update older versions.
   // 14.0 onward uses 3 numbers instead of 4
   $ver_windows_16 = "16.0.147";

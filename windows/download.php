@@ -5,6 +5,7 @@
   // Required
   head([
     'title' =>'Download Keyman for Windows ' . $stable_version,
+    'description' => 'Download Keyman for Windows',
     'css' => ['template.css','index.css','desktop-download.css'],
     'js' => ['download.js'],
     'showMenu' => true

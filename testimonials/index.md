@@ -213,6 +213,7 @@ title: Testimonials
 
 <p class="center">
   <span class="testimonial">"Thank you very much for making my move to a new computer smooth… Absolutely not a penny wasted in purchasing your software."</span>
+</p>
 
 #### Dawn Jacob - March 2012 {.caption}
 

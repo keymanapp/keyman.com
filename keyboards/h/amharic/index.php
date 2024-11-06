@@ -220,7 +220,7 @@
           <kbd>a</kbd>
           <kbd>m</kbd>
           produces:
-          <span class="example">ሰላም</span>
+          <span class="example" lang="am">ሰላም</span>
           <br>
           Typing
           <kbd>T</kbd>
@@ -234,11 +234,11 @@
           <kbd>l</kbd>
           <kbd>N</kbd>
           produces:
-          <span class="example">ጤናይስጥልኝ</span>
+          <span class="example" lang="am">ጤናይስጥልኝ</span>
         </li>
         <li>
           Ge'ez default punctuation with Western default space. (Ge'ez space '
-          <span class="example">፡</span>
+          <span class="example" lang="am">፡</span>
           ' available with
           <kbd>SHIFT</kbd>
           +
@@ -255,13 +255,13 @@
     <span class="question">What is the difference between Tigrigna (Eritrea) and Tigrigna (Ethiopia)?</span>
     <span class="answer">
       The two Tigrigna keyboards differ slightly. Tigrigna (Ethiopia) includes three sets of characters which are not in Tigrigna (Eritrea) —
-      <span class="example">ሥ</span>
+      <span class="example" lang="ti-et">ሥ</span>
       ,
-      <span class="example">ኅ</span>
+      <span class="example" lang="ti-et">ኅ</span>
       ,
-      <span class="example">ፅ</span>
+      <span class="example" lang="ti-et">ፅ</span>
       — as well as the single character
-      <span class="example">ኧ</span>
+      <span class="example" lang="ti-et">ኧ</span>
       . The two keyboards also differ on the punctuation they offer:
     </span>
     <table id="ethiopic-punctuation">
@@ -305,26 +305,26 @@
         </tr>
         <tr>
           <th>Tigrigna (Eritrea) result</th>
-          <td class="example">፡</td>
-          <td class="example">,</td>
+          <td class="example" lang="ti-er">፡</td>
+          <td class="example" lang="ti-er">,</td>
           <td class="nil"></td>
-          <td class="example">፣</td>
-          <td class="example">;</td>
-          <td class="example">፡</td>
-          <td class="example">።</td>
-          <td class="example">፦</td>
-          <td class="example">፧</td>
+          <td class="example" lang="ti-er">፣</td>
+          <td class="example" lang="ti-er">;</td>
+          <td class="example" lang="ti-er">፡</td>
+          <td class="example" lang="ti-er">።</td>
+          <td class="example" lang="ti-er">፦</td>
+          <td class="example" lang="ti-er">፧</td>
         </tr>
         <tr>
           <th>Tigrignia (Ethiopia) result</th>
-          <td class="example">፣</td>
-          <td class="example">፥</td>
-          <td class="example">,</td>
-          <td class="example">፤</td>
-          <td class="example">;</td>
-          <td class="example">፡</td>
-          <td class="example">።</td>
-          <td class="example">፦</td>
+          <td class="example" lang="ti-et">፣</td>
+          <td class="example" lang="ti-et">፥</td>
+          <td class="example" lang="ti-et">,</td>
+          <td class="example" lang="ti-et">፤</td>
+          <td class="example" lang="ti-et">;</td>
+          <td class="example" lang="ti-et">፡</td>
+          <td class="example" lang="ti-et">።</td>
+          <td class="example" lang="ti-et">፦</td>
           <td class="nil"></td>
         </tr>
       </tbody>

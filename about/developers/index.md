@@ -100,6 +100,14 @@ I am married, with two adult children, and two cats.  I love playing computer ga
 
 My personal website can be found at [markcsinclair.co.uk](https://markcsinclair.co.uk/)
 
+----
+
+![](https://github.com/rc-swag.png?size=240)
+
+### Ross Cruickshank
+<br/>
+With degrees in Electronics and Information Technology from QUT, I have worked across various roles in software and electronics engineering. This has given me experience in high-availability systems, microcontroller design, and software development. With Keyman, I contribute mostly to the Keyman for Windows product. I am based in Australia and outside of work, I enjoy spending time with my family, mountain biking and road cycling.
+
 ## Previous Contributors
 
 More about [previous contributors](./previous)

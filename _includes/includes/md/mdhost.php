@@ -14,6 +14,7 @@
     'title' => $md->PageTitle(),
     'css' => ['template.css','prism.css'],
     'showMenu' => $md->ShowMenu(),
+    'description' => $md->PageDescription(),
     'js' => ['prism.js']
   ]);
 
