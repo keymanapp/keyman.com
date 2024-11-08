@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'IPA Keyboards'
+    'title' =>'IPA Keyboards',
+    'description' => 'Free and open source IPA (International Phonetic Alphabet) keyboard layouts for Windows, macOS, Linux, Android, iOS and web'
   ];
 
   if($embed != 'none') {

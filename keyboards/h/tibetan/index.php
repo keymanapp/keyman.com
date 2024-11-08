@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Tibetan Keyboards'
+    'title' =>'Tibetan Keyboards',
+    'description' => 'Free and open source Tibetan keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
   ];
 
   if($embed != 'none') {

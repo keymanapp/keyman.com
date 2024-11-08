@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tigrigna (Eritrea)',
+    'description' => 'Free and open source Tigrigna (Eritrea) keyboard layouts for Windows, macOS, Linux, Android, iOS and web.',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

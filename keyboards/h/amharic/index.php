@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Amharic | አማርኛ ይጻፉ',
+    'description' => 'Free and open source Amharic and Ethiopic keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

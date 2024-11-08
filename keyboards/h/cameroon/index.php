@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Cameroon Keyboards'
+    'title' =>'Cameroon Keyboards',
+    'description' => 'Free and open source Cameroon keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Available for QWERTY (US) and AZERTY (French) layouts.'
   ];
 
   if($embed != 'none') {

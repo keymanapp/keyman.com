@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Classical Greek Keyboards'
+    'title' =>'Classical Greek Keyboards',
+    'description' => 'Free and open source Classical (Biblical) and Polytonic Greek keyboard layouts for Windows, macOS, Linux, Android, iOS and web.'
   ];
 
   if($embed != 'none') {

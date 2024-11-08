@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil99',
+    'description' => 'Free and open source Tamil keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Popularly used in eKalappai, this keyboard follows the Tamil99 standard recommended by the Tamil Nadu government',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
