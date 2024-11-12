@@ -1,9 +1,11 @@
 <?php
   require_once('includes/template.php');
-
+  require_once __DIR__ . '/../_includes/autoload.php';
+  
   // Required
   head([
     'title' =>'Keyman for Windows ' . $stable_version,
+    'description' => 'Keyman for Windows',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css'],
     'showMenu' => true,
     'banner' => [

@@ -7,6 +7,7 @@
   // Required
   head([
     'title' =>'Keyman for Android',
+    'description' => 'Keyman for Android',
     'css' => ['template.css','feature-grid.css','app-store-links.css'],
     'showMenu' => true,
     'banner' => [
@@ -61,14 +62,6 @@
     <img src='<?= cdn("img/android-kmp.png"); ?>' />
 </p>
 
-<p>The <strong class='red'>Keyman built-in browser</strong> dynamically loads your language font into each website you visit so you no longer see square boxes for your language on the web!</p>
-
-<p style='text-align:center'><img src='<?= cdn("img/android-browser.png"); ?>' /></p>
-
-<p>
-  The built-in browser feature applies your language font to websites that you browse, and includes a bookmark feature and of course supports typing your language into any website!
-</p>
-
 <h2>Keyman for Android Features</h2>
 
 <br/>
@@ -98,15 +91,32 @@
         <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
     <tr>
-        <td>Built in browser for full font support</td>
-        <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
-    </tr>
-    <tr>
         <td>Install custom keyboard and dictionary packages</td>
         <td><img class="table-tick" src="<?= cdn("img/table-tick.png"); ?>"/></td>
     </tr>
   </tbody>
 </table>
+
+<br/>
+<h3>New in Keyman for Android 17.0 (May 2024)</h3>
+<ul>
+  <li>Multitap and flick gestures are now supported for Android. (#7324)</li>
+  <li>When suggestions aren’t enabled, displays a themed banner. This area is for displaying top row key gestures and is also reserved for future enhancements (#9696)</li>
+  <li>Removes in-app browser (#8430)</li>
+  <li>Predictive text suggestions are now handled more flexibly on the banner (#7934)
+    <ol>
+      <li>Can now display up to 8 suggestions on screen</li>
+      <li>Can drag the banner left and right to see more suggestions</li>
+      <li>Shortens long suggestions to avoid long words overwhelming the available space.</li>
+    </ol>  
+  </li>
+  <li>Improves scaling of key caps for some keyboards (#10506)</li>
+  <li>Add localization for:
+    <ol>
+      <li>Mon (Burmese script)</li>  
+    </ol>  
+  </li>
+</ul>
 
 <br/>
 <h3>New in Keyman for Android 16.0 (Feb 2023)</h3>

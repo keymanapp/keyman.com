@@ -13,13 +13,12 @@ Computing degree, I worked with my wife for a year in Papua New Guinea as a volu
 International. I continued part-time development of Keyman during and after University and started working full time
 on the full suite of Keyman projects in 2005.
 
+Outside work I still ride my bike. We have two adult daughters and one son; currently, we are living in Phnom Penh,
+Cambodia where I am now the Product Owner for Keyman within SIL. I can speak, read, and write (and type!),
+to varying degrees, Khmer, Lao, Thai, and Tok Pisin, and used to speak French as a child.
 
-Outside work I still ride my bike. We have two daughters and one son. After living in Phnom Penh, Cambodia
-for two years, our family is back in Australia where I continue to lead the Keyman team within SIL.
-I can speak, read, and write, to varying degrees, Khmer, Lao, Thai and Tok Pisin, and used to speak French as a child.
-
-My personal blog can be found at [marc.durdin.net](https://marc.durdin.net/) and my Twitter account is
-[@MarcDurdin](https://www.twitter.com/MarcDurdin).
+My personal blog can be found at [marc.durdin.net](https://marc.durdin.net/);
+[@MarcDurdin](https://x.com/MarcDurdin) on x, [@marc@typo.social](https://typo.social/@marc) on Mastodon.
 
 ----
 
@@ -86,6 +85,28 @@ our users.
 
 
 My wife and I have two children. I also enjoy playing Ultimate (frisbee), going to the gym, and playing boardgames.
+
+----
+
+![](https://github.com/markcsinclair.png?size=240)
+
+### Mark Sinclair
+<br/>
+I am a systems developer and experienced university teacher in computer science and telecommunications, with research interests in computational intelligence and network design. I was committed to the development of higher education in Cambodia over eighteen years, including co-founding an MSc, two university departments and a software house.  After three years at Northumbria University as Assistant Professor in Computer & Information Sciences, I moved to CAP (Christians Against Poverty) as a systems developer.  Following financial difficulties at CAP, I took voluntary redundancy, and alongside phased retirement, have subsequently had three fixed-term contracts as an MSc Project Supervisor in Computing Science at the University of Glasgow; Academic Mentor in Computer Science at NPIC (for SIL in Cambodia); and now as Senior Software Developer for SIL in Cambodia.
+
+I have a BA and MA in Electrical Sciences from Pembroke College, University of Cambridge; an MSc in Telecommunication and Information Systems, and a PhD in Electronic Systems Engineering from the University of Essex.  I am a Chartered Engineer, a member of both the IET and IEEE, and a Fellow of the Higher Education Academy.  I am a Visiting Professor of Computer Science at NPIC in Cambodia.
+
+I am married, with two adult children, and two cats.  I love playing computer games, reading science fiction and fantasy novels, going to the cinema and theatre, and am an active member of my local church.
+
+My personal website can be found at [markcsinclair.co.uk](https://markcsinclair.co.uk/)
+
+----
+
+![](https://github.com/rc-swag.png?size=240)
+
+### Ross Cruickshank
+<br/>
+With degrees in Electronics and Information Technology from QUT, I have worked across various roles in software and electronics engineering. This has given me experience in high-availability systems, microcontroller design, and software development. With Keyman, I contribute mostly to the Keyman for Windows product. I am based in Australia and outside of work, I enjoy spending time with my family, mountain biking and road cycling.
 
 ## Previous Contributors
 

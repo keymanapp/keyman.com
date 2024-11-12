@@ -78,5 +78,6 @@ developing software that serves the needs of language communities around the wor
 [Write us](https://software.sil.org/about/contact/), or ping us on [@Keyman](https://twitter.com/keyman) and
 introduce yourself &mdash; we'd love to meet with you!
 
+* [Jobs](/jobs)
 * [Write to us](https://software.sil.org/about/contact/)
 * [Send us a tweet or DM on Twitter](https://twitter.com/keyman)

@@ -7,6 +7,7 @@
   // Required
   head([
     'title' =>'Keyman for iPhone and iPad',
+    'description' => 'Keyman for iPhone and iPad',
     'css' => ['template.css','feature-grid.css','app-store-links.css'],
     'showMenu' => true,
     'banner' => [
@@ -81,6 +82,20 @@
     </tr>
   </tbody>
 </table>
+
+<h2>New in Keyman 17.0 (May 2024)</h2>
+<ul>
+  <li>Multitap and flick gestures are now supported for iOS (#7934)</li>
+  <li>Predictive text suggestions are now handled more flexibly on the banner (#7934)
+    <ol>
+      <li>Can now display up to 8 suggestions on screen</li>
+      <li>Can drag the banner left and right to see more suggestions</li>
+      <li>Shortens long suggestions to avoid long words overwhelming the available space.</li>
+    </ol>
+  </li>
+  <li>Improves scaling of key caps for some keyboards (#10506)</li>
+  <li>Update minimum iOS version to 12.2</li>
+</ul>
 
 <h2>New in Keyman 16.0 (Feb 2023)</h2>
 <ul>

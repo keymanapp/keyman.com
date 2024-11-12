@@ -10,6 +10,7 @@
 
   $head_options = [
     'title' =>'Keyboard Search',
+    'description' => 'Keyman Keyboard Search',
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
     'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
       Util::cdn('keyboard-search/search.js')]

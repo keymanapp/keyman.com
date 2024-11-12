@@ -6,7 +6,7 @@
   // Required
   head([
     'title' =>'KeymanWeb | Source Code and Development',
-    'css' => ['template.css','dev.css','prism.css','prism-keyman.css'],
+    'css' => ['template.css','dev.css','prism.css'],
     'showMenu' => true
   ]);
 
@@ -18,7 +18,7 @@
     $build = $json->version;
   } else {
     // If the get-version API fails, we'll use the latest known stable version
-    $build = "11.0.227";
+    $build = "16.0.145";
   }
 
   $cdnUrlBase = "{$KeymanHosts->s_keyman_com}/kmw/engine/$build";
@@ -54,9 +54,20 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
 <p>Upgrade Note: with KeymanWeb <?= $stable_version; ?>, the unminified version is no longer served from our CDN.
 Instead, we use source maps to make the full source available in web developer tools.</p>
 
-<p><a href='sample1.php' target='_blank'>Try it!</a></p>
+<h3>Live Examples</h3>
 
-<p>KeymanWeb has multiple user interface designs to fit into any site. The sample above uses the
+<ul>
+  <li>
+    <a href='sample1.php' target='_blank'>Basic Example</a>
+    (<a href="https://github.com/keymanapp/keyman.com/blob/master/developer/keymanweb/sample1.php">source code</a>)
+  </li>
+  <li>
+    <a href='sample2.php' target='_blank'>Multi-language example</a>
+    (<a href="https://github.com/keymanapp/keyman.com/blob/master/developer/keymanweb/sample2.php">source code</a>)
+  </li>
+</ul>
+
+<p>KeymanWeb has multiple user interface designs to fit into any site. The Basic Example above uses the
 Toggle User Interface for desktop browsers.  Mobile browsers all integrate the language selection into
 the on screen keyboard.</p>
 
@@ -73,7 +84,7 @@ the on screen keyboard.</p>
     keyman.addKeyboards({
       name: 'Tai Nua',
       id: 'tainua',
-      filename: './tainua-1.0.js',
+      filename: './tainua.js',
       version: '1.0',
       language: [{
         name: 'Tai Nua',
@@ -90,10 +101,10 @@ the on screen keyboard.</p>
 
 <h2 class='red underline'>Use the Keyman Cloud CDN</h2>
 
-<p>The Keyman Cloud CDN is appropriate for smaller sites. While HTTP and HTTPS endpoints are available, HTTPS is always recommended.</p>
+<p>The Keyman Cloud CDN is appropriate for smaller sites.</p>
 
 <table class='basic-table'><tbody>
-  <tr><td>HTTPS endpoint:</td><td><input type='text' readonly size='60' value='<?= KeymanHosts::Instance()->s_keyman_com ?>/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
+  <tr><td>Endpoint:</td><td><input type='text' readonly size='60' value='<?= KeymanHosts::Instance()->s_keyman_com ?>/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
 </tbody></table>
 
 <br>

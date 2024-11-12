@@ -2,4 +2,4 @@
 # Redirects for Keyman 10.0 for macOS onward
 
 # /go/macos/X.Y/download-keyboards
-RedirectMatch "/go/macos/([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=macos"
+RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=macos" [R,QSA]

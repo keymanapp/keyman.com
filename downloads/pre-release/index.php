@@ -5,6 +5,7 @@
   // Required
   head([
     'title' =>'Keyman Pre-release Versions',
+    'description' => 'Keyman pre-release versions: alpha, beta',
     'css' => ['template.css','index.css', 'app-store-links.css','prism.css'],
     'showMenu' => true
   ]);

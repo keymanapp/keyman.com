@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman ' . $stable_version . ' for macOS',
+    'description' => 'Keyman for macOS',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css'],
     'showMenu' => true,
     'banner' => [
@@ -103,7 +104,7 @@
     <span class="red">Q.</span> What versions of macOS will Keyman work with?
 </p>
 <p>
-    <span class="red">A.</span> Keyman is compatible with OS X Yosemite (10.10) and later.
+    <span class="red">A.</span> Keyman is compatible with macOS High Sierra (10.13) and later.
 </p>
 
 <br/>

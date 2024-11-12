@@ -13,6 +13,9 @@ class Head {
       if(!isset($fields->title)) {
         $fields->title = 'Keyman | Type to the world in your language';
       }
+      if(empty($fields->language)) {
+        $fields->language = 'en'; // Default to English
+      }
       if(!isset($fields->favicon)) {
         $fields->favicon = Util::cdn("img/favicon.ico");
       }
@@ -23,10 +26,19 @@ class Head {
         $fields->js = [];
       }
 ?><!DOCTYPE html>
-<html>
+<?php
+  if (!empty($fields->language)) {
+    echo "<html lang='$fields->language'>";
+  } else {
+    echo "<html>";
+  }
+?>
 <head>
   <meta charset="utf-8">
   <?php
+  if(isset($fields->description) && !empty($fields->description)) {
+    echo "<meta name='description' content='" . $fields->description . "'>\n";
+  }
   if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_STAGING) {
     echo '    <meta name="robots" content="none">';
   }

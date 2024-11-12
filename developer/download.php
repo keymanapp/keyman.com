@@ -8,7 +8,7 @@
   head([
     'title' =>'Download Keyman Developer ' . $stable_version,
     'css' => ['template.css','feature-grid.css','index.css','desktop-download.css','prism.css'],
-    'js' => ['download.js'],
+    'js' => ['download.js','prism.js'],
     'showMenu' => true
   ]);
 ?>
@@ -30,20 +30,23 @@
 
 <h2 class='red underline'>Keyman Developer Command Line Tools</h2>
 
-<p>The Keyman Developer command line tools can be run on Windows, or using WINE on Linux and macOS. <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?= $stable_version ?>/guides/command-line'>Command line tool guide</a>. This download is
-provided separately primarily for users on non-Windows platforms.</p>
+<p>
+  The Keyman Developer command line tool kmcomp, which was a Windows-only console application, has been replaced by kmc.
+  kmc is a cross-platform application, running on Windows, Linux, and macOS, built in node.js.
+</p>
 
+<p>
+  In Keyman Developer, kmc is located in "%ProgramFiles(x86)%\Keyman\Keyman Developer".
+</p>
 
-<?php
-  downloadLargeCTA('kmcomp Compiler', 'developer', 'stable', 'kmcomp-$version.zip');
-  ?>
+<p>
+  kmc is also available as an npm module for Windows, macOS, and Linux developers:
+</p>
 
-<p>Command-line install:</p>
-
-<script src='<?=cdn('js/prism.js')?>'></script>
-<pre class="language-markup code"><code>
-mkdir kmcomp
-cd kmcomp
-curl -L https://keyman.com/go/download/kmcomp -o kmcomp.zip
-unzip kmcomp.zip
+<pre class="language-bash code"><code>
+  npm install -g @keymanapp/kmc
 </code></pre>
+
+<p>
+  For kmcomp, please download from our <a href="/downloads/archive/">archived downloads page</a>.
+</p>
