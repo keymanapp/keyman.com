@@ -31,6 +31,9 @@
   $embed_android = $embed == 'android';
   $embed_ios = $embed == 'ios';
 
+  $embed_locale = isset($_REQUEST['locale']) ? $_REQUEST['locale'] : 'en';
+  $_SESSION['embed_locale'] = $embed_locale;
+
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
     // default, including in existing versions of Keyman.

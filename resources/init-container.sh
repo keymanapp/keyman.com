@@ -10,3 +10,18 @@ else
   echo "Skip Generating CDN and clean CDN cache"
   rm -rf cdn/deploy
 fi
+
+echo "---- Generating .mo localization files ----"
+cd _includes/locale/en/LC_MESSAGES/
+
+# cleanup previous .mo files
+find . -type f -name '*.mo' -delete
+
+# Compile .po to .mo localization files
+for filename in `find . -type f -name "*.po"`; do
+  # Remove the .po extension
+  base_name=`echo ${filename} | sed 's/\.[^.]*$//'`
+  msgfmt "${base_name}.po" --output-file="${base_name}".mo
+done
+
+cd ../../../../
