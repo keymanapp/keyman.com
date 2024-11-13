@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil Suratha Bamuni',
+    'description' => 'Free and open source Tamil keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Popularly used in eKalappai, this keyboard follows the Bamini standard common in Sri Lanka, based on old Tamil typewriters',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

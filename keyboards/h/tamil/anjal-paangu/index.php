@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil Anjal Paangu',
+    'description' => 'Free and open source Tamil Anjal Paangu keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Popularly used in eKalappai and follows the Anjal phonetic standard.',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

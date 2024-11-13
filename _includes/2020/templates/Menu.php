@@ -38,7 +38,7 @@ END;
             <h3>Keyboards</h3>
             <form method="get" action="/keyboards" name="fsearch">
                 <input id="language-search2" type="text" placeholder="Enter language" name="q">
-                <input id="search-submit2" type="image" src="<?php echo Util::cdn("img/search-button.png"); ?>" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
+                <input id="search-submit2" type="image" src="<?php echo Util::cdn("img/search-button.png"); ?>" alt="search button" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
             </form>
         </div>
         <div class="phone-menu-item">
@@ -101,7 +101,7 @@ END;
 
 <div id="container" class="page-<?=$fields->pageClass?>">
     <div class="header">
-        <img id="show-phone-menu" src="<?php echo Util::cdn("img/phonehide.png"); ?>" />
+        <img id="show-phone-menu" src="<?php echo Util::cdn("img/phonehide.png"); ?>" alt="menu toggle" />
         <a id="home-link" href="/"><img id="logo" src="<?php echo Util::cdn(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION ? "img/logo2.png" : "img/logo2dev.png"); ?>" alt='Keyman Logo' /></a>
         <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
@@ -114,12 +114,12 @@ END;
             </div>
           </form>
           <p id="donate"><a href="/donate">Donate</a></p>
-          <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>"></a></p>
+          <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon"></a></p>
         </div>
     </div>
     <div id="top-menu-bg"></div>
     <div id="top-menu1">
-        <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" /></a>
+        <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" alt="Keyman logo" /></a>
         <div id='help1'>
           <form action="/search/" method="get" role="search">
             <div class="search-wrap">
@@ -129,11 +129,11 @@ END;
             </div>
           </form>
           <a id='help1-donate' href="/donate">Donate</a>
-          <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" /></a>
+          <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon" /></a>
         </div>
         <div class="wrapper">
             <div class="menu-item" id="keyboards">
-                <h3>Keyboards<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
+                <h3>Keyboards<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" alt="keyboards dropdown" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <h4>(2000+ languages)</h4>
@@ -161,7 +161,7 @@ END;
                 </div>
             </div>
             <div class="menu-item" id="products">
-                <h3>Products<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
+                <h3>Products<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" alt="products dropdown" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <h4>Core Products</h4>
@@ -184,7 +184,7 @@ END;
                 </div>
             </div>
             <div class="menu-item" id="tavultesoft">
-                <h3>About<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" /></span></h3>
+                <h3>About<span class="header-triangle"><img src="<?php echo Util::cdn("img/img_trans.png"); ?>" alt="About dropdown" /></span></h3>
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <ul>
@@ -209,7 +209,7 @@ END;
                 </div>
             </div>
         </div>
-        <img id="top-menu-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" />
+        <img id="top-menu-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt="Header bottom" />
     </div>
     <div id="phone-header-spacer"></div>
 

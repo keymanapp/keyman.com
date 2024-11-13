@@ -5,7 +5,8 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Burmese Keyboards'
+    'title' =>'Burmese Keyboards',
+    'description' => 'Free and open source Burmese (Myanmar) keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Based on WinMyanmar and Myanmar3 layouts'
   ];
 
   if($embed != 'none') {

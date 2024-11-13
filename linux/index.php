@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman ' . $stable_version . ' for Linux',
+    'description' => 'Keyman for Linux',
     'css' => ['template.css','index.css','desktop.css','feature-grid.css', 'prism.css'],
     'js' => ['prism.js'],
     'showMenu' => true,
@@ -156,8 +157,8 @@ sudo apt install keyman onboard-keyman
   <span class="red">Q.</span> Does Keyman for Linux work with Wayland?
 </p>
 <p>
-  <span class="red">A.</span> Currently, there's <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
-  to add support for Wayland. As a workaround, use X11.
+  <span class="red">A.</span> Wayland is supported in Keyman 17.0 onward. See <a href="https://github.com/keymanapp/keyman/issues/4273">issue #4273</a>
+  for more information.
 </p>
 
 <br/>

@@ -6,6 +6,7 @@
   // Required
   head([
     'title' =>'Keyman for Tamil Visual Media (Typewriter)',
+    'description' => 'Free and open source Tamil keyboard layouts for Windows, macOS, Linux, Android, iOS and web. This follows the standard Tamil typewriter layout',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);

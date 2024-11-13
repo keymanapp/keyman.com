@@ -37,9 +37,49 @@
     $tier = array_key_first(get_object_vars($versions->android));
   }
 
+  $versionWithHyphens = str_replace('.', '-', $version);
+  $versionNumber = $versionWithHyphens . ($tier ? "-$tier" : "-stable");
+
   $versionTier = $version . ($tier == 'stable' ? "" : "-$tier");
 
-  // Required
+
+
+  $versionsData = @json_decode(file_get_contents("https://downloads.keyman.com/api/version/all"));
+  if (!$versionsData) {
+    die("Failed to retrieve or parse the API data.");
+  }
+
+  $versionsList = [];
+
+  foreach ($versionsData as $major => $tierData) {
+    foreach ($tierData as $tierName => $versionArray) {
+      foreach ($versionArray as $version) {
+        $versionsList[] = [
+            'version' => $version,
+            'tier' => $tierName,
+            'major' => $major
+        ];
+      }
+    }
+  }
+
+  usort($versionsList, function($a, $b) {
+    return version_compare($b['version'], $a['version']);
+  });
+
+  $currentVersion = $_REQUEST['version'];
+  $index = array_search($currentVersion, array_column($versionsList, 'version'));
+
+  if ($index === false) {
+    die("Version parameter is not in the list of versions.");
+  }
+
+  $prevVersion = ($index < count($versionsList) - 1) ? $versionsList[$index + 1] : null;
+  $nextVersion = ($index > 0) ? $versionsList[$index - 1] : null;
+
+  $prevVersionLink = $prevVersion ? "" . urlencode($prevVersion['version']) : null;
+  $nextVersionLink = $nextVersion ? "" . urlencode($nextVersion['version']) : null;
+
   head([
     'title' =>"Keyman $versionTier Downloads",
     'css' => ['template.css','index.css','app-store-links.css', 'prism.css'],
@@ -47,14 +87,37 @@
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Keyman <?= $versionTier ?> Downloads</h2>
+
+<div class="download-title red underline">
+  <h2 class="large">Keyman <?= htmlspecialchars($versionTier) ?> Download</h2>
+
+  <div class="navigation-buttons">
+    <?php if ($prevVersionLink): ?>
+      <a class="button" href="<?= htmlspecialchars($prevVersionLink) ?>">&lt; <?= htmlspecialchars($prevVersion['version']) ?></a>
+    <?php else: ?>
+      <span class="button disabled">&lt; No Previous Version</span>
+    <?php endif; ?>
+
+    <?php if ($nextVersionLink): ?>
+      <a class="button" href="<?= htmlspecialchars($nextVersionLink) ?>"><?= htmlspecialchars($nextVersion['version']) ?> &gt;</a>
+    <?php else: ?>
+      <span class="button disabled">No Next Version &gt;</span>
+    <?php endif; ?>
+  </div>
+</div>
 
 <?php
   if(empty($versions->android)) {
-    echo "<p>Version $version may be invalid, or may not yet be available.</p>";
+    echo "<p>Version $currentVersion may be invalid, or may not yet be available.</p>";
     exit;
   }
+?>
 
+<div class="navigation-buttons">
+  <a class ="button" href='<?=$KeymanHosts->help_keyman_com?>/version-history/all-versions.php#<?=$versionNumber?>'>View version history for <?=$versionNumber?></a>
+</div>
+
+<?php
   downloadSection('Keyman for Windows',         'windows',   ['keyman-$version.exe', 'keymandesktop-$version.exe'], $tier);
   downloadSection('Keyman for macOS',           'mac',     'keyman-$version.dmg', $tier);
   downloadSection('Keyman for Android',         'android', 'keyman-$version.apk', $tier);
