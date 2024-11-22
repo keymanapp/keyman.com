@@ -6,7 +6,8 @@
   require_once('includes/appstore.php');
 
   use \DateTime;
-  use \Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\KeymanWebHost;
+use \Keyman\Site\Common\KeymanHosts;
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
   define('DOCUMENTATION_ROOT', KeymanHosts::Instance()->help_keyman_com . '/keyboard/');
@@ -67,7 +68,9 @@
 
       self::LoadData();
       self::WriteTitle();
+      self::WriteDescription();
       self::WriteDownloadBoxes();
+      self::WriteKeymanWebBox();
       self::WriteKeyboardDetails();
       if(!empty(self::$deprecatedBy)) echo "</div></div>";
     }
@@ -123,7 +126,7 @@ END;
       global $embed_target;
       global $KeymanHosts;
       if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none' && empty(self::$deprecatedBy)) {
-          if(empty(self::$bcp47)) {
+        if(empty(self::$bcp47)) {
           if (isset(self::$keyboard->languages)) {
             if (is_array(self::$keyboard->languages)) {
               if (count(self::$keyboard->languages) > 0) {
@@ -142,11 +145,10 @@ END;
         if (!isset($lang)) $lang = 'en';
         $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
         $description = htmlentities(self::$keyboard->name);
-          return <<<END
+        return <<<END
           <div class="download download-web">
-          <a class="download-link" $embed_target href='$url'>Use keyboard online</a>
-          <div class="download-description">Use $description in your web browser. No need to install anything.</div>
-        </div>
+            <a class="download-link" $embed_target href='$url'>Full online editor</a>
+          </div>
 END;
       }
       return FALSE;
@@ -369,15 +371,85 @@ END;
       }
 
       if ($embed == 'none') {
-        $webtext = self::WriteWebBoxes();
-        if ($webtext) {
-          echo $webtext;
+        if(self::GetWebDeviceFromPageDevice() == null) {
+          $webtext = self::WriteWebBoxes();
+          if ($webtext) {
+            echo $webtext;
+          }
         }
-
         if(empty(self::$deprecatedBy)) {
           self::WriteQRCode('other');
         }
       }
+    }
+
+    protected static function GetWebDeviceFromPageDevice() {
+      global $pageDevice;
+      switch($pageDevice) {
+        case 'Windows': return 'windows';
+        case 'mac':     return 'macosx';
+        case 'Linux':   return 'linux';
+      }
+      return null;
+    }
+
+    protected static function WriteKeymanWebBox() {
+      global $embed;
+
+      // don't show if we are embedded into a Keyman app
+      if($embed != 'none') {
+        return;
+      }
+
+      // only show if we have a web keyboard and we are not deprecated
+      if(!isset(self::$keyboard->platformSupport->desktopWeb) ||
+          self::$keyboard->platformSupport->desktopWeb == 'none' ||
+          !empty(self::$deprecatedBy)) {
+        return;
+      }
+
+      // only inject on desktop platforms
+      $webDevice = self::GetWebDeviceFromPageDevice();
+      if(!$webDevice) {
+        return;
+      }
+
+      $webtext = self::WriteWebBoxes();
+      $cdnUrlBase = KeymanWebHost::getKeymanWebUrlBase();
+      ?>
+        <h2 id='try-header' class='red underline'>Try this keyboard</h2>
+        <div id='try-box'>
+          <input type='text' id='try-keyboard'>
+          <div id='osk-host'></div>
+          <div id='try-keymanweb-link'><?= $webtext ?></div>
+        </div>
+        <script src='<?=$cdnUrlBase?>/keymanweb.js'></script>
+        <script>
+          (function() {
+            keyman.init({attachType:'manual'}).then(
+              function() {
+                keyman.attachToControl(document.getElementById('try-keyboard'));
+
+                // Create a new on screen keyboard view and tell KeymanWeb that
+                // we are using the targetDevice for context input.
+                const targetDevice = {
+                  browser: 'chrome', formFactor: 'desktop', OS: '<?=$webDevice?>',
+                  touchable: false, dimensions: [640, 300] };
+                newOSK = new keyman.views.InlinedOSKView(keyman, { device: targetDevice });  // Note: KeymanWeb internal API
+                keyman.core.contextDevice = targetDevice;  // Note: KeymanWeb internal API
+                keyman.osk = newOSK;  // Note: undocumented KeymanWeb API
+                newOSK.setSize(targetDevice.dimensions[0]+'px', targetDevice.dimensions[1]+'px');
+                document.getElementById('osk-host').appendChild(newOSK.element);
+              }
+            );
+            keyman.addKeyboards('<?= self::$id ?>');
+          })();
+        </script>
+      <?php
+    }
+
+    protected static function WriteDescription() {
+      echo "<p>" . self::$description . "</p>";
     }
 
     protected static function WriteKeyboardDetails() {
@@ -386,7 +458,6 @@ END;
       // this is html, trusted in database
       ?>
       <h2 class='red underline'>Keyboard Details</h2>
-      <p><?= self::$description ?></p>
       <div class='cols' id='keyboard-details-col'>
         <div class='col'>
 

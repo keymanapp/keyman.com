@@ -314,6 +314,39 @@ p#permalink {
   font-size: 8pt;
 }
 
+/* Try this keyboard */
+
+#try-box {
+  display: none;
+  margin: 0px 0px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+html[data-platform~='windows linux macos'] #try-header,
+html[data-platform~='windows linux macos'] #try-box {
+  display: block;
+}
+
+#try-keyboard {
+  font-size: 1.5em;
+  width: 632px;
+  height: 44px;
+  margin: 0 auto 8px auto;
+  display: block;
+}
+
+#osk-host {
+  width: 640px;
+  height: 300px;
+}
+
+#try-keymanweb-link {
+  margin-top: 8px;
+  display: block;
+}
+
 /* Download boxes */
 
 .download {

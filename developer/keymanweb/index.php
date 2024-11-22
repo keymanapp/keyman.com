@@ -2,6 +2,7 @@
   require_once('includes/template.php');
   require_once __DIR__ . '/../../_includes/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\KeymanWebHost;
 
   // Required
   head([
@@ -10,18 +11,7 @@
     'showMenu' => true
   ]);
 
-  $json = @file_get_contents("{$KeymanHosts->api_keyman_com}/version/web");
-  if($json) {
-    $json = json_decode($json);
-  }
-  if($json && property_exists($json, 'version')) {
-    $build = $json->version;
-  } else {
-    // If the get-version API fails, we'll use the latest known stable version
-    $build = "16.0.145";
-  }
-
-  $cdnUrlBase = "{$KeymanHosts->s_keyman_com}/kmw/engine/$build";
+  $cdnUrlBase = KeymanWebHost::getKeymanWebUrlBase();
 ?>
 <script src='<?=cdn('js/clipboard.min.js')?>'></script>
 <script src='<?=cdn('js/prism.js')?>'></script>
@@ -42,11 +32,11 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
 &lt;script src='<?=$cdnUrlBase?>/keymanweb.js'&gt;&lt;/script&gt;
 &lt;script src='<?=$cdnUrlBase?>/kmwuitoggle.js'&gt;&lt;/script&gt;
 &lt;script&gt;
-  (function(kmw) {
-    kmw.init({attachType:'auto'});
-    kmw.addKeyboards('@en'); // Loads default English keyboard from Keyman Cloud (CDN)
-    kmw.addKeyboards('@th'); // Loads default Thai keyboard from Keyman Cloud (CDN)
-  })(keyman);
+  (function() {
+    keyman.init({attachType:'auto'});
+    keyman.addKeyboards('@en'); // Loads default English keyboard from Keyman Cloud (CDN)
+    keyman.addKeyboards('@th'); // Loads default Thai keyboard from Keyman Cloud (CDN)
+  })();
 &lt;/script&gt;
 </code></pre>
 </div>
