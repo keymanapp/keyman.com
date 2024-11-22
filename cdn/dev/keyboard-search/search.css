@@ -342,6 +342,11 @@ html[data-platform~='windows linux macos'] #try-box {
   height: 300px;
 }
 
+#osk-host .kmw-key-square {
+  /* Note: this is a hack to override the incorrect z-index that KMW is using for embedded OSK */
+  z-index: auto;
+}
+
 #try-keymanweb-link {
   margin-top: 8px;
   display: block;
