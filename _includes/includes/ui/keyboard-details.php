@@ -268,6 +268,22 @@ END;
         ];
         $embed_target = '';
       }
+      
+      // calculate keywords per language
+      $keywords = '';
+      if (isset(self::$keyboard->languages)) {
+        foreach (self::$keyboard->languages as $lang) {
+          if (!empty($keywords)) {
+            $keywords = $keywords . ', ';
+          }
+          $languageName = $lang->languageName;
+          $keywords = $keywords . $languageName . ' Keyboard';
+        }
+      }
+
+      // will be ignored if ''
+      $head_options['keywords'] = $keywords;
+
       head($head_options);
 
       if($embed == 'none') { ?>

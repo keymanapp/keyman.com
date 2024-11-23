@@ -42,6 +42,10 @@ class Head {
   if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_STAGING) {
     echo '    <meta name="robots" content="none">';
   }
+  if(isset($fields->keywords) && !empty($fields->keywords)) {
+    $keywords = htmlspecialchars($fields->keywords, ENT_QUOTES, "UTF-8");
+    echo "<meta name=\"keywords\" content=\"" . $keywords . "\" />\n";
+  }
 ?>
   <title><?= $fields->title; ?></title>
   <?php
