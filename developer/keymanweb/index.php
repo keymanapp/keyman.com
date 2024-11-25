@@ -41,9 +41,6 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
 </code></pre>
 </div>
 
-<p>Upgrade Note: with KeymanWeb <?= $stable_version; ?>, the unminified version is no longer served from our CDN.
-Instead, we use source maps to make the full source available in web developer tools.</p>
-
 <h3>Live Examples</h3>
 
 <ul>

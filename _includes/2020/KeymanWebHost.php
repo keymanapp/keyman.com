@@ -15,7 +15,7 @@ class KeymanWebHost {
       $build = $json->version;
     } else {
       // If the get-version API fails, we'll use the latest known stable version
-      $build = "16.0.145";
+      $build = "17.0.332";
     }
 
     return "{$KeymanHosts->s_keyman_com}/kmw/engine/$build";

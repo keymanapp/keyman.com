@@ -6,8 +6,8 @@
   require_once('includes/appstore.php');
 
   use \DateTime;
-use Keyman\Site\com\keyman\KeymanWebHost;
-use \Keyman\Site\Common\KeymanHosts;
+  use \Keyman\Site\com\keyman\KeymanWebHost;
+  use \Keyman\Site\Common\KeymanHosts;
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
   define('DOCUMENTATION_ROOT', KeymanHosts::Instance()->help_keyman_com . '/keyboard/');
@@ -122,7 +122,7 @@ END;
       }
     }
 
-    protected static function WriteWebBoxes() {
+    protected static function WriteWebBoxes($useDescription) {
       global $embed_target;
       global $KeymanHosts;
       if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none' && empty(self::$deprecatedBy)) {
@@ -144,10 +144,18 @@ END;
         }
         if (!isset($lang)) $lang = 'en';
         $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
-        $description = htmlentities(self::$keyboard->name);
+        if($useDescription) {
+          $description = htmlentities(self::$keyboard->name);
+          $description = "<div class=\"download-description\">Use $description in your web browser. No need to install anything.</div>";
+          $linktext = 'Use keyboard online';
+        } else {
+          $description = '';
+          $linktext = 'Full online editor';
+        }
         return <<<END
           <div class="download download-web">
-            <a class="download-link" $embed_target href='$url'>Full online editor</a>
+            <a class="download-link" $embed_target href='$url'>$linktext</a>
+            $description
           </div>
 END;
       }
@@ -372,8 +380,10 @@ END;
 
       if ($embed == 'none') {
         if(self::GetWebDeviceFromPageDevice() == null) {
-          $webtext = self::WriteWebBoxes();
+          $webtext = self::WriteWebBoxes(true);
           if ($webtext) {
+            // If we have a web keyboard, and we are not embedded, and this is a
+            // mobile device, then show the link to keymanweb.com
             echo $webtext;
           }
         }
@@ -414,7 +424,7 @@ END;
         return;
       }
 
-      $webtext = self::WriteWebBoxes();
+      $webtext = self::WriteWebBoxes(false);
       $cdnUrlBase = KeymanWebHost::getKeymanWebUrlBase();
       ?>
         <h2 id='try-header' class='red underline'>Try this keyboard</h2>
