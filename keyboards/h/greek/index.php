@@ -5,7 +5,7 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Classical Greek Keyboards',
+    'title' =>'Classical Greek Keyboards for Keyman',
     'description' => 'Free and open source Classical (Biblical) and Polytonic Greek keyboard layouts for Windows, macOS, Linux, Android, iOS and web.'
   ];
 
@@ -149,7 +149,7 @@
 
 </style>
 
-<h2 class="red underline">Classical Greek Keyboards</h2>
+<h1 class="red underline">Classical Greek Keyboards for Keyman</h1>
 <p class='info'>
   Need to type in Biblical or Classical Greek? Choose from our selection of Polytonic Greek keyboards. These
   <a href='http://www.unicode.org/standard/WhatIsUnicode.html' target='_blank'>Unicode</a> keyboards run on Keyman for Windows in any Unicode Windows application.

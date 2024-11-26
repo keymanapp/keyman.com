@@ -5,7 +5,7 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'IPA Keyboards',
+    'title' =>'IPA Keyboards for Keyman',
     'description' => 'Free and open source IPA (International Phonetic Alphabet) keyboard layouts for Windows, macOS, Linux, Android, iOS and web'
   ];
 
@@ -36,7 +36,7 @@
   </style>
 
   <div id='intro'>
-    <h1 class="red">IPA Keyboards</h1>
+    <h1 class="red">IPA Keyboards for Keyman</h1>
     <div id='ipa' lang="und-fonipa">
       <p>tʰaɪpʰ ɪn <a href='https://www.internationalphoneticassociation.org/content/ipa-chart' target='_blank'>aɪ pʰiː eɪ</a> kʰeɹɛktɚz ɪn ɔl jɚ  faɪvɹɪt̚ pɹogɹæmz <!--ɪŋkludɪŋ jɚ imeɪl, wɛb bɹaʊzɚ, wɚd, ɛksɛl, aʊtlʊk ænd mɛni mɛni moɹ...--></p>
       <p>tʰaɪp̚ wɪðaʊt̚ tʃeɪndʒɪŋ jɚ hɔɹdwɛɹ wɪð ðiz <a href='http://www.unicode.org/standard/WhatIsUnicode.html'>junəkod</a> kiboɹdz</p>

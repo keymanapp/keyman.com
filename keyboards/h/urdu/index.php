@@ -5,13 +5,13 @@
 
   // Required
   head([
-    'title' =>'Keyman for Urdu',
+    'title' =>'Urdu Keyboard for Keyman',
     'description' => 'Free and open source Urdu keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Keyman for Urdu</h2>
+<h1 class="red underline large">Urdu Keyboard for Keyman</h1>
 <p>
     Type in Urdu on iPhone, Windows and Android. Our Urdu keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications. This keyboard layout has been optimised for touch devices!
 </p>

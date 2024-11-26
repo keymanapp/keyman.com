@@ -5,7 +5,7 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Cameroon Keyboards',
+    'title' =>'Cameroon Keyboards for Keyman',
     'description' => 'Free and open source Cameroon keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Available for QWERTY (US) and AZERTY (French) layouts.'
   ];
 
@@ -29,7 +29,7 @@
     <img title="Mont Mbapit14 &mdash; Image Courtesy of Noel Coston" src="<?= cdn('img/Mont_Mbapit14.jpg') ?>"
          id="photo" style='float:right; margin: 8px 0px 8px 24px; width: 50%' />
 
-    <h1 class="red underline">Cameroon Keyboards</h1>
+    <h1 class="red underline">Cameroon Keyboards for Keyman</h1>
 
     <p>
       Choose from our selection of Cameroon keyboards to match your physical hardware: QWERTY (US Keyboard) or AZERTY (French Keyboard).<br/><br/>
