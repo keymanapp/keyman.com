@@ -599,11 +599,13 @@ END;
                         echo " <a id='expand-languages' href='#expand-languages'>Expand $count more &gt;&gt;</a>";
                         echo "<a id='collapse-languages' href='#collapse-languages'>&lt;&lt; Collapse</a> <span class='expand-languages'>";
                       }
-                      echo
-                        "<a href='/keyboards?q=l:id:".htmlspecialchars(rawurlencode($bcp47)).
-                        "' title='".htmlspecialchars($bcp47).": ".htmlspecialchars($detail->displayName)."'>" .
-                        (!strcasecmp($bcp47, self::$bcp47) ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
-                        "</a> ";
+                      if (array_key_exists('languageName', $detail)) {
+                        echo
+                          "<a href='/keyboards?q=l:id:".htmlspecialchars(rawurlencode($bcp47)).
+                          "' title='".htmlspecialchars($bcp47).": ".htmlspecialchars($detail->displayName)."'>" .
+                          (!strcasecmp($bcp47, self::$bcp47) ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
+                          "</a> ";
+                      }    
                       $n++;
                     }
                     if($n >= 3) {
