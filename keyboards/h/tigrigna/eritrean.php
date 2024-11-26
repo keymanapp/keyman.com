@@ -5,13 +5,13 @@
 
   // Required
   head([
-    'title' =>'Keyman for Tigrigna (Eritrea)',
+    'title' =>'Tigrigna (Eritrea) Keyboards for Keyman',
     'description' => 'Free and open source Tigrigna (Eritrea) keyboard layouts for Windows, macOS, Linux, Android, iOS and web.',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Keyman for Tigrigna (Eritrea)<span lang="ti" class="lang-example large"></span></h2>
+<h1 class="red underline large">Tigrigna (Eritrea) Keyboards for Keyman<span lang="ti" class="lang-example large"></span></h1>
 <p>
     Type in Tigrigna on iPhone, iPad, Windows, macOS, Linux, and Android. Our Tigrigna keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>

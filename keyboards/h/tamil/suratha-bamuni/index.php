@@ -5,13 +5,13 @@
 
   // Required
   head([
-    'title' =>'Keyman for Tamil Suratha Bamuni',
+    'title' =>'Suratha Bamuni Tamil Keyboard for Keyman',
     'description' => 'Free and open source Tamil keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Popularly used in eKalappai, this keyboard follows the Bamini standard common in Sri Lanka, based on old Tamil typewriters',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Keyman for Tamil Suratha Bamuni</h2>
+<h1 class="red underline large">Suratha Bamuni Tamil Keyboard for Keyman</h1>
 <p>
   Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>

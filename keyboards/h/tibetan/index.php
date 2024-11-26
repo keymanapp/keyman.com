@@ -5,7 +5,7 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Tibetan Keyboards',
+    'title' =>'Tibetan Keyboards for Keyman',
     'description' => 'Free and open source Tibetan keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
   ];
 
@@ -29,7 +29,7 @@
     <img title="Chiyu Gompa and Mount Kailash &mdash; Image Courtesy of Reurinkjan" src="<?= cdn('img/Mount_Kailash_-_reurinkjan.jpg') ?>"
          id="photo" style='float:right; margin: 8px 0px 8px 24px; width: 50%' />
 
-    <h1 class="red underline">Tibetan Keyboards</h1>
+    <h1 class="red underline">Tibetan Keyboards for Keyman</h1>
 
     <p>
       Choose from our selection of Tibetan keyboards and type Tibetan in all your favourite applications, without changing your hardware.<br/><br/>

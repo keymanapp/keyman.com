@@ -5,13 +5,13 @@
 
   // Required
   head([
-    'title' =>'Keyman for Tamil Visual Media (Modular)',
+    'title' =>'Tamil Visual Media (Modular) Keyboard for Keyman',
     'description' => 'Free and open source Tamil keyboard layouts for Windows, macOS, Linux, Android, iOS and web. This follows the popular Modular layout standard.',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Keyman for Visual Media (Modular)</h2>
+<h1 class="red underline large">Tamil Visual Media (Modular) Keyboard for Keyman</h1>
 <p>
   Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>

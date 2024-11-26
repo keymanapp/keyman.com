@@ -5,13 +5,13 @@
 
   // Required
   head([
-    'title' =>'Keyman for Amharic | አማርኛ ይጻፉ',
+    'title' =>'Amharic Keyboard for Keyman | አማርኛ ይጻፉ',
     'description' => 'Free and open source Amharic and Ethiopic keyboard layouts for Windows, macOS, Linux, Android, iOS and web',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Keyman for Amharic | <span lang="am" class="lang-example large">አማርኛ ይጻፉ</span></h2>
+<h1 class="red underline large">Amharic Keyboard for Keyman | <span lang="am" class="lang-example large">አማርኛ ይጻፉ</span></h1>
 <p>
   Type in Amharic on iPhone, iPad, Windows, macOS, Linux, and Android. Our Amharic keyboard works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
