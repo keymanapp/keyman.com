@@ -22,6 +22,10 @@ for filename in `find . -type f -name "*.po"`; do
   # Remove the .po extension
   base_name=`echo ${filename} | sed 's/\.[^.]*$//'`
   msgfmt "${base_name}.po" --output-file="${base_name}".mo
+  retVal=$?
+  if [ ${retVal} -ne 0 ]; then
+    exit 1
+  fi
 done
 
 cd ../../../../
