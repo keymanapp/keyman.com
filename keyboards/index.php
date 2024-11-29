@@ -11,8 +11,8 @@
 
   // Container uses English locale, but use setTextDomain to change localization as needed 
   setLocale(LC_ALL, 'en_US.UTF-8');
-  bindtextdomain("keyboards-fr-FR", "../_includes/locale");
-  bindtextdomain("keyboards-es-ES", "../_includes/locale");
+  bindtextdomain("keyboards-fr-FR", __DIR__ . "/../_includes/locale");
+  bindtextdomain("keyboards-es-ES", __DIR__ . "/../_includes/locale");
 
   // $embed_locale set by session.php
   setTextDomain($embed_locale, "keyboards");
