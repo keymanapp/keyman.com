@@ -74,7 +74,7 @@
 
     protected static function map_license($s) {
       $license_map = ['mit' => 'MIT'];
-      return array_key_exists($s, $license_map) ? $license_map[$s] : $s;
+      return property_exists($license_map, $s) ? $license_map[$s] : $s;
     }
 
     protected static function download_box($url, $title, $description, $class, $linktitle, $platform, $mode='standalone') {
@@ -323,7 +323,7 @@ END;
         self::$keyboardPlatforms = '';
         $vars = get_object_vars(self::$keyboard->platformSupport);
         foreach ($vars as $var => $value) {
-          if ($value != 'none' && array_key_exists($var, $platformTitles)) {
+          if ($value != 'none' && property_exists($platformTitles, $var)) {
             self::$keyboardPlatforms .= (self::$keyboardPlatforms == '' ? '' : ', ') . $platformTitles[$var];
           }
         }
@@ -441,7 +441,7 @@ END;
         "Android" => "self::WriteAndroidBoxes"
       );
 
-      $text = (isset($pageDevice) && array_key_exists($pageDevice, $deviceboxfuncs)) ? $deviceboxfuncs[$pageDevice] : '';
+      $text = (isset($pageDevice) && property_exists($deviceboxfuncs, $pageDevice)) ? $deviceboxfuncs[$pageDevice] : '';
       $webtext = self::WriteWebBoxes();
 
       if ($text) {
