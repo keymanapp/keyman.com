@@ -6,9 +6,23 @@
     'fr-FR' => 'Français'
   ];
 
-  // Wrapper to format string with gettext '_(' alias and variable args
-  function _s($s, ...$args) {
-    return vsprintf(_($s), $args);
+  /**
+   *  Wrapper to setup locale files
+   * basePoFile - base filename of the .po file (not including the locales or .po extension)
+   * pathToLocale - absoluate path to _includes/locale
+  */
+  function setupLocale($basePoFile, $pathToLocale) {
+    // Container uses English locale, but use setTextDomain to change localization as needed 
+    setLocale(LC_ALL, 'en_US.UTF-8');
+
+    // Iterate through locales for bindtextdomain
+    foreach(array_keys($locales) as $code) {
+      if ($code == 'en') {
+        // Skip appending English .po name
+        continue;
+      }
+      bindtextdomain("keyboards-${code}", $pathToLocale);
+    }
   }
 
   /**
@@ -28,3 +42,22 @@
       return;
     }
   }
+
+  /**
+   * Wrapper to format string with gettext '_(' alias and variable args
+   * s - the format string
+   * args - optional remaining args to the format string
+   */
+  function _s($s, ...$args) {
+    return vsprintf(_($s), $args);    
+  }
+
+  /**
+   * Wrapper of echo and _s
+   */
+  function echo_s($s, ...$args) {
+    $tempString = _s($s, $args);
+    echo '$tempString';
+  }
+
+
