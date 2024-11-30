@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: keymancom\n"
+"X-Crowdin-Project-ID: 740839\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /master/keyboards/keyboards.po\n"
+"X-Crowdin-File-ID: 2\n"
+"Project-Id-Version: keymancom\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"PO-Revision-Date: 2024-11-11 08:15\n"
+
+# Page Title
+msgid "Keyboard Search"
+msgstr "Recherche au clavier"
+
+# Page Description
+msgid "Keyman Keyboard Search"
+msgstr "Recherche de clavier Keyman"
+
+# Keyboard search bar
+msgid "Keyboard search%s"
+msgstr "Recherche au clavier%s"
+
+# Search bar placeholder
+msgid "Enter language or keyboard"
+msgstr "Entrez la langue ou le clavier"
+
+# Search Button Value
+msgid "Search"
+msgstr "Recherche"
+
+# Link to start a new keyboard search
+msgid "New search"
+msgstr "Nouvelle recherche"
+
+# Search box prompt
+msgid "Enter the name of a keyboard or language to search for%s"
+msgstr "Saisissez le nom d'un clavier ou d'une langue à rechercher%s"
+
+# Search box link for popular keyboards
+msgid "Popular keyboards"
+msgstr "Claviers populaires"
+
+# Search box link for all Keyman keyboards
+msgid "All keyboards"
+msgstr "Tous les claviers"
+
+# Search box hint: List header
+msgid "Hints"
+msgstr "Conseils"
+
+# Search box hint: Description
+msgid "The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names."
+msgstr "La recherche renvoie toujours une liste de claviers. Elle recherche les noms et les détails des claviers, les noms de langues, les noms de pays et les noms d'écritures."
+
+# Search box hint: available prefixes to use in the search
+msgid "You can apply prefixes"
+msgstr "Vous pouvez appliquer des préfixes"
+
+# (keyboards)
+msgid "%skeyboards%s"
+msgstr "%sclaviers%s"
+
+# (languages)
+msgid "%slanguages%s"
+msgstr "%slangues%s"
+
+# (scripts, writing systems) or...
+msgid "%sscripts, writing systems%s or"
+msgstr "%sscripts, systèmes d'écriture%s ou"
+
+# (countries) to filter your search results...
+msgid "%scountries%s to filter your search results. For example"
+msgstr "%spays%s pour filtrer vos résultats de recherche. Par exemple"
+
+# Search box hint: example of country search
+msgid "searches for keyboards for languages used in Thailand."
+msgstr "recherche des claviers pour les langues utilisées en Thaïlande."
+
+# Search box hint: BCP 47 prefix
+msgid "Use prefix"
+msgstr "Utiliser le préfixe"
+
+# Seach box hint: BCP 47 language example
+msgid "to search for a BCP 47 language tag, for example"
+msgstr "pour rechercher une balise de langue BCP 47, par exemple"
+
+# Search box hint: BCP 47 language example
+msgid "searches for Tigrigna %sEthiopia%s"
+msgstr "busca Tigrigna %sEtiopía%s"
+
