@@ -38,7 +38,7 @@
    */
   function echo_s($s, ...$args) {
     $tempString = _s($s, $args);
-    echo '$tempString';
+    echo $tempString;
   }
 
 
