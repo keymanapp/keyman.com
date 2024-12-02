@@ -6,6 +6,9 @@
     'fr-FR' => 'Français'
   ];
 
+  // override by session.php
+  $currentLocale = 'en';
+
   /**
    * Use textdomain to specify the localization file for "localization".
    * Ignore if locale is "en" or the filename doesn't exist
@@ -32,13 +35,3 @@
   function _s($s, ...$args) {
     return vsprintf(_($s), $args);    
   }
-
-  /**
-   * Wrapper of echo and _s
-   */
-  function echo_s($s, ...$args) {
-    $tempString = _s($s, $args);
-    echo $tempString;
-  }
-
-

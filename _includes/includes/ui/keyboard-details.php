@@ -13,16 +13,48 @@
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
   define('DOCUMENTATION_ROOT', KeymanHosts::Instance()->help_keyman_com . '/keyboard/');
 
-  // Container uses English locale, but use setTextDomain to change localization as needed 
-  setLocale(LC_ALL, 'en_US.UTF-8');
-  bindtextdomain("keyboards-details-fr-FR", __DIR__ . "/../../locale");
-  bindtextdomain("keyboards-details-es-ES", __DIR__ . "/../../locale");
+  // Of array of strings at top of file
+  // by msgid 
 
-  global $embed_locale;
-  setTextDomain($embed_locale, "keyboards-details");
+  KeyboardDetails::strings = localize('keyboards-details', [
+    'Install Keyboard',
+    'Installs %s for %s on this device',
+    // ...
+  ]);
+
+  function _s($format, $args) {
+    return vsprintf($format, $args);
+  }
+
+  function localize($domain, $strings) {
+    bindtextdomain("$domain-fr-FR", __DIR__ . "/../../locale");
+    bindtextdomain("$domain-es-ES", __DIR__ . "/../../locale");
+    global $embed_locale;
+    setTextDomain($embed_locale, $domain);
+
+    $result = [];
+    foreach($strings as $s) {
+      $result[$s] = _($s);
+    }
+
+    restoreTextDomain(...);
+    return $result;
+  }
+
+  // Pass locale as a parameter to keyboard details constructor
+
+  // // Container uses English locale, but use setTextDomain to change localization as needed 
+  // setLocale(LC_ALL, 'en_US.UTF-8');
+  // bindtextdomain("keyboards-details-fr-FR", __DIR__ . "/../../locale");
+  // bindtextdomain("keyboards-details-es-ES", __DIR__ . "/../../locale");
+
+  // global $embed_locale;
+  // setTextDomain($embed_locale, "keyboards-details");
 
   class KeyboardDetails
   {
+    static $strings;
+    
     const platformTitles = [
       'windows' => 'Windows',
       'macos' => 'macOS',
@@ -115,8 +147,8 @@
         $platformTitle = self::platformTitles[$platform];
 
         // Get the localized strings to pass to heredoc syntax
-        $install_keyboard = _("Install keyboard");
-        $install_keyboard_description = _s("Installs %s for %s on this device", $h_filename, $platformTitle); 
+        $install_keyboard = $KeyboardDetails_["Install keyboard"];
+        $install_keyboard_description = _s($KeyboardDetails_["Installs %s for %s on this device"], $h_filename, $platformTitle); 
   
         return <<<END
 <div class="download download-$platform">
@@ -383,7 +415,7 @@ END;
 
       if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
 ?>
-        <p><?= _s("Sorry, this keyboard requires Keyman %s or higher.", self::$keyboard->minKeymanVersion) ?></p>
+        <p><?= _s("Sorry, this keyboard requires Keyman %s or higher.", self::$keyboard->minKeymanVersion ?></p>
 <?php
       } else {
         echo $text;
