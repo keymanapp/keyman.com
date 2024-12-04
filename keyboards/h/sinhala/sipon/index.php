@@ -3,13 +3,13 @@
 
   // Required
   head([
-    'title' =>'Keyman for Sinhala',
+    'title' =>'Sipon Phonetic Sinhala Keyboard for Keyman',
     'description' => 'Free and open source Sipon Phonetic Sinhala keyboard layouts for Windows, macOS, Linux, Android, iOS and web. For QWERTY layouts',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Sipon Phonetic Sinhala</h2>
+<h1 class="red underline large">Sipon Phonetic Sinhala Keyboard for Keyman</h1>
 <p>
   Type Sinhala in all your favourite programs, including your email, web browser, Word, Excel, Outlook and many, many more...
 </p>

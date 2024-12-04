@@ -5,13 +5,13 @@
 
   // Required
   head([
-    'title' =>'Keyman for Tamil (ISIS)',
+    'title' =>'ISIS Tamil Keyboard for Keyman',
     'description' => 'Free and open source Tmail keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Phonetic (Romanised) layouts that come in the ISIS keyboard package',
     'css' => ['template.css','index.css'],
     'showMenu' => true
   ]);
 ?>
-<h2 class="red underline large">Keyman for Tamil (ISIS)</h2>
+<h1 class="red underline large">ISIS Tamil Keyboard for Keyman</h1>
 <p>
     Type in Tamil on iPhone, Windows and Android. Our Tamil keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>

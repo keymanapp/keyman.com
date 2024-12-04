@@ -5,7 +5,7 @@
   use Keyman\Site\Common\KeymanHosts;
 
   $head_options = [
-    'title' =>'Burmese Keyboards',
+    'title' =>'Burmese Keyboards for Keyman',
     'description' => 'Free and open source Burmese (Myanmar) keyboard layouts for Windows, macOS, Linux, Android, iOS and web. Based on WinMyanmar and Myanmar3 layouts'
   ];
 
@@ -29,7 +29,7 @@
     <img title="Mandalay Hill 3 &mdash; Image Courtesy of Stefan Fussan" src="<?= cdn('img/Mandalay_Hill_3.jpg') ?>"
          id="photo" style='float:right; margin: 8px 0px 8px 24px; width: 50%' />
 
-    <h1 class="red">Burmese Keyboards</h1>
+    <h1 class="red">Burmese Keyboards for Keyman</h1>
     <p>Type Burmese in all your favourite applications from your own hardware keyboard.</p>
     <p>These <a href='http://www.unicode.org/standard/WhatIsUnicode.html'>Unicode</a>
       layouts run on Keyman for Windows in any Unicode compliant Windows application. They allow intuitive typing of Burmese-script languages.</p>
