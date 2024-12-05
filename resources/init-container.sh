@@ -20,7 +20,7 @@ find . -type f -name '*.mo' -delete
 # Compile .po to .mo localization files
 for filename in `find . -type f -name "*.po"`; do
   # Remove the .po extension
-  base_name=`echo ${filename} | sed 's/\.[^.]*$//'`
+  base_name="${filename%.po}"
   msgfmt "${base_name}.po" --output-file="${base_name}".mo
   retVal=$?
   if [[ ${retVal} -ne 0 ]]; then
