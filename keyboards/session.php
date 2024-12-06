@@ -31,6 +31,10 @@
   $embed_android = $embed == 'android';
   $embed_ios = $embed == 'ios';
 
+  if(isset($_Request['locale'])) {
+    Locale::Instance()->overrideCurrentLocale($_REQUEST['locale']);
+  }
+
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
     // default, including in existing versions of Keyman.
