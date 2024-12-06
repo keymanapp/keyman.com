@@ -30,3 +30,5 @@ for filename in `find . -type f -name "*.po"`; do
     exit 1
   fi
 done
+
+cd ../../../../
