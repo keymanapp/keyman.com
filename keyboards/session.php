@@ -32,6 +32,10 @@
   $embed_ios = $embed == 'ios';
   $embed_developer = $embed == 'developer';
 
+  if(isset($_Request['locale'])) {
+    Locale::Instance()->overrideCurrentLocale($_REQUEST['locale']);
+  }
+
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
     // default, including in existing versions of Keyman.
