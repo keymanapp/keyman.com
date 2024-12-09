@@ -9,8 +9,33 @@
   use Keyman\Site\com\keyman\templates\Foot;
   use Keyman\Site\com\keyman\Locale;
 
+  // Of array of strings at top of file
+  // by msgid 
+
+  $keyboardIndexStrings = localize('keyboards', [
+    '1',
+    '2',
+    // ...
+  ]);
+
+  function localize($domain, $strings) {
+      bindtextdomain("$domain-fr-FR", __DIR__ . "/../_includes/locale");
+      bindtextdomain("$domain-es-ES", __DIR__ . "/../_includes/locale");
+      setTextDomain(Locale::currentLocale(), $domain);
+
+      $result = [];
+      foreach($strings as $s) {
+        $result[$s] = _($s);
+      }
+
+      restoreTextDomain(...);
+      return $result;
+    }
+
+
+
   $head_options = [
-    'title' =>'Keyboard Search',
+    'title' => $keyboardIndexStrings[0], //'Keyboard Search',
     'description' => 'Keyman Keyboard Search',
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
     'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),

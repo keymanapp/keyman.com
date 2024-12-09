@@ -22,3 +22,8 @@
       Locale::$currentLocale = $locale;
     }
   }
+
+  // Wrapper
+  function _s($s, ...$args) {
+    return vsprintf($s, $args);
+  }
