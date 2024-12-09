@@ -4,32 +4,21 @@
   namespace Keyman\Site\com\keyman;
 
   class Locale {
-    private $currentLocale;
-
-    private static $instance;
-
-    public static function Instance(): Locale {
-      if(!self::$instance)
-        self::Rebuild();
-      return self::$instance;
-    }
+    private static $currentLocale = 'en';
 
     /**
      * Return the current locale. Fallback to 'en'
+     * @return $currentLocale
      */
-    static function CurrentLocale() {
-      return $this->currentLocale;
+    public static function currentLocale() {
+      return Locale::$currentLocale;
     }
 
-    public static function Rebuild() {
-      self::$instance = new Locale();
-    }
-
-    public function overrideCurrentLocale($locale) {
-      $this->currentLocale = $locale;
-    }
-
-    function __construct() {
-      $this->currentLocale = 'en';
+    /**
+     * Override the current locale
+     * @param $locale - the new current locale
+     */
+    public static function overrideCurrentLocale($locale) {
+      Locale::$currentLocale = $locale;
     }
   }

@@ -31,8 +31,8 @@
   $embed_android = $embed == 'android';
   $embed_ios = $embed == 'ios';
 
-  if(isset($_Request['locale'])) {
-    Locale::Instance()->overrideCurrentLocale($_REQUEST['locale']);
+  if(isset($_REQUEST['locale'])) {
+    \Keyman\Site\com\keyman\Locale::overrideCurrentLocale($_REQUEST['locale']);
   }
 
   if($embed != 'none') {
