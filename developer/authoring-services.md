@@ -7,9 +7,11 @@ may be able to assist you.
 
 ---
 
-### EXAMPLE: Code Hive Tx, LLC
+### Enabling Languages
 
-Contact: Steven Loomis, [codehivetx.us](https://codehivetx.us)
+Advise on layout requirements; developing new keyboard layouts; creating word frequency lists from a corpus; assisting in publishing a completed keyboard to keyboard repository on github; introductory training on using git and github to enable self-publishing.
+
+Contact: [enabling.languages@gmail.com](mailto:enabling.languages@gmail.com)
 
 ---
 
