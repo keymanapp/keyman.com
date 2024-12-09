@@ -42,4 +42,4 @@ textdomain('keyboards-fr-FR');
 
 ----
 
-For formatted string, use the PHP wrapper [`_s(msgstr, $args)`](./locale.php).
+For formatted string, use the PHP wrapper [`_s(msgstr, $args)`](./Locale.php).

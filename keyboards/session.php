@@ -32,8 +32,8 @@
   $embed_ios = $embed == 'ios';
   $embed_developer = $embed == 'developer';
 
-  if(isset($_REQUEST['locale'])) {
-    \Keyman\Site\com\keyman\Locale::overrideCurrentLocale($_REQUEST['locale']);
+  if(isset($_REQUEST['lang'])) {
+    \Keyman\Site\com\keyman\Locale::overrideCurrentLocale($_REQUEST['lang']);
   }
 
   if($embed != 'none') {
