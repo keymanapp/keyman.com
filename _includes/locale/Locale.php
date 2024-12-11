@@ -18,11 +18,13 @@
     }
 
     /**
-     * Override the current locale
+     * Validate and override the current locale
      * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
      */
     public static function overrideCurrentLocale($locale) {
-      Locale::$currentLocale = $locale;
+      if (Locale::validateLocale($locale)) {
+        Locale::$currentLocale = $locale;
+      }
     }
 
     /**
@@ -32,7 +34,11 @@
      * @return true if valid locale
      */
     public static function validateLocale($locale) {
+      if(preg_match('/^[[:alpha:]]{2,3}(-[[:alpha:]]{2,3})?$/i', $locale)) {
+        return true;
+      }
 
+      return false;
     }
 
     /**
