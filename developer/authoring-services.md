@@ -15,6 +15,14 @@ Contact: [enabling.languages@gmail.com](mailto:enabling.languages@gmail.com)
 
 ---
 
+### Katelem Edeh
+
+Creating new keyboards and lexical models.
+
+Contact: [katelem247@gmail.com](mailto:katelem247@gmail.com)
+
+---
+
 ## Request addition to this directory
 
 If you would like to be added to this directory, please complete the following form:
