@@ -7,6 +7,7 @@
   use Keyman\Site\com\keyman\templates\Menu;
   use Keyman\Site\com\keyman\templates\Body;
   use Keyman\Site\com\keyman\templates\Foot;
+  use Keyman\Site\com\keyman\Locale;
 
   $head_options = [
     'title' =>'Keyboard Search',
