@@ -11,7 +11,7 @@
 
   // Of array of strings at top of file
   // by msgid 
-  $keyboardIndexStrings = localize('keyboards', [
+  $keyboardIndexStrings = Locale::localize('keyboards', [
     'Keyboard Search',
     'Keyman Keyboard Search',
     'Keyboard search%s',
@@ -33,23 +33,6 @@
     'to search for a BCP 47 language tag, for example',
     'searches for Tigrigna %sEthiopia%s',    
   ]);
-
-  function localize($domain, $strings) {
-    bindtextdomain("$domain-fr-FR", __DIR__ . "/../_includes/locale");
-    bindtextdomain("$domain-es-ES", __DIR__ . "/../_includes/locale");
-
-    $previousTextDomain = textdomain(NULL);
-    Locale::setTextDomain($domain);
-
-    $result = [];
-    foreach($strings as $s) {
-      $result[$s] = _($s);
-    }
-
-    // Restore textdomain
-    textdomain($previousTextDomain);
-    return $result;
-  }
 
   $head_options = [
     'title' => $keyboardIndexStrings['Keyboard Search'],

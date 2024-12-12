@@ -6,6 +6,12 @@
   class Locale {
     public const DEFAULT_LOCALE = 'en';
 
+    public const CROWDIN_LOCALES = array(
+      'en',
+      'es-ES',
+      'fr-FR'
+    );
+
     // xx-YY locale as specified in crowdin %locale%
     private static $currentLocale = Locale::DEFAULT_LOCALE;
 
@@ -34,11 +40,7 @@
      * @return true if valid locale
      */
     public static function validateLocale($locale) {
-      if(preg_match('/^[[:alpha:]]{2,3}(-[[:alpha:]]{2,3})?$/i', $locale)) {
-        return true;
-      }
-
-      return false;
+      return in_array($locale, Locale::CROWDIN_LOCALES);
     }
 
     /**
@@ -64,6 +66,36 @@
         //echo "textdomain $fullPath doesn't exist";
         return;
       }
+    }
+
+    /**
+     * Returns an array of localized strings from the specified $domain-locale.po file
+     * for the current locale.
+     * @param $domain - base filename of the .po files (not including -xx-YY locale)
+     * @param $strings - Array of msgid's in the .po files
+     * @return Array of localized strings for the current locale
+     */
+    public static function localize($domain, $strings) {
+      foreach(Locale::CROWDIN_LOCALES as $l) {
+        if ($l == Locale::DEFAULT_LOCALE) {
+          // Skip English
+          continue;
+        }
+
+        bindtextdomain("$domain-$l", __DIR__);
+      }
+
+      $previousTextDomain = textdomain(NULL);
+      Locale::setTextDomain($domain);
+  
+      $result = [];
+      foreach($strings as $s) {
+        $result[$s] = _($s);
+      }
+  
+      // Restore textdomain
+      textdomain($previousTextDomain);
+      return $result;
     }
 
     /**
