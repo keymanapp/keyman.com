@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# Default English strings for keyboards/index.php
+
+# Page Title
+msgid "Keyboard Search"
+msgstr "Keyboard Search"
+
+# Page Description
+msgid "Keyman Keyboard Search"
+msgstr "Keyman Keyboard Search"
+
+# Keyboard search bar
+msgid "Keyboard search%s"
+msgstr "Keyboard search%s"
+
+# Search bar placeholder
+msgid "Enter language or keyboard"
+msgstr "Enter language or keyboard"
+
+# Search Button Value
+msgid "Search"
+msgstr "Search"
+
+# Link to start a new keyboard search
+msgid "New search"
+msgstr "New search"
+
+# Search box prompt
+msgid "Enter the name of a keyboard or language to search for%s"
+msgstr "Enter the name of a keyboard or language to search for%s"
+
+# Search box link for popular keyboards
+msgid "Popular keyboards"
+msgstr "Popular keyboards"
+
+# Search box link for all Keyman keyboards
+msgid "All keyboards"
+msgstr "All keyboards"
+
+# Search box hint: List header
+msgid "Hints"
+msgstr "Hints"
+
+# Search box hint: Description
+msgid "The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names."
+msgstr "The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names."
+
+# Search box hint: available prefixes to use in the search
+msgid "You can apply prefixes"
+msgstr "You can apply prefixes"
+
+# (keyboards)
+msgid "%skeyboards%s"
+msgstr "%skeyboards%s"
+
+# (languages)
+msgid "%slanguages%s"
+msgstr "%slanguages%s"
+
+# (scripts, writing systems) or...
+msgid "%sscripts, writing systems%s or"
+msgstr "%sscripts, writing systems%s or"
+
+# (countries) to filter your search results...
+msgid "%scountries%s to filter your search results. For example"
+msgstr "%scountries%s to filter your search results. For example"
+
+# Search box hint: example of country search
+msgid "searches for keyboards for languages used in Thailand."
+msgstr "searches for keyboards for languages used in Thailand."
+
+# Search box hint: BCP 47 prefix
+msgid "Use prefix"
+msgstr "Use prefix"
+
+# Seach box hint: BCP 47 language example
+msgid "to search for a BCP 47 language tag, for example"
+msgstr "to search for a BCP 47 language tag, for example"
+
+# Search box hint: BCP 47 language example
+msgid "searches for Tigrigna %sEthiopia%s"
+msgstr "searches for Tigrigna %sEthiopia%s"
