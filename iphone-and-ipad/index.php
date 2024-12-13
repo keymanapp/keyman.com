@@ -228,7 +228,7 @@
   You can develop your own keyboard layouts for Keyman for iPhone and iPad with <a href='/developer'>Keyman Developer</a>.  If you have existing keyboards, they can be ported to iOS with just a recompile.  And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/iphone-and-ipad/<?php echo $stable_version?>'>Keyman Engine for iPhone and iPad Documentation</a>
+  <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/iphone-and-ipad/current-version'>Keyman Engine for iPhone and iPad Documentation</a>
 </p>
 <p>
   <a href="/downloads/#ios-engine">Download the latest Keyman Engine for iOS</a>
