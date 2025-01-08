@@ -6,6 +6,9 @@ title: Join the Keyman team
 
 Do you have a passion for software development? Would you be interested in joining SIL and working full-time on
 developing software that serves the needs of language communities around the world?
+
+We also welcome part-time volunteers.
+
 [Write us](https://software.sil.org/about/contact/), or ping us on [@Keyman](https://twitter.com/keyman) and
 introduce yourself &mdash; we'd love to meet with you!
 
