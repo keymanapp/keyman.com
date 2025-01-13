@@ -442,7 +442,7 @@ END;
         return;
       }
 
-      $kmwid = self::GetWebKeyboardId();
+      $keymanWebId = self::GetWebKeyboardId();
       $webtext = self::WriteWebBoxes(false);
       $cdnUrlBase = KeymanWebHost::getKeymanWebUrlBase();
       ?>
@@ -471,7 +471,7 @@ END;
                 document.getElementById('osk-host').appendChild(newOSK.element);
               }
             );
-            keyman.addKeyboards('<?= $kmwid ?>');
+            keyman.addKeyboards('<?= $keymanWebId ?>');
           })();
         </script>
       <?php
