@@ -328,7 +328,7 @@ html {
 
 .button a {
 	color: inherit;
-    text-decoration: none; 
+    text-decoration: none;
 	align-items: center;
 }
 
@@ -368,17 +368,17 @@ span.button.disabled{
 .version-type {
     margin-bottom: 10px;
     height: 300px;
-    width: 30%; 
+    width: 30%;
     max-width: 300px;
     padding: 10px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 5px;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .version-type h5 {
-    opacity: 0.6; 
+    opacity: 0.6;
 }
 
 .version-item {
@@ -388,7 +388,7 @@ span.button.disabled{
 .version-item a {
     text-decoration: none;
     color: #B92034;
-    display: block; 
+    display: block;
     width: 100%;
 }
 
@@ -530,6 +530,12 @@ span.button.disabled{
 	text-decoration: none;
 }
 
+#help #free {
+	float: left;
+	margin-right: 1em;
+	padding-top: 7px;
+}
+
 #help form {
 	float: left;
 }
@@ -537,7 +543,7 @@ span.button.disabled{
 #help #donate {
 	padding-top: 5px;
 	margin-right: 1em;
-	margin-left: 1em;
+	margin-left: 0em;
 }
 
 #help #donate a {
