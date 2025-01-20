@@ -61,20 +61,20 @@ msgid "You can apply prefixes"
 msgstr "Vous pouvez appliquer des préfixes"
 
 # (keyboards)
-msgid "%1$skeyboards%2$s"
-msgstr "%1$sclaviers%2$s"
+msgid "(keyboards)"
+msgstr "(claviers)"
 
 # (languages)
-msgid "%1$slanguages%2$s"
-msgstr "%1$slangues%2$s"
+msgid "(languages)"
+msgstr "(langues)"
 
 # (scripts, writing systems) or...
-msgid "%1$sscripts, writing systems%2$s or"
-msgstr "%1$sscripts, systèmes d'écriture%2$s ou"
+msgid "(scripts, writing systems) or"
+msgstr "(scripts, systèmes d'écriture) ou"
 
 # (countries) to filter your search results...
-msgid "%1$scountries%2$s to filter your search results. For example"
-msgstr "%1$spays%2$s pour filtrer vos résultats de recherche. Par exemple"
+msgid "(countries) to filter your search results. For example"
+msgstr "(pays) pour filtrer vos résultats de recherche. Par exemple"
 
 # Search box hint: example of country search
 msgid "searches for keyboards for languages used in Thailand."
