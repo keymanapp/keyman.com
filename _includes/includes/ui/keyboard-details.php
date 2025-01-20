@@ -11,56 +11,7 @@
   use \Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Locale;
 
-  // Of array of strings at top of file
-  // by msgid 
-  KeyboardDetails::$strings = Locale::localize('keyboards-details', [
-    "New keyboard search",
-    "Search",
-    "Install keyboard",
-    "Installs %s for %s on this device",
-    "Try this keyboard",
-    "Use keyboard online",
-    "Full online editor",
-    "Use %s in your web browser. No need to install anything.",
-    "Scan this code to load this keyboard on another device",
-    "Keyboard Details",
-    "Keyboard ID",
-    "Supported Platforms",
-    "Author",
-    "License",
-    "Documentation",
-    "Keyboard help",
-    "Help not available.",
-    "Source",
-    "Source not available.",
-    "Keyboard Version",
-    "Last Updated",
-    "Package Download",
-    "Monthly Downloads",
-    "Total Downloads",
-    "Downloads since %s",
-    "Encoding",
-    "Unicode",
-    "Legacy (ANSI)",
-    "Minimum %s Version",
-    "Related Keyboards",
-    "This keyboard is not available on %s",
-    "(deprecated)",
-    "(new version)",
-    "Supported Languages",
-    "Expand %s more %s",
-    "%s Collapse",
-    "Permanent link to this keyboard:",
-    "Important note:",
-    "This is an obsolete version of this keyboard. Unless you have a good reason, click here to install the new version, called",
-    ", instead.",
-    "View details for obsolete version instead",
-    "Failed to load keyboard %s",
-    "Error returned from %s: %s",
-    "Keyboard %s not found.",
-    "New search",
-    "Sorry, this keyboard requires Keyman %s or higher."
-  ]);
+  Locale::localize('keyboards-details');
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
   define('DOCUMENTATION_ROOT', KeymanHosts::Instance()->help_keyman_com . '/keyboard/');
@@ -163,8 +114,8 @@
         $platformTitle = self::platformTitles[$platform];
 
         // Get the localized strings to pass to heredoc syntax
-        $install_keyboard = KeyboardDetails::$strings['Install keyboard'];
-        $install_keyboard_description = Locale::_s(KeyboardDetails::$strings['Installs %s for %s on this device'], $h_filename, $platformTitle);
+        $install_keyboard = _('Install keyboard');
+        $install_keyboard_description = Locale::_s('Installs %1$s for %2$s on this device', $h_filename, $platformTitle);
         return <<<END
 <div class="download download-$platform">
   <a class='download-link binary-download' href='$installLink'><span>$install_keyboard</span></a>
@@ -204,13 +155,13 @@ END;
         $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
         if($useDescription) {
           $description = htmlentities(self::$keyboard->name);
-          $useKeyboardDescription = Locale::_s(KeyboardDetails::$strings['Use %s in your web browser. No need to install anything.'], $description);
+          $useKeyboardDescription = Locale::_s('Use %1$s in your web browser. No need to install anything.', $description);
           $description = "<div class=\"download-description\">
             $useKeyboardDescription</div>";
-          $linktext = KeyboardDetails::$strings['Use keyboard online'];
+          $linktext = _('Use keyboard online');
         } else {
           $description = '';
-          $linktext = KeyboardDetails::$strings['Full online editor'];
+          $linktext = _('Full online editor');
         }
         return <<<END
           <div class="download download-web">
@@ -230,7 +181,7 @@ END;
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
-        self::$title = Locale::_s(KeyboardDetails::$strings['Failed to load keyboard %s'], self::$id);
+        self::$title = Locale::_s('Failed to load keyboard %1$s', self::$id);
         header('HTTP/1.0 404 Keyboard not found');
       } else {
         $s = json_decode($s);
@@ -243,19 +194,19 @@ END;
           self::$minVersion = isset(self::$keyboard->minKeymanVersion) ? self::$keyboard->minKeymanVersion : $stable_version;
           self::$license = self::map_license(isset(self::$keyboard->license) ? self::$keyboard->license : 'Unknown');
         } else {
-          self::$error .= Locale::_s(KeyboardDetails::$strings['Error returned from %s: %s'], $KeymanHosts->api_keyman_com, "$s\n");
-          self::$title = Locale::_s(KeyboardDetails::$strings['Failed to load keyboard %s'], self::$id);
+          self::$error .= Locale::_s('Error returned from %1$s: %2$s', $KeymanHosts->api_keyman_com, "$s\n");
+          self::$title = Locale::_s('Failed to load keyboard %1$s', self::$id);
           header('HTTP/1.0 500 Internal Server Error');
         }
       }
 
       if(!empty(self::$keyboard)) {
         if (in_array('unicode', self::$keyboard->encodings) && in_array('ansi', self::$keyboard->encodings))
-          self::$keyboardEncoding = KeyboardDetails::$strings['Unicode, Legacy (ANSI)'];
+          self::$keyboardEncoding = _('Unicode, Legacy (ANSI)');
         else if (in_array('unicode', self::$keyboard->encodings))
-          self::$keyboardEncoding = KeyboardDetails::$strings['Unicode'];
+          self::$keyboardEncoding = _('Unicode');
         else // ansi
-          self::$keyboardEncoding = KeyboardDetails::$strings['Legacy (ANSI)'];
+          self::$keyboardEncoding = _('Legacy (ANSI)');
 
         $date = new DateTime(self::$keyboard->lastModifiedDate);
         self::$keyboardLastModifiedDate = $date->format('Y-m-d H:i');
@@ -360,7 +311,7 @@ END;
         // If parameters are missing ...
         ?>
           <h1 class='red underline'><?= self::$id ?></h1>
-          <p><?= Locale::_s(KeyboardDetails::$strings['Keyboard %s not found.'], self::$id) ?></p>
+          <p><?= Locale::_s('Keyboard %1$s not found.', self::$id) ?></p>
         <?php
         // DEBUG: Only display errors on local sites
         global $KeymanHosts;
@@ -374,7 +325,7 @@ END;
         ?>
 
         <div id='search-box'>
-          <label id='search-new'><a href='/keyboards<?= $session_query_q ?>'><?= KeyboardDetails::$strings['New search'] ?></a></label>
+          <label id='search-new'><a href='/keyboards<?= $session_query_q ?>'><?= _('New search') ?></a></label>
           <h1 class='red'><?= self::$title ?></h1>
         </div>
 
@@ -384,9 +335,9 @@ END;
 
         <div id='search-box'>
           <form method='get' action='/keyboards' name='f'>
-            <input id="search-q" type="text" placeholder="<?= KeyboardDetails::$strings['New keyboard search'] ?>" name="q">
+            <input id="search-q" type="text" placeholder="<?= _('New keyboard search') ?>" name="q">
             <input id='search-page' type='hidden' name='page'>
-            <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="<?= KeyboardDetails::$strings['Search'] ?>">
+            <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="<?= _('Search') ?>">
           </form>
         </div>
 <?php
@@ -404,13 +355,13 @@ END;
         echo "
           <div>
             <a href='/keyboards/$dep$session_query_q' class='deprecated'>
-            <span> " . KeyboardDetails::$strings['Important note:'] . " </span>" .
-            KeyboardDetails::$strings['This is an obsolete version of this keyboard. Unless you have a good reason, click here to install the new version, called'] . 
-            " <span>$dep</span>" . KeyboardDetails::$strings[', instead.'] . "</a>
+            <span> " . _('Important note:') . " </span>" .
+            _('This is an obsolete version of this keyboard. Unless you have a good reason, click here to install the new version, called') . 
+            " <span>$dep</span>" . _(', instead.') . "</a>
           </div>
           <div>
             <p class='deprecated-link'><a href='javascript:toggleDeprecatedVersionDetails()'>" . 
-            KeyboardDetails::$strings['View details for obsolete version instead'] . "</a></p>
+            _('View details for obsolete version instead') . "</a></p>
             <div id='deprecated-old'>
 
         ";
@@ -435,7 +386,7 @@ END;
 
       if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
 ?>
-        <p><?= Locale::_s(KeyboardDetails::$strings["Sorry, this keyboard requires Keyman %s or higher."], self::$keyboard->minKeymanVersion) ?> </p>
+        <p><?= Locale::_s("Sorry, this keyboard requires Keyman %1$s or higher.", self::$keyboard->minKeymanVersion) ?> </p>
 <?php
       } else {
         echo $text;
@@ -490,7 +441,7 @@ END;
       $webtext = self::WriteWebBoxes(false);
       $cdnUrlBase = KeymanWebHost::getKeymanWebUrlBase();
       ?>
-        <h2 id='try-header' class='red underline'><?= KeyboardDetails::$strings['Try this keyboard'] ?></h2>
+        <h2 id='try-header' class='red underline'><?= _('Try this keyboard') ?></h2>
         <div id='try-box'>
           <input type='text' id='try-keyboard'>
           <div id='osk-host'></div>
@@ -530,46 +481,46 @@ END;
 
       // this is html, trusted in database
       ?>
-      <h2 class='red underline'><?= KeyboardDetails::$strings["Keyboard Details"] ?></h2>
+      <h2 class='red underline'><?= _("Keyboard Details") ?></h2>
       <div class='cols' id='keyboard-details-col'>
         <div class='col'>
 
           <table id='keyboard-details'>
             <tbody>
             <tr>
-              <th><?= KeyboardDetails::$strings["Keyboard ID"] ?></th>
+              <th><?= _("Keyboard ID") ?></th>
               <td><?= htmlentities(self::$id) ?></td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["Supported Platforms"] ?></th>
+              <th><?= _("Supported Platforms") ?></th>
               <td><?= self::$keyboardPlatforms ?></td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["Author"] ?></th>
+              <th><?= _("Author") ?></th>
               <td><?= htmlentities(self::$authorName) ?></td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["License"] ?></th>
+              <th><?= _("License") ?></th>
               <td><?= self::$license ?></td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["Documentation"] ?></th>
+              <th><?= _("Documentation") ?></th>
               <td>
 <?php
               if (isset(self::$keyboard->helpLink2)) {
 ?>
                 <a <?= $embed_target ?>
-                  href='<?= self::$keyboard->helpLink ?>'><?= KeyboardDetails::$strings["Keyboard help"] ?></a>
+                  href='<?= self::$keyboard->helpLink ?>'><?= _("Keyboard help") ?></a>
 <?php
               } else {
-                $helpNotAvailable = KeyboardDetails::$strings['Help not available.'];
-                echo KeyboardDetails::$strings['Help not available.'];
+                $helpNotAvailable = _('Help not available.');
+                echo _('Help not available.');
               }
 ?>
               </td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["Source"] ?></th>
+              <th><?= _("Source") ?></th>
               <td>
 <?php
                 if (isset(self::$keyboard->sourcePath) && preg_match('/^(release|experimental)\//', self::$keyboard->sourcePath)) {
@@ -578,15 +529,15 @@ END;
                     href='<?= GITHUB_ROOT . htmlentities(self::$keyboard->sourcePath) ?>'><?= htmlentities(self::$keyboard->sourcePath) ?></a>
 <?php
                 } else {
-                  echo KeyboardDetails::$strings["Source not available."];
+                  echo _("Source not available.");
                 } ?>
               </td>
             <tr>
-              <th><?= KeyboardDetails::$strings["Keyboard Version"] ?></th>
+              <th><?= _("Keyboard Version") ?></th>
               <td><?= htmlentities(self::$keyboard->version) ?></td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["Last Updated"] ?></th>
+              <th><?= _("Last Updated") ?></th>
               <td><?= self::$keyboardLastModifiedDate ?></td>
             </tr>
             </tbody>
@@ -601,31 +552,31 @@ END;
               if(isset(self::$keyboard->packageFilename)) {
 ?>
             <tr>
-              <th><?= KeyboardDetails::$strings["Package Download"] ?></th>
+              <th><?= _("Package Download") ?></th>
               <td><a href="<?= self::$kmpDownloadUrl ?>" rel="nofollow"><?= self::$keyboard->id ?>.kmp</a></td>
             </tr>
 <?php
               }
 ?>
             <tr>
-              <th><?= KeyboardDetails::$strings["Monthly Downloads"] ?></th>
+              <th><?= _("Monthly Downloads") ?></th>
               <td><?= number_format(self::$downloadCount) ?></td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["Total Downloads"] ?></th>
-              <td title='<?= Locale::_s(KeyboardDetails::$strings["Downloads since %s"], "October 2019") ?>'><?= number_format(self::$totalDownloadCount) ?></td>
+              <th><?= _("Total Downloads") ?></th>
+              <td title='<?= Locale::_s('Downloads since %1$s', "October 2019") ?>' ><?= number_format(self::$totalDownloadCount) ?></td>
             </tr>
             <tr>
-              <th><?= KeyboardDetails::$strings["Encoding"] ?></th>
+              <th><?= _("Encoding") ?></th>
               <td><?= self::$keyboardEncoding ?></td>
             </tr>
             <tr>
-              <th><?= Locale::_s(KeyboardDetails::$strings["Minimum %s Version"], "Keyman") ?></th>
+              <th><?= Locale::_s('Minimum %1$s Version', "Keyman") ?></th>
               <td><?= self::$minVersion ?></td>
             </tr>
             <?php if (isset(self::$keyboard->related)) { ?>
               <tr>
-                <th><?= KeyboardDetails::$strings["Related Keyboards"] ?></th>
+                <th><?= _("Related Keyboards") ?></th>
                 <td>
                   <?php
                   foreach (self::$keyboard->related as $name => $value) {
@@ -636,16 +587,16 @@ END;
                     $s = @file_get_contents($KeymanHosts->api_keyman_com . '/keyboard/' . rawurlencode($name));
                     if ($s === FALSE) {
                       echo "<span class='keyboard-unavailable' title='" .  
-                        Locale::_s(KeyboardDetails::$strings['This keyboard is not available on %s'], $KeymanHosts->keyman_com_host) . 
+                        Locale::_s('This keyboard is not available on %1$s', $KeymanHosts->keyman_com_host) . 
                         "'>$hname</span> ";
                     } else {
                       echo "<a href='/keyboards/$hname$session_query_q'>$hname</a> ";
                     }
                     if (isset($value->deprecates) && $value->deprecates)  {
-                      echo KeyboardDetails::$strings['(deprecated)'];
+                      echo _('(deprecated)');
                     }
                     if (isset($value->deprecatedBy) && $value->deprecatedBy) {
-                      echo KeyboardDetails::$strings['(new version)'];
+                      echo _('(new version)');
                     }
                   }
                   ?>
@@ -653,7 +604,7 @@ END;
               </tr>
             <?php } ?>
             <tr>
-              <th><?= KeyboardDetails::$strings["Supported Languages"] ?></th>
+              <th><?= _("Supported Languages") ?></th>
               <td class='supported-languages'>
                 <?php
                   (function() {
@@ -667,9 +618,9 @@ END;
                     foreach($langs as $bcp47 => $detail) {
                       if($n == 3) {
                         echo " <a id='expand-languages' href='#expand-languages'>" . 
-                          Locale::_s(KeyboardDetails::$strings['Expand %s more %s'], $count, ">>") . "</a>";
+                          Locale::_s('Expand %1$s more >>', $count) . "</a>";
                         echo "<a id='collapse-languages' href='#collapse-languages'>" . 
-                          Locale::_s(KeyboardDetails::$strings['%s Collapse'], "<<") . "</a> <span class='expand-languages'>";
+                          _('<< Collapse') . "</a> <span class='expand-languages'>";
                       }
                       if (property_exists($detail, 'languageName')) {
                         echo
@@ -695,7 +646,7 @@ END;
       </div>
 
       <p id='permalink'>
-        <?= KeyboardDetails::$strings["Permanent link to this keyboard:"] ?>
+        <?= _("Permanent link to this keyboard:") ?>
         <a <?= $embed_target ?> href='<?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= self::$keyboard->id ?>'>
           <?= KeymanHosts::Instance()->keyman_com ?>/keyboards/<?= self::$keyboard->id ?>
         </a>
@@ -707,7 +658,7 @@ END;
 ?>
     <div class='qrcode-host qrcode-<?=$context?>'>
       <div id="qrcode-<?=$context?>"></div>
-      <div class='qrcode-caption'><?= KeyboardDetails::$strings["Scan this code to load this keyboard on another device"] ?></div>
+      <div class='qrcode-caption'><?= _("Scan this code to load this keyboard on another device") ?></div>
     </div>
     <script type="text/javascript">
       new QRCode(document.getElementById("qrcode-<?=$context?>"), {

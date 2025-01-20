@@ -17,8 +17,8 @@ msgid "Install keyboard"
 msgstr "Install keyboard"
 
 # "Install keyboard" button description
-msgid "Installs %s for %s on this device"
-msgstr "Installs %s for %s on this device"
+msgid "Installs %1$s for %2$s on this device"
+msgstr "Installs %1$s for %2$s on this device"
 
 # Try this keyboard heading
 msgid "Try this keyboard"
@@ -33,8 +33,8 @@ msgid "Full online editor"
 msgstr "Full online editor"
 
 # "Use keyboard online" button description
-msgid "Use %s in your web browser. No need to install anything."
-msgstr "Use %s in your web browser. No need to install anything."
+msgid "Use %1$s in your web browser. No need to install anything."
+msgstr "Use %1$s in your web browser. No need to install anything."
 
 # Scan this QR code
 msgid "Scan this code to load this keyboard on another device"
@@ -88,8 +88,8 @@ msgid "Total Downloads"
 msgstr "Total Downloads"
 
 # Total Downloads title - Downloads since [date]
-msgid "Downloads since %s"
-msgstr "Downloads since %s"
+msgid "Downloads since %1$s"
+msgstr "Downloads since %1$s"
 
 msgid "Encoding"
 msgstr "Encoding"
@@ -107,15 +107,15 @@ msgid "Legacy (ANSI)"
 msgstr "Legacy (ANSI)"
 
 # Minimum Keyman Version
-msgid "Minimum %s Version"
-msgstr "Minimum %s Version"
+msgid "Minimum %1$s Version"
+msgstr "Minimum %1$s Version"
 
 msgid "Related Keyboards"
 msgstr "Related Keyboards"
 
 # This keyboard is not available on keyman.com
-msgid "This keyboard is not available on %s"
-msgstr "This keyboard is not available on %s"
+msgid "This keyboard is not available on %1$s"
+msgstr "This keyboard is not available on %1$s"
 
 msgid "(deprecated)"
 msgstr "(deprecated)"
@@ -127,12 +127,12 @@ msgid "Supported Languages"
 msgstr "Supported Languages"
 
 # Expand {count} more >>
-msgid "Expand %s more %s"
-msgstr "Expand %s more %s"
+msgid "Expand %1$s more >>"
+msgstr "Expand %1$s more >>"
 
 # << Collapse
-msgid "%s Collapse"
-msgstr "%s Collapse"
+msgid "<< Collapse"
+msgstr "<< Collapse"
 
 msgid "Permanent link to this keyboard:"
 msgstr "Permanent link to this keyboard:"
@@ -160,17 +160,17 @@ msgstr "New search"
 ## Errors
 
 # Failed to load keyboard [ID]
-msgid "Failed to load keyboard %s"
-msgstr "Failed to load keyboard %s"
+msgid "Failed to load keyboard %1$s"
+msgstr "Failed to load keyboard %1$s"
 
 # Error returned from api.keyman.com: {error string}
-msgid "Error returned from %s: %s"
-msgstr "Error returned from %s: %s"
+msgid "Error returned from %1$s: %2$s"
+msgstr "Error returned from %1$s: %2$s"
 
 # Keyboard [ID] not found
-msgid "Keyboard %s not found."
-msgstr "Keyboard %s not found."
+msgid "Keyboard %1$s not found."
+msgstr "Keyboard %1$s not found."
 
 # Sorry, this keyboard requires Keyman {minimum version} or higher.
-msgid "Sorry, this keyboard requires Keyman %s or higher."
-msgstr "Sorry, this keyboard requires Keyman %s or higher."
+msgid "Sorry, this keyboard requires Keyman %1$s or higher."
+msgstr "Sorry, this keyboard requires Keyman %1$s or higher."

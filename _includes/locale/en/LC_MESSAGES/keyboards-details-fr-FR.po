@@ -27,8 +27,8 @@ msgid "Install keyboard"
 msgstr "Installer le clavier"
 
 # "Install keyboard" button description
-msgid "Installs %s for %s on this device"
-msgstr "Installer %s pour %s sur cet appareil"
+msgid "Installs %1$s for %2$s on this device"
+msgstr "Installer %1$s pour %2$s sur cet appareil"
 
 # Try this keyboard heading
 msgid "Try this keyboard"
@@ -43,8 +43,8 @@ msgid "Full online editor"
 msgstr "Éditeur en ligne complet"
 
 # "Use keyboard online" button description
-msgid "Use %s in your web browser. No need to install anything."
-msgstr "Utiliser %s dans votre navigateur Web. Aucune installation n'est nécessaire."
+msgid "Use %1$s in your web browser. No need to install anything."
+msgstr "Utiliser %1$s dans votre navigateur Web. Aucune installation n'est nécessaire."
 
 # Scan this QR code
 msgid "Scan this code to load this keyboard on another device"
@@ -98,8 +98,8 @@ msgid "Total Downloads"
 msgstr "Téléchargements totaux"
 
 # Total Downloads title - Downloads since [date]
-msgid "Downloads since %s"
-msgstr "Téléchargements depuis %s"
+msgid "Downloads since %1$s"
+msgstr "Téléchargements depuis %1$s"
 
 msgid "Encoding"
 msgstr "Codage"
@@ -117,15 +117,15 @@ msgid "Legacy (ANSI)"
 msgstr "Héritage (ANSI)"
 
 # Minimum Keyman Version
-msgid "Minimum %s Version"
-msgstr "Version minimale de %s"
+msgid "Minimum %1$s Version"
+msgstr "Version minimale de %1$s"
 
 msgid "Related Keyboards"
 msgstr "Claviers associés"
 
 # This keyboard is not available on keyman.com
-msgid "This keyboard is not available on %s"
-msgstr "Ce clavier n'est pas disponible sur %s"
+msgid "This keyboard is not available on %1$s"
+msgstr "Ce clavier n'est pas disponible sur %1$s"
 
 msgid "(deprecated)"
 msgstr "(obsolète)"
@@ -137,12 +137,12 @@ msgid "Supported Languages"
 msgstr "Langues prises en charge"
 
 # Expand {count} more >>
-msgid "Expand %s more %s"
-msgstr "Développer %s plus %s"
+msgid "Expand %1$s more >>"
+msgstr "Développer %1$s plus >>"
 
 # << Collapse
-msgid "%s Collapse"
-msgstr "%s Effondrement"
+msgid "<< Collapse"
+msgstr "<< Effondrement"
 
 msgid "Permanent link to this keyboard:"
 msgstr "Lien permanent vers ce clavier:"
@@ -170,17 +170,17 @@ msgstr "Nouvelle recherche"
 ## Errors
 
 # Failed to load keyboard [ID]
-msgid "Failed to load keyboard %s"
-msgstr "Impossible de charger le clavier %s"
+msgid "Failed to load keyboard %1$s"
+msgstr "Impossible de charger le clavier %1$s"
 
 # Error returned from api.keyman.com: {error string}
-msgid "Error returned from %s: %s"
-msgstr "Erreur renvoyée par %s: %s"
+msgid "Error returned from %1$s: %2$s"
+msgstr "Erreur renvoyée par %1$s: %2$s"
 
 # Keyboard [ID] not found
-msgid "Keyboard %s not found."
-msgstr "Claviere %s non trouvé."
+msgid "Keyboard %1$s not found."
+msgstr "Claviere %1$s non trouvé."
 
 # Sorry, this keyboard requires Keyman {minimum version} or higher.
-msgid "Sorry, this keyboard requires Keyman %s or higher."
-msgstr "Désolé, ce clavier nécessite Keyman %s ou supérieur."
+msgid "Sorry, this keyboard requires Keyman %1$s or higher."
+msgstr "Désolé, ce clavier nécessite Keyman %1$s ou supérieur."
