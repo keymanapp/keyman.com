@@ -31,7 +31,7 @@
     'searches for keyboards for languages used in Thailand.',
     'Use prefix',
     'to search for a BCP 47 language tag, for example',
-    'searches for Tigrigna %1$sEthiopia%2$s',
+    'searches for Tigrigna (Ethiopia)',
   ]);
 
   $head_options = [
@@ -112,7 +112,7 @@
       <li>
         <?= $keyboardIndexStrings['Use prefix'] ?> 
         <code>l:id:</code> <?= $keyboardIndexStrings['to search for a BCP 47 language tag, for example'] ?> 
-        <code>l:id:ti-et</code> <?= Locale::_s($keyboardIndexStrings['searches for Tigrigna %1$sEthiopia%2$s'], "(", ").") ?>
+        <code>l:id:ti-et</code> <?= $keyboardIndexStrings['searches for Tigrigna (Ethiopia)'] ?>
       </li>
     </ul>
   </div>

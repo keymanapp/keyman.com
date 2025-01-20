@@ -89,6 +89,6 @@ msgid "to search for a BCP 47 language tag, for example"
 msgstr "pour rechercher une balise de langue BCP 47, par exemple"
 
 # Search box hint: BCP 47 language example
-msgid "searches for Tigrigna %1$sEthiopia%2$s"
-msgstr "busca Tigrigna %1$sEtiopía%2$s"
+msgid "searches for Tigrigna (Ethiopia)"
+msgstr "busca Tigrigna (Etiopía)"
 
