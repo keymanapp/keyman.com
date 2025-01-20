@@ -21,8 +21,8 @@ msgid "Keyman Keyboard Search"
 msgstr "Keyman Búsqueda por Teclado"
 
 # Keyboard search bar
-msgid "Keyboard search%s"
-msgstr "Búsqueda por teclado%s"
+msgid "Keyboard search:"
+msgstr "Búsqueda por teclado:"
 
 # Search bar placeholder
 msgid "Enter language or keyboard"
@@ -37,8 +37,8 @@ msgid "New search"
 msgstr "Nueva buscar"
 
 # Search box prompt
-msgid "Enter the name of a keyboard or language to search for%s"
-msgstr "Introduzca el nombre de un teclado o idioma para buscar%s"
+msgid "Enter the name of a keyboard or language to search for%1$s"
+msgstr "Introduzca el nombre de un teclado o idioma para buscar%1$s"
 
 # Search box link for popular keyboards
 msgid "Popular keyboards"
@@ -61,20 +61,20 @@ msgid "You can apply prefixes"
 msgstr "Puedes aplicar prefijos"
 
 # (keyboards)
-msgid "%skeyboards%s"
-msgstr "%stescados%s"
+msgid "%1$skeyboards%2$s"
+msgstr "%1$stescados%2$s"
 
 # (languages)
-msgid "%slanguages%s"
-msgstr "%sidiomas%s"
+msgid "%1$slanguages%2$s"
+msgstr "%1$sidiomas%2$s"
 
 # (scripts, writing systems) or...
-msgid "%sscripts, writing systems%s or"
-msgstr "%sguiones, sistemas de escritura%s o"
+msgid "%1$sscripts, writing systems%2$s or"
+msgstr "%1$sguiones, sistemas de escritura%2$s o"
 
 # (countries) to filter your search results...
-msgid "%scountries%s to filter your search results. For example"
-msgstr "%spaíses%s para filtrar los resultados de búsqueda. Por ejemplo"
+msgid "%1$scountries%2$s to filter your search results. For example"
+msgstr "%1$spaíses%2$s para filtrar los resultados de búsqueda. Por ejemplo"
 
 # Search box hint: example of country search
 msgid "searches for keyboards for languages used in Thailand."
@@ -89,6 +89,6 @@ msgid "to search for a BCP 47 language tag, for example"
 msgstr "para buscar una etiqueta de idioma BCP 47, por ejemplo"
 
 # Search box hint: BCP 47 language example
-msgid "searches for Tigrigna %sEthiopia%s"
-msgstr "busca Tigrigna %sEtiopía%s"
+msgid "searches for Tigrigna %1$sEthiopia%2$s"
+msgstr "busca Tigrigna %1$sEtiopía%2$s"
 
