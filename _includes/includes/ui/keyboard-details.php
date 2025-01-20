@@ -18,8 +18,6 @@
 
   class KeyboardDetails
   {
-    static $strings;
-
     const platformTitles = [
       'windows' => 'Windows',
       'macos' => 'macOS',
