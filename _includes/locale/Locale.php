@@ -69,13 +69,11 @@
     }
 
     /**
-     * Returns an array of localized strings from the specified $domain-locale.po file
+     * Reads localized strings from the specified $domain-locale.po file
      * for the current locale.
      * @param $domain - base filename of the .po files (not including -xx-YY locale)
-     * @param $strings - Array of msgid's in the .po files
-     * @return Array of localized strings for the current locale
      */
-    public static function localize($domain, $strings) {
+    public static function localize($domain) {
       foreach(Locale::CROWDIN_LOCALES as $l) {
         if ($l == Locale::DEFAULT_LOCALE) {
           // Skip English
@@ -86,16 +84,7 @@
       }
 
       $previousTextDomain = textdomain(NULL);
-      Locale::setTextDomain($domain);
-  
-      $result = [];
-      foreach($strings as $s) {
-        $result[$s] = _($s);
-      }
-  
-      // Restore textdomain
-      textdomain($previousTextDomain);
-      return $result;
+      Locale::setTextDomain($domain); 
     }
 
     /**
@@ -104,6 +93,6 @@
      * @param $args - optional remaining args to the format string
      */ 
     public static function _s($s, ...$args) {
-      return vsprintf($s, $args);
+      return vsprintf(_($s), $args);
     }
   }
