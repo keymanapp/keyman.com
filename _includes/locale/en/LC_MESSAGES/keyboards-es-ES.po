@@ -36,9 +36,9 @@ msgstr "Buscar"
 msgid "New search"
 msgstr "Nueva buscar"
 
-# Search box prompt
-msgid "Enter the name of a keyboard or language to search for%1$s"
-msgstr "Introduzca el nombre de un teclado o idioma para buscar%1$s"
+# Search box instruction (Popular keyboards | All keyboards)
+msgid "Enter the name of a keyboard or language to search for"
+msgstr "Introduzca el nombre de un teclado o idioma para buscar"
 
 # Search box link for popular keyboards
 msgid "Popular keyboards"
