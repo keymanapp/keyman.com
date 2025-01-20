@@ -14,24 +14,24 @@
   $keyboardIndexStrings = Locale::localize('keyboards', [
     'Keyboard Search',
     'Keyman Keyboard Search',
-    'Keyboard search%s',
+    'Keyboard search:',
     'Enter language or keyboard',
     'Search',
     'New search',
-    'Enter the name of a keyboard or language to search for%s',
+    'Enter the name of a keyboard or language to search for%1$s',
     'Popular keyboards',
     'All keyboards',
     'Hints',
     'The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names.',
     'You can apply prefixes',
-    '%skeyboards%s',
-    '%slanguages%s',
-    '%sscripts, writing systems%s or',
-    '%scountries%s to filter your search results. For example',
+    '%1$skeyboards%2$s',
+    '%1$slanguages%2$s',
+    '%1$sscripts, writing systems%2$s or',
+    '%1$scountries%2$s to filter your search results. For example',
     'searches for keyboards for languages used in Thailand.',
     'Use prefix',
     'to search for a BCP 47 language tag, for example',
-    'searches for Tigrigna %sEthiopia%s',    
+    'searches for Tigrigna %1$sEthiopia%2$s',
   ]);
 
   $head_options = [
@@ -77,7 +77,7 @@
 
   <div id='search-box'>
     <form method='get' action='/keyboards' name='f'>
-      <label for="search-q"><?= Locale::_s($keyboardIndexStrings['Keyboard search%s'], ":") ?></label><input id="search-q" type="text" placeholder="<?= $keyboardIndexStrings['Enter language or keyboard'] ?>" name="q"
+      <label for="search-q"><?= $keyboardIndexStrings['Keyboard search:'] ?></label><input id="search-q" type="text" placeholder="<?= $keyboardIndexStrings['Enter language or keyboard'] ?>" name="q"
       <?php if($embed == 'none') echo 'autofocus'; ?>>
       <input id="search-f" type="image" src="<?= cdn('img/search-button.png"') ?>" value="<?= $keyboardIndexStrings['Search'] ?>" onclick="return do_search()">
       <label id="search-new"><a href='/keyboards<?=$session_query_q?>'><?= $keyboardIndexStrings['New search'] ?></a></label>
@@ -90,7 +90,7 @@
   <div id='search-results'></div>
   <div id='search-results-empty'>
     <p>
-      <?= Locale::_s($keyboardIndexStrings['Enter the name of a keyboard or language to search for%s'], ". (") ?>
+      <?= Locale::_s($keyboardIndexStrings['Enter the name of a keyboard or language to search for%1$s'], ". (") ?>
       <a href="?q=p:popular"><?= $keyboardIndexStrings['Popular keyboards'] ?></a> | 
       <a href="?q=p:alphabetical"><?= $keyboardIndexStrings['All keyboards'] ?></a>)
     </p>
@@ -103,16 +103,16 @@
       </li>
       <li>
         <?= $keyboardIndexStrings['You can apply prefixes'] ?> 
-        <code>k:</code> <?= Locale::_s($keyboardIndexStrings['%skeyboards%s'], "(", "), ") ?>
-        <code>l:</code> <?= Locale::_s($keyboardIndexStrings['%slanguages%s'], "(", "), ") ?>
-        <code>s:</code> <?= Locale::_s($keyboardIndexStrings['%sscripts, writing systems%s or'], "(", ")") ?>
-        <code>c:</code> <?= Locale::_s($keyboardIndexStrings['%scountries%s to filter your search results. For example'], "(", ")") ?> 
+        <code>k:</code> <?= Locale::_s($keyboardIndexStrings['%1$skeyboards%2$s'], "(", "), ") ?>
+        <code>l:</code> <?= Locale::_s($keyboardIndexStrings['%1$slanguages%2$s'], "(", "), ") ?>
+        <code>s:</code> <?= Locale::_s($keyboardIndexStrings['%1$sscripts, writing systems%2$s or'], "(", ")") ?>
+        <code>c:</code> <?= Locale::_s($keyboardIndexStrings['%1$scountries%2$s to filter your search results. For example'], "(", ")") ?> 
         <code>c:thailand</code> <?= $keyboardIndexStrings['searches for keyboards for languages used in Thailand.'] ?>
       </li>
       <li>
         <?= $keyboardIndexStrings['Use prefix'] ?> 
         <code>l:id:</code> <?= $keyboardIndexStrings['to search for a BCP 47 language tag, for example'] ?> 
-        <code>l:id:ti-et</code> <?= Locale::_s($keyboardIndexStrings['searches for Tigrigna %sEthiopia%s'], "(", ").") ?>
+        <code>l:id:ti-et</code> <?= Locale::_s($keyboardIndexStrings['searches for Tigrigna %1$sEthiopia%2$s'], "(", ").") ?>
       </li>
     </ul>
   </div>
