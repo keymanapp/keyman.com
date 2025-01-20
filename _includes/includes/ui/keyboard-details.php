@@ -511,7 +511,6 @@ END;
                   href='<?= self::$keyboard->helpLink ?>'><?= _("Keyboard help") ?></a>
 <?php
               } else {
-                $helpNotAvailable = _('Help not available.');
                 echo _('Help not available.');
               }
 ?>
