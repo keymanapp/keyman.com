@@ -13,8 +13,8 @@ msgid "Keyman Keyboard Search"
 msgstr "Keyman Keyboard Search"
 
 # Keyboard search bar
-msgid "Keyboard search%s"
-msgstr "Keyboard search%s"
+msgid "Keyboard search:"
+msgstr "Keyboard search:"
 
 # Search bar placeholder
 msgid "Enter language or keyboard"
@@ -28,9 +28,9 @@ msgstr "Search"
 msgid "New search"
 msgstr "New search"
 
-# Search box prompt
-msgid "Enter the name of a keyboard or language to search for%s"
-msgstr "Enter the name of a keyboard or language to search for%s"
+# Search box instruction (Popular keyboards | All keyboards)
+msgid "Enter the name of a keyboard or language to search for"
+msgstr "Enter the name of a keyboard or language to search for"
 
 # Search box link for popular keyboards
 msgid "Popular keyboards"
@@ -53,20 +53,20 @@ msgid "You can apply prefixes"
 msgstr "You can apply prefixes"
 
 # (keyboards)
-msgid "%skeyboards%s"
-msgstr "%skeyboards%s"
+msgid "(keyboards)"
+msgstr "(keyboards)"
 
 # (languages)
-msgid "%slanguages%s"
-msgstr "%slanguages%s"
+msgid "(languages)"
+msgstr "(languages)"
 
 # (scripts, writing systems) or...
-msgid "%sscripts, writing systems%s or"
-msgstr "%sscripts, writing systems%s or"
+msgid "(scripts, writing systems) or"
+msgstr "(scripts, writing systems) or"
 
 # (countries) to filter your search results...
-msgid "%scountries%s to filter your search results. For example"
-msgstr "%scountries%s to filter your search results. For example"
+msgid "(countries) to filter your search results. For example"
+msgstr "(countries) to filter your search results. For example"
 
 # Search box hint: example of country search
 msgid "searches for keyboards for languages used in Thailand."
@@ -81,5 +81,5 @@ msgid "to search for a BCP 47 language tag, for example"
 msgstr "to search for a BCP 47 language tag, for example"
 
 # Search box hint: BCP 47 language example
-msgid "searches for Tigrigna %sEthiopia%s"
-msgstr "searches for Tigrigna %sEthiopia%s"
+msgid "searches for Tigrigna (Ethiopia)"
+msgstr "searches for Tigrigna (Ethiopia)"
