@@ -24,10 +24,10 @@
     'Hints',
     'The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names.',
     'You can apply prefixes',
-    '%1$skeyboards%2$s',
-    '%1$slanguages%2$s',
-    '%1$sscripts, writing systems%2$s or',
-    '%1$scountries%2$s to filter your search results. For example',
+    '(keyboards)',
+    '(languages)',
+    '(scripts, writing systems) or',
+    '(countries) to filter your search results. For example',
     'searches for keyboards for languages used in Thailand.',
     'Use prefix',
     'to search for a BCP 47 language tag, for example',
@@ -103,10 +103,10 @@
       </li>
       <li>
         <?= $keyboardIndexStrings['You can apply prefixes'] ?> 
-        <code>k:</code> <?= Locale::_s($keyboardIndexStrings['%1$skeyboards%2$s'], "(", "), ") ?>
-        <code>l:</code> <?= Locale::_s($keyboardIndexStrings['%1$slanguages%2$s'], "(", "), ") ?>
-        <code>s:</code> <?= Locale::_s($keyboardIndexStrings['%1$sscripts, writing systems%2$s or'], "(", ")") ?>
-        <code>c:</code> <?= Locale::_s($keyboardIndexStrings['%1$scountries%2$s to filter your search results. For example'], "(", ")") ?> 
+        <code>k:</code> <?= $keyboardIndexStrings['(keyboards)'] ?>
+        <code>l:</code> <?= $keyboardIndexStrings['(languages)'] ?>
+        <code>s:</code> <?= $keyboardIndexStrings['(scripts, writing systems) or'] ?>
+        <code>c:</code> <?= $keyboardIndexStrings['(countries) to filter your search results. For example'] ?> 
         <code>c:thailand</code> <?= $keyboardIndexStrings['searches for keyboards for languages used in Thailand.'] ?>
       </li>
       <li>

@@ -13,8 +13,8 @@ msgid "Keyman Keyboard Search"
 msgstr "Keyman Keyboard Search"
 
 # Keyboard search bar
-msgid "Keyboard search%1$s"
-msgstr "Keyboard search%1$s"
+msgid "Keyboard search:"
+msgstr "Keyboard search:"
 
 # Search bar placeholder
 msgid "Enter language or keyboard"
@@ -53,20 +53,20 @@ msgid "You can apply prefixes"
 msgstr "You can apply prefixes"
 
 # (keyboards)
-msgid "%1$skeyboards%2$s"
-msgstr "%1$skeyboards%2$s"
+msgid "(keyboards)"
+msgstr "(keyboards)"
 
 # (languages)
-msgid "%1$slanguages%2$s"
-msgstr "%1$slanguages%2$s"
+msgid "(languages)"
+msgstr "(languages)"
 
 # (scripts, writing systems) or...
-msgid "%1$sscripts, writing systems%2$s or"
-msgstr "%1$sscripts, writing systems%2$s or"
+msgid "(scripts, writing systems) or"
+msgstr "(scripts, writing systems) or"
 
 # (countries) to filter your search results...
-msgid "%1$scountries%2$s to filter your search results. For example"
-msgstr "%1$scountries%2$s to filter your search results. For example"
+msgid "(countries) to filter your search results. For example"
+msgstr "(countries) to filter your search results. For example"
 
 # Search box hint: example of country search
 msgid "searches for keyboards for languages used in Thailand."
