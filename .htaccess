@@ -108,7 +108,7 @@ RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "
 # RewriteRule "^keyboards$" "/keyboards/index.php" [L]
 
 # /keyboards/languages to /keyboards/index.php
-RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [END]
+RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [END,QSA]
 
 # /keyboards/download to /keyboards/download.php
 RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [END,QSA]

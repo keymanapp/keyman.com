@@ -5,8 +5,8 @@ require_once __DIR__ . '/_includes/autoload.php';
 // Required
 head([
     'title' =>'Keyman | Type to the world in your language',
-    'description' => 'Unlock the power of your language with Keyman customizable keyboard software. 
-       Available for Windows, Mac, Linux, Android, iPhone, and web, 
+    'description' => 'Unlock the power of your language with Keyman customizable keyboard software.
+       Available for Windows, Mac, Linux, Android, iPhone, and web,
        we support over 2,000 languages to make communication seamless and meaningful.',
     'css' => ['template.css','index.css'],
     'showMenu' => true,
@@ -45,6 +45,7 @@ head([
             <p>
                 Keyman helps you type in over 2000 languages on
                 just about any device &mdash; Windows, macOS, Linux, iPhone, iPad, Android tablets and phones, and even instantly in your web browser.
+                Keyman is completely <a href="/free">free and open source</a>!
             </p>
         </div>
     </div>
