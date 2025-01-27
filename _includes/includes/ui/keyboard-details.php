@@ -182,7 +182,7 @@ END;
           $linktext = _('Use keyboard online');
       } else {
         $description = '';
-          $linktext = _('Full online editor');
+        $linktext = _('Full online editor');
       }
       return <<<END
         <div class="download download-web">
