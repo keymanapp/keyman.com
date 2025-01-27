@@ -1,0 +1,186 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: keymancom\n"
+"X-Crowdin-Project-ID: 740839\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /master/keyboards/keyboards-details.po\n"
+"X-Crowdin-File-ID: 2\n"
+"Project-Id-Version: keymancom\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"PO-Revision-Date: 2024-11-11 08:15\n"
+
+# French strings for keyboards/keyboard-details.php
+
+# Placeholder for new keyboard search
+msgid "New keyboard search"
+msgstr "Nouvelle recherche de clavier"
+
+# Search Button Value
+msgid "Search"
+msgstr "Recherche"
+
+# "Install keyboard" button text
+msgid "Install keyboard"
+msgstr "Installer le clavier"
+
+# "Install keyboard" button description
+msgid "Installs %1$s for %2$s on this device"
+msgstr "Installer %1$s pour %2$s sur cet appareil"
+
+# Try this keyboard heading
+msgid "Try this keyboard"
+msgstr "Essayez ce clavier"
+
+# "Use keyboard online" button text
+msgid "Use keyboard online"
+msgstr "Utiliser le clavier en ligne"
+
+# "Full online editor" button text
+msgid "Full online editor"
+msgstr "Éditeur en ligne complet"
+
+# "Use keyboard online" button description
+msgid "Use %1$s in your web browser. No need to install anything."
+msgstr "Utiliser %1$s dans votre navigateur Web. Aucune installation n'est nécessaire."
+
+# Scan this QR code
+msgid "Scan this code to load this keyboard on another device"
+msgstr "Scannez ce code pour charger ce clavier sur un autre appareil"
+
+# Headers in Keyboard Details section
+
+msgid "Keyboard Details"
+msgstr "Détails du clavier"
+
+msgid "Keyboard ID"
+msgstr "ID du clavier"
+
+msgid "Supported Platforms"
+msgstr "Plateformes prises en charge"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "License"
+msgstr "Licence"
+
+msgid "Documentation"
+msgstr "Documentation"
+
+msgid "Keyboard help"
+msgstr "Aide au clavier"
+
+msgid "Help not available."
+msgstr "Aide non disponible."
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Source not available."
+msgstr "Source non disponible."
+
+msgid "Keyboard Version"
+msgstr "Version clavier"
+
+msgid "Last Updated"
+msgstr "Dernière mise à jour"
+
+msgid "Package Download"
+msgstr "Téléchargement du package"
+
+msgid "Monthly Downloads"
+msgstr "Téléchargements mensuels"
+
+msgid "Total Downloads"
+msgstr "Téléchargements totaux"
+
+# Total Downloads title - Downloads since [date]
+msgid "Downloads since %1$s"
+msgstr "Téléchargements depuis %1$s"
+
+msgid "Encoding"
+msgstr "Codage"
+
+# Encoding list
+msgid "Unicode, Legacy (ANSI)"
+msgstr "Unicode, Héritage (ANSI)"
+
+# Unicode encoding
+msgid "Unicode"
+msgstr "Unicode"
+
+# Legacy (ANSI) encoding
+msgid "Legacy (ANSI)"
+msgstr "Héritage (ANSI)"
+
+# Minimum Keyman Version
+msgid "Minimum %1$s Version"
+msgstr "Version minimale de %1$s"
+
+msgid "Related Keyboards"
+msgstr "Claviers associés"
+
+# This keyboard is not available on keyman.com
+msgid "This keyboard is not available on %1$s"
+msgstr "Ce clavier n'est pas disponible sur %1$s"
+
+msgid "(deprecated)"
+msgstr "(obsolète)"
+
+msgid "(new version)"
+msgstr "(nouvelle version)"
+
+msgid "Supported Languages"
+msgstr "Langues prises en charge"
+
+# Expand {count} more >>
+msgid "Expand %1$s more >>"
+msgstr "Développer %1$s plus >>"
+
+# << Collapse
+msgid "<< Collapse"
+msgstr "<< Effondrement"
+
+msgid "Permanent link to this keyboard:"
+msgstr "Lien permanent vers ce clavier:"
+
+## Obsolete keyboard notes
+
+msgid "Important note:"
+msgstr "Remarque importante :"
+
+msgid "This is an obsolete version of this keyboard. Unless you have a good reason, click here to install the new version, called"
+msgstr "Il s'agit d'une version obsolète de ce clavier. Sauf si vous avez une bonne raison, cliquez ici pour installer la nouvelle version, appelée"
+
+msgid ", instead."
+msgstr ", plutôt."
+
+msgid "View details for obsolete version instead"
+msgstr "Afficher les détails de la version obsolète à la place"
+
+msgid "New search"
+msgstr "Nouvelle recherche"
+
+## TODO: Previous/Next pagination handled in search.js
+
+
+## Errors
+
+# Failed to load keyboard package [ID]
+msgid "Failed to load keyboard package %1$s"
+msgstr "Échec du chargement du package clavier %1$s"
+
+# Error returned from api.keyman.com: {error string}
+msgid "Error returned from %1$s: %2$s"
+msgstr "Erreur renvoyée par %1$s: %2$s"
+
+# Keyboard package [ID] not found
+msgid "Keyboard package %1$s not found."
+msgstr "Package claviere %1$s non trouvé."
+
+# Sorry, this keyboard requires Keyman {minimum version} or higher.
+msgid "Sorry, this keyboard requires Keyman %1$s or higher."
+msgstr "Désolé, ce clavier nécessite Keyman %1$s ou supérieur."
