@@ -159,7 +159,7 @@ msgstr "New search"
 
 ## Errors
 
-# Failed to load keyboard [ID]
+# Failed to load keyboard package [ID]
 msgid "Failed to load keyboard package %1$s"
 msgstr "Failed to load keyboard package %1$s"
 
