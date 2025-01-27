@@ -55,7 +55,7 @@
 
     /**
      * render_keyboard_details - display keyboard download boxes and details
-     * @param $id - keyboard ID
+     * @param $id - keyboard package ID
      * @param string $tier - ['stable', 'alpha', or 'beta']
      * @param bool $landingPage - when true, details won't display keyboard search box or title
      * @param string $bcp47 - BCP 47 tag to pass as a hint to download links for apps to make connection
@@ -125,41 +125,48 @@ END;
     protected static function WriteWebBoxes($useDescription) {
       global $embed_target;
       global $KeymanHosts;
-      if (isset(self::$keyboard->platformSupport->desktopWeb) && self::$keyboard->platformSupport->desktopWeb != 'none' && empty(self::$deprecatedBy)) {
-        if(empty(self::$bcp47)) {
-          if (isset(self::$keyboard->languages)) {
-            if (is_array(self::$keyboard->languages)) {
-              if (count(self::$keyboard->languages) > 0) {
-                $lang = self::$keyboard->languages[0];
-              }
-            } else {
-              $langs = array_keys(get_object_vars(self::$keyboard->languages));
-              if (count($langs) > 0) {
-                $lang = $langs[0];
-              }
+
+      // only show if the jsFilename property is present in the .keyboard_info
+      if(empty(self::$keyboard->jsFilename)) {
+        return FALSE;
+      }
+
+      if (!isset(self::$keyboard->platformSupport->desktopWeb) || self::$keyboard->platformSupport->desktopWeb == 'none' || !empty(self::$deprecatedBy)) {
+        return FALSE;
+      }
+
+      if(empty(self::$bcp47)) {
+        if (isset(self::$keyboard->languages)) {
+          if (is_array(self::$keyboard->languages)) {
+            if (count(self::$keyboard->languages) > 0) {
+              $lang = self::$keyboard->languages[0];
+            }
+          } else {
+            $langs = array_keys(get_object_vars(self::$keyboard->languages));
+            if (count($langs) > 0) {
+              $lang = $langs[0];
             }
           }
-        } else {
-          $lang = self::$bcp47;
         }
-        if (!isset($lang)) $lang = 'en';
-        $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::$keyboard->id;
-        if($useDescription) {
-          $description = htmlentities(self::$keyboard->name);
-          $description = "<div class=\"download-description\">Use $description in your web browser. No need to install anything.</div>";
-          $linktext = 'Use keyboard online';
-        } else {
-          $description = '';
-          $linktext = 'Full online editor';
-        }
-        return <<<END
-          <div class="download download-web">
-            <a class="download-link" $embed_target href='$url'>$linktext</a>
-            $description
-          </div>
-END;
+      } else {
+        $lang = self::$bcp47;
       }
-      return FALSE;
+      if (!isset($lang)) $lang = 'en';
+      $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::GetWebKeyboardId();
+      if($useDescription) {
+        $description = htmlentities(self::$keyboard->name);
+        $description = "<div class=\"download-description\">Use $description in your web browser. No need to install anything.</div>";
+        $linktext = 'Use keyboard online';
+      } else {
+        $description = '';
+        $linktext = 'Full online editor';
+      }
+      return <<<END
+        <div class="download download-web">
+          <a class="download-link" $embed_target href='$url'>$linktext</a>
+          $description
+        </div>
+END;
     }
 
     protected static function LoadData() {
@@ -170,7 +177,7 @@ END;
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
-        self::$title = 'Failed to load keyboard ' . self::$id;
+        self::$title = 'Failed to load keyboard package ' . self::$id;
         header('HTTP/1.0 404 Keyboard not found');
       } else {
         $s = json_decode($s);
@@ -184,7 +191,7 @@ END;
           self::$license = self::map_license(isset(self::$keyboard->license) ? self::$keyboard->license : 'Unknown');
         } else {
           self::$error .= "Error returned from {$KeymanHosts->api_keyman_com}: $s\n";
-          self::$title = 'Failed to load keyboard ' . self::$id;
+          self::$title = 'Failed to load keyboard package ' . self::$id;
           header('HTTP/1.0 500 Internal Server Error');
         }
       }
@@ -300,7 +307,7 @@ END;
         // If parameters are missing ...
         ?>
           <h1 class='red underline'><?= self::$id ?></h1>
-          <p>Keyboard <?= self::$id ?> not found.</p>
+          <p>Keyboard package <?= self::$id ?> not found.</p>
         <?php
         // DEBUG: Only display errors on local sites
         global $KeymanHosts;
@@ -340,7 +347,6 @@ END;
 
       if(!empty(self::$deprecatedBy)) {
         $dep = self::$deprecatedBy;
-        $id = self::$id;
         echo "
           <div>
             <a href='/keyboards/$dep$session_query_q' class='deprecated'><span>Important note:</span>
@@ -393,6 +399,13 @@ END;
       }
     }
 
+    private static function GetWebKeyboardId() {
+      if(empty(self::$keyboard->jsFilename)) {
+        return "";
+      }
+      return preg_replace("/\.js$/", "", self::$keyboard->jsFilename);
+    }
+
     protected static function GetWebDeviceFromPageDevice() {
       global $pageDevice;
       switch($pageDevice) {
@@ -418,12 +431,18 @@ END;
         return;
       }
 
+      // only show if the jsFilename property is present in the .keyboard_info
+      if(empty(self::$keyboard->jsFilename)) {
+        return;
+      }
+
       // only inject on desktop platforms
       $webDevice = self::GetWebDeviceFromPageDevice();
       if(!$webDevice) {
         return;
       }
 
+      $keymanWebId = self::GetWebKeyboardId();
       $webtext = self::WriteWebBoxes(false);
       $cdnUrlBase = KeymanWebHost::getKeymanWebUrlBase();
       ?>
@@ -452,7 +471,7 @@ END;
                 document.getElementById('osk-host').appendChild(newOSK.element);
               }
             );
-            keyman.addKeyboards('<?= self::$id ?>');
+            keyman.addKeyboards('<?= $keymanWebId ?>');
           })();
         </script>
       <?php

@@ -10,6 +10,7 @@ Keyboard layouts are defined with a clear and easy to understand keyboard gramma
 means keyboard layouts can be intelligent and make it simple to type even the most complex languages.
 Keyboard layouts are distributed through an open catalog to all major desktop and mobile platforms.
 
+Keyman is [free and open source!](/free)
 
 ## About SIL Global
 

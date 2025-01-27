@@ -106,6 +106,8 @@ END;
         <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
 
+          <span id='free'>Keyman is <a href='/free'>free and open source</a></span>
+
           <form action="/search/" method="get" role="search">
             <div class="search-wrap">
               <label for="main-q" class="offscreen">Search</label>

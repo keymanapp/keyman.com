@@ -26,6 +26,7 @@
   <li><a href="features.php">See the features.</a></li>
   <li><a href='download.php'>Keyman Developer Downloads</a></li>
   <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?php echo $stable_version; ?>/'>Keyman Developer Support</a></li>
+  <li><a href='authoring-services'>Keyboard authoring service providers</a></li>
 </ul>
 
 <?php
