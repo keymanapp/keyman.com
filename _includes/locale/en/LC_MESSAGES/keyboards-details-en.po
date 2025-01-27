@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# Default English strings for keyboards/keyboard-details.php
+
+# Placeholder for new keyboard search
+msgid "New keyboard search"
+msgstr "New keyboard search"
+
+# Search Button Value
+msgid "Search"
+msgstr "Search"
+
+# "Install keyboard" button text
+msgid "Install keyboard"
+msgstr "Install keyboard"
+
+# "Install keyboard" button description
+msgid "Installs %1$s for %2$s on this device"
+msgstr "Installs %1$s for %2$s on this device"
+
+# Try this keyboard heading
+msgid "Try this keyboard"
+msgstr "Try this keyboard"
+
+# "Use keyboard online" button text
+msgid "Use keyboard online"
+msgstr "Use keyboard online"
+
+# "Full online editor" button text
+msgid "Full online editor"
+msgstr "Full online editor"
+
+# "Use keyboard online" button description
+msgid "Use %1$s in your web browser. No need to install anything."
+msgstr "Use %1$s in your web browser. No need to install anything."
+
+# Scan this QR code
+msgid "Scan this code to load this keyboard on another device"
+msgstr "Scan this code to load this keyboard on another device"
+
+# Headers in Keyboard Details section
+
+msgid "Keyboard Details"
+msgstr "Keyboard Details"
+
+msgid "Keyboard ID"
+msgstr "Keyboard ID"
+
+msgid "Supported Platforms"
+msgstr "Supported Platforms"
+
+msgid "Author"
+msgstr "Author"
+
+msgid "License"
+msgstr "License"
+
+msgid "Documentation"
+msgstr "Documentation"
+
+msgid "Keyboard help"
+msgstr "Keyboard help"
+
+msgid "Help not available."
+msgstr "Help not available."
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Source not available."
+msgstr "Source not available."
+
+msgid "Keyboard Version"
+msgstr "Keyboard Version"
+
+msgid "Last Updated"
+msgstr "Last Updated"
+
+msgid "Package Download"
+msgstr "Package Download"
+
+msgid "Monthly Downloads"
+msgstr "Monthly Downloads"
+
+msgid "Total Downloads"
+msgstr "Total Downloads"
+
+# Total Downloads title - Downloads since [date]
+msgid "Downloads since %1$s"
+msgstr "Downloads since %1$s"
+
+msgid "Encoding"
+msgstr "Encoding"
+
+# Encoding list
+msgid "Unicode, Legacy (ANSI)"
+msgstr "Unicode, Legacy (ANSI)"
+
+# Unicode encoding
+msgid "Unicode"
+msgstr "Unicode"
+
+# Legacy (ANSI) encoding
+msgid "Legacy (ANSI)"
+msgstr "Legacy (ANSI)"
+
+# Minimum Keyman Version
+msgid "Minimum %1$s Version"
+msgstr "Minimum %1$s Version"
+
+msgid "Related Keyboards"
+msgstr "Related Keyboards"
+
+# This keyboard is not available on keyman.com
+msgid "This keyboard is not available on %1$s"
+msgstr "This keyboard is not available on %1$s"
+
+msgid "(deprecated)"
+msgstr "(deprecated)"
+
+msgid "(new version)"
+msgstr "(new version)"
+
+msgid "Supported Languages"
+msgstr "Supported Languages"
+
+# Expand {count} more >>
+msgid "Expand %1$s more >>"
+msgstr "Expand %1$s more >>"
+
+# << Collapse
+msgid "<< Collapse"
+msgstr "<< Collapse"
+
+msgid "Permanent link to this keyboard:"
+msgstr "Permanent link to this keyboard:"
+
+## Obsolete keyboard notes
+
+msgid "Important note:"
+msgstr "Important note:"
+
+msgid "This is an obsolete version of this keyboard. Unless you have a good reason, click here to install the new version, called"
+msgstr "This is an obsolete version of this keyboard. Unless you have a good reason, click here to install the new version, called"
+
+msgid ", instead."
+msgstr ", instead."
+
+msgid "View details for obsolete version instead"
+msgstr "View details for obsolete version instead"
+
+msgid "New search"
+msgstr "New search"
+
+## TODO: Previous/Next pagination handled in search.js
+
+
+## Errors
+
+# Failed to load keyboard [ID]
+msgid "Failed to load keyboard package %1$s"
+msgstr "Failed to load keyboard package %1$s"
+
+# Error returned from api.keyman.com: {error string}
+msgid "Error returned from %1$s: %2$s"
+msgstr "Error returned from %1$s: %2$s"
+
+# Keyboard package [ID] not found
+msgid "Keyboard package %1$s not found."
+msgstr "Keyboard package %1$s not found."
+
+# Sorry, this keyboard requires Keyman {minimum version} or higher.
+msgid "Sorry, this keyboard requires Keyman %1$s or higher."
+msgstr "Sorry, this keyboard requires Keyman %1$s or higher."
