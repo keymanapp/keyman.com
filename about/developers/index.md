@@ -113,7 +113,7 @@ With degrees in Electronics and Information Technology from QUT, I have worked a
 ![](https://github.com/Meng-Heng.png?size=240)
 
 ### MengHeng Hav
-
+<br/>
 During my 3rd year of acquiring a computer science degree at National Polytechnic Institute of Cambodia, I got the opportunity to be involved in the Keyman's work, and until the 4th year, I got a role in Keyman as a Technical Support Engineer. If you are interested in my study, I have the source code (Laravel) of my Thesis on [GitHub](https://github.com/Meng-Heng/bus_ticketing_web).
 
 I managed to obtain some experience through an internship in Web Development for a POS system company based in Toul Kork, Phnom Penh, Cambodia. I also worked on simplistic app and website design and development to submit the classes' deadlines and kept up with the various programming languages the school had.
