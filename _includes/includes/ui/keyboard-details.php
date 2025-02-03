@@ -106,10 +106,10 @@
       $installLink = 'keyman:keyboard/install/' . rawurlencode(self::$id);
       if(!empty(self::$bcp47)) $installLink .= "?bcp47=" . rawurlencode(self::$bcp47);
       $h_filename = htmlspecialchars($filename);
-
+      $new_project_details = Locale::_s('Fill in New Project Details box below and click OK to clone %1$s.', $h_filename);
       return <<<END
 <div class="download download-developer">
-  <div class="download-description">Fill in New Project Details box below and click OK to clone $h_filename.</div>
+  <div class="download-description">$new_project_details</div>
 </div>
 END;
   // <script>location.href = '$installLink';</script>

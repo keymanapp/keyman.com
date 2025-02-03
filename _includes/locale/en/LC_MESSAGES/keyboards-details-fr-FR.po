@@ -22,6 +22,12 @@ msgstr "Nouvelle recherche de clavier"
 msgid "Search"
 msgstr "Recherche"
 
+# Keyman Developer clone keyboard box
+
+# Fill in New Project Details box below and click OK to clone {filename}
+msgid "Fill in New Project Details box below and click OK to clone %1$s."
+msgstr "Remplissez la case Détails du nouveau projet ci-dessous et cliquez sur OK pour cloner %1$s."
+
 # "Install keyboard" button text
 msgid "Install keyboard"
 msgstr "Installer le clavier"
@@ -97,7 +103,7 @@ msgstr "Téléchargements mensuels"
 msgid "Total Downloads"
 msgstr "Téléchargements totaux"
 
-# Total Downloads title - Downloads since [date]
+# Total Downloads title - Downloads since {date}
 msgid "Downloads since %1$s"
 msgstr "Téléchargements depuis %1$s"
 
