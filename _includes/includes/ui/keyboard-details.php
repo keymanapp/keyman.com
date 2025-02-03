@@ -97,6 +97,20 @@
       return array_key_exists($s, $license_map) ? $license_map[$s] : $s;
     }
 
+    protected static function WriteDeveloperCloneBox() {
+      $filename = self::$id . ".kpj";
+      $installLink = 'keyman:keyboard/install/' . rawurlencode(self::$id);
+      if(!empty(self::$bcp47)) $installLink .= "?bcp47=" . rawurlencode(self::$bcp47);
+      $h_filename = htmlspecialchars($filename);
+
+      return <<<END
+<div class="download download-developer">
+  <div class="download-description">Fill in New Project Details box below and click OK to clone $h_filename.</div>
+</div>
+END;
+  // <script>location.href = '$installLink';</script>
+    }
+
     protected static function download_box($platform) {
       if(!empty(self::$deprecatedBy)) {
         return "";
@@ -361,27 +375,32 @@ END;
     }
 
     protected static function WriteDownloadBoxes() {
-      global $embed, $session_query_q, $embed_win, $embed_version, $pageDevice;
-      global $embed_target;
+      global $embed, $embed_win, $embed_version;
+      global $embed_developer;
 
       // We'll write all the different platforms here and then let Bowser determine
       // which box to show. This is true for both embedded and web-based viewing.
 
       $text = '';
 
-      foreach(self::platformTitles as $platform => $title) {
-        if($platform != 'desktopWeb' && $platform != 'mobileWeb')
-          $text .= self::download_box($platform);
-      }
+      if($embed_developer) {
+        $text .= self::WriteDeveloperCloneBox();
+        echo $text;
+      } else {
+        foreach(self::platformTitles as $platform => $title) {
+          if($platform != 'desktopWeb' && $platform != 'mobileWeb')
+            $text .= self::download_box($platform);
+        }
 
-      $text .= self::download_box('unknown');
+        $text .= self::download_box('unknown');
 
-      if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
+        if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
 ?>
         <p>Sorry, this keyboard requires Keyman <?= self::$keyboard->minKeymanVersion ?> or higher.</p>
 <?php
-      } else {
-        echo $text;
+        } else {
+          echo $text;
+        }
       }
 
       if ($embed == 'none') {

@@ -7,7 +7,7 @@
 
   if(isset($_REQUEST['embed'])) {
     $embed = $_REQUEST['embed'];
-    if(!in_array($embed, ['none','windows','macos','linux','android','ios'])) {
+    if(!in_array($embed, ['none','windows','macos','linux','android','ios','developer'])) {
       $embed = 'none';
     }
     if(isset($_REQUEST['version'])) {
@@ -30,6 +30,7 @@
   $embed_linux = $embed == 'linux';
   $embed_android = $embed == 'android';
   $embed_ios = $embed == 'ios';
+  $embed_developer = $embed == 'developer';
 
   if(isset($_REQUEST['lang'])) {
     \Keyman\Site\com\keyman\Locale::overrideCurrentLocale($_REQUEST['lang']);

@@ -465,6 +465,10 @@ html[data-platform='unknown'] .download.download-unknown {
   display: block;
 }
 
+.download.download-developer {
+  display: block;
+}
+
 #search-results-empty {
   display: none;
 }
