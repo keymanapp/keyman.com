@@ -91,7 +91,7 @@ the on screen keyboard.</p>
 <p>The Keyman Cloud CDN is appropriate for smaller sites.</p>
 
 <table class='basic-table'><tbody>
-  <tr><td>Endpoint:</td><td><input type='text' readonly size='60' value='<?= KeymanHosts::Instance()->s_keyman_com ?>/kmw/engine/<?=$build?>/keymanweb.js' onclick='this.select()'></td></tr>
+  <tr><td>Endpoint:</td><td><input type='text' readonly size='60' value='<?= KeymanWebHost::getKeymanWebUrlBase() ?>/keymanweb.js' onclick='this.select()'></td></tr>
 </tbody></table>
 
 <br>
