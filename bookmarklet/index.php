@@ -2,7 +2,7 @@
   require_once('includes/template.php');
   require_once __DIR__ . '/../_includes/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
-  use Keyman\Site\com\keyman\KeymanVersion;
+  use Keyman\Site\Common\KeymanVersion;
 
   $lang = isset($_GET['language']) ? json_encode($_GET['language']) : '""';
   $kbd = isset($_GET['keyboard']) ? json_encode($_GET['keyboard']) : '""';
