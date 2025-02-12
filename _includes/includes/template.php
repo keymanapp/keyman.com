@@ -3,7 +3,7 @@
 
   // *Don't* use autoloader here because of potential side-effects in older pages
   require_once(__DIR__ . '/../2020/Util.php');
-  require_once(__DIR__ . '/../2020/KeymanVersion.php');
+  require_once(__DIR__ . '/../../_common/KeymanVersion.php');
   require_once(__DIR__ . '/../2020/templates/Head.php');
 
   function template_finish($foot) {
