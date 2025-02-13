@@ -1,4 +1,5 @@
 <?php
+  use Keyman\Site\Common\KeymanHosts;
   define('DEBUG', false);
 
   // Redirects download to the appropriate file on downloads.keyman.com
