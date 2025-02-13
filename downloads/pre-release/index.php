@@ -1,6 +1,7 @@
 <?php
   require_once('includes/template.php');
   require_once('includes/ui/downloads.php');
+  use Keyman\Site\Common\KeymanHosts;
 
   // Required
   head([
@@ -38,7 +39,7 @@
   If neither of these sound like what you wanted: <a href='/downloads/'>download a stable release version of Keyman</a>.
 </p>
 
-<p><a href='<?=$KeymanHosts->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
+<p><a href='<?=KeymanHosts::Instance()->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
 
 <?php
   downloadSection('Keyman for Windows',         'windows', 'keyman-$version.exe', 'beta alpha');

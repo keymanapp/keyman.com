@@ -108,13 +108,13 @@
       <li>Can now display up to 8 suggestions on screen</li>
       <li>Can drag the banner left and right to see more suggestions</li>
       <li>Shortens long suggestions to avoid long words overwhelming the available space.</li>
-    </ol>  
+    </ol>
   </li>
   <li>Improves scaling of key caps for some keyboards (#10506)</li>
   <li>Add localization for:
     <ol>
-      <li>Mon (Burmese script)</li>  
-    </ol>  
+      <li>Mon (Burmese script)</li>
+    </ol>
   </li>
 </ul>
 
@@ -292,7 +292,7 @@
 </ul>
 <br/>
 <p>
-  <a href="<?= $KeymanHosts->help_keyman_com ?>/products/android/version-history/">View all version history</a>
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/android/version-history/">View all version history</a>
 </p>
 
 <?= $playstoreTable ?>
@@ -307,7 +307,7 @@
   You can develop your own keyboard layouts for Keyman for Android with <a href="/developer/download.php">Keyman Developer</a>. If you have existing keyboards, they can be ported to Android with just a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
-  <a href="<?= $KeymanHosts->help_keyman_com ?>/developer/engine/android/">Keyman Engine for Android Documentation</a>
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/android/">Keyman Engine for Android Documentation</a>
 </p>
 <p>
   <a href="/downloads/#android-engine">Download the latest Keyman Engine for Android</a>

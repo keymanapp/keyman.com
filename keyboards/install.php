@@ -353,7 +353,7 @@ END;
 
       // Get Keyboard Metadata
 
-      $s = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . '/keyboard/' . rawurlencode(self::$id));
+      $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com . '/keyboard/' . rawurlencode(self::$id));
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
@@ -374,7 +374,7 @@ END;
 
       // Get Program Download Versions and URLs
 
-      $s = @file_get_contents(KeymanHosts::Instance()->downloads_keyman_com . '/api/version/1.0');
+      $s = @file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . '/api/version/1.0');
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";

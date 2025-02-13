@@ -110,7 +110,7 @@ relies on font source paths being configured in <a href='<?= KeymanHosts::Instan
   <tbody>
 
 <?php
-  $data = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . '/cloud/4.0/keyboards?languageidtype=bcp47&version='.$stable_version);
+  $data = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com . '/cloud/4.0/keyboards?languageidtype=bcp47&version='.$stable_version);
   if($data === FALSE) {
     // fallback if API is down, bad news anyway.
     $data = file_get_contents('keyboards.txt');
