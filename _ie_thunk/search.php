@@ -9,6 +9,8 @@
 
   require_once('includes/servervars.php');
 
+  use Keyman\Site\Common\KeymanHosts;
+
   $q = $_REQUEST['q'];
-  echo file_get_contents("{$KeymanHosts->api_keyman_com}/search?q=".urlencode($q));
+  echo file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com ."/search?q=".urlencode($q));
 ?>

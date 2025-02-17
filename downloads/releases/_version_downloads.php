@@ -3,6 +3,7 @@
   require_once('includes/ui/downloads.php');
   require_once('includes/appstore.php');
   require_once('includes/playstore.php');
+  use Keyman\Site\Common\KeymanHosts;
 
   if(!isset($_REQUEST['version'])) {
     echo "version parameter is required.";
@@ -28,7 +29,7 @@
 
   // note: we currently ignore the tier parameter
 
-  $versions = @json_decode(file_get_contents("https://downloads.keyman.com/api/version/2.0?targetVersion=$version")); // TODO: use KeymanHosts in the future
+  $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . "/api/version/2.0?targetVersion=$version"));
 
   if(empty($versions->android))
     $tier = 'unknown';
@@ -44,7 +45,7 @@
 
 
 
-  $versionsData = @json_decode(file_get_contents("https://downloads.keyman.com/api/version/all"));
+  $versionsData = @json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . "/api/version/all"));
   if (!$versionsData) {
     die("Failed to retrieve or parse the API data.");
   }
@@ -114,7 +115,7 @@
 ?>
 
 <div class="navigation-buttons">
-  <a class ="button" href='<?=$KeymanHosts->help_keyman_com?>/version-history/all-versions.php#<?=$versionNumber?>'>View version history for <?=$versionNumber?></a>
+  <a class ="button" href='<?=KeymanHosts::Instance()->help_keyman_com?>/version-history/all-versions.php#<?=$versionNumber?>'>View version history for <?=$versionNumber?></a>
 </div>
 
 <?php

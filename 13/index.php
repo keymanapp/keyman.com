@@ -3,6 +3,7 @@ require_once('includes/template.php');
 require_once('includes/ui/downloads.php');
 require_once('includes/appstore.php');
 require_once('includes/playstore.php');
+use \Keyman\Site\Common\KeymanHosts;
 
 // Required
 head([
@@ -32,7 +33,7 @@ head([
 <h2>There's more!</h2>
 <p>We have made many other smaller changes and improvements to Keyman 13, such as an improved Lexical Model editor in Keyman Developer,
 improvements to context handling in Keyman for macOS, and setting keyboard options in Keyman for Linux. Read about all the changes in our
-<a href='<?=$KeymanHosts->help_keyman_com?>/version-history'>release notes</a>.
+<a href='<?=KeymanHosts::Instance()->help_keyman_com?>/version-history'>release notes</a>.
 
 <h1 class='red underline large'>Get Involved</h1>
 

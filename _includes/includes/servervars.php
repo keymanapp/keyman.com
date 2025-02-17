@@ -27,7 +27,6 @@
   require_once(__DIR__ . '/../2020/Util.php');
 
   use \Keyman\Site\Common\KeymanVersion;
-  use \Keyman\Site\Common\KeymanHosts;
   use \Keyman\Site\com\keyman\Util;
 
   // Major stable and beta versions
@@ -46,10 +45,6 @@
   function betaTier() {
     return KeymanVersion::IsBetaTier();
   }
-
-  // TODO refactor away global variable
-  global $KeymanHosts;
-  $KeymanHosts = KeymanHosts::Instance();
 
   // Alpha and Beta signup links
   global $playstore_signup_link, $testflight_alpha_link, $testflight_beta_link;

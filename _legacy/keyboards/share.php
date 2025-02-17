@@ -2,6 +2,7 @@
   require_once('includes/template.php');
   require_once('includes/ui/legacy-keyboard-details.php');
   require_once('./session.php');
+  use Keyman\Site\Common\KeymanHosts;
 
   if(!isset($_REQUEST['id'])) {
     header('Location: /keyboards');
@@ -15,8 +16,7 @@
   }
 
   function find_keyboard($id) {
-    global $KeymanHosts;
-    $s = @file_get_contents($KeymanHosts->api_keyman_com.'/keyboard/'.$id);
+    $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/keyboard/'.$id);
     if($s === FALSE) {
       return null;
     }
