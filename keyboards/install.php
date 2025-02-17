@@ -12,6 +12,7 @@
   use Keyman\Site\com\keyman\templates\AppStore;
   use Keyman\Site\com\keyman\templates\PlayStore;
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\com\keyman\Util;
 
@@ -32,8 +33,15 @@
     }
   }
 
+  if(!isset($_REQUEST['id'])) {
+    // install without a keyboard id doesn't make sense,
+    // so redirect to the keyboard search
+    header('Location: /keyboards');
+    exit;
+  }
+
   KeyboardInstallPage::render_keyboard_details(
-    isset($_REQUEST['id']) ? $_REQUEST['id'] : null,
+    $_REQUEST['id'],
     $tier,
     isset($_REQUEST['bcp47']) ? $_REQUEST['bcp47'] : null
   );
