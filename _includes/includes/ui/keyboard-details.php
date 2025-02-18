@@ -469,7 +469,7 @@ END;
           <div id='osk-host'></div>
           <div id='try-keymanweb-link'><?= $webtext ?></div>
         </div>
-        <script src='<?=$cdnUrlBase?>/keymanweb.js'></script>
+        <script crossorigin="anonymous" src='<?=$cdnUrlBase?>/keymanweb.js'></script>
         <script>
           (function() {
             keyman.init({attachType:'manual'}).then(
