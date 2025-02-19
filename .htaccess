@@ -133,6 +133,8 @@ RedirectMatch "^/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$
 # Connect With Art landing page
 RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
 
+RedirectMatch "^/lt4all(/?)$"          "/ldml/lt4all"
+
 # per-language landing pages
 RedirectMatch "^/albanian(/?)$"         "/keyboards/basic_kbdal"
 RedirectMatch "^/ancient-egyptian(/?)$" "/keyboards/hieroglyphic"
