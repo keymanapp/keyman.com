@@ -3,6 +3,7 @@
   require_once('includes/ui/downloads.php');
   require_once('includes/appstore.php');
   require_once('includes/playstore.php');
+  use \Keyman\Site\Common\KeymanHosts;
 
   // Required
   head([
@@ -32,14 +33,14 @@
 <p>Keyman Developer includes all the functionality you need to create dictionaries for your language.
 Distribute dictionaries directly through Keyman or peer-to-peer in your community.</p>
 
-<p><a href='<?=$KeymanHosts->help_keyman_com?>/developer/12.0/guides/lexical-models/'>Learn more about creating dictionaries</a></p>
+<p><a href='<?=KeymanHosts::Instance()->help_keyman_com?>/developer/12.0/guides/lexical-models/'>Learn more about creating dictionaries</a></p>
 
 <p style='text-align: center'><img src='predictive-text-editor.png'></p>
 
 <h2>There's more!</h2>
 
 <p>We have made many other smaller changes and improvements to Keyman 12, such as a new Welcome screen in Keyman Developer,
-and improvements to the stability of Keyman for MacOS. Read about all the changes in our <a href='<?=$KeymanHosts->help_keyman_com?>/version-history'>release notes</a>.</p>
+and improvements to the stability of Keyman for MacOS. Read about all the changes in our <a href='<?=KeymanHosts::Instance()->help_keyman_com?>/version-history'>release notes</a>.</p>
 
 <h1 class='red underline large'>Get Involved</h1>
 

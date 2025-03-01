@@ -45,7 +45,7 @@ head([
     Mobile apps download and install keyboard packages from keyman.com
   </li>
   <li>
-    Consolidated crash reporting to <a href="<?= KeymanHosts::Instance()->sentry_keyman_com ?>">sentry.keyman.com</a>
+    Consolidated crash reporting to sentry.keyman.com
   </li>
   <li>
     Many bug fixes and improvements (see the <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/version-history">version history</a>)

@@ -214,7 +214,7 @@
 <br/>
 
 <p>
-  <a href="<?= $KeymanHosts->help_keyman_com ?>/products/iphone-and-ipad/version-history/">View all version history</a>
+  <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/products/iphone-and-ipad/version-history/">View all version history</a>
 </p>
 
 <?= $appstoreTable ?>

@@ -53,6 +53,8 @@ RewriteRule "^downloads/releases/(.+)$" "/downloads/releases/_version_downloads.
 # index
 RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
 
+# CLDR -> LDML
+RewriteRule "^cldr(\/)?$" "/ldml" [R=301,END]
 
 #
 # Keyboard landing pages (TODO)
@@ -130,6 +132,8 @@ RedirectMatch "^/(?!iphone-and-ipad)(ios|iphone|ipad)(\/.*)?" "/iphone-and-ipad$
 
 # Connect With Art landing page
 RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
+
+RedirectMatch "^/lt4all(/?)$"          "/ldml/lt4all"
 
 # per-language landing pages
 RedirectMatch "^/albanian(/?)$"         "/keyboards/basic_kbdal"

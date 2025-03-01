@@ -3,7 +3,7 @@
   require_once __DIR__ . '/../../autoload.php';
   use Keyman\Site\Common\KeymanHosts;
 
-  $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->downloads_keyman_com . '/api/version/2.0'));
+  $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . '/api/version/2.0'));
   //if($versions === NULL || $versions === FALSE) {
   //  echo "<p class='error'>WARNING: unable to retrieve latest versions of Keyman from download server</p>";
   //}

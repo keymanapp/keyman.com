@@ -12,6 +12,7 @@
   use Keyman\Site\com\keyman\templates\AppStore;
   use Keyman\Site\com\keyman\templates\PlayStore;
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\com\keyman\Util;
 
@@ -32,8 +33,15 @@
     }
   }
 
+  if(!isset($_REQUEST['id'])) {
+    // install without a keyboard id doesn't make sense,
+    // so redirect to the keyboard search
+    header('Location: /keyboards');
+    exit;
+  }
+
   KeyboardInstallPage::render_keyboard_details(
-    isset($_REQUEST['id']) ? $_REQUEST['id'] : null,
+    $_REQUEST['id'],
     $tier,
     isset($_REQUEST['bcp47']) ? $_REQUEST['bcp47'] : null
   );
@@ -353,7 +361,7 @@ END;
 
       // Get Keyboard Metadata
 
-      $s = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . '/keyboard/' . rawurlencode(self::$id));
+      $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com . '/keyboard/' . rawurlencode(self::$id));
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
@@ -374,7 +382,7 @@ END;
 
       // Get Program Download Versions and URLs
 
-      $s = @file_get_contents(KeymanHosts::Instance()->downloads_keyman_com . '/api/version/1.0');
+      $s = @file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . '/api/version/1.0');
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";

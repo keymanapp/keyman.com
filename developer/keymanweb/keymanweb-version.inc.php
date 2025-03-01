@@ -5,7 +5,7 @@ use Keyman\Site\Common\KeymanHosts;
 
 function getKeymanWebHref()
 {
-  $json = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . "/version/web");
+  $json = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com . "/version/web");
   if ($json) {
     $json = json_decode($json);
   }
