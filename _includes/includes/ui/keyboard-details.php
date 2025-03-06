@@ -499,7 +499,7 @@ END;
     }
 
     protected static function WriteKeyboardDetails() {
-      global $embed_target, $session_query_q;
+      global $embed_target, $embed, $session_query_q;
 
       // this is html, trusted in database
       ?>
@@ -570,7 +570,8 @@ END;
           <table id='keyboard-details'>
             <tbody>
 <?php
-              if(isset(self::$keyboard->packageFilename)) {
+              if(isset(self::$keyboard->packageFilename) &&
+                 isset(self::$keyboard->platformSupport->$embed) && self::$keyboard->platformSupport->$embed != 'none') {
 ?>
             <tr>
               <th>Package Download</th>
