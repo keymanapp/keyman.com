@@ -17,7 +17,6 @@
 */
 
   require_once __DIR__ . '/../../vendor/autoload.php';
-  require_once __DIR__ . '/../../_common/KeymanSentry.php';
   require_once __DIR__ . '/../2020/KeymanComSentry.php';
   Keyman\Site\com\keyman\KeymanComSentry::init();
 
