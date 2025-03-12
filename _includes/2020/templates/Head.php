@@ -7,6 +7,11 @@ use Keyman\Site\com\keyman\Util;
 use Keyman\Site\Common\Assets;
 use Keyman\Site\Common\KeymanHosts;
 
+// *Don't* use autoloader here because of potential side-effects in older pages
+require_once(__DIR__ . '/../Util.php');
+require_once(__DIR__ . '/../../../_common/Assets.php');
+require_once(__DIR__ . '/../../../_common/KeymanHosts.php');
+
 class Head {
     static function render($fields = []) {
       $fields = (object)$fields;
