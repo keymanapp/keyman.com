@@ -4,6 +4,7 @@
   namespace Keyman\Site\com\keyman\templates;
 
 use Keyman\Site\com\keyman\Util;
+use Keyman\Site\Common\Assets;
 use Keyman\Site\Common\KeymanHosts;
 
 class Head {
@@ -65,10 +66,11 @@ class Head {
   ></script>
   <script>
     const sentryEnvironment = {
+      dsn: 'https://44d5544d7c45466ba1928b9196faf67e@o1005580.ingest.us.sentry.io/5983516',
       tier: '<?=KeymanHosts::Instance()->TierName()?>',
     }
   </script>
-  <script src="<?= Util::cdn('js/sentry.js'); ?>"></script>
+  <script src="<?= Assets::Get('js/sentry.js'); ?>"></script>
   <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
   <link rel='shortcut icon' href="<?= $fields->favicon; ?>">
   <?php foreach($fields->css as $cssFile) { ?>
