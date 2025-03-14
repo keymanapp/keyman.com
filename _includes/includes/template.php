@@ -15,7 +15,7 @@
   }
 
   function head($args=[]){
-    // Args are title='My Page Title', css='page.css' showMenu=true/false, showHeader=true/false, foot=true/false
+    // Args are title='My Page Title', css='page.css' showMenu=true/false, showHeader=true/false, foot=true/false, keywords='comma,separated,list'
 
     $agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
     // Get device
@@ -55,6 +55,9 @@
     if(isset($args['language'])) {
       $language = $args['language'];
     }
+    if(isset($args['keywords'])) {
+      $keywords = $args['keywords'];
+    }
     if(isset($args['css'])){
       $css = array();
       foreach($args['css'] as $cssFile){
@@ -91,6 +94,7 @@
     if(isset($language)) $head['language'] = $language;
     if(isset($css)) $head['css'] = $css;
     if(isset($js)) $head['js'] = $js;
+    if(isset($keywords)) $head['keywords'] = $keywords;
     \Keyman\Site\com\keyman\templates\Head::render($head);
 
     if($menu == true) {
