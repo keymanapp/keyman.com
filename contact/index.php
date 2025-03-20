@@ -39,5 +39,7 @@
   <br/>
   7500 W Camp Wisdom Rd
   <br/>
-  Texas USA 75236
+  Dallas, TX 75236-5629
+  <br/>
+  USA
 </p>
