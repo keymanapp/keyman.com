@@ -138,7 +138,6 @@ END;
 
     protected static function WriteWebBoxes($useDescription) {
       global $embed_target;
-      global $KeymanHosts;
 
       // only show if the jsFilename property is present in the .keyboard_info
       if(empty(self::$keyboard->jsFilename)) {
@@ -166,7 +165,7 @@ END;
         $lang = self::$bcp47;
       }
       if (!isset($lang)) $lang = 'en';
-      $url = "{$KeymanHosts->keymanweb_com}/#$lang,Keyboard_" . self::GetWebKeyboardId();
+      $url = KeymanHosts::Instance()->keymanweb_com ."/#$lang,Keyboard_" . self::GetWebKeyboardId();
       if($useDescription) {
         $description = htmlentities(self::$keyboard->name);
         $description = "<div class=\"download-description\">Use $description in your web browser. No need to install anything.</div>";
@@ -184,10 +183,10 @@ END;
     }
 
     protected static function LoadData() {
-      global $KeymanHosts, $stable_version;
+      global $stable_version;
 
       self::$error = "";
-      $s = @file_get_contents($KeymanHosts->api_keyman_com . '/keyboard/' . rawurlencode(self::$id));
+      $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com. '/keyboard/' . rawurlencode(self::$id));
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
@@ -204,7 +203,7 @@ END;
           self::$minVersion = isset(self::$keyboard->minKeymanVersion) ? self::$keyboard->minKeymanVersion : $stable_version;
           self::$license = self::map_license(isset(self::$keyboard->license) ? self::$keyboard->license : 'Unknown');
         } else {
-          self::$error .= "Error returned from {$KeymanHosts->api_keyman_com}: $s\n";
+          self::$error .= "Error returned from ".KeymanHosts::Instance()->api_keyman_com.": $s\n";
           self::$title = 'Failed to load keyboard package ' . self::$id;
           header('HTTP/1.0 500 Internal Server Error');
         }
@@ -249,7 +248,7 @@ END;
 
         self::$downloadCount = 0;
         self::$totalDownloadCount = 0;
-        $s = @file_get_contents($KeymanHosts->api_keyman_com . '/search/2.0?q=k:id:' . rawurlencode(self::$id));
+        $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/search/2.0?q=k:id:' . rawurlencode(self::$id));
         if ($s !== FALSE) {
           $s = json_decode($s);
           if(is_object($s) && is_array(($s->keyboards))) {
@@ -324,8 +323,7 @@ END;
           <p>Keyboard package <?= self::$id ?> not found.</p>
         <?php
         // DEBUG: Only display errors on local sites
-        global $KeymanHosts;
-        if($KeymanHosts->Tier() == KeymanHosts::TIER_DEVELOPMENT && (ini_get('display_errors') !== '0')) {
+        if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT && (ini_get('display_errors') !== '0')) {
           echo "<p>" . self::$error . "</p>";
         }
         exit;
@@ -471,7 +469,7 @@ END;
           <div id='osk-host'></div>
           <div id='try-keymanweb-link'><?= $webtext ?></div>
         </div>
-        <script src='<?=$cdnUrlBase?>/keymanweb.js'></script>
+        <script crossorigin="anonymous" src='<?=$cdnUrlBase?>/keymanweb.js'></script>
         <script>
           (function() {
             keyman.init({attachType:'manual'}).then(
@@ -501,7 +499,7 @@ END;
     }
 
     protected static function WriteKeyboardDetails() {
-      global $embed_target, $session_query_q, $KeymanHosts;
+      global $embed_target, $session_query_q;
 
       // this is html, trusted in database
       ?>
@@ -607,9 +605,10 @@ END;
                     // TODO(lowpri): we could return this information in the API to avoid multiple
                     // round trip queries but that requires more changes to the API, docs, and
                     // schema.
-                    $s = @file_get_contents($KeymanHosts->api_keyman_com . '/keyboard/' . rawurlencode($name));
+                    $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/keyboard/' . rawurlencode($name));
                     if ($s === FALSE) {
-                      echo "<span class='keyboard-unavailable' title='This keyboard is not available on {$KeymanHosts->keyman_com_host}'>$hname</span> ";
+                      echo "<span class='keyboard-unavailable' title='This keyboard is not available on ".
+                        KeymanHosts::Instance()->keyman_com_host."'>$hname</span> ";
                     } else {
                       echo "<a href='/keyboards/$hname$session_query_q'>$hname</a> ";
                     }

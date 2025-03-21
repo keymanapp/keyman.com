@@ -3,6 +3,7 @@
   require_once('includes/ui/downloads.php');
   require_once('includes/appstore.php');
   require_once('includes/playstore.php');
+  use Keyman\Site\Common\KeymanHosts;
 
   // Required
   head([
@@ -21,7 +22,7 @@
   for your language. See also the <a href='pre-release'>pre-release download page</a> and the <a href='archive'>old versions download page</a>.
 </p>
 
-<p><a href='<?=$KeymanHosts->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
+<p><a href='<?= KeymanHosts::Instance()->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
 
 
   <a class="button" href="all-versions">Browse all versions (14.0 onwards)</a>

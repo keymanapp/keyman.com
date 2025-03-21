@@ -4,7 +4,7 @@
   namespace Keyman\Site\com\keyman\templates;
 
   use Keyman\Site\Common\ImageRandomizer;
-  use Keyman\Site\com\keyman\KeymanVersion;
+  use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\Common\KeymanHosts;
 
   class Foot {

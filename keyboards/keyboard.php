@@ -3,6 +3,7 @@
   require_once('includes/ui/keyboard-details.php');
   require_once('./session.php');
   require_once __DIR__ . '/../_includes/autoload.php';
+  use Keyman\Site\Common\KeymanHosts;
 
   if(isset($_REQUEST['legacy'])) {
     $id = find_id_by_legacy(clean_id($_REQUEST['legacy']));
@@ -26,8 +27,7 @@
   }
 
   function find_id_by_legacy($legacy) {
-    global $KeymanHosts;
-    $s = @file_get_contents($KeymanHosts->api_keyman_com.'/search/?q=k:legacy:'.rawurlencode($legacy));
+    $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/search/?q=k:legacy:'.rawurlencode($legacy));
     if($s === FALSE) {
       return null;
     }

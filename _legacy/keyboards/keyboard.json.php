@@ -14,7 +14,7 @@
   header('Content-Type: application/json; charset=utf-8');
   header('Access-Control-Allow-Origin: *');
 
-  $kmw = @file_get_contents("{$KeymanHosts->api_keyman_com}/cloud/4.0/keyboards/$id?version=$version&languageidtype=bcp47");
+  $kmw = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com."/cloud/4.0/keyboards/$id?version=$version&languageidtype=bcp47");
   if($kmw === FALSE) {
     header('HTTP/1.0 404 Keyboard not found');
     exit;

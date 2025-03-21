@@ -42,7 +42,7 @@
 
       if(empty($version)) {
         // If version isn't provided, we'll query the live api for the version
-        $json = @file_get_contents(KeymanHosts::Instance()->api_keyman_com . "/$type/" . rawurlencode($id));
+        $json = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com . "/$type/" . rawurlencode($id));
         if ($json !== FALSE) {
           $json = json_decode($json);
         }
@@ -93,7 +93,7 @@
 
     private static function report_download_event($id, $platform, $tier, $bcp47, $update) {
       global $env;
-      $url = KeymanHosts::Instance()->api_keyman_com . "/increment-download/".rawurlencode($id);
+      $url = KeymanHosts::Instance()->SERVER_api_keyman_com . "/increment-download/".rawurlencode($id);
 
       if(KeymanHosts::Instance()->Tier() !== KeymanHosts::TIER_TEST) {
         if(KeymanHosts::Instance()->Tier() === KeymanHosts::TIER_DEVELOPMENT)
