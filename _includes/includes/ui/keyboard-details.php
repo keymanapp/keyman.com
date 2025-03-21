@@ -4,6 +4,7 @@
   require_once('includes/template.php');
   require_once('includes/playstore.php');
   require_once('includes/appstore.php');
+  require_once __DIR__ . '/../../../keyboards/session.php';
 
   use \DateTime;
   use \Keyman\Site\com\keyman\KeymanWebHost;
@@ -203,7 +204,7 @@ END;
           self::$minVersion = isset(self::$keyboard->minKeymanVersion) ? self::$keyboard->minKeymanVersion : $stable_version;
           self::$license = self::map_license(isset(self::$keyboard->license) ? self::$keyboard->license : 'Unknown');
         } else {
-          self::$error .= "Error returned from ".KeymanHosts::Instance()->api_keyman_com.": $s\n";
+          self::$error .= Locale::_s('Error returned from %1$s: %2$s\n', $KeymanHosts::Instance()->api_keyman_com, $s);
           self::$title = 'Failed to load keyboard package ' . self::$id;
           header('HTTP/1.0 500 Internal Server Error');
         }
@@ -608,7 +609,9 @@ END;
                     $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/keyboard/' . rawurlencode($name));
                     if ($s === FALSE) {
                       echo "<span class='keyboard-unavailable' title='This keyboard is not available on ".
-                        KeymanHosts::Instance()->keyman_com_host."'>$hname</span> ";
+		        Locale::_s('This keyboard is not available on %1$s',
+                        KeymanHosts::Instance()->keyman_com_host) .
+                        "'>$hname</span> ";
                     } else {
                       echo "<a href='/keyboards/$hname$session_query_q'>$hname</a> ";
                     }
