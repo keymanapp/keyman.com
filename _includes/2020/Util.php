@@ -21,7 +21,9 @@
           $cdn = false;
         }
       }
-      $use_cdn = KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION || (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
+      $use_cdn = KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION || 
+          KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_STAGING || 
+          (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
       if($use_cdn) {
         if($cdn && isset($cdn['/'.$file])) {
           return "/cdn/deploy{$cdn['/'.$file]}";
