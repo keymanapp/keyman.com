@@ -12,7 +12,8 @@
     'showMenu' => true,
     'banner' => [
       'title' => 'Type in Your Language On Your Android Device!',
-      'button' => '<a href="'.$playstore.'"><img id="app-store" src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" alt="Android app on Google Play"></a>',
+      'button' => '<a href="'.$playstore.'"><img id="app-store" src="cdn(en_app_rgb_wo_60.png)"
+        alt="Android app on Google Play"></a>',
       'image' => 'android-splash.png',
       'background' => 'water'
     ]
