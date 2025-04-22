@@ -338,8 +338,8 @@ html[data-platform~='windows linux macos'] #try-box {
 }
 
 #osk-host {
-  width: 640px;
-  height: 300px;
+  min-width: 640px;
+  min-height: 300px;
 }
 
 #osk-host .kmw-key-square {
