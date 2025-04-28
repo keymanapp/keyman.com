@@ -24,6 +24,11 @@ jobs:
     #
     # Finally, run the tests
     #
+    - name: PHP test
+      shell: bash
+      run: |
+        ./vendor/bin/phpunit --testdox ./
+
     - name: Lint
       shell: bash
       run: |
