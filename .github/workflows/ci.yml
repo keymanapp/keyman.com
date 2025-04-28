@@ -27,8 +27,9 @@ jobs:
     - name: PHP test
       shell: bash
       run: |
-        pwd;
-        ./vendor/bin/phpunit --testdox ./
+        DOCKER_ID="$(docker images -q $keyman-website)"
+        cmd="./vendor/bin/phpunit --testdox ./"
+        docker exec -i $CONTAINER_ID sh -c "${cmd}"
 
     - name: Lint
       shell: bash
