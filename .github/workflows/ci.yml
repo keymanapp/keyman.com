@@ -27,6 +27,7 @@ jobs:
     - name: PHP test
       shell: bash
       run: |
+        pwd;
         ./vendor/bin/phpunit --testdox ./
 
     - name: Lint
