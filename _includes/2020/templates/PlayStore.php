@@ -3,13 +3,14 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
+  use Keyman\Site\com\keyman\Util;
+
   class PlayStore {
     // See also /go/developer/10.0/web.config for another redirect
-
     public const url = 'https://play.google.com/store/apps/details?id=com.tavultesoft.kmapro';
 
     static function getButtonImageSrc() {
-      return "https://developer.android.com/images/brand/en_app_rgb_wo_60.png";
+      return Util::cdn('img/en_app_rgb_wo_60.png');
     }
 
     static function getTable() {
