@@ -17,7 +17,7 @@ jobs:
       shell: bash
       run: |
         echo "TIER_TEST" > tier.txt
-        ./build.sh build start
+        ./build.sh configure build start
       env:
         fail-fast: true
 
@@ -27,7 +27,8 @@ jobs:
     - name: PHP test
       shell: bash
       run: |
-        DOCKER_ID="$(docker images -q $keyman-website)"
+        DOCKER_ID=$(docker images -q keyman-website)
+        CONTAINER_ID=$(docker ps -a -q --filter ancestor=keyman-website)
         cmd="./vendor/bin/phpunit --testdox ./"
         docker exec -i $CONTAINER_ID sh -c "${cmd}"
 
