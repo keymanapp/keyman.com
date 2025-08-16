@@ -307,7 +307,7 @@ function process_response(q, obsolete, res) {
       }
 
       $('.id', k).text(kbd.id);
-      $('.description', k).html(kbd.description);
+      $('.description', k).html(firstParagraph(kbd.description));
 
       switch(kbd.match.type) {
         case 'keyboard': $('.title a', k).mark(qq); break; // don't annotate
@@ -460,6 +460,44 @@ function prepareInitialSearch() {
 
 function isKeyboardObsolete(kbd) {
   return kbd.deprecated || (typeof kbd.encodings.includes === 'function' && !kbd.encodings.includes('unicode'));
+}
+
+/**
+ * Return the first paragraph of a HTML or plain text block, as HTML. This
+ * function is a bit imprecise, but works well enough for our current needs; as
+ * we improve the html descriptions of packages in the keyboards repository, we
+ * may want to revisit this (or remove it entirely by supporting a shorter
+ * summary field).
+ *
+ * For HTML strings (where the source description field in the .keyboard_info
+ * was markdown and converted in the backend to HTML, this stops on first </p>
+ * or <br>. It then adds a </p> in the case of <br> to keep the HTML hopefully
+ * well-formed.
+ *
+ * For text strings, it stops on the first \r or \n (text strings in legacy
+ * .keyboard_info tend to have CRLF line endings), and encloses the result in
+ * <p></p>.
+ *
+ * @param {*} text A HTML or plain-text string
+ * @returns A html snippet
+ */
+function firstParagraph(text) {
+  // Yes, this is HTML parsing by regexp, but we will survive the apocalypse!
+  const firstPara = /^(((?:.|[\r\n])+?)(<\/p>|<br>))/m.exec(text);
+  if(!firstPara) {
+    // No paragraph markers (e.g. legacy .keyboard_info files); it is a plain
+    // text description, so we stop at first newline marker
+    const firstPlainTextPara = /^(.+?)(\r|\n|$)/.exec(text);
+    const html = $('<p>').text(firstPlainTextPara ? firstPlainTextPara[1] : text)[0].outerHTML;
+    return html;
+  }
+  if(firstPara[3] == '<br>') {
+    // We stop at first <br>, so will miss the end of paragraph, so close the
+    // tag ourselves
+    return firstPara[2] + '</p>';
+  }
+  // Return the whole paragraph
+  return firstPara[1];
 }
 
 window.addEventListener('load', load_search, false);
