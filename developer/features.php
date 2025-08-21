@@ -37,6 +37,9 @@
       <li>Font settings for on screen keyboards are now kept consistent with package metadata during compilation (#12949)</li>
       <li>New npm module @keymanapp/langtags makes langtags.json easily accessible (#13046)</li>
       <li>Compiler messages now have links to additional documentation (#13156)</li>
+    </ul>
+    <h2 class="red underline">Other features</h2>
+    <ul>
       <li>Redesigned Touch Layout Editor and introduced support for Flicks and Multitap (#6884)
         <ul>
           <li>Note: these gestures will be supported for use in Keyman 17.0</li>
