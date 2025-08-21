@@ -32,7 +32,11 @@
         <br/><br/><br/>
         <h2 class="red center">What's New</h2>
         <ul>
-          <li>Revamp Configuration UI (#7206)</li>
+            <li>Minimum supported version of Windows is 10.0</li>
+            <li>Updates to Keyman are now applied before Keyman starts for the first time in a session, so Windows no longer needs to be restarted (#10041)</li>
+            <li>Keyman no longer adds a desktop shortcut when it is installed (#11401)</li>
+            <li>Added an option to make Right Alt and Right Control also work for keyboard switching hotkeys if preferred (#11471)</li>
+            <li>Revamp Configuration UI (#7206)</li>
         </ul>
     </div>
     <div class="section" id="setup">
