@@ -29,6 +29,19 @@
     <h2 class="red underline">What's New</h2>
 
     <ul>
+      <li>Updated to Unicode 16.0 (#12393)</li>
+      <li>Improve automatic detection of minimum Keyman version for a keyboard during compilation (#11981, #11982, #11965, #11957)</li>
+      <li>Generate keyboards and lexical models from templates, with kmc generate (#11014)</li>
+      <li>Clone existing keyboard and lexical model projects, both from local file system and also from any open source online Keyman keyboard in Keyman Cloud or GitHub, with kmc copy and New Project dialogs (#12555, #12586, #13076)</li>
+      <li>Support extending existing &displaymap data files when adding new characters (#12622)</li>
+      <li>Font settings for on screen keyboards are now kept consistent with package metadata during compilation (#12949)</li>
+      <li>New npm module @keymanapp/langtags makes langtags.json easily accessible (#13046)</li>
+      <li>Compiler messages now have links to additional documentation (#13156)</li>
+    </ul>
+    <br/><br/>
+
+    <h3 class="red underline">Other features</h3>
+    <ul>
       <li>Redesigned Touch Layout Editor and introduced support for Flicks and Multitap (#6884)
         <ul>
           <li>Note: these gestures will be supported for use in Keyman 17.0</li>

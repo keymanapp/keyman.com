@@ -90,6 +90,15 @@
 
 <p class='center'><img src='<?= cdn('img/mac-configuration.png'); ?>' alt='Keyman Configuration' /></p>
 
+<h3>New in Keyman for macOS 18.0</h3>
+<ul>
+  <li>Minimum supported version of macOS is 10.13 High Sierra.</li>
+  <li>Improved handling of Option key and how it relates to Alt key in Keyman keyboards (#12458)</li>
+  <li>Keyman keyboards are now stored in the preferred location, /Library/Application Support, instead of /Documents (#12106)</li>
+  <li>Removed ‘Use Verbose console Logging’ option and use Apple unified logging system instead (#12431)</li>
+  <li>Removed ‘Always Show OSK’ option and automatically remember OSK window state instead (#12355)</li>
+</ul>
+
 <h2 class="red underline">Frequently Asked Questions</h2>
 <p>
     <span class="red">Q.</span> How do I install Keyman for macOS?

@@ -97,6 +97,14 @@
 
 <p class='center'><img src='<?= cdn('img/linux-configuration.png'); ?>' alt='Keyman Configuration' /></p>
 
+<h3>New in Keyman for Linux 18.0</h3>
+<ul>
+  <li>Minimum supported version for Ubuntu is Ubuntu 22.04 Jammy (#12003).</li>
+  <li>Other supported versions of Ubuntu are 24.04 Noble and 24.10 Oracular.</li>
+  <li>Keyman no longer requires a patched version of ibus as Keyman now uses a system service to manage keystroke order (#11535).</li>
+  <li>Support for simulation of AltGr (right Alt) with Ctrl+Alt (#11852).</li>
+</ul>
+
 <h2 class="red underline">Frequently Asked Questions</h2>
 <p>
   <span class="red">Q.</span> What Linux distros will Keyman work with?
