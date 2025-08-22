@@ -38,7 +38,9 @@
       <li>New npm module @keymanapp/langtags makes langtags.json easily accessible (#13046)</li>
       <li>Compiler messages now have links to additional documentation (#13156)</li>
     </ul>
-    <h2 class="red underline">Other features</h2>
+    <br/><br/>
+
+    <h3 class="red underline">Other features</h3>
     <ul>
       <li>Redesigned Touch Layout Editor and introduced support for Flicks and Multitap (#6884)
         <ul>
