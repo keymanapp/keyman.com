@@ -76,7 +76,7 @@ function wrapSearch(localCounter, updateHistory) {
   // Workaround for HTML form encoding spaces with "+", which breaks keyboard searches
   q = q.replace(/\+/g, ' ');
   document.f.q.value = q;
-  if((!updateHistory && q.trim().length < 3) || q.trim().length == 0) {
+  if((!updateHistory && q.trim().length < 2) || q.trim().length == 0) {
     var resultsElement = $('#search-results');
     resultsElement.empty();
     if(updateHistory)
@@ -84,7 +84,7 @@ function wrapSearch(localCounter, updateHistory) {
     $('#search-box').removeClass('searching');
     return false;
   }
-
+  
   var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.localhost]"
   var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(stripCommonWords(q));
 
