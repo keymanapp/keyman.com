@@ -99,6 +99,15 @@
 </table>
 
 <br/>
+<h3>New in Keyman for Android 18.0 (April 2025)</h3>
+<ul>
+  <li>ENTER key can now handle different actions such as: newline, Previous, Next, Submit, and Search. (#12125, #12315, #12473)</li>
+  <li>New menu to adjust the number of milliseconds (300 ms to 1500 ms) required to trigger a longpress gesture (#12170, #12185)</li>
+  <li>Navigation arrows for back / forward actions now show correctly in right-to-left (RTL) languages (#12227)</li>
+  <li>Predictive text and on screen keyboard startup performance improvements (#11784, #11264, #11265)</li>
+</ul>
+
+<br/>
 <h3>New in Keyman for Android 17.0 (May 2024)</h3>
 <ul>
   <li>Multitap and flick gestures are now supported for Android. (#7324)</li>

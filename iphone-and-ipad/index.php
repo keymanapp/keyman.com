@@ -83,6 +83,13 @@
   </tbody>
 </table>
 
+<h2>New in Keyman 18.0 (April 2025)</h2>
+<ul>
+  <li>Predictive text and on screen keyboard startup performance improvements (#11784, #11264, #11265)</li>
+  <li>Keyboard size can now be adjusted to your preference (#12571)</li>
+  <li>Update minimum iOS version to 13.0</li>
+</ul>
+
 <h2>New in Keyman 17.0 (May 2024)</h2>
 <ul>
   <li>Multitap and flick gestures are now supported for iOS (#7934)</li>
