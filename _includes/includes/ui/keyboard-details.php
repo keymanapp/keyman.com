@@ -128,9 +128,10 @@ END;
         // Get the localized strings to pass to heredoc syntax
         $install_keyboard = _('Install keyboard');
         $install_keyboard_description = Locale::_s('Installs %1$s for %2$s on this device', $h_filename, $platformTitle);
+        $text_font_style = self::get_font_style($install_keyboard);
         return <<<END
 <div class="download download-$platform">
-  <a class='download-link binary-download' href='$installLink'><span>$install_keyboard</span></a>
+  <a class='download-link binary-download' $text_font_style href='$installLink'><span>$install_keyboard</span></a>
   <div class="download-description">$install_keyboard_description</div>
 </div>
 END;
@@ -183,9 +184,10 @@ END;
         $description = '';
         $linktext = _('Full online editor');
       }
+      $text_font_style = self::get_font_style($linktext);
       return <<<END
         <div class="download download-web">
-          <a class="download-link" $embed_target href='$url'>$linktext</a>
+          <a class="download-link" $text_font_style $embed_target href='$url'>$linktext</a>
           $description
         </div>
 END;
@@ -273,6 +275,19 @@ END;
           }
         }
       }
+    }
+
+    /* Adjust the text size of the button depending on the string length */
+    private static function get_font_style($s) {
+      $length = strlen($s);
+
+      if ($length > 22) {
+        return "style='font-size: 12pt;'";
+      } else if ($length > 18) {
+        return "style='font-size: 14pt;'";
+      }
+
+      return "";
     }
 
     private static function array_find($xs, $f) {
