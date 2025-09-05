@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+## Default English strings for keyboards/install.php
+
+## WriteWindowsBoxes strings
+
+# Windows Download prompt - line 1
+msgid "Your %1$s keyboard download should start shortly."
+msgstr "Your %1$s keyboard download should start shortly."
+
+# Windows Download prompt - line 2
+msgid "If it does not, click the button below to start the download."
+msgstr "If it does not, click the button below to start the download."
+
+## Common strings to Write[Platform]Boxes
+
+# Link to help on installing Keyman
+msgid "Help on installing Keyman"
+msgstr "Help on installing Keyman"
+
+# Link to help on keyboard documentation
+msgid "%1$s keyboard home"
+msgstr "%1$s keyboard home"
+
+# Link to help on installing a keyboard
+msgid "Help on installing a keyboard"
+msgstr "Help on installing a keyboard"
+
+# Prompt if Keyman not installed
+msgid "If you have not yet installed %1$s, please install it first before installing the keyboard."
+msgstr "If you have not yet installed %1$s, please install it first before installing the keyboard."
+
+# Title if Keyman not installed
+msgid "Download and install Keyman"
+msgstr "Download and install Keyman"
+
+# Text to install Keyman for [platform]
+msgid "Install Keyman for %1$s"
+msgstr "Install Keyman for %1$s"
+
+# Install keyboard button text
+msgid "Install keyboard"
+msgstr "Install keyboard"
+
+# Install keyboard button description: [name] for [platform]
+msgid "Downloads %1$s for %2$s."
+msgstr "Downloads %1$s for %2$s."
