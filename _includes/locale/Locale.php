@@ -89,7 +89,7 @@
 
     /**
      * Wrapper to format string with gettext '_(' alias and variable args
-     * @param $s - the format string
+     * @param $s - the format string (in single-quotes)
      * @param $args - optional remaining args to the format string
      */ 
     public static function _s($s, ...$args) {

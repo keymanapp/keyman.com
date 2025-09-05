@@ -14,7 +14,10 @@ The Docker image has the "en_US.UTF-8" locale enabled in `/etc/locale.gen`
 We'll use `textdomain` to specify filenames for "switching" localization. 
 The filenames will include the `%locale%` as defined in the [crowdin.com project](https://crowdin.com/project/keymancom).
 
-Note: the details below will get refactored to use a Locale.php class
+When adding new languages in Crowdin, remember to add them to the `CROWDIN_LOCALES` array in Locale.php
+
+> [!NOTE]
+> The details below will get refactored to use a Locale.php class
 
 In the example below, the English file `keyboards-en.po` is copied to `keyboards-fr-FR.po` for French.
 
@@ -36,6 +39,7 @@ bindtextdomain("keyboards-fr-FR", "../_includes/locale");
 ```
 
 3. To use French,
+
 ```php
 textdomain('keyboards-fr-FR');
 ```
@@ -43,3 +47,6 @@ textdomain('keyboards-fr-FR');
 ----
 
 For formatted string, use the PHP wrapper [`Locale::_s(msgstr, $args)`](./Locale.php).
+
+> [!IMPORTANT] 
+> Use single quotes '' for msgstr

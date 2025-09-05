@@ -136,9 +136,10 @@ END;
 </div>
 END;
       } else {
+        $keyboard_not_supported = _('This keyboard is not supported on this device. You may find other options below.');
         return <<<END
 <div class="download download-$platform">
-  <span>This keyboard is not supported on this device. You may find other options below.</span>
+  <span>$keyboard_not_supported</span>
 </div>
 END;
       }
@@ -228,6 +229,7 @@ END;
         else // ansi
           self::$keyboardEncoding = _('Legacy (ANSI)');
 
+        // TODO: Internationalize date format, but would require a lot more Dockerfile dependencies
         $date = new DateTime(self::$keyboard->lastModifiedDate);
         self::$keyboardLastModifiedDate = $date->format('Y-m-d H:i');
 
@@ -421,7 +423,7 @@ END;
 
         if ($embed_win && isset(self::$keyboard->minKeymanVersion) && version_compare(self::$keyboard->minKeymanVersion, $embed_version) > 0) {
 ?>
-        <p><?= Locale::_s("Sorry, this keyboard requires Keyman %1$s or higher.", self::$keyboard->minKeymanVersion) ?> </p>
+        <p><?= Locale::_s('Sorry, this keyboard requires Keyman %1$s or higher.', self::$keyboard->minKeymanVersion) ?> </p>
 <?php
         } else {
           echo $text;

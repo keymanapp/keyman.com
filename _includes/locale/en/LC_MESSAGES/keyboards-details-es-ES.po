@@ -34,6 +34,10 @@ msgstr "Instalar teclado"
 msgid "Installs %1$s for %2$s on this device"
 msgstr "Instalaciones %1$s para %2$s en este dispositivo"
 
+# keyboard download is not supported on this device
+msgid "This keyboard is not supported on this device. You may find other options below."
+msgstr "Este teclado no es compatible con este dispositivo. Puede encontrar otras opciones a continuación."
+
 # Try this keyboard heading
 msgid "Try this keyboard"
 msgstr "Prueba este teclado"
