@@ -3,6 +3,7 @@
 
   namespace Keyman\Site\com\keyman;
 
+  //require_once('./session.php');
   require __DIR__ . '/../_includes/autoload.php';
 
   use Keyman\Site\com\keyman\templates\Head;
@@ -13,8 +14,11 @@
   use Keyman\Site\com\keyman\templates\PlayStore;
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\Common\KeymanVersion;
+  use Keyman\Site\com\keyman\Locale;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\com\keyman\Util;
+
+  Locale::localize('keyboards-install');
 
   // Bundled downloads will make use of Keyman tier, which the site visitor
   // can override with tier=[alpha|beta|stable]. If no override has been
@@ -121,18 +125,28 @@
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
 
+      $keyboard_start_shortly = 
+        Locale::_s(
+          'Your %1$s keyboard download should start shortly.',
+          $h['name']) .
+        _('If it does not, click the button below to start the download.');
+      $help_installing_keyman = _('Help on installing Keyman');
+      $keyboard_home =
+        Locale::_s(
+          '%1$s keyboard home',
+          $h['name']);
+      $download_keyboard = _('Download keyboard');
       $result = <<<END
         <div class='download download-windows'>
-        <p>Your {$h['name']} keyboard download should start shortly. If it does not,
-        click the button below to start the download.</p>
-        <div class='download download-windows'><a class='download-link binary-download' href='$downloadLink'><span>Download keyboard</span></a></div>
+        <p>$keyboard_start_shortly</p>
+        <div class='download download-windows'><a class='download-link binary-download' href='$downloadLink'><span>$download_keyboard</span></a></div>
         <script data-host="{$h['host']}" data-tier="{$h['tier']}" data-version="{$h['version']}"
             data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
           startAfterPageLoad_Windows(document.currentScript.dataset);
         </script>
         <ul>
-        <li><a href='$helpLink'>Help on installing Keyman</a></li>
-        <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+        <li><a href='$helpLink'>$help_installing_keyman</a></li>
+        <li><a href='$keyboardHomeUrl'>$keyboard_home</a></li>
         </ul>
         </div>
 END;
@@ -222,24 +236,39 @@ END;
 
       $downloadKeymanUrl = KeymanHosts::Instance()->keyman_com . '/linux/download';
 
+      $keyboard_start_shortly =
+        Locale::_s(
+          'If you have not yet installed %1$s, please install it first before installing the keyboard',
+          'Keyman for Linux');
+      $download_keyman_title = _('Download and install Keyman');
+      $install_keyman = 
+        Locale::_s(
+          'Install Keyman for %1$s',
+          'Linux'); // platform
+      $install_keyboard = _('Install keyboard');
+      $help_installing_keyboard = _('Help on installing a keyboard');
+      $keyboard_home =
+        Locale::_s(
+          '%1$s keyboard home',
+          $h['name']);
       $result = <<<END
         <div class='download download-linux'>
           <script data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
             startAfterPageLoad_Linux(document.currentScript.dataset);
           </script>
           <div>
-            <p>If you have not yet installed Keyman for Linux, please install it first before installing the keyboard.</p>
+            <p>$keyboard_start_shortly</p>
             <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for Linux</a></li>
+              <li id='step1'><a href='$downloadKeymanUrl' title='$download_keyman_title'>$install_keyman</a></li>
               <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>Install keyboard</span></a>
+                <span>$install_keyboard</span></a>
               </li>
             </ol>
 
             <br>
             <ul>
-              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
-              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+              <li><a href='$helpLink'>$help_installing_keyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>$keyboard_home</a></li>
             </ul>
           </div>
         </div>
