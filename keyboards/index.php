@@ -7,10 +7,13 @@
   use Keyman\Site\com\keyman\templates\Menu;
   use Keyman\Site\com\keyman\templates\Body;
   use Keyman\Site\com\keyman\templates\Foot;
+  use Keyman\Site\com\keyman\Locale;
+
+  Locale::localize('keyboards');
 
   $head_options = [
-    'title' =>'Keyboard Search',
-    'description' => 'Keyman Keyboard Search',
+    'title' =>Locale::_m('page_title'),
+    'description' => Locale::_m('page_description'),
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
     'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
       Util::cdn('keyboard-search/search.js')]
@@ -46,14 +49,14 @@
 
 <div class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>'>
 
-  <h2 class="red underline"><a href='/keyboards'>Keyboard Search</a></h2>
+  <h2 class="red underline"><a href='/keyboards'><?= Locale::_m('page_title') ?></a></h2>
 
   <div id='search-box'>
     <form method='get' action='/keyboards' name='f'>
-      <label for="search-q">Keyboard search:</label><input id="search-q" type="text" placeholder="Enter language or keyboard" name="q"
+      <label for="search-q"><?= Locale::_m('keyboard_search') ?></label><input id="search-q" type="text" placeholder="<?= Locale::_m('enter_language') ?>" name="q"
       <?php if($embed == 'none') echo 'autofocus'; ?>>
-      <input id="search-f" type="image" src="<?= cdn('img/search-button.png"') ?>" value="Search" onclick="return do_search()">
-      <label id="search-new"><a href='/keyboards<?=$session_query_q?>'>New search</a></label>
+      <input id="search-f" type="image" src="<?= cdn('img/search-button.png"') ?>" value="<?= Locale::_m('search') ?>" onclick="return do_search()">
+      <label id="search-new"><a href='/keyboards<?=$session_query_q?>'><?= Locale::_m('new_search')?></a></label>
       <input id="search-obsolete" type="hidden" name="obsolete" value="0">
       <input id="search-page" type="hidden" name="page" value="1">
     </form>
@@ -62,14 +65,14 @@
   <div id='search-results-container' class=''>
   <div id='search-results'></div>
   <div id='search-results-empty'>
-    <p>Enter the name of a keyboard or language to search for. (<a href="?q=p:popular">Popular keyboards</a> | <a href="?q=p:alphabetical">All keyboards</a>)</p>
+    <p><?= Locale::_m('enter_name') ?> (<a href="?q=p:popular"><?= Locale::_m('popular_keyboards') ?></a> | <a href="?q=p:alphabetical"><?= Locale::_m('all_keyboards') ?></a>)</p>
     <br />
-    <p>Hints</p>
+    <p><?= Locale::_m('hints') ?></p>
     <ul>
-      <li>The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names.</li>
-      <li>You can apply prefixes <code>k:</code> (keyboards), <code>l:</code> (languages), <code>s:</code> (scripts, writing systems)
-      or <code>c:</code> (countries) to filter your search results. For example <code>c:thailand</code> searches for keyboards for languages used in Thailand.</li>
-      <li>Use prefix <code>l:id:</code> to search for a BCP 47 language tag, for example <code>l:id:ti-et</code> searches for Tigrigna (Ethiopia).</li>
+      <li><?= Locale::_m('searchbox_description') ?></li>
+      <li><?= Locale::_m('searchbox_hint') ?> <code>k:</code> <?= Locale::_m('(keyboards)') ?> <code>l:</code> <?= Locale::_m('(languages)') ?> <code>s:</code> <?= Locale::_m('(scripts, writing systems) or') ?>
+        <code>c:</code> <?= Locale::_m('(countries) to filter your search results. For example') ?> <code>c:thailand</code> <?= Locale::_m('searches for keyboards for languages used in Thailand.') ?></li>
+      <li><?= Locale::_m('use_prefix') ?> <code>l:id:</code> <?= Locale::_m('to search for a BCP 47 language tag, for example') ?> <code>l:id:ti-et</code> <?= Locale::_m('searches_tigrigna') ?></li>
     </ul>
   </div>
 </div>
