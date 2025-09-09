@@ -8,22 +8,24 @@
 
   namespace Keyman\Site\com\keyman;
 
+  use \Keyman\Site\Common\KeymanHosts;
+
   class Locale {
     public const DEFAULT_LOCALE = 'en';
 
     public const CROWDIN_LOCALES = array(
       'en',
-      'es-ES',
-      'fr-FR'
+      'es',
+      'fr'
     );
 
     // xx-YY locale as specified in crowdin %locale%
     private static $currentLocale = Locale::DEFAULT_LOCALE;
 
-    // If set to true, warn about untranslated strings
-    private static $debugMode = false; // Keep false in production
-
-    // Associative array to hold translated strings in "current locale" and English
+    // strings is an array of domains.
+    // Each domain is an array of locales
+    // Each locale is an object? with loaded flag and array of strings
+    private static $strings = [];
     private static $langArray = [];
     private static $langArrayEn = [];
 
@@ -55,13 +57,28 @@
       return in_array($locale, Locale::CROWDIN_LOCALES);
     }
 
+    public static function loadDomain($domain) {
+      self::$strings[$domain] = [];
+      echo __DIR__;
+      $files = glob('/locale/strings/$domain');
+      if ($files == false) {
+        echo "failed";
+        return false;
+      }
+      foreach ($files as $file) {
+        $file = pathinfo($file, PATHINFO_FILENAME);
+        echo "$file";
+      }
+
+    }
+
     /**
      * Reads localized strings from the specified $domain-locale.php file
      * @param $domain - base filename of the .php file containing localized strings
      * (name not including -xx-YY locale)
      * path is relative to _includes/locale/
      */
-    public static function localize($domain) {
+    public static function loadStrings($domain) {
       $currentLocaleFilename = sprintf("%s/%s-%s",
         __DIR__ . '/en/LC_MESSAGES/',
         $domain,
@@ -90,7 +107,7 @@
      */
     public static function _m($id) {
       if (!isset(self::$langArray[$id])) {
-        if (self::$debugMode) {
+        if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT) {
           // Warn about untranslated strings
           echo "WARNING: $id untranslated for " . Locale::$currentLocale;
         }

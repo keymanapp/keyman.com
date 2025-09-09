@@ -9,7 +9,7 @@
   use Keyman\Site\com\keyman\templates\Foot;
   use Keyman\Site\com\keyman\Locale;
 
-  Locale::localize('keyboards');
+  Locale::loadDomain('keyboards');
 
   $head_options = [
     'title' =>Locale::_m('page_title'),
