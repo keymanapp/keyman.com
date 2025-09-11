@@ -19,57 +19,54 @@
       'fr'
     );
 
+    // array of the support locales 
     // xx-YY locale as specified in crowdin %locale%
-    private static $currentLocale = Locale::DEFAULT_LOCALE;
+    private static $currentLocales = [];
 
     // strings is an array of domains.
     // Each domain is an array of locales
     // Each locale is an object? with loaded flag and array of strings
     private static $strings = [];
-    private static $langArray = [];
-    private static $langArrayEn = [];
 
     /**
      * Return the current locale. Fallback to 'en'
-     * @return $currentLocale
+     * @return $currentLocales
      */
-    public static function currentLocale() {
-      return Locale::$currentLocale;
+    public static function currentLocales() {
+      return self::$currentLocales;
     }
 
     /**
-     * Validate and override the current locale
+     * Set the primary locale, with an array of fallbacks, ending in 'en'.
      * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
      */
-    public static function overrideCurrentLocale($locale) {
-      if (Locale::validateLocale($locale)) {
-        Locale::$currentLocale = $locale;
-      }
+    public static function setLocale($locale) {
+      // TODO: support other fallbacks such as es-419 -> es
+      self::$currentLocales = [$locale, Locale::DEFAULT_LOCALE];
     }
 
     /**
-     * Validate $locale is an acceptable locale.
-     * Using xx-YY as specified in crowdin %locale%
-     * @param $locale - the locale to validate
-     * @return true if valid locale
+     * Load the strings for the given domain
+     * @param $domain - the domain of strings
+     * @return boolean - true if successfully loaded strings
      */
-    public static function validateLocale($locale) {
-      return in_array($locale, Locale::CROWDIN_LOCALES);
-    }
-
     public static function loadDomain($domain) {
+      //echo `in loadDomain $domain\n`;
       self::$strings[$domain] = [];
-      echo __DIR__;
-      $files = glob('/locale/strings/$domain');
+      $path = __DIR__ . '/strings/' . $domain . '/*.php';
+      $files = glob(__DIR__ . '/strings/' . $domain . '/*.php');
       if ($files == false) {
-        echo "failed";
         return false;
       }
       foreach ($files as $file) {
+        // files are named by locale
         $file = pathinfo($file, PATHINFO_FILENAME);
-        echo "$file";
+        self::$strings[$domain][$file] = (object)[
+          'strings' => [],
+          'loaded' => false
+        ];
       }
-
+      return true;
     }
 
     /**
@@ -77,53 +74,68 @@
      * @param $domain - base filename of the .php file containing localized strings
      * (name not including -xx-YY locale)
      * path is relative to _includes/locale/
+     * @param $locale - locale for the strings to load
      */
-    public static function loadStrings($domain) {
-      $currentLocaleFilename = sprintf("%s/%s-%s",
-        __DIR__ . '/en/LC_MESSAGES/',
+    public static function loadStrings($domain, $locale) {
+      $currentLocaleFilename = sprintf("%s/%s/%s",
+        __DIR__ . '/strings/',
         $domain,
-        Locale::$currentLocale . '.php');
-      $enLocaleFilename =  sprintf("%s/%s-%s",
-        __DIR__ . '/en/LC_MESSAGES/',
-        $domain,
-        Locale::DEFAULT_LOCALE . '.php');
+        $locale . '.php');
 
-      if (Locale::$currentLocale != Locale::DEFAULT_LOCALE && 
-          file_exists($currentLocaleFilename)) {
-        self::$langArray = require $currentLocaleFilename;
-      } else {
-        self::$langArray = [];
-      }
-      if (file_exists($enLocaleFilename)) {
-        self::$langArrayEn = require $enLocaleFilename;
-      } else {
-        die("English strings in $enLocaleFilename not found");
+      if (file_exists($currentLocaleFilename)) {
+        self::$strings[$domain][$locale]-> strings = require $currentLocaleFilename;
+        self::$strings[$domain][$locale]-> loaded = true;
       }
     }
 
     /**
      * Wrapper to lookup string. Fallback to English
+     * @param $domain - the domain file
      * @param $id - the key
      */
-    public static function _m($id) {
-      if (!isset(self::$langArray[$id])) {
-        if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT) {
-          // Warn about untranslated strings
-          echo "WARNING: $id untranslated for " . Locale::$currentLocale;
+    private static function getString($domain, $id) {
+      if (!array_key_exists($domain, self::$strings)) {
+        // Load the domain if it doesn't exist
+        if (!self::loadDomain($domain)) {
+          die('Domain ' . $domain . "doesn't exist");
         }
-        return self::$langArrayEn[$id];
       }
 
-      return self::$langArray[$id];
+      foreach (self::currentLocales() as $locale) {
+        if (!array_key_exists($locale, self::$strings[$domain])) {
+          continue;
+        }
+
+        //echo self::$strings[$domain][$locale]->strings;
+        if (!self::$strings[$domain][$locale]->loaded) {
+          // Will set -> loaded = true
+          self::loadStrings($domain, $locale);
+        }
+
+        if (array_key_exists($id, self::$strings[$domain][$locale]->strings)) {
+          return self::$strings[$domain][$locale]->strings[$id];
+        }
+      }
+
+      // String not found in any localization - 
+      if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT) {
+        die('string ' . $id . ' is missing in all the l10ns');
+      }
+      return $id;
     }
 
     /**
      * Wrapper to format string with gettext '_(' alias and variable args
      * Placeholders should escape like %1\$s
-     * @param $s - the format string
+     * @param $domain - the PHP file using the localized strings
+     * @param $id - the id for the string
      * @param $args - optional remaining args to the format string
      */ 
-    public static function _s($s, ...$args) {
-      return vsprintf(self::_m($s), $args);
+    public static function m($domain, $id, ...$args) {
+      $str = self::getString($domain, $id);
+      if (count($args) == 0) {
+        return $str;
+      }
+      return vsprintf($str, $args);
     }
   }

@@ -33,11 +33,11 @@
   $embed_developer = $embed == 'developer';
 
   if(isset($_REQUEST['lang'])) {
-    \Keyman\Site\com\keyman\Locale::overrideCurrentLocale($_REQUEST['lang']);
+    \Keyman\Site\com\keyman\Locale::setLocale($_REQUEST['lang']);
   } else if (isset($_SESSION['lang'])) {
-    \Keyman\Site\com\keyman\Locale::overrideCurrentLocale($_SESSION['lang']);
+    \Keyman\Site\com\keyman\Locale::setLocale($_SESSION['lang']);
   }
-  $_SESSION['lang'] = \Keyman\Site\com\keyman\Locale::currentLocale();
+  $_SESSION['lang'] = \Keyman\Site\com\keyman\Locale::currentLocales()[0];
 
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
