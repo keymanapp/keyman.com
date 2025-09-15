@@ -13,12 +13,6 @@
   class Locale {
     public const DEFAULT_LOCALE = 'en';
 
-    public const CROWDIN_LOCALES = array(
-      'en',
-      'es',
-      'fr'
-    );
-
     // array of the support locales 
     // xx-YY locale as specified in crowdin %locale%
     private static $currentLocales = [];
@@ -37,12 +31,23 @@
     }
 
     /**
-     * Set the primary locale, with an array of fallbacks, ending in 'en'.
+     * Set the current locales, with an array of fallbacks, ending in 'en'.
      * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
      */
     public static function setLocale($locale) {
-      // TODO: support other fallbacks such as es-419 -> es
-      self::$currentLocales = [$locale, Locale::DEFAULT_LOCALE];
+      // Reset currentLocales to the give locale
+      self::$currentLocales = [$locale];
+
+      // Support other fallbacks such as es-419 -> es
+      $parts = explode('-', $locale);
+      for ($i = count($parts)-1; $i > 0; $i--) {
+        $lastPosition = strrpos($locale, $parts[$i]) - 1;
+        // Insert language tag substring to head
+        array_unshift(self::$currentLocales, substr($locale, 0, $lastPosition));
+      }
+
+      // Push default fallback locale to the end
+      array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
     }
 
     /**
@@ -51,7 +56,6 @@
      * @return boolean - true if successfully loaded strings
      */
     public static function loadDomain($domain) {
-      //echo `in loadDomain $domain\n`;
       self::$strings[$domain] = [];
       $path = __DIR__ . '/strings/' . $domain . '/*.php';
       $files = glob(__DIR__ . '/strings/' . $domain . '/*.php');
@@ -92,6 +96,7 @@
      * Wrapper to lookup string. Fallback to English
      * @param $domain - the domain file
      * @param $id - the key
+     * @return localized string, or fallback to English string, and then $id
      */
     private static function getString($domain, $id) {
       if (!array_key_exists($domain, self::$strings)) {
@@ -125,8 +130,9 @@
     }
 
     /**
-     * Wrapper to format string with gettext '_(' alias and variable args
-     * Placeholders should escape like %1\$s
+     * Wrapper to lookup localized string for webpage domain. 
+     * Formatted string using optional variable args for placeholders
+     * should escape like %1\$s
      * @param $domain - the PHP file using the localized strings
      * @param $id - the id for the string
      * @param $args - optional remaining args to the format string
