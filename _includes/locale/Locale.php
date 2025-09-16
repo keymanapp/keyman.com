@@ -15,7 +15,7 @@
 
     // array of the support locales 
     // xx-YY locale as specified in crowdin %locale%
-    private static $currentLocales = [];
+    private static $currentLocales = [self::DEFAULT_LOCALE];
 
     // strings is an array of domains.
     // Each domain is an array of locales
@@ -23,7 +23,7 @@
     private static $strings = [];
 
     /**
-     * Return the current locale. Fallback to 'en'
+     * Return the current locales. Fallback to 'en'
      * @return $currentLocales
      */
     public static function currentLocales() {
@@ -35,16 +35,7 @@
      * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
      */
     public static function setLocale($locale) {
-      // Reset currentLocales to the give locale
-      self::$currentLocales = [$locale];
-
-      // Support other fallbacks such as es-419 -> es
-      $parts = explode('-', $locale);
-      for ($i = count($parts)-1; $i > 0; $i--) {
-        $lastPosition = strrpos($locale, $parts[$i]) - 1;
-        // Insert language tag substring to head
-        array_unshift(self::$currentLocales, substr($locale, 0, $lastPosition));
-      }
+      self::$currentLocales = self::calculateFallbackLocales($locale);
 
       // Push default fallback locale to the end
       array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
@@ -93,6 +84,29 @@
     }
 
     /**
+     * Given a locale, return an array of fallback locales
+     * For example: es-ES --> [es, es-ES]
+     * TODO: Use an existing fallback algorthim like
+     *  https://cldr.unicode.org/development/development-process/design-proposals/language-distance-data
+     * @param $locale - the locale to determine fallback locales
+     * @return array of fallback locales
+     */
+    private static function calculateFallbackLocales($locale) {
+      // Start with the given locale
+      $fallback = [$locale];
+
+      // Support other fallbacks such as es-419 -> es
+      $parts = explode('-', $locale);
+      for ($i = count($parts)-1; $i > 0; $i--) {
+        $lastPosition = strrpos($locale, $parts[$i]) - 1;
+        // Insert language tag substring to head
+        array_unshift($fallback, substr($locale, 0, $lastPosition));
+      }
+
+      return $fallback;
+    }
+
+    /**
      * Wrapper to lookup string. Fallback to English
      * @param $domain - the domain file
      * @param $id - the key
@@ -111,7 +125,6 @@
           continue;
         }
 
-        //echo self::$strings[$domain][$locale]->strings;
         if (!self::$strings[$domain][$locale]->loaded) {
           // Will set -> loaded = true
           self::loadStrings($domain, $locale);
