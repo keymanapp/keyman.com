@@ -15,7 +15,7 @@
 
     // array of the support locales 
     // xx-YY locale as specified in crowdin %locale%
-    private static $currentLocales = [self::DEFAULT_LOCALE];
+    private static $currentLocales = [];
 
     // strings is an array of domains.
     // Each domain is an array of locales
@@ -35,7 +35,12 @@
      * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
      */
     public static function setLocale($locale) {
-      self::$currentLocales = self::calculateFallbackLocales($locale);
+      // Clear current locales
+      self::$currentLocales == [];
+
+      if (!empty($locale)) {
+        self::$currentLocales = self::calculateFallbackLocales($locale);
+      }
 
       // Push default fallback locale to the end
       array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);

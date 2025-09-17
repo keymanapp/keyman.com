@@ -66,7 +66,7 @@ return [
   # Search box hint: BCP 47 prefix
   "use_prefix" => "Use prefix",
   
-  # Seach box hint: BCP 47 language example
+  # Search box hint: BCP 47 language example
   "to search for a BCP 47 language tag, for example" => 
     "to search for a BCP 47 language tag, for example",
   

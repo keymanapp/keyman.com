@@ -37,7 +37,10 @@
   } else if (isset($_SESSION['lang'])) {
     \Keyman\Site\com\keyman\Locale::setLocale($_SESSION['lang']);
   }
-  $_SESSION['lang'] = \Keyman\Site\com\keyman\Locale::currentLocales()[0];
+  $embed_locale = \Keyman\Site\com\keyman\Locale::currentLocales();
+  if (!empty($embed_locale) && $embed_locale != \Keyman\Site\com\keyman\Locale::DEFAULT_LOCALE) { 
+    $_SESSION['lang'] = $embed_locale[0];
+  }
 
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
