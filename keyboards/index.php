@@ -16,6 +16,7 @@
   $head_options = [
     'title' => _m('page_title'),
     'description' => _m('page_description'),
+    'language' => isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en',
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
     'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
       Util::cdn('keyboard-search/search.js')]

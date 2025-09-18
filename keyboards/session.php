@@ -36,6 +36,10 @@
     \Keyman\Site\com\keyman\Locale::setLocale($_REQUEST['lang']);
   } else if (isset($_SESSION['lang'])) {
     \Keyman\Site\com\keyman\Locale::setLocale($_SESSION['lang']);
+  } else {
+    // Fallback to English locale
+    \Keyman\Site\com\keyman\Locale::setLocale(
+      \Keyman\Site\com\keyman\Locale::DEFAULT_LOCALE);
   }
   $embed_locale = \Keyman\Site\com\keyman\Locale::currentLocales();
   if (!empty($embed_locale) && $embed_locale != \Keyman\Site\com\keyman\Locale::DEFAULT_LOCALE) { 
