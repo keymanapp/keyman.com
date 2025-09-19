@@ -4,6 +4,7 @@
  * Keyman is copyright (C) SIL Global. MIT License.
  *
  * Default English strings for keyboards/index.php
+ * Don't escape $s when uploading source to crowdin because exports will escape \$s to \\$s
  */
 
 declare(strict_types=1);

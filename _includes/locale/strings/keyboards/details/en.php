@@ -4,6 +4,7 @@
  * Keyman is copyright (C) SIL Global. MIT License.
  *
  * Default English strings for keyboards/keyboard-details.php
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);
