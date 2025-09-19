@@ -73,8 +73,8 @@
     <p><?= _m('hints') ?></p>
     <ul>
       <li><?= _m('searchbox_description') ?></li>
-      <li><?= _m('searchbox_hint') ?> <code>k:</code> <?= _m('(keyboards)') ?> <code>l:</code> <?= _m('(languages)') ?> <code>s:</code> <?= _m('(scripts, writing systems) or') ?>
-        <code>c:</code> <?= _m('(countries) to filter your search results. For example') ?> <code>c:thailand</code> <?= _m('searches for keyboards for languages used in Thailand.') ?></li>
+      <li><?= _m('searchbox_hint') ?> <code>k:</code> <?= _m('keyboards') ?> <code>l:</code> <?= _m('languages') ?> <code>s:</code> <?= _m('scripts_ws') ?>
+        <code>c:</code> <?= _m('countries_to_filter') ?> <code>c:thailand</code> <?= _m('thailand_searches') ?></li>
       <li><?= _m('use_prefix') ?> <code>l:id:</code> <?= _m('to search for a BCP 47 language tag, for example') ?> <code>l:id:ti-et</code> <?= _m('searches_tigrigna') ?></li>
     </ul>
   </div>

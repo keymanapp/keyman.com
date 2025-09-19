@@ -46,20 +46,20 @@ return [
   "searchbox_hint" => "Vous pouvez appliquer des préfixes",
   
   # (keyboards)
-  "(keyboards)" => "(claviers)",
+  "keyboards" => "(claviers)",
   
   # (languages)
-  "(languages)" => "(langues)",
+  "languages" => "(langues)",
   
   # (scripts, writing systems) or...
-  "(scripts, writing systems) or" => "(scripts, systèmes d'écriture) ou",
+  "scripts_ws" => "(scripts, systèmes d'écriture) ou",
   
   # (countries) to filter your search results...
-  "(countries) to filter your search results. For example" =>
+  "countries_to_filter" =>
     "(pays) pour filtrer vos résultats de recherche. Par exemple",
   
   # Search box hint: example of country search
-  "searches for keyboards for languages used in Thailand." =>
+  "thailand_searches" =>
     "recherche des claviers pour les langues utilisées en Thaïlande.",
   
   # Search box hint: BCP 47 prefix
