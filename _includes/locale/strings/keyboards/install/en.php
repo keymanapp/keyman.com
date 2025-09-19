@@ -4,7 +4,7 @@
  * Keyman is copyright (C) SIL Global. MIT License.
  *
  * Default English strings for keyboards/keyboard-install.php
- * Use placeholders like %1\$s
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);

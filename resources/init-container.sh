@@ -13,3 +13,20 @@ else
   echo "Skip Generating CDN and clean CDN cache"
   rm -rf "$THIS_SCRIPT_PATH/../cdn/deploy"
 fi
+
+# PHP localization strings need to have '$' escaped like '%1\$s'.
+# But the download files from Crowdin get escaped again as '%1\\$s'. 
+# Reverts to escaping once.
+cd "$THIS_SCRIPT_PATH/../_includes/locale/strings"
+
+find . -type f -name "*.php" -print0 | while IFS= read -r -d '' file; do
+  sed -r -i'' 's/([0-9])\\{2}\$/\1\\\$/g' "$file"
+
+  if [ $? -ne 0 ]; then
+    echo "ERROR cleaning up file: $file"
+    exit 1
+  fi
+done
+
+#find . -type f -name "*.php" -exec \
+#  sed -r -i'' 's/([0-9])\\{2}\$/\1\\\$/g' {} \;
