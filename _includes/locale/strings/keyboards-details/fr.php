@@ -4,6 +4,7 @@
  * Keyman is copyright (C) SIL Global. MIT License.
  *
  * French strings for keyboards/index.php
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);
