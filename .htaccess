@@ -221,4 +221,7 @@ RewriteRule "^(.+)/$" "$1/index.php" [END]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule "^(.*)([^/])$" "$1$2/" [R]
 
+# Rewrite Location redirects to https for all redirects
 
+Header edit Location ^http://(?:www\.)?keyman\.com/ https://keyman.com/
+Header edit Location ^http://(?:www\.)?keyman-staging\.com/ https://keyman-staging.com/
