@@ -1,7 +1,7 @@
 <?php
   require_once('includes/template.php');
   require_once __DIR__ . '/../_includes/autoload.php';
-  
+
   // Required
   head([
     'title' =>'Keyman for Windows ' . $stable_version,
@@ -19,7 +19,7 @@
 <br/>
 <h2 class="red underline">Introducing Keyman <?= $stable_version; ?> for Windows</h2>
 <p>
-    With keyboards for over 2000 languages, Keyman for Windows lets you type in your language even when Windows doesn't. You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?= $stable_version; ?></a>.
+    With keyboards for over 2500 languages, Keyman for Windows lets you type in your language even when Windows doesn't. You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?= $stable_version; ?></a>.
 </p>
 <p>
     Our unique virtual keyboard technology makes it easy to type in all your programs, including Microsoft Office, Adobe Creative Suite, internet browsers and more, as well as supporting the latest version of Windows.
@@ -154,7 +154,7 @@
     <span class="red">Q.</span> What languages does Keyman support?
 </p>
 <p>
-    <span class="red">A.</span> The short answer is a lot! With keyboards for over 2000 languages, there's a very good chance we have yours covered. You can search for a keyboard for your language <a href="/keyboards/">here</a>. If we don't already have a keyboard available, you can use <a href="/developer/">Keyman Developer <?= $stable_version; ?></a> to build one!
+    <span class="red">A.</span> The short answer is a lot! With keyboards for over 2500 languages, there's a very good chance we have yours covered. You can search for a keyboard for your language <a href="/keyboards/">here</a>. If we don't already have a keyboard available, you can use <a href="/developer/">Keyman Developer <?= $stable_version; ?></a> to build one!
 </p>
 <br/>
 <p>

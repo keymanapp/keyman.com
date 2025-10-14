@@ -17,7 +17,7 @@ head([
 </div>
 <div class="main1">
     <h1>Type to the world<br/> in your language</h1>
-    <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 2000 languages supported' />
+    <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 2500 languages supported' />
 </div>
 <div class="main2">
 <!--
@@ -43,7 +43,7 @@ head([
     <div class="section section-blurb">
         <div class='wrapper'>
             <p>
-                Keyman helps you type in over 2000 languages on
+                Keyman helps you type in over 2500 languages on
                 just about any device &mdash; Windows, macOS, Linux, iPhone, iPad, Android tablets and phones, and even instantly in your web browser.
                 Keyman is completely <a href="/free">free and open source</a>!
             </p>
@@ -66,7 +66,7 @@ head([
             <?php require_once('includes/ui/download-links.php'); ?>
 
             <form name="fsearch" action="/keyboards" method="get">
-                <h4>Search over 2000 languages</h4>
+                <h4>Search over 2500 languages</h4>
                 <input type="text" name="q" id="language-search3" placeholder="Enter your language" />
                 <input id="search-submit3" type="image" onclick="if(document.getElementById('language-search3').value==''){return false;}" value="Search" src="<?php echo cdn("img/search-button.png"); ?>" alt="Search button">
             </form>
@@ -110,7 +110,7 @@ head([
                     <img src="<?php echo cdn("img/icon-android2.png"); ?>" alt="Android logo" />
                     <h3>Keyman for Android</h3>
                     <p>
-                        Type in over 2000 languages on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
+                        Type in over 2500 languages on your Android device. Touch enabled keyboards for phone, 7-inch and 10-inch tablets ensure a seamless typing solution across any Android device.
                     </p>
                 </a>
             </div>
