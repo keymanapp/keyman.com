@@ -22,18 +22,6 @@ My personal blog can be found at [marc.durdin.net](https://marc.durdin.net/);
 
 ----
 
-![](https://github.com/makarasok.png?size=240)
-
-### Makara Sok
-<br/>
-
-My name is Makara. I have just graduated with an MA in Linguistics. The topic of my thesis was about how to convert
-Khmer words into IPA. It was a really fun project to do because I got to incorporate my limited knowledge in coding
-into the making of the tool with the help of my advisor, and contribute to Khmer language research. I love to explore
-new technological things and that is why I am now here to help and learn from the Keyman team.
-
-----
-
 ![](https://github.com/jahorton.png?size=240)
 
 ### Joshua Horton
