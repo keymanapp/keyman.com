@@ -91,7 +91,7 @@ You can learn more about SIL Global on the [SIL Global web site](https://www.sil
   <td style='vertical-align: middle; text-align: center'><img src="../cdn/dev/img/open-source/browserstack.svg" style="width: 160px" alt="Browserstack" /></td>
   <td style='vertical-align: middle'><p>
 
-  We are now using <a href='https://www.browserstack.com/'>BrowserStack</a> to test KeymanWeb
+  We are using <a href='https://www.browserstack.com/'>BrowserStack</a> to test KeymanWeb
   and browser and renderer support for various languages and scripts. BrowserStack
   is an awesome tool to automatically test your website across thousands of
   different devices and browsers, instantly. They have kindly sponsored us with a
