@@ -11,7 +11,7 @@
     'css' => ['template.css','feature-grid.css','app-store-links.css'],
     'showMenu' => true,
     'banner' => [
-      'title' => '2000 languages,<br/>all your apps.',
+      'title' => '2500 languages,<br/>all your apps.',
       'button' => '<a href="'.$appstore.'" target="itunes_store"><img id="app-store" src="cdn(Available_on_the_App_Store_Badge_US-UK_135x40_0824.png)"
         alt="Available on the App Store" /></a>',
       'image' => 'ios-splash.png',
@@ -32,7 +32,7 @@
 ?>
 
 <p>
-  Keyman for iPhone and iPad makes it possible to type in over 2000 languages on your iPhone or iPad.
+  Keyman for iPhone and iPad makes it possible to type in over 2500 languages on your iPhone or iPad.
   Keyman provides system-wide keyboards in iOS 12.1 and later, allowing you to use your keyboard in all your favourite apps.
   <br/><br/>
   Keyman also adds font rendering for languages that even Apple doesn't support.
@@ -228,7 +228,7 @@
 
 <h2 class="red underline">Keyman Engine for iPhone and iPad</h2>
 <p>
-  As always, we make our technology available to app developers!  Keyman Engine for iPhone and iPad is our programming interface for Keyman for iPhone and iPad.  Bringing with it over 2000 languages and multiple keyboards for many of those languages, as well as automatic embedded font support, Keyman Engine for iPhone and iPad makes it straightforward to take your app to the world!
+  As always, we make our technology available to app developers!  Keyman Engine for iPhone and iPad is our programming interface for Keyman for iPhone and iPad.  Bringing with it over 2500 languages and multiple keyboards for many of those languages, as well as automatic embedded font support, Keyman Engine for iPhone and iPad makes it straightforward to take your app to the world!
 </p>
 <br/>
 <p>
