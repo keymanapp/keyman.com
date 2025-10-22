@@ -6,7 +6,7 @@
     <li>Keyman <?= $stable_version ?> for Windows Features</li>
     <li><a href="#setup">Easy Setup</a></li>
     <li><a href="#compatibility">Compatibility</a></li>
-    <li><a href="#keyboard-list">Keyboards for over 2000 Languages Available</a></li>
+    <li><a href="#keyboard-list">Keyboards for over 2500 Languages Available</a></li>
     <li><a href="#keyman-dev">Build Custom Keyboard Layouts</a></li>
     <li><a href="#unicode">Unicode Compliant</a></li>
     <li><a href="#keyboard-limit">Keyboard Limit</a></li>
