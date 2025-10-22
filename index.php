@@ -50,6 +50,13 @@ head([
         </div>
     </div>
 
+    <div class="section">
+      <div class='wrapper' id='attributions'>
+        <p><a href='https://commons.wikimedia.org/wiki/File:Noun_project_Globe_icon_1109009.png'>Globe icon</a> courtesy of Adnen Kadri, under
+        <a href='https://creativecommons.org/licenses/by/3.0/deed.en'>Creative Commons Attribution 3.0 Unported licence</a>.</p>
+      </div>
+    </div>
+
     <!-- event banner: uncomment this section when we have an event or promotion -
     <div class="section section-announcement">
           <div class='wrapper'>

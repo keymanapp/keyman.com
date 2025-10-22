@@ -117,6 +117,18 @@ END;
           </form>
           <p id="donate"><a href="/donate">Donate</a></p>
           <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon"></a></p>
+
+          <p><img id="ui" src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
+            <div class="menu-item-dropdown">
+              <div class="menu-dropdown-inner">
+                <ul>
+                  <li><a href="./?lang=en">English</a></li>
+                  <li><a href="./?lang=fr">French</a></li>
+                  <li><a href="./?lang=es">Spanish</a></li>
+                </ul>
+              </div>
+            </div>
+          </p>
         </div>
     </div>
     <div id="top-menu-bg"></div>
