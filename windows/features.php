@@ -461,7 +461,7 @@
             We're as dedicated as ever to making Keyman for Windows the best multi-lingual typing solution for you.
         </p>
         <p>
-            Keyman is used by millions of people in over 2000 languages. All those user experiences feed back into perfecting Keyman.
+            Keyman is used by millions of people in over 2500 languages. All those user experiences feed back into perfecting Keyman.
         </p>
         <p>
             We've worked with a community of developers around the world to create the keyboards we offer, in order to meet the needs of local languages like yours.

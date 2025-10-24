@@ -465,13 +465,21 @@ END;
       ?>
         <h2 id='try-header' class='red underline'>Try this keyboard</h2>
         <div id='try-box'>
-          <input type='text' id='try-keyboard'>
-          <div id='osk-host'></div>
+          <div id='try-content'>
+            <input type='text' id='try-keyboard'>
+            <div id='osk-host'></div>
+          </div>
           <div id='try-keymanweb-link'><?= $webtext ?></div>
         </div>
         <script crossorigin="anonymous" src='<?=$cdnUrlBase?>/keymanweb.js'></script>
         <script>
           (function() {
+            if(!window.keyman) {
+              // page failed to load keymanweb.js, perhaps network, perhaps plugin
+              console.warn('`keyman` variable is undefined, not using web keyboard');
+              document.getElementById('try-content').style.display = 'none';
+              return;
+            }
             keyman.init({attachType:'manual'}).then(
               function() {
                 keyman.attachToControl(document.getElementById('try-keyboard'));
