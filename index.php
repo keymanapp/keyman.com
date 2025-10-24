@@ -49,7 +49,6 @@ head([
             </p>
         </div>
     </div>
-
     <!-- event banner: uncomment this section when we have an event or promotion -
     <div class="section section-announcement">
           <div class='wrapper'>
