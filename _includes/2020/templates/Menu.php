@@ -29,6 +29,28 @@ END;
       Menu::render_top_menu($fields);
     }
 
+    /**
+     * Generate the URL with query to change the UI language
+     * @param language - language tag to use
+     */
+    private static function change_ui_language($language): string {
+      // Parse the current URI for populating the UI dropdown
+      $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
+      $parts = parse_url($url);
+
+      if (!empty($parts['query'])) {
+        parse_str($parts['query'], $queryParams);
+      } else {
+        $queryParams = [];
+      }
+
+      // Set the language query
+      $queryParams['lang'] = $language;
+      $query = http_build_query($queryParams);
+
+      return $parts['path'] . "?" . $query;
+    }
+
     private static function render_phone_menu(object $fields): void {
 ?>
 
@@ -124,9 +146,9 @@ END;
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <ul>
-                        <li><a href="?lang=en">English</a></li>
-                        <li><a href="?lang=fr">French - Français</a></li>
-                        <li><a href="?lang=es">Spanish - Español</a></li>
+                        <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
+                        <li><a href="<?= Menu::change_ui_language('fr'); ?>">French - Français</a></li>
+                        <li><a href="<?= Menu::change_ui_language('es'); ?>">Spanish - Español</a></li>
                         </ul>
                     </div>
                 </div>
