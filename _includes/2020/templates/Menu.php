@@ -51,20 +51,24 @@ END;
       return $parts['path'] . "?" . $query;
     }
 
+    /**
+     * Render the globe dropdown for changing the UI language.
+     * As UI languages get added, we'll need to update this
+     */
     private static function render_globe_dropdown(): void {
 ?>
           <p>
             <div id="ui-language" class="menu-item">  
-                <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
-                <div class="menu-item-dropdown">
-                    <div class="menu-dropdown-inner">
-                        <ul>
-                        <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
-                        <li><a href="<?= Menu::change_ui_language('fr'); ?>">French - Français</a></li>
-                        <li><a href="<?= Menu::change_ui_language('es'); ?>">Spanish - Español</a></li>
-                        </ul>
-                    </div>
+              <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
+              <div class="menu-item-dropdown">
+                <div class="menu-dropdown-inner">
+                  <ul>
+                    <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
+                    <li><a href="<?= Menu::change_ui_language('fr'); ?>">French - Français</a></li>
+                    <li><a href="<?= Menu::change_ui_language('es'); ?>">Spanish - Español</a></li>
+                  </ul>
                 </div>
+              </div>
             </div>
           </p>
 <?php
