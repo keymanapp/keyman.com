@@ -51,6 +51,25 @@ END;
       return $parts['path'] . "?" . $query;
     }
 
+    private static function render_globe_dropdown(): void {
+?>
+          <p>
+            <div id="ui-language" class="menu-item">  
+                <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
+                <div class="menu-item-dropdown">
+                    <div class="menu-dropdown-inner">
+                        <ul>
+                        <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
+                        <li><a href="<?= Menu::change_ui_language('fr'); ?>">French - Français</a></li>
+                        <li><a href="<?= Menu::change_ui_language('es'); ?>">Spanish - Español</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </p>
+<?php
+    }
+
     private static function render_phone_menu(object $fields): void {
 ?>
 
@@ -139,21 +158,9 @@ END;
           </form>
           <p id="donate"><a href="/donate">Donate</a></p>
           <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon"></a></p>
-
-          <p>
-            <div id="ui-language" class="menu-item">  
-                <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
-                <div class="menu-item-dropdown">
-                    <div class="menu-dropdown-inner">
-                        <ul>
-                        <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
-                        <li><a href="<?= Menu::change_ui_language('fr'); ?>">French - Français</a></li>
-                        <li><a href="<?= Menu::change_ui_language('es'); ?>">Spanish - Español</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-          </p>
+          <?php
+            Menu::render_globe_dropdown();
+?>
         </div>
     </div>
     <div id="top-menu-bg"></div>
@@ -169,6 +176,9 @@ END;
           </form>
           <a id='help1-donate' href="/donate">Donate</a>
           <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon" /></a>
+<?php
+            Menu::render_globe_dropdown();
+?>
         </div>
         <div class="wrapper">
             <div class="menu-item" id="keyboards">
