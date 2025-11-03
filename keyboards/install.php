@@ -4,6 +4,7 @@
   namespace Keyman\Site\com\keyman;
 
   require __DIR__ . '/../_includes/autoload.php';
+  require_once('./session.php');
 
   use Keyman\Site\com\keyman\templates\Head;
   use Keyman\Site\com\keyman\templates\Menu;
@@ -15,6 +16,11 @@
   use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\Locale;
+
+  function _m($id, ...$args) {
+    return Locale::m('keyboards-install', $id, $args);
+  }
 
   // Bundled downloads will make use of Keyman tier, which the site visitor
   // can override with tier=[alpha|beta|stable]. If no override has been
@@ -117,22 +123,25 @@
         ".exe";
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/windows/current-version/start/download-and-install-keyman";
+      $helpInstallingKeyman = _m("help_on_installing_keyman");
+      $keyboardHome = _m("keyboard_home", $h['name']);
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
+      $keyboardDownloadShortly = _m("download_start_shortly", $h['name']);
+      $downloadKeyboard = _m("download_keyboard");
 
       $result = <<<END
         <div class='download download-windows'>
-        <p>Your {$h['name']} keyboard download should start shortly. If it does not,
-        click the button below to start the download.</p>
-        <div class='download download-windows'><a class='download-link binary-download' href='$downloadLink'><span>Download keyboard</span></a></div>
+        <p>$keyboardDownloadShortly</p>
+        <div class='download download-windows'><a class='download-link binary-download' href='$downloadLink'><span>$downloadKeyboard</span></a></div>
         <script data-host="{$h['host']}" data-tier="{$h['tier']}" data-version="{$h['version']}"
             data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
           startAfterPageLoad_Windows(document.currentScript.dataset);
         </script>
         <ul>
-        <li><a href='$helpLink'>Help on installing Keyman</a></li>
-        <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+        <li><a href='$helpLink'>$helpInstallingKeyman</a></li>
+        <li><a href='$keyboardHomeUrl'>$keyboardHome</a></li>
         </ul>
         </div>
 END;
@@ -164,26 +173,33 @@ END;
         (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/mac/current-version/start/install-keyboard";
+      $helpInstallingKeyboard = _m("help_on_installing_keyboard");
+      $keyboardHome = _m("keyboard_home", $h['name']);
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
 
+      $platformNotInstalled = _m("platform_not_installed", "Keyman for macOS");
       $downloadKeymanUrl = KeymanHosts::Instance()->keyman_com . '/mac/download';
+      $downloadKeymanTitle = _m("download_keyman_title");
+      $installKeyman = _m("install_keyman", "Keyman for macOS");
+      $installKeyboard = _m("install_keyboard");
+      $downloadsKeyboardForPlatform = _m("downloads_keyboard_for_platform", $h['name'], "macOS");
 
       $result = <<<END
         <div class='download download-macos'>
           <div>
-            <p>If you have not yet installed Keyman for macOS, please install it first before installing the keyboard.</p>
+            <p>$platformNotInstalled</p>
             <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for macOS</a></li>
+              <li id='step1'><a href='$downloadKeymanUrl' title='$downloadKeymanTitle'>$installKeyman</a></li>
               <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>Install keyboard</span></a>
-                <div class='download-description'>Downloads {$h['name']} for macOS.</div>
+                <span>$installKeyboard</span></a>
+                <div class='download-description'>$downloadsKeyboardForPlatform</div>
               </li>
             </ol>
             <ul>
-              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
-              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+              <li><a href='$helpLink'>$helpInstallingKeyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>$keyboardHome</a></li>
             </ul>
           </div>
         </div>
@@ -216,11 +232,18 @@ END;
         (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/linux/current-version/start/installing-keyboard";
+      $helpInstallingKeyboard = _m("help_on_installing_keyboard");
+      $keyboardHome = _m("keyboard_home", $h['name']);
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
 
+      $platformNotInstalled = _m("platform_not_installed", "Keyman for Linux");
       $downloadKeymanUrl = KeymanHosts::Instance()->keyman_com . '/linux/download';
+      $downloadKeymanTitle = _m("download_keyman_title");
+      $installKeyman = _m("install_keyman", "Keyman for Linux");
+      $installKeyboard = _m("install_keyboard");
+      $downloadsKeyboardForPlatform = _m("downloads_keyboard_for_platform", $h['name'], "Linux");
 
       $result = <<<END
         <div class='download download-linux'>
@@ -228,18 +251,19 @@ END;
             startAfterPageLoad_Linux(document.currentScript.dataset);
           </script>
           <div>
-            <p>If you have not yet installed Keyman for Linux, please install it first before installing the keyboard.</p>
+            <p>$platformNotInstalled</p>
             <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for Linux</a></li>
+              <li id='step1'><a href='$downloadKeymanUrl' title='$downloadKeymanTitle'>$installKeyman</a></li>
               <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>Install keyboard</span></a>
+                <span>$installKeyboard</span></a>
+                <div class='download-description'>$downloadsKeyboardForPlatform</div>
               </li>
             </ol>
 
             <br>
             <ul>
-              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
-              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+              <li><a href='$helpLink'>$helpInstallingKeyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>$keyboardHome</a></li>
             </ul>
           </div>
         </div>
@@ -272,6 +296,8 @@ END;
         (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/android/current-version/start/installing-keyboards";
+      $helpInstallingKeyboard = _m("help_on_installing_keyboard");
+      $keyboardHome = _m("keyboard_home", $h['name']);
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
@@ -281,21 +307,27 @@ END;
       $referrer = "source=keyman&package={$u['id']}";
       if(!empty($u['bcp47'])) $referrer .= "&bcp47={$u['bcp47']}";
 
+      $downloadKeymanTitle = _m("download_keyman_title");
+      $withPlayStore = _m("with_play_store", $h['name']);
+      $installFromPlayStore = _m("install_from_play_store");
+      $installKeymanAndKeyboard = _m("keyman_and_keyboard_for_platform", $h['name'], "Android");
+      $alreadyInstalled = _m("already_installed");
+      $downloadJustKeyboard = _m("download_just_keyboard");
       $downloadKeymanUrl = PlayStore::url . "&referrer=" . rawurlencode($referrer);
+      $andThenInstallInApp = _m("and_then_install_in_the_app");
 
       $result = <<<END
         <div class='download download-android'>
           <p></p>
           <div>
-            <p>Install Keyman together with {$h['name']} keyboard through the Google Play Store:</p>
-            <a class='download-link binary-download' href='$downloadKeymanUrl' title='Download and install Keyman'><span>Install from Play Store</span></a>
-            <div class='download-description'>Installs Keyman and {$h['name']} keyboard for Android</div>
+            <p>$withPlayStore</p>
+            <a class='download-link binary-download' href='$downloadKeymanUrl' title='$downloadKeymanTitle'><span>$installFromPlayStore</span></a>
+            <div class='download-description'>$installKeymanAndKeyboard</div>
             <br>
-            <p>Keyman already installed? <a rel="nofollow" href='$downloadLink'>Download just this keyboard</a> and then install in the app.
-            </p>
+            <p>$alreadyInstalled <a rel="nofollow" href='$downloadLink'>$downloadJustKeyboard</a> $andThenInstallInApp</p>
             <ul>
-              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
-              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+              <li><a href='$helpLink'>$helpInstallingKeyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>$keyboardHome</a></li>
             </ul>
           </div>
         </div>
@@ -329,26 +361,33 @@ END;
         (empty($hu['bcp47']) ? "" : "&amp;bcp47={$hu['bcp47']}");
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/iphone-and-ipad/current-version/start/searching-for-keyboards";
+      $helpInstallingKeyboard = _m("help_on_installing_keyboard");
+      $keyboardHome = _m("keyboard_home", $h['name']);
 
       $keyboardHomeUrl = "/keyboards/{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : "?bcp47=" . $hu['bcp47']);
 
+      $platformNotInstalled = _m("platform_not_installed", "Keyman for iPhone and iPad");
       $downloadKeymanUrl = AppStore::url;
+      $downloadKeymanTitle = _m("download_keyman_title");
+      $installKeyman = _m("install_keyman", "Keyman for iPhone and iPad");
+      $installKeyboard = _m("install_keyboard");
+      $downloadsKeyboardForPlatform = _m("downloads_keyboard_for_platform", $h['name'], "iPhone and iPad");
 
       $result = <<<END
         <div class='download download-ios'>
           <div>
-            <p>If you have not yet installed Keyman for iPhone and iPad, please install it first before installing the keyboard.</p>
+            <p>$platformNotInstalled</p>
             <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='Download and install Keyman'>Install Keyman for iPhone and iPad</a></li>
+              <li id='step1'><a href='$downloadKeymanUrl' title='$downloadKeymanTitle'>$installKeyman</a></li>
               <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>Install keyboard</span></a>
-                <div class='download-description'>Downloads {$h['name']} for iPhone and iPad.</div>
+                <span>$installKeyboard</span></a>
+                <div class='download-description'>$downloadsKeyboardForPlatform</div>
               </li>
             </ol>
             <ul>
-              <li><a href='$helpLink'>Help on installing a keyboard</a></li>
-              <li><a href='$keyboardHomeUrl'>{$h['name']} keyboard home</a></li>
+              <li><a href='$helpLink'>$helpInstallingKeyboard</a></li>
+              <li><a href='$keyboardHomeUrl'>$keyboardHome</a></li>
             </ul>
           </div>
         </div>
@@ -409,7 +448,7 @@ END;
         // If parameters are missing ...
 ?>
           <h1 class='red underline'><?= htmlentities(self::$id); ?></h1>
-          <p>Keyboard <?= htmlentities(self::$id); ?> not found.</p>
+          <p><?= _m("keyboard_not_found", htmlentities(self::$id)) ?></p>
 <?php
         // DEBUG: Only display errors on local sites
         if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT && (ini_get('display_errors') !== '0')) {
