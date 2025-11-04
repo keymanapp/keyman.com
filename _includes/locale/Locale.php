@@ -125,6 +125,10 @@
         }
       }
 
+      if (count(self::currentLocales()) == 0) {
+        die('Current locales haven\'t been set by session');
+      }
+
       foreach (self::currentLocales() as $locale) {
         if (!array_key_exists($locale, self::$strings[$domain])) {
           continue;
