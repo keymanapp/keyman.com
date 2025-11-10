@@ -63,9 +63,10 @@ END;
               <div class="menu-item-dropdown">
                 <div class="menu-dropdown-inner">
                   <ul>
+                    <!-- Just use autonyms -->
                     <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
-                    <li><a href="<?= Menu::change_ui_language('fr'); ?>">French - Français</a></li>
-                    <li><a href="<?= Menu::change_ui_language('es'); ?>">Spanish - Español</a></li>
+                    <li><a href="<?= Menu::change_ui_language('es'); ?>">Español</a></li>
+                    <li><a href="<?= Menu::change_ui_language('fr'); ?>">Français</a></li>
                   </ul>
                 </div>
               </div>

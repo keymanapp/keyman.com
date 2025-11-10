@@ -5,10 +5,10 @@
     if(preg_match('/^Keyman\\\\Site\\\\com\\\\keyman\\\\(.+)/', $class_name, $matches)) {
       // Fix namespace pathing for Linux
       $filename = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $matches[1]);
-      if ($filename != 'Locale') {
-        $success = include(__DIR__ . "/2020/{$filename}.php");
-      } else {
+      if ($filename == 'Locale') {
         $success = include(__DIR__ . "/locale/{$filename}.php");
+      } else {
+        $success = include(__DIR__ . "/2020/{$filename}.php");
       }
       if($success === FALSE) {
         debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
