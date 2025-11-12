@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Keyman is copyright (C) SIL Global. MIT License.
  *
@@ -10,11 +9,11 @@ declare(strict_types=1);
 
 return [
   # Page Title
-  "page_title" => "Búsqueda por teclado",
+  "page_title" => "Búsqueda por Teclado",
 
   # Page Description
-  "page_description" => "Búsqueda por teclado de Keyman",
-
+  "page_description" => "Keyman Búsqueda por Teclado",
+  
   # Keyboard search bar
   "keyboard_search" => "Búsqueda por teclado:",
   
@@ -25,7 +24,7 @@ return [
   "search" => "Buscar",
   
   # Link to start a new keyboard search
-  "new_search" => "Nueva búsqueda",
+  "new_search" => "Nueva buscar",
   
   # Search box instruction (Popular keyboards | All keyboards)
   "enter_name" => "Introduzca el nombre de un teclado o idioma para buscar",
@@ -47,30 +46,30 @@ return [
   "searchbox_hint" => "Puedes aplicar prefijos",
   
   # (keyboards)
-  "keyboards" => "(keyboards)",
+  "keyboards" => "(tescados)",
   
   # (languages)
-  "languages" => "(languages)",
+  "languages" => "(idiomas)",
   
   # (scripts, writing systems) or...
-  "scripts_ws" => "(scripts, writing systems) or",
+  "scripts_ws" => "(guiones, sistemas de escritura) o",
   
   # (countries) to filter your search results...
   "countries_to_filter" =>
-    "(countries) to filter your search results. For example",
+    "(países) para filtrar los resultados de búsqueda. Por ejemplo",
   
   # Search box hint: example of country search
-  "thailand_searches" => 
-    "searches for keyboards for languages used in Thailand.",
+  "thailand_searches" =>
+    "busca teclados para los idiomas utilizados en Tailandia.",
   
   # Search box hint: BCP 47 prefix
   "use_prefix" => "Utilice prefijo",
   
-  # Search box hint: BCP 47 language example
-  "to search for a BCP 47 language tag, for example" => 
+  # Seach box hint: BCP 47 language example
+  "to search for a BCP 47 language tag, for example" =>
     "para buscar una etiqueta de idioma BCP 47, por ejemplo",
   
   # Search box hint: BCP 47 language example
-  "searches_tigrigna" => "busca Tigrigna (Etiopía)."
+  "searches_tigrigna" => "busca Tigrigna (Etiopía).",
 
 ];
