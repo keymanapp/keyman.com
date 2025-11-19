@@ -11,7 +11,7 @@
   use \Keyman\Site\com\keyman\Locale;
   use \Keyman\Site\com\keyman;
   
-  define('LOCALE_KEYBOARD_DETAILS', 'keyboard-details');
+  define('LOCALE_KEYBOARD_DETAILS', 'keyboards/details');
   $_m_KeyboardDetails = function($id, ...$args) {
     return Locale::m(LOCALE_KEYBOARD_DETAILS, $id, ...$args);
   };
