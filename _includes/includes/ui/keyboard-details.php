@@ -130,13 +130,10 @@ END;
         $filename = self::$id . ".kmp";
         $installLink = '/keyboards/install/' . rawurlencode(self::$id);
         if(!empty(self::$bcp47)) $installLink .= "?bcp47=" . rawurlencode(self::$bcp47);
-        $h_filename = htmlspecialchars($filename);
-        $platformTitle = self::platformTitles[$platform];
-
         return <<<END
 <div class="download download-{$platform}">
   <a class='download-link binary-download' href='$installLink'><span>{$_m_KeyboardDetails('install_keyboard')}</span></a>
-  <div class='download-description'>{$_m_KeyboardDetails('install_keyboard_button_description', htmlspecialchars($filename), $platformTitle)}</div>
+  <div class='download-description'>{$_m_KeyboardDetails('install_keyboard_button_description', htmlspecialchars($filename), self::platformTitles[$platform])}</div>
 </div>
 END;
       } else {
