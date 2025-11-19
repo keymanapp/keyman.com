@@ -11,7 +11,7 @@
   use \Keyman\Site\com\keyman\Locale;
 
   function _m($id, ...$args) {
-    return Locale::m('keyboards-details', $id, $args);
+    return Locale::m('keyboard-details', $id, $args);
   }
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
