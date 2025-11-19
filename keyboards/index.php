@@ -9,9 +9,9 @@
   use Keyman\Site\com\keyman\templates\Foot;
   use Keyman\Site\com\keyman\Locale;
 
-  function _m($id) {
-    return Locale::m('keyboards', $id);
-  }
+  define('LOCALE_KEYBOARDS', 'keyboards');
+  $_m = function($id, ...$args) { return Locale::m(LOCALE_KEYBOARDS, $id, ...$args); };
+  function _m($id, ...$args) {    return Locale::m(LOCALE_KEYBOARDS, $id, ...$args); }
 
   $head_options = [
     'title' => _m('page_title'),
