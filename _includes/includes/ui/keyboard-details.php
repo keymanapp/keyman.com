@@ -177,10 +177,7 @@ END;
       $url = KeymanHosts::Instance()->keymanweb_com ."/#$lang,Keyboard_" . self::GetWebKeyboardId();
       if($useDescription) {
         $description = htmlentities(self::$keyboard->name);
-        $useKeyboardDescription = _m("use_keyboard_button_description",
-          $description);
-        $description = "<div class=\"download-description\">
-          $useKeyboardDescription</div>";
+        $description = "<div class='download-description'>"._m("use_keyboard_button_description", $description)."</div>";
         $linktext = _m("use_keyboard_online");
       } else {
         $description = '';
