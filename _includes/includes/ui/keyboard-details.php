@@ -122,6 +122,8 @@ END;
     }
 
     protected static function download_box($platform) {
+      global $_m_KeyboardDetails;
+
       if(!empty(self::$deprecatedBy)) {
         return "";
       } else if(isset(self::$keyboard->platformSupport->$platform) && self::$keyboard->platformSupport->$platform != 'none') {
@@ -131,20 +133,16 @@ END;
         $h_filename = htmlspecialchars($filename);
         $platformTitle = self::platformTitles[$platform];
 
-        $install_keyboard = $_m_KeyboardDetails("install_keyboard");
-        $install_keyboard_button_description = $_m_KeyboardDetails("install_keyboard_button_description",
-          $h_filename, $platformTitle);
         return <<<END
-<div class="download download-$platform">
-  <a class='download-link binary-download' href='$installLink'><span>$install_keyboard</span></a>
-  <div class="download-description">$install_keyboard_button_description</div>
+<div class="download download-{$platform}">
+  <a class='download-link binary-download' href='$installLink'><span>{$_m_KeyboardDetails('install_keyboard')}</span></a>
+  <div class='download-description'>{$_m_KeyboardDetails('install_keyboard_button_description', htmlspecialchars($filename), $platformTitle)}</div>
 </div>
 END;
       } else {
-        $keyboard_not_supported = $_m_KeyboardDetails("keyboard_not_supported");
         return <<<END
 <div class="download download-$platform">
-  <span>$keyboard_not_supported</span>
+  <span>{$_m_KeyboardDetails('keyboard_not_supported')}</span>
 </div>
 END;
       }
@@ -152,6 +150,7 @@ END;
 
     protected static function WriteWebBoxes($useDescription) {
       global $embed_target;
+      global $_m_KeyboardDetails;
 
       // only show if the jsFilename property is present in the .keyboard_info
       if(empty(self::$keyboard->jsFilename)) {
@@ -395,6 +394,7 @@ END;
     protected static function WriteDownloadBoxes() {
       global $embed, $embed_win, $embed_version;
       global $embed_developer;
+      global $_m_KeyboardDetails;
 
       // We'll write all the different platforms here and then let Bowser determine
       // which box to show. This is true for both embedded and web-based viewing.
@@ -455,6 +455,7 @@ END;
 
     protected static function WriteKeymanWebBox() {
       global $embed;
+      global $_m_KeyboardDetails;
 
       // don't show if we are embedded into a Keyman app
       if($embed != 'none') {
@@ -709,6 +710,7 @@ END;
     }
 
     protected static function WriteQRCode($context) {
+      global $_m_KeyboardDetails;
 ?>
     <div class='qrcode-host qrcode-<?=$context?>'>
       <div id="qrcode-<?=$context?>"></div>
