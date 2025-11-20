@@ -4,6 +4,15 @@
   require_once('./session.php');
   require_once __DIR__ . '/../_includes/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Locale;
+
+  define('LOCALE_KEYBOARD_SHARE', 'keyboards/share');
+  $_m_KeyboardShare = function($id, ...$args) {
+    return Locale::m(LOCALE_KEYBOARD_SHARE, $id, ...$args);
+  };
+  function _m_KeyboardShare($id, ...$args) {
+    return Locale::m(LOCALE_KEYBOARD_SHARE, $id, ...$args);
+  }
 
   if(!isset($_REQUEST['id'])) {
     header('Location: /keyboards');
@@ -38,26 +47,19 @@
   // Keyboard not found, so let's explain.
 
   $head_options = [
-    'title' => "Share Keyboard: $id"
+    'title' => $_m_KeyboardShare('head_title', $id)
   ];
 
   head($head_options);
 ?>
 
-<h1>Sharing keyboard <?= $id ?></h1>
+<h1><?= $_m_KeyboardShare('h1_sharing_keyboard', $id) ?></h1>
 
-<p>You probably arrived here by scanning a QRCode or opening a link
-to share a keyboard from the Keyman app. We are sorry, but unfortunately,
-the keyboard you are interested in, called <b class='red'><?=$id?></b>, is not currently available from the
-Keyman keyboards repository.</p>
+<p><?= $_m_KeyboardShare('line1') ?> <?= $_m_KeyboardShare('line2') ?> <b class='red'><?=$id?></b>, <?= $_m_KeyboardShare('line3') ?></p>
 
-<h2>How you can get this keyboard</h2>
+<h2><?= $_m_KeyboardShare('h2_how_to_get') ?></h2>
 
-<p>This keyboard has been distributed peer-to-peer rather than through
-the Keyman keyboards repository, so the best way to access the keyboard
-is to ask the person who shared this link or QRCode with you.</p>
+<p><?= $_m_KeyboardShare('how_to_get_1') ?></p>
 
-<p>If you cannot locate the person who shared the keyboard with you,
-please do feel free to ask on the <a href='https://community.software.sil.org/c/keyman'>
-Keyman Community Forum</a> for assistance in locating the keyboard or
-a suitable alternative.</p>
+<p><?= $_m_KeyboardShare('how_to_get_2') ?> <a href='https://community.software.sil.org/c/keyman'>
+<?= $_m_KeyboardShare('keyman_forum') ?></a> <?= $_m_KeyboardShare('how_to_get_3') ?></p>
