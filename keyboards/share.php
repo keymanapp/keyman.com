@@ -6,8 +6,12 @@
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Locale;
 
-  function _m($id, ...$args) {
-    return Locale::m('keyboards-share', $id, $args);
+  define('LOCALE_KEYBOARD_SHARE', 'keyboards/share');
+  $_m_KeyboardShare = function($id, ...$args) {
+    return Locale::m(LOCALE_KEYBOARD_SHARE, $id, ...$args);
+  };
+  function _m_KeyboardShare($id, ...$args) {
+    return Locale::m(LOCALE_KEYBOARD_SHARE, $id, ...$args);
   }
 
   if(!isset($_REQUEST['id'])) {
@@ -43,19 +47,19 @@
   // Keyboard not found, so let's explain.
 
   $head_options = [
-    'title' => _m("head_title", $id)
+    'title' => $_m_KeyboardShare('head_title', $id)
   ];
 
   head($head_options);
 ?>
 
-<h1><?= _m("h1_sharing_keyboard", $id) ?></h1>
+<h1><?= $_m_KeyboardShare('h1_sharing_keyboard', $id) ?></h1>
 
-<p><?= _m("line1") ?> <?= _m("line2") ?> <b class='red'><?=$id?></b>, <?= _m("line3") ?></p>
+<p><?= $_m_KeyboardShare('line1') ?> <?= $_m_KeyboardShare('line2') ?> <b class='red'><?=$id?></b>, <?= $_m_KeyboardShare('line3') ?></p>
 
-<h2><?= _m("h2_how_to_get") ?></h2>
+<h2><?= $_m_KeyboardShare('h2_how_to_get') ?></h2>
 
-<p><?= _m("how_to_get_1") ?></p>
+<p><?= $_m_KeyboardShare('how_to_get_1') ?></p>
 
-<p><?= _m("how_to_get_2") ?> <a href='https://community.software.sil.org/c/keyman'>
-<?= _m("keyman_forum") ?></a> <?= _m("how_to_get_3") ?></p>
+<p><?= $_m_KeyboardShare('how_to_get_2') ?> <a href='https://community.software.sil.org/c/keyman'>
+<?= $_m_KeyboardShare('keyman_forum') ?></a> <?= $_m_KeyboardShare('how_to_get_3') ?></p>
