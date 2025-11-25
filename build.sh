@@ -33,12 +33,18 @@ function test_docker_container() {
   echo "---- Testing links ----"
   set +e;
   set +o pipefail;
-  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' | \
+  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' | tee blc.log
+  local BLC_RESULT=${PIPESTATUS[0]}
+  echo ----------------------------------------------------------------------
+  echo Link check summary
+  echo ----------------------------------------------------------------------
+  cat blc.log | \
     grep -E "BROKEN|Getting links from" | \
     grep -B 1 "BROKEN";
 
   echo "Done checking links"
   rm tier.txt
+  return "${BLC_RESULT}"
 }
 
 builder_run_action configure  bootstrap_configure
