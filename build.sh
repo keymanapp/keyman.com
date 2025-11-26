@@ -42,7 +42,6 @@ function test_docker_container() {
   docker exec $KEYMAN_CONTAINER_DESC sh -c "find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 -d '\\n' php -l"
 
   # NOTE: link checker runs on host rather than in docker image
-  #--exclude '*/downloads/releases/*' | \ 
   builder_echo blue "---- Testing links"
   npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' | tee blc.log
   local BLC_RESULT=${PIPESTATUS[0]}
