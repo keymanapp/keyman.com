@@ -4,6 +4,10 @@ cdn/deploy/
 
 tier.txt
 
+# unit test artifacts
+blc.log
+.phpunit.result.cache
+
 vendor*
 /node_modules/
 
