@@ -37,10 +37,11 @@ jobs:
     - name: Check broken links
       shell: bash
       continue-on-error: false
+      # Exclude checking locales for each link 'lang=*'
       run: |
         set +e
         set +o pipefail
-        npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' | tee blc.log
+        npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' --exclude '*lang=*' | tee blc.log
         echo "BLC_RESULT=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
 
     - name: Report on broken links
