@@ -54,11 +54,15 @@ END;
     /**
      * Render the globe dropdown for changing the UI language.
      * As UI languages get added, we'll need to update this
+     * @param number - Div number, default 0.
      */
-    private static function render_globe_dropdown(): void {
-?>
+    private static function render_globe_dropdown($number = 0): void {
+      $divID = ($number == 1) ? "ui-language1" : "ui-language";
+echo <<<END
           <p>
-            <div id="ui-language" class="menu-item">  
+            <div id='$divID' class="menu-item">
+END;
+?>
               <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
               <div class="menu-item-dropdown">
                 <div class="menu-dropdown-inner">
@@ -182,7 +186,7 @@ END;
           <a id='help1-donate' href="/donate">Donate</a>
           <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon" /></a>
 <?php
-            Menu::render_globe_dropdown();
+            Menu::render_globe_dropdown(1);
 ?>
         </div>
         <div class="wrapper">
