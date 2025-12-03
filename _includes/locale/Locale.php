@@ -164,6 +164,6 @@
       if (count($args) == 0) {
         return $str;
       }
-      return vsprintf($str, ...$args);
+      return vsprintf($str, array(...$args));
     }
   }
