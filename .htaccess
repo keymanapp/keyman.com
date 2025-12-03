@@ -34,6 +34,9 @@ RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
 # Redirect deprecated Google Plus link
 RewriteRule "^plus.*" "/" [NC,R=301,END,QSA]
 
+# Redirect PHP unit tests
+RewriteRule "^tests(\/.*)?" "/" [NC,R=301,END,QSA]
+
 # /donate -> donate.keyman.com
 RedirectMatch 301 "^(?i)/donate(\/.*)?" "https://donate.keyman.com"
 

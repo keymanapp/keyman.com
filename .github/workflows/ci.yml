@@ -11,19 +11,24 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3.5.2
+      uses: actions/checkout@v4.1.5
 
     - name: Build the docker image for keyman.com app
       shell: bash
       run: |
         echo "TIER_TEST" > tier.txt
-        ./build.sh build start
+        ./build.sh configure build start --debug
       env:
         fail-fast: true
 
     #
     # Finally, run the tests
     #
+    - name: PHP test
+      shell: bash
+      run: |
+        docker exec keyman-com-app sh -c "vendor/bin/phpunit --testdox"
+
     - name: Lint
       shell: bash
       run: |
@@ -31,13 +36,22 @@ jobs:
 
     - name: Check broken links
       shell: bash
+      continue-on-error: false
+      # Exclude checking locales for each link 'lang=*'
       run: |
-        set +e;
-        set +o pipefail;
-        npx broken-link-checker http://localhost:8053/_test --ordered --recursive --host-requests 50 -e --filter-level 3 --exclude '*/donate' | \
+        set +e
+        set +o pipefail
+        npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' --exclude '*lang=*' | tee blc.log
+        echo "BLC_RESULT=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+
+    - name: Report on broken links
+      run: |
+        set +e
+        set +o pipefail
+        cat blc.log | \
           grep -E "BROKEN|Getting links from" | \
-          grep -B 1 "BROKEN"
-        exit ${PIPESTATUS[0]}
+          grep -B 1 "BROKEN";
+        exit "${BLC_RESULT}"
 
     - name: Check PHP errors
       shell: bash

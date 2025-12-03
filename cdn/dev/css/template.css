@@ -831,7 +831,8 @@ input[type="search"] {
 	width: 280px;
 }
 
-#ui-language .menu-item-dropdown {
+#ui-language .menu-item-dropdown,
+#ui-language1 .menu-item-dropdown {
 	top: 26px;
 	left: -150px;
 	width: 180px;
