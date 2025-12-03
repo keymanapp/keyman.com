@@ -18,12 +18,12 @@
   use Keyman\Site\com\keyman\Util;
   use Keyman\Site\com\keyman\Locale;
 
-  define('LOCALE_KEYBOARD_INSTALL', 'keyboards/install');
+  define('LOCALE_KEYBOARDS_INSTALL', 'keyboards/install');
   $_m = function($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARD_INSTALL, $id, ...$args);
+    return Locale::m(LOCALE_KEYBOARDS_INSTALL, $id, ...$args);
   };
   function _m($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARD_INSTALL, $id, ...$args);
+    return Locale::m(LOCALE_KEYBOARDS_INSTALL, $id, ...$args);
   }
 
   // Bundled downloads will make use of Keyman tier, which the site visitor

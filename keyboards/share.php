@@ -6,12 +6,12 @@
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Locale;
 
-  define('LOCALE_KEYBOARD_SHARE', 'keyboards/share');
+  define('LOCALE_KEYBOARDS_SHARE', 'keyboards/share');
   $_m_KeyboardShare = function($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARD_SHARE, $id, ...$args);
+    return Locale::m(LOCALE_KEYBOARDS_SHARE, $id, ...$args);
   };
   function _m_KeyboardShare($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARD_SHARE, $id, ...$args);
+    return Locale::m(LOCALE_KEYBOARDS_SHARE, $id, ...$args);
   }
 
   if(!isset($_REQUEST['id'])) {
