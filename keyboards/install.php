@@ -19,10 +19,10 @@
   use Keyman\Site\com\keyman\Locale;
 
   define('LOCALE_KEYBOARD_INSTALL', 'keyboards/install');
-  $_m_KeyboardInstall = function($id, ...$args) {
+  $_m = function($id, ...$args) {
     return Locale::m(LOCALE_KEYBOARD_INSTALL, $id, ...$args);
   };
-  function _m_KeyboardInstall($id, ...$args) {
+  function _m($id, ...$args) {
     return Locale::m(LOCALE_KEYBOARD_INSTALL, $id, ...$args);
   }
 
