@@ -29,6 +29,56 @@ END;
       Menu::render_top_menu($fields);
     }
 
+    /**
+     * Generate the URL with query to change the UI language
+     * @param language - language tag to use
+     */
+    private static function change_ui_language($language): string {
+      // Parse the current URI for populating the UI dropdown
+      $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
+      $parts = parse_url($url);
+
+      if (!empty($parts['query'])) {
+        parse_str($parts['query'], $queryParams);
+      } else {
+        $queryParams = [];
+      }
+
+      // Set the language query
+      $queryParams['lang'] = $language;
+      $query = http_build_query($queryParams);
+
+      return $parts['path'] . "?" . $query;
+    }
+
+    /**
+     * Render the globe dropdown for changing the UI language.
+     * As UI languages get added, we'll need to update this
+     * @param number - Div number, default 0.
+     */
+    private static function render_globe_dropdown($number = 0): void {
+      $divID = ($number == 1) ? "ui-language1" : "ui-language";
+echo <<<END
+          <p>
+            <div id='$divID' class="menu-item">
+END;
+?>
+              <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
+              <div class="menu-item-dropdown">
+                <div class="menu-dropdown-inner">
+                  <ul>
+                    <!-- Just use autonyms -->
+                    <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
+                    <li><a href="<?= Menu::change_ui_language('es'); ?>">Español</a></li>
+                    <li><a href="<?= Menu::change_ui_language('fr'); ?>">Français</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </p>
+<?php
+    }
+
     private static function render_phone_menu(object $fields): void {
 ?>
 
@@ -117,6 +167,9 @@ END;
           </form>
           <p id="donate"><a href="/donate">Donate</a></p>
           <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon"></a></p>
+          <?php
+            Menu::render_globe_dropdown();
+?>
         </div>
     </div>
     <div id="top-menu-bg"></div>
@@ -132,6 +185,9 @@ END;
           </form>
           <a id='help1-donate' href="/donate">Donate</a>
           <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon" /></a>
+<?php
+            Menu::render_globe_dropdown(1);
+?>
         </div>
         <div class="wrapper">
             <div class="menu-item" id="keyboards">

@@ -3,9 +3,12 @@
 
   // *Don't* use autoloader here because of potential side-effects in older pages
   require_once(__DIR__ . '/../2020/Util.php');
+  require_once(__DIR__ . '/../locale/Locale.php');
   require_once(__DIR__ . '/../../_common/KeymanVersion.php');
   require_once(__DIR__ . '/../2020/templates/Head.php');
 
+  use Keyman\Site\com\keyman\Locale;
+  
   function template_finish($foot) {
     //ob_end_flush();
 
