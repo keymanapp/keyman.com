@@ -9,7 +9,7 @@
   use Keyman\Site\com\keyman\templates\Foot;
   use Keyman\Site\com\keyman\Locale;
 
-  define('LOCALE_KEYBOARDS', 'keyboards');
+  Locale::definePageLocale('LOCALE_KEYBOARDS', 'keyboards');
   $_m = function($id, ...$args) { return Locale::m(LOCALE_KEYBOARDS, $id, ...$args); };
   function _m($id, ...$args) {    return Locale::m(LOCALE_KEYBOARDS, $id, ...$args); }
 

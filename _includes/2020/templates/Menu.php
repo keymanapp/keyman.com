@@ -52,11 +52,18 @@ END;
     }
 
     /**
-     * Render the globe dropdown for changing the UI language.
-     * As UI languages get added, we'll need to update this
+     * Render the globe dropdown for changing the UI language
+     * As UI languages get added, we'll need to update this.
+     * Limitation: Currently only visible on pages that use localized strings
      * @param number - Div number, default 0.
      */
     private static function render_globe_dropdown($number = 0): void {
+      global $page_is_using_locale;
+      if (!isset($page_is_using_locale) || !$page_is_using_locale) {
+        // only render on pages that use localized strings
+        return;
+      }
+
       $divID = ($number == 1) ? "ui-language1" : "ui-language";
 echo <<<END
           <p>
