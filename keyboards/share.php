@@ -6,7 +6,7 @@
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Locale;
 
-  define('LOCALE_KEYBOARDS_SHARE', 'keyboards/share');
+  Locale::definePageLocale('LOCALE_KEYBOARDS_SHARE', 'keyboards/share');
   $_m = function($id, ...$args) {
     return Locale::m(LOCALE_KEYBOARDS_SHARE, $id, ...$args);
   };

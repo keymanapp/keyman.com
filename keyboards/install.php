@@ -18,7 +18,7 @@
   use Keyman\Site\com\keyman\Util;
   use Keyman\Site\com\keyman\Locale;
 
-  define('LOCALE_KEYBOARDS_INSTALL', 'keyboards/install');
+  Locale::definePageLocale('LOCALE_KEYBOARDS_INSTALL', 'keyboards/install');
   $_m = function($id, ...$args) {
     return Locale::m(LOCALE_KEYBOARDS_INSTALL, $id, ...$args);
   };
