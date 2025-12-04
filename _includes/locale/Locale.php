@@ -89,6 +89,18 @@
     }
 
     /**
+     * Defines a global variable for page locale strings and also
+     * tells locale system that current page uses locales
+     * @param $define - 
+     * @param $id - folder containing locale strings, relative to /_includes/locale/strings
+     */
+    public static function definePageLocale($define, $id) {
+      global $page_is_using_locale;
+      $page_is_using_locale = true;
+      define($define, $id);
+    }
+
+    /**
      * Given a locale, return an array of fallback locales
      * For example: es-ES --> [es, es-ES]
      * TODO: Use an existing fallback algorthim like
