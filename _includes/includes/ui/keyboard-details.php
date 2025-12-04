@@ -11,12 +11,12 @@
   use \Keyman\Site\com\keyman\Locale;
   use \Keyman\Site\com\keyman;
   
-  Locale::definePageLocale('LOCALE_KEYBOARD_DETAILS', 'keyboards/details');
+  Locale::definePageLocale('LOCALE_KEYBOARDS_DETAILS', 'keyboards/details');
   $_m_KeyboardDetails = function($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARD_DETAILS, $id, ...$args);
+    return Locale::m(LOCALE_KEYBOARDS_DETAILS, $id, ...$args);
   };
   function _m_KeyboardDetails($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARD_DETAILS, $id, ...$args);
+    return Locale::m(LOCALE_KEYBOARDS_DETAILS, $id, ...$args);
   }
 
   define('GITHUB_ROOT', 'https://github.com/keymanapp/keyboards/tree/master/');
