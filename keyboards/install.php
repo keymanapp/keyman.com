@@ -98,7 +98,7 @@
     }
 
     protected static function WriteWindowsBoxes() {
-      global $_m_KeyboardInstall;
+      global $_m;
 
       $keyboard = self::$keyboard;
       $tier = self::$tier;
@@ -135,15 +135,15 @@
 
       $result = <<<END
         <div class='download download-windows'>
-        <p> {$_m_KeyboardInstall('download_start_shortly', $h['name'])} </p>
-        <div class='download download-windows'><a class='download-link binary-download' href='$downloadLink'><span>{$_m_KeyboardInstall('download_keyboard')}</span></a></div>
+        <p> {$_m('download_start_shortly', $h['name'])} </p>
+        <div class='download download-windows'><a class='download-link binary-download' href='$downloadLink'><span>{$_m('download_keyboard')}</span></a></div>
         <script data-host="{$h['host']}" data-tier="{$h['tier']}" data-version="{$h['version']}"
             data-id="{$h['id']}" data-bcp47="{$h['bcp47']}">
           startAfterPageLoad_Windows(document.currentScript.dataset);
         </script>
         <ul>
-        <li><a href='$helpLink'>{$_m_KeyboardInstall('help_on_installing_keyman')}</a></li>
-        <li><a href='$keyboardHomeUrl'>{$_m_KeyboardInstall('download_keyboard')}</a></li>
+        <li><a href='$helpLink'>{$_m('help_on_installing_keyman')}</a></li>
+        <li><a href='$keyboardHomeUrl'>{$_m('download_keyboard')}</a></li>
         </ul>
         </div>
 END;
@@ -151,7 +151,7 @@ END;
     }
 
     protected static function WritemacOSBoxes() {
-      global $_m_KeyboardInstall;
+      global $_m;
 
       $keyboard = self::$keyboard;
       $tier = self::$tier;
@@ -186,17 +186,17 @@ END;
       $result = <<<END
         <div class='download download-macos'>
           <div>
-            <p>{$_m_KeyboardInstall('platform_not_installed', 'Keyman for macOS')}</p>
+            <p>{$_m('platform_not_installed', 'Keyman for macOS')}</p>
             <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='{$_m_KeyboardInstall('download_keyman_title')}'>{$_m_KeyboardInstall('install_keyman', 'Keyman for macOS')}</a></li>
+              <li id='step1'><a href='$downloadKeymanUrl' title='{$_m('download_keyman_title')}'>{$_m('install_keyman', 'Keyman for macOS')}</a></li>
               <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>{$_m_KeyboardInstall('install_keyboard')}</span></a>
-                <div class='download-description'>{$_m_KeyboardInstall('downloads_keyboard_for_platform', $h['name'], 'macOS')}</div>
+                <span>{$_m('install_keyboard')}</span></a>
+                <div class='download-description'>{$_m('downloads_keyboard_for_platform', $h['name'], 'macOS')}</div>
               </li>
             </ol>
             <ul>
-              <li><a href='$helpLink'>{$_m_KeyboardInstall('help_on_installing_keyboard')}</a></li>
-              <li><a href='$keyboardHomeUrl'>{$_m_KeyboardInstall('keyboard_home', $h['name'])}</a></li>
+              <li><a href='$helpLink'>{$_m('help_on_installing_keyboard')}</a></li>
+              <li><a href='$keyboardHomeUrl'>{$_m('keyboard_home', $h['name'])}</a></li>
             </ul>
           </div>
         </div>
@@ -205,7 +205,7 @@ END;
     }
 
     protected static function WriteLinuxBoxes() {
-      global $_m_KeyboardInstall;
+      global $_m;
 
       $keyboard = self::$keyboard;
       $tier = self::$tier;
@@ -243,19 +243,19 @@ END;
             startAfterPageLoad_Linux(document.currentScript.dataset);
           </script>
           <div>
-            <p>{$_m_KeyboardInstall('platform_not_installed', 'Keyman for Linux')}</p>
+            <p>{$_m('platform_not_installed', 'Keyman for Linux')}</p>
             <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='{$_m_KeyboardInstall('download_keyman_title')}'>{$_m_KeyboardInstall('install_keyman', 'Keyman for Linux')}</a></li>
+              <li id='step1'><a href='$downloadKeymanUrl' title='{$_m('download_keyman_title')}'>{$_m('install_keyman', 'Keyman for Linux')}</a></li>
               <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>{$_m_KeyboardInstall('install_keyboard')}</span></a>
-                <div class='download-description'>{$_m_KeyboardInstall('downloads_keyboard_for_platform', $h['name'], 'Linux')}</div>
+                <span>{$_m('install_keyboard')}</span></a>
+                <div class='download-description'>{$_m('downloads_keyboard_for_platform', $h['name'], 'Linux')}</div>
               </li>
             </ol>
 
             <br>
             <ul>
-              <li><a href='$helpLink'>{$_m_KeyboardInstall('help_on_installing_keyboard')}</a></li>
-              <li><a href='$keyboardHomeUrl'>{$_m_KeyboardInstall('keyboard_home', $h['name'])}</a></li>
+              <li><a href='$helpLink'>{$_m('help_on_installing_keyboard')}</a></li>
+              <li><a href='$keyboardHomeUrl'>{$_m('keyboard_home', $h['name'])}</a></li>
             </ul>
           </div>
         </div>
@@ -264,7 +264,7 @@ END;
     }
 
     protected static function WriteAndroidBoxes() {
-      global $_m_KeyboardInstall;
+      global $_m;
 
       $keyboard = self::$keyboard;
       $tier = self::$tier;
@@ -305,14 +305,14 @@ END;
         <div class='download download-android'>
           <p></p>
           <div>
-            <p>{$_m_KeyboardInstall('with_play_store', $h['name'])}</p>
-            <a class='download-link binary-download' href='$downloadKeymanUrl' title='{$_m_KeyboardInstall('download_keyman_title')}'><span>{$_m_KeyboardInstall('install_from_play_store')}</span></a>
-            <div class='download-description'>{$_m_KeyboardInstall('keyman_and_keyboard_for_platform', $h['name'], 'Android')}</div>
+            <p>{$_m('with_play_store', $h['name'])}</p>
+            <a class='download-link binary-download' href='$downloadKeymanUrl' title='{$_m('download_keyman_title')}'><span>{$_m('install_from_play_store')}</span></a>
+            <div class='download-description'>{$_m('keyman_and_keyboard_for_platform', $h['name'], 'Android')}</div>
             <br>
-            <p>{$_m_KeyboardInstall('already_installed')} <a rel="nofollow" href='$downloadLink'>{$_m_KeyboardInstall('download_just_keyboard')}</a> {$_m_KeyboardInstall('and_then_install_in_the_app')}</p>
+            <p>{$_m('already_installed')} <a rel="nofollow" href='$downloadLink'>{$_m('download_just_keyboard')}</a> {$_m('and_then_install_in_the_app')}</p>
             <ul>
-              <li><a href='$helpLink'>{$_m_KeyboardInstall('help_on_installing_keyboard')}</a></li>
-              <li><a href='$keyboardHomeUrl'>{$_m_KeyboardInstall('keyboard_home', $h['name'])}</a></li>
+              <li><a href='$helpLink'>{$_m('help_on_installing_keyboard')}</a></li>
+              <li><a href='$keyboardHomeUrl'>{$_m('keyboard_home', $h['name'])}</a></li>
             </ul>
           </div>
         </div>
@@ -321,7 +321,7 @@ END;
     }
 
     protected static function WriteiOSBoxes() {
-      global $_m_KeyboardInstall;
+      global $_m;
 
       $keyboard = self::$keyboard;
       $tier = self::$tier;
@@ -356,17 +356,17 @@ END;
       $result = <<<END
         <div class='download download-ios'>
           <div>
-            <p>{$_m_KeyboardInstall('platform_not_installed', 'Keyman for iPhone and iPad')}</p>
+            <p>{$_m('platform_not_installed', 'Keyman for iPhone and iPad')}</p>
             <ol>
-              <li id='step1'><a href='$downloadKeymanUrl' title='{$_m_KeyboardInstall('download_keyman_title')}'>{$_m_KeyboardInstall('install_keyman', 'Keyman for iPhone and iPad')}</a></li>
+              <li id='step1'><a href='$downloadKeymanUrl' title='{$_m('download_keyman_title')}'>{$_m('install_keyman', 'Keyman for iPhone and iPad')}</a></li>
               <li id='step2'><a class='download-link binary-download' rel="nofollow" href='$downloadLink'>
-                <span>{$_m_KeyboardInstall('install_keyboard')}</span></a>
-                <div class='download-description'>{$_m_KeyboardInstall('downloads_keyboard_for_platform', $h['name'], 'iPhone and iPad')}</div>
+                <span>{$_m('install_keyboard')}</span></a>
+                <div class='download-description'>{$_m('downloads_keyboard_for_platform', $h['name'], 'iPhone and iPad')}</div>
               </li>
             </ol>
             <ul>
-              <li><a href='$helpLink'>{$_m_KeyboardInstall('help_on_installing_keyboard')}</a></li>
-              <li><a href='$keyboardHomeUrl'>{$_m_KeyboardInstall('keyboard_home', $h['name'])}</a></li>
+              <li><a href='$helpLink'>{$_m('help_on_installing_keyboard')}</a></li>
+              <li><a href='$keyboardHomeUrl'>{$_m('keyboard_home', $h['name'])}</a></li>
             </ul>
           </div>
         </div>
@@ -427,7 +427,7 @@ END;
         // If parameters are missing ...
 ?>
           <h1 class='red underline'><?= htmlentities(self::$id); ?></h1>
-          <p><?= $_m_KeyboardInstall('keyboard_not_found', htmlentities(self::$id)) ?></p>
+          <p><?= $_m('keyboard_not_found', htmlentities(self::$id)) ?></p>
 <?php
         // DEBUG: Only display errors on local sites
         if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT && (ini_get('display_errors') !== '0')) {
