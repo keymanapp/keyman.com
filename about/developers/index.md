@@ -36,7 +36,7 @@ new technological things and that is why I am now here to help and learn from th
 
 ![](https://github.com/jahorton.png?size=240)
 
-### Joshua Horton
+### Joshua Prins-Horton
 <br/>
 
 I grew up in the United States watching lots of science-fiction shows. I always loved the grand vision of the future
