@@ -54,14 +54,13 @@ END;
     /**
      * Render the globe dropdown for changing the UI language
      * As UI languages get added, we'll need to update this.
-     * Limitation: Currently only visible on /keyboards/ pages
+     * Limitation: Currently only visible on pages that use localized strings
      * @param number - Div number, default 0.
      */
     private static function render_globe_dropdown($number = 0): void {
-      // Parse the current URI to determine globe visiblity
-      $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
-      $path = parse_url($url, PHP_URL_PATH);
-      if (!isset($path) || !preg_match("/^\/keyboards.*$/i", $path)) { 
+      global $page_is_using_locale;
+      if (!isset($page_is_using_locale) || !$page_is_using_locale) {
+        // only render on pages that use localized strings
         return;
       }
 
