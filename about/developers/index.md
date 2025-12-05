@@ -28,7 +28,7 @@ I also lurk at [@marc@typo.social](https://typo.social/@marc) on Mastodon.
 
 ![](https://github.com/jahorton.png?size=240)
 
-### Joshua Horton
+### Joshua Prins-Horton
 <br/>
 
 I grew up in the United States watching lots of science-fiction shows. I always loved the grand vision of the future
