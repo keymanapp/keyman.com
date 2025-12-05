@@ -1009,19 +1009,27 @@ input[type="search"] {
 	color: #444444;
 }
 
+#low-frequency {
+	display: block;
+	text-align: center;
+	line-height: 1.25em;
+}
+
 #privacy-policy {
+	display: block;
 	text-align: center;
 	margin-top: 16px;
 }
 
-#privacy-policy a {
-	display: block;
+#privacy-policy a,
+#low-frequency a {
 	text-decoration: none;
 	color: white;
 	font-size: 12pt;
 }
 
-#privacy-policy a:hover {
+#privacy-policy a:hover,
+#low-frequency a:hover {
 	color: #444444;
 }
 
