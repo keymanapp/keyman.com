@@ -38,6 +38,7 @@
             </div>
             <!--End mc_embed_signup-->
             <br>
+            <div id="low-frequency">Receive updates 3-4 times/year, or you can<br><a href="https://blog.keyman.com/subscribe/">get regular updates</a> every 2 weeks</div>
             <div id="privacy-policy"><a href="/privacy/">Privacy policy</a></div>
 
             <div id='footer-get-involved'>

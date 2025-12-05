@@ -32,6 +32,20 @@
   $embed_ios = $embed == 'ios';
   $embed_developer = $embed == 'developer';
 
+  if(isset($_REQUEST['lang'])) {
+    \Keyman\Site\com\keyman\Locale::setLocale($_REQUEST['lang']);
+  } else if (isset($_SESSION['lang'])) {
+    \Keyman\Site\com\keyman\Locale::setLocale($_SESSION['lang']);
+  } else {
+    // Fallback to English locale
+    \Keyman\Site\com\keyman\Locale::setLocale(
+      \Keyman\Site\com\keyman\Locale::DEFAULT_LOCALE);
+  }
+  $embed_locale = \Keyman\Site\com\keyman\Locale::currentLocales();
+  if (!empty($embed_locale) && $embed_locale != \Keyman\Site\com\keyman\Locale::DEFAULT_LOCALE) { 
+    $_SESSION['lang'] = $embed_locale[0];
+  }
+
   if($embed != 'none') {
     // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
     // default, including in existing versions of Keyman.
