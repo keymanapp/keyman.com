@@ -40,12 +40,62 @@ Keyman Developer.  Version 17.0 of Keyman includes support for LDML keyboards on
 desktop platforms - Windows, macOS, and Linux - and Keyman Developer 17.0
 includes support for compiling and validation LDML keyboards.
 
-As of February 2025:
+Learn more about the LDML Keyboard initiative at the [CLDR Keyboard Working Group home page](https://cldr.unicode.org/index/keyboard-workgroup). An excerpt:
+
+> ### The challenge and promise of Keyboards
+> Text input is a core component of most computing experiences and is most
+> commonly achieved using a keyboard, whether hardware or virtual (on-screen or
+> touch). However, keyboard support for most of the world’s languages is either
+> completely missing or often does not adequately support the input needs of
+> language communities. Improving text input support for minority languages is
+> an essential part of the Unicode mission.
+>
+> Keyboard data is currently completely platform-specific. Consequently, language
+> communities and other keyboard authors must see their designs developed
+> independently for every platform/operating system, resulting in unnecessary
+> duplication of technical and organizational effort.
+>
+> There is no central repository or contact point for this data, meaning that such
+> authors must separately and independently contact all platform/operating system
+> developers.
+>
+> ### LDML: The universal interchange format for keyboards
+>
+> The CLDR Keyboard Working Group has written a definition for keyboards (UTS#35 part 7) in order to define core keyboard-based
+> text input requirements for the world’s languages. This format allows the
+> physical and virtual (on-screen or touch) keyboard layouts for a language to be
+> defined in a single file. Input Method Editors (IME) or other input methods are
+> not currently in scope for this format.
+>
+> ### CLDR: A home for the world’s newest keyboards
+>
+> Today, there are many existing
+> platform-specific implementations and keyboard definitions. This project does
+> not intend to remove or replace existing well-established support.
+>
+> The goal of this project is that, where otherwise unsupported languages are
+> concerned, CLDR becomes the common source for keyboard data, for use by
+> platform/operating system developers and vendors.
+>
+> As a result, CLDR will also become the point of contact for keyboard authors and
+> language communities to submit new or updated keyboard layouts to serve those
+> user communities. CLDR has already become the definitive and publicly available
+> source for the world’s locale data.
+
+---
+
+### Keyman project progress
+
+As of December 2025:
 
 * Support for LDML keyboards on the web and iOS and Android platforms is in
   development.
 
 * A cross-platform visual design tool for LDML keyboards is in development.
+
+* Tooling to convert Keyman keyboards to LDML keyboards is in development.
+
+---
 
 The LDML support is being developed in our cross-platform Keyman Core component,
 which will enable a consistent feature set across all platforms including web by
