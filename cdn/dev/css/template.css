@@ -133,6 +133,12 @@ q:after {
 	content: none;
 }
 
+.markdown blockquote {
+	margin: 12px 24px 24px;
+	padding: 18px 6px 6px 6px;
+	background: white;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
