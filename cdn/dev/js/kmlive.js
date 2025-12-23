@@ -64,8 +64,19 @@ function loaded(){
 	$('.info-left').removeClass('fixed-pos');
       }
     });
+    var scroller_anchor = $(".header").height();
+    if ($(this).scrollTop() >= scroller_anchor && $('#top-menu1').css('position') != 'fixed'){
+      $('#top-menu1').addClass('faded-menu');
+      $('#top-menu-icon,#help1').show();
+      $('.info-left').addClass('fixed-pos');
+    }else if ($(this).scrollTop() < (scroller_anchor + 1) && $('#top-menu1').css('position') != 'absolute'){
+      $('#top-menu1').removeClass('faded-menu');
+      $('#top-menu-icon,#help1').hide();
+      $('#top-menu-icon,#help1').removeClass('help1-on-scroll');
+      $('.info-left').removeClass('fixed-pos');
+    }
   }
-
+  
   $('#show-phone-menu').click(function(event) {
     $("#phone-menu").toggleClass('menu-visible');
   });
