@@ -73,9 +73,12 @@
     $fileData = $versions->$platform->$tier->files->$file;
     $fileSize = formatSizeUnits($fileData->size);
     $host = KeymanHosts::Instance()->downloads_keyman_com;
+    $downloadSiteUrl = "$host/$platform/$tier/{$versions->$platform->$tier->version}/$file";
+    $downloadUrl = htmlentities("/go/app/download/$platform/{$versions->$platform->$tier->version}/$tier?url=".
+      rawurlencode($downloadSiteUrl));
 
     echo <<<END
-<div class="download-cta-big selected" id="cta-big-Windows" data-url='$host/$platform/$tier/{$versions->$platform->$tier->version}/$file' data-version='{$versions->$platform->$tier->version}'>
+<div class="download-cta-big selected" id="cta-big-Windows" data-url='$downloadUrl' data-version='{$versions->$platform->$tier->version}'>
     <div class="download-stable-email">
     <h3>$product {$versions->$platform->$tier->version}</h3>
     <p>Released: {$fileData->date}</p>
