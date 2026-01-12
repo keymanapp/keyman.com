@@ -27,7 +27,7 @@ return [
   
   # "Install keyboard" button description
   "install_keyboard_button_description" =>
-    "ដំឡើង %1\\$s សម្រាប់ %2\\$s នៅលើឧបករណ៍នេះ",
+    "ដំឡើង %1\$s សម្រាប់ %2\$s នៅលើឧបករណ៍នេះ",
   
   # keyboard download is not supported on this device
   "keyboard_not_supported" => 
@@ -44,7 +44,7 @@ return [
   
   # "Use keyboard online" button description
   "use_keyboard_button_description" => 
-    "ប្រើ %1\\$s នៅ​ក្នុង​កម្មវិធី​រុករកគេហទំព័រ​របស់​អ្នក ។ មិន​ចាំបាច់​ដំឡើង​អ្វី​ឡើយ ។",
+    "ប្រើ %1\$s នៅ​ក្នុង​កម្មវិធី​រុករកគេហទំព័រ​របស់​អ្នក ។ មិន​ចាំបាច់​ដំឡើង​អ្វី​ឡើយ ។",
   
   # Scan this QR code
   "scan_qr_code" => 
@@ -83,7 +83,7 @@ return [
   "total_downloads" => "ចំនួនទាញយកសរុប",
   
   # Total Downloads title - Downloads since {date}
-  "downloads_since" => "ដំឡើងចាប់តាំងពី %1\\$s",
+  "downloads_since" => "ដំឡើងចាប់តាំងពី %1\$s",
   
   # Date to start counting downloads
   "date_counting" => "October 2019",
@@ -100,12 +100,12 @@ return [
   "legacy_ansi" => "លេហ្កាស៊ី (អេអ៊ីនអេសអាយ)",
   
   # Minimum Keyman Version
-  "minimum_version" => "ជំនាន់អប្បបរមានៃ %1\\$s",
+  "minimum_version" => "ជំនាន់អប្បបរមានៃ %1\$s",
   
   "related_keyboards" => "ក្ដារចុចពាក់ព័ន្ធ",
   
   # This keyboard is not available on keyman.com
-  "keyboard_not_available" => "ក្ដារចុចនេះមិនមាននៅ %1\\$s",
+  "keyboard_not_available" => "ក្ដារចុចនេះមិនមាននៅ %1\$s",
   
   "deprecated" => "(បោះបង់)",
   
@@ -114,7 +114,7 @@ return [
   "supported_languages" => "ភាសាដែលអាចប្រើប្រាស់បាន",
   
   # Expand {count} more >>
-  "expand_more" => "ពង្រីក %1\\$s បន្ថែម >>",
+  "expand_more" => "ពង្រីក %1\$s បន្ថែម >>",
   
   # << Collapse
   "collapse" => "<< បង្រួម",
@@ -140,16 +140,16 @@ return [
   ## Errors
   
   # Failed to load keyboard package [ID]
-  "failed_to_load_keyboard_package" => "បរាជ័យក្នុងការទាញយកកញ្ចប់​ក្ដារចុច %1\\$s",
+  "failed_to_load_keyboard_package" => "បរាជ័យក្នុងការទាញយកកញ្ចប់​ក្ដារចុច %1\$s",
   
   # Error returned from api.keyman.com: {error string}
-  "error_returned_from_api" => "បញ្ហាត្រលប់មកពី %1\\$s: %2\\$s",
+  "error_returned_from_api" => "បញ្ហាត្រលប់មកពី %1\$s: %2\$s",
   
   # Keyboard package [ID] not found)'Failed to load keyboard package ' . 
-  "package_not_found" => "កញ្ចប់ក្ដារចុច %1\\$s រកមិនឃើញ។",
+  "package_not_found" => "កញ្ចប់ក្ដារចុច %1\$s រកមិនឃើញ។",
   
   # Sorry, this keyboard requires Keyman {minimum version} or higher.
   "requires_keyman_minimum_version" => 
-    "សូមទោស, ក្ដារចុចនេះតម្រូវការ Keyman %1\\$s ឫខ្ពស់ជាងនេះ។"
+    "សូមទោស, ក្ដារចុចនេះតម្រូវការ Keyman %1\$s ឫខ្ពស់ជាងនេះ។"
 
 ];

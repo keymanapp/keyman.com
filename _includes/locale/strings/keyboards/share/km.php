@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 return [
   # Head options title
-  "head_title" => "ចែក​រំលែកក្ដារចុច %1\\$s",
+  "head_title" => "ចែក​រំលែកក្ដារចុច %1\$s",
 
   # Page title - Sharing {keyboard}
-  "h1_sharing_keyboard" => "កំពុងចែក​រំលែកក្ដារចុច %1\\$s",
+  "h1_sharing_keyboard" => "កំពុងចែក​រំលែកក្ដារចុច %1\$s",
 
   "line1" => "អ្នកប្រហែលជាបានមកដល់ទីនេះ តាមរយៈការស្កេនកូដ QR ឬបើកតំណ
    ដើម្បីចែករំលែកក្ដារចុចពីកម្មវិធី Keyman។",
