@@ -122,11 +122,12 @@
 
       // This maps to buildStandardWindowsDownloadUrl in install.js (which we don't use here for those
       // few users who have JS disabled -- although this is not really a tested/supported scenario)
-      $downloadLink = KeymanHosts::Instance()->downloads_keyman_com .
+      $downloadServerLink = KeymanHosts::Instance()->downloads_keyman_com .
         "/windows/{$hu['tier']}/{$hu['version']}/keyman-setup" .
         self::BOOTSTRAP_SEPARATOR . "{$hu['id']}" .
         (empty($hu['bcp47']) ? "" : ".{$hu['bcp47']}") .
         ".exe";
+      $downloadLink = "/go/app/download/windows/{$hu['version']}/{$hu['tier']}?url=".rawurlencode($downloadServerLink);
 
       $helpLink = KeymanHosts::Instance()->help_keyman_com . "/products/windows/current-version/start/download-and-install-keyman";
 
