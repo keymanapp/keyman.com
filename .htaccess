@@ -22,6 +22,9 @@ RewriteBase /
 # Add mime type for apple-app-site-association
 AddType application/json apple-app-site-association
 
+# Deny crowdin.yml
+RewriteRule ^crowdin.yml$ = [F,L]
+
 # Custom error messages
 # ErrorDocument 404 /_includes/errors/404.php
 

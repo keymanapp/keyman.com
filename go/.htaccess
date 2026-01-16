@@ -32,6 +32,13 @@ RewriteRule "^package/download/(keyboard/)?([^/]+)$" "package/download.php?type=
 RedirectMatch "/go/keyboard/([^/?]+)/share$" "/keyboards/share/$1"
 
 #
+# go/app/download
+#
+
+# download-app?url=...
+RewriteRule "^app/download/([^/?]+)/([^/?]+)/(.*)" "app/download.php?product=$1&version=$2&tier=$3" [END,QSA]
+
+#
 # Non-app-specific endpoints
 #
 

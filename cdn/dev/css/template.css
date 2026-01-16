@@ -676,6 +676,13 @@ input[type="search"] {
 	display: none;
 }
 
+.help1-on-scroll {
+	display: flex !important;
+	flex-direction: row;
+	align-items: center;
+	top: 10px !important;
+}
+
 #help1 form {
 	float: left;
 }
