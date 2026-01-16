@@ -76,6 +76,7 @@ END;
                   <ul>
                     <!-- Just use autonyms -->
                     <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
+                    <li><a href="<?= Menu::change_ui_language('de'); ?>">Deutsch</a></li>
                     <li><a href="<?= Menu::change_ui_language('es'); ?>">Español</a></li>
                     <li><a href="<?= Menu::change_ui_language('fr'); ?>">Français</a></li>
                     <li><a href="<?= Menu::change_ui_language('km'); ?>">ខ្មែរ</a></li>
