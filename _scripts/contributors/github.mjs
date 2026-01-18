@@ -1,16 +1,26 @@
+/*
+ * Keyman is copyright (C) SIL Global. MIT License.
+ *
+ * Created by pbdurdin on 2026-01-18
+ *
+ * Generate github section of contributors.md
+ */
 import { Octokit } from "octokit";
+import { paginateRest } from "@octokit/plugin-paginate-rest";
 
 // Initiatlize an empty Octokit variable, to be set later.
+const OctokitInit = Octokit.plugin(paginateRest);
 let octokit = null;
+const githubOrgName = "keymanapp";
 
 export async function getGithub(githubKey) {
   // Set the aforementioned Octokit variable, with the provided key.
-  octokit = new Octokit({
+  octokit = new OctokitInit({
     auth: githubKey,
   });
 
   // Get a list of every repo in the keymanapp github organization
-  let allRepos = await getReposByOrg("keymanapp");
+  let allRepos = await getReposByOrg(githubOrgName);
 
   // Get the data of each of those repositories
   let allRepoData = await getAllRepos(allRepos);
@@ -18,7 +28,7 @@ export async function getGithub(githubKey) {
 }
 
 export function genGithub(repo) {
-  const MAJOR_CONTUBUTION_THRESHOLD = 100;
+  const MAJOR_CONTRIBUTION_THRESHOLD = 100;
 
   // Initialize empty arrays, to be added to later
   let major = [];
@@ -45,7 +55,7 @@ export function genGithub(repo) {
 
   // Sort into the major and minor categories
   all.forEach((user) => {
-    if (user.contributions > MAJOR_CONTUBUTION_THRESHOLD) {
+    if (user.contributions > MAJOR_CONTRIBUTION_THRESHOLD) {
       major.push(user);
     }
     else {
@@ -54,17 +64,16 @@ export function genGithub(repo) {
   });
 
   // Sort the major and minor categories by contributions
-  major.sort((a, b) => b.contributions - a.contributions);
-  minor.sort((a, b) => b.contributions - a.contributions);
+  major.sort((a, b) => a.login.localeCompare(b.login));
+  minor.sort((a, b) => a.login.localeCompare(b.login));
   return [major, minor];
 }
 
 async function getReposByOrg(org) {
   // Fetch a list of all repositories belonging to this organization.
-  console.log("TODO: Github Api Pagination");
 
   console.log("Retrieving list of Repositories");
-  let repos = await octokit.request(`GET /orgs/${org}/repos`, {
+  let repos = await octokit.paginate(`GET /orgs/${org}/repos`, {
     org,
     per_page: 100,
     type: "sources",
@@ -74,12 +83,11 @@ async function getReposByOrg(org) {
   });
 
   // Map the repository data to make mearly a list of names.
-  return repos.data.map(repo => repo.name);
+  return repos.map(repo => repo.name);
 }
 
 async function getAllRepos(allRepos) {
   // Fetch the data for the given list of repositories.
-  console.log("TODO: Github Api Pagination");
 
   let allRepoData = [];
 
@@ -95,7 +103,7 @@ async function getAllRepos(allRepos) {
 
 async function getRepo(repoName) {
   // Fetch data for repo of the inputted name.
-  let repo = await octokit.request(`GET /repos/keymanapp/${repoName}/contributors`, {
+  let repo = await octokit.paginate(`GET /repos/${githubOrgName}/${repoName}/contributors`, {
     owner: "keymanapp",
     repo: repoName,
     per_page: 100,
@@ -103,5 +111,5 @@ async function getRepo(repoName) {
       "X-GitHub-Api-Version": "2022-11-28",
     },
   });
-  return repo.data;
+  return repo;
 }

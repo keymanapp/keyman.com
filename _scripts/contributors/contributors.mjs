@@ -1,3 +1,10 @@
+/*
+ * Keyman is copyright (C) SIL Global. MIT License.
+ *
+ * Created by pbdurdin on 2026-01-18
+ *
+ * Generate contributors.md
+ */
 import { Command } from "commander";
 import * as fs from "node:fs";
 import { getGithub, genGithub } from "./github.mjs";
@@ -15,8 +22,13 @@ program.name("node .")
 program.parse(process.argv);
 
 async function main() {
-  // Header for the markdown file. Can include explaination, title, etc.
-  let headers = "---\ntitle: Contributors\n---";
+  // Header for the markdown file. Can include explanation, title, etc.
+  let headers = `
+---
+title: Keyman Contributors
+---
+<div><style>@import './contributors.css';</style></div>
+`;
 
   let githubSeg = null;
   // If the user provided a key for github
@@ -43,16 +55,25 @@ function genMarkdownSegment(name, major, minor) {
   // Initiate the markdown variable as a level 2 header of the section's name.
   let markDown = `## ${name}\n`;
 
-  // Add the Major contributors, one at a time
-  markDown += `### Major ${name}\n`;
-  major.forEach((user) => {
-    markDown += `[<img src="${user.avatar_url}" alt="${user.login}'s profile picture" width="50"/> ${user.login}](${user.html_url} "${user.login}")\n\n`;
-  });
+  if (major.length > 0) {
+    // Add the Major contributors, one at a time
+    if (minor.length > 0) {
+      markDown += `### Major ${name}\n`;
+    }
+    major.forEach((user) => {
+      markDown += `[<img class='contributor-major' src="${user.avatar_url}" alt="${user.login}" width="50"/>](${user.html_url} "${user.login}") `;
+      markDown += `[${user.login}](${user.html_url})\n\n`;
+    });
+  }
 
-  // Add the "Minor" contributors, one at a time
-  markDown += `### Other ${name}\n`;
-  minor.forEach((user) => {
-    markDown += `[<img src="${user.avatar_url}" alt="${user.login}'s profile picture" width="50"/>](${user.html_url} "${user.login}") `;
-  });
+  if (minor.length > 0) {
+    // Add the "Minor" contributors, one at a time
+    if (major.length > 0) {
+      markDown += `### Other ${name}\n`;
+    }
+    minor.forEach((user) => {
+      markDown += `[<img class='contributor-minor' src="${user.avatar_url}" alt="${user.login}" width="50"/>](${user.html_url} "${user.login}") `;
+    });
+  }
   return markDown;
 }
