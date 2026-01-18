@@ -1,0 +1,24 @@
+{
+    "name": "contributers",
+    "version": "0.1.0",
+    "description": "Script to generate a keyman contributers.md file for Github and Crowdin.",
+    "license": "MIT",
+    "author": "Peter Durdin",
+    "type": "module",
+    "main": "contributors.mjs",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "@crowdin/crowdin-api-client": "^1.51.1",
+        "@octokit/plugin-paginate-rest": "^14.0.0",
+        "@stylistic/eslint-plugin": "^5.7.0",
+        "commander": "^14.0.2",
+        "octokit": "^5.0.5"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.2",
+        "eslint": "^9.39.2",
+        "globals": "^17.0.0"
+    }
+}
