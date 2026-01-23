@@ -46,10 +46,10 @@ return [
   # Search box hint (line 2):
   "searchbox_hint_2" => 
     "Sie können Präfixe anwenden %1\$s (Tastaturen), %2\$s (Sprachen), %3\$s (Skripte, Schreibsysteme) oder 
-    %4\$s (Länder) um Ihre Suchergebnisse zu filtern. Zum Beispiel %5\$s sucht nach Tastaturen für Sprachen in Thailand.",
+    %4\$s (Länder), um Ihre Suchergebnisse zu filtern. Zum Beispiel sucht %5\$s nach Tastaturen für Sprachen in Thailand.",
   
   # Search box hint (line 3):
   "searchbox_hint_3" =>
-    "Präfix verwenden %1\$s um nach einem BCP 47 Sprachtag zu suchen, zum Beispiel %2\$s sucht nach Tigrigna (Äthiopien)."
+    "Präfix %1\$s verwenden, um nach einem BCP 47 Sprachtag zu suchen. Zum Beispiel sucht %2\$s nach Tigrigna (Äthiopien)."
 
 ];
