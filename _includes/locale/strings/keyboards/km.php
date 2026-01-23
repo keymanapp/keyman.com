@@ -3,7 +3,7 @@
 /*
  * Keyman is copyright (C) SIL Global. MIT License.
  *
- * Default English strings for keyboards/index.php
+ * Default Khmer strings for keyboards/index.php
  */
 
 declare(strict_types=1);
