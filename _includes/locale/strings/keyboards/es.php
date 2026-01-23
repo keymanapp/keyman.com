@@ -41,35 +41,14 @@ return [
   # Search box hint: Description
   "searchbox_description" => 
     "La búsqueda siempre devuelve una lista de teclados. Busca nombres de teclados y detalles, nombres de idiomas, nombres de países y nombres de alfabetos.",
+
+  # Search box hint (line 2):
+  "searchbox_hint_2" => 
+    "Puedes aplicar los prefijos %1\$s (teclados), %2\$s (idiomas), %3\$s (escrituras, sistemas de escritura) o 
+    %4\$s (países) para filtrar los resultados de búsqueda. Por ejemplo, %5\$s busca teclados para los idiomas utilizados en Tailandia.",
   
-  # Search box hint: available prefixes to use in the search
-  "searchbox_hint" => "Puedes aplicar prefijos",
-  
-  # (keyboards)
-  "keyboards" => "(tescados)",
-  
-  # (languages)
-  "languages" => "(idiomas)",
-  
-  # (scripts, writing systems) or...
-  "scripts_ws" => "(guiones, sistemas de escritura) o",
-  
-  # (countries) to filter your search results...
-  "countries_to_filter" =>
-    "(países) para filtrar los resultados de búsqueda. Por ejemplo",
-  
-  # Search box hint: example of country search
-  "thailand_searches" =>
-    "busca teclados para los idiomas utilizados en Tailandia.",
-  
-  # Search box hint: BCP 47 prefix
-  "use_prefix" => "Utilice prefijo",
-  
-  # Seach box hint: BCP 47 language example
-  "to search for a BCP 47 language tag, for example" =>
-    "para buscar una etiqueta de idioma BCP 47, por ejemplo",
-  
-  # Search box hint: BCP 47 language example
-  "searches_tigrigna" => "busca Tigrigna (Etiopía).",
+  # Search box hint (line 3):
+  "searchbox_hint_3" => 
+    "Utilice el prefijo %1\$s para buscar una etiqueta de idioma BCP 47, por ejemplo, %2\$s busca Tigrigna (Etiopía)."
 
 ];

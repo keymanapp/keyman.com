@@ -42,34 +42,12 @@ return [
   "searchbox_description" => 
     "La recherche renvoie toujours une liste de claviers. Elle recherche les noms et les détails des claviers, les noms de langues, les noms de pays et les noms d'écritures.",
   
-  # Search box hint: available prefixes to use in the search
-  "searchbox_hint" => "Vous pouvez appliquer des préfixes",
-  
-  # (keyboards)
-  "keyboards" => "(claviers)",
-  
-  # (languages)
-  "languages" => "(langues)",
-  
-  # (scripts, writing systems) or...
-  "scripts_ws" => "(scripts, systèmes d'écriture) ou",
-  
-  # (countries) to filter your search results...
-  "countries_to_filter" =>
-    "(pays) pour filtrer vos résultats de recherche. Par exemple",
-  
-  # Search box hint: example of country search
-  "thailand_searches" =>
-    "recherche des claviers pour les langues utilisées en Thaïlande.",
-  
-  # Search box hint: BCP 47 prefix
-  "use_prefix" => "Utiliser le préfixe",
-  
-  # Seach box hint: BCP 47 language example
-  "to search for a BCP 47 language tag, for example" =>
-    "pour rechercher une balise de langue BCP 47, par exemple",
-  
-  # Search box hint: BCP 47 language example
-  "searches_tigrigna" => "recherche Tigrigna (Ethiopie)."
-  
+  # Search box hint (line 2):
+  "searchbox_hint_2" => 
+    "Vous pouvez utiliser les préfixes %1\$s (claviers), %2\$s (langues), %3\$s (systèmes d'écriture) ou
+    %4\$s (pays) pour filtrer vos résultats de recherche. Par exemple, %5\$s permet de rechercher les claviers des langues utilisées en Thaïlande.",
+
+  # Search box hint (line 3):
+  "searchbox_hint_3" =>
+    "Utilisez le préfixe %1\$s pour rechercher une étiquette de langue BCP 47, par exemple %2\$s recherche le tigrigna (Éthiopie)."
 ];

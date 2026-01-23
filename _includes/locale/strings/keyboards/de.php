@@ -3,7 +3,7 @@
 /*
  * Keyman is copyright (C) SIL Global. MIT License.
  *
- * Default English strings for keyboards/index.php
+ * German strings for keyboards/index.php
  */
 
 declare(strict_types=1);
@@ -43,34 +43,13 @@ return [
   "searchbox_description" => 
     "Die Suche gibt immer eine Liste von Tastaturen zurück und sucht nach Tastaturnamen und Details, Sprachnamen, Ländernamen und Skriptnamen.",
   
-  # Search box hint: available prefixes to use in the search
-  "searchbox_hint" => "Sie können Präfixe anwenden",
+  # Search box hint (line 2):
+  "searchbox_hint_2" => 
+    "Sie können Präfixe anwenden %1\$s (Tastaturen), %2\$s (Sprachen), %3\$s (Skripte, Schreibsysteme) oder 
+    %4\$s (Länder) um Ihre Suchergebnisse zu filtern. Zum Beispiel %5\$s sucht nach Tastaturen für Sprachen in Thailand.",
   
-  # (keyboards)
-  "keyboards" => "(Tastaturen)",
-  
-  # (languages)
-  "languages" => "(Sprachen)",
-  
-  # (scripts, writing systems) or...
-  "scripts_ws" => "(Skripte, Schreibsysteme) oder",
-  
-  # (countries) to filter your search results...
-  "countries_to_filter" =>
-    "(Länder), um Ihre Suchergebnisse zu filtern. Zum Beispiel",
-  
-  # Search box hint: example of country search
-  "thailand_searches" => 
-    "sucht nach Tastaturen für Sprachen in Thailand.",
-  
-  # Search box hint: BCP 47 prefix
-  "use_prefix" => "Präfix verwenden",
-  
-  # Search box hint: BCP 47 language example
-  "to search for a BCP 47 language tag, for example" => 
-    "um nach einem BCP 47 Sprachtag zu suchen, zum Beispiel",
-  
-  # Search box hint: BCP 47 language example
-  "searches_tigrigna" => "sucht nach Tigrigna (Äthiopien)."
+  # Search box hint (line 3):
+  "searchbox_hint_3" =>
+    "Präfix verwenden %1\$s um nach einem BCP 47 Sprachtag zu suchen, zum Beispiel %2\$s sucht nach Tigrigna (Äthiopien)."
 
 ];
