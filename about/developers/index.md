@@ -1,5 +1,11 @@
 ---
-title: Current Developers
+title: About the Keyman team
+---
+
+The core Keyman team is a small group of dedicated software developers, working
+across 4 continents. We keep the project running, fixing bugs, adding features
+and generally trying to make Keyman a great product to use.
+
 ---
 
 ![](https://github.com/mcdurdin.png?size=240)
@@ -112,6 +118,9 @@ I managed to obtain some experience through an internship in Web Development for
 
 After successfully defending my Thesis and graduating, I continue to have a passion for supporting Keyman's users. The responsibility of a technical support engineer is to provide and form sophisticated help instructions according to users' requirements, monitor Keyman's social platforms and blogs, write documents, report bugs to the product developers, and use programming skills to fix bugs, add features, and make updates to the Keyman websites.
 
-## Previous Contributors
+## Navigation
 
-More about [previous contributors](./previous)
+* About the Keyman team (this page)
+* [Previous core team members](previous)
+* [All contributors](contributors)
+* [Join the team](../get-involved)
