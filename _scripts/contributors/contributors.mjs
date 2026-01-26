@@ -98,7 +98,7 @@ function genMarkdownSegment(name, major, minor) {
       markDown += `### Other ${name}\n`;
     }
     minor.forEach((user) => {
-      markDown += `[<img class='contributor-minor' src="${user.avatar_url}" alt="${user.login}" width="50"/>](${user.html_url} "${user.login}") `;
+      markDown += `[<img class='contributor-minor' src="${user.avatar_url}" alt="${user.login}" width="50"/>](${user.html_url} "${user.login}")\n`;
     });
   }
   return markDown;
