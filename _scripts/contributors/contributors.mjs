@@ -23,11 +23,37 @@ program.parse(process.argv);
 
 async function main() {
   // Header for the markdown file. Can include explanation, title, etc.
-  let headers = `
+  const headers = `
 ---
 title: Keyman Contributors
 ---
 <div><style>@import './contributors.css';</style></div>
+
+This page lists contributors who have made changes to the Keyman project, through GitHub and
+our localization platform Crowdin. We are aware of many other people who have made valuable
+contributions to the project and we would like to acknowledge their generosity, though
+we cannot easily list each person here.
+
+For now, major contributors are simply those who have made over 100 commits accepted into
+Keyman repositories.
+
+We update this page weekly with new contributors.
+
+* [Get involved](../get-involved)
+
+---
+`;
+
+  const footers = `
+
+---
+
+## Navigation
+
+* [About the Keyman team](../developers)
+* [Previous core team members](previous)
+* All contributors (this page)
+* [Join the team](../get-involved)
 `;
 
   let githubSeg = null;
@@ -48,7 +74,7 @@ title: Keyman Contributors
   }
 
   // To the users input file for output (default: contributors.md), write a join of the header, the github segment.
-  fs.writeFileSync(program.opts().output, `${headers}\n${githubSeg != null ? githubSeg : ""}\n${crowdinSeg != null ? crowdinSeg : ""}`);
+  fs.writeFileSync(program.opts().output, `${headers}\n${githubSeg != null ? githubSeg : ""}\n${crowdinSeg != null ? crowdinSeg : ""}\n${footers}`);
 }
 
 function genMarkdownSegment(name, major, minor) {
@@ -72,7 +98,7 @@ function genMarkdownSegment(name, major, minor) {
       markDown += `### Other ${name}\n`;
     }
     minor.forEach((user) => {
-      markDown += `[<img class='contributor-minor' src="${user.avatar_url}" alt="${user.login}" width="50"/>](${user.html_url} "${user.login}") `;
+      markDown += `[<img class='contributor-minor' src="${user.avatar_url}" alt="${user.login}" width="50"/>](${user.html_url} "${user.login}")\n`;
     });
   }
   return markDown;

@@ -32,8 +32,10 @@ You can learn more about SIL Global on the [SIL Global web site](https://www.sil
 
 ## About the team
 
-* [The current team](developers/)
-* [Previous contributors](developers/previous)
+* [The core Keyman team](developers/)
+* [Previous core team members](developers/previous)
+* [All contributors](developers/contributors)
+
 
 ## Thank you to supporting organizations
 

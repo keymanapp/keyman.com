@@ -2,6 +2,11 @@
 title: Previous Contributors
 ---
 
+Many other people have been involved in the Keyman project over the years. Here
+are just a few of them!
+
+---
+
 ![](https://github.com/makarasok.png?size=240)
 
 ### Makara Sok
@@ -40,4 +45,9 @@ open software projects.
 
 I enjoy audax, other non-speedy cycling, and board games.
 
+## Navigation
 
+* [About the Keyman team](../developers)
+* Previous core team members (this page)
+* [All contributors](contributors)
+* [Join the team](../get-involved)
