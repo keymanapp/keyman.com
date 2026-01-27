@@ -118,6 +118,20 @@ I managed to obtain some experience through an internship in Web Development for
 
 After successfully defending my Thesis and graduating, I continue to have a passion for supporting Keyman's users. The responsibility of a technical support engineer is to provide and form sophisticated help instructions according to users' requirements, monitor Keyman's social platforms and blogs, write documents, report bugs to the product developers, and use programming skills to fix bugs, add features, and make updates to the Keyman websites.
 
+----
+
+![Sepia tone picture of a man wearing a black felt western (cowboy) hat against a forested skyline and partly cloudy sky, wearing a sweater, with glasses and a full beard.](https://github.com/srl295.png?size=240)
+
+### Steven R. Loomis
+<br/>
+I’ve long been interested in languages, accessibility, and input—and computers. These didn't always intersect.  I built a chorded keyboard after hearing Steven K. Roberts speak.  My keyboard had eight switches, one for each bit of ASCII.  In grade school I used to doodle circuits for the micromouse competition, or for refreshable braille displays.  I spent a year working on the island of Malta, for a more international perspective.  Later, I helped start [the Maltese Wikipedija](https://mt.wikipedia.org) and was involved in language standardization. I first ran into Keyman through the Windows keyboard driver that was licensed through the government of Malta.
+
+After a long run with IBM’s Corporate Globalization team, I set out on my own in 2020, with my own consultancy [Code Hive Tx, LLC](https://codehivetx.us) based in Dripping Springs, near Austin, Texas, USA.  Besides corporate globalization projects, I continue to contribute to Unicode’s Common Locale Data Repository (CLDR), and chair its [Digitally Disadvantaged Languages](https://cldr.unicode.org/ddl) working group.
+
+As for Keyboards, I have been involved in [LDML Keyboards](/ldml) as the CLDR spec editor, and have been involved in the implementation of LDML in Keyman, both on the compiler (kmc) and runtime (core) portions.
+
+----
+
 ## Navigation
 
 * About the Keyman team (this page)
