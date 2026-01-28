@@ -38,8 +38,16 @@ async function main() {
       : await getGithub(program.opts().githubKey);
     fs.writeFileSync('./github.cache.json', JSON.stringify(githubData, null, 2));
 
+    // We exclude the following repos which are basically dependencies with
+    // largely external contributors, to provide a more accurate picture of
+    // people contributing to Keyman itself
+    const excludedRepos = ['keyman-ios-beta.herokuapp.com', 'keyman-ios-alpha.herokuapp.com', 'onboard-keyman'];
+    excludedRepos.forEach(repo => delete githubData[repo]);
+
     const teamHandles = teamData.map(member => member.handle);
-    githubData = githubData.filter(user => !teamHandles.includes(user.login));
+    Object.keys(githubData).forEach(repo => {
+      githubData[repo] = githubData[repo].filter(user => !teamHandles.includes(user.login));
+    });
     let [gMajor, gMinor] = genGithub(githubData);
     githubMajorSeg = genMajorMarkdownSegment("github-major", gMajor);
     githubMinorSeg = genMinorMarkdownSegment("github-minor", gMinor);
@@ -113,12 +121,6 @@ ${crowdinMinorSeg}
 ---
 
 We update this page weekly with new contributors.
-
-## Navigation
-
-* About the Keyman team (this page)
-* [Previous core team members](previous)
-* [Join the team](../get-involved)
 `;
 
 }

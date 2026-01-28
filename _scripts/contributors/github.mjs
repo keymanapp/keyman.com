@@ -27,7 +27,7 @@ export async function getGithub(githubKey) {
   return allRepoData;
 }
 
-export function genGithub(repo) {
+export function genGithub(repos) {
   const MAJOR_CONTRIBUTION_THRESHOLD = 100;
 
   // Initialize empty arrays, to be added to later
@@ -36,21 +36,23 @@ export function genGithub(repo) {
   let all = [];
 
   // For each item in the provided data,
-  repo.forEach((user) => {
-    // ... check for bots, and skip over if one is found,
-    if (/^(keyman-server|keyman-status|.+\[bot\])$/.test(user.login)) {
-      return;
-    }
+  Object.keys(repos).forEach(repo => {
+    repos[repo].forEach((user) => {
+      // ... check for bots, and skip over if one is found,
+      if (/^(keyman-server|keyman-status|.+\[bot\])$/.test(user.login)) {
+        return;
+      }
 
-    // ... if we have not already added this user to the user list, add them,
-    if (!all.map(user => user.login).includes(user.login)) {
-      all.push(user);
-      return;
-    }
+      // ... if we have not already added this user to the user list, add them,
+      if (!all.map(user => user.login).includes(user.login)) {
+        all.push(user);
+        return;
+      }
 
-    // ... Otherwise, increase their contributions score.
-    let i = all.findIndex(oldUser => oldUser.login == user.login);
-    all[i].contributions += user.contributions;
+      // ... Otherwise, increase their contributions score.
+      let i = all.findIndex(oldUser => oldUser.login == user.login);
+      all[i].contributions += user.contributions;
+    });
   });
 
   // Sort into the major and minor categories
@@ -89,14 +91,14 @@ async function getReposByOrg(org) {
 async function getAllRepos(allRepos) {
   // Fetch the data for the given list of repositories.
 
-  let allRepoData = [];
+  let allRepoData = {};
 
   // Using for instead of foreach, as foreach does not support asynchrony.
   for (let repo of allRepos) {
     // Get data, then concat it to all previously fetched data.
     console.log(`Fetching repository contributors: ${repo}`);
     let repoData = await getRepo(repo);
-    allRepoData = allRepoData.concat(repoData);
+    allRepoData[repo] = repoData;
   };
   return allRepoData;
 }
