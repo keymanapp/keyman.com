@@ -26,7 +26,7 @@ and generally trying to make Keyman a great product to use.
 
 [Marc Durdin](bios/mcdurdin)
 
-Project Manager, Developer - Keyboard authoring
+Project Manager, Developer - keyboard authoring
 
 </div>
 
@@ -66,7 +66,7 @@ Developer - Linux, Core
 
 [Mark Sinclair](bios/markcsinclair)
 
-Developer - Keyboard authoring
+Developer - keyboard authoring
 
 </div>
 
@@ -92,6 +92,16 @@ Support and Test Engineer
 
 <div markdown="1">
 
+[![](https://github.com/LornaSIL.png?size=240)](bios/LornaSIL)
+
+[Lorna Evans](bios/LornaSIL)
+
+Keyboards maintainer
+
+</div>
+
+<div markdown="1">
+
 [![](/cdn/dev/img/sgschantz.png)](bios/sgschantz)
 
 [Shawn Schantz](bios/sgschantz)
@@ -106,7 +116,7 @@ Developer - macOS, iOS
 
 [Sabine Schmitt](bios/SabineSIL)
 
-Developer - Keyboard authoring
+Developer - keyboard authoring
 
 </div>
 
@@ -117,6 +127,36 @@ Developer - Keyboard authoring
 [Steven R. Loomis](bios/srl295)
 
 Developer - Core
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/DavidLRowe.png?size=240)](https://github.com/DavidLRowe)
+
+[David Rowe](https://github.com/DavidLRowe)
+
+Keyboards maintainer
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/Markus-SWAG.png?size=240)](https://github.com/Markus-SWAG)
+
+[Markus Greiner](https://github.com/Markus-SWAG)
+
+Developer - Linux
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/sze2st.png?size=240)](https://github.com/sze2st)
+
+[Eberhard Schweizer](https://github.com/sze2st)
+
+Developer - Windows
 
 </div>
 </div>
@@ -160,14 +200,6 @@ with 100 or more commits accepted into Keyman repositories.
 [![](https://avatars.githubusercontent.com/u/142644166?v=4)](https://github.com/Cathaylaboratory)
 
 [Cathaylaboratory](https://github.com/Cathaylaboratory)
-
-</div>
-
-<div markdown="1">
-
-[![](https://avatars.githubusercontent.com/u/8562172?v=4)](https://github.com/DavidLRowe)
-
-[DavidLRowe](https://github.com/DavidLRowe)
 
 </div>
 
@@ -232,14 +264,6 @@ with 100 or more commits accepted into Keyman repositories.
 [![](https://avatars.githubusercontent.com/u/53642368?v=4)](https://github.com/katelem24)
 
 [katelem24](https://github.com/katelem24)
-
-</div>
-
-<div markdown="1">
-
-[![](https://avatars.githubusercontent.com/u/7071907?v=4)](https://github.com/LornaSIL)
-
-[LornaSIL](https://github.com/LornaSIL)
 
 </div>
 
@@ -444,7 +468,6 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/28749166?v=4" alt="MaleBou" />](https://github.com/MaleBou "MaleBou")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/206065583?v=4" alt="manik-choudhary" />](https://github.com/manik-choudhary "manik-choudhary")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/12962708?v=4" alt="markpenny" />](https://github.com/markpenny "markpenny")
-[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/90342882?v=4" alt="Markus-SWAG" />](https://github.com/Markus-SWAG "Markus-SWAG")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/71820562?v=4" alt="MaryDalrymple" />](https://github.com/MaryDalrymple "MaryDalrymple")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/161212377?v=4" alt="mauriu" />](https://github.com/mauriu "mauriu")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/14062593?v=4" alt="MayuraVerma" />](https://github.com/MayuraVerma "MayuraVerma")
@@ -509,7 +532,6 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/44895234?v=4" alt="sslaia" />](https://github.com/sslaia "sslaia")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/63965936?v=4" alt="SvarnimN" />](https://github.com/SvarnimN "SvarnimN")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/10751250?v=4" alt="sven-oly" />](https://github.com/sven-oly "sven-oly")
-[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/191286125?v=4" alt="sze2st" />](https://github.com/sze2st "sze2st")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/63309602?v=4" alt="TheSchlunz" />](https://github.com/TheSchlunz "TheSchlunz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/66953205?v=4" alt="thohahente" />](https://github.com/thohahente "thohahente")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5265930?v=4" alt="tomasbm01" />](https://github.com/tomasbm01 "tomasbm01")

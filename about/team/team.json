@@ -1,12 +1,16 @@
 [
-  { "name": "Marc Durdin",          "handle": "mcdurdin",      "title": "Project Manager, Developer - Keyboard authoring" },
+  { "name": "Marc Durdin",          "handle": "mcdurdin",      "title": "Project Manager, Developer - keyboard authoring" },
   { "name": "Joshua Prins-Horton",  "handle": "jahorton",      "title": "Developer - Web, Predictive Text" },
   { "name": "Darcy Wong",           "handle": "darcywong00",   "title": "Team Lead - Western Hemisphere, Developer - Android" },
   { "name": "Eberhard Beilhard",    "handle": "ermshiperete",  "title": "Developer - Linux, Core", "img": "eberhard.png" },
-  { "name": "Mark Sinclair",        "handle": "markcsinclair", "title": "Developer - Keyboard authoring" },
+  { "name": "Mark Sinclair",        "handle": "markcsinclair", "title": "Developer - keyboard authoring" },
   { "name": "Ross Cruickshank",     "handle": "rc-swag",       "title": "Team Lead - Eastern Hemisphere, Developer - Windows" },
   { "name": "MengHeng Hav",         "handle": "Meng-Heng",     "title": "Support and Test Engineer" },
+  { "name": "Lorna Evans",          "handle": "LornaSIL",      "title": "Keyboards maintainer" },
   { "name": "Shawn Schantz",        "handle": "sgschantz",     "title": "Developer - macOS, iOS", "img": "sgschantz.png" },
-  { "name": "Sabine Schmitt",       "handle": "SabineSIL",     "title": "Developer - Keyboard authoring", "img": "SabineSIL.png" },
-  { "name": "Steven R. Loomis",     "handle": "srl295",        "title": "Developer - Core" }
+  { "name": "Sabine Schmitt",       "handle": "SabineSIL",     "title": "Developer - keyboard authoring", "img": "SabineSIL.png" },
+  { "name": "Steven R. Loomis",     "handle": "srl295",        "title": "Developer - Core" },
+  { "name": "David Rowe",           "handle": "DavidLRowe",    "title": "Keyboards maintainer" },
+  { "name": "Markus Greiner",       "handle": "Markus-SWAG",   "title": "Developer - Linux" },
+  { "name": "Eberhard Schweizer",   "handle": "sze2st",        "title": "Developer - Windows" }
 ]

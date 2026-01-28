@@ -17,7 +17,7 @@ if [[ -z "${GITHUB_TOKEN+x}" ]] || [[ -z "${CROWDIN_TOKEN+x}" ]]; then
 fi
 
 npm ci
-node . -g "${GITHUB_TOKEN}" -c "${CROWDIN_TOKEN}" -o "../../about/team/index.md"
+node . -g "${GITHUB_TOKEN}" -c "${CROWDIN_TOKEN}" -o "../../about/team/index.md" "$@"
 
 if [[ -z "${GITHUB_ACTIONS+x}" ]]; then
   echo "Skipping git commit because of local run"
