@@ -30,4 +30,4 @@ child, and am now learning German.
 My personal blog can be found at [marc.durdin.net](https://marc.durdin.net/);
 I also lurk at [@marc@typo.social](https://typo.social/@marc) on Mastodon.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

@@ -19,4 +19,4 @@ various keyboard layout file formats to Keyman Developer's KMN format.
 In my free time, I enjoy inline skating, which I find very relaxing. I like to
 go on longer or multi-day tours and regularly attend night skating events.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

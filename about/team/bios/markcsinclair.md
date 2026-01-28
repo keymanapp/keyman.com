@@ -31,4 +31,4 @@ theatre, and am an active member of my local church.
 
 My personal website can be found at [markcsinclair.co.uk](https://markcsinclair.co.uk/)
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

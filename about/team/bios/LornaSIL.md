@@ -20,4 +20,4 @@ maintains.
 My husband and I live in Dallas, TX (USA). In my spare time I enjoy
 gardening and reading.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

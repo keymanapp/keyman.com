@@ -23,4 +23,4 @@ in Georgia which is my wife's home state. I grew up close to Seattle, and we
 love taking trips as a family to Washington state to visit family and friends,
 go hiking and enjoy the scenery and seafood.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

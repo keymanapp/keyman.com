@@ -12,4 +12,4 @@ development. With Keyman, I contribute mostly to the Keyman for Windows product.
 I am based in Australia and outside of work, I enjoy spending time with my
 family, mountain biking and road cycling.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

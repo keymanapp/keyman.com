@@ -15,4 +15,4 @@ environment as we learn together how to improve Keyman for our users.
 My wife and I have two children. I also enjoy playing Ultimate (frisbee), going
 to the gym, and playing boardgames.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

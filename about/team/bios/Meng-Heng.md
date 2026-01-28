@@ -24,4 +24,4 @@ users' requirements, monitor Keyman's social platforms and blogs, write
 documents, report bugs to the product developers, and use programming skills to
 fix bugs, add features, and make updates to the Keyman websites.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

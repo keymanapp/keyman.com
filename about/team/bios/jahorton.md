@@ -28,4 +28,4 @@ in August 2015, after which I worked for a year and a half as an adjunct
 lecturer at the University of Florida. Now, as of May 2017 I've joined the
 Keyman team as a software developer.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)

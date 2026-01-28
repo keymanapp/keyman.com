@@ -16,4 +16,4 @@ of Keyman for Linux.
 If I happen to have some spare time I enjoy reading, bicycling and other outdoor
 activities.
 
-* [About the Keyman team](../../team)
+* [About the Keyman team](../)
