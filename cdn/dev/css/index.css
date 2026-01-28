@@ -1015,3 +1015,23 @@
 #bookmarklet-use ol {
 	padding: 0 5%;
 }
+
+/* Contributors */
+
+.section-contributors #contributors {
+	text-align: center;
+}
+
+.section-contributors #contributors-intro {
+	clear: both;
+	text-align: center;
+	padding-top: 12px;
+	margin: 0 0 16px 0;
+}
+
+.section-contributors img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin: 12px 18px 12px;
+}
