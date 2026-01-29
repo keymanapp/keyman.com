@@ -17,7 +17,7 @@ We are seeking people like you who are:
 
 ## About the event
 
-[Marc Durdin](/about/developers/) will be sharing on his experiences working as
+[Marc Durdin](/about/team/bios/mcdurdin) will be sharing on his experiences working as
 a software developer in the majority world — in Thailand, Papua New Guinea,
 Cambodia, and Laos. Watch the video to learn more about Marc's current context
 in Cambodia!
