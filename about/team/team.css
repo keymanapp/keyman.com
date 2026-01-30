@@ -1,0 +1,45 @@
+#section2 .markdown img {
+  border-radius: 50%;
+  margin: 0;
+}
+
+#section2 .markdown .contributors {
+  margin-top: 16px;
+  text-align: center;
+}
+
+#section2 .markdown .contributors div {
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+
+#section2 .markdown .contributors#team div {
+  width: 240px;
+  height: 320px;
+}
+
+#section2 .markdown .contributors#team div img {
+  width: 200px;
+  height: 200px;
+}
+
+#section2 .markdown .contributors#github-major div {
+  width: 200px;
+  height: 240px;
+}
+
+#section2 .markdown .contributors#github-major div img {
+  width: 160px;
+  height: 160px;
+}
+
+#section2 .markdown .contributors#github-minor img,
+#section2 .markdown .contributors#crowdin-minor img {
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+}

@@ -4,7 +4,7 @@
  * Keyman is copyright (C) SIL Global. MIT License.
  *
  * Default English strings for keyboards/index.php
- * Don't escape $s when uploading source to crowdin because exports will escape \$s to \\$s
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);
@@ -43,35 +43,14 @@ return [
   # Search box hint: Description
   "searchbox_description" => 
     "The search always returns a list of keyboards. It searches for keyboard names and details, language names, country names and script names.",
+
+  # Search box hint (line 2):
+  "searchbox_hint_2" => 
+    "You can apply prefixes %1\$s (keyboards) %2\$s (languages) %3\$s (scripts, writing systems) or 
+    %4\$s (countries) to filter your search results. For example %5\$s searches for keyboards for languages used in Thailand.",
   
-  # Search box hint: available prefixes to use in the search
-  "searchbox_hint" => "You can apply prefixes",
-  
-  # (keyboards)
-  "keyboards" => "(keyboards)",
-  
-  # (languages)
-  "languages" => "(languages)",
-  
-  # (scripts, writing systems) or...
-  "scripts_ws" => "(scripts, writing systems) or",
-  
-  # (countries) to filter your search results...
-  "countries_to_filter" =>
-    "(countries) to filter your search results. For example",
-  
-  # Search box hint: example of country search
-  "thailand_searches" => 
-    "searches for keyboards for languages used in Thailand.",
-  
-  # Search box hint: BCP 47 prefix
-  "use_prefix" => "Use prefix",
-  
-  # Search box hint: BCP 47 language example
-  "to search for a BCP 47 language tag, for example" => 
-    "to search for a BCP 47 language tag, for example",
-  
-  # Search box hint: BCP 47 language example
-  "searches_tigrigna" => "searches for Tigrigna (Ethiopia)."
+  # Search box hint (line 3):
+  "searchbox_hint_3" => 
+    "Use prefix %1\$s to search for a BCP 47 language tag, for example %2\$s searches for Tigrigna (Ethiopia).",
 
 ];

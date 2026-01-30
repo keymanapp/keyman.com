@@ -177,4 +177,32 @@ head([
             </div>
         </div>
     </div>
+
+    <div class="section section-contributors">
+        <div class='wrapper'>
+            <h2 class="section-heading">About the Keyman team</h2>
+            <p id="contributors-intro">
+                Learn more about the <a href="/about/team">hundreds of people</a> involved in the Keyman project &mdash; or <a href="/about/get-involved">join the team</a> yourself!
+            </p>
+            <div id="contributors">
+                <?php
+                    // read a few random contributors
+                    $data = json_decode(file_get_contents("./about/team/team.json"));
+                    $rand = [];
+                    for($i = 0; $i < 5; $i++) {
+                        do {
+                            $r = random_int(0, sizeof($data) - 1);
+                        } while(array_search($r, $rand, true) !== false);
+                        array_push($rand, $r);
+                        if(isset($data[$r]->img)) {
+                            $img = cdn("img/{$data[$r]->img}");
+                        } else {
+                            $img = "https://github.com/{$data[$r]->handle}.png?size=240";
+                        }
+                        echo "<a href=\"/about/team\"><img src=\"$img\"></a>";
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>

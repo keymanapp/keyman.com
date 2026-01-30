@@ -76,6 +76,7 @@ END;
                   <ul>
                     <!-- Just use autonyms -->
                     <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
+                    <li><a href="<?= Menu::change_ui_language('de'); ?>">Deutsch</a></li>
                     <li><a href="<?= Menu::change_ui_language('es'); ?>">Español</a></li>
                     <li><a href="<?= Menu::change_ui_language('fr'); ?>">Français</a></li>
                     <li><a href="<?= Menu::change_ui_language('km'); ?>">ខ្មែរ</a></li>
@@ -132,6 +133,7 @@ END;
             <h3>About</h3>
             <ul>
               <li><a href="/about/">About Keyman</a></li>
+              <li><a href="/about/team">The team</a></li>
               <li><a href="/about/get-involved">Get Involved</a></li>
               <li><a href="/training">Training Events</a></li>
               <li><a href="/free/">Free on all Platforms</a></li>
@@ -255,6 +257,7 @@ END;
                     <div class="menu-dropdown-inner">
                         <ul>
                             <li><a href="/about/">About Keyman</a></li>
+                            <li><a href="/about/team">The team</a></li>
                             <li><a href="/about/get-involved">Get Involved</a></li>
                             <li><a href="/training">Training Events</a></li>
                             <li><a href="/free/">Free on all Platforms</a></li>

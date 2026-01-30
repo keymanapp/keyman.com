@@ -73,9 +73,8 @@
     <p><?= _m('hints') ?></p>
     <ul>
       <li><?= _m('searchbox_description') ?></li>
-      <li><?= _m('searchbox_hint') ?> <code>k:</code> <?= _m('keyboards') ?> <code>l:</code> <?= _m('languages') ?> <code>s:</code> <?= _m('scripts_ws') ?>
-        <code>c:</code> <?= _m('countries_to_filter') ?> <code>c:thailand</code> <?= _m('thailand_searches') ?></li>
-      <li><?= _m('use_prefix') ?> <code>l:id:</code> <?= _m('to search for a BCP 47 language tag, for example') ?> <code>l:id:ti-et</code> <?= _m('searches_tigrigna') ?></li>
+      <li><?= _m('searchbox_hint_2', '<code>k:</code>', '<code>l:</code>', '<code>s:</code>', '<code>c:</code>', '<code>c:thailand</code>') ?></li>
+      <li><?= _m('searchbox_hint_3', '<code>l:id:</code>', '<code>l:id:ti-et</code>') ?></li>
     </ul>
   </div>
 </div>
