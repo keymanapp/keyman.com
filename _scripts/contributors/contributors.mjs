@@ -14,9 +14,9 @@ import { genTeamMarkdownSegment } from "./team.mjs";
 // Parse CLI input
 const program = new Command();
 program.name("node .")
-  .description("Script to generate https://keyman.com/about/contributors")
+  .description("Script to generate https://keyman.com/about/team/index.md")
   .version("0.1.0")
-  .option("-o, --output <filename>", "output file", "contributors.md")
+  .option("-o, --output <filename>", "output file", "index.md")
   .option("-g, --github-key <key>", "github api authentication key (https://github.com/settings/tokens)")
   .option("-G, --github-cache", "use cached github data from previous run")
   .option("-c, --crowdin-key <key>", "crowdin api authentication key (https://crowdin.com/setting#api-key)")

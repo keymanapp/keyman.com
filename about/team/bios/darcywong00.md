@@ -5,6 +5,10 @@ title: Keyman team - about Darcy Wong
 
 ![](https://github.com/darcywong00.png?size=240)
 
+### Team Lead - Western Hemisphere, Developer - Android
+
+<br />
+
 I'm a Texan from a family of engineers, and have an MS in Software Engineering
 from Southern Methodist University. Since 2000, I've been working as a software
 developer, and in 2013, my family moved to southeast Asia where I joined one of

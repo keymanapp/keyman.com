@@ -5,6 +5,10 @@ title: Keyman team - about Shawn Schantz
 
 ![](/cdn/dev/img/sgschantz.png)
 
+### Developer - macOS, iOS
+
+<br/>
+
 I joined the Keyman team in 2021 in Cambodia and have focused on development for
 Mac and iOS. At the start of my career I worked on Mac software for several
 years, but that was long ago, when the Mac was not UNIX-based, had only
