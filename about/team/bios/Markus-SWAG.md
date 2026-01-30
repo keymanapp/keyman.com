@@ -16,9 +16,9 @@ drivers, high-availability systems, and database development. In between there
 was an excursion as a regional secretary for the German IFES movement (SMD).
 
 I'm married, have three adult children and live in the Frankfurt area in
-Germany. After myretirement I enjoy having more time for playing saxophone
+Germany. After my retirement I enjoy having more time for playing saxophone
 ("It's not jazz, because you are just missing the tone."), having outdoor
-activities andbeing a lay preacher in my local church.
+activities and being a lay preacher in my local church.
 
 I'm contributing to "Keyman for Linux".
 
