@@ -5,6 +5,10 @@ title: Keyman team - about Eberhard Beilharz
 
 ![](/cdn/dev/img/eberhard.png)
 
+### Developer - Linux, Core
+
+<br />
+
 I am one of the few non-native English speakers in the team, coming from
 Germany. I have a degree in computer science from the University of Applied
 Sciences in Karlsruhe. After working in a small software company for several

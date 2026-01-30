@@ -5,6 +5,10 @@ title: Keyman team - about Mark Sinclair
 
 ![](https://github.com/markcsinclair.png?size=240)
 
+### Developer - keyboard authoring
+
+<br/>
+
 I am a systems developer and experienced university teacher in computer science
 and telecommunications, with research interests in computational intelligence
 and network design. I was committed to the development of higher education in

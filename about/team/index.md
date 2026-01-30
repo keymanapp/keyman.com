@@ -36,7 +36,7 @@ Project Manager, Developer - keyboard authoring
 
 [Joshua Prins-Horton](bios/jahorton)
 
-Developer - Web, Predictive Text
+Developer - Web, predictive text
 
 </div>
 
@@ -54,7 +54,7 @@ Team Lead - Western Hemisphere, Developer - Android
 
 [![](/cdn/dev/img/eberhard.png)](bios/ermshiperete)
 
-[Eberhard Beilhard](bios/ermshiperete)
+[Eberhard Beilharz](bios/ermshiperete)
 
 Developer - Linux, Core
 
@@ -142,9 +142,9 @@ Keyboards maintainer
 
 <div markdown="1">
 
-[![](https://github.com/Markus-SWAG.png?size=240)](https://github.com/Markus-SWAG)
+[![](https://github.com/Markus-SWAG.png?size=240)](bios/Markus-SWAG)
 
-[Markus Greiner](https://github.com/Markus-SWAG)
+[Markus Greiner](bios/Markus-SWAG)
 
 Developer - Linux
 
@@ -157,6 +157,36 @@ Developer - Linux
 [Eberhard Schweizer](https://github.com/sze2st)
 
 Developer - Windows
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/chrisvire.png?size=240)](https://github.com/chrisvire)
+
+[Chris Hubbard](https://github.com/chrisvire)
+
+Developer - Keyboard App Builder
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/rpmargetts.png?size=240)](https://github.com/rpmargetts)
+
+[Richard Margetts](https://github.com/rpmargetts)
+
+Developer - Keyboard App Builder
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/davidmoore1.png?size=240)](https://github.com/davidmoore1)
+
+[David Moore](https://github.com/davidmoore1)
+
+Developer - Keyboard App Builder
 
 </div>
 </div>
@@ -213,30 +243,6 @@ with 100 or more commits accepted into Keyman repositories.
 
 <div markdown="1">
 
-[![](https://avatars.githubusercontent.com/u/2294397?v=4)](https://github.com/eddieantonio)
-
-[eddieantonio](https://github.com/eddieantonio)
-
-</div>
-
-<div markdown="1">
-
-[![](https://avatars.githubusercontent.com/u/3857617?v=4)](https://github.com/gabrielwong)
-
-[gabrielwong](https://github.com/gabrielwong)
-
-</div>
-
-<div markdown="1">
-
-[![](https://avatars.githubusercontent.com/u/901605?v=4)](https://github.com/glasseyes)
-
-[glasseyes](https://github.com/glasseyes)
-
-</div>
-
-<div markdown="1">
-
 [![](https://avatars.githubusercontent.com/u/127360690?v=4)](https://github.com/HopsAndHops)
 
 [HopsAndHops](https://github.com/HopsAndHops)
@@ -277,25 +283,9 @@ with 100 or more commits accepted into Keyman repositories.
 
 <div markdown="1">
 
-[![](https://avatars.githubusercontent.com/u/28331388?v=4)](https://github.com/MakaraSok)
-
-[MakaraSok](https://github.com/MakaraSok)
-
-</div>
-
-<div markdown="1">
-
 [![](https://avatars.githubusercontent.com/u/986339?v=4)](https://github.com/MattGyverLee)
 
 [MattGyverLee](https://github.com/MattGyverLee)
-
-</div>
-
-<div markdown="1">
-
-[![](https://avatars.githubusercontent.com/u/123520338?v=4)](https://github.com/Nnyny)
-
-[Nnyny](https://github.com/Nnyny)
 
 </div>
 
@@ -333,9 +323,9 @@ with 100 or more commits accepted into Keyman repositories.
 
 <div markdown="1">
 
-[![](https://avatars.githubusercontent.com/u/5771433?v=4)](https://github.com/SerkanKurt)
+[![](https://github.com/sillsdev-dondillard.png?size=240)](https://github.com/sillsdev-dondillard)
 
-[SerkanKurt](https://github.com/SerkanKurt)
+[sillsdev-dondillard](https://github.com/sillsdev-dondillard)
 
 </div>
 
@@ -344,14 +334,6 @@ with 100 or more commits accepted into Keyman repositories.
 [![](https://avatars.githubusercontent.com/u/5336736?v=4)](https://github.com/tim-eves)
 
 [tim-eves](https://github.com/tim-eves)
-
-</div>
-
-<div markdown="1">
-
-[![](https://avatars.githubusercontent.com/u/4229598?v=4)](https://github.com/tombogle)
-
-[tombogle](https://github.com/tombogle)
 
 </div>
 
@@ -376,7 +358,110 @@ with 100 or more commits accepted into Keyman repositories.
 
 ---
 
+## Former core team members
+
+These former team members have moved onto other projects but all have made a
+lasting contribution to Keyman. They are greatly missed by us!
+
+<div class="contributors" id="team">
+<div markdown="1">
+
+[![](https://github.com/Nnyny.png?size=240)](bios/Nnyny)
+
+[Nguonnyny Tan](bios/Nnyny)
+
+Support and Test Engineer
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/MakaraSok.png?size=240)](bios/MakaraSok)
+
+[Makara Sok](bios/MakaraSok)
+
+Support and Test Engineer
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/tombogle.png?size=240)](bios/tombogle)
+
+[Tom Bogle](bios/tombogle)
+
+Developer - macOS
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/glasseyes.png?size=240)](bios/glasseyes)
+
+[Daniel Glassey](bios/glasseyes)
+
+Developer - Linux
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/bharanidharanj.png?size=240)](https://github.com/bharanidharanj)
+
+[Bharanidharan Jawehar](https://github.com/bharanidharanj)
+
+Test Engineer
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/dinakaranr.png?size=240)](https://github.com/dinakaranr)
+
+[Dinakaran Rajasekar](https://github.com/dinakaranr)
+
+Test Engineer
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/SerkanKurt.png?size=240)](https://github.com/SerkanKurt)
+
+[Serkan Kurt](https://github.com/SerkanKurt)
+
+Developer - Android, iOS, macOS
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/gabrielwong.png?size=240)](https://github.com/gabrielwong)
+
+[Gabriel Wong](https://github.com/gabrielwong)
+
+Developer - iOS
+
+</div>
+
+<div markdown="1">
+
+[![](https://github.com/eddieantonio.png?size=240)](https://github.com/eddieantonio)
+
+[Eddie Antonio Santos](https://github.com/eddieantonio)
+
+Developer - predictive text
+
+</div>
+</div>
+
+---
+
 ## Other contributors
+
+We value each and every contribution &mdash; whether that's a one word correction
+or a new keyboard layout or a bug fix or new feature. Thank you to all these
+people who have helped Keyman serve you all better!
 
 
 <div class="contributors" id="github-minor" markdown="1">
@@ -387,12 +472,15 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/20852968?v=4" alt="alevy03" />](https://github.com/alevy03 "alevy03")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/82162128?v=4" alt="alex-larkin" />](https://github.com/alex-larkin "alex-larkin")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/181968861?v=4" alt="AmacsizBirKisi" />](https://github.com/AmacsizBirKisi "AmacsizBirKisi")
+[<img class='contributor-minor' src="https://github.com/anandakm.png?size=240" alt="anandakm" />](https://github.com/anandakm "anandakm")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4560208?v=4" alt="Anontamon" />](https://github.com/Anontamon "Anontamon")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/15011591?v=4" alt="anvalon" />](https://github.com/anvalon "anvalon")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/8268042?v=4" alt="atabekm" />](https://github.com/atabekm "atabekm")
+[<img class='contributor-minor' src="https://github.com/athinkra.png?size=240" alt="athinkra" />](https://github.com/athinkra "athinkra")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/18376291?v=4" alt="BARQx" />](https://github.com/BARQx "BARQx")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/49857456?v=4" alt="benaustralia" />](https://github.com/benaustralia "benaustralia")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/3002108?v=4" alt="bennylin" />](https://github.com/bennylin "bennylin")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="beran" />](https://community.software.sil.org/u/beran "beran")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/17914487?v=4" alt="billjancewicz" />](https://github.com/billjancewicz "billjancewicz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/236532?v=4" alt="binarybottle" />](https://github.com/binarybottle "binarybottle")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/19643078?v=4" alt="bravogeorge" />](https://github.com/bravogeorge "bravogeorge")
@@ -400,19 +488,21 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4087431?v=4" alt="cachang" />](https://github.com/cachang "cachang")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/53020872?v=4" alt="caforbes" />](https://github.com/caforbes "caforbes")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/193945261?v=4" alt="Caliph3ubaidUrRe7man" />](https://github.com/Caliph3ubaidUrRe7man "Caliph3ubaidUrRe7man")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="chris_rice" />](https://community.software.sil.org/u/chris_rice "chris_rice")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/24827155?v=4" alt="chrisguthrie1999" />](https://github.com/chrisguthrie1999 "chrisguthrie1999")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/116103537?v=4" alt="ChristopherFio" />](https://github.com/ChristopherFio "ChristopherFio")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/1966942?v=4" alt="cibu" />](https://github.com/cibu "cibu")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/81847?v=4" alt="claude" />](https://github.com/claude "claude")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/133279657?v=4" alt="cmirus" />](https://github.com/cmirus "cmirus")
+[<img class='contributor-minor' src="https://github.com/connman90.png?size=240" alt="connman90" />](https://github.com/connman90 "connman90")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/82140472?v=4" alt="cvosoft" />](https://github.com/cvosoft "cvosoft")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/43384963?v=4" alt="Danble" />](https://github.com/Danble "Danble")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/26031946?v=4" alt="danishdtp" />](https://github.com/danishdtp "danishdtp")
-[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/6209188?v=4" alt="davidmoore1" />](https://github.com/davidmoore1 "davidmoore1")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/214262657?v=4" alt="DavidSMa532" />](https://github.com/DavidSMa532 "DavidSMa532")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/58449545?v=4" alt="dhivehimedia" />](https://github.com/dhivehimedia "dhivehimedia")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/110551238?v=4" alt="dinesharatna" />](https://github.com/dinesharatna "dinesharatna")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/6199709?v=4" alt="dotland" />](https://github.com/dotland "dotland")
+[<img class='contributor-minor' src="https://github.com/DOUCKI56.png?size=240" alt="DOUCKI56" />](https://github.com/DOUCKI56 "DOUCKI56")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/53433504?v=4" alt="DP-Upstate" />](https://github.com/DP-Upstate "DP-Upstate")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/1534119?v=4" alt="dy2288" />](https://github.com/dy2288 "dy2288")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/148839270?v=4" alt="Ehblut" />](https://github.com/Ehblut "Ehblut")
@@ -420,14 +510,19 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/35470921?v=4" alt="emmanuel-ferdman" />](https://github.com/emmanuel-ferdman "emmanuel-ferdman")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/10482921?v=4" alt="ericjding" />](https://github.com/ericjding "ericjding")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/54675996?v=4" alt="erros84" />](https://github.com/erros84 "erros84")
+[<img class='contributor-minor' src="https://github.com/evangaline-fpcc.png?size=240" alt="evangaline-fpcc" />](https://github.com/evangaline-fpcc "evangaline-fpcc")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="evertype" />](https://evertype.com "evertype")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="gaikhuanlung" />](https://community.software.sil.org/u/gaikhuanlung "gaikhuanlung")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/117494817?v=4" alt="gichegemi" />](https://github.com/gichegemi "gichegemi")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/58897028?v=4" alt="gregeck" />](https://github.com/gregeck "gregeck")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/14802245?v=4" alt="gsghyd" />](https://github.com/gsghyd "gsghyd")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/34921843?v=4" alt="gushmazuko" />](https://github.com/gushmazuko "gushmazuko")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5824426?v=4" alt="guyemerson" />](https://github.com/guyemerson "guyemerson")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/96712770?v=4" alt="Harshavardhan-Pandurangan" />](https://github.com/Harshavardhan-Pandurangan "Harshavardhan-Pandurangan")
+[<img class='contributor-minor' src="https://github.com/hinditutorpoint.png?size=240" alt="hinditutorpoint" />](https://github.com/hinditutorpoint "hinditutorpoint")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/32862915?v=4" alt="hsabdullahi" />](https://github.com/hsabdullahi "hsabdullahi")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/11741571?v=4" alt="inkeysoftware" />](https://github.com/inkeysoftware "inkeysoftware")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="Into_Besa" />](https://community.software.sil.org/u/Into_Besa "Into_Besa")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/88164608?v=4" alt="jackrittenberry" />](https://github.com/jackrittenberry "jackrittenberry")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/296827?v=4" alt="jacobbullock" />](https://github.com/jacobbullock "jacobbullock")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/110570208?v=4" alt="jagdouglastavani" />](https://github.com/jagdouglastavani "jagdouglastavani")
@@ -444,6 +539,7 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/10276952?v=4" alt="Jkeku2" />](https://github.com/Jkeku2 "Jkeku2")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5035341?v=4" alt="jmdurdin" />](https://github.com/jmdurdin "jmdurdin")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/78667298?v=4" alt="joe-shares-stuff" />](https://github.com/joe-shares-stuff "joe-shares-stuff")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="johannes_genberg" />](https://community.software.sil.org/u/johannes_genberg "johannes_genberg")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/89797554?v=4" alt="jonathangearyCTUIR" />](https://github.com/jonathangearyCTUIR "jonathangearyCTUIR")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/250732966?v=4" alt="joserosas-silamericas" />](https://github.com/joserosas-silamericas "joserosas-silamericas")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/61866048?v=4" alt="Juanan-Ochoa" />](https://github.com/Juanan-Ochoa "Juanan-Ochoa")
@@ -469,6 +565,7 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/206065583?v=4" alt="manik-choudhary" />](https://github.com/manik-choudhary "manik-choudhary")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/12962708?v=4" alt="markpenny" />](https://github.com/markpenny "markpenny")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/71820562?v=4" alt="MaryDalrymple" />](https://github.com/MaryDalrymple "MaryDalrymple")
+[<img class='contributor-minor' src="https://github.com/MasoodDur.png?size=240" alt="MasoodDur" />](https://github.com/MasoodDur "MasoodDur")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/161212377?v=4" alt="mauriu" />](https://github.com/mauriu "mauriu")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/14062593?v=4" alt="MayuraVerma" />](https://github.com/MayuraVerma "MayuraVerma")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/8888020?v=4" alt="MCGallaspy" />](https://github.com/MCGallaspy "MCGallaspy")
@@ -479,6 +576,7 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/73817896?v=4" alt="miketvo" />](https://github.com/miketvo "miketvo")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/51888982?v=4" alt="MLocria" />](https://github.com/MLocria "MLocria")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/25468552?v=4" alt="mondele" />](https://github.com/mondele "mondele")
+[<img class='contributor-minor' src="https://github.com/mujeebcpy.png?size=240" alt="mujeebcpy" />](https://github.com/mujeebcpy "mujeebcpy")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/40431755?v=4" alt="MuratKaribay" />](https://github.com/MuratKaribay "MuratKaribay")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/89265521?v=4" alt="mx-ash" />](https://github.com/mx-ash "mx-ash")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/2171161?v=4" alt="Narvey" />](https://github.com/Narvey "Narvey")
@@ -487,6 +585,7 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5889363?v=4" alt="nileshbandhiya" />](https://github.com/nileshbandhiya "nileshbandhiya")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/301567?v=4" alt="ninenik" />](https://github.com/ninenik "ninenik")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/12891019?v=4" alt="nlci-dev" />](https://github.com/nlci-dev "nlci-dev")
+[<img class='contributor-minor' src="https://github.com/Noon7007.png?size=240" alt="Noon7007" />](https://github.com/Noon7007 "Noon7007")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/579519?v=4" alt="novta" />](https://github.com/novta "novta")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/153693839?v=4" alt="okandale" />](https://github.com/okandale "okandale")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/76998333?v=4" alt="OscarEwen" />](https://github.com/OscarEwen "OscarEwen")
@@ -500,12 +599,14 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/93768384?v=4" alt="RafalBru" />](https://github.com/RafalBru "RafalBru")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/83806286?v=4" alt="Raji1205" />](https://github.com/Raji1205 "Raji1205")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/12659192?v=4" alt="ramesh-k" />](https://github.com/ramesh-k "ramesh-k")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="rana_zubair" />](https://community.software.sil.org/u/rana_zubair "rana_zubair")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/137201021?v=4" alt="RavingRaven4" />](https://github.com/RavingRaven4 "RavingRaven4")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4934466?v=4" alt="rdai" />](https://github.com/rdai "rdai")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/45110266?v=4" alt="rfaramir" />](https://github.com/rfaramir "rfaramir")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/36448964?v=4" alt="Rieselhilfe" />](https://github.com/Rieselhilfe "Rieselhilfe")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/2560632?v=4" alt="rik-shaw" />](https://github.com/rik-shaw "rik-shaw")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/2812673?v=4" alt="rimas-kudelis" />](https://github.com/rimas-kudelis "rimas-kudelis")
+[<img class='contributor-minor' src="https://github.com/RiyadhAlfareh.png?size=240" alt="RiyadhAlfareh" />](https://github.com/RiyadhAlfareh "RiyadhAlfareh")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/157615239?v=4" alt="roger-nadoumngar" />](https://github.com/roger-nadoumngar "roger-nadoumngar")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/97346456?v=4" alt="rovasiras" />](https://github.com/rovasiras "rovasiras")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/420492?v=4" alt="rowbory" />](https://github.com/rowbory "rowbory")
@@ -513,6 +614,7 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/179603570?v=4" alt="RyanCecil1" />](https://github.com/RyanCecil1 "RyanCecil1")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/166697246?v=4" alt="SabinePlay" />](https://github.com/SabinePlay "SabinePlay")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5070211?v=4" alt="sapradhan" />](https://github.com/sapradhan "sapradhan")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="saraiki" />](https://community.software.sil.org/u/saraiki "saraiki")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/26537840?v=4" alt="sdysart" />](https://github.com/sdysart "sdysart")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/3781280?v=4" alt="serapio" />](https://github.com/serapio "serapio")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/11654191?v=4" alt="Sethyboy0" />](https://github.com/Sethyboy0 "Sethyboy0")
@@ -532,8 +634,10 @@ with 100 or more commits accepted into Keyman repositories.
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/44895234?v=4" alt="sslaia" />](https://github.com/sslaia "sslaia")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/63965936?v=4" alt="SvarnimN" />](https://github.com/SvarnimN "SvarnimN")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/10751250?v=4" alt="sven-oly" />](https://github.com/sven-oly "sven-oly")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="takahiro-harada" />](https://aclanthology.org/people/takahiro-harada/unverified/ "takahiro-harada")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/63309602?v=4" alt="TheSchlunz" />](https://github.com/TheSchlunz "TheSchlunz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/66953205?v=4" alt="thohahente" />](https://github.com/thohahente "thohahente")
+[<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="toby_anderson" />](https://community.software.sil.org/u/toby_anderson "toby_anderson")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5265930?v=4" alt="tomasbm01" />](https://github.com/tomasbm01 "tomasbm01")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/196777653?v=4" alt="tonizo2025" />](https://github.com/tonizo2025 "tonizo2025")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/165828871?v=4" alt="Tranhaiming" />](https://github.com/Tranhaiming "Tranhaiming")
