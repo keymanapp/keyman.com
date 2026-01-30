@@ -27,7 +27,23 @@ program.parse(process.argv);
 async function main() {
 
   const teamData = JSON.parse(fs.readFileSync('../../about/team/team.json', 'utf-8'));
-  let teamSeg = genTeamMarkdownSegment(teamData);
+  const coreTeam = teamData.filter(member => member.level == 'core');
+  const formerTeam = teamData.filter(member => member.level == 'core-previous');
+  const coreTeamHandles = coreTeam.map(member => member.handle);
+  const formerTeamHandles = formerTeam.map(member => member.handle);
+
+  const mapContributor = (member) => ({
+    login: member.handle,
+    avatar_url: member.url ? '/cdn/dev/img/user.png' :
+      // ? (member.url.startsWith('https://community.software.sil.org') ?
+      `https://github.com/${member.handle}.png?size=240`,
+    html_url: member.url ?? `https://github.com/${member.handle}`
+  });
+
+  const sortContributors = (a, b) => a.login.localeCompare(b.login);
+
+  let teamSeg = genTeamMarkdownSegment(coreTeam);
+  let formerTeamSeg = genTeamMarkdownSegment(formerTeam);
 
   let githubMajorSeg = "", githubMinorSeg = "";
   // If the user provided a key for github
@@ -44,11 +60,17 @@ async function main() {
     const excludedRepos = ['keyman-ios-beta.herokuapp.com', 'keyman-ios-alpha.herokuapp.com', 'onboard-keyman'];
     excludedRepos.forEach(repo => delete githubData[repo]);
 
-    const teamHandles = teamData.map(member => member.handle);
+
     Object.keys(githubData).forEach(repo => {
-      githubData[repo] = githubData[repo].filter(user => !teamHandles.includes(user.login));
+      githubData[repo] = githubData[repo].filter(user => !coreTeamHandles.includes(user.login) && !formerTeamHandles.includes(user.login));
     });
     let [gMajor, gMinor] = genGithub(githubData);
+
+    // Include hand-selected contributors, but make sure we don't have them twice
+    const excludeExisting = (user) => !gMajor.find(u => u.login == user.login) && !gMinor.find(u => u.login == user.login);
+    gMinor = gMinor.concat(teamData.filter(member => member.level == 'contributor').map(mapContributor).filter(excludeExisting)).sort(sortContributors);
+    gMajor = gMajor.concat(teamData.filter(member => member.level == 'contributor-major').map(mapContributor).filter(excludeExisting)).sort(sortContributors);
+
     githubMajorSeg = genMajorMarkdownSegment("github-major", gMajor);
     githubMinorSeg = genMinorMarkdownSegment("github-minor", gMinor);
   }
@@ -66,13 +88,13 @@ async function main() {
     crowdinSeg = genMinorMarkdownSegment("crowdin-minor", cMinor);
   }
 
-  let markdown = fillTemplate(teamSeg, githubMajorSeg, githubMinorSeg, crowdinSeg);
+  let markdown = fillTemplate(teamSeg, formerTeamSeg, githubMajorSeg, githubMinorSeg, crowdinSeg);
 
   // To the users input file for output (default: contributors.md), write a join of the header, the github segment.
   fs.writeFileSync(program.opts().output, markdown);
 }
 
-function fillTemplate(teamSeg, githubMajorSeg, githubMinorSeg, crowdinMinorSeg) {
+function fillTemplate(teamSeg, formerTeamSeg, githubMajorSeg, githubMinorSeg, crowdinMinorSeg) {
   // Header for the markdown file. Can include explanation, title, etc.
   return `
 ---
@@ -108,7 +130,20 @@ ${githubMajorSeg}
 
 ---
 
+## Former core team members
+
+These former team members have moved onto other projects but all have made a
+lasting contribution to Keyman. They are greatly missed by us!
+
+${formerTeamSeg}
+
+---
+
 ## Other contributors
+
+We value each and every contribution &mdash; whether that's a one word correction
+or a new keyboard layout or a bug fix or new feature. Thank you to all these
+people who have helped Keyman serve you all better!
 
 ${githubMinorSeg}
 
