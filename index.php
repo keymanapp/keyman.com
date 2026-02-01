@@ -188,6 +188,9 @@ head([
                 <?php
                     // read a few random contributors
                     $data = json_decode(file_get_contents("./about/team/team.json"));
+                    $data = array_filter($data, function($item) {
+                        return $item->level == 'core';
+                    });
                     $rand = [];
                     for($i = 0; $i < 5; $i++) {
                         do {

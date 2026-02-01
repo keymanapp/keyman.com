@@ -24,7 +24,6 @@
 
 #section2 .markdown .contributors#team div img {
   width: 200px;
-  height: 200px;
 }
 
 #section2 .markdown .contributors#github-major div {
@@ -34,12 +33,44 @@
 
 #section2 .markdown .contributors#github-major div img {
   width: 160px;
-  height: 160px;
 }
 
 #section2 .markdown .contributors#github-minor img,
 #section2 .markdown .contributors#crowdin-minor img {
   width: 80px;
-  height: 80px;
   margin: 8px;
+}
+
+@media all and (min-width: 10px) and (max-width: 600px) {
+  #section2 .markdown .contributors#team div {
+    width: 240px;
+    height: auto;
+  }
+
+  #section2 .markdown .contributors#team div img {
+    width: 200px;
+  }
+
+  #section2 .markdown .contributors#team div img {
+    width: 120px;
+  }
+
+  #section2 .markdown .contributors#github-major div {
+    width: 120px;
+    height: auto;
+    display: inline-block;
+  }
+
+  #section2 .contributors#github-major p {
+    font-size: 10pt;
+  }
+
+  #section2 .markdown .contributors#github-major div img {
+    width: 80px;
+  }
+
+  #section2 .markdown .contributors#github-minor img,
+  #section2 .markdown .contributors#crowdin-minor img {
+    width: 40px;
+  }
 }
