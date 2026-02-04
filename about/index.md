@@ -7,6 +7,14 @@ allows you to [build and share](../developer) keyboard layouts for any language.
 Keyman already supports over 2,500 languages and more are contributed every
 week.
 
+<blockquote class='mission'>
+<p>
+Our mission is to empower every language to thrive in the digital world,
+giving communities the tools to read, write, and communicate in their own
+language—at no cost to them.
+</p>
+</blockquote>
+
 Keyman was originally created in 1993 to type Lao on Windows. It  is available
 for many platforms, including [Windows](../windows/), [macOS](../mac/),
 [iOS](../iphone-and-ipad/), [Android](../android/), [Linux](../linux/) and the
@@ -19,6 +27,12 @@ layouts are distributed through an
 [open catalog](https://help.keyman.com/developer/keyboards) to all major desktop and
 mobile platforms.
 
+## About the team
+
+Keyman is made available to you by a dedicated team and many contributors. [Learn more about our team](team/).
+
+➡️ [About the Keyman team](team/)
+
 ## About SIL Global
 
 <img id="sil-logo" src="../_common/assets/sil-logos-2024/sil-logo-abbysinica.png" width="30%" alt='SIL' />
@@ -30,9 +44,7 @@ through research, translation, training and materials development.
 
 You can learn more about SIL Global on the [SIL Global web site](https://www.sil.org/about).
 
-## About the team
-
-➡️ [About the Keyman team](team/)
+➡️ [About SIL Global](https://www.sil.org/about)
 
 ## Thank you to supporting organizations
 

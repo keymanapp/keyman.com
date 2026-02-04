@@ -139,6 +139,18 @@ q:after {
 	background: white;
 }
 
+#section2 .markdown blockquote.mission {
+	padding: 0;
+}
+
+#section2 .markdown blockquote.mission p {
+	font-size:1.8em;
+	font-style: italic;
+	font-family: Gabriola, Palatino;
+	text-align: justify;
+	padding: 1em;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -2391,6 +2403,10 @@ button.feedback {
 		text-align: left;
 		line-height: 1.4;
 	}
+
+	#section2 .markdown blockquote.mission p {
+		font-size:1.4em;
+	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
@@ -2814,11 +2830,19 @@ button.feedback {
 	#bookmarklet-search {
 		width: 300px;
 	}
+
+	#section2 .markdown blockquote.mission p {
+		font-size:1.4em;
+	}
 }
 
 @media (min-width: 600px) and (max-width: 767px) {
 	#bookmarklet-search {
 		width: 550px;
+	}
+
+	#section2 .markdown blockquote.mission p {
+		font-size:1.4em;
 	}
 }
 
@@ -2847,6 +2871,10 @@ button.feedback {
 
 	#download-cta {
 		margin: 0px 80px;
+	}
+
+	#section2 .markdown blockquote.mission p {
+		font-size:1.4em;
 	}
 }
 
