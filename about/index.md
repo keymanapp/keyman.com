@@ -2,18 +2,18 @@
 title: About Keyman
 ---
 
+<blockquote class='mission'>
+<p>
+Our mission is to empower every language community to thrive in the digital world,
+giving them the tools to read, write, and communicate in their own
+language—at no cost to them.
+</p>
+</blockquote>
+
 Keyman is a [free and open source](../free) multilingual keyboard system which
 allows you to [build and share](../developer) keyboard layouts for any language.
 Keyman already supports over 2,500 languages and more are contributed every
 week.
-
-<blockquote class='mission'>
-<p>
-Our mission is to empower every language to thrive in the digital world,
-giving communities the tools to read, write, and communicate in their own
-language—at no cost to them.
-</p>
-</blockquote>
 
 Keyman was originally created in 1993 to type Lao on Windows. It  is available
 for many platforms, including [Windows](../windows/), [macOS](../mac/),
