@@ -133,6 +133,11 @@ q:after {
 	content: none;
 }
 
+#section2 .markdown h3 {
+	font-size: 16pt;
+	font-weight: bold
+}
+
 .markdown blockquote {
 	margin: 12px 24px 24px;
 	padding: 18px 6px 6px 6px;
@@ -149,6 +154,14 @@ q:after {
 	font-family: Gabriola, Palatino;
 	text-align: justify;
 	padding: 1em;
+}
+
+#section2 .markdown strong {
+	font-weight: bold;
+}
+
+#section2 .markdown em {
+	font-style: italic;
 }
 
 table {
