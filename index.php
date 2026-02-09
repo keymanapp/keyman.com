@@ -1,6 +1,7 @@
 ﻿<?php
 require_once('includes/template.php');
 require_once __DIR__ . '/_includes/autoload.php';
+require_once('includes/ui/section-announcement.php');
 
 // Required
 head([
@@ -8,18 +9,26 @@ head([
     'description' => 'Unlock the power of your language with Keyman customizable keyboard software.
        Available for Windows, Mac, Linux, Android, iPhone, and web,
        we support over 2,000 languages to make communication seamless and meaningful.',
-    'css' => ['template.css','index.css'],
+    'css' => ['template.css','index.css','section-announcement.css'],
     'showMenu' => true,
     'addSection2' => false
 ]);
 ?>
 </div>
 </div>
+
+<?php
+    \UI\SectionAnnouncement::render();
+?>
+
 <div class="main1">
+
+
     <h1>Type to the world<br/> in your language</h1>
     <img id="main-banner" src="<?php echo cdn("img/banner.png"); ?>" alt='More than 2500 languages supported' />
 </div>
 <div class="main2">
+
 <!--
     <div class="home-page-video">
         <div class="home-page-video-container">
@@ -49,14 +58,6 @@ head([
             </p>
         </div>
     </div>
-
-    <!-- event banner: uncomment this section when we have an event or promotion -
-    <div class="section section-announcement">
-          <div class='wrapper'>
-            <p style='font-size:2em'><a href='/15'>New: Keyman 15 is released!!</a></p>
-          </div>
-        </div>
-    -->
 
     <div class="section section-languages">
         <div class="wrapper">

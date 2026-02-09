@@ -2,6 +2,8 @@
  * Section1 CSS
  * ***********************************/
 
+@import url('section-announcement.css');
+
 .main1 {
 	float: left;
 	width: 100%;
@@ -240,30 +242,6 @@
 	font-weight: bold;
 	text-indent: 20%;
 	color: #2F4B67
-}
-
-.section-announcement {
-	color: #B92034;
-	background: white;
-}
-
-.section-announcement p {
-	font-size: 36pt;
-	font-weight: bold;
-	padding: 36px 12px;
-	text-align: center;
-}
-
-.section-announcement p a {
-	color: #B92034;
-	text-decoration: none;
-	padding: 4px;
-	display: inline-block;
-}
-
-.section-announcement p a:hover {
-	background: #D6D6D6;
-	border-radius: 6px;
 }
 
 .lang-ital {
