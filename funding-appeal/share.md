@@ -20,7 +20,7 @@ Your stories:
 * help us engage with major funders
 
 
-<a href='https://community.software.sil.org/c/keyman-stories' class='share-link'>Share on the SIL Community site</a>
+<a href='https://community.software.sil.org/t/share-your-keyman-stories/11154' class='share-link'>Share on the SIL Community site</a>
 
 If you prefer to share by email, you can write to
 [support@keyman.com](mailto:support@keyman.com?subject=My%20Keyman%20story).

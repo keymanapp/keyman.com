@@ -10,7 +10,7 @@ available at no cost for every language community, we need your help.
 
 # To continue, we must raise: US$280,000 by 1 March 2026
 
-<div class='donate-link-container'><a class='donate-link' href='https://give.sil.org/campaign/724691/donate?src1=access4all'>Donate now</a></div>
+<div class='donate-link-container'><a class='donate-link' href='https://give.sil.org/campaign/724691/donate?c_src=web-access4all'>Donate now</a></div>
 
 ## You can help!
 
@@ -47,6 +47,6 @@ no cost to them.
 
 
 <div class='donate-link-container'>
-  <a class='donate-link' href='https://give.sil.org/campaign/724691/donate?src1=access4all'>Donate now</a>
+  <a class='donate-link' href='https://give.sil.org/campaign/724691/donate?c_src=web-access4all'>Donate now</a>
   <a class='share-link' href='share'>Share your story</a>
 </div>
