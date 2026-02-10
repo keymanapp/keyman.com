@@ -12,6 +12,20 @@ if (!String.prototype.includes) {
   };
 }
 
+i18next.init({
+  lng: 'en',
+  resources: {
+    en: {
+      translation: {
+        result_one: " result",
+        result_more: " results",
+        pageNumberOfTotalPages: "; page {{pageNumber, number}} of {{totalPages, number}}."
+      }
+    }
+  }
+});
+
+
 /////////////////////////////
 
 if(typeof embed_query == 'undefined') {
@@ -256,10 +270,13 @@ function process_response(q, obsolete, res) {
 
   if(res.keyboards) {
     var deprecatedElement = null;
-
+    var result = res.context.totalRows == 1 ? i18next.t('result_one') : i18next.t('result_more');
     $('<div class="statistics">').text(
-      res.context.totalRows + (res.context.totalRows == 1 ? ' result' : ' results') +
-      (res.context.totalPages < 2 ? '' : '; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.')
+      res.context.totalRows + ' ' + (result) +
+      (res.context.totalPages < 2 ? '' : 
+        i18next.t('pageNumberOfTotalPages', {
+          pageNumber: res.context.pageNumber,
+          totalPages: res.context.totalPages}))
     ).appendTo(resultsElement);
 
     document.title = q + ' - Keyboard search';
