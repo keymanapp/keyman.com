@@ -258,18 +258,18 @@ function process_response(q, obsolete, res) {
     var deprecatedElement = null;
 
     $('<div class="statistics">').text(
-      res.context.totalRows + (res.context.totalRows == 1 ? ' result' : ' results') +
-      (res.context.totalPages < 2 ? '' : '; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.')
+      res.context.totalRows + ' ' + (res.context.totalRows == 1 ? t('resultOne') : t('resultMore') )+ ' ' +
+      (res.context.totalPages < 2 ? '' : t('pageNumberOfTotalPages', {pageNumber: res.context.pageNumber, totalPages: res.context.totalPages}))
     ).appendTo(resultsElement);
 
-    document.title = q + ' - Keyboard search';
+    document.title = q + ' ' + t('keyboardSearchTitle');
 
     res.keyboards.forEach(function(kbd) {
 
       if(isKeyboardObsolete(kbd) && !deprecatedElement) {
         // TODO: make title change depending on whether deprecated keyboards are shown or hidden
         deprecatedElement = $(
-          '<div class="keyboards-deprecated"><h4 class="red underline">Obsolete keyboards</h4></div>');
+          '<div class="keyboards-deprecated"><h4 class="red underline">' + t('obsoleteKeyboards') + '</h4></div>');
         resultsElement.append(deprecatedElement);
       }
 
@@ -296,14 +296,14 @@ function process_response(q, obsolete, res) {
       if(kbd.isDedicatedLandingPage) {
         // We won't show the downloads text
       } else if(kbd.match.downloads == 0)
-        $('.downloads', k).text('No recent downloads');
+        $('.downloads', k).text(t('monthlyDownloadZero'));
       else if(kbd.match.downloads == 1)
-        $('.downloads', k).text(kbd.match.downloads+' monthly download');
+        $('.downloads', k).text(kbd.match.downloads+' ' + t('monthlyDownloadOne'));
       else
-        $('.downloads', k).text(kbd.match.downloads+' monthly downloads');
+        $('.downloads', k).text(kbd.match.downloads+' ' + t('monthlyDownloadMore'));
 
       if(!kbd.encodings.toString().match(/unicode/)) {
-        $('.encoding', k).text('Note: Not a Unicode keyboard');
+        $('.encoding', k).text(t('notUnicode'));
       }
 
       $('.id', k).text(kbd.id);
@@ -331,7 +331,7 @@ function process_response(q, obsolete, res) {
             // icon-ios
             // icon-linux
             // icon-windows
-            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', 'Designed for '+i);
+            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', t('designedForPlatform')+' '+i);
             $('.platforms', k).append(img);
           }
         }
@@ -358,7 +358,7 @@ function buildPager(res, q, obsolete) {
     }
   }
 
-  appendPager(pager, '&lt; Previous', res.context.pageNumber-1);
+  appendPager(pager, t('previousPager'), res.context.pageNumber-1);
   if(res.context.pageNumber > 5) {
     $('<span>...</span>').appendTo(pager);
   }
@@ -368,7 +368,7 @@ function buildPager(res, q, obsolete) {
   if(res.context.pageNumber < res.context.totalPages - 4) {
     $('<span>...</span>').appendTo(pager);
   }
-  appendPager(pager, 'Next &gt;', res.context.pageNumber+1);
+  appendPager(pager, t('nextPager'), res.context.pageNumber+1);
   return pager;
 }
 
