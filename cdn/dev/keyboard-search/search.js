@@ -1,3 +1,13 @@
+//import { i18next } from './i18next-25.5.2.min.js';
+import translationEN from '../js/i18n/search/en.json';
+
+// Translation strings
+const resources = {
+  en: {
+    translation: translationEN
+  }
+}
+
 // Polyfill for String.prototype.includes
 
 if (!String.prototype.includes) {
@@ -12,19 +22,7 @@ if (!String.prototype.includes) {
   };
 }
 
-i18next.init({
-  lng: 'en',
-  resources: {
-    en: {
-      translation: {
-        result_one: " result",
-        result_more: " results",
-        pageNumberOfTotalPages: "; page {{pageNumber, number}} of {{totalPages, number}}."
-      }
-    }
-  }
-});
-
+fetchTranslation();
 
 /////////////////////////////
 
@@ -42,6 +40,25 @@ var dynamic_search_timeout = 0;
 /////////////////////////////////////////////////////////////////////////////////////
 
 var counter = 0;
+
+async function fetchTranslation() {
+  var location = window.location.pathname;
+  console.log(`cwd: ${location}`)
+  await i18next.init({
+    resources,
+    lng: 'en',
+    /*
+    resources: {
+      en: {
+        translation: {
+          result_one: " result",
+          result_more: " results",
+          pageNumberOfTotalPages: "; page {{pageNumber, number}} of {{totalPages, number}}."
+        }
+      }
+    }*/
+  });
+}
 
 function getCurrentPath(q, page, obsolete) {
   q = q.trim();
@@ -270,7 +287,7 @@ function process_response(q, obsolete, res) {
 
   if(res.keyboards) {
     var deprecatedElement = null;
-    var result = res.context.totalRows == 1 ? i18next.t('result_one') : i18next.t('result_more');
+    var result = res.context.totalRows == 1 ? i18next.t('keyResultOne') : i18next.t('keyResultMore');
     $('<div class="statistics">').text(
       res.context.totalRows + ' ' + (result) +
       (res.context.totalPages < 2 ? '' : 

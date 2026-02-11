@@ -66,9 +66,14 @@ class Head {
       Util::cdn('js/kmlive.js')
     );
 
-    foreach($fields->js as $jsFile) { ?>
+    foreach($fields->js as $jsFile) {
+      //echo $jsFile . '\n';
+      if (str_contains($jsFile, 'search.js')) { ?>
+    <script type='module' src='<?=$jsFile?>'></script>
+  <?php } else { ?>
     <script src='<?=$jsFile?>'></script>
-  <?php } ?>
+  <?php }
+    } ?>
 </head>
 
 <?php

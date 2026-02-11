@@ -1,8 +1,4 @@
 {
-  "key": "value",
-  "keyDeep": {
-    "inner": "value"
-  },
   "keyResultOne": " result",
   "keyResultMore": " results",
   "keyPageNumberOfTotalPages": "; page {{pageNumber, number}} of {{totalPages, number}}."
