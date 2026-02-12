@@ -1,3 +1,5 @@
+import t from '../js/i18n/i18n.js';
+
 // Polyfill for String.prototype.includes
 
 if (!String.prototype.includes) {
@@ -273,10 +275,10 @@ function process_response(q, obsolete, res) {
         resultsElement.append(deprecatedElement);
       }
 
-      $keyboardClass = kbd.isDedicatedLandingPage ? 'keyboard keyboardLandingPage' : 'keyboard';
+      var keyboardClass = kbd.isDedicatedLandingPage ? 'keyboard keyboardLandingPage' : 'keyboard';
 
       var k = $(
-        "<div class='"+$keyboardClass+"'>"+
+        "<div class='"+keyboardClass+"'>"+
           "<div class='title'><a></a><span class='match'></span></div>"+
           "<div class='detail'>"+
             "<div class='id-downloads'><div class='id'></div>"+
@@ -384,7 +386,7 @@ function goToPage(event, q, page) {
   return false;
 }
 
-function do_search() {
+export function do_search() {
   document.f.page.value = 1;
   search(true);
   return false; // always return false from search box

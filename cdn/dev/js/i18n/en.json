@@ -1,0 +1,14 @@
+{
+  "resultOne": "result",
+  "resultMore": "results",
+  "pageNumberOfTotalPages": "page {pageNumber} of {totalPages}.",
+  "keyboardSearchTitle": "- Keyboard search",
+  "obsoleteKeyboards": "Obsolete keyboards",
+  "monthlyDownloadZero": "No recent downloads",
+  "monthlyDownloadOne": "monthly download",
+  "monthlyDownloadMore": "monthly downloads",
+  "notUnicode": "Note: Not a Unicode keyboard",
+  "designedForPlatform": "Designed for",
+  "previousPager": "< Previous",
+  "nextPager": "Next >"
+}

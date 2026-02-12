@@ -2,6 +2,15 @@
  * Vanilla JS for localizing keyboard search strings without a framework
  * Reference: https://medium.com/@mihura.ian/translations-in-vanilla-javascript-c942c2095170
  */
+import translationEN from './en.json' with { type: 'json' };
+import translationES from './es.json' with { type: 'json' };
+import translationFR from './fr.json' with { type: 'json' };
+
+const translations = {
+  "en": translationEN,
+  "es": translationES,
+  "fr": translationFR
+};
 
 
 /**
@@ -10,11 +19,13 @@
  * Usage:
  * objNavigate({a: {b: 123}}, "a.b") // returns 123
  *
- * Returns undefined if variable is not found.
  * Fails silently.
+ * @param {obj} obj
+ * @param {String} path to navigate into obj
+ * @returns String or undefined if variable is not found.
  */
 function objNavigate(obj, path){
-  aPath = path.split('.');
+  var aPath = path.split('.');
   try {
     return aPath.reduce((a, v) => a[v], obj);
   } catch {
@@ -53,7 +64,7 @@ function strObjInterpolation(str, obj){
  * @param {obj} interpolations for optional formatted parameters
  * @returns localized string
  */
-function t(key, interpolations) {
+export default function t(key, interpolations) {
   // embed_lang set by session.php
   var language = embed_lang ?? "en";
 
