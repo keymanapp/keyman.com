@@ -1,14 +1,50 @@
 {
-  "resultOne": "resultado",
-  "resultMore": "resultados",
-  "pageNumberOfTotalPages": "página {pageNumber} de {totalPages}.",
-  "keyboardSearchTitle": "- Búsqueda por teclado",
-  "obsoleteKeyboards": "Teclados obsoletos",
-  "monthlyDownloadZero": "No hay descargas recientes",
-  "monthlyDownloadOne": "descargas mensual",
-  "monthlyDownloadMore": "descargas mensuales",
-  "notUnicode": "Nota: No es un teclado Unicode",
-  "designedForPlatform": "Diseñado para",
-  "previousPager": "< Anteriores",
-  "nextPager": "Más >"
+  "resultOne": {
+    "text": "resultado",
+    "crowdinContext": "1 keyboard result found"
+  },
+  "resultMore": {
+    "text": "resultados",
+    "crowdinContext": "More than 1 keyboard results found"
+  },
+  "pageNumberOfTotalPages": {
+    "text": "página {pageNumber} de {totalPages}.",
+    "crowdinContext": "Summary of how many pages of keyboard results"
+  },
+  "keyboardSearchTitle": {
+    "text": "- Búsqueda por teclado",
+    "crowdinContext": "title"
+  },
+  "obsoleteKeyboards": {
+    "text": "Teclados obsoletos",
+    "crowdinContext": "Separator for obsolete keyboards"
+  },
+  "monthlyDownloadZero": {
+    "text": "No hay descargas recientes",
+    "crowdinContext": "0 monthly downloads"
+  },
+  "monthlyDownloadOne": {
+    "text": "descargas mensual",
+    "crowdinContext": "1 monthly download"
+  },
+  "monthlyDownloadMore": {
+    "text": "descargas mensuales",
+    "crowdinContext": "More than 1 monthly download"
+  },
+  "notUnicode": {
+    "text": "Nota: No es un teclado Unicode",
+    "crowdinContext": "Disclaimer for legacy non-Unicode keyboard"
+  },
+  "designedForPlatform": {
+    "text": "Diseñado para {platform}",
+    "crowdinContext": "Designed for {OS platform}"
+  },
+  "previousPager": {
+    "text": "< Anteriores",
+    "crowdinContext": "Previous pages"
+  },
+  "nextPager": {
+    "text": "Más >",
+    "crowdinContext": "More pages"
+  }
 }

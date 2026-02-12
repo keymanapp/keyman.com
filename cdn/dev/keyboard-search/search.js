@@ -333,7 +333,7 @@ function process_response(q, obsolete, res) {
             // icon-ios
             // icon-linux
             // icon-windows
-            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', t('designedForPlatform')+' '+i);
+            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', t('designedForPlatform', {platform: i}));
             $('.platforms', k).append(img);
           }
         }

@@ -1,4 +1,6 @@
 /**
+ * Keyman is copyright (c) SIL Global. MIT License
+ * 
  * Vanilla JS for localizing keyboard search strings without a framework
  * Reference: https://medium.com/@mihura.ian/translations-in-vanilla-javascript-c942c2095170
  */
@@ -8,10 +10,25 @@ import translationFR from './fr.json' with { type: 'json' };
 
 const translations = {
   "en": translationEN,
-  "es": translationES,
-  "fr": translationFR
 };
 
+/**
+ * Load translation for a language if not already added
+ * @param {String} lang 
+ */
+function loadTranslation(lang) {
+  if (!translations.hasOwnProperty(lang)) {
+    switch(lang) {
+      case 'es' : 
+        translations['es'] = translationES;
+        break;
+      case 'fr' :
+        translations['fr'] = translationFR;
+        break;
+      default:
+    }
+  }
+}
 
 /**
  * Navigates inside `obj` with `path` string,
@@ -27,7 +44,7 @@ const translations = {
 function objNavigate(obj, path){
   var aPath = path.split('.');
   try {
-    return aPath.reduce((a, v) => a[v], obj);
+    return aPath.reduce((a, v) => a[v].text, obj);
   } catch {
     return;
   }
@@ -67,6 +84,8 @@ function strObjInterpolation(str, obj){
 export default function t(key, interpolations) {
   // embed_lang set by session.php
   var language = embed_lang ?? "en";
+
+  loadTranslation(language);
 
   if (!translations[language]) {
     // Langage is missing, so fallback to "en"
