@@ -2,7 +2,7 @@
   namespace UI;
 
   class SectionAnnouncement {
-    public function render() {
+    static public function render() {
       ?>
 
     <!-- event banner: uncomment this section when we have an event or promotion -->
