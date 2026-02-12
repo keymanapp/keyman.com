@@ -39,6 +39,10 @@
     "text": "Conçu pour {platform}",
     "crowdinContext": "Designed for {OS platform}"
   },
+  "noMatchesFoundForKeyboard": {
+    "text": "Aucun résultat trouvé pour '{keyboard}'",
+    "crowdinContext": "No keyboards found for search"
+  },
   "previousPager": {
     "text": "< Précédentes",
     "crowdinContext": "Previous pages"

@@ -346,7 +346,7 @@ function process_response(q, obsolete, res) {
       buildPager(res, q, obsolete).appendTo(resultsElement);
     }
   } else {
-    $('<h3>').addClass('red').text("No matches found for '"+qq+"'").appendTo(resultsElement);
+    $('<h3>').addClass('red').text(t('noMatchesFoundForKeyboard', {keyboard: qq})).appendTo(resultsElement);
   }
 }
 
