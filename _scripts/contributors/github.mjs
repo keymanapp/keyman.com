@@ -65,9 +65,6 @@ export function genGithub(repos) {
     };
   });
 
-  // Sort the major and minor categories by contributions
-  major.sort((a, b) => a.login.localeCompare(b.login));
-  minor.sort((a, b) => a.login.localeCompare(b.login));
   return [major, minor];
 }
 

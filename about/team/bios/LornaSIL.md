@@ -5,6 +5,10 @@ title: Keyman team - about Lorna Evans
 
 ![](https://github.com/LornaSIL.png?size=240)
 
+### Keyboards maintainer
+
+<br/>
+
 I grew up in a small indigenous village in Bolivia. Living amongst a
 very small, and oppressed, people group, I grew up with an innate desire
 to help disadvantaged peoples.

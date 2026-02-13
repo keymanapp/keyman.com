@@ -5,6 +5,10 @@ title: Keyman team - about Ross Cruickshank
 
 ![](https://github.com/rc-swag.png?size=240)
 
+### Team Lead - Eastern Hemisphere, Developer - Windows
+
+<br/>
+
 With degrees in Electronics and Information Technology from QUT, I have worked
 across various roles in software and electronics engineering. This has given me
 experience in high-availability systems, microcontroller design, and software

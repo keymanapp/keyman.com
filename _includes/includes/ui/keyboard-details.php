@@ -4,13 +4,14 @@
   require_once('includes/template.php');
   require_once('includes/playstore.php');
   require_once('includes/appstore.php');
+  require_once('includes/ui/section-announcement.php');
 
   use \DateTime;
   use \Keyman\Site\com\keyman\KeymanWebHost;
   use \Keyman\Site\Common\KeymanHosts;
   use \Keyman\Site\com\keyman\Locale;
   use \Keyman\Site\com\keyman;
-  
+
   Locale::definePageLocale('LOCALE_KEYBOARDS_DETAILS', 'keyboards/details');
   $_m_KeyboardDetails = function($id, ...$args) {
     return Locale::m(LOCALE_KEYBOARDS_DETAILS, $id, ...$args);
@@ -307,7 +308,7 @@ END;
       } else {
         $head_options += [
           'js' => ['../keyboard-search/keyboard-details.js', 'qrcode.js'],
-          'css' => ['template.css', '../keyboard-search/search.css']
+          'css' => ['template.css', '../keyboard-search/search.css', 'section-announcement.css']
         ];
         $embed_target = '';
       }
@@ -319,6 +320,7 @@ END;
           var embed_query='';
         </script>
       <?php
+        \UI\SectionAnnouncement::render();
       } else {
         global $session_query;
       ?>
@@ -376,7 +378,7 @@ END;
           <div>
             <a href='/keyboards/$dep$session_query_q' class='deprecated'>
               <span> " . $_m_KeyboardDetails("important_note") . " </span>" .
-              $_m_KeyboardDetails("obsolete_version") . 
+              $_m_KeyboardDetails("obsolete_version") .
               " <span>$dep</span>" . $_m_KeyboardDetails("instead") . "</a>
           </div>
           <div>
@@ -636,7 +638,7 @@ END;
                     $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/keyboard/' . rawurlencode($name));
                     if ($s === FALSE) {
                       echo "<span class='keyboard-unavailable' title='" .
-                        $_m_KeyboardDetails("keyboard_not_available", 
+                        $_m_KeyboardDetails("keyboard_not_available",
                         KeymanHosts::Instance()->keyman_com_host) .
                         "'>$hname</span> ";
                     } else {
@@ -669,9 +671,9 @@ END;
 
                     foreach($langs as $bcp47 => $detail) {
                       if($n == 3) {
-                        echo " <a id='expand-languages' href='#expand-languages'>" . 
+                        echo " <a id='expand-languages' href='#expand-languages'>" .
                           $_m_KeyboardDetails("expand_more", $count) . "</a>";
-                        echo "<a id='collapse-languages' href='#collapse-languages'>" . 
+                        echo "<a id='collapse-languages' href='#collapse-languages'>" .
                           $_m_KeyboardDetails("collapse") . "</a> <span class='expand-languages'>";
                       }
                       if (property_exists($detail, 'languageName')) {

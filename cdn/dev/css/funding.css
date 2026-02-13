@@ -1,0 +1,164 @@
+.funding-tracker-widget {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+#section2 .tracker-header h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.1rem;
+  padding-left: 0;
+}
+
+.progress-container {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  height: 20px;
+}
+
+.progress-bar {
+  background-color: #28a745; /* Green color for progress */
+  height: 100%;
+  width: 0; /* Set initial width to 0, adjust with JavaScript or inline style */
+  transition: width 1s ease-in-out; /* Smooth transition for the bar */
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.tracker-stats {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+}
+
+.amount-raised {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.donate-link-container {
+  text-align: center;
+}
+
+.donate-link {
+  display: inline-block;
+  background: #b92034;
+  color: #f0f0f0 !important;
+  font-size: 24px;
+  margin: 12px 12px 12px 0;
+  padding: 14px 22px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(185, 32, 52, 0.5);
+}
+
+.donate-link:hover {
+  background: #df1b35ff;
+  color: white !important;
+}
+
+.share-link {
+  display: inline-block;
+  background: #202ab9ff;
+  color: #f0f0f0 !important;
+  font-size: 24px;
+  margin: 12px 12px 12px 0;
+  padding: 14px 22px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(185, 32, 52, 0.5);
+}
+
+.share-link:hover {
+  background: #1b29ecff;
+  color: white !important;
+}
+
+/* General container styles */
+
+.medallions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.medallion-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.medallion-container .donation-amount {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.medallion-container .tier-label {
+  font-size: 1.2em;
+  padding: 10px;
+  line-height: 1.2;
+}
+
+/* Base styling for all medallions */
+.medallion {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Gold Tier */
+.medallion-container .gold {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff9ac 0%,
+    #d4af37 40%,
+    #8a6d3b 100%
+  );
+  color: #5c4b1a;
+}
+
+/* Silver Tier */
+.medallion-container .silver {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffffff 0%,
+    #c0c0c0 40%,
+    #707070 100%
+  );
+  color: #4a4a4a;
+}
+
+/* Bronze Tier */
+.medallion-container .bronze {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f5d1b5 0%,
+    #cd7f32 40%,
+    #7d4a21 100%
+  );
+  color: #3e2410;
+}
+
+.sponsors tr > td img {
+  width: 150px;
+}

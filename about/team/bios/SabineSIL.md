@@ -5,6 +5,10 @@ title: Keyman team - about Sabine Schmitt
 
 ![](/cdn/dev/img/SabineSIL.png)
 
+### Developer - keyboard authoring
+
+<br/>
+
 My name is Sabine Schmitt, and I live in the far south of Germany together with
 my husband. I am an engineer and worked at a research institute as a C++
 software developer for many years. In this role, I was responsible for the

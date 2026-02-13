@@ -1,0 +1,49 @@
+
+html .section-announcement {
+	color: #B92034;
+	background: white;
+	padding: 0;
+
+	/* grow transition */
+	display: grid;
+	animation: 2s ease-out 0s 1 expand-section-announcement;
+	overflow: hidden;
+}
+
+@keyframes expand-section-announcement {
+	0% {
+		grid-template-rows: 0fr;
+	}
+	75% {
+		grid-template-rows: 0fr;
+	}
+	100% {
+		grid-template-rows: 1fr;
+	}
+}
+
+.section-announcement > .wrapper {
+	overflow: hidden;
+}
+
+.section-announcement .content {
+	padding: 36px 12px;
+}
+
+.section-announcement p {
+	font-size: 36pt;
+	font-weight: bold;
+	padding: 8px 4px;
+	text-align: center;
+}
+
+.section-announcement p a {
+	color: #B92034;
+	padding: 4px;
+	display: inline-block;
+}
+
+.section-announcement p a:hover {
+	background: #D6D6D6;
+	border-radius: 6px;
+}
