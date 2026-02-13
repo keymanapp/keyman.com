@@ -1,4 +1,4 @@
-import t from '../js/i18n/i18n.js';
+import { I18n } from '../js/i18n/i18n.mjs';
 
 // Polyfill for String.prototype.includes
 
@@ -13,6 +13,8 @@ if (!String.prototype.includes) {
     return this.indexOf(search, start) !== -1;
   };
 }
+
+const t = I18n.t;
 
 /////////////////////////////
 
