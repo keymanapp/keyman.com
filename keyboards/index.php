@@ -19,6 +19,7 @@
     'language' => isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en',
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
     'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
+      Util::cdn('js/i18n/i18n.mjs'),
       Util::cdn('keyboard-search/search.js')]
   ];
 
@@ -39,6 +40,7 @@
 <script>
   var embed='<?=$embed?>';
   var embed_query='<?=$session_query?>';
+  var embed_lang='<?=$head_options['language']?>';
 
   if(embed != 'none') {
     // For an iframe hosted in Download Keyboards dialog, we cannot use
