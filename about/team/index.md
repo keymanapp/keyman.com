@@ -453,6 +453,16 @@ Developer - iOS
 Developer - predictive text
 
 </div>
+
+<div markdown="1">
+
+[![](/cdn/dev/img/tpbaehr.png)](bios/tpbaehr)
+
+[Peirce Baehr](bios/tpbaehr)
+
+Technical Support Engineer
+
+</div>
 </div>
 
 ---
