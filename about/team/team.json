@@ -26,6 +26,7 @@
   { "level": "core-previous", "name": "Serkan Kurt",            "handle": "SerkanKurt",     "title": "Developer - Android, iOS, macOS" },
   { "level": "core-previous", "name": "Gabriel Wong",           "handle": "gabrielwong",    "title": "Developer - iOS" },
   { "level": "core-previous", "name": "Eddie Antonio Santos",   "handle": "eddieantonio",   "title": "Developer - predictive text" },
+  { "level": "core-previous", "name": "Peirce Baehr",           "handle": "tpbaehr",        "title": "Technical Support Engineer", "img": "tpbaehr.png" },
 
   { "level": "contributor-major", "handle": "sillsdev-dondillard" },
 
