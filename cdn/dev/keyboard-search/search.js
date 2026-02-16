@@ -277,7 +277,7 @@ function process_response(q, obsolete, res) {
         resultsElement.append(deprecatedElement);
       }
 
-      var keyboardClass = kbd.isDedicatedLandingPage ? 'keyboard keyboardLandingPage' : 'keyboard';
+      const keyboardClass = kbd.isDedicatedLandingPage ? 'keyboard keyboardLandingPage' : 'keyboard';
 
       var k = $(
         "<div class='"+keyboardClass+"'>"+
