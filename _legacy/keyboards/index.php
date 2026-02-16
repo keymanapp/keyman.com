@@ -39,4 +39,4 @@
   <p>Loading...</p>
 </div>
 
-<script src="<?= cdn('legacy-keyboard-search/search.js'); ?>"></script>
+<script src="<?= cdn('legacy-keyboard-search/search.mjs'); ?>" type="module"></script>

@@ -67,12 +67,10 @@ class Head {
     );
 
     foreach($fields->js as $jsFile) {
-      if (str_contains($jsFile, '/js/i18n/') || str_contains($jsFile, 'search.js')) { ?>
-    <script src='<?=$jsFile?>' type='module' ></script>
-  <?php } else { ?>
-    <script src='<?=$jsFile?>'></script>
-  <?php }
-    } ?>
+      $jsFileType = str_ends_with($jsFile, '.mjs') ? "type='module'" : "";
+      echo "<script src='$jsFile' $jsFileType></script>";
+    }
+  ?>
 </head>
 
 <?php
