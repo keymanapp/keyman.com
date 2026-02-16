@@ -20,7 +20,7 @@
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
     'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
       Util::cdn('js/i18n/i18n.mjs'),
-      Util::cdn('keyboard-search/search.js')]
+      Util::cdn('keyboard-search/search.mjs')]
   ];
 
   if($embed != 'none') {
