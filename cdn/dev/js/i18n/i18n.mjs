@@ -157,7 +157,7 @@ export class I18n {
    * Determine the display UI language for the keyboard search
    * Navigate the translation JSON 
    * @param {string} domain of the localized strings
-   * @param {string} key 
+   * @param {string} key for the string
    * @param {obj} interpolations for optional formatted parameters
    * @returns localized string
    */
@@ -168,7 +168,7 @@ export class I18n {
     }
 
     // embed_lang set by session.php
-    var language = embed_lang ?? "en";
+    var language = embed_lang ?? I18n.DEFAULT_LOCALE;
     if (I18n.currentDomain) {
       if (!I18n.strings[domain][language]) {
         var obj = {
@@ -191,7 +191,10 @@ export class I18n {
     }
 
     const value = I18n.objNavigate(I18n.strings[I18n.currentDomain][language].strings, key);
-    //console.info(`language: ${language}, key: ${key}, value: ${value}`);
+    if (!value) {
+      // Warn if string doesn't exist
+      console.log(`Missing '${I18n.currentDomain}/${language}.json' string for '${key}'`);
+    }
     return I18n.strObjInterpolation(value, interpolations);
   }
 
