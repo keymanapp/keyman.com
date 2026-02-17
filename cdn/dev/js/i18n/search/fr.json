@@ -1,54 +1,15 @@
 {
-  "resultOne": {
-    "text": "résultat",
-    "crowdinContext": "1 keyboard result found"
-  },
-  "resultMore": {
-    "text": "résultats",
-    "crowdinContext": "More than 1 keyboard results found"
-  },
-  "pageNumberOfTotalPages": {
-    "text": "page {pageNumber} sur {totalPages}.",
-    "crowdinContext": "Summary of how many pages of keyboard results"
-  },
-  "keyboardSearchTitle": {
-    "text": "- Recherche au clavier",
-    "crowdinContext": "title"
-  },
-  "obsoleteKeyboards": {
-    "text": "Claviers obsolètes",
-    "crowdinContext": "Separator for obsolete keyboards"
-  },
-  "monthlyDownloadZero": {
-    "text": "Aucun téléchargement récent",
-    "crowdinContext": "0 monthly downloads"
-  },
-  "monthlyDownloadOne": {
-    "text": "téléchargement mensuel",
-    "crowdinContext": "1 monthly download"
-  },
-  "monthlyDownloadMore": {
-    "text": "téléchargements mensuels",
-    "crowdinContext": "More than 1 monthly download"
-  },
-  "notUnicode": {
-    "text": "Remarque: Ce n'est pas un clavier Unicode.",
-    "crowdinContext": "Disclaimer for legacy non-Unicode keyboard"
-  },
-  "designedForPlatform": {
-    "text": "Conçu pour {platform}",
-    "crowdinContext": "Designed for {OS platform}"
-  },
-  "noMatchesFoundForKeyboard": {
-    "text": "Aucun résultat trouvé pour '{keyboard}'",
-    "crowdinContext": "No keyboards found for search"
-  },
-  "previousPager": {
-    "text": "< Précédentes",
-    "crowdinContext": "Previous pages"
-  },
-  "nextPager": {
-    "text": "Plus >",
-    "crowdinContext": "More pages"
-  }
+  "resultOne": "résultat",
+  "resultMore": "résultats",
+  "pageNumberOfTotalPages": "page {pageNumber} sur {totalPages}.",
+  "keyboardSearchTitle": "- Recherche au clavier",
+  "obsoleteKeyboards": "Claviers obsolètes",
+  "monthlyDownloadZero": "Aucun téléchargement récent",
+  "monthlyDownloadOne": "téléchargement mensuel",
+  "monthlyDownloadMore": "téléchargements mensuels",
+  "notUnicode": "Remarque: Ce n'est pas un clavier Unicode.",
+  "designedForPlatform": "Conçu pour {platform}",
+  "noMatchesFoundForKeyboard": "Aucun résultat trouvé pour '{keyboard}'",
+  "previousPager": "< Précédentes",
+  "nextPager": "Plus >"
 }

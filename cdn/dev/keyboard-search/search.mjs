@@ -305,14 +305,14 @@ async function process_response(q, obsolete, res) {
       if(kbd.isDedicatedLandingPage) {
         // We won't show the downloads text
       } else if(kbd.match.downloads == 0)
-        $('.downloads', k).text(t('search', 'monthlyDownloadZero'));
+        $('.downloads', k).text(await t('search', 'monthlyDownloadZero'));
       else if(kbd.match.downloads == 1)
         $('.downloads', k).text(kbd.match.downloads+' ' + await('monthlyDownloadOne'));
       else
         $('.downloads', k).text(kbd.match.downloads+' ' + await('monthlyDownloadMore'));
 
       if(!kbd.encodings.toString().match(/unicode/)) {
-        $('.encoding', k).text(t('search', 'notUnicode'));
+        $('.encoding', k).text(await t('notUnicode'));
       }
 
       $('.id', k).text(kbd.id);
@@ -340,7 +340,7 @@ async function process_response(q, obsolete, res) {
             // icon-ios
             // icon-linux
             // icon-windows
-            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', await('designedForPlatform', {platform: i}));
+            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', await t('designedForPlatform', {platform: i}));
             $('.platforms', k).append(img);
           }
         }
@@ -354,7 +354,7 @@ async function process_response(q, obsolete, res) {
       p.appendTo(resultsElement);
     }
   } else {
-    $('<h3>').addClass('red').text(t('search', 'noMatchesFoundForKeyboard', {keyboard: qq})).appendTo(resultsElement);
+    $('<h3>').addClass('red').text(await t('noMatchesFoundForKeyboard', {keyboard: qq})).appendTo(resultsElement);
   }
 }
 

@@ -1,54 +1,15 @@
 {
-  "resultOne": {
-    "text": "result",
-    "crowdinContext": "1 keyboard result found"
-  },
-  "resultMore": {
-    "text": "results",
-    "crowdinContext": "More than 1 keyboard results found"
-  },
-  "pageNumberOfTotalPages": {
-    "text": "page {pageNumber} of {totalPages}.",
-    "crowdinContext": "Summary of how many pages of keyboard results"
-  },
-  "keyboardSearchTitle": {
-    "text": "- Keyboard search",
-    "crowdinContext": "title"
-  },
-  "obsoleteKeyboards": {
-    "text": "Obsolete keyboards",
-    "crowdinContext": "Separator for obsolete keyboards"
-  },
-  "monthlyDownloadZero": {
-    "text": "No recent downloads",
-    "crowdinContext": "0 monthly downloads"
-  },
-  "monthlyDownloadOne": {
-    "text": "monthly download",
-    "crowdinContext": "1 monthly download"
-  },
-  "monthlyDownloadMore": {
-    "text": "monthly downloads",
-    "crowdinContext": "More than 1 monthly download"
-  },
-  "notUnicode": {
-    "text": "Note: Not a Unicode keyboard",
-    "crowdinContext": "Disclaimer for legacy non-Unicode keyboard"
-  },
-  "designedForPlatform": {
-    "text": "Designed for {platform}",
-    "crowdinContext": "Designed for {OS platform}"
-  },
-  "noMatchesFoundForKeyboard": {
-    "text": "No matches found for '{keyboard}'",
-    "crowdinContext": "No keyboards found for search"
-  },
-  "previousPager": {
-    "text": "< Previous",
-    "crowdinContext": "Previous pages"
-  },
-  "nextPager": {
-    "text": "Next >",
-    "crowdinContext": "More pages"
-  }
+  "resultOne": "result",
+  "resultMore": "results",
+  "pageNumberOfTotalPages": "page {pageNumber} of {totalPages}.",
+  "keyboardSearchTitle": "- Keyboard search",
+  "obsoleteKeyboards": "Obsolete keyboards",
+  "monthlyDownloadZero": "No recent downloads",
+  "monthlyDownloadOne": "monthly download",
+  "monthlyDownloadMore": "monthly downloads",
+  "notUnicode": "Note: Not a Unicode keyboard",
+  "designedForPlatform": "Designed for {platform}",
+  "noMatchesFoundForKeyboard": "No matches found for '{keyboard}'",
+  "previousPager": "< Previous",
+  "nextPager": "Next >"
 }

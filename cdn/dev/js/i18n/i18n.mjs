@@ -108,7 +108,7 @@ export class I18n {
    * Navigates inside `obj` with `path` string,
    *
    * Usage:
-   * objNavigate({a: {b: {c: {text:123}}}}, "a.b.c") // returns 123
+   * objNavigate({a: {b: {c: 123}}}, "a.b.c") // returns 123
    *
    * Fails silently.
    * @param {obj} obj
@@ -118,7 +118,7 @@ export class I18n {
   static objNavigate(obj, path){
     var aPath = path.split('.');
     try {
-      return aPath.reduce((a, v) => a[v], obj).text;
+      return aPath.reduce((a, v) => a[v], obj);
     } catch {
       return;
     }
