@@ -44,7 +44,7 @@ export class I18n {
     if (!I18n.strings[domain]) {
       I18n.strings[domain] = [];
     }
-    I18n.strings[domain]['en'] = {
+    I18n.strings[domain][I18n.DEFAULT_LOCALE] = {
       strings: [],
       loaded: false
     }
@@ -61,7 +61,7 @@ export class I18n {
     if (!I18n.strings.hasOwnProperty(id)) {
       I18n.strings[id] = [];
     }
-    await I18n.loadStrings(domain, 'en');
+    await I18n.loadStrings(domain, I18n.DEFAULT_LOCALE);
   }
 
   /**
@@ -95,13 +95,18 @@ export class I18n {
     var currentLocaleFilename = `./${domain}/${lang}.json`;
     I18n.currentDomain = domain;
 
-    const jsModule = await import(currentLocaleFilename, {
-      with: { type: 'json'}
-    });
-    I18n.strings[I18n.currentDomain][lang] = {
-      strings: jsModule.default,
-      loaded: true
-    };
+    try {
+      const jsModule = await import(currentLocaleFilename, {
+        with: { type: 'json'}
+      });
+      I18n.strings[I18n.currentDomain][lang] = {
+        strings: jsModule.default,
+        loaded: true
+      };
+    } catch (ex) {
+      // JSON localization file doesn't exist. Log to sentry?
+      //console.warn(`${domain}/${lang}.json doesn't exist. Not loading...`);
+    }
   }
 
   /**
@@ -178,16 +183,11 @@ export class I18n {
       }
     }
 
-    if (!I18n.strings[I18n.currentDomain][language]) {
-      // Langage is missing, so fallback to "en"
-      console.warn(`i18n for language: '${language}' missing, fallback to 'en'`);
-      language = "en";
-    }
-
-    if (!I18n.strings[I18n.currentDomain][language].strings[key]) {
-      // key is missing for current language
-      console.warn(`key '${key}' missing in '${language}' strings`);
-      return '';
+    if (!I18n.strings[I18n.currentDomain][language] || !I18n.strings[I18n.currentDomain][language].strings[key]) {
+      // Langage or key is missing, so fallback to "en"
+      // Log to Sentry?
+      // console.warn(`i18n for language: '${language}' or key ${key} missing, fallback to 'en'`);
+      language = I18n.DEFAULT_LOCALE;
     }
 
     const value = I18n.objNavigate(I18n.strings[I18n.currentDomain][language].strings, key);
