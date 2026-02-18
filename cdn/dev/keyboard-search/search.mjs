@@ -305,11 +305,11 @@ async function process_response(q, obsolete, res) {
       if(kbd.isDedicatedLandingPage) {
         // We won't show the downloads text
       } else if(kbd.match.downloads == 0)
-        $('.downloads', k).text(await t('search', 'monthlyDownloadZero'));
+        $('.downloads', k).text(await t('monthlyDownloadZero'));
       else if(kbd.match.downloads == 1)
-        $('.downloads', k).text(kbd.match.downloads+' ' + await('monthlyDownloadOne'));
+        $('.downloads', k).text(kbd.match.downloads+' ' + await t('monthlyDownloadOne'));
       else
-        $('.downloads', k).text(kbd.match.downloads+' ' + await('monthlyDownloadMore'));
+        $('.downloads', k).text(kbd.match.downloads+' ' + await t('monthlyDownloadMore'));
 
       if(!kbd.encodings.toString().match(/unicode/)) {
         $('.encoding', k).text(await t('notUnicode'));

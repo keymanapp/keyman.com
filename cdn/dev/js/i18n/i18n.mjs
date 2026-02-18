@@ -186,7 +186,7 @@ export class I18n {
     if (!I18n.strings[I18n.currentDomain][language] || !I18n.strings[I18n.currentDomain][language].strings[key]) {
       // Langage or key is missing, so fallback to "en"
       // Log to Sentry?
-      // console.warn(`i18n for language: '${language}' or key ${key} missing, fallback to 'en'`);
+      // console.warn(`i18n for language: '${language}' for '${key}' missing, fallback to 'en'`);
       language = I18n.DEFAULT_LOCALE;
     }
 
