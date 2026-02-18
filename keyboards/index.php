@@ -32,6 +32,8 @@
     array_push($head_options['css'], Util::cdn('keyboard-search/embed.css'));
   }
   Head::render($head_options);
+  $direction = $head_options['language'] == 'ar' ? 'rtl' : 'ltr';
+  $div_direction = "dir='" . $direction . "'";
   if($embed == 'none')
     Menu::render([]); // we'll be doing client-side os detection now
   Body::render();
@@ -52,9 +54,9 @@
   }
 </script>
 
-<div class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>'>
+<div class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>' <?= $div_direction ?> >
 
-  <h2 class="red underline"><a href='/keyboards'><?= _m('page_title') ?></a></h2>
+  <h2 class="red underline" <?= $div_direction ?>><a href='/keyboards'><?= _m('page_title') ?></a></h2>
 
   <div id='search-box'>
     <form method='get' action='/keyboards' name='f'>
