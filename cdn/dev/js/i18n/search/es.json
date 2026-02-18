@@ -5,11 +5,11 @@
   "keyboardSearchTitle": "- Búsqueda por teclado",
   "obsoleteKeyboards": "Teclados obsoletos",
   "monthlyDownloadZero": "No hay descargas recientes",
-  "monthlyDownloadOne": "descargas mensual",
+  "monthlyDownloadOne": "descarga mensual",
   "monthlyDownloadMore": "descargas mensuales",
   "notUnicode": "Nota: No es un teclado Unicode",
   "designedForPlatform": "Diseñado para {platform}",
   "noMatchesFoundForKeyboard": "No se encontraron coincidencias para '{keyboard}'",
-  "previousPager": "< Anteriores",
-  "nextPager": "Más >"
+  "previousPager": "< Anterior",
+  "nextPager": "Siguente >"
 }
