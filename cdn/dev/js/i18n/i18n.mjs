@@ -25,7 +25,7 @@ export class I18n {
    * @param {locale} The new current locale
    */
   static setLocale(locale) {
-    // Clea current locales
+    // Clean current locales
     I18n.currentLocales = [];
 
     if (!locale) {

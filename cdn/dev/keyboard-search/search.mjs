@@ -368,7 +368,7 @@ async function buildPager(res, q, obsolete) {
     }
   }
 
-  appendPager(pager, await('previousPager'), res.context.pageNumber-1);
+  appendPager(pager, await t('previousPager'), res.context.pageNumber-1);
   if(res.context.pageNumber > 5) {
     $('<span>...</span>').appendTo(pager);
   }
@@ -378,7 +378,7 @@ async function buildPager(res, q, obsolete) {
   if(res.context.pageNumber < res.context.totalPages - 4) {
     $('<span>...</span>').appendTo(pager);
   }
-  appendPager(pager, await('nextPager'), res.context.pageNumber+1);
+  appendPager(pager, await t('nextPager'), res.context.pageNumber+1);
   return pager;
 }
 
