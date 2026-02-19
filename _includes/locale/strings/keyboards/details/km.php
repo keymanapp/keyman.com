@@ -10,6 +10,9 @@
 declare(strict_types=1);
 
 return [
+  # Page Title
+  "details_page_title" => "%1\$s ក្តារចុច",
+
   # Placeholder for new keyboard search
   "new_keyboard_search" => "ស្វែងរកក្ដារចុចថ្មី",
   
