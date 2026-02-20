@@ -377,6 +377,7 @@ END;
 
     protected static function LoadData() {
       self::$error = "";
+      global $_m;
 
       // Get Keyboard Metadata
 
@@ -391,7 +392,7 @@ END;
         if(is_object($s)) {
           self::$keyboard = $s;
           self::$title = htmlentities(self::$keyboard->name);
-          if (!preg_match('/keyboard$/i', self::$title)) self::$title .= ' keyboard';
+          if (!preg_match('/keyboard$/i', self::$title)) self::$title = $_m('install_page_title', self::$title);
         } else {
           self::$error .= "Error returned from ".KeymanHosts::Instance()->api_keyman_com.": $s\n";
           self::$title = 'Failed to load keyboard ' . self::$id;

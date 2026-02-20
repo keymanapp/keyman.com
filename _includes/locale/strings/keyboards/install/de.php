@@ -10,6 +10,9 @@
 declare(strict_types=1);
 
 return [
+  # Page Title
+  "install_page_title" => "%1\$s-Tastatur",
+
   # {Keyboard} download should start shortly
   "download_start_shortly" => 
     "Ihr %1\$s Tastatur-Download sollte in Kürze beginnen. 

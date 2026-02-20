@@ -10,6 +10,9 @@
 declare(strict_types=1);
 
 return [
+  # Page Title
+  "install_page_title" => "%1\$s ក្តារចុច",
+
   # {Keyboard} download should start shortly
   "download_start_shortly" => 
     "ការទាញយក ក្ដារចុច %1\$s របស់អ្នកគួរចាប់ផ្ដើមក្នុងពេលឆាប់ៗនេះ។ 
