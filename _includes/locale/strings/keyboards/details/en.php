@@ -134,9 +134,6 @@ return [
   
   "new_search" => "New search",
   
-  ## TODO: Previous/Next pagination handled in search.js
-  
-  
   ## Errors
   
   # Failed to load keyboard package [ID]
