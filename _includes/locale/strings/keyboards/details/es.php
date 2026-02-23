@@ -9,6 +9,9 @@
 declare(strict_types=1);
 
 return [
+  # Page Title
+  "details_page_title" => "Teclado %1\$s",
+
   # Placeholder for new keyboard search
   "new_keyboard_search" => "Nueva búsqueda de teclado",
   

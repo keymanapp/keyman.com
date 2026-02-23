@@ -209,7 +209,7 @@ END;
         if(is_object($s)) {
           self::$keyboard = $s;
           self::$title = htmlentities(self::$keyboard->name);
-          if (!preg_match('/keyboard$/i', self::$title)) self::$title .= ' keyboard';
+          if (!preg_match('/keyboard$/i', self::$title)) self::$title = $_m_KeyboardDetails("details_page_title", self::$title);
           self::$description = isset(self::$keyboard->description) ? self::$keyboard->description : '';
           self::$authorName = isset(self::$keyboard->authorName) ? self::$keyboard->authorName : '';
           self::$minVersion = isset(self::$keyboard->minKeymanVersion) ? self::$keyboard->minKeymanVersion : $stable_version;
