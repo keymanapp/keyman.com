@@ -56,24 +56,23 @@ END;
      * As UI languages get added, we'll need to update this.
      */
     private static function render_ui_list() {
-      $link = [
-        'en' => Menu::change_ui_language('en'),
-        'de' => Menu::change_ui_language('de'),
-        'es' => Menu::change_ui_language('es'),
-        'fr' => Menu::change_ui_language('fr'),
-        'km' => Menu::change_ui_language('km')
-      ];
-
 echo <<<END
                   <ul>
                     <!-- Just use autonyms -->
-                    <li><a href="{$link['en']}">English</a></li>
-                    <li><a href="{$link['de']}">Deutsch</a></li>
-                    <li><a href="{$link['es']}">Español</a></li>
-                    <li><a href="{$link['fr']}">Français</a></li>
-                    <li><a href="{$link['km']}">ខ្មែរ</a></li>
-                  </ul>
 END;
+      $linkArray = array(
+        'en' => array(Menu::change_ui_language('en'), 'English'),
+        'de' => array(Menu::change_ui_language('de'), 'Deutsch'),
+        'es' => array(Menu::change_ui_language('es'), 'Español'),
+        'fr' => array(Menu::change_ui_language('fr'), 'Français'),
+        'km' => array(Menu::change_ui_language('km'), 'ខ្មែរ')
+      );
+
+      foreach($linkArray as $id) {
+echo <<<END
+                    <li><a href="{$id[0]}">{$id[1]}</a></li>
+END;
+      }
     }
 
     /**
