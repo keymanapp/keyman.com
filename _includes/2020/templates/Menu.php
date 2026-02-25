@@ -70,9 +70,7 @@ echo <<<END
                 <li><a href="{$id[0]}">{$id[1]}</a></li>\n
 END;
       }
-?>
-            </ul>
-<?php
+      echo "</ul>";
     }
 
     /**
