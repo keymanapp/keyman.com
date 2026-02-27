@@ -132,9 +132,9 @@ Developer - Core
 
 <div markdown="1">
 
-[![](https://github.com/DavidLRowe.png?size=240)](https://github.com/DavidLRowe)
+[![](https://github.com/DavidLRowe.png?size=240)](bios/DavidLRowe)
 
-[David Rowe](https://github.com/DavidLRowe)
+[David Rowe](bios/DavidLRowe)
 
 Keyboards maintainer
 
@@ -451,6 +451,16 @@ Developer - iOS
 [Eddie Antonio Santos](https://github.com/eddieantonio)
 
 Developer - predictive text
+
+</div>
+
+<div markdown="1">
+
+[![](/cdn/dev/img/tpbaehr.png)](bios/tpbaehr)
+
+[Peirce Baehr](bios/tpbaehr)
+
+Technical Support Engineer
 
 </div>
 </div>
