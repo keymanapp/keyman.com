@@ -27,6 +27,20 @@ files:
 
   # Keyboard search files
 
+  # JS files
+  - source: /cdn/dev/js/i18n/search/en.json
+    dest: /js/search/en.json
+    translation: /cdn/dev/js/i18n/search/%locale%.json
+    languages_mapping:
+      locale:
+        # Canonical locales as needed
+        es-ES: es
+        de: de
+        fr: fr
+        km: km
+
+  # PHP files
+
   - source: /_includes/locale/strings/keyboards/en.php
     dest: /keyboards/keyboards/en.php
     translation: /_includes/locale/strings/keyboards/%locale%.php

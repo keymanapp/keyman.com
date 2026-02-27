@@ -66,9 +66,11 @@ class Head {
       Util::cdn('js/kmlive.js')
     );
 
-    foreach($fields->js as $jsFile) { ?>
-    <script src='<?=$jsFile?>'></script>
-  <?php } ?>
+    foreach($fields->js as $jsFile) {
+      $jsFileType = str_ends_with($jsFile, '.mjs') ? "type='module'" : "";
+      echo "<script src='$jsFile' $jsFileType></script>";
+    }
+  ?>
 </head>
 
 <?php
