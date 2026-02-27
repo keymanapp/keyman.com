@@ -28,9 +28,9 @@ files:
   # Keyboard search files
 
   # JS files
-  - source: /cdn/dev/js/i18n/search/en.json
+  - source: /_includes/locale/strings/keyboard-search/en.json
     dest: /js/search/en.json
-    translation: /cdn/dev/js/i18n/search/%locale%.json
+    translation: /_includes/locale/strings/keyboard-search/%locale%.json
     languages_mapping:
       locale:
         # Canonical locales as needed
