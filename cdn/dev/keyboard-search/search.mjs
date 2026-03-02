@@ -1,6 +1,6 @@
 import { I18n } from '../js/i18n.mjs';
 
-const I18N_DOMAIN = 'keyboard-search';
+const I18N_DOMAIN = 'keyboards';
 const t = (key, interpolations) => I18n.t(I18N_DOMAIN, key, interpolations);
 
 // Polyfill for String.prototype.includes

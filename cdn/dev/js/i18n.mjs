@@ -7,7 +7,7 @@
  * Domains are loaded by Head::render() with the js_i18n_domains property, e.g.
  *
  *    'js_i18n_domains' => [
- *      'keyboard-search' => Locale::domain_js('keyboard-search'),
+ *      'keyboards' => Locale::domain_js('keyboards'),
  *    ],
  *
  */
