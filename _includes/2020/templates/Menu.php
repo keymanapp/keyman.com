@@ -52,19 +52,54 @@ END;
     }
 
     /**
-     * Render the globe dropdown for changing the UI language
+     * Generate links that correspond to the UI options
      * As UI languages get added, we'll need to update this.
-     * Limitation: Currently only visible on pages that use localized strings
-     * @param number - Div number, default 0.
      */
-    private static function render_globe_dropdown($number = 0): void {
+    private static function render_ui_list() {
+      echo "<ul>\n                <!-- Just use autonyms -->\n";
+      $linkArray = array(
+        'en' => array(Menu::change_ui_language('en'), 'English'),
+        'de' => array(Menu::change_ui_language('de'), 'Deutsch'),
+        'es' => array(Menu::change_ui_language('es'), 'Español'),
+        'fr' => array(Menu::change_ui_language('fr'), 'Français'),
+        'km' => array(Menu::change_ui_language('km'), 'ខ្មែរ')
+      );
+
+      foreach($linkArray as $id) {
+echo <<<END
+                <li><a href="{$id[0]}">{$id[1]}</a></li>\n
+END;
+      }
+      echo "</ul>";
+    }
+
+    /**
+     * Render the globe dropdown for changing the UI language
+     * Limitation: Currently only visible on pages that use localized strings
+     * @param divID - <div> ID to handle 3 cases:
+     * ui-language (default) Desktop globe hover
+     * ui-language1 - Desktop globe hover
+     * phone - Mobile list
+     */
+    private static function render_globe_dropdown($divID = "ui-language"): void {
       global $page_is_using_locale;
       if (!isset($page_is_using_locale) || !$page_is_using_locale) {
         // only render on pages that use localized strings
         return;
       }
 
-      $divID = ($number == 1) ? "ui-language1" : "ui-language";
+      // Phone layout
+      if ($divID === "phone") {
+?>
+<div class="phone-menu-item">
+            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Keyboard Search UI</h3>
+            <?= Menu::render_ui_list(); ?>
+        </div>
+      <?php
+        return;
+      }
+
+      // Desktop layout
 echo <<<END
           <p>
             <div id='$divID' class="menu-item">
@@ -73,14 +108,7 @@ END;
               <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
               <div class="menu-item-dropdown">
                 <div class="menu-dropdown-inner">
-                  <ul>
-                    <!-- Just use autonyms -->
-                    <li><a href="<?= Menu::change_ui_language('en'); ?>">English</a></li>
-                    <li><a href="<?= Menu::change_ui_language('de'); ?>">Deutsch</a></li>
-                    <li><a href="<?= Menu::change_ui_language('es'); ?>">Español</a></li>
-                    <li><a href="<?= Menu::change_ui_language('fr'); ?>">Français</a></li>
-                    <li><a href="<?= Menu::change_ui_language('km'); ?>">ខ្មែរ</a></li>
-                  </ul>
+                  <?= Menu::render_ui_list(); ?>
                 </div>
               </div>
             </div>
@@ -100,7 +128,8 @@ END;
                 <input id="search-submit2" type="image" src="<?php echo Util::cdn("img/search-button.png"); ?>" alt="search button" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
             </form>
         </div>
-        <div class="phone-menu-item">
+        <?= Menu::render_globe_dropdown("phone"); ?>
+  <div class="phone-menu-item">
             <h3>Products</h3>
             <ul>
                 <li><a href="/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>

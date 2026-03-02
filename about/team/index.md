@@ -132,9 +132,9 @@ Developer - Core
 
 <div markdown="1">
 
-[![](https://github.com/DavidLRowe.png?size=240)](https://github.com/DavidLRowe)
+[![](https://github.com/DavidLRowe.png?size=240)](bios/DavidLRowe)
 
-[David Rowe](https://github.com/DavidLRowe)
+[David Rowe](bios/DavidLRowe)
 
 Keyboards maintainer
 
