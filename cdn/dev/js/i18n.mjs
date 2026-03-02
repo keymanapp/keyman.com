@@ -24,6 +24,7 @@ export class I18n {
   /**
    * Load the strings for the given domain
    * @param {string} domain
+   * @return {boolean} Status if domain was successfully loaded
    */
   static loadDomain(domain) {
 
@@ -43,7 +44,7 @@ export class I18n {
     } catch(e) {
       // Handle JSON parse errors so we get a functioning page, even if it has
       // no localized strings visible
-      console.error(e);
+      console.error(`Invalid JSON for 'i18n_${domain}': ${e}`);
       return false;
     }
 
