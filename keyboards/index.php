@@ -18,9 +18,14 @@
     'description' => _m('page_description'),
     'language' => isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en',
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
-    'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
-      Util::cdn('js/i18n/i18n.mjs'),
-      Util::cdn('keyboard-search/search.mjs')]
+    'js' => [
+      Util::cdn('keyboard-search/jquery.mark.js'),
+      Util::cdn('keyboard-search/dedicated-landing-pages.js'),
+      Util::cdn('keyboard-search/search.mjs'),
+    ],
+    'js_i18n_domains' => [
+      'keyboard-search' => Locale::domain_js('keyboard-search'),
+    ],
   ];
 
   if($embed != 'none') {

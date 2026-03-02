@@ -31,6 +31,9 @@ class Head {
       if(!isset($fields->js)) {
         $fields->js = [];
       }
+      if(!isset($fields->js_i18n_domains)) {
+        $fields->js_i18n_domains = [];
+      }
 ?><!DOCTYPE html>
 <?php
   if (!empty($fields->language)) {
@@ -60,6 +63,16 @@ class Head {
   <link href='https://fonts.googleapis.com/css?family=Cabin:400,400italic,500,600,700,700italic|Source+Sans+Pro:400,700,900,600,300|Noto+Serif:400' rel='stylesheet' type='text/css'>
 
   <?php
+    /* Embed json i18n strings for each domain */
+    foreach($fields->js_i18n_domains as $domain => $locales) {
+      $localization = '';
+      foreach($locales as $locale) {
+        if($localization != '') $localization .= ",\n";
+        $localization .= "{ \"locale\": \"$locale\", \"strings\": " . file_get_contents(__DIR__ . "/../../locale/strings/$domain/$locale.json") . "}";
+      }
+      echo "<script id='i18n_$domain' type='application/json'>[\n$localization\n]</script>\n";
+    }
+
     array_unshift($fields->js,
       Util::cdn('js/jquery1-11-1.min.js'),
       Util::cdn('js/bowser.es5.2.9.0.min.js'),
@@ -68,7 +81,7 @@ class Head {
 
     foreach($fields->js as $jsFile) {
       $jsFileType = str_ends_with($jsFile, '.mjs') ? "type='module'" : "";
-      echo "<script src='$jsFile' $jsFileType></script>";
+      echo "<script src='$jsFile' $jsFileType></script>\n";
     }
   ?>
 </head>
