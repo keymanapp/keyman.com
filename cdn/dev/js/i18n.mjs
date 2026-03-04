@@ -58,9 +58,9 @@ export class I18n {
    * objNavigate({a: {b: {c: 123}}}, "a.b.c") // returns 123
    *
    * Fails silently.
-   * @param {obj} obj
-   * @param {String} path to navigate into obj
-   * @returns String or undefined if variable is not found.
+   * @param {Object} obj
+   * @param {string} path to navigate into obj
+   * @return {string} or undefined if variable is not found.
    */
   static objNavigate(obj, path){
     if(!obj) return undefined;
@@ -83,6 +83,9 @@ export class I18n {
    *
    * ordered variables
    * strObjInterpolation("The {0} says {1}, {1}, {1}!", ['cow', 'moo']);
+   * @param {string} str containing interpolated variables wrapped in `{}`
+   * @param {Object} JSON containing values for the variables
+   * @return {string} Resulting string where variables are replaced
    */
   static strObjInterpolation(str, obj){
     obj = obj || [];
@@ -101,8 +104,8 @@ export class I18n {
    * Navigate the translation JSON
    * @param {string} domain of the localized strings
    * @param {string} key for the string
-   * @param {obj} interpolations for optional formatted parameters
-   * @returns localized string
+   * @param {Object} interpolations for optional formatted parameters
+   * @return {string} localized string
    */
   static t(domain, key, interpolations) {
     if (!I18n.domains[domain]) {
