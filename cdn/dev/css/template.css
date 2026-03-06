@@ -731,6 +731,13 @@ input[type="search"] {
 	margin-top: -1px;
 }
 
+#help1 #ui-language1 {
+	width: 28px;
+	margin: 0px 0px 14px 8px;
+	vertical-align: top;
+	height: 22px;
+}
+
 /* hover menus */
 
 .menu-item {

@@ -89,6 +89,7 @@ END;
       }
 
       // Phone layout
+      $globeClass = '';
       if ($divID === "phone") {
 ?>
 <div class="phone-menu-item">
@@ -97,12 +98,16 @@ END;
         </div>
       <?php
         return;
+      } else if ($divID === "ui-language") {
+        $globeClass = 'menu-item';
+      } else if ($divID === "ui-language1") {
+        $globeClass = 'help1-globe menu-item';
       }
 
       // Desktop layout
 echo <<<END
           <p>
-            <div id='$divID' class="menu-item">
+            <div id='$divID' class='$globeClass'>
 END;
 ?>
               <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
@@ -207,7 +212,7 @@ END;
           <p id="donate"><a href="/donate">Donate</a></p>
           <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>" target="blank">Support<img src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon"></a></p>
           <?php
-            Menu::render_globe_dropdown();
+            Menu::render_globe_dropdown("ui-language");
 ?>
         </div>
     </div>
@@ -225,7 +230,7 @@ END;
           <a id='help1-donate' href="/donate">Donate</a>
           <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>"><img id="top-menu-icon2" src="<?php echo Util::cdn("img/helpIcon.png"); ?>" alt="help icon" /></a>
 <?php
-            Menu::render_globe_dropdown(1);
+            Menu::render_globe_dropdown("ui-language1");
 ?>
         </div>
         <div class="wrapper">
