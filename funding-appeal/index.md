@@ -21,8 +21,10 @@ What this means: We are grateful that because of your response, Keyman will be
 able to continue to be offered free to all through the end of 2026. The project
 won't shut down, but because we are at 58% of the need, not all the
 functionality as shown in the [Keyman Roadmap](https://blog.keyman.com/2026/03/keyman-roadmap-march-2026/)
-will be released this year. But we are still working hard to get the funding from
-foundation grants - we will keep you posted!
+will be released this year.
+
+We are working hard to get additional funding from foundation grants — we
+will keep you posted! We appreciate any donations you can make — every bit helps.
 
 <br>
 
