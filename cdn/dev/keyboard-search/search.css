@@ -95,7 +95,14 @@ h2 a {
 #search-box #search-f {
   float: left;
   position: relative;
-  left: -1px;
+  top: 1px;
+  height: 30px;
+  color: white;
+  background-color: #A0C4F3;
+  outline-style: solid;
+  outline-width: 1px;
+  border: none;
+  outline-color: #4184DC;
 }
 
 #search-results {
