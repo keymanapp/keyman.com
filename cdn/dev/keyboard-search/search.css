@@ -400,6 +400,8 @@ html[data-platform~='windows linux macos'] #try-box {
 
 .download.download-web a.download-link {
   background-image: url(/cdn/dev/keyboard-search/link-blank.png);
+  background-repeat: no-repeat;
+  width:100%;
 }
 
 /*.platforms span + span::before {

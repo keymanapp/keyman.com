@@ -101,6 +101,28 @@
     }
 
     /**
+     * Determine a button style in px to accomodate grapheme cluster length. Height hard-coded to 46px;
+     * @param $str - the string
+     * @return string element style (width and height in 'px') or empty if no change/invalid string
+     */ 
+    public static function calculateButtonStyle($str) {
+      $buttonStyle = '';
+      if (empty($str)) {
+        return $buttonStyle;
+      }
+
+      // Rough conversion of 360px width for every 20 grapheme clusters
+      // Intl grapheme_strlen() not available, so use regex for count
+      $count = preg_match_all('/\X/u', $str, $matches);
+      $px = (int) ($count * 360 / 20);
+      if ($px > 1) {
+        $buttonStyle = sprintf("style=\"background-size: %dpx 46px;\"", $px);
+      }
+
+      return $buttonStyle;
+    }
+
+    /**
      * Given a locale, return an array of fallback locales
      * For example: es-ES --> [es, es-ES]
      * TODO: Use an existing fallback algorthim like
