@@ -416,6 +416,7 @@ END;
     }
 
     protected static function WriteTitle() {
+      global $_m;
       $head_options = [
         'title' => self::$title,
         'js' => [Util::cdn('keyboard-search/keyboard-details.js'), Util::cdn('keyboard-search/install.js')],
