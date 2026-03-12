@@ -1247,18 +1247,20 @@ input[type="search"] {
 #section2 h1 {
 	text-align: center;
 	font-size: 28pt;
+	line-height: 1.4;
 	padding: 40px 10px 10px 10px;
 }
 
 #section2 h2 {
 	font-size: 22pt;
-	line-height: 1.2em;
+	line-height: 1.4;
 	padding: 40px 10px 10px 10px;
 	clear: both;
 }
 
 #section2 h3 {
 	font-size: 14pt;
+	line-height: 1.4;
 	font-weight: 600;
 	padding: 0px 10px 10px 10px;
 }
