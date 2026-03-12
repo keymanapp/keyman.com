@@ -185,10 +185,9 @@ END;
         $description = '';
         $linktext = $_m_KeyboardDetails("full_online_editor");
       }
-      $buttonStyle = Locale::calculateButtonStyle($linktext);
       return <<<END
         <div class="download download-web">
-          <a class="download-link" $embed_target $buttonStyle href='$url'>$linktext</a>
+          <a class="download-link" $embed_target href='$url'>$linktext</a>
           $description
         </div>
 END;
