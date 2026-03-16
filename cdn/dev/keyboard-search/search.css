@@ -387,7 +387,7 @@ html[data-platform~='windows linux macos'] #try-box {
 
 .download a.download-link {
   margin-top: 4px;
-  padding: 12px 30px 0 4px;
+  padding: 12px 50px 0 10px;
   color: white;
   min-width: 202px;
   height: 34px;
