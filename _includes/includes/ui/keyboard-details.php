@@ -360,7 +360,7 @@ END;
           <form method='get' action='/keyboards' name='f'>
             <input id="search-q" type="text" placeholder="<?= $_m_KeyboardDetails("new_keyboard_search") ?>" name="q">
             <input id='search-page' type='hidden' name='page'>
-            <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="<?= $_m_KeyboardDetails("search") ?>">
+            <input id="search-f" type="submit" value="<?= $_m_KeyboardDetails("search") ?>">
           </form>
         </div>
 <?php
