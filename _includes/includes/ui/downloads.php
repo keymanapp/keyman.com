@@ -29,7 +29,8 @@
   function downloadSection($product, $platform, $filepattern, $tiers = '', $target = '') {
     if($target == '') $target = $platform;
 
-    echo "<h2 id='$target' class='red underline'>$product</h2>\n\n";
+    echo sprintf("<h2 id='%s' class='red underline'>%s</h2>\n\n", 
+      $target, _m_Downloads($product));
     $tiers = explode(' ',$tiers);
     foreach($tiers as $tier) {
       echo downloadLinks($product, $platform, $tier, $filepattern);
@@ -38,9 +39,7 @@
 
   function downloadLinks($product, $platform, $tier, $filepatterns) {
     global $versions;
-    $tierTitle = ucFirst($tier);
-    echo "<h3>$tierTitle</h3>\n";
-    echo "<ul>\n";
+    echo sprintf("<h3>%s</h3>\n<ul>\n", ucFirst(_m_Downloads($tier)));
     if(!empty($versions->$platform->$tier)) {
       if(!is_array($filepatterns)) $filepatterns = array($filepatterns);
       foreach($filepatterns as $filepattern) {
@@ -50,12 +49,18 @@
         if(!empty($versions->$platform->$tier->files->$file)) {
           $fileData = $versions->$platform->$tier->files->$file;
           $fileSize = formatSizeUnits($fileData->size);
-          echo "<li><a href='" . KeymanHosts::Instance()->downloads_keyman_com . "/$platform/$tier/{$versions->$platform->$tier->version}/$file'>$file $tier</a> (released $fileData->date, $fileSize)</li>\n";
+          echo sprintf("<li><a href='%s/%s/%s/%s/%s'>%s %s</a> %s</li>\n",
+            KeymanHosts::Instance()->downloads_keyman_com ,
+            $platform, $tier,
+            $versions->$platform->$tier->version,
+            $file, $file, $tier,
+            _m_Downloads('released_date_size', $fileData->date, $fileSize));
         }
       }
     }
-    echo "<li><a href='" . KeymanHosts::Instance()->downloads_keyman_com . "/$platform/$tier/'>All $product $tier releases</a></li>\n";
-    echo "</ul><br/>\n";
+    echo sprintf("<li><a href='%s/%s/%s/'>%s</a></li>\n</ul><br/>\n",
+      KeymanHosts::Instance()->downloads_keyman_com, $platform, $tier,
+      _m_Downloads('all_product_releases', _m_Downloads($product), _m_Downloads($tier)));
   }
 
   function downloadLargeCTA($product, $platform, $tier, $filepattern) {
