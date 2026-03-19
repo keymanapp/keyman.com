@@ -71,6 +71,19 @@ files:
         fr: fr
         km: km
 
+  # Product Download files
+  - source: /_includes/locale/strings/downloads/en.php
+    dest: /downloads/en.php
+    translation: /_includes/locale/strings/downloads/%locale%.php
+    languages_mapping:
+      locale:
+        # Canonical locales as needed
+        es-ES: es
+        de: de
+        fr: fr
+        km: km
+
+
   # crowdin parameters descriptions:
 
   #
