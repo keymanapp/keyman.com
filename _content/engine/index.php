@@ -45,7 +45,7 @@
   standalone Keyman Engine for Web (KeymanWeb), you can integrate over 2500 languages to give you and your users the
   simplest solution to typing on your site possible.
   <br/><br/>
-  You can of course build your own keyboard layouts using <a href='/developer/'>Keyman Developer</a>, as well as
+  You can of course build your own keyboard layouts using <a href='../developer/'>Keyman Developer</a>, as well as
   access our library of hundreds of keyboard layouts covering thousands of languages.
   <br/><br/>
   <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/web/'>KeymanWeb Documentation</a>
@@ -61,13 +61,13 @@
   the world!
   <br/><br/>
   You can develop your own keyboard layouts for Keyman for iOS with
-  <a href='/developer/'>Keyman Developer</a>. If you have existing keyboards, they can be ported to iOS with just
+  <a href='../developer/'>Keyman Developer</a>. If you have existing keyboards, they can be ported to iOS with just
   a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus,
   dynamic keyboard layers and more!
   <br/><br/>
   <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/iphone-and-ipad/'>Keyman Engine for iPhone and iPad Documentation</a>
   <br/>
-  <a href='/downloads/#ios-engine'>Get the Keyman Engine for iOS now</a>
+  <a href='../downloads/#ios-engine'>Get the Keyman Engine for iOS now</a>
 </p>
 <h2 class="red underline">Keyman Engine for Android</h2>
 <p>
@@ -76,13 +76,13 @@
   Keyman Engine for Android makes it straightforward to take your app to the world!
   <br/><br/>
   You can develop your own keyboard layouts for Keyman for Android with
-  <a href='/developer/'>Keyman Developer</a>. If you have existing keyboards, they can be ported to Android with just
+  <a href='../developer/'>Keyman Developer</a>. If you have existing keyboards, they can be ported to Android with just
   a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus,
   dynamic keyboard layers and more!
   <br/><br/>
   <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/android/'>Keyman Engine for Android Documentation</a>
   <br/>
-  <a href='/downloads/#android-engine'>Get the Keyman Engine for Android SDK now</a>
+  <a href='../downloads/#android-engine'>Get the Keyman Engine for Android SDK now</a>
 </p>
 <br/>
 

@@ -19,7 +19,7 @@
 <h2 class="red underline">KeymanWeb Source Code and Development</h2>
 <p>
   KeymanWeb <?= $stable_version; ?> is an Open Source input method system for the web, supporting both desktops and touch devices. Keyboard layouts for
-  use with KeymanWeb can be created with the free download <a href='/developer/download.php'>Keyman Developer</a> (Windows).
+  use with KeymanWeb can be created with the free download <a href='../download.php'>Keyman Developer</a> (Windows).
 </p>
 
 <h2 class="red underline">Add KeymanWeb to a Website</h2>
