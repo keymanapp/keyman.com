@@ -4,7 +4,7 @@
   require_once('includes/appstore.php');
   require_once('includes/playstore.php');
 
-  require_once __DIR__ . '/../_includes/autoload.php';
+  require_once __DIR__ . '/../../_includes/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
 
   // Required
