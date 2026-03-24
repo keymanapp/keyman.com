@@ -32,6 +32,11 @@ RewriteRule ^crowdin.yml$ = [F,L]
 # apple-app-site-association
 RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
 
+# Rewrite /<lang>/... ignoring known 2-3 letter folders
+#RewriteCond "$1" !-f
+#RewriteCond "$1" !-d
+#RewriteRule "^/(?!cdn|go|mac|web)/(.+)?/" "/_content/$2?lang=$1"
+
 # macosx and macos to mac (ignore case)
 RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
 
@@ -180,8 +185,17 @@ RedirectMatch "^/(french|german|italian|spanish|swedish)(/?)$"       "/keyboards
 # dedicated-keyboard-landing pages
 RedirectMatch 301 "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(/.*)?$" "/keyboards/h/$1$2"
 
+
 #
-# PHP and Markdown rewriting
+# if $1 is a folder or file in /_content, then redirect to currentlang (en?)
+# e.g. would redirect windows/download --> en/windows/download/
+RewriteCond "{$DOCUMENT_ROOT}/_content/$1.php" -f
+RewriteRule "^(.+)" "en/$1" [R,L]
+
+# TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
+
+#
+# PHP and Markdown redirections
 #
 
 # Remove index or index.php and redirect (and stop processing)
@@ -200,14 +214,15 @@ RewriteCond "{DOCUMENT_ROOT}/$1.md" !-f
 RewriteRule "^(.+[^/])$" "$1/" [R,END]
 
 #
-# PHP rewriting
+# PHP and Markdown rewriting
 #
 
 # TODO: mdhost currently in a different path than help.keyman
 
 # Rewrite file to file.md
-RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
-RewriteRule "^(.+)$" "/_includes/includes/md/mdhost.php?file=$1.md" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
+# en --> should be a bcp-47 type 'lang' match (e.g. ab[-x][-y]) ignore case, keep it a fairly loose expression [a-z][a-z][a-z]?(-...)?
+RewriteRule "^(en)/(.+)$" "/_includes/includes/md/mdhost.php?file=_content/$2.md&lang=$1" [END]
 
 # Rewrite file to file.php
 RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
