@@ -26,7 +26,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for Android <?= $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
+        <p>Want to try the Keyman for Android <?= $beta_version ?> Beta? <a href="../beta/">Learn more</a></p>
 <?php
     }
 ?>
@@ -46,7 +46,7 @@
 </p>
 
 <p>
-  Create custom Keyman dictionaries with <a href='/developer'>Keyman Developer <?= $stable_version ?> </a>
+  Create custom Keyman dictionaries with <a href='../developer'>Keyman Developer <?= $stable_version ?> </a>
   and install them to use with your keyboards.
 </p>
 
@@ -56,7 +56,7 @@
 
 <p>
   Now you also have the flexibility of installing Keyman keyboard packages from either online
-  (like <a href="/keyboards"><?= KeymanHosts::Instance()->keyman_com ?>/keyboards</a>) or local storage from a new "Settings" panel.
+  (like <a href="../keyboards"><?= KeymanHosts::Instance()->keyman_com ?>/keyboards</a>) or local storage from a new "Settings" panel.
 </p>
 
 <p>
