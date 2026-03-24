@@ -3,7 +3,7 @@
 
   namespace Keyman\Site\com\keyman;
 
-  require __DIR__ . '/../../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
 
   const DEBUG=0;
 
