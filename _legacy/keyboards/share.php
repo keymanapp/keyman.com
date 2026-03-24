@@ -1,6 +1,6 @@
 <?php
-  require_once('includes/template.php');
-  require_once('includes/ui/legacy-keyboard-details.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/ui/legacy-keyboard-details.php';
   require_once('./session.php');
   use Keyman\Site\Common\KeymanHosts;
 

@@ -1,6 +1,6 @@
 <?php
-  require_once('includes/servervars.php');
-  require_once __DIR__ . '/../../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
 
   if(!isset($_REQUEST['id'])) {

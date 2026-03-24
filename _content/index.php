@@ -1,7 +1,7 @@
-﻿<?php
-require_once('includes/template.php');
-require_once __DIR__ . '/../_includes/autoload.php';
-require_once('includes/ui/section-announcement.php');
+<?php
+require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+require_once _KEYMANCOM_INCLUDES . '/autoload.php';
+require_once _KEYMANCOM_INCLUDES . '/includes/ui/section-announcement.php';
 
 // Required
 head([
@@ -64,7 +64,7 @@ head([
             <h2 class="section-heading">Choose a keyboard for your language</h2>
             <p class="section-explainer">Select a language to download a suitable keyboard for your device. We've listed some of the more popular below, if yours isn't there, use the search tool to find it.</p>
 
-            <?php require_once('includes/ui/download-links.php'); ?>
+            <?php require_once _KEYMANCOM_INCLUDES . '/includes/ui/download-links.php'; ?>
 
             <form name="fsearch" action="/keyboards" method="get">
                 <h4>Search over 2500 languages</h4>

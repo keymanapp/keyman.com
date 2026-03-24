@@ -3,7 +3,7 @@
 
   namespace Keyman\Site\com\keyman;
 
-  require __DIR__ . '/../../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   require_once('./session.php');
 
   use Keyman\Site\com\keyman\templates\Head;

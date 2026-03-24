@@ -1,11 +1,11 @@
 <?php
 
-  require_once('includes/template.php');
-  require_once('includes/ui/downloads.php');
-  require_once('includes/appstore.php');
-  require_once('includes/playstore.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
 
-  require_once __DIR__ . '/../../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
 
   // Required

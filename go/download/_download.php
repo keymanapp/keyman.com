@@ -1,5 +1,5 @@
 <?php
-  require_once __DIR__ . '/../../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\com\keyman\KeymanComSentry;
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Util;

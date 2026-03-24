@@ -1,14 +1,14 @@
 <?php
-  require_once('servervars.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
 
   // *Don't* use autoloader here because of potential side-effects in older pages
-  require_once(__DIR__ . '/../2020/Util.php');
-  require_once(__DIR__ . '/../locale/Locale.php');
-  require_once(__DIR__ . '/../../_common/KeymanVersion.php');
-  require_once(__DIR__ . '/../2020/templates/Head.php');
+  require_once _KEYMANCOM_INCLUDES . '/2020/Util.php';
+  require_once _KEYMANCOM_INCLUDES . '/locale/Locale.php';
+  require_once _KEYMANCOM_COMMON . '/KeymanVersion.php';
+  require_once _KEYMANCOM_INCLUDES . '/2020/templates/Head.php';
 
   use Keyman\Site\com\keyman\Locale;
-  
+
   function template_finish($foot) {
     //ob_end_flush();
 
@@ -97,13 +97,13 @@
     \Keyman\Site\com\keyman\templates\Head::render($head);
 
     if($menu == true) {
-      require_once(__DIR__ . '/../2020/templates/Menu.php');
+      require_once _KEYMANCOM_INCLUDES . '/2020/templates/Menu.php';
       \Keyman\Site\com\keyman\templates\Menu::render([
         'pageClass' => $pageClass,
         'device' => (isset($device) ? $device : '')
       ]);
     } else {
-        require_once ('no-menu.php');
+        require_once _KEYMANCOM_INCLUDES . '/includes/no-menu.php';
     }
 
     if(isset($args['banner'])) {
@@ -156,7 +156,7 @@
     $img = cdn("img/".$img);
     $img = '<img src="'.$img.'" />';
     $bg = 'section1-bg'.$bg;
-    require_once('banner.php');
+    require_once _KEYMANCOM_INCLUDES . '/includes/banner.php';
   }
 
   function begin_main($addSection2){
@@ -173,10 +173,10 @@
       $display = true;
     }
     if($display == true){
-      require_once(__DIR__ . '/../2020/templates/Foot.php');
+      require_once _KEYMANCOM_INCLUDES . '/2020/templates/Foot.php';
       \Keyman\Site\com\keyman\templates\Foot::render();
     }else{
-      require_once('no-footer.php');
+      require_once _KEYMANCOM_INCLUDES . '/includes/no-footer.php';
     }
   }
 
