@@ -5,11 +5,11 @@
   if (!is_dir(__DIR__ . '/../cdn/deploy')) {
     die("/cdn/deploy not ready");
   }
-  
-  if (!file_exists(__DIR__ . '/../_common/KeymanHosts.php')) {
+
+  if (!file_exists(_KEYMANCOM_COMMON . '/KeymanHosts.php')) {
     die('/_common not ready');
   }
-  
+
   if (!is_dir(__DIR__ . '/../vendor')) {
     die('/vendor not ready');
   }

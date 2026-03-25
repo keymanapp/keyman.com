@@ -1,5 +1,5 @@
 <?php
-  require_once('includes/template.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
 
   $UninstallID='';
   $Token='';
