@@ -69,7 +69,7 @@ Indigenous and minority language communities around the world.
 <!-- NPIC -->
 
 <tr>
-  <td style='vertical-align: middle; text-align: center'><img src='../../../cdn/dev/img/npic-logo.png' style='width:160px'></td>
+  <td style='vertical-align: middle; text-align: center'><img src='/cdn/dev/img/npic-logo.png' style='width:160px'></td>
   <td style='vertical-align: middle'><p>
 
   The <a href='https://npic.edu.kh/'>National Polytechnic Institute of Cambodia
@@ -101,7 +101,7 @@ Indigenous and minority language communities around the world.
 <!-- Browserstack -->
 
 <tr>
-  <td style='vertical-align: middle; text-align: center'><img src="../../../cdn/dev/img/open-source/browserstack.svg" style="width: 160px" alt="Browserstack" /></td>
+  <td style='vertical-align: middle; text-align: center'><img src="/cdn/dev/img/open-source/browserstack.svg" style="width: 160px" alt="Browserstack" /></td>
   <td style='vertical-align: middle'><p>
 
   We are using <a href='https://www.browserstack.com/'>BrowserStack</a> to test KeymanWeb
@@ -119,7 +119,7 @@ Indigenous and minority language communities around the world.
 <!-- Sentry -->
 
 <tr>
-  <td style='vertical-align: middle; text-align: center'><img src="../../../cdn/dev/img/open-source/sentry.svg" style="width: 160px" alt="Sentry" /></td>
+  <td style='vertical-align: middle; text-align: center'><img src="/cdn/dev/img/open-source/sentry.svg" style="width: 160px" alt="Sentry" /></td>
   <td style='vertical-align: middle'><p>
 
   Keyman uses <a href='https://sentry.io'>Sentry</a> for error monitoring. Thank you to
@@ -133,7 +133,7 @@ Indigenous and minority language communities around the world.
 <!-- 1Password -->
 
 <tr>
-  <td style='vertical-align: middle; text-align: center'><img src="../../../cdn/dev/img/open-source/1password.png" style="width: 160px" alt="1Password" /></td>
+  <td style='vertical-align: middle; text-align: center'><img src="/cdn/dev/img/open-source/1password.png" style="width: 160px" alt="1Password" /></td>
   <td style='vertical-align: middle'><p>
 
   Thank you to <a href='https://1password.com'>1Password</a> for supporting the Keyman team
