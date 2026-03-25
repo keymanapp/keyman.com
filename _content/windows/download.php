@@ -1,6 +1,6 @@
 <?php
-  require_once('includes/template.php');
-  require_once('includes/ui/downloads.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
 
   // Required
   head([
@@ -36,7 +36,7 @@
 
 <div class="section section-languages">
     <h2 class="section-heading">Or select a language from the list below:</h2>
-    <?php require_once('includes/ui/download-links.php'); ?>
+    <?php require_once _KEYMANCOM_INCLUDES . '/includes/ui/download-links.php'; ?>
 </div>
 <h2 class="red underline">Download Keyman <?= $stable_version ?> for Windows without any keyboards</h2>
 <p>

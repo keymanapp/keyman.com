@@ -8,9 +8,9 @@ use Keyman\Site\com\keyman\KeymanComSentry;
 use Keyman\Site\Common\KeymanHosts;
 
 // *Don't* use autoloader here because of potential side-effects in older pages
-require_once(__DIR__ . '/../Util.php');
-require_once(__DIR__ . '/../KeymanComSentry.php');
-require_once(__DIR__ . '/../../../_common/KeymanHosts.php');
+require_once _KEYMANCOM_INCLUDES . '/2020/Util.php';
+require_once _KEYMANCOM_INCLUDES . '/2020/KeymanComSentry.php';
+require_once _KEYMANCOM_COMMON . '/KeymanHosts.php';
 
 class Head {
     static function render($fields = []) {

@@ -10,7 +10,7 @@
   //   platform  one of windows,macos,linux,ios,android,web
   //   mode:     optional, either bundle or standalone (for now, supported only for Windows)
 
-  require_once('includes/servervars.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
 
   if(DEBUG)
     header('Content-Type: text/plain');

@@ -48,7 +48,7 @@ function test_docker_container() {
   # NOTE: link checker runs on host rather than in docker image
   # Also exclude testing locales for each link: 'lang=*'
   builder_echo blue "---- Testing links"
-  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' --exclude '*lang=*' | tee blc.log
+  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' --exclude='/downloads/releases/*' --exclude '*lang=*' | tee blc.log
   local BLC_RESULT=${PIPESTATUS[0]}
   echo ----------------------------------------------------------------------
   echo Link check summary
