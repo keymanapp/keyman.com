@@ -2,7 +2,7 @@
 title: Keyman 14 Launch Webinar Series
 ---
 
-[< Back to Keyman 14.0 Home](/14)
+[< Back to Keyman 14.0 Home](./)
 
 We held a series of webinars all about Keyman 14 between 29 March and 1 April
 2021.
@@ -224,4 +224,4 @@ class="generic-cta-button" target='_blank'>Join the webinar now!</a></p>
   }
 </script>
 
-[< Back to Keyman 14.0 Home](/14)
+[< Back to Keyman 14.0 Home](./)

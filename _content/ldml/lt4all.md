@@ -56,8 +56,8 @@ title: LT4All 2025 - CLDR Keyboards
 ## How to start creating CLDR Keyboards
 
 * [Read the specification](https://www.unicode.org/reports/tr35/tr35-keyboards.html)
-* [Download Keyman Developer](/developer)
-* [More about Keyman and CLDR/LDML Keyboards](/ldml)
+* [Download Keyman Developer](../developer)
+* [More about Keyman and CLDR/LDML Keyboards](./)
 
 ## Talk to us
 

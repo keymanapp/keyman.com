@@ -5,7 +5,7 @@ title: Keyman Training
 ## Upcoming events
 
 There are no current upcoming events. We will announce new events on our
-[mailing list](/about/list), on [Twitter @keyman](https://twitter.com/keyman),
+[mailing list](../about/list), on [Twitter @keyman](https://twitter.com/keyman),
 and [Facebook @keymanapp](https://facebook.com/keymanapp).
 
 ## Keyman 14 Webinar Series
@@ -14,7 +14,7 @@ We held a series of webinars all about Keyman 14 between 29 March and 1 April
 2021.
 
 All the webinars were recorded and the recordings can be viewed by visiting the
-[webinar home page](/14/webinar). The slides accompanying the videos contain
+[webinar home page](../14/webinar). The slides accompanying the videos contain
 links which may also be helpful.
 
 The recorded webinars include questions from some attendees. If you have any
@@ -24,7 +24,7 @@ to answer any questions!
 
 ### Webinar Links
 
-* [Webinar Recordings and Slides](/14/webinar)
+* [Webinar Recordings and Slides](../14/webinar)
 * [SIL Language Software Community](https://community.software.sil.org/c/keyman)
 
 ## Online Keyman Developer Training Workshop - 24-28 February, 2020
