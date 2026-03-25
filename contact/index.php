@@ -1,6 +1,6 @@
 <?php
-  require_once('includes/template.php');
-  require_once __DIR__ . '/../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
 
   // Required
@@ -31,7 +31,7 @@
 
 <h2 class="red underline">Social Media and Mailing Lists</h2>
 
-<?php require_once('includes/ui/contact-social.php'); ?>
+<?php require_once _KEYMANCOM_INCLUDES . '/includes/ui/contact-social.php'; ?>
 
 <h2 class="red underline">Postal Address</h2>
 <p>

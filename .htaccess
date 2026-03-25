@@ -4,6 +4,7 @@
 php_value display_errors off
 php_value display_startup_errors off
 php_value include_path ".:/var/www/html/_includes/"
+php_value auto_prepend_file "/var/www/html/_includes/prepended_header.php"
 
 <IfFile /var/www/html/_control/debug>
   php_value display_startup_errors on

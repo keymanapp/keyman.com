@@ -1,6 +1,6 @@
 <?php
-  require_once('includes/template.php');
-  require_once __DIR__ . '/../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
 
   // Required
@@ -9,7 +9,7 @@
     'css' => ['template.css', 'dev.css', 'feature-template.css'],
     'showMenu' => true
   ]);
-  require_once('includes/developer-features.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/developer-features.php';
 ?>
 <style>
     dl { font-size: 14pt; }

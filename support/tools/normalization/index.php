@@ -1,12 +1,12 @@
 <?php
-  require_once('includes/template.php');
-  
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+
   // Required
   head([
     'title' =>'Normalization Test',
     'css' => ['template.css'],
     'showMenu' => true
-  ]);           
+  ]);
 ?>
 
 <h1>Normalization Test</h1>
@@ -26,7 +26,7 @@ characters into the box below. The detected normalization form will be reported 
       window.setTimeout(afterLoad, 100);
       return false;
     }
-   
+
     $('#normalization').keyup(function() {
       var s = $('#normalization').val();
       var nfc = s.normalize('NFC');
@@ -34,7 +34,7 @@ characters into the box below. The detected normalization form will be reported 
       $('#result').text( s === nfc ? 'NFC' : s === nfd ? 'NFD' : 'Mixed' );
     });
   }
-  
+
   window.addEventListener('load', afterLoad, false);
 </script>
 
