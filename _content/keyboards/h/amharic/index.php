@@ -138,7 +138,7 @@
       <li><a href="/keyboards/gff_gurage_legacy">Gurage Legacy</a></li>
       <li><a href="/keyboards/gff_harari">Harari</a></li>
       <li><a href="/keyboards/gff_tigre">Tigre</a></li>
-      <li><a href="../tigrigna/eritrean.php">Tigrigna (Eritrea)</a></li>
+      <li><a href="../tigrigna/eritrean">Tigrigna (Eritrea)</a></li>
       <li><a href="../tigrigna/">Tigrigna (Ethiopia)</a></li>
   </ul>
 </p>

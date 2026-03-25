@@ -238,7 +238,7 @@
       <a href='https://community.software.sil.org/c/keyman'>Keyman Community Site</a>. We love answering questions about Keyman keyboards and
       Keyman Developer <?php echo $stable_version_int; ?>.</p>
     <br/><br/>
-    <div class="button-dl9" id="bottom-button-dl9"><a href="download.php">Download for Free</a></div>
+    <div class="button-dl9" id="bottom-button-dl9"><a href="download">Download for Free</a></div>
   </div>
 
 </div>

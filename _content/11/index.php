@@ -52,7 +52,7 @@
 <h2 id='linux' class='red underline'>Keyman Desktop 11</h2>
 <h3>Stable</h3>
 <ul>
-  <li><a href='../windows/download.php'>Download Keyman Desktop 11</a></li>
+  <li><a href='../windows/download'>Download Keyman Desktop 11</a></li>
 </ul>
 
 <br>
