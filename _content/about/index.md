@@ -29,7 +29,7 @@ mobile platforms.
 
 <br>
 
-➡️ [Testimonials](/testimonials)
+➡️ [Testimonials](../testimonials)
 
 
 ## About the team
@@ -50,11 +50,11 @@ Keyman is provided to you free of charge with the support of generous [donors](s
 
 ## Get in touch
 
-➡️ [Contact us](/contact)
+➡️ [Contact us](../contact)
 
 ## About SIL Global
 
-<img id="sil-logo" src="../_common/assets/sil-logos-2024/sil-logo-abbysinica.png" width="30%" alt='SIL' />
+<img id="sil-logo" src="../../_common/assets/sil-logos-2024/sil-logo-abbysinica.png" width="30%" alt='SIL' />
 
 Keyman is created by SIL Global (formerly SIL International). Partners in Language Development,
 SIL Global is a faith-based nonprofit organization committed to serving language communities

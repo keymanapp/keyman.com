@@ -13,15 +13,15 @@
   ]);
 ?>
 <div class="download-stable" id="vista">
-    <p>Keyman Developer <?php echo $stable_version; ?> is not compatible with Windows Vista. Please download Keyman Developer 8.0 instead from our <a href="/downloads/archive/">archived downloads page</a>.</p>
+    <p>Keyman Developer <?php echo $stable_version; ?> is not compatible with Windows Vista. Please download Keyman Developer 8.0 instead from our <a href="../downloads/archive/">archived downloads page</a>.</p>
 </div>
 <div class="download-stable" id="xp">
-    <p>Keyman Developer <?php echo $stable_version; ?> is not compatible with Windows XP. Please download Keyman Developer 8.0 instead from our <a href="/downloads/archive/">archived downloads page</a>.</p>
+    <p>Keyman Developer <?php echo $stable_version; ?> is not compatible with Windows XP. Please download Keyman Developer 8.0 instead from our <a href="../downloads/archive/">archived downloads page</a>.</p>
 </div>
 
 <h2 class="red underline">Download Keyman Developer <?php echo $stable_version; ?></h2>
 <p>
-    Keyman Developer <?php echo $stable_version; ?> is compatible with Windows 10 and Windows 11. If you have an older version of Windows, please download an earlier version of Keyman Developer from our <a href="/downloads/archive/">archived downloads page</a>.
+    Keyman Developer <?php echo $stable_version; ?> is compatible with Windows 10 and Windows 11. If you have an older version of Windows, please download an earlier version of Keyman Developer from our <a href="../downloads/archive/">archived downloads page</a>.
 </p>
 
 <?php
@@ -48,5 +48,5 @@
 </code></pre>
 
 <p>
-  For kmcomp, please download from our <a href="/downloads/archive/">archived downloads page</a>.
+  For kmcomp, please download from our <a href="../downloads/archive/">archived downloads page</a>.
 </p>

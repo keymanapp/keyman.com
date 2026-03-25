@@ -33,13 +33,13 @@
   <li><a href="keyboards.php">Clever keyboards</a></li>
 </ul>
 <div class="button-div">
-    <a href="/windows/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for Windows <?php echo $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
+        <p>Want to try the Keyman for Windows <?php echo $beta_version ?> Beta? <a href="../beta/">Learn more</a></p>
 <?php
     }
 ?>
@@ -133,7 +133,7 @@
     You can learn about all the features of Keyman <?= $stable_version; ?> for Windows by <a href="features.php">clicking here!</a>
 </p>
 <div class="button-div">
-    <a href="/windows/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 <h2 class="red underline">Frequently Asked Questions</h2>
 <p>

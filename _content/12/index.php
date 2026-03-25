@@ -44,8 +44,8 @@ and improvements to the stability of Keyman for MacOS. Read about all the change
 
 <h1 class='red underline large'>Get Involved</h1>
 
-<p style='cursor:pointer' onclick='location.href="/about/get-involved";return false;'>The success of Keyman is up to you! Keyman is a community-developed program and your involvement guarantees the ongoing usefulness of Keyman.
-There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!</p>
+<p style='cursor:pointer' onclick='location.href="../about/get-involved";return false;'>The success of Keyman is up to you! Keyman is a community-developed program and your involvement guarantees the ongoing usefulness of Keyman.
+There are many ways you can help: <a href='../about/get-involved'>get involved</a> in the Keyman project now!</p>
 
 <h1 class='red underline large'>Downloads</h1>
 

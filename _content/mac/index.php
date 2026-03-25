@@ -24,7 +24,7 @@
 <h2 class="red underline">Introducing Keyman for macOS</h2>
 <p>
     Keyman for macOS brings an extensive library of keyboards for over 2500 languages to macOS.
-    You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a> (a Windows product).
+    You can even create your own custom keyboards with <a href="../developer/">Keyman Developer <?php echo $stable_version; ?></a> (a Windows product).
 </p>
 <p>
     Our unique virtual keyboard technology makes it easy to type in all your programs, including Microsoft Office,
@@ -37,7 +37,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for macOS <?php echo $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
+        <p>Want to try the Keyman for macOS <?php echo $beta_version ?> Beta? <a href="../beta/">Learn more</a></p>
 <?php
     }
 ?>
@@ -133,8 +133,8 @@
 <p>
     <span class="red">A.</span> The short answer is a lot! With keyboards for over 2500 languages,
     there's a very good chance we have yours covered. You can search for a keyboard for your language
-    <a href="/keyboards">here</a>. If we don't already have a keyboard available, you can use
-    <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a> (Windows only) to build one!
+    <a href="../keyboards">here</a>. If we don't already have a keyboard available, you can use
+    <a href="../developer/">Keyman Developer <?php echo $stable_version; ?></a> (Windows only) to build one!
 </p>
 
 <br/>

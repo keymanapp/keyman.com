@@ -66,7 +66,7 @@ head([
 
             <?php require_once _KEYMANCOM_INCLUDES . '/includes/ui/download-links.php'; ?>
 
-            <form name="fsearch" action="/keyboards" method="get">
+            <form name="fsearch" action="keyboards" method="get">
                 <h4>Search over 2500 languages</h4>
                 <input type="text" name="q" id="language-search3" placeholder="Enter your language" />
                 <input id="search-submit3" type="image" onclick="if(document.getElementById('language-search3').value==''){return false;}" value="Search" src="<?php echo cdn("img/search-button.png"); ?>" alt="Search button">
@@ -183,12 +183,12 @@ head([
         <div class='wrapper'>
             <h2 class="section-heading">About the Keyman team</h2>
             <p id="contributors-intro">
-                Learn more about the <a href="about/team">hundreds of people</a> involved in the Keyman project &mdash; or <a href="./about/get-involved">join the team</a> yourself!
+                Learn more about the <a href="about/team">hundreds of people</a> involved in the Keyman project &mdash; or <a href="about/get-involved">join the team</a> yourself!
             </p>
             <div id="contributors">
                 <?php
                     // read a few random contributors
-                    $data = json_decode(file_get_contents("./about/team/team.json"));
+                    $data = json_decode(file_get_contents("about/team/team.json"));
                     $data = array_filter($data, function($item) {
                         return $item->level == 'core';
                     });

@@ -42,7 +42,7 @@
             <div id="privacy-policy"><a href="/privacy/">Privacy policy</a></div>
 
             <div id='footer-get-involved'>
-              <a href="/about/get-involved">Get involved</a>
+              <a href="../_content/about/get-involved">Get involved</a>
               <a href='/donate'>Donate</a>
             </div>
         </div>
@@ -60,8 +60,8 @@
         </div>
         <div class="footer-third sil-logo">
             <br>
-            <a href="/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
-            <p>Created by <a href="/about/">SIL Global</a></p>
+            <a href="../_content/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
+            <p>Created by <a href="../_content/about/">SIL Global</a></p>
         </div>
     </div>
 </div>

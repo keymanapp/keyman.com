@@ -51,7 +51,7 @@ Keyman for Android, Keyman for iPhone and iPad and KeymanWeb.</p>
 
 <dt>Will the price of Keyman be changing?</dt>
 <dd><del>It’s too soon to be able to answer that question completely. However, for the time being we do not anticipate any price changes.</del></dd>
-<dd>Keyman is now <a href="/free">free</a>!</dd>
+<dd>Keyman is now <a href="../free">free</a>!</dd>
 
 <dt>I have a created a keyboard with Keyman Developer. Should I still share it with Tavultesoft?</dt>
 <dd>Yes, we welcome all keyboard layouts developed by the Keyman community. Tavultesoft’s existing open source keyboard repository will now be stewarded by SIL International. To learn how to submit your keyboard layout, visit <a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/keyboards'><?= KeymanHosts::Instance()->help_keyman_com_host ?>/developer/keyboards</a>.</dd>
