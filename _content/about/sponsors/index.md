@@ -53,7 +53,7 @@ Indigenous and minority language communities around the world.
 <!-- Microsoft -->
 
 <tr>
-  <td style='vertical-align: middle; text-align: center'><img src='../../../cdn/dev/img/microsoft.png' alt='Microsoft' title='Microsoft logo'></td>
+  <td style='vertical-align: middle; text-align: center'><img src='/cdn/dev/img/microsoft.png' alt='Microsoft' title='Microsoft logo'></td>
   <td style='vertical-align: middle'><p>
 
   <a href='https://microsoft.com'>Microsoft</a>, through their <a
