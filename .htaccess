@@ -219,24 +219,25 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 
 # TODO: mdhost currently in a different path than help.keyman
 
+# TODO: en --> should be a bcp-47 type 'lang' match (e.g. ab[-x][-y]) ignore case, keep it a fairly loose expression [a-z][a-z][a-z]?(-...)?
+
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
-# en --> should be a bcp-47 type 'lang' match (e.g. ab[-x][-y]) ignore case, keep it a fairly loose expression [a-z][a-z][a-z]?(-...)?
 RewriteRule "^(en)/(.+)$" "/_includes/includes/md/mdhost.php?file=_content/$2.md&lang=$1" [END]
 
 # Rewrite file to file.php
-RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
-RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
-RewriteRule "^(.+)$" "$1.php" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" !-f
+RewriteRule "^(en)/(.+)$" "/_content/$2.php?lang=$1" [END]
 
 # Rewrite folder/ to folder/index.md
-RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
-RewriteRule "^(.+)/$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" -f
+RewriteRule "^(en)/(.+)/$" "/_includes/includes/md/mdhost.php?file=_content/$2/index.md&lang=$1" [END]
 
 # Rewrite folder/ to folder/index.php
-RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
-RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" !-f
-RewriteRule "^(.+)/$" "$1/index.php" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" !-f
+RewriteRule "^(en)/(.+)/$" "/_content/$2/index.php?lang=$1" [END]
 
 # Finally, append the terminating slash for folders, given it is no longer
 # done automatically because we put DirectorySlash off
