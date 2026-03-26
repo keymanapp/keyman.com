@@ -221,6 +221,10 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 
 # TODO: en --> should be a bcp-47 type 'lang' match (e.g. ab[-x][-y]) ignore case, keep it a fairly loose expression [a-z][a-z][a-z]?(-...)?
 
+
+# root
+RewriteRule "^/?$"   "/_content/" [END,QSA]
+
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
 RewriteRule "^(en)/(.+)$" "/_includes/includes/md/mdhost.php?file=_content/$2.md&lang=$1" [END]
