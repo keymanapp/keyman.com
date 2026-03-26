@@ -339,7 +339,7 @@
             If our exhaustive list of keyboards isn't enough, build your own with Keyman Developer <?php echo $stable_version; ?>, our most powerful keyboard creation tool yet.
         </p>
         <p>
-            Learn more about <a href="/developer/">Keyman Developer here</a>.
+            Learn more about <a href="../developer/">Keyman Developer here</a>.
         </p>
         <img src="<?php echo cdn("img/developer9.png"); ?>"/>
     </div>
