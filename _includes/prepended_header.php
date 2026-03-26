@@ -13,3 +13,10 @@ define('_KEYMANCOM_INCLUDES', __DIR__);
 
 /** Defines the base folder for all shared common includes */
 define('_KEYMANCOM_COMMON', __DIR__ . '/../_common');
+
+/*
+global $lang;
+if (!isset($lang)) {
+    $lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
+} 
+*/
