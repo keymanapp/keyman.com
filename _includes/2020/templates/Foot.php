@@ -12,6 +12,10 @@
       $fields = (object)$fields;
       $fields->stable_version = KeymanVersion::stable_version;
       $fields->beta_version = KeymanVersion::beta_version;
+
+      // Fallback to 'en'
+      $lang = isset($_REQUEST['lang']) ? isset($_REQUEST['lang']) : 'en';
+        
 ?>
 
       </div>
@@ -42,7 +46,7 @@
             <div id="privacy-policy"><a href="/privacy/">Privacy policy</a></div>
 
             <div id='footer-get-involved'>
-              <a href="../_content/about/get-involved">Get involved</a>
+              <a href="/<?= $lang ?>/about/get-involved">Get involved</a>
               <a href='/donate'>Donate</a>
             </div>
         </div>
@@ -60,8 +64,8 @@
         </div>
         <div class="footer-third sil-logo">
             <br>
-            <a href="../_content/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
-            <p>Created by <a href="../_content/about/">SIL Global</a></p>
+            <a href="/<?= $lang ?>/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
+            <p>Created by <a href="/<?= $lang ?>/about/">SIL Global</a></p>
         </div>
     </div>
 </div>
