@@ -14,7 +14,7 @@
       $fields->beta_version = KeymanVersion::beta_version;
 
       // Fallback to 'en'
-      $fields->lang = isset($_REQUEST['lang']) ? isset($_REQUEST['lang']) : 'en';
+      $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
         
 ?>
 
