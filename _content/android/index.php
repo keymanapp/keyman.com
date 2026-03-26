@@ -26,7 +26,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for Android <?= $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
+        <p>Want to try the Keyman for Android <?= $beta_version ?> Beta? <a href="../beta/">Learn more</a></p>
 <?php
     }
 ?>
@@ -46,7 +46,7 @@
 </p>
 
 <p>
-  Create custom Keyman dictionaries with <a href='/developer'>Keyman Developer <?= $stable_version ?> </a>
+  Create custom Keyman dictionaries with <a href='../developer'>Keyman Developer <?= $stable_version ?> </a>
   and install them to use with your keyboards.
 </p>
 
@@ -56,7 +56,7 @@
 
 <p>
   Now you also have the flexibility of installing Keyman keyboard packages from either online
-  (like <a href="/keyboards"><?= KeymanHosts::Instance()->keyman_com ?>/keyboards</a>) or local storage from a new "Settings" panel.
+  (like <a href="../keyboards"><?= KeymanHosts::Instance()->keyman_com ?>/keyboards</a>) or local storage from a new "Settings" panel.
 </p>
 
 <p>
@@ -260,7 +260,7 @@
 <ul>
   <li>Released in two editions: Keyman Free and Keyman Pro</li>
   <li>Use any Keyman keyboard throughout your entire Android device (Pro Edition only)</li>
-    <li>Install custom keyboards created with Keyman Developer 9 (<a href="/downloads/archive/">free download for Windows</a>)</li>
+    <li>Install custom keyboards created with Keyman Developer 9 (<a href="../downloads/archive/">free download for Windows</a>)</li>
     <li>Updated keyboard styling</li>
   <li>Bug fixes</li>
 
@@ -298,7 +298,7 @@
 <br/>
 <h3>New in Update 1.2 (22 Apr 2014):</h3>
 <ul>
-  <li>Install custom keyboards created with Keyman Developer 9 (<a href="/downloads/archive/">free download for Windows</a>)</li>
+  <li>Install custom keyboards created with Keyman Developer 9 (<a href="../downloads/archive/">free download for Windows</a>)</li>
 </ul>
 <br/>
 <p>
@@ -314,11 +314,11 @@
 </p>
 <br/>
 <p>
-  You can develop your own keyboard layouts for Keyman for Android with <a href="/developer/download.php">Keyman Developer</a>. If you have existing keyboards, they can be ported to Android with just a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
+  You can develop your own keyboard layouts for Keyman for Android with <a href="../developer/download">Keyman Developer</a>. If you have existing keyboards, they can be ported to Android with just a recompile. And of course, we include support for touch-oriented features such as touch-and-hold menus, dynamic keyboard layers and more!
 </p>
 <p>
   <a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/engine/android/">Keyman Engine for Android Documentation</a>
 </p>
 <p>
-  <a href="/downloads/#android-engine">Download the latest Keyman Engine for Android</a>
+  <a href="../downloads/#android-engine">Download the latest Keyman Engine for Android</a>
 </p>

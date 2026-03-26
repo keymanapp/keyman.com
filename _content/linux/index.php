@@ -25,7 +25,7 @@
 <h2 class="red underline">Introducing Keyman for Linux</h2>
 <p>
     Keyman for Linux makes it possible to type in over 2500 languages in any Linux application. Create your own custom
-    keyboards with <a href="/developer/">Keyman Developer <?php echo $stable_version; ?></a>*.
+    keyboards with <a href="../developer/">Keyman Developer <?php echo $stable_version; ?></a>*.
 </p>
 <p>
     Keyman for Linux also supports KMFL keyboards, so your existing KMFL keyboards will continue to work.
@@ -40,7 +40,7 @@
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for Linux <?php echo $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
+        <p>Want to try the Keyman for Linux <?php echo $beta_version ?> Beta? <a href="../beta/">Learn more</a></p>
 <?php
     }
 ?>
@@ -223,8 +223,8 @@ sudo apt install ibus-kmfl</code></pre>
 <p>
     <span class="red">A.</span> The short answer is a lot! With keyboards for over 2500 languages,
     there's a very good chance we have yours covered. You can search for a keyboard for your language
-    <a href="/keyboards">here</a>. If we don't already have a keyboard available, you can use
-    <a href="/developer/">Keyman Developer</a> to build one!
+    <a href="../keyboards">here</a>. If we don't already have a keyboard available, you can use
+    <a href="../developer/">Keyman Developer</a> to build one!
 </p>
 
 <br/>

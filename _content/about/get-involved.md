@@ -25,11 +25,11 @@ paying staff and contractors, server costs and hardware and software purchases.
 
 ## Create a keyboard layout for your language ## {#create-keyboard}
 Keyman Developer is our comprehensive tool for creating keyboard layouts for every major platform; it is of
-course completely free and open source! Go ahead and [download Keyman Developer](/developer/download)
+course completely free and open source! Go ahead and [download Keyman Developer](../developer/download)
 to start creating keyboard layouts today. Once you have created a layout, you can share it online, and if you like,
 contribute it to the Keyman keyboard repository.
 
-* [Learn about Keyman Developer](/developer)
+* [Learn about Keyman Developer](../developer)
 * [Share your keyboard layouts](https://help.keyman.com/developer/keyboards)
 
 ## Localize Keyman for your language ## {#localize-keyman}
@@ -51,7 +51,7 @@ We frequently release updates to Keyman. Independent testing and reporting of is
 you test bug fixes and report issues, you help those who are depending on Keyman to work in their language, many
 of whom do not have the capacity to test new versions themselves.
 
-* [Download a pre-release version](/downloads/pre-release)
+* [Download a pre-release version](../downloads/pre-release)
 * [Report issues and feature requests](https://github.com/keymanapp/keyman/issues/new/choose)
 
 ## Write some code ## {#write-code}
@@ -79,6 +79,6 @@ developing software that serves the needs of language communities around the wor
 introduce yourself &mdash; we'd love to meet with you!
 
 * [About the Keyman team](team/)
-* [Jobs](/jobs)
+* [Jobs](../jobs)
 * [Write to us](https://software.sil.org/about/contact/)
 * [Send us a tweet or DM on Twitter](https://twitter.com/keyman)

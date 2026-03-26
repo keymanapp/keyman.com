@@ -19,7 +19,7 @@
 <br/>
 <h2 class="red underline">Introducing Keyman <?= $stable_version; ?> for Windows</h2>
 <p>
-    With keyboards for over 2500 languages, Keyman for Windows lets you type in your language even when Windows doesn't. You can even create your own custom keyboards with <a href="/developer/">Keyman Developer <?= $stable_version; ?></a>.
+    With keyboards for over 2500 languages, Keyman for Windows lets you type in your language even when Windows doesn't. You can even create your own custom keyboards with <a href="../developer/">Keyman Developer <?= $stable_version; ?></a>.
 </p>
 <p>
     Our unique virtual keyboard technology makes it easy to type in all your programs, including Microsoft Office, Adobe Creative Suite, internet browsers and more, as well as supporting the latest version of Windows.
@@ -33,13 +33,13 @@
   <li><a href="keyboards.php">Clever keyboards</a></li>
 </ul>
 <div class="button-div">
-    <a href="/windows/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 
 <?php
     if (betaTier()) {
 ?>
-        <p>Want to try the Keyman for Windows <?php echo $beta_version ?> Beta? <a href="/beta/">Learn more</a></p>
+        <p>Want to try the Keyman for Windows <?php echo $beta_version ?> Beta? <a href="../beta/">Learn more</a></p>
 <?php
     }
 ?>
@@ -133,7 +133,7 @@
     You can learn about all the features of Keyman <?= $stable_version; ?> for Windows by <a href="features.php">clicking here!</a>
 </p>
 <div class="button-div">
-    <a href="/windows/download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </div>
 <h2 class="red underline">Frequently Asked Questions</h2>
 <p>
@@ -147,14 +147,14 @@
     <span class="red">Q.</span> What versions of Windows will Keyman <?= $stable_version; ?> work with?
 </p>
 <p>
-    <span class="red">A.</span> Keyman <?= $stable_version; ?> for Windows is compatible with Windows 10, 11, and all later versions. If you're using an older version of Windows, Keyman Desktop 8.0 is still available for download at our archive page <a href="/downloads/archive/">here</a>.
+    <span class="red">A.</span> Keyman <?= $stable_version; ?> for Windows is compatible with Windows 10, 11, and all later versions. If you're using an older version of Windows, Keyman Desktop 8.0 is still available for download at our archive page <a href="../downloads/archive/">here</a>.
 </p>
 <br/>
 <p>
     <span class="red">Q.</span> What languages does Keyman support?
 </p>
 <p>
-    <span class="red">A.</span> The short answer is a lot! With keyboards for over 2500 languages, there's a very good chance we have yours covered. You can search for a keyboard for your language <a href="/keyboards/">here</a>. If we don't already have a keyboard available, you can use <a href="/developer/">Keyman Developer <?= $stable_version; ?></a> to build one!
+    <span class="red">A.</span> The short answer is a lot! With keyboards for over 2500 languages, there's a very good chance we have yours covered. You can search for a keyboard for your language <a href="/keyboards/">here</a>. If we don't already have a keyboard available, you can use <a href="../developer/">Keyman Developer <?= $stable_version; ?></a> to build one!
 </p>
 <br/>
 <p>
@@ -168,6 +168,6 @@
     <span class="red">Q.</span> Are Keyman Desktop 7.1 and other previous releases still available for download?
 </p>
 <p>
-    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 7.1 and other previous releases <a href="/archive/downloads.php">here</a>.
+    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 7.1 and other previous releases <a href="../archive/downloads.php">here</a>.
 </p>
 <br/>

@@ -37,8 +37,8 @@ improvements to context handling in Keyman for macOS, and setting keyboard optio
 
 <h1 class='red underline large'>Get Involved</h1>
 
-<p style='cursor:pointer' onclick='location.href="/about/get-involved";return false;'>The success of Keyman is up to you! Keyman is a community-developed program and your involvement guarantees the ongoing usefulness of Keyman.
-  There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!</p>
+<p style='cursor:pointer' onclick='location.href="../about/get-involved";return false;'>The success of Keyman is up to you! Keyman is a community-developed program and your involvement guarantees the ongoing usefulness of Keyman.
+  There are many ways you can help: <a href='../about/get-involved'>get involved</a> in the Keyman project now!</p>
 
 <h1 class='red underline large'>Downloads</h1>
 

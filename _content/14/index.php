@@ -250,5 +250,5 @@ known breaking changes in Keyman 14.0:</p>
 <p><a href='keyman-engine-changes'>Changes for Keyman Engine</a></p>
 
 <h2>Get Involved</h2>
-<p>There are many ways you can help: <a href='/about/get-involved'>get involved</a> in the Keyman project now!
+<p>There are many ways you can help: <a href='../about/get-involved'>get involved</a> in the Keyman project now!
 </p>

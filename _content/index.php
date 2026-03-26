@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
 require_once _KEYMANCOM_INCLUDES . '/autoload.php';
 require_once _KEYMANCOM_INCLUDES . '/includes/ui/section-announcement.php';
@@ -54,7 +54,7 @@ head([
             <p>
                 Keyman helps you type in over 2500 languages on
                 just about any device &mdash; Windows, macOS, Linux, iPhone, iPad, Android tablets and phones, and even instantly in your web browser.
-                Keyman is completely <a href="/free">free and open source</a>!
+                Keyman is completely <a href="free">free and open source</a>!
             </p>
         </div>
     </div>
@@ -66,7 +66,7 @@ head([
 
             <?php require_once _KEYMANCOM_INCLUDES . '/includes/ui/download-links.php'; ?>
 
-            <form name="fsearch" action="/keyboards" method="get">
+            <form name="fsearch" action="keyboards" method="get">
                 <h4>Search over 2500 languages</h4>
                 <input type="text" name="q" id="language-search3" placeholder="Enter your language" />
                 <input id="search-submit3" type="image" onclick="if(document.getElementById('language-search3').value==''){return false;}" value="Search" src="<?php echo cdn("img/search-button.png"); ?>" alt="Search button">
@@ -80,7 +80,7 @@ head([
                 With the world’s most powerful keyboarding engine, intuitive and rapid text input is now possible in
                 your language, and for over 99% of the global population’s mother tongues!</p>
             <div class="product" id="product-desktop">
-                <a href="/windows">
+                <a href="windows">
                     <img src="<?php echo cdn("img/icon-desktop.png"); ?>" alt="Windows logo" />
                     <h3>Keyman for Windows</h3>
                     <p>
@@ -89,7 +89,7 @@ head([
                 </a>
             </div>
             <div class="product" id="product-mac">
-                <a href="/mac">
+                <a href="mac">
                     <img src="<?php echo cdn("img/icon-mac.png"); ?>" alt="macOS logo" />
                     <h3>Keyman for macOS</h3>
                     <p>
@@ -98,7 +98,7 @@ head([
                 </a>
             </div>
             <div class="product" id="product-linux">
-                <a href="/linux">
+                <a href="linux">
                     <img src="<?= cdn("img/icon-tux.png"); ?>" alt="Linux logo" />
                     <h3>Keyman for Linux</h3>
                     <p>
@@ -107,7 +107,7 @@ head([
                 </a>
             </div>
             <div class="product" id="product-android">
-                <a href="/android">
+                <a href="android">
                     <img src="<?php echo cdn("img/icon-android2.png"); ?>" alt="Android logo" />
                     <h3>Keyman for Android</h3>
                     <p>
@@ -116,7 +116,7 @@ head([
                 </a>
             </div>
             <div class="product" id="product-iphone">
-                <a href="/iphone-and-ipad">
+                <a href="iphone-and-ipad">
                     <img src="<?php echo cdn("img/icon-iphone.png"); ?>" alt="Keyman for iPhone and iPad screenshot" />
                     <h3>Keyman for iPhone and iPad</h3>
                     <p>
@@ -125,7 +125,7 @@ head([
                 </a>
             </div>
             <div class="product" id="product-web">
-                <a href="/web">
+                <a href="web">
                     <img src="<?php echo cdn("img/icon-web.png"); ?>" alt="various browser logos" />
                     <h3>keymanweb.com</h3>
                     <p>
@@ -134,7 +134,7 @@ head([
                 </a>
             </div>
             <div class="product" id="product-bookmarklet">
-                <a href="/bookmarklet">
+                <a href="bookmarklet">
                     <img src="<?php echo cdn("img/icon-bookmarklet.png"); ?>" alt="Hebrew Keyboard bookmarklet" />
                     <h3>Keyman Bookmarklet</h3>
                     <p>
@@ -159,7 +159,7 @@ head([
         <div class="wrapper">
             <h2 class="section-heading">Developer Tools</h2>
             <div class="developer-half" id="product-developer">
-                <a href="/developer">
+                <a href="developer">
                     <img src="<?php echo cdn("img/icon-developer.png"); ?>" alt="Keyman logo" />
                     <h3>Keyman Developer</h3>
                     <p>
@@ -168,7 +168,7 @@ head([
                 </a>
             </div>
             <div class="developer-half" id="product-engine">
-                <a href="/engine">
+                <a href="engine">
                     <img src="<?php echo cdn("img/icon-engine.png"); ?>" alt="Gears" />
                     <h3>Keyman Engine</h3>
                     <p>
@@ -183,12 +183,12 @@ head([
         <div class='wrapper'>
             <h2 class="section-heading">About the Keyman team</h2>
             <p id="contributors-intro">
-                Learn more about the <a href="/about/team">hundreds of people</a> involved in the Keyman project &mdash; or <a href="/about/get-involved">join the team</a> yourself!
+                Learn more about the <a href="about/team">hundreds of people</a> involved in the Keyman project &mdash; or <a href="about/get-involved">join the team</a> yourself!
             </p>
             <div id="contributors">
                 <?php
                     // read a few random contributors
-                    $data = json_decode(file_get_contents("./about/team/team.json"));
+                    $data = json_decode(file_get_contents("about/team/team.json"));
                     $data = array_filter($data, function($item) {
                         return $item->level == 'core';
                     });
@@ -203,7 +203,7 @@ head([
                         } else {
                             $img = "https://github.com/{$data[$r]->handle}.png?size=240";
                         }
-                        echo "<a href=\"/about/team\"><img src=\"$img\"></a>";
+                        echo "<a href=\"about/team\"><img src=\"$img\"></a>";
                     }
                 ?>
             </div>

@@ -1,2 +1,2 @@
 <?php
-  header('Location: /developer/keymanweb/');
+  header('Location: ./');

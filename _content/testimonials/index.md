@@ -210,7 +210,7 @@ I can have my language Ede keyboard now ..thanks you so much ! God blesses you
 
 <br>
 Note: in 2017, Keyman was acquired from Tavultesoft by SIL Global, and became
-[free and open source](/free). Testimonials prior to this may reference
+[free and open source](../free). Testimonials prior to this may reference
 purchases.
 
 
