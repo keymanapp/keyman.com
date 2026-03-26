@@ -14,6 +14,7 @@
       $fields->beta_version = KeymanVersion::beta_version;
 
       // Fallback to 'en'
+      // TODO-I18N-URL-SCHEME: integrate with Locale.php
       $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
         
 ?>
