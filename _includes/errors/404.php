@@ -1,5 +1,5 @@
 <?php
-  require_once('includes/template.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
 
   head([
     'title' => "Page not found",
@@ -24,7 +24,7 @@
 
 <p>Please tell us about this problem on the <a href="https://community.software.sil.org/c/keyman" target="_blank">Keyman Community</a>.</p>
 
-<h2>Search Keyman Help</h2>
+<h2>Search Keyman</h2>
 
 <script>
   (function() {
@@ -38,4 +38,4 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:searchbox-only as_sitesearch='help.keyman.com' resultsUrl="/search/"></gcse:searchbox-only>
+<gcse:searchbox-only as_sitesearch='keyman.com' resultsUrl="/search/"></gcse:searchbox-only>
