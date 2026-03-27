@@ -27,7 +27,7 @@ AddType application/json apple-app-site-association
 RewriteRule ^crowdin.yml$ = [F,L]
 
 # Custom error messages
-# ErrorDocument 404 /_includes/errors/404.php
+ErrorDocument 404 /_includes/errors/404.php
 
 # apple-app-site-association
 RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
