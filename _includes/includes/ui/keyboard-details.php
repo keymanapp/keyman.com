@@ -1,10 +1,10 @@
 <?php
   namespace UI;
 
-  require_once('includes/template.php');
-  require_once('includes/playstore.php');
-  require_once('includes/appstore.php');
-  require_once('includes/ui/section-announcement.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/ui/section-announcement.php';
 
   use \DateTime;
   use \Keyman\Site\com\keyman\KeymanWebHost;
@@ -360,7 +360,7 @@ END;
           <form method='get' action='/keyboards' name='f'>
             <input id="search-q" type="text" placeholder="<?= $_m_KeyboardDetails("new_keyboard_search") ?>" name="q">
             <input id='search-page' type='hidden' name='page'>
-            <input id="search-f" type="image" src="<?= cdn('img/search-button.png') ?>" value="<?= $_m_KeyboardDetails("search") ?>">
+            <input id="search-f" type="submit" value="<?= $_m_KeyboardDetails("search") ?>">
           </form>
         </div>
 <?php

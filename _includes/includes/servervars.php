@@ -17,13 +17,13 @@
 */
 
   require_once __DIR__ . '/../../vendor/autoload.php';
-  require_once __DIR__ . '/../2020/KeymanComSentry.php';
+  require_once _KEYMANCOM_INCLUDES . '/2020/KeymanComSentry.php';
   Keyman\Site\com\keyman\KeymanComSentry::init();
 
   // *don't* use autoloader here because it may lead to side-effects in older pages
-  require_once(__DIR__ . '/../../_common/KeymanVersion.php');
-  require_once(__DIR__ . '/../../_common/KeymanHosts.php');
-  require_once(__DIR__ . '/../2020/Util.php');
+  require_once _KEYMANCOM_COMMON . '/KeymanVersion.php';
+  require_once _KEYMANCOM_COMMON . '/KeymanHosts.php';
+  require_once _KEYMANCOM_INCLUDES . '/2020/Util.php';
 
   use \Keyman\Site\Common\KeymanVersion;
   use \Keyman\Site\com\keyman\Util;

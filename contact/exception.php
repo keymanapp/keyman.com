@@ -1,5 +1,5 @@
 <?php
-require_once('includes/template.php');
+require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
 
     // Required
     head([
@@ -43,4 +43,4 @@ require_once('includes/template.php');
 
 <h2 class="red underline">Online Community</h2>
 
-<?php require_once('includes/ui/contact-social.php'); ?>
+<?php require_once _KEYMANCOM_INCLUDES . '/includes/ui/contact-social.php'; ?>

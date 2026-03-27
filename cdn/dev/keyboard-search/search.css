@@ -387,19 +387,45 @@ html[data-platform~='windows linux macos'] #try-box {
 
 .download a.download-link {
   margin-top: 4px;
-  padding: 12px 30px 0 4px;
+  padding: 12px 50px 0 10px;
   color: white;
-  background-image: url(/cdn/dev/keyboard-search/install-blank.png);
-  width: 202px;
+  min-width: 202px;
   height: 34px;
   display: inline-block;
   text-decoration: none;
   font-size: 16pt;
   text-align: center;
+
+  border-radius: 8px;
+  position: relative;
+
+  background: linear-gradient(to bottom, #A1CE45 0%, #589421 100%);
+  border: solid 1px #508E1E;
 }
 
 .download.download-web a.download-link {
-  background-image: url(/cdn/dev/keyboard-search/link-blank.png);
+  background: linear-gradient(to bottom, #92BADB 0%, #2970B4 100%);
+  border: solid 1px #276FB3;
+}
+
+a.download-link::before {
+  content: '';
+  background-image: url(/cdn/dev/keyboard-search/download.png);
+  background-repeat: no-repeat;
+  background-position: top 50% right 12px;
+  border-radius: 6px;
+  border: solid 1px white;
+  display: block;
+  position: absolute;
+  top: 0.5px;
+  left: 1px;
+  right: 0.5px;
+  bottom: 1px;
+}
+
+.download.download-web a.download-link::before {
+  content: '';
+  background-image: url(/cdn/dev/keyboard-search/redirect.png);
 }
 
 /*.platforms span + span::before {
