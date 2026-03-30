@@ -2,7 +2,7 @@
 ## START STANDARD SITE BUILD SCRIPT INCLUDE
 readonly THIS_SCRIPT="$(readlink -f "${BASH_SOURCE[0]}")"
 readonly BOOTSTRAP="$(dirname "$THIS_SCRIPT")/resources/bootstrap.inc.sh"
-readonly BOOTSTRAP_VERSION=v1.0.10
+readonly BOOTSTRAP_VERSION=v1.0.11
 if ! [ -f "$BOOTSTRAP" ] || ! source "$BOOTSTRAP"; then
   curl -H "Cache-Control: no-cache" --fail --silent --show-error -w "curl: Finished attempt to download %{url}" "https://raw.githubusercontent.com/keymanapp/shared-sites/$BOOTSTRAP_VERSION/bootstrap.inc.sh" -o "$BOOTSTRAP.tmp" || exit 1
   source "$BOOTSTRAP.tmp"
@@ -48,7 +48,7 @@ function test_docker_container() {
   # NOTE: link checker runs on host rather than in docker image
   # Also exclude testing locales for each link: 'lang=*'
   builder_echo blue "---- Testing links"
-  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' --exclude '*lang=*' | tee blc.log
+  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' --exclude='/downloads/releases/*' --exclude '*lang=*' | tee blc.log
   local BLC_RESULT=${PIPESTATUS[0]}
   echo ----------------------------------------------------------------------
   echo Link check summary

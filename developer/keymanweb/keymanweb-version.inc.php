@@ -1,5 +1,5 @@
 <?php
-require_once("includes/servervars.php");
+require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
 
 use Keyman\Site\Common\KeymanHosts;
 

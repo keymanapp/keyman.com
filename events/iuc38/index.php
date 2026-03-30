@@ -1,5 +1,5 @@
 <?php
-  require_once('includes/template.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
 
   // Required
   head([
@@ -9,9 +9,9 @@
 ?>
 
  <h1>Unicode Conference IUC38 - Keyboard Futures presentation and demos</h1>
- 
+
  <p><a href='keyboardfutures_iuc38.pdf'>Keyboard Futures Presentation (PDF)</a></p>
- 
+
  <p>These demos have been setup to run on a tablet and may not function correctly on other devices.  They have been tested primarily on iPad.
  They are intended as proof of concept experiments rather than complete, functional layouts.</p>
  <p>Feedback is welcome; contact <a href='mailto:support@keyman.com'>support@keyman.com</a>.</p>

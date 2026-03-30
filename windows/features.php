@@ -1,6 +1,6 @@
 <?php
-  require_once('includes/template.php');
-  require_once __DIR__ . '/../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
 
   // Required
   head([
@@ -9,7 +9,7 @@
     'css' => ['template.css','feature-template.css'],
     'showMenu' => true
   ]);
-  require_once('includes/desktop-features.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/desktop-features.php';
 ?>
 <div class="info-right">
     <div class="section" id="features">

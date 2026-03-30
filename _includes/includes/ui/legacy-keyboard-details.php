@@ -1,9 +1,9 @@
 <?php
   namespace UI;
 
-  require_once('includes/template.php');
-  require_once('includes/playstore.php');
-  require_once('includes/appstore.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
+  require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
 
   use \DateTime;
   use \Keyman\Site\Common\KeymanHosts;

@@ -3,7 +3,7 @@
 
   namespace Keyman\Site\com\keyman;
 
-  require __DIR__ . '/../_includes/autoload.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   require_once('./session.php');
 
   use Keyman\Site\com\keyman\templates\Head;
@@ -416,6 +416,7 @@ END;
     }
 
     protected static function WriteTitle() {
+      global $_m;
       $head_options = [
         'title' => self::$title,
         'js' => [Util::cdn('keyboard-search/keyboard-details.js'), Util::cdn('keyboard-search/install.js')],

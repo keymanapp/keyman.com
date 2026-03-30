@@ -7,7 +7,7 @@
 
   // Because of the limited use case, there is also minimal error checking.
 
-  require_once('includes/servervars.php');
+  require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
 
   use Keyman\Site\Common\KeymanHosts;
 
