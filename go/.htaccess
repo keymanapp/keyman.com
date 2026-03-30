@@ -32,7 +32,7 @@ RewriteRule "^package/download/(keyboard/)?([^/]+)$" "package/download.php?type=
 RedirectMatch "/go/keyboard/([^/?]+)/share$" "/keyboards/share/$1"
 
 #
-# go/app/download
+# go/app/download/{product}/{version}/{tier}?url=https://downloads.keyman.com/...
 #
 
 # download-app?url=...
