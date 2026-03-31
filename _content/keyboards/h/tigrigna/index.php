@@ -16,7 +16,7 @@
     Type in Tigrigna on iPhone, iPad, Windows, macOS, Linux, and Android. Our Tigrigna keyboards works with Microsoft Word, Photoshop, Facebook, Twitter, email and thousands of other applications.
 </p>
 <p>
-  <a href="eritrean.php">Click here</a> for Tigirigna (Eritrea)
+  <a href="eritrean">Click here</a> for Tigirigna (Eritrea)
 </p>
 <img id="ezana-stone" style="height:488px" src="<?php echo cdn('img/ezana.jpg'); ?>" title="The Ezana Stone — Image Courtesy of A. Davey" />
 <div id="download-cta" data-language='ti' data-keyboard='gff_tigrinya_ethiopia'>
@@ -115,7 +115,7 @@
 <p>
     Type in other Ethiopic languages such as:
     <ul>
-        <li><a href="eritrean.php">Tigrigna (Eritrea)</a></li>
+        <li><a href="eritrean">Tigrigna (Eritrea)</a></li>
         <li><a href="/keyboards/gff_awngi_xamtanga">Awngi & Xamtanga</a></li>
         <li><a href="/keyboards/gff_blin">Blin</a></li>
         <li><a href="/keyboards/gff_geez">Ge'ez</a></li>
