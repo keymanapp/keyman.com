@@ -10,7 +10,7 @@
     'showMenu' => true,
     'banner' => [
       'title' => 'Keyman '.$stable_version.' for Windows<br/><span id="title-small">Type in your language</span>',
-      'button' => '<div id="banner-buttons"><a class="banner-button" href="download.php"><img src="'.cdn('img/download_button.png').'" /></a></div>',
+      'button' => '<div id="banner-buttons"><a class="banner-button" href="download"><img src="'.cdn('img/download_button.png').'" /></a></div>',
       'image' => 'screenshots/14/windows/osk-malayalam-566x226.png',
       'background' => 'water'
     ]
