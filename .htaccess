@@ -38,7 +38,7 @@ RewriteRule "^(archive)/(downloads)(\.php)?$" "en/$2/$1/" [NC,R=301,QSA]
 # Rewrite /<lang>/... ignoring known 2-3 letter folders
 RewriteCond "$1" !-f
 RewriteCond "$1" !-d
-RewriteRule "^/(?!cdn|go|mac|web)/(.+)?/" "/_content/$2?lang=$1"
+RewriteRule "^(?!cdn|go|mac|web)([^/]+)/(.+)$" "/_content/$2?lang=$1"
 
 # macosx and macos to mac (ignore case)
 RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
