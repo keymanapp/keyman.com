@@ -24,10 +24,10 @@ RewriteBase /
 AddType application/json apple-app-site-association
 
 # Deny crowdin.yml
-RewriteRule ^crowdin.yml$ = [F,L]
+RewriteRule "^crowdin.yml$" = [F,L]
 
 # Custom error messages (need to pass the original request)
-ErrorDocument 404 /_includes/errors/404
+ErrorDocument 404 /_includes/errors/404.php
 
 # apple-app-site-association
 RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
@@ -204,10 +204,10 @@ RewriteRule "^(.+)" "en/$1" [R,L]
 RewriteCond "$1" -d
 RewriteRule "^((.+)/)?index(\.php)?$" "$1" [R,L]
 
-# Remove .php extension and redirect
+# Remove .php extension and redirect (except for 404)
 RewriteCond "$1.php" -f
 RewriteCond "$1" !-d
-RewriteRule "^(.+)\.php$" "$1" [R,L]
+RewriteRule "^(.+)?!404\.php$" "$1" [R,L]
 
 # Redirect folder without / to include /
 RewriteCond "{DOCUMENT_ROOT}/$1" -d
