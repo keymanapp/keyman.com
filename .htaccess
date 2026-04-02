@@ -178,6 +178,9 @@ RewriteCond "%{DOCUMENT_ROOT}/_content/$1.md" -f [OR]
 RewriteCond "%{DOCUMENT_ROOT}/_content/$1" -d
 RewriteRule "^(.*)$" "en/$1" [R,L]
 
+# downloads/releases (tier & version params)
+RewriteRule "^(downloads\/releases)/(.+)$" "en/$1/$2" [R,L]
+
 # ##################################################################
 # Rewriting
 # ##################################################################
@@ -247,11 +250,10 @@ RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [END]
 
 # releases-tier/download
 # note: the tier is currently ignored
-RewriteRule "^downloads/releases/(alpha|beta|stable)/(.+)$" "/downloads/releases/_version_downloads.php?tier=$1&version=$2" [END]
+RewriteRule "^(en)/downloads/releases/(alpha|beta|stable)/(.+)$" "/_content/downloads/releases/_version_downloads.php?tier=$2&version=$3&lang=$1" [END]
 
 # releases-download
 RewriteRule "^(en)/downloads/releases/(.+)$" "/_content/downloads/releases/_version_downloads.php?version=$2&lang=$1" [END]
-RewriteRule "^downloads/releases/(.+)$" "/downloads/releases/_version_downloads.php?version=$1" [END]
 
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
 
