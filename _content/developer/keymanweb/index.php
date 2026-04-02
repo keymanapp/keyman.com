@@ -45,11 +45,11 @@ layouts from the Keyman Cloud CDN; the code can be hosted on your own servers ju
 
 <ul>
   <li>
-    <a href='sample1.php' target='_blank'>Basic Example</a>
+    <a href='sample1' target='_blank'>Basic Example</a>
     (<a href="https://github.com/keymanapp/keyman.com/blob/master/developer/keymanweb/sample1.php">source code</a>)
   </li>
   <li>
-    <a href='sample2.php' target='_blank'>Multi-language example</a>
+    <a href='sample2' target='_blank'>Multi-language example</a>
     (<a href="https://github.com/keymanapp/keyman.com/blob/master/developer/keymanweb/sample2.php">source code</a>)
   </li>
 </ul>
@@ -97,9 +97,9 @@ the on screen keyboard.</p>
 <br>
 
 <ul>
-  <li><a href='keyboards.php'>Keyman Cloud CDN Keyboard Catalogue</a></li>
+  <li><a href='keyboards'>Keyman Cloud CDN Keyboard Catalogue</a></li>
   <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/cloud/version/2.0'>How to: retrieve the latest version of KeymanWeb from Keyman Cloud CDN</a></li>
-  <li><a href='index.2.0.php'>Using older versions of KeymanWeb</a></li>
+  <li><a href='index.2.0'>Using older versions of KeymanWeb</a></li>
 </ul>
 
 <br>

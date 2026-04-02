@@ -17,14 +17,14 @@
 ?>
 
 <h2 class="red underline">Keyman Developer <?php echo $stable_version_int; ?></h2>
-<p><a href="features.php">Keyman Developer <?php echo $stable_version_int; ?></a> is the most powerful tool for creating
+<p><a href="features">Keyman Developer <?php echo $stable_version_int; ?></a> is the most powerful tool for creating
   keyboard layouts for any popular platform for any language around the world. Build keyboards layouts for desktop,
   web, tablet and phone. Optimise your keyboards for each platform, including touch-and-hold keys and alternative layers.
 </p>
 
 <ul>
-  <li><a href="features.php">See the features.</a></li>
-  <li><a href='download.php'>Keyman Developer Downloads</a></li>
+  <li><a href="features">See the features.</a></li>
+  <li><a href='download'>Keyman Developer Downloads</a></li>
   <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/<?php echo $stable_version; ?>/'>Keyman Developer Support</a></li>
   <li><a href='authoring-services'>Keyboard authoring service providers</a></li>
 </ul>

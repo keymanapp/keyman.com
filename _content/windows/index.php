@@ -10,7 +10,7 @@
     'showMenu' => true,
     'banner' => [
       'title' => 'Keyman '.$stable_version.' for Windows<br/><span id="title-small">Type in your language</span>',
-      'button' => '<div id="banner-buttons"><a class="banner-button" href="download.php"><img src="'.cdn('img/download_button.png').'" /></a></div>',
+      'button' => '<div id="banner-buttons"><a class="banner-button" href="download"><img src="'.cdn('img/download_button.png').'" /></a></div>',
       'image' => 'screenshots/14/windows/osk-malayalam-566x226.png',
       'background' => 'water'
     ]
@@ -29,8 +29,8 @@
     And now that Keyman is free, we've completely removed any obstacles from getting you typing right away.
 </p>
 <ul>
-  <li><a href="features.php">See the features</a></li>
-  <li><a href="keyboards.php">Clever keyboards</a></li>
+  <li><a href="features">See the features</a></li>
+  <li><a href="keyboards">Clever keyboards</a></li>
 </ul>
 <div class="button-div">
     <a href="download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
@@ -56,11 +56,11 @@
     </thead>
     <tbody>
         <tr>
-            <td><a href="features.php#keyboard-list">World-leading input methods for thousands of languages</a></td>
+            <td><a href="features#keyboard-list">World-leading input methods for thousands of languages</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#keyman-dev">Create your own custom keyboards</a></td>
+            <td><a href="features#keyman-dev">Create your own custom keyboards</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
@@ -68,43 +68,43 @@
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#keyboard-limit">Number of keyboards you can install</a></td>
+            <td><a href="features#keyboard-limit">Number of keyboards you can install</a></td>
             <td>Unlimited</td>
         </tr>
         <tr>
-            <td><a href="features.php#language-association">Associate keyboards with multiple languages</a></td>
+            <td><a href="features#language-association">Associate keyboards with multiple languages</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#keyboard-information">Advanced keyboard information</a></td>
+            <td><a href="features#keyboard-information">Advanced keyboard information</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#hotkeys">Keyboard hotkeys</a></td>
+            <td><a href="features#hotkeys">Keyboard hotkeys</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#hotkeys">Interface hotkeys</a></td>
+            <td><a href="features#hotkeys">Interface hotkeys</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#language-switcher">Language switcher</a></td>
+            <td><a href="features#language-switcher">Language switcher</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#language-switcher">Global language switch</a></td>
+            <td><a href="features#language-switcher">Global language switch</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#character-map">Character Map tool</a></td>
+            <td><a href="features#character-map">Character Map tool</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#font-helper">Font helper tool</a></td>
+            <td><a href="features#font-helper">Font helper tool</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#character-map">Character Identifier tool</a></td>
+            <td><a href="features#character-map">Character Identifier tool</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
@@ -112,11 +112,11 @@
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#osk">Basic On-Screen Keyboard</a></td>
+            <td><a href="features#osk">Basic On-Screen Keyboard</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
-            <td><a href="features.php#osk">Advanced On-Screen Keyboard</a></td>
+            <td><a href="features#osk">Advanced On-Screen Keyboard</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
         <tr>
@@ -124,13 +124,13 @@
             <th></th>
         </tr>
         <tr>
-            <td><a href="features.php#support">Web-based Community Technical Support</a></td>
+            <td><a href="features#support">Web-based Community Technical Support</a></td>
             <td><img class="table-tick" src="<?php echo cdn("img/table-tick.png"); ?>"/></td>
         </tr>
     </tbody>
 </table>
 <p>
-    You can learn about all the features of Keyman <?= $stable_version; ?> for Windows by <a href="features.php">clicking here!</a>
+    You can learn about all the features of Keyman <?= $stable_version; ?> for Windows by <a href="features">clicking here!</a>
 </p>
 <div class="button-div">
     <a href="download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
@@ -168,6 +168,6 @@
     <span class="red">Q.</span> Are Keyman Desktop 7.1 and other previous releases still available for download?
 </p>
 <p>
-    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 7.1 and other previous releases <a href="../archive/downloads.php">here</a>.
+    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 7.1 and other previous releases <a href="/archive/downloads">here</a>.
 </p>
 <br/>
