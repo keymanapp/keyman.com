@@ -188,6 +188,18 @@ RedirectMatch "^/(french|german|italian|spanish|swedish)(/?)$"       "/keyboards
 # dedicated-keyboard-landing pages
 RedirectMatch 301 "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinhala|tamil|tibetan|tigrigna|urdu)(/.*)?$" "/keyboards/h/$1$2"
 
+# No i18n for _control and go pages - won't go to _content
+RewriteCond "%{DOCUMENT_ROOT}/$1/$2.php" -f
+RewriteRule "^(_control|go)/(.+)$" "/$1/$2.php" [END]
+
+# No i18n for _test infrastructure pages - won't go to _content
+RewriteCond "%{DOCUMENT_ROOT}/$1/$2.md" -f
+RewriteRule "^(_test)/(.+)$" "/_includes/includes/md/mdhost.php?file=$1/$2.md" [END]
+
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
+RewriteRule "^(_test)/?$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
+
+
 #
 # if $1 is a folder or file in /_content, then redirect to currentlang (en?)
 # e.g. would redirect windows/download --> en/windows/download/
@@ -224,6 +236,7 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 # TODO: mdhost currently in a different path than help.keyman
 
 # TODO: en --> should be a bcp-47 type 'lang' match (e.g. ab[-x][-y]) ignore case, keep it a fairly loose expression [a-z][a-z][a-z]?(-...)?
+
 ##############################################
 
 # root
