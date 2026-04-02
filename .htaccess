@@ -178,8 +178,9 @@ RewriteCond "%{DOCUMENT_ROOT}/_content/$1.md" -f [OR]
 RewriteCond "%{DOCUMENT_ROOT}/_content/$1" -d
 RewriteRule "^(.*)$" "en/$1" [R,L]
 
-# downloads/releases (tier & version params)
-RewriteRule "^(downloads\/releases)/(.+)$" "en/$1/$2" [R,L]
+#
+# Paths involving queries (don't match on file/directory)
+RewriteRule "^(downloads\/releases|keyboards)/(.+)$" "en/$1/$2" [R,L]
 
 # ##################################################################
 # Rewriting
@@ -204,45 +205,39 @@ RewriteRule "^(_control|go|_test)/?$" "/_includes/includes/md/mdhost.php?file=$1
 # keyboards Install | Download | Share | bare | .json -->
 #
 
-## inject content and lang 200-250
-
-
 # /keyboards/install/[id] to /keyboards/install.php
-RewriteRule "^keyboards/install/([^/]+)$" "/keyboards/install.php?id=$1" [END,QSA]
+RewriteRule "^(en)/keyboards/install/([^/]+)$" "/_content/keyboards/install.php?id=$2&lang=$1" [END,QSA]
 
 # /keyboards/download/[id] to /keyboards/keyboard.php
 # This formerly redirected to a download, but we no longer need it; keep it for
 # legacy links
-RewriteRule "^keyboards/download/([^/]+)$" "/keyboards/keyboard.php?id=$1" [END,QSA]
+RewriteRule "^(en)/keyboards/download/([^/]+)$" "/_content/keyboards/keyboard.php?id=$2&lang=$1" [END,QSA]
 
 # /keyboards/share/[id] to /keyboards/share.php
 # if the keyboard exists in the repo, then share.php will redirect to /keyboards/<id>
-RewriteRule "^keyboards/share/([^/]+)$" "/keyboards/share.php?id=$1" [END,QSA]
+RewriteRule "^(en)/keyboards/share/([^/]+)$" "/_content/keyboards/share.php?id=$2&lang=$1" [END,QSA]
 
 # /keyboards/{id}.json to /keyboards/keyboard.json.php
-RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/keyboards/keyboard.json.php?id=$1" [END]
+RewriteRule "^(en)/keyboards/(?!keyboard.json)(.*)\.json$" "/_content/keyboards/keyboard.json.php?id=$2&lang=$1" [END]
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/keyboards/keyboard.php?id=$1" [END,QSA]
+RewriteRule "^(en)/keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/_content/keyboards/keyboard.php?id=$2&lang=$1" [END,QSA]
 
 #
 # keyboards search
 #
 
-# /keyboards?q=... to /keyboards/index.php
-# RewriteRule "^keyboards$" "/keyboards/index.php" [L]
-
 # /keyboards/languages to /keyboards/index.php
-RewriteRule "^keyboards/languages/(.*)" "/keyboards/index.php?q=l:id:$1" [END,QSA]
+RewriteRule "^(en)/keyboards/languages/(.*)" "/_content/keyboards/index.php?q=l:id:$2&lang=$1" [END,QSA]
 
 # /keyboards/download to /keyboards/download.php
-RewriteRule "^keyboards/download(.php)?" "/keyboards/download.php" [END,QSA]
+RewriteRule "^(en)/keyboards/download(.php)?" "/_content/keyboards/download.php&lang=$1" [END,QSA]
 
 # /keyboards/legacy to /keyboards/keyboard.php
-RewriteRule "^keyboards/legacy/(.*)" "/keyboards/keyboard.php?legacy=$1" [END]
+RewriteRule "^(en)/keyboards/legacy/(.*)" "/_content/keyboards/keyboard.php?legacy=$2&lang=$1" [END]
 
 # /keyboards/countries to /keyboards/index.php
-RewriteRule "^keyboards/countries/(.*)" "/keyboards/index.php?q=c:id:$1" [END]
+RewriteRule "^(en)/keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:id:$2&lang=$1" [END]
 
 #
 # downloads/releases
