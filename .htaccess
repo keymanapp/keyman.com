@@ -60,7 +60,7 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 # ------------------------------------------------------------------
 
 # Redirect /archive/downloads.php"
-RewriteRule "^(archive)/(downloads)(\.php)?$" "en/$2/$1/" [NC,R=301,QSA]
+RewriteRule "^archive/downloads(\.php)?$" "/archive/downloads/" [NC,R=301,QSA]
 
 # Rewrite /<lang>/... ignoring known 2-3 letter folders
 #RewriteCond "$1" !-f
@@ -85,7 +85,7 @@ RedirectMatch 301 "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-soft
 # desktop to windows
 RewriteRule "^desktop(/.*)?" "/windows$1" [NC,R=301,END,QSA]
 
-# index
+# releases-download index
 RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
 
 # CLDR -> LDML
