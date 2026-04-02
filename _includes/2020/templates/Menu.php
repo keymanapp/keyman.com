@@ -42,17 +42,16 @@ END;
       $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
       $parts = parse_url($url);
 
-      if (!empty($parts['query'])) {
-        parse_str($parts['query'], $queryParams);
-      } else {
-        $queryParams = [];
+      if (!empty($parts['path'])) {
+        // Replace language
+        $path = explode('/', $parts['path']);
+        //echo "$path";
+        $path[0] = $language;
       }
 
-      // Set the language query
-      $queryParams['lang'] = $language;
-      $query = http_build_query($queryParams);
-
-      return $parts['path'] . "?" . $query;
+      // Rebuild the path
+      $query = http_build_query($parts['query']);
+      return join('/', $path) . "?" . $query;
     }
 
     /**
