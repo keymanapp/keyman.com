@@ -36,9 +36,9 @@ RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-s
 RewriteRule "^(archive)/(downloads)(\.php)?$" "en/$2/$1/" [NC,R=301,QSA]
 
 # Rewrite /<lang>/... ignoring known 2-3 letter folders
-RewriteCond "$1" !-f
-RewriteCond "$1" !-d
-RewriteRule "^(?!cdn|go|mac|web)([^/]+)/(.+)$" "/_content/$2?lang=$1"
+#RewriteCond "$1" !-f
+#RewriteCond "$1" !-d
+#RewriteRule "^(?!cdn|go|mac|web)([^/]+)/(.+)$" "/_content/$2?lang=$1"
 
 # macosx and macos to mac (ignore case)
 RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
@@ -191,8 +191,10 @@ RedirectMatch 301 "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinh
 #
 # if $1 is a folder or file in /_content, then redirect to currentlang (en?)
 # e.g. would redirect windows/download --> en/windows/download/
-RewriteCond "{$DOCUMENT_ROOT}/_content/$1.php" -f
-RewriteRule "^(.+)" "en/$1" [R,L]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$1.php" -f [OR]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$1.md" -f [OR]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$1" -d
+RewriteRule "^(.+)$" "en/$1" [R,L]
 
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
 
@@ -222,6 +224,10 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 # TODO: mdhost currently in a different path than help.keyman
 
 # TODO: en --> should be a bcp-47 type 'lang' match (e.g. ab[-x][-y]) ignore case, keep it a fairly loose expression [a-z][a-z][a-z]?(-...)?
+##############################################
+
+# root
+RewriteRule "^/?$" "/_content/" [END,QSA]
 
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
