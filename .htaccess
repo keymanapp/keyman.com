@@ -265,9 +265,6 @@ RewriteRule "^downloads/releases/(.+)$" "/downloads/releases/_version_downloads.
 
 ##############################################
 
-# root - TODO is this rule needed? surely rule to redirect to/en ## 
-# RewriteRule "^/?$" "/_content/" [END,QSA]
-
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
 RewriteRule "^(en)/(.+)$" "/_includes/includes/md/mdhost.php?file=_content/$2.md&lang=$1" [END]
