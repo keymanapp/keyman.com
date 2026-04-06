@@ -102,24 +102,24 @@
   <h3 id="cta-other-downloads">Download a Tamil keyboard on these devices:</h3>
 
   <div class="download-cta-small iPhone" id="cta-iPhone">
-    <a href=../../../iphone/">
+    <a href="/iphone/">
       <img src="<?php echo cdn('img/cta-icons/icon-iphone.png'); ?>" />
       <p>iPhone</p>
     </a>
   </div>
   <div class="download-cta-small iPad" id="cta-iPad">
-    <a href="../../../ipad/">
+    <a href="/ipad/">
       <img src="<?php echo cdn('img/cta-icons/icon-ipad.png'); ?>" />
       <p>iPad</p>
   </div>
   <div class="download-cta-small Android" id="cta-Android">
-    <a href="../../../android/">
+    <a href="../../../../android/">
       <img src="<?php echo cdn('img/cta-icons/icon-android.png'); ?>" />
       <p>Android</p>
     </a>
   </div>
   <div class="download-cta-small Bookmarklet" id="cta-Bookmarklet">
-    <a href="../../../bookmarklet/">
+    <a href="../../../../bookmarklet/">
       <img src="<?php echo cdn('img/cta-icons/icon-bookmarklet.png'); ?>" />
       <p>Bookmarklet</p>
     </a>
