@@ -60,12 +60,7 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 # ------------------------------------------------------------------
 
 # Redirect /archive/downloads.php"
-RewriteRule "^archive/downloads(\.php)?$" "/archive/downloads/" [NC,R=301,QSA]
-
-# Rewrite /<lang>/... ignoring known 2-3 letter folders
-#RewriteCond "$1" !-f
-#RewriteCond "$1" !-d
-#RewriteRule "^(?!cdn|go|mac|web)([^/]+)/(.+)$" "/_content/$2?lang=$1"
+RewriteRule "^archive/downloads(.php)?$" "/downloads/archive/" [NC,R=301,QSA]
 
 # macosx and macos to mac (ignore case)
 RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
