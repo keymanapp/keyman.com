@@ -37,7 +37,7 @@
   <div class="download-cta-big mac" id="cta-big-mac">
     <h3>Urdu Keyman for macOS</h3>
     <p>
-      Type in Urdu in all your favourite software applications for macOS. Download <a href="../..../mac/">Keyman
+      Type in Urdu in all your favourite software applications for macOS. Download <a href="../../../mac/">Keyman
       for macOS</a> first
     </p>
     <div class="download-cta-button">

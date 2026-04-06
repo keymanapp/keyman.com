@@ -107,7 +107,7 @@
       <p>iPad</p>
   </div>
   <div class="download-cta-small Android" id="cta-Android">
-    <a href="../../../../android/">
+    <a href="../../../android/">
       <img src="<?php echo cdn('img/cta-icons/icon-android.png'); ?>" />
       <p>Android</p>
     </a>
