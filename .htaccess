@@ -234,6 +234,17 @@ RewriteRule "^(en)/keyboards/legacy/(.*)" "/_content/keyboards/keyboard.php?lega
 # /keyboards/countries to /keyboards/index.php
 RewriteRule "^(en)/keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:id:$2&lang=$1" [END]
 
+
+#
+# contact/exception
+#
+
+# /contact/exception to /contact/exception.php
+RewriteRule "^(en)/contact/exception(.php)?" "/_content/contact/exception.php?lang=$1" [END,QSA]
+
+RewriteRule "^(en)/contact/exception?id=(.+)$" "/_content/contact/exception?id=$2&lang=$1" [END]
+
+
 #
 # downloads/releases
 #
