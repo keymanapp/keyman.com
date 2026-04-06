@@ -256,6 +256,11 @@ RewriteRule "^(en)/downloads/releases/(alpha|beta|stable)/(.+)$" "/_content/down
 # releases-download
 RewriteRule "^(en)/downloads/releases/(.+)$" "/_content/downloads/releases/_version_downloads.php?version=$2&lang=$1" [END]
 
+#
+# Assets don't use lang param
+#
+RewriteRule "^(en)/(.+\.)(gif|js|png|svg)$" "/_content/$2$3" [END]
+
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
 
 #
