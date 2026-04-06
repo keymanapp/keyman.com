@@ -12,11 +12,6 @@
       $fields = (object)$fields;
       $fields->stable_version = KeymanVersion::stable_version;
       $fields->beta_version = KeymanVersion::beta_version;
-
-      // Fallback to 'en'
-      // TODO-I18N-URL-SCHEME: integrate with Locale.php
-      $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
-        
 ?>
 
       </div>
@@ -47,7 +42,7 @@
             <div id="privacy-policy"><a href="/privacy/">Privacy policy</a></div>
 
             <div id='footer-get-involved'>
-              <a href="/<?=$fields->lang?>/about/get-involved">Get involved</a>
+              <a href="/about/get-involved">Get involved</a>
               <a href='/donate'>Donate</a>
             </div>
         </div>
@@ -65,8 +60,8 @@
         </div>
         <div class="footer-third sil-logo">
             <br>
-            <a href="/<?=$fields->lang?>/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
-            <p>Created by <a href="/<?=$fields->lang?>/about/">SIL Global</a></p>
+            <a href="/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
+            <p>Created by <a href="/about/">SIL Global</a></p>
         </div>
     </div>
 </div>

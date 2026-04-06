@@ -32,10 +32,6 @@ class Head {
         $fields->js = [];
       }
 
-      // Fallback to 'en'
-      // TODO-I18N-URL-SCHEME: integrate with Locale.php
-      $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
-
 ?><!DOCTYPE html>
 <?php
   if (!empty($fields->language)) {
