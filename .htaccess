@@ -226,7 +226,7 @@ RewriteRule "^(en)/keyboards/(?!index\.php|install|keyboard|session|share)([^/]+
 RewriteRule "^(en)/keyboards/languages/(.*)" "/_content/keyboards/index.php?q=l:id:$2&lang=$1" [END,QSA]
 
 # /keyboards/download to /keyboards/download.php
-RewriteRule "^(en)/keyboards/download(.php)?" "/_content/keyboards/download.php&lang=$1" [END,QSA]
+RewriteRule "^(en)/keyboards/download(.php)?" "/_content/keyboards/download.php?lang=$1" [END,QSA]
 
 # /keyboards/legacy to /keyboards/keyboard.php
 RewriteRule "^(en)/keyboards/legacy/(.*)" "/_content/keyboards/keyboard.php?legacy=$2&lang=$1" [END]
