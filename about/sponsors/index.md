@@ -36,7 +36,7 @@ title: About our sponsors and partners
   <td style='vertical-align: middle; text-align: center' markdown="1">[![Translation Commons](translation-commons.svg)](https://translationcommons.org)</td>
   <td style='vertical-align: middle'><p markdown="1">
 
-  [Translation Cmmons](https://translationcommons.org) believes every language
+  [Translation Commons](https://translationcommons.org) believes every language
   deserves a place in the digital world. We’re committed to bridging the digital
   divide, ensuring all communities can communicate, learn, and thrive online in
   their native tongue.
