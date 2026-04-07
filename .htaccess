@@ -265,6 +265,9 @@ RewriteRule "^(en)/downloads/releases/(.+)$" "/_content/downloads/releases/_vers
 #
 # Assets don't use lang param
 #
+RewriteCond "%{DOCUMENT_ROOT}/cdn/$1$2" -f
+RewriteRule "^cdn/(.+\.)(gif|js|png|svg)$" "/cdn/$1$2" [END]
+
 RewriteRule "^(en)/(.+\.)(gif|js|png|svg)$" "/_content/$2$3" [END]
 
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
