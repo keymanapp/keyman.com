@@ -31,7 +31,6 @@ class Head {
       if(!isset($fields->js)) {
         $fields->js = [];
       }
-
 ?><!DOCTYPE html>
 <?php
   if (!empty($fields->language)) {
