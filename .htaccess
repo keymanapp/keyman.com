@@ -27,7 +27,9 @@ AddType application/json apple-app-site-association
 RewriteRule "^crowdin.yml$" = [F,L]
 
 # Custom error messages (need to pass the original request)
-# ErrorDocument 404 /_includes/errors/404.php Add this back
+ErrorDocument 404 /_includes/errors/404.php
+
+RewriteRule "^_includes/errors/404(.php)?$" "/_includes/errors/404.php" [END]
 
 # apple-app-site-association
 RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
@@ -40,14 +42,14 @@ RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-s
 # PHP and Markdown redirections
 # ------------------------------------------------------------------
 
-# Remove index or index.php and redirect (and stop processing)
-RewriteCond "$1" -d
-RewriteRule "^((.+)/)?index(\.php)?$" "$1" [R,L]
+# Remove index.md or index.php and redirect (and stop processing)
+#RewriteCond "$1" -d
+RewriteRule "^((.+)/)?index(.md|.php)?$" "$1" [R,L]
 
-# Remove .php extension and redirect (except for 404)
-RewriteCond "$1.php" -f
-RewriteCond "$1" !-d
-RewriteRule "^(.+)(?!404)\.php$" "$1" [R,L]
+# Remove .php extension and redirect
+#RewriteCond "$1.php" -f
+#RewriteCond "$1" !-d
+RewriteRule "^(.+).php$" "$1" [R,L]
 
 # Redirect folder without / to include /
 RewriteCond "{DOCUMENT_ROOT}/$1" -d
