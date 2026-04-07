@@ -91,13 +91,13 @@
   <h3 id="cta-other-downloads">Download a Sinhala keyboard on these devices:</h3>
 
   <div class="download-cta-small iPhone" id="cta-iPhone">
-    <a href="/iphone/">
+    <a href="../../../../iphone/">
       <img src="<?php echo cdn('img/cta-icons/icon-iphone.png'); ?>" alt="."/>
       <p>iPhone</p>
     </a>
   </div>
   <div class="download-cta-small iPad" id="cta-iPad">
-    <a href="/ipad/">
+    <a href="../../../../ipad/">
       <img src="<?php echo cdn('img/cta-icons/icon-ipad.png'); ?>" alt="."/>
       <p>iPad</p>
     </a>

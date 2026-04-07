@@ -62,6 +62,9 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 # Redirect /archive/downloads.php"
 RewriteRule "^archive/downloads(.php)?$" "/downloads/archive/" [NC,R=301,QSA]
 
+# ios and iphone and ipad to iphone-and-ipad
+RewriteRule "^(ios|iphone|ipad)(\/.*)?$" "/iphone-and-ipad$2" [NC,R=301,END,QSA]
+
 # macosx and macos to mac (ignore case)
 RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
 
@@ -114,9 +117,6 @@ RewriteRule "^keyboard(/.*)$" "/keyboards$1" [R,END]
 # 10.0 to 15.0
 # /1X.0 to /1X landing page
 RedirectMatch "^/1([0-5])(\.0)\/?" "/1$1/"
-
-# ios
-RedirectMatch "^/(?!iphone-and-ipad)(ios|iphone|ipad)(/.*)?" "/iphone-and-ipad$2"
 
 # Connect With Art landing page
 RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
@@ -244,6 +244,10 @@ RewriteRule "^(en)/contact/exception(.php)?" "/_content/contact/exception.php?la
 
 RewriteRule "^(en)/contact/exception?id=(.+)$" "/_content/contact/exception?id=$2&lang=$1" [END]
 
+#
+# ios
+#
+RewriteRule "^(en)/(iphone|ipad)(\/.*)?" "/_content/iphone-and-ipad/$3?lang=$1" [END,QSA]
 
 #
 # downloads/releases
