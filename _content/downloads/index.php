@@ -29,5 +29,5 @@
 
 
 <?php
-  require_once('_downloads.php');
+  require_once('./_downloads.php');
 ?>
