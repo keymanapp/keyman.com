@@ -4,6 +4,7 @@
   namespace Keyman\Site\com\keyman\templates;
 
   use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\Common\KeymanHosts;
 
@@ -34,25 +35,33 @@ END;
     }
 
     /**
-     * Generate the URL with query to change the UI language
+     * Modify link of the current URL for a given UI language
      * @param language - language tag to use
+     * @return string - modified URL
      */
     private static function change_ui_language($language): string {
       // Parse the current URI for populating the UI dropdown
       $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
       $parts = parse_url($url);
 
-      if (!empty($parts['query'])) {
-        parse_str($parts['query'], $queryParams);
-      } else {
-        $queryParams = [];
+      $path = '';
+      // Replace language if current language in path is valid BCP-47
+      // Note: Validate differs from regex in .htaccess
+      // ^(([a-z]{2,3}|[A-Za-z]{4}|[a-z]{5,8})(-[A-Za-z]{4})?(-([A-Z]{2}|[0-9]{3}))?)
+      if (!empty($parts['path'])) {
+        $path = explode("/", $parts['path']);
+        if (Validation::validate_bcp47($path[1]) != null) {
+          $path[1] = $language;
+        }
       }
 
-      // Set the language query
-      $queryParams['lang'] = $language;
-      $query = http_build_query($queryParams);
-
-      return $parts['path'] . "?" . $query;
+      // Rebuild the path
+      $newPath = implode("/", $path);
+      if (!empty($parts['query'])) {
+        // Append query
+        $newPath .= "?" . $parts['query'];
+      }
+      return $newPath;
     }
 
     /**
