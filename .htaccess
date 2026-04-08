@@ -65,6 +65,9 @@ RewriteRule "^archive/downloads(.php)?$" "/downloads/archive/" [NC,R=301,END,QSA
 # ios and iphone and ipad to iphone-and-ipad
 RewriteRule "^(ios|iphone|ipad)(\/.*)?$" "/iphone-and-ipad$2" [NC,R=301,END,QSA]
 
+# Redirect Android/iOS app to help homepage
+RewriteRule "^(android|iphone-and-ipad)/app(.*)$" "https://help.keyman.com/products/$1/" [NC,R=301,END]
+
 # macosx and macos to mac (ignore case)
 RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
 
