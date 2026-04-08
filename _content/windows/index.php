@@ -168,6 +168,6 @@
     <span class="red">Q.</span> Are Keyman Desktop 7.1 and other previous releases still available for download?
 </p>
 <p>
-    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 7.1 and other previous releases <a href="/archive/downloads">here</a>.
+    <span class="red">A.</span> Yes, you can find the links to download Keyman Desktop 7.1 and other previous releases <a href="../downloads/archive">here</a>.
 </p>
 <br/>
