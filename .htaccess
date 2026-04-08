@@ -43,13 +43,11 @@ RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-s
 # ------------------------------------------------------------------
 
 # Remove index.md or index.php and redirect (and stop processing)
-#RewriteCond "$1" -d
-RewriteRule "^((.+)/)?index(.md|.php)?$" "$1" [R,L]
+RewriteRule "^((.+)/)?index(\.md|\.php)?$" "$1" [R,L]
 
 # Remove .php extension and redirect
-#RewriteCond "$1.php" -f
-#RewriteCond "$1" !-d
-RewriteRule "^(.+).php$" "$1" [R,L]
+RewriteRule "^(.+)\.php$" "$1" [R,L]
+RewriteRule "^(.+)\.md$" "$1" [R,L]
 
 # Redirect folder without / to include /
 RewriteCond "{DOCUMENT_ROOT}/$1" -d
@@ -62,7 +60,7 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 # ------------------------------------------------------------------
 
 # Redirect /archive/downloads.php"
-RewriteRule "^archive/downloads(.php)?$" "/downloads/archive/" [NC,R=301,QSA]
+RewriteRule "^archive/downloads(.php)?$" "/downloads/archive/" [NC,R=301,END,QSA]
 
 # ios and iphone and ipad to iphone-and-ipad
 RewriteRule "^(ios|iphone|ipad)(\/.*)?$" "/iphone-and-ipad$2" [NC,R=301,END,QSA]
@@ -268,7 +266,8 @@ RewriteRule "^(en)/downloads/releases/(.+)$" "/_content/downloads/releases/_vers
 RewriteCond "%{DOCUMENT_ROOT}/cdn/$1$2" -f
 RewriteRule "^cdn/(.+\.)(gif|js|png|svg)$" "/cdn/$1$2" [END]
 
-RewriteRule "^(en)/(.+\.)(gif|js|png|svg)$" "/_content/$2$3" [END]
+RewriteCond "%{DOCUMENT_ROOT}/$2" -f
+RewriteRule "^(en)/(.+)$" "/_content/$2" [END]
 
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
 

@@ -103,7 +103,7 @@
     </a>
   </div>
   <!--<div class="download-cta-small Bookmarklet" id="cta-Bookmarklet">
-    <a href="../../../../bookmarklet/">
+    <a href="../../../bookmarklet/">
       <img src="<?php echo cdn('img/cta-icons/icon-bookmarklet.png'); ?>" />
       <p>Bookmarklet</p>
     </a>
