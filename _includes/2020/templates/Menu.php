@@ -21,6 +21,10 @@
       $fields->stable_version = KeymanVersion::stable_version;
       $fields->beta_version = KeymanVersion::beta_version;
 
+      // Fallback to 'en'
+      // TODO-I18N-URL-SCHEME: integrate with Locale.php
+      $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
+
       echo <<<END
 <body data-device="$fields->device">
 END;
@@ -128,7 +132,7 @@ END;
     <div id="phone-menu-inner">
         <div class="phone-menu-item">
             <h3>Keyboards</h3>
-            <form method="get" action="/keyboards" name="fsearch">
+            <form method="get" action="/<?=$fields->lang?>/keyboards" name="fsearch">
                 <input id="language-search2" type="text" placeholder="Enter language" name="q">
                 <input id="search-submit2" type="image" src="<?php echo Util::cdn("img/search-button.png"); ?>" alt="search button" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
             </form>
@@ -137,45 +141,45 @@ END;
   <div class="phone-menu-item">
             <h3>Products</h3>
             <ul>
-                <li><a href="/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
-                <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
-                <li><a href="/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
-                <li><a href="/keymanweb/">KeymanWeb.com</a></li>
-                <li><a href="/iphone/">Keyman <?=$fields->stable_version?> for iPhone</a></li>
-                <li><a href="/ipad/">Keyman <?=$fields->stable_version?> for iPad</a></li>
-                <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
-                <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
+                <li><a href="/<?=$fields->lang?>/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
+                <li><a href="/<?=$fields->lang?>/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                <li><a href="/<?=$fields->lang?>/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
+                <li><a href="/<?=$fields->lang?>/keymanweb/">KeymanWeb.com</a></li>
+                <li><a href="/<?=$fields->lang?>/iphone/">Keyman <?=$fields->stable_version?> for iPhone</a></li>
+                <li><a href="/<?=$fields->lang?>/ipad/">Keyman <?=$fields->stable_version?> for iPad</a></li>
+                <li><a href="/<?=$fields->lang?>/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
+                <li><a href="/<?=$fields->lang?>/bookmarklet/">Keyman Bookmarklet</a></li>
             </ul>
             <h3>Downloads</h3>
             <ul>
-                <li><a href='/downloads/'>Current release versions</a></li>
-                <li><a href='/downloads/pre-release/'>Pre-release versions</a></li>
-                <li><a href="/downloads/archive/">Older versions</a></li>
+                <li><a href='/<?=$fields->lang?>/downloads/'>Current release versions</a></li>
+                <li><a href='/<?=$fields->lang?>/downloads/pre-release/'>Pre-release versions</a></li>
+                <li><a href="/<?=$fields->lang?>/downloads/archive/">Older versions</a></li>
             </ul>
         </div>
         <div class="phone-menu-item">
             <h3>Developer Tools</h3>
             <ul>
-                <li><a href="/developer/">Keyman Developer <?=$fields->stable_version?></a></li>
-                <li><a href="/engine/">Keyman Engine for Desktop</a></li>
-                <li><a href="/engine/">Keyman Engine for Web</a></li>
-                <li><a href="/engine/">Keyman Engine for iOS</a></li>
-                <li><a href="/engine/">Keyman Engine for Android</a></li>
+                <li><a href="/<?=$fields->lang?>/developer/">Keyman Developer <?=$fields->stable_version?></a></li>
+                <li><a href="/<?=$fields->lang?>/engine/">Keyman Engine for Desktop</a></li>
+                <li><a href="/<?=$fields->lang?>/engine/">Keyman Engine for Web</a></li>
+                <li><a href="/<?=$fields->lang?>/engine/">Keyman Engine for iOS</a></li>
+                <li><a href="/<?=$fields->lang?>/engine/">Keyman Engine for Android</a></li>
             </ul>
         </div>
         <div class="phone-menu-item">
             <h3>About</h3>
             <ul>
-              <li><a href="/about/">About Keyman</a></li>
-              <li><a href="/about/team">The team</a></li>
-              <li><a href="/about/get-involved">Get Involved</a></li>
-              <li><a href="/training">Training Events</a></li>
-              <li><a href="/free/">Free on all Platforms</a></li>
-              <li><a href="/ldml/">LDML Support</a></li>
-              <li><a href="/contact/">Contact Us</a></li>
+              <li><a href="/<?=$fields->lang?>/about/">About Keyman</a></li>
+              <li><a href="/<?=$fields->lang?>/about/team">The team</a></li>
+              <li><a href="/<?=$fields->lang?>/about/get-involved">Get Involved</a></li>
+              <li><a href="/<?=$fields->lang?>/training">Training Events</a></li>
+              <li><a href="/<?=$fields->lang?>/free/">Free on all Platforms</a></li>
+              <li><a href="/<?=$fields->lang?>/ldml/">LDML Support</a></li>
+              <li><a href="/<?=$fields->lang?>/contact/">Contact Us</a></li>
               <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
-              <li><a href="/testimonials/">Testimonials</a></li>
-              <li><a href="/search/">Search Site</a></li>
+              <li><a href="/<?=$fields->lang?>/testimonials/">Testimonials</a></li>
+              <li><a href="/<?=$fields->lang?>/search/">Search Site</a></li>
            </ul>
         </div>
         <div class="phone-menu-item">
@@ -202,7 +206,7 @@ END;
 
           <span id='free'>Keyman is <a href='/free'>free and open source</a></span>
 
-          <form action="/search/" method="get" role="search">
+          <form action="/<?=$fields->lang?>/search/" method="get" role="search">
             <div class="search-wrap">
               <label for="main-q" class="offscreen">Search</label>
               <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
@@ -220,7 +224,7 @@ END;
     <div id="top-menu1">
         <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" alt="Keyman logo" /></a>
         <div id='help1'>
-          <form action="/search/" method="get" role="search">
+          <form action="/<?=$fields->lang?>/search/" method="get" role="search">
             <div class="search-wrap">
               <label for="main-q" class="offscreen">Search</label>
               <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
@@ -239,7 +243,7 @@ END;
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <h4>(2500+ languages)</h4>
-                        <form method="get" action="/keyboards" name="fsearch">
+                        <form method="get" action="/<?=$fields->lang?>/keyboards" name="fsearch">
                             <input id="language-search" type="text" placeholder="Enter language" name="q">
                             <input id="search-submit" type="image" src="<?php echo Util::cdn('img/search-button.png'); ?>" value="Search" onclick="if(document.getElementById('language-search').value==''){return false;}">
                         </form>
@@ -268,19 +272,19 @@ END;
                     <div class="menu-dropdown-inner">
                         <h4>Core Products</h4>
                         <ul>
-                            <li><a href="/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
-                            <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
-                            <li><a href="/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
-                            <li><a href="/iphone-and-ipad/">Keyman <?=$fields->stable_version?> for iPhone and iPad</a></li>
-                            <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
-                            <li><a href="/keymanweb/">KeymanWeb.com</a></li>
-                            <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
+                            <li><a href="/<?=$fields->lang?>/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
+                            <li><a href="/<?=$fields->lang?>/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                            <li><a href="/<?=$fields->lang?>/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
+                            <li><a href="/<?=$fields->lang?>/iphone-and-ipad/">Keyman <?=$fields->stable_version?> for iPhone and iPad</a></li>
+                            <li><a href="/<?=$fields->lang?>/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
+                            <li><a href="/<?=$fields->lang?>/keymanweb/">KeymanWeb.com</a></li>
+                            <li><a href="/<?=$fields->lang?>/bookmarklet/">Keyman Bookmarklet</a></li>
                         </ul>
                         <h4>Downloads</h4>
                         <ul>
-                            <li><a href='/downloads/'>Current release versions</a></li>
-                            <li><a href='/downloads/pre-release/'>Pre-release versions</a></li>
-                            <li><a href="/downloads/archive/">Older versions</a></li>
+                            <li><a href='/<?=$fields->lang?>/downloads/'>Current release versions</a></li>
+                            <li><a href='/<?=$fields->lang?>/downloads/pre-release/'>Pre-release versions</a></li>
+                            <li><a href="/<?=$fields->lang?>/downloads/archive/">Older versions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -290,23 +294,23 @@ END;
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <ul>
-                            <li><a href="/about/">About Keyman</a></li>
-                            <li><a href="/about/team">The team</a></li>
-                            <li><a href="/about/get-involved">Get Involved</a></li>
-                            <li><a href="/training">Training Events</a></li>
-                            <li><a href="/free/">Free on all Platforms</a></li>
-                            <li><a href="/ldml/">LDML Support</a></li>
+                            <li><a href="/<?=$fields->lang?>/about/">About Keyman</a></li>
+                            <li><a href="/<?=$fields->lang?>/about/team">The team</a></li>
+                            <li><a href="/<?=$fields->lang?>/about/get-involved">Get Involved</a></li>
+                            <li><a href="/<?=$fields->lang?>/training">Training Events</a></li>
+                            <li><a href="/<?=$fields->lang?>/free/">Free on all Platforms</a></li>
+                            <li><a href="/<?=$fields->lang?>/ldml/">LDML Support</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
                             <li><a href="/contact/">Contact Us</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
-                            <li><a href="/testimonials/">Testimonials</a></li>
+                            <li><a href="/<?=$fields->lang?>/testimonials/">Testimonials</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="menu-item" id="developer">
                 <div class="menu-item-sub" id="develop">
-                    <a href="/developer/">
+                    <a href="/<?=$fields->lang?>/developer/">
                         <h3>Developer</h3>
                     </a>
                 </div>

@@ -19,9 +19,10 @@ class Head {
       if(!isset($fields->title)) {
         $fields->title = 'Keyman | Type to the world in your language';
       }
-      if(empty($fields->language)) {
-        $fields->language = 'en'; // Default to English
-      }
+      // Fallback to 'en'
+      // TODO-I18N-URL-SCHEME: integrate with Locale.php
+      $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
+
       if(!isset($fields->favicon)) {
         $fields->favicon = Util::cdn("img/favicon.ico");
       }
@@ -33,8 +34,8 @@ class Head {
       }
 ?><!DOCTYPE html>
 <?php
-  if (!empty($fields->language)) {
-    echo "<html lang='$fields->language'>";
+  if (!empty($fields->lang)) {
+    echo "<html lang='$fields->lang'>";
   } else {
     echo "<html>";
   }
