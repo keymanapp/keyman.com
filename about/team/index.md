@@ -291,6 +291,14 @@ with 100 or more commits accepted into Keyman repositories.
 
 <div markdown="1">
 
+[![](https://avatars.githubusercontent.com/u/222913739?v=4)](https://github.com/Neminda95)
+
+[Neminda95](https://github.com/Neminda95)
+
+</div>
+
+<div markdown="1">
+
 [![](https://avatars.githubusercontent.com/u/48961603?v=4)](https://github.com/quwatsunny)
 
 [quwatsunny](https://github.com/quwatsunny)
