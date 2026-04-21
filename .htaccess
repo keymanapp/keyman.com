@@ -50,9 +50,9 @@ RewriteRule "^(.+)\.php$" "$1" [R,L]
 RewriteRule "^(.+)\.md$" "$1" [R,L]
 
 # Redirect folder without / to include /
-RewriteCond "{DOCUMENT_ROOT}/$1" -d
-RewriteCond "{DOCUMENT_ROOT}/$1.php" !-f
-RewriteCond "{DOCUMENT_ROOT}/$1.md" !-f
+RewriteCond "%{DOCUMENT_ROOT}/$1" -d
+RewriteCond "%{DOCUMENT_ROOT}/$1.php" !-f
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
 RewriteRule "^(.+[^/])$" "$1/" [R,END]
 
 # ------------------------------------------------------------------
@@ -63,7 +63,7 @@ RewriteRule "^(.+[^/])$" "$1/" [R,END]
 RewriteRule "^archive/downloads(.php)?$" "/downloads/archive/" [NC,R=301,END,QSA]
 
 # ios and iphone and ipad to iphone-and-ipad
-RewriteRule "^(ios|iphone|ipad)(\/.*)?$" "/iphone-and-ipad$2" [NC,R=301,END,QSA]
+RewriteRule "^(ios|iphone|ipad)(/.*)?$" "/iphone-and-ipad$2" [NC,R=301,END,QSA]
 
 # Redirect Android/iOS app to help homepage
 RewriteRule "^(android|iphone-and-ipad)/app(.*)$" "https://help.keyman.com/products/$1/" [NC,R=301,END]
@@ -75,22 +75,22 @@ RewriteRule "^(macosx|macos)\b(.*)$" "/mac$2" [NC,R=301,END,QSA]
 RewriteRule "^plus.*" "/" [NC,R=301,END,QSA]
 
 # Redirect PHP unit tests
-RewriteRule "^tests(\/.*)?" "/" [NC,R=301,END,QSA]
+RewriteRule "^tests(/.*)?" "/" [NC,R=301,END,QSA]
 
 # /donate -> donate.keyman.com
-RedirectMatch 301 "^(?i)/donate(\/.*)?" "https://donate.keyman.com"
+RedirectMatch 301 "^(?i)/donate(/.*)?" "https://donate.keyman.com"
 
 # /privacy -> SIL Privacy policy
-RedirectMatch 301 "^(?i)/privacy(\/.*)?" "https://software.sil.org/language-software-privacy-policy/"
+RedirectMatch 301 "^(?i)/privacy(/.*)?" "https://software.sil.org/language-software-privacy-policy/"
 
 # desktop to windows
 RewriteRule "^desktop(/.*)?" "/windows$1" [NC,R=301,END,QSA]
 
 # releases-download index
-RewriteRule "^downloads/releases(\/)?$" "/downloads" [R,END]
+RewriteRule "^downloads/releases(/)?$" "/downloads" [R,END]
 
 # CLDR -> LDML
-RewriteRule "^cldr(\/)?$" "/ldml" [R=301,END]
+RewriteRule "^cldr(/)?$" "/ldml" [R=301,END]
 
 #
 # Keyboard landing pages (TODO)
@@ -119,10 +119,10 @@ RewriteRule "^keyboard(/.*)$" "/keyboards$1" [R,END]
 
 # 10.0 to 15.0
 # /1X.0 to /1X landing page
-RedirectMatch "^/1([0-5])(\.0)\/?" "/1$1/"
+RedirectMatch "^/1([0-5])(\.0)(/?)" "/1$1/"
 
 # Connect With Art landing page
-RedirectMatch "/connectwithart(\/|$)" "https://sites.google.com/sil.org/connectwithart/home"
+RedirectMatch "/connectwithart(/|$)" "https://sites.google.com/sil.org/connectwithart/home"
 
 RedirectMatch "^/lt4all(/?)$"          "/ldml/lt4all"
 
@@ -178,7 +178,7 @@ RewriteRule "^(.*)$" "en/$1" [R,L]
 
 #
 # Paths involving queries (don't match on file/directory)
-RewriteRule "^(downloads\/releases|keyboards)/(.+)$" "en/$1/$2" [R,L]
+RewriteRule "^(downloads/releases|keyboards)/(.+)$" "en/$1/$2" [R,L]
 
 # ##################################################################
 # Rewriting
@@ -197,7 +197,7 @@ RewriteCond "%{DOCUMENT_ROOT}/$1/$2.md" -f
 RewriteRule "^(_control|go|_test)/(.+)$" "/_includes/includes/md/mdhost.php?file=$1/$2.md" [END]
 
 RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
-RewriteRule "^(_control|go|_test)/?$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
+RewriteRule "^(_control|go|_test)(/?)$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
 
 RewriteCond "%{DOCUMENT_ROOT}/cdn/$1$2" -f
 RewriteRule "^cdn/(.+\.)(gif|js|png|svg)$" "/cdn/$1$2" [END]
@@ -254,7 +254,7 @@ RewriteRule "^(en)/contact/exception?id=(.+)$" "/_content/contact/exception?id=$
 #
 # ios
 #
-RewriteRule "^(en)/(iphone|ipad)(\/.*)?" "/_content/iphone-and-ipad/$3?lang=$1" [END,QSA]
+RewriteRule "^(en)/(iphone|ipad)(/.*)?" "/_content/iphone-and-ipad/$3?lang=$1" [END,QSA]
 
 #
 # downloads/releases

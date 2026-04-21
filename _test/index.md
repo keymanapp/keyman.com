@@ -23,15 +23,15 @@ showmenu: false
 
 ## Links to Other Test Pages
 
-[/go links](/_test/go)
+[go links](go)
 
-[/keyboards links](/_test/keyboards)
+[keyboards links](keyboards)
 
-[keyboard language landing links](/_test/language-landing)
+[keyboard language landing links](language-landing)
 
-[/_legacy keyboards links](/_test/legacy)
+[legacy keyboards links](legacy)
 
-[/well-known links](/_test/well-known)
+[well-known links](well-known)
 
 ## Link to Main Page
 
