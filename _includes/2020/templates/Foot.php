@@ -60,8 +60,8 @@
         </div>
         <div class="footer-third sil-logo">
             <br>
-            <a href="/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
-            <p>Created by <a href="/about/">SIL Global</a></p>
+            <a href="https://global.sil.org/about/"><img id="sil-logo" src="<?php echo ImageRandomizer::randomizer(); ?>" width="50%" alt='SIL' /></a>
+            <p>Created by <a href="https://global.sil.org/about/">SIL Global</a></p>
         </div>
     </div>
 </div>
