@@ -46,12 +46,15 @@ END;
 
       $path = '';
       // Replace language if current language in path is valid BCP-47
-      // Note: Validate differs from regex in .htaccess
-      // ^(([a-z]{2,3}|[A-Za-z]{4}|[a-z]{5,8})(-[A-Za-z]{4})?(-([A-Z]{2}|[0-9]{3}))?)
+      // Note: Validate::validate_bcp47 differs from regex in .htaccess
       if (!empty($parts['path'])) {
         $path = explode("/", $parts['path']);
-        if (Validation::validate_bcp47($path[1]) != null) {
+        if ($path[1] != null && class_exists('\\Keyman\\Site\\com\\keyman\\Validation') &&
+            \Keyman\Site\com\keyman\Validation::validate_bcp47($path[1]) != null) {
           $path[1] = $language;
+        } else {
+          // original URL didn't have a valid BCP-47 so inert it
+          array_splice($path, 1, 0, $language);
         }
       }
 
@@ -88,19 +91,12 @@ END;
 
     /**
      * Render the globe dropdown for changing the UI language
-     * Limitation: Currently only visible on pages that use localized strings
      * @param divID - <div> ID to handle 3 cases:
      * ui-language (default) Desktop globe hover
      * ui-language1 - Desktop globe hover
      * phone - Mobile list
      */
     private static function render_globe_dropdown($divID = "ui-language"): void {
-      global $page_is_using_locale;
-      if (!isset($page_is_using_locale) || !$page_is_using_locale) {
-        // only render on pages that use localized strings
-        return;
-      }
-
       // Phone layout
       $globeClass = '';
       if ($divID === "phone") {
