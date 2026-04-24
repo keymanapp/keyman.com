@@ -291,6 +291,14 @@ with 100 or more commits accepted into Keyman repositories.
 
 <div markdown="1">
 
+[![](https://avatars.githubusercontent.com/u/222913739?v=4)](https://github.com/Neminda95)
+
+[Neminda95](https://github.com/Neminda95)
+
+</div>
+
+<div markdown="1">
+
 [![](https://avatars.githubusercontent.com/u/48961603?v=4)](https://github.com/quwatsunny)
 
 [quwatsunny](https://github.com/quwatsunny)
@@ -477,6 +485,7 @@ people who have helped Keyman serve you all better!
 <div class="contributors" id="github-minor" markdown="1">
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/56992370?v=4" alt="abhi-deshpande" />](https://github.com/abhi-deshpande "abhi-deshpande")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/25257917?v=4" alt="adinkraalphabet" />](https://github.com/adinkraalphabet "adinkraalphabet")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/76251057?v=4" alt="AgMenos47" />](https://github.com/AgMenos47 "AgMenos47")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/186282342?v=4" alt="Aixther" />](https://github.com/Aixther "Aixther")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/266491785?v=4" alt="AKAAA252" />](https://github.com/AKAAA252 "AKAAA252")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/89323017?v=4" alt="aldorsvo21" />](https://github.com/aldorsvo21 "aldorsvo21")
