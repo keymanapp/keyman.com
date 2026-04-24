@@ -18,8 +18,14 @@
     'description' => _m('page_description'),
     'language' => isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en',
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
-    'js' => [Util::cdn('keyboard-search/jquery.mark.js'), Util::cdn('keyboard-search/dedicated-landing-pages.js'),
-      Util::cdn('keyboard-search/search.js')]
+    'js' => [
+      Util::cdn('keyboard-search/jquery.mark.js'),
+      Util::cdn('keyboard-search/dedicated-landing-pages.js'),
+      Util::cdn('keyboard-search/search.mjs'),
+    ],
+    'js_i18n_domains' => [
+      'keyboards' => Locale::domain_js('keyboards'),
+    ],
   ];
 
   if($embed != 'none') {
@@ -39,6 +45,7 @@
 <script>
   var embed='<?=$embed?>';
   var embed_query='<?=$session_query?>';
+  var embed_lang='<?=$head_options['language']?>';
 
   if(embed != 'none') {
     // For an iframe hosted in Download Keyboards dialog, we cannot use
@@ -52,14 +59,14 @@
 
 <div class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>'>
 
-  <h2 class="red underline"><a href='/keyboards'><?= _m('page_title') ?></a></h2>
+  <h2 class="red underline"><a href='/<?= $head_options['language']?>/keyboards'><?= _m('page_title') ?></a></h2>
 
   <div id='search-box'>
-    <form method='get' action='/keyboards' name='f'>
+    <form method='get' action='/<?= $head_options['language']?>/keyboards' name='f'>
       <label for="search-q"><?= _m('keyboard_search') ?></label><input id="search-q" type="text" placeholder="<?= _m('enter_language') ?>" name="q"
       <?php if($embed == 'none') echo 'autofocus'; ?>>
       <input id="search-f" type="button" value="<?= _m('search') ?>" onclick="return do_search()">
-      <label id="search-new"><a href='/keyboards<?=$session_query_q?>'><?= _m('new_search')?></a></label>
+      <label id="search-new"><a href='/<?= $head_options['language']?>/keyboards<?=$session_query_q?>'><?= _m('new_search')?></a></label>
       <input id="search-obsolete" type="hidden" name="obsolete" value="0">
       <input id="search-page" type="hidden" name="page" value="1">
     </form>

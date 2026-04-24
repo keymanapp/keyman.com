@@ -21,7 +21,7 @@
   class Locale {
     public const DEFAULT_LOCALE = 'en';
 
-    // array of the support locales 
+    // array of the support locales
     // xx-YY locale as specified in crowdin %locale%
     private static $currentLocales = [];
 
@@ -44,14 +44,16 @@
      */
     public static function setLocale($locale) {
       // Clear current locales
-      self::$currentLocales == [];
+      self::$currentLocales = [];
 
       if (!empty($locale)) {
         self::$currentLocales = self::calculateFallbackLocales($locale);
       }
 
-      // Push default fallback locale to the end
-      array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
+      if(!in_array(Locale::DEFAULT_LOCALE, self::$currentLocales)) {
+        // Push default fallback locale to the end
+        array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
+      }
     }
 
     /**
@@ -97,9 +99,25 @@
     }
 
     /**
+     * Return an array of javascript locales available for the given domain, in
+     * priority order.
+     */
+    public static function domain_js($domain) {
+      $root = __DIR__ . "/strings/$domain";
+      $locales = [];
+      foreach (self::currentLocales() as $locale) {
+        if(file_exists("$root/$locale.json")) {
+          array_push($locales, $locale);
+        }
+      }
+
+      return $locales;
+    }
+
+    /**
      * Defines a global variable for page locale strings and also
      * tells locale system that current page uses locales
-     * @param $define - 
+     * @param $define -
      * @param $id - folder containing locale strings, relative to /_includes/locale/strings
      */
     public static function definePageLocale($define, $id) {
@@ -164,7 +182,7 @@
         }
       }
 
-      // String not found in any localization - 
+      // String not found in any localization -
       if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT) {
         die('string ' . $id . ' is missing in all the l10ns');
       }
@@ -172,13 +190,13 @@
     }
 
     /**
-     * Wrapper to lookup localized string for webpage domain. 
+     * Wrapper to lookup localized string for webpage domain.
      * Formatted string using optional variable args for placeholders
      * should escape like %1\$s
      * @param $domain - the PHP file using the localized strings
      * @param $id - the id for the string
      * @param $args - optional remaining args to the format string
-     */ 
+     */
     public static function m($domain, $id, ...$args) {
       $str = self::getString($domain, $id);
       if (count($args) == 0) {
