@@ -277,7 +277,7 @@ RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/downloads/r
 #
 # Assets don't use lang param
 #
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2" -f
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7" -f
 RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(.+)$" "/_content/$7$8" [NC,END]
 
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
