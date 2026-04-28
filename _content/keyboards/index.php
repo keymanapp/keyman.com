@@ -65,12 +65,18 @@
     <form method='get' action='/<?= $head_options['language']?>/keyboards' name='f'>
       <label for="search-q"><?= _m('keyboard_search') ?></label><input id="search-q" type="text" placeholder="<?= _m('enter_language') ?>" name="q"
       <?php if($embed == 'none') echo 'autofocus'; ?>>
-      <input id="search-f" type="button" value="<?= _m('search') ?>" onclick="return do_search()">
+      <input id="search-f" type="button" value="<?= _m('search') ?>">
       <label id="search-new"><a href='/<?= $head_options['language']?>/keyboards<?=$session_query_q?>'><?= _m('new_search')?></a></label>
       <input id="search-obsolete" type="hidden" name="obsolete" value="0">
       <input id="search-page" type="hidden" name="page" value="1">
     </form>
   </div>
+
+  <script type="module">
+    // Wrapper to call .mjs function
+    import { do_search } from '../../cdn/dev/keyboard-search/search.mjs';
+    document.getElementById('search-f').onclick = do_search;
+  </script>
 
   <div id='search-results-container' class=''>
   <div id='search-results'></div>

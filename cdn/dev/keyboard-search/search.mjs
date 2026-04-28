@@ -399,7 +399,6 @@ export function do_search() {
   search(true);
   return false; // always return false from search box
 }
-window.do_search = do_search; // TODO: cleanup global
 
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
