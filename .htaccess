@@ -248,6 +248,9 @@ RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/l
 # /keyboards/countries to /keyboards/index.php
 RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:id:$7&lang=$1" [NC,END]
 
+# Root keyboard search to pass embed query?
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards(/)?$" "/_content/keyboards/index.php?lang=$1" [NC,END,QSA]
+
 
 #
 # contact/exception
