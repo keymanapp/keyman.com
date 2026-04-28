@@ -26,6 +26,10 @@ if(typeof embed_query == 'undefined') {
 var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
 var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
+// TODO: Validate BCP-47 triplet?
+var langMatch = location.pathname.match(/(\/(.+))?\/keyboards(.*)$/);
+var embed_lang = (langMatch) ? langMatch[2] : 'en';
+
 var dynamic_search_timeout = 0;
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -41,13 +45,13 @@ function getCurrentPath(q, page, obsolete) {
   page = page > 1 ? 'page='+page : '';
   var path = '';
   if(r && r[1].charAt(0) == 'c') {
-    path = '/keyboards/countries/';
+    path = '/' + embed_lang + '/keyboards/countries/';
   } else if(r && r[1].charAt(0) == 'l') {
-    path = '/keyboards/languages/'+r[3];
+    path = '/' + embed_lang + '/keyboards/languages/'+r[3];
   } else if(q == '') {
-    path = '/keyboards'
+    path = '/' + embed_lang + '/keyboards'
   } else {
-    path = '/keyboards?q='+encodeURIComponent(q);
+    path = '/' + embed_lang + '/keyboards?q='+encodeURIComponent(q);
   }
 
   if(page + obsolete == '') {
@@ -293,9 +297,9 @@ function process_response(q, obsolete, res) {
         "</div>");
 
       if(kbd.isDedicatedLandingPage) {
-        $('.title a', k).text(kbd.name).attr('href', '/keyboards/h'+kbd.id+embed_query_q);
+        $('.title a', k).text(kbd.name).attr('href', '/' + embed_lang + '/keyboards/h'+kbd.id+embed_query_q);
       } else {
-        $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
+        $('.title a', k).text(kbd.name).attr('href', '/' + embed_lang + '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
       }
 
       if(kbd.isDedicatedLandingPage) {
