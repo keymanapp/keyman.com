@@ -210,7 +210,7 @@ END;
         <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
 
-          <span id='free'>Keyman is <a href='/free'>free and open source</a></span>
+          <span id='free'>Keyman is <a href='/<?=$fields->lang?>/free'>free and open source</a></span>
 
           <form action="/<?=$fields->lang?>/search/" method="get" role="search">
             <div class="search-wrap">
