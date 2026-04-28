@@ -79,7 +79,7 @@ END;
         'de' => array(Menu::change_ui_language('de'), 'Deutsch'),
         'es' => array(Menu::change_ui_language('es'), 'Español'),
         'fr' => array(Menu::change_ui_language('fr'), 'Français'),
-        'km' => array(Menu::change_ui_language('km'), 'ខ្មែរ')
+        'km' => array(Menu::change_ui_language('km'), 'ខ្មែរ (Khmer)')
       );
 
       foreach($linkArray as $id) {
@@ -103,7 +103,7 @@ END;
       if ($divID === "phone") {
 ?>
 <div class="phone-menu-item">
-            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Keyboard Search UI</h3>
+            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Display in:</h3>
             <?= Menu::render_ui_list(); ?>
         </div>
       <?php
