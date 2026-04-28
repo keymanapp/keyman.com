@@ -69,7 +69,7 @@ class Head {
       $localization = '';
       foreach($locales as $locale) {
         if($localization != '') $localization .= ",\n";
-        $localization .= "{ \"locale\": \"$locale\", \"strings\": " . file_get_contents(__DIR__ . "/../../locale/strings/$domain/$locale.json") . "}";
+        $localization .= "{ \"locale\": \"$locale\", \"strings\": " . file_get_contents(_KEYMANCOM_INCLUDES . "/locale/strings/$domain/$locale.json") . "}";
       }
       echo "<script id='i18n_$domain' type='application/json'>[\n$localization\n]</script>\n";
     }

@@ -63,8 +63,8 @@
      */
     public static function loadDomain($domain) {
       self::$strings[$domain] = [];
-      $path = __DIR__ . '/strings/' . $domain . '/*.php';
-      $files = glob(__DIR__ . '/strings/' . $domain . '/*.php');
+      $path = _KEYMANCOM_INCLUDES . '/locale/strings/' . $domain . '/*.php';
+      $files = glob(_KEYMANCOM_INCLUDES . '/locale/strings/' . $domain . '/*.php');
       if ($files == false) {
         return false;
       }
@@ -88,7 +88,7 @@
      */
     public static function loadStrings($domain, $locale) {
       $currentLocaleFilename = sprintf("%s/%s/%s",
-        __DIR__ . '/strings/',
+        _KEYMANCOM_INCLUDES . '/locale/strings/',
         $domain,
         $locale . '.php');
 
@@ -103,7 +103,7 @@
      * priority order.
      */
     public static function domain_js($domain) {
-      $root = __DIR__ . "/strings/$domain";
+      $root = _KEYMANCOM_INCLUDES . "/locale/strings/$domain";
       $locales = [];
       foreach (self::currentLocales() as $locale) {
         if(file_exists("$root/$locale.json")) {
