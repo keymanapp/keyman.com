@@ -12,7 +12,7 @@
     'showMenu' => true,
     'banner' => [
       'title' => 'Keyman for Linux<br/><span id="title-small">Type in your language</span>',
-      'button' => '<div id="banner-buttons"><a class="banner-button" href="download.php"><img src="'.cdn('img/download_button.png').'" /></a></div>',
+      'button' => '<div id="banner-buttons"><a class="banner-button" href="download"><img src="'.cdn('img/download_button.png').'" /></a></div>',
       'image' => 'linux-osk-khmer.png',
       'background' => 'water'
     ]
@@ -34,7 +34,7 @@
     * Keyman Developer is currently a Windows-only product; however, the command line compiler kmcomp runs in WINE.
 </p>
 <p class='center'>
-    <a href="download.php"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
+    <a href="download"><img src="<?php echo cdn('img/download_button.png'); ?>" /></a>
 </p>
 
 <?php

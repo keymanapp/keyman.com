@@ -31,13 +31,13 @@
       <div class="download-cta-button">
         <h4>Download Now</h4>
       </div>
-      <a class="download-cta-more" href=../../../windows/">Learn more about Keyman for Windows</a>
+      <a class="download-cta-more" href="../../../windows/">Learn more about Keyman for Windows</a>
     </div>
   </div>
   <div class="download-cta-big mac" id="cta-big-mac">
     <h3>Urdu Keyman for macOS</h3>
     <p>
-      Type in Urdu in all your favourite software applications for macOS. Download <a href="../..../mac/">Keyman
+      Type in Urdu in all your favourite software applications for macOS. Download <a href="../../../mac/">Keyman
       for macOS</a> first
     </p>
     <div class="download-cta-button">

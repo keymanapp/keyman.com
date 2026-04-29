@@ -296,11 +296,11 @@ END;
                         <ul>
                             <li><a href="/<?=$fields->lang?>/about/">About Keyman</a></li>
                             <li><a href="/<?=$fields->lang?>/about/team">The team</a></li>
-                            <li><a href="/<?=$fields->lang?>/<?=$fields->lang?>/about/get-involved">Get Involved</a></li>
-                            <li><a href="/<?=$fields->lang?>/<?=$fields->lang?>/training">Training Events</a></li>
-                            <li><a href="/<?=$fields->lang?>/<?=$fields->lang?>/free/">Free on all Platforms</a></li>
-                            <li><a href="/<?=$fields->lang?>/<?=$fields->lang?>/ldml/">LDML Support</a></li>
-                            <li><a href="<<?=$fields->lang?>/?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
+                            <li><a href="/<?=$fields->lang?>/about/get-involved">Get Involved</a></li>
+                            <li><a href="/<?=$fields->lang?>/training">Training Events</a></li>
+                            <li><a href="/<?=$fields->lang?>/free/">Free on all Platforms</a></li>
+                            <li><a href="/<?=$fields->lang?>/ldml/">LDML Support</a></li>
+                            <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
                             <li><a href="/<?=$fields->lang?>/contact/">Contact Us</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
                             <li><a href="/<?=$fields->lang?>/testimonials/">Testimonials</a></li>

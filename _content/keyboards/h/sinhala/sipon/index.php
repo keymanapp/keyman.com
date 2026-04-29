@@ -35,19 +35,19 @@
       <div class="download-cta-button">
         <h4>Download Now</h4>
       </div>
-      <a class="download-cta-more" href="../../../windows/">Learn more about Keyman for Windows</a>
+      <a class="download-cta-more" href="../../../../windows/">Learn more about Keyman for Windows</a>
     </div>
   </div>
   <div class="download-cta-big mac" id="cta-big-mac">
     <h3>Sipon Phonetic Sinhala Keyman for macOS</h3>
     <p>
-      Type in Sinhala in all your favourite software applications for macOS. Download <a href="../../../mac/">Keyman
+      Type in Sinhala in all your favourite software applications for macOS. Download <a href="../../../../mac/">Keyman
       for macOS</a> first
     </p>
     <div class="download-cta-button">
       <h4>Download Now</h4>
     </div>
-    <a class="download-cta-more" href="../../../mac/">Learn more about Keyman for macOS</a>
+    <a class="download-cta-more" href="../../../../mac/">Learn more about Keyman for macOS</a>
   </div>
 </div>
 <div id="download-cta" data-language='si' data-keyboard='helabasauni'> <!-- TODO: use a better mobile version -->
@@ -91,25 +91,25 @@
   <h3 id="cta-other-downloads">Download a Sinhala keyboard on these devices:</h3>
 
   <div class="download-cta-small iPhone" id="cta-iPhone">
-    <a href="../../../iphone/">
+    <a href="../../../../iphone/">
       <img src="<?php echo cdn('img/cta-icons/icon-iphone.png'); ?>" alt="."/>
       <p>iPhone</p>
     </a>
   </div>
   <div class="download-cta-small iPad" id="cta-iPad">
-    <a href="../../../ipad/">
+    <a href="../../../../ipad/">
       <img src="<?php echo cdn('img/cta-icons/icon-ipad.png'); ?>" alt="."/>
       <p>iPad</p>
     </a>
   </div>
   <div class="download-cta-small Android" id="cta-Android">
-    <a href="../../../android/">
+    <a href="../../../../android/">
       <img src="<?php echo cdn('img/cta-icons/icon-android.png'); ?>" alt="."/>
       <p>Android</p>
     </a>
   </div>
   <div class="download-cta-small Bookmarklet" id="cta-Bookmarklet">
-    <a href=../../../bookmarklet/">
+    <a href="../../../../bookmarklet/">
       <img src="<?php echo cdn('img/cta-icons/icon-bookmarklet.png'); ?>" alt="."/>
       <p>Bookmarklet</p>
     </a>
