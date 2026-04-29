@@ -1,8 +1,12 @@
 ---
-title: About our sponsors
+title: About our sponsors and partners
 ---
 
-## Financial sponsors
+## Financial sponsors and partners
+
+<style>
+  .sponsors img { width: 200px }
+</style>
 
 <table class='sponsors'>
 
@@ -24,6 +28,18 @@ title: About our sponsors
   [Typotheque](https://www.typotheque.com) is a Netherlands-based type design
   company, recognised internationally as experts in multilingual typography and
   creating innovative font solutions for both global and local audiences.
+
+  </p></td>
+</tr>
+
+<tr>
+  <td style='vertical-align: middle; text-align: center' markdown="1">[![Translation Commons](translation-commons.svg)](https://translationcommons.org)</td>
+  <td style='vertical-align: middle'><p markdown="1">
+
+  [Translation Commons](https://translationcommons.org) believes every language
+  deserves a place in the digital world. We’re committed to bridging the digital
+  divide, ensuring all communities can communicate, learn, and thrive online in
+  their native tongue.
 
   </p></td>
 </tr>
