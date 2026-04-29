@@ -1,3 +1,8 @@
+import { I18n } from '../js/i18n.mjs';
+
+const I18N_DOMAIN = 'keyboards';
+const t = (key, interpolations) => I18n.t(I18N_DOMAIN, key, interpolations);
+
 // Polyfill for String.prototype.includes
 
 if (!String.prototype.includes) {
@@ -21,6 +26,10 @@ if(typeof embed_query == 'undefined') {
 var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
 var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
+// TODO: Validate BCP-47 triplet?
+var langMatch = location.pathname.match(/(\/(.+))?\/keyboards(.*)$/);
+var embed_lang = (langMatch) ? langMatch[2] : 'en';
+
 var dynamic_search_timeout = 0;
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -36,13 +45,13 @@ function getCurrentPath(q, page, obsolete) {
   page = page > 1 ? 'page='+page : '';
   var path = '';
   if(r && r[1].charAt(0) == 'c') {
-    path = '/keyboards/countries/';
+    path = '/' + embed_lang + '/keyboards/countries/';
   } else if(r && r[1].charAt(0) == 'l') {
-    path = '/keyboards/languages/'+r[3];
+    path = '/' + embed_lang + '/keyboards/languages/'+r[3];
   } else if(q == '') {
-    path = '/keyboards'
+    path = '/' + embed_lang + '/keyboards'
   } else {
-    path = '/keyboards?q='+encodeURIComponent(q);
+    path = '/' + embed_lang + '/keyboards?q='+encodeURIComponent(q);
   }
 
   if(page + obsolete == '') {
@@ -84,7 +93,7 @@ function wrapSearch(localCounter, updateHistory) {
     $('#search-box').removeClass('searching');
     return false;
   }
-  
+
   var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.localhost]"
   var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(stripCommonWords(q));
 
@@ -258,25 +267,25 @@ function process_response(q, obsolete, res) {
     var deprecatedElement = null;
 
     $('<div class="statistics">').text(
-      res.context.totalRows + (res.context.totalRows == 1 ? ' result' : ' results') +
-      (res.context.totalPages < 2 ? '' : '; page '+res.context.pageNumber + ' of '+res.context.totalPages+'.')
+      res.context.totalRows + ' ' + (res.context.totalRows == 1 ? t('resultOne') : t('resultMore') )+ ' ' +
+      (res.context.totalPages < 2 ? '' : t('pageNumberOfTotalPages', {pageNumber: res.context.pageNumber, totalPages: res.context.totalPages}))
     ).appendTo(resultsElement);
 
-    document.title = q + ' - Keyboard search';
+    document.title = q + ' ' + t('keyboardSearchTitle');
 
-    res.keyboards.forEach(function(kbd) {
+    for (const kbd of res.keyboards) {
 
       if(isKeyboardObsolete(kbd) && !deprecatedElement) {
         // TODO: make title change depending on whether deprecated keyboards are shown or hidden
         deprecatedElement = $(
-          '<div class="keyboards-deprecated"><h4 class="red underline">Obsolete keyboards</h4></div>');
+          '<div class="keyboards-deprecated"><h4 class="red underline">' + t('obsoleteKeyboards') + '</h4></div>');
         resultsElement.append(deprecatedElement);
       }
 
-      $keyboardClass = kbd.isDedicatedLandingPage ? 'keyboard keyboardLandingPage' : 'keyboard';
+      const keyboardClass = kbd.isDedicatedLandingPage ? 'keyboard keyboardLandingPage' : 'keyboard';
 
       var k = $(
-        "<div class='"+$keyboardClass+"'>"+
+        "<div class='"+keyboardClass+"'>"+
           "<div class='title'><a></a><span class='match'></span></div>"+
           "<div class='detail'>"+
             "<div class='id-downloads'><div class='id'></div>"+
@@ -288,22 +297,22 @@ function process_response(q, obsolete, res) {
         "</div>");
 
       if(kbd.isDedicatedLandingPage) {
-        $('.title a', k).text(kbd.name).attr('href', '/keyboards/h'+kbd.id+embed_query_q);
+        $('.title a', k).text(kbd.name).attr('href', '/' + embed_lang + '/keyboards/h'+kbd.id+embed_query_q);
       } else {
-        $('.title a', k).text(kbd.name).attr('href', '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
+        $('.title a', k).text(kbd.name).attr('href', '/' + embed_lang + '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
       }
 
       if(kbd.isDedicatedLandingPage) {
         // We won't show the downloads text
       } else if(kbd.match.downloads == 0)
-        $('.downloads', k).text('No recent downloads');
+        $('.downloads', k).text(t('monthlyDownloadZero'));
       else if(kbd.match.downloads == 1)
-        $('.downloads', k).text(kbd.match.downloads+' monthly download');
+        $('.downloads', k).text(kbd.match.downloads+' ' + t('monthlyDownloadOne'));
       else
-        $('.downloads', k).text(kbd.match.downloads+' monthly downloads');
+        $('.downloads', k).text(kbd.match.downloads+' ' + t('monthlyDownloadMore'));
 
       if(!kbd.encodings.toString().match(/unicode/)) {
-        $('.encoding', k).text('Note: Not a Unicode keyboard');
+        $('.encoding', k).text(t('notUnicode'));
       }
 
       $('.id', k).text(kbd.id);
@@ -331,20 +340,21 @@ function process_response(q, obsolete, res) {
             // icon-ios
             // icon-linux
             // icon-windows
-            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', 'Designed for '+i);
+            var img = $('<img>').attr('src', '/cdn/dev/keyboard-search/icon-'+i+'.png').attr('title', t('designedForPlatform', {platform: i}));
             $('.platforms', k).append(img);
           }
         }
       }
       $('.platforms', k).text();
       (deprecatedElement ? deprecatedElement : resultsElement).append(k);
-    });
+    };
 
     if(res.context.totalPages > 1) {
-      buildPager(res, q, obsolete).appendTo(resultsElement);
+      const p = buildPager(res, q, obsolete);
+      p.appendTo(resultsElement);
     }
   } else {
-    $('<h3>').addClass('red').text("No matches found for '"+qq+"'").appendTo(resultsElement);
+    $('<h3>').addClass('red').text(t('noMatchesFoundForKeyboard', {keyboard: qq})).appendTo(resultsElement);
   }
 }
 
@@ -358,7 +368,7 @@ function buildPager(res, q, obsolete) {
     }
   }
 
-  appendPager(pager, '&lt; Previous', res.context.pageNumber-1);
+  appendPager(pager, t('previousPager'), res.context.pageNumber-1);
   if(res.context.pageNumber > 5) {
     $('<span>...</span>').appendTo(pager);
   }
@@ -368,7 +378,7 @@ function buildPager(res, q, obsolete) {
   if(res.context.pageNumber < res.context.totalPages - 4) {
     $('<span>...</span>').appendTo(pager);
   }
-  appendPager(pager, 'Next &gt;', res.context.pageNumber+1);
+  appendPager(pager, t('nextPager'), res.context.pageNumber+1);
   return pager;
 }
 
@@ -384,7 +394,7 @@ function goToPage(event, q, page) {
   return false;
 }
 
-function do_search() {
+export function do_search() {
   document.f.page.value = 1;
   search(true);
   return false; // always return false from search box
