@@ -3,6 +3,7 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
+  use Keyman\Site\com\keyman\Locale;
   use Keyman\Site\com\keyman\Util;
   use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\Common\KeymanVersion;
@@ -70,17 +71,13 @@ END;
 
     /**
      * Generate links that correspond to the UI options
-     * As UI languages get added, we'll need to update this.
      */
     private static function render_ui_list() {
       echo "<ul>\n                <!-- Just use autonyms -->\n";
-      $linkArray = array(
-        'en' => array(Menu::change_ui_language('en'), 'English'),
-        'de' => array(Menu::change_ui_language('de'), 'Deutsch'),
-        'es' => array(Menu::change_ui_language('es'), 'Español'),
-        'fr' => array(Menu::change_ui_language('fr'), 'Français'),
-        'km' => array(Menu::change_ui_language('km'), 'ខ្មែរ (Khmer)')
-      );
+      $linkArray = array();
+      foreach(DISPLAY_NAMES as $id => $name) {
+        $linkArray[$id] = array(Menu::change_ui_language($id), $name);
+      }
 
       foreach($linkArray as $id) {
 echo <<<END
