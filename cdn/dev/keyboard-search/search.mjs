@@ -27,7 +27,7 @@ var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
 var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
 
 // TODO: Validate BCP-47 triplet?
-var langMatch = location.pathname.match(/(\/(.+))?\/keyboards(.*)$/);
+var langMatch = location.pathname.match(/(\/(.+))?\/keyboards\/(.*)$/);
 var embed_lang = (langMatch) ? langMatch[2] : 'en';
 
 var dynamic_search_timeout = 0;
@@ -49,9 +49,9 @@ function getCurrentPath(q, page, obsolete) {
   } else if(r && r[1].charAt(0) == 'l') {
     path = '/' + embed_lang + '/keyboards/languages/'+r[3];
   } else if(q == '') {
-    path = '/' + embed_lang + '/keyboards'
+    path = '/' + embed_lang + '/keyboards/'
   } else {
-    path = '/' + embed_lang + '/keyboards?q='+encodeURIComponent(q);
+    path = '/' + embed_lang + '/keyboards/?q='+encodeURIComponent(q);
   }
 
   if(page + obsolete == '') {

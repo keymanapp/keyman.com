@@ -148,8 +148,7 @@ END;
                 <li><a href="/<?=$fields->lang?>/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
                 <li><a href="/<?=$fields->lang?>/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
                 <li><a href="/<?=$fields->lang?>/keymanweb/">KeymanWeb.com</a></li>
-                <li><a href="/<?=$fields->lang?>/iphone/">Keyman <?=$fields->stable_version?> for iPhone</a></li>
-                <li><a href="/<?=$fields->lang?>/ipad/">Keyman <?=$fields->stable_version?> for iPad</a></li>
+                <li><a href="/<?=$fields->lang?>/iphone-and-ipad/">Keyman <?=$fields->stable_version?> for iPhone and iPad</a></li>
                 <li><a href="/<?=$fields->lang?>/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
                 <li><a href="/<?=$fields->lang?>/bookmarklet/">Keyman Bookmarklet</a></li>
             </ul>
