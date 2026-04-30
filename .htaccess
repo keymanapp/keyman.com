@@ -49,17 +49,64 @@ RewriteRule "^((.+)/)?index(\.md|\.php)?$" "$1" [R,L]
 RewriteRule "^(.+)\.php$" "$1" [R,L]
 RewriteRule "^(.+)\.md$" "$1" [R,L]
 
-# Redirect folder without / to include /
+# ------------------------------------------------------------------
+# Add and remove `/` for folders and files for consistency
+# ------------------------------------------------------------------
+
+#
+# Note: we don't test the content of the lang path parameter (?:[^/]+)/
+# here; that is managed exclusively in the i18n section later.
+#
+
+# Redirect folder to folder/ for .php
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2" -d
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.php" -f
+RewriteRule "^([^/]+)/(.+[^/])$" "$1/$2/" [R,L]
+
+# Redirect folder to folder/ for .md
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2" -d
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" -f
+RewriteRule "^([^/]+)/(.+[^/])$" "$1/$2/" [R,L]
+
+# Redirect file/ to file (.md)
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2" !-d
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
+RewriteRule "^([^/]+)/(.+)/$" "$1/$2" [R,L]
+
+# Redirect file/ to file (.php)
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2" !-d
+RewriteCond "%{DOCUMENT_ROOT}/_content/$2.php" -f
+RewriteRule "^([^/]+)/(.+)/$" "$1/$2" [R,L]
+
+#
+# top-level folders and files
+#
+
+# Redirect folder to folder/ for .php
 RewriteCond "%{DOCUMENT_ROOT}/$1" -d
-RewriteCond "%{DOCUMENT_ROOT}/$1.php" !-f
-RewriteCond "%{DOCUMENT_ROOT}/$1.md" !-f
-RewriteRule "^(.+[^/])$" "$1/" [R,END]
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.php" -f
+RewriteRule "^(.+[^/])$" "$1/" [R,L]
+
+# Redirect folder to folder/ for .md
+RewriteCond "%{DOCUMENT_ROOT}/$1" -d
+RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
+RewriteRule "^(.+[^/])$" "$1/" [R,L]
+
+# Redirect file/ to file (.md)
+RewriteCond "%{DOCUMENT_ROOT}/$1" !-d
+RewriteCond "%{DOCUMENT_ROOT}/$1.md" -f
+RewriteRule "^(.+)/$" "$1" [R,L]
+
+# Redirect file/ to file (.php)
+RewriteCond "%{DOCUMENT_ROOT}/$1" !-d
+RewriteCond "%{DOCUMENT_ROOT}/$1.php" -f
+RewriteRule "^(.+)/$" "$1" [R,L]
 
 # ------------------------------------------------------------------
 # Known path redirections
 # ------------------------------------------------------------------
 
-# Redirect /archive/downloads.php"
+# Redirect /archive/downloads.php
 RewriteRule "^archive/downloads(.php)?$" "/downloads/archive/" [NC,R=301,END,QSA]
 
 # ios and iphone and ipad to iphone-and-ipad
@@ -315,6 +362,6 @@ RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(.+)/$" "/_
 RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/$" "/_content/index.php?lang=$1" [NC,END]
 
 # Finally, append the terminating slash for folders, given it is no longer
-# done automatically because we put DirectorySlash off
+# done automatically because we put DirectorySlash off, for the top-level paths only
 RewriteCond "%{DOCUMENT_ROOT}/_content/$7$8" -d
 RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)(.*)([^/])?$" "$1$7$8/" [NC,R,QSA]

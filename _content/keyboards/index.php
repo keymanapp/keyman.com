@@ -40,6 +40,8 @@
   if($embed == 'none')
     Menu::render([]); // we'll be doing client-side os detection now
   Body::render();
+
+  $keyboardsPage = '/' . $head_options['language'] . '/keyboards';
 ?>
 
 <script>
@@ -59,14 +61,14 @@
 
 <div class='<?= $embed == 'none' ? '' : 'embed embed-'.$embed ?>'>
 
-  <h2 class="red underline"><a href='/<?= $head_options['language']?>/keyboards'><?= _m('page_title') ?></a></h2>
+  <h2 class="red underline"><a href='<?=$keyboardsPage?>'><?= _m('page_title') ?></a></h2>
 
   <div id='search-box'>
-    <form method='get' action='/<?= $head_options['language']?>/keyboards' name='f'>
+    <form method='get' action='<?=$keyboardsPage?>' name='f'>
       <label for="search-q"><?= _m('keyboard_search') ?></label><input id="search-q" type="text" placeholder="<?= _m('enter_language') ?>" name="q"
       <?php if($embed == 'none') echo 'autofocus'; ?>>
       <input id="search-f" type="button" value="<?= _m('search') ?>">
-      <label id="search-new"><a href='/<?= $head_options['language']?>/keyboards<?=$session_query_q?>'><?= _m('new_search')?></a></label>
+      <label id="search-new"><a href='<?= $keyboardsPage . $session_query_q?>'><?= _m('new_search')?></a></label>
       <input id="search-obsolete" type="hidden" name="obsolete" value="0">
       <input id="search-page" type="hidden" name="page" value="1">
     </form>
