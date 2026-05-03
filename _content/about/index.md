@@ -61,6 +61,6 @@ SIL Global is a faith-based nonprofit organization committed to serving language
 worldwide as they build capacity for sustainable language development. SIL does this primarily
 through research, translation, training and materials development.
 
-You can learn more about SIL Global on the [SIL Global web site](https://www.sil.org/about).
+You can learn more about SIL Global on the [SIL Global web site](https://global.sil.org/about/).
 
-➡️ [About SIL Global](https://www.sil.org/about)
+➡️ [About SIL Global](https://global.sil.org/about/)

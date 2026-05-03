@@ -24,5 +24,5 @@ are licensed under the MIT License. All lexical models in the
 are also licensed under the MIT License. Copyright for these keyboards and
 lexical models belongs to many different authors.
 
-* [About SIL Global](https://www.sil.org/about)
+* [About SIL Global](https://global.sil.org/about/)
 * [About Keyman](../about)
