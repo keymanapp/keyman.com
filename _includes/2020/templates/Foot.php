@@ -12,6 +12,10 @@
       $fields = (object)$fields;
       $fields->stable_version = KeymanVersion::stable_version;
       $fields->beta_version = KeymanVersion::beta_version;
+
+      // Fallback to 'en'
+      // TODO-I18N-URL-SCHEME: integrate with Locale.php
+      $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
 ?>
 
       </div>
@@ -42,7 +46,7 @@
             <div id="privacy-policy"><a href="/privacy/">Privacy policy</a></div>
 
             <div id='footer-get-involved'>
-              <a href="/about/get-involved">Get involved</a>
+              <a href="/<?=$fields->lang?>/about/get-involved">Get involved</a>
               <a href='/donate'>Donate</a>
             </div>
         </div>
