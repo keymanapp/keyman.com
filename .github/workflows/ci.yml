@@ -21,6 +21,11 @@ jobs:
       env:
         fail-fast: true
 
+    - name: Install node dependencies
+      shell: bash
+      run: |
+        npm install
+
     #
     # Finally, run the tests
     #
