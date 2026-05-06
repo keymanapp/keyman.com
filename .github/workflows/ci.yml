@@ -43,7 +43,7 @@ jobs:
         readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
           -execdir basename  {} .php ';')
         baseURL="http://localhost:8053"
-        ignoreStr=("  --exclude ${baseURL}*/downloads/releases/*")
+        ignoreStr=("  --exclude */downloads/releases/*")
         for locale in "${ignoresArray[@]}"; do
           ignoreStr+=" --exclude ${baseURL}/$locale/*"
         done

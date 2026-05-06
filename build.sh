@@ -52,7 +52,7 @@ function test_docker_container() {
   readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
     -execdir basename  {} .php ';')
   local baseURL="http://localhost:8053"
-  local ignoreStr=("  --exclude ${baseURL}*/downloads/releases/*")
+  local ignoreStr=("  --exclude */downloads/releases/*")
   for locale in "${ignoresArray[@]}"; do
     ignoreStr+=" --exclude ${baseURL}/$locale/*"
   done
