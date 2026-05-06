@@ -10,7 +10,7 @@ export function genTeamMarkdownSegment(teamData) {
 
   for(const member of teamData) {
     const img = member.img ? `/cdn/dev/img/${member.img}` : `https://github.com/${member.handle}.png?size=240`;
-    const url = fs.existsSync(`../../about/team/bios/${member.handle}.md`) ? `bios/${member.handle}` : `https://github.com/${member.handle}`;
+    const url = fs.existsSync(`../../_content/about/team/bios/${member.handle}.md`) ? `bios/${member.handle}` : `https://github.com/${member.handle}`;
     md += `
 <div markdown="1">
 
