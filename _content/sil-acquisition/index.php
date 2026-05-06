@@ -29,7 +29,7 @@ Keyman for Android, Keyman for iPhone and iPad and KeymanWeb.</p>
 
 <p>If you have questions about the acquisition, and how it may affect you, please read our Frequently Asked Questions section below.</p>
 
-<p><a href='http://www.sil.org/about/news/sil-acquires-rights-keyman'>Read the SIL announcement</a></p>
+<p><a href='https://global.sil.org/stories-news/sil-acquires-rights-keyman/'>Read the SIL announcement</a></p>
 
 <p class='center'><img class='inline' src='<?= cdn('img/android-splash.png'); ?>' alt='Keyman running on Android devices'></p>
 <h4 class='caption'>Keyman running on Android devices</h4>

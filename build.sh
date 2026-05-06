@@ -46,9 +46,18 @@ function test_docker_container() {
   docker exec $KEYMAN_CONTAINER_DESC sh -c "find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 -d '\\n' php -l"
 
   # NOTE: link checker runs on host rather than in docker image
-  # Also exclude testing locales for each link: 'lang=*'
   builder_echo blue "---- Testing links"
-  npx broken-link-checker http://localhost:8053/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 --exclude '*/donate' --exclude='/downloads/releases/*' --exclude '*lang=*' | tee blc.log
+
+  # determine non-en locales to ignore along with /downloads/releases
+  readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
+    -execdir basename  {} .php ';')
+  local baseURL="http://localhost:8053"
+  local ignoreStr=("  --exclude */downloads/releases/*")
+  for locale in "${ignoresArray[@]}"; do
+    ignoreStr+=" --exclude ${baseURL}/$locale/*"
+  done
+  echo "ignoreStr: ${ignoreStr[@]}"
+  npx broken-link-checker ${baseURL}/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 ${ignoreStr} | tee blc.log
   local BLC_RESULT=${PIPESTATUS[0]}
   echo ----------------------------------------------------------------------
   echo Link check summary
