@@ -47,9 +47,17 @@ function test_docker_container() {
 
   # NOTE: link checker runs on host rather than in docker image
   builder_echo blue "---- Testing links"
-  cd ./_test
-  node blc_test.mjs | tee ../blc.log
-  cd ../
+
+  # determine non-en locales to ignore along with /downloads/releases
+  readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
+    -execdir basename  {} .php ';')
+  local baseURL="http://localhost:8053"
+  local ignoreStr=("  --exclude ${baseURL}*/downloads/releases/*")
+  for locale in "${ignoresArray[@]}"; do
+    ignoreStr+=" --exclude ${baseURL}/$locale/*"
+  done
+  echo "ignoreStr: ${ignoreStr[@]}"
+  npx broken-link-checker ${baseURL}/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 ${ignoreStr} | tee blc.log
   local BLC_RESULT=${PIPESTATUS[0]}
   echo ----------------------------------------------------------------------
   echo Link check summary

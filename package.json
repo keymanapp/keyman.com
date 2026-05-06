@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/keymanapp/keyman.com#readme",
   "devDependencies": {
-    "broken-link-checker": "^0.7.8",
-    "bhttp": "1.2.8"
+    "broken-link-checker": "^0.7.8"
   }
 }
