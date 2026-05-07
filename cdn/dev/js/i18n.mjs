@@ -21,6 +21,16 @@ export class I18n {
   //   ]
   static domains = [];
 
+  static _pageLocale;
+
+  static pageLocale() {
+    if(!this._pageLocale) {
+      let langMatch = location.pathname.match(/^\/([^/]+)/);
+      this._pageLocale = langMatch ? langMatch[1] : 'en';
+    }
+    return this._pageLocale;
+  }
+
   /**
    * Load the strings for the given domain
    * @param {string} domain

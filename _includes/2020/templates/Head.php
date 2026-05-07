@@ -6,6 +6,7 @@
 use Keyman\Site\com\keyman\Util;
 use Keyman\Site\com\keyman\KeymanComSentry;
 use Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\Locale;
 
 // *Don't* use autoloader here because of potential side-effects in older pages
 require_once _KEYMANCOM_INCLUDES . '/2020/Util.php';
@@ -19,9 +20,6 @@ class Head {
       if(!isset($fields->title)) {
         $fields->title = 'Keyman | Type to the world in your language';
       }
-      // Fallback to 'en'
-      // TODO-I18N-URL-SCHEME: integrate with Locale.php
-      $fields->lang = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
 
       if(!isset($fields->favicon)) {
         $fields->favicon = Util::cdn("img/favicon.ico");
@@ -35,14 +33,19 @@ class Head {
       if(!isset($fields->js_i18n_domains)) {
         $fields->js_i18n_domains = [];
       }
+
+      $fields->pageLocale = Locale::pageLocale();
+
+      // Redirect to /en/... if not a supported locale; this needs to be emitted
+      // as a HTTP header before first content byte.
+      if(Locale::invalidLocale()) {
+        if(preg_match('/^\\/[^\/]+\\/(.+)$/', $_SERVER['REQUEST_URI'], $matches)) {
+          header("Location: /" . Locale::DEFAULT_LOCALE . "/" . $matches[1]);
+          return;
+        }
+      }
 ?><!DOCTYPE html>
-<?php
-  if (!empty($fields->lang)) {
-    echo "<html lang='$fields->lang'>";
-  } else {
-    echo "<html>";
-  }
-?>
+<html lang='<?=$fields->pageLocale?>'>
 <head>
   <meta charset="utf-8">
   <?php
