@@ -10,6 +10,14 @@
 
   use \Keyman\Site\Common\KeymanHosts;
 
+  // As UI languages get added, we'll need to update this.
+  define('DISPLAY_NAMES', [
+    'en' => 'English',
+    'de' => 'Deutsch',
+    'es' => 'Español',
+    'fr' => 'Français',
+    'km' => 'ខ្មែរ (Khmer)']);
+
   class Locale {
     public const DEFAULT_LOCALE = 'en';
 

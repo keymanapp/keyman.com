@@ -204,42 +204,49 @@ RewriteRule "^cdn/(.+\.)(gif|js|png|svg)$" "/cdn/$1$2" [END]
 
 
 #
+# Intentionally not using regex from Validation::validate_bcp47 because we only need lang-script-region triplet
+# ^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)
+# [NC] for case-insensitive
+# Long regex for "BCP-47" codes = $1, rest of URL $7 onward
+#
+
+#
 # keyboards Install | Download | Share | bare | .json -->
 #
 
 # /keyboards/install/[id] to /keyboards/install.php
-RewriteRule "^(en)/keyboards/install/([^/]+)$" "/_content/keyboards/install.php?id=$2&lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/install/([^/]+)$" "/_content/keyboards/install.php?id=$7&lang=$1" [NC,END,QSA]
 
 # /keyboards/download/[id] to /keyboards/keyboard.php
 # This formerly redirected to a download, but we no longer need it; keep it for
 # legacy links
-RewriteRule "^(en)/keyboards/download/([^/]+)$" "/_content/keyboards/keyboard.php?id=$2&lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/download/([^/]+)$" "/_content/keyboards/keyboard.php?id=$7&lang=$1" [NC,END,QSA]
 
 # /keyboards/share/[id] to /keyboards/share.php
 # if the keyboard exists in the repo, then share.php will redirect to /keyboards/<id>
-RewriteRule "^(en)/keyboards/share/([^/]+)$" "/_content/keyboards/share.php?id=$2&lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/share/([^/]+)$" "/_content/keyboards/share.php?id=$7&lang=$1" [NC,END,QSA]
 
 # /keyboards/{id}.json to /keyboards/keyboard.json.php
-RewriteRule "^(en)/keyboards/(?!keyboard.json)(.*)\.json$" "/_content/keyboards/keyboard.json.php?id=$2&lang=$1" [END]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/(?!keyboard.json)(.*)\.json$" "/_content/keyboards/keyboard.json.php?id=$7&lang=$1" [NC,END]
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteRule "^(en)/keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/_content/keyboards/keyboard.php?id=$2&lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/_content/keyboards/keyboard.php?id=$7&lang=$1" [NC,END,QSA]
 
 #
 # keyboards search
 #
 
 # /keyboards/languages to /keyboards/index.php
-RewriteRule "^(en)/keyboards/languages/(.*)" "/_content/keyboards/index.php?q=l:id:$2&lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/languages/(.*)" "/_content/keyboards/index.php?q=l:id:$7&lang=$1" [NC,END,QSA]
 
 # /keyboards/download to /keyboards/download.php
-RewriteRule "^(en)/keyboards/download(.php)?" "/_content/keyboards/download.php?lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/download(.php)?" "/_content/keyboards/download.php?lang=$1" [NC,END,QSA]
 
 # /keyboards/legacy to /keyboards/keyboard.php
-RewriteRule "^(en)/keyboards/legacy/(.*)" "/_content/keyboards/keyboard.php?legacy=$2&lang=$1" [END]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/legacy/(.*)" "/_content/keyboards/keyboard.php?legacy=$7&lang=$1" [NC,END]
 
 # /keyboards/countries to /keyboards/index.php
-RewriteRule "^(en)/keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:id:$2&lang=$1" [END]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:id:$7&lang=$1" [NC,END]
 
 
 #
@@ -247,14 +254,14 @@ RewriteRule "^(en)/keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:
 #
 
 # /contact/exception to /contact/exception.php
-RewriteRule "^(en)/contact/exception(.php)?" "/_content/contact/exception.php?lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/contact/exception(.php)?" "/_content/contact/exception.php?lang=$1" [NC,END,QSA]
 
-RewriteRule "^(en)/contact/exception?id=(.+)$" "/_content/contact/exception?id=$2&lang=$1" [END]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/contact/exception?id=(.+)$" "/_content/contact/exception?id=$7&lang=$1" [NC,END]
 
 #
 # ios
 #
-RewriteRule "^(en)/(iphone|ipad)(/.*)?" "/_content/iphone-and-ipad/$3?lang=$1" [END,QSA]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(iphone|ipad)(/.*)?" "/_content/iphone-and-ipad/$8?lang=$1" [NC,END,QSA]
 
 #
 # downloads/releases
@@ -262,16 +269,16 @@ RewriteRule "^(en)/(iphone|ipad)(/.*)?" "/_content/iphone-and-ipad/$3?lang=$1" [
 
 # releases-tier/download
 # note: the tier is currently ignored
-RewriteRule "^(en)/downloads/releases/(alpha|beta|stable)/(.+)$" "/_content/downloads/releases/_version_downloads.php?tier=$2&version=$3&lang=$1" [END]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/downloads/releases/(alpha|beta|stable)/(.+)$" "/_content/downloads/releases/_version_downloads.php?tier=$7&version=$8&lang=$1" [NC,END]
 
 # releases-download
-RewriteRule "^(en)/downloads/releases/(.+)$" "/_content/downloads/releases/_version_downloads.php?version=$2&lang=$1" [END]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/downloads/releases/(.+)$" "/_content/downloads/releases/_version_downloads.php?version=$7&lang=$1" [NC,END]
 
 #
 # Assets don't use lang param
 #
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2" -f
-RewriteRule "^(en)/(.+)$" "/_content/$2" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7" -f
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(.+)$" "/_content/$7$8" [NC,END]
 
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
 
@@ -281,32 +288,30 @@ RewriteRule "^(en)/(.+)$" "/_content/$2" [END]
 
 # TODO: mdhost currently in a different path than help.keyman
 
-# TODO: en --> should be a bcp-47 type 'lang' match (e.g. ab[-x][-y]) ignore case, keep it a fairly loose expression [a-z][a-z][a-z]?(-...)?
-
 ##############################################
 
 # Rewrite file to file.md
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
-RewriteRule "^(en)/(.+)$" "/_includes/includes/md/mdhost.php?file=_content/$2.md&lang=$1" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7.md" -f
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(.+)$" "/_includes/includes/md/mdhost.php?file=_content/$7.md&lang=$1" [NC,END]
 
 # Rewrite file to file.php
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2.php" -f
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" !-f
-RewriteRule "^(en)/(.+)$" "/_content/$2.php?lang=$1" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7.md" !-f
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(.+)$" "/_content/$7.php?lang=$1" [NC,END]
 
 # Rewrite folder/ to folder/index.md
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" -f
-RewriteRule "^(en)/(.+)/$" "/_includes/includes/md/mdhost.php?file=_content/$2/index.md&lang=$1" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7/index.md" -f
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(.+)/$" "/_includes/includes/md/mdhost.php?file=_content/$7/index.md&lang=$1" [NC,END]
 
 # Rewrite folder/ to folder/index.php
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.php" -f
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" !-f
-RewriteRule "^(en)/(.+)/$" "/_content/$2/index.php?lang=$1" [END]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7/index.php" -f
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7/index.md" !-f
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/(.+)/$" "/_content/$7/index.php?lang=$1" [NC,END]
 
 # Root page
-RewriteRule "^(en)/$" "/_content/index.php?lang=$1" [END]
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)/$" "/_content/index.php?lang=$1" [NC,END]
 
 # Finally, append the terminating slash for folders, given it is no longer
 # done automatically because we put DirectorySlash off
-RewriteCond "%{DOCUMENT_ROOT}/_content/$2$3" -d
-RewriteRule "^(en)(.*)([^/])?$" "$1$2$3/" [R,QSA]
+RewriteCond "%{DOCUMENT_ROOT}/_content/$7$8" -d
+RewriteRule "^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)(.*)([^/])?$" "$1$7$8/" [NC,R,QSA]

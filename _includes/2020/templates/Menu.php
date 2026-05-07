@@ -3,7 +3,9 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
+  use Keyman\Site\com\keyman\Locale;
   use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\Common\KeymanHosts;
 
@@ -34,40 +36,48 @@ END;
     }
 
     /**
-     * Generate the URL with query to change the UI language
+     * Modify link of the current URL for a given UI language
      * @param language - language tag to use
+     * @return string - modified URL
      */
     private static function change_ui_language($language): string {
       // Parse the current URI for populating the UI dropdown
       $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
       $parts = parse_url($url);
 
-      if (!empty($parts['query'])) {
-        parse_str($parts['query'], $queryParams);
-      } else {
-        $queryParams = [];
+      $path = '';
+      // Replace language if current language in path is valid BCP-47
+      // Note: Validate::validate_bcp47 differs from regex in .htaccess
+      if (!empty($parts['path'])) {
+        $path = explode("/", $parts['path']);
+        if ($path[1] != null ) {
+           /* TODO: add validation back && class_exists('\\Keyman\\Site\\com\\keyman\\Validation') &&
+            \Keyman\Site\com\keyman\Validation::validate_bcp47($path[1]) != null*/
+          $path[1] = $language;
+        } else {
+          // original URL didn't have a valid BCP-47 so inert it
+          array_splice($path, 1, 0, $language);
+        }
       }
 
-      // Set the language query
-      $queryParams['lang'] = $language;
-      $query = http_build_query($queryParams);
-
-      return $parts['path'] . "?" . $query;
+      // Rebuild the path
+      $newPath = implode("/", $path);
+      if (!empty($parts['query'])) {
+        // Append query
+        $newPath .= "?" . $parts['query'];
+      }
+      return $newPath;
     }
 
     /**
      * Generate links that correspond to the UI options
-     * As UI languages get added, we'll need to update this.
      */
     private static function render_ui_list() {
       echo "<ul>\n                <!-- Just use autonyms -->\n";
-      $linkArray = array(
-        'en' => array(Menu::change_ui_language('en'), 'English'),
-        'de' => array(Menu::change_ui_language('de'), 'Deutsch'),
-        'es' => array(Menu::change_ui_language('es'), 'Español'),
-        'fr' => array(Menu::change_ui_language('fr'), 'Français'),
-        'km' => array(Menu::change_ui_language('km'), 'ខ្មែរ')
-      );
+      $linkArray = array();
+      foreach(DISPLAY_NAMES as $id => $name) {
+        $linkArray[$id] = array(Menu::change_ui_language($id), $name);
+      }
 
       foreach($linkArray as $id) {
 echo <<<END
@@ -79,25 +89,18 @@ END;
 
     /**
      * Render the globe dropdown for changing the UI language
-     * Limitation: Currently only visible on pages that use localized strings
      * @param divID - <div> ID to handle 3 cases:
      * ui-language (default) Desktop globe hover
      * ui-language1 - Desktop globe hover
      * phone - Mobile list
      */
     private static function render_globe_dropdown($divID = "ui-language"): void {
-      global $page_is_using_locale;
-      if (!isset($page_is_using_locale) || !$page_is_using_locale) {
-        // only render on pages that use localized strings
-        return;
-      }
-
       // Phone layout
       $globeClass = '';
       if ($divID === "phone") {
 ?>
 <div class="phone-menu-item">
-            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Keyboard Search UI</h3>
+            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Display in:</h3>
             <?= Menu::render_ui_list(); ?>
         </div>
       <?php
@@ -204,7 +207,7 @@ END;
         <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
 
-          <span id='free'>Keyman is <a href='/free'>free and open source</a></span>
+          <span id='free'>Keyman is <a href='/<?=$fields->lang?>/free'>free and open source</a></span>
 
           <form action="/<?=$fields->lang?>/search/" method="get" role="search">
             <div class="search-wrap">
