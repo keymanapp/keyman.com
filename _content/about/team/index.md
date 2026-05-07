@@ -601,6 +601,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/89265521?v=4" alt="mx-ash" />](https://github.com/mx-ash "mx-ash")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/2171161?v=4" alt="Narvey" />](https://github.com/Narvey "Narvey")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/58198267?v=4" alt="ngaretou" />](https://github.com/ngaretou "ngaretou")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/301464?v=4" alt="ngoohebi" />](https://github.com/ngoohebi "ngoohebi")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/13879891?v=4" alt="nikita-moor" />](https://github.com/nikita-moor "nikita-moor")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5889363?v=4" alt="nileshbandhiya" />](https://github.com/nileshbandhiya "nileshbandhiya")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/301567?v=4" alt="ninenik" />](https://github.com/ninenik "ninenik")
@@ -641,7 +642,6 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/11654191?v=4" alt="Sethyboy0" />](https://github.com/Sethyboy0 "Sethyboy0")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/16904461?v=4" alt="sewhite" />](https://github.com/sewhite "sewhite")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/59408625?v=4" alt="Shavian-info" />](https://github.com/Shavian-info "Shavian-info")
-[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/301464?v=4" alt="shiami" />](https://github.com/shiami "shiami")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4686809?v=4" alt="showgan" />](https://github.com/showgan "showgan")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5095331?v=4" alt="Shreeshrii" />](https://github.com/Shreeshrii "Shreeshrii")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/57601680?v=4" alt="sigilante" />](https://github.com/sigilante "sigilante")
@@ -673,6 +673,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/66054189?v=4" alt="WX-JO" />](https://github.com/WX-JO "WX-JO")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/29972641?v=4" alt="xavernitsch" />](https://github.com/xavernitsch "xavernitsch")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/61056388?v=4" alt="ydroberts" />](https://github.com/ydroberts "ydroberts")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/270503075?v=4" alt="zagazagaturtur-svg" />](https://github.com/zagazagaturtur-svg "zagazagaturtur-svg")
 
 </div>
 
