@@ -19,16 +19,12 @@ if (!String.prototype.includes) {
 
 /////////////////////////////
 
-if(typeof embed_query == 'undefined') {
-  var embed_query = '';
+if(typeof window.embed_query == 'undefined') {
+  window.embed_query = '';
 }
 
-var embed_query_q = embed_query == '' ? '' : '?'+embed_query;
-var embed_query_x = embed_query == '' ? '' : '&'+embed_query;
-
-// TODO: Validate BCP-47 triplet?
-var langMatch = location.pathname.match(/(\/(.+))?\/keyboards\/(.*)$/);
-var embed_lang = (langMatch) ? langMatch[2] : 'en';
+var embed_query_q = window.embed_query == '' ? '' : '?'+window.embed_query;
+var embed_query_x = window.embed_query == '' ? '' : '&'+window.embed_query;
 
 var dynamic_search_timeout = 0;
 
@@ -44,14 +40,15 @@ function getCurrentPath(q, page, obsolete) {
   obsolete = obsolete ? '&obsolete=1' : '';
   page = page > 1 ? 'page='+page : '';
   var path = '';
+  const base = `/${I18n.pageLocale()}`;
   if(r && r[1].charAt(0) == 'c') {
-    path = '/' + embed_lang + '/keyboards/countries/';
+    path = `${base}/keyboards/countries/`;
   } else if(r && r[1].charAt(0) == 'l') {
-    path = '/' + embed_lang + '/keyboards/languages/'+r[3];
+    path = `${base}/keyboards/languages/${r[3]}`;
   } else if(q == '') {
-    path = '/' + embed_lang + '/keyboards/'
+    path = `${base}/keyboards/`
   } else {
-    path = '/' + embed_lang + '/keyboards/?q='+encodeURIComponent(q);
+    path = `${base}/keyboards/?q=${encodeURIComponent(q)}`;
   }
 
   if(page + obsolete == '') {
@@ -97,8 +94,8 @@ function wrapSearch(localCounter, updateHistory) {
   var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.localhost]"
   var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(stripCommonWords(q));
 
-  if(embed) {
-    url += '&platform='+embed;
+  if(window.embed) {
+    url += '&platform='+window.embed;
   }
 
   if(obsolete) {
@@ -297,9 +294,9 @@ function process_response(q, obsolete, res) {
         "</div>");
 
       if(kbd.isDedicatedLandingPage) {
-        $('.title a', k).text(kbd.name).attr('href', `/${embed_lang}/keyboards/h/${kbd.id}${embed_query_q}`);
+        $('.title a', k).text(kbd.name).attr('href', `/${I18n.pageLocale()}/keyboards/h/${kbd.id}${embed_query_q}`);
       } else {
-        $('.title a', k).text(kbd.name).attr('href', '/' + embed_lang + '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
+        $('.title a', k).text(kbd.name).attr('href', '/' + I18n.pageLocale() + '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
       }
 
       if(kbd.isDedicatedLandingPage) {

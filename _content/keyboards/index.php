@@ -9,14 +9,13 @@
   use Keyman\Site\com\keyman\templates\Foot;
   use Keyman\Site\com\keyman\Locale;
 
-  Locale::definePageLocale('LOCALE_KEYBOARDS', 'keyboards');
+  Locale::definePageScope('LOCALE_KEYBOARDS', 'keyboards');
   $_m = function($id, ...$args) { return Locale::m(LOCALE_KEYBOARDS, $id, ...$args); };
   function _m($id, ...$args) {    return Locale::m(LOCALE_KEYBOARDS, $id, ...$args); }
 
   $head_options = [
     'title' => _m('page_title'),
     'description' => _m('page_description'),
-    'language' => isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en',
     'css' => [Util::cdn('css/template.css'), Util::cdn('keyboard-search/search.css')],
     'js' => [
       Util::cdn('keyboard-search/jquery.mark.js'),
@@ -41,15 +40,14 @@
     Menu::render([]); // we'll be doing client-side os detection now
   Body::render();
 
-  $keyboardsPage = '/' . $head_options['language'] . '/keyboards/';
+  $keyboardsPage = '/' . Locale::pageLocale() . '/keyboards/';
 ?>
 
 <script>
-  var embed='<?=$embed?>';
-  var embed_query='<?=$session_query?>';
-  var embed_lang='<?=$head_options['language']?>';
+  window.embed='<?=$embed?>';
+  window.embed_query='<?=$session_query?>';
 
-  if(embed != 'none') {
+  if(window.embed != 'none') {
     // For an iframe hosted in Download Keyboards dialog, we cannot use
     // autofocus because it is cross-origin. However, setting focus
     // programatically works here.

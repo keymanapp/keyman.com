@@ -21,6 +21,20 @@ export class I18n {
   //   ]
   static domains = [];
 
+  static _pageLocale;
+
+  /**
+   * @returns the current page locale based on the URL. Note that the PHP
+   * Locale.php is responsible for parsing and avoiding invalid locales.
+   */
+  static pageLocale() {
+    if(!this._pageLocale) {
+      let langMatch = location.pathname.match(/^\/([^/]+)/);
+      this._pageLocale = langMatch ? langMatch[1] : 'en';
+    }
+    return this._pageLocale;
+  }
+
   /**
    * Load the strings for the given domain
    * @param {string} domain

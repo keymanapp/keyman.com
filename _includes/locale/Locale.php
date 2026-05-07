@@ -30,19 +30,64 @@
     // Each locale is an object? with loaded flag and array of strings
     private static $strings = [];
 
+    private static $invalidLocale = false;
+
     /**
      * Return the current locales. Fallback to 'en'
      * @return $currentLocales
      */
     public static function currentLocales() {
+      if(count(self::$currentLocales) == 0) {
+        Locale::setLocaleFromURL();
+      }
       return self::$currentLocales;
+    }
+
+    /**
+     * Return the user-selected page locale, which is always embedded at the
+     * front of the URL path
+     */
+    public static function pageLocale() {
+      return self::currentLocales()[0];
+    }
+
+    /**
+     * Returns true if the locale determined from the URL is not a known locale,
+     * based on the list in DISPLAY_NAMES. If we are loaded in a context outside
+     * localized content, and where the top-level folder name would be valid
+     * BCP47, e.g. /go/, Locale::invalidLocale() will return true. See root
+     * /.htaccess for list of all non-localized content where this may arise.
+     */
+    public static function invalidLocale() {
+      self::currentLocales(); // ensure locale is set
+      return self::$invalidLocale;
+    }
+
+    /**
+     * Set the current locale based on the first path component
+     * /<locale>/rest/of/path for the current page URL
+     */
+    private static function setLocaleFromURL() {
+      // First component of the URL is always the locale
+      if(preg_match('/^\\/(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)\\//', $_SERVER['REQUEST_URI'], $matches)) {
+        if(!isset(DISPLAY_NAMES[$matches[1]])) {
+          // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
+          $pageLocale = Locale::DEFAULT_LOCALE;
+          self::$invalidLocale = true;
+        } else {
+          $pageLocale = $matches[1];
+        }
+      } else {
+        $pageLocale = Locale::DEFAULT_LOCALE;
+      }
+      self::setLocale($pageLocale);
     }
 
     /**
      * Set the current locales, with an array of fallbacks, ending in 'en'.
      * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
      */
-    public static function setLocale($locale) {
+    private static function setLocale($locale) {
       // Clear current locales
       self::$currentLocales = [];
 
@@ -120,7 +165,7 @@
      * @param $define -
      * @param $id - folder containing locale strings, relative to /_includes/locale/strings
      */
-    public static function definePageLocale($define, $id) {
+    public static function definePageScope($define, $id) {
       global $page_is_using_locale;
       $page_is_using_locale = true;
       define($define, $id);
