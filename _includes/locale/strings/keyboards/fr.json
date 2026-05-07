@@ -1,0 +1,15 @@
+{
+  "resultOne": "résultat",
+  "resultMore": "résultats",
+  "pageNumberOfTotalPages": "page {pageNumber} sur {totalPages}.",
+  "keyboardSearchTitle": "- Recherche au clavier",
+  "obsoleteKeyboards": "Claviers obsolètes",
+  "monthlyDownloadZero": "Aucun téléchargement récent",
+  "monthlyDownloadOne": "téléchargement mensuel",
+  "monthlyDownloadMore": "téléchargements mensuels",
+  "notUnicode": "Remarque: Ce n'est pas un clavier Unicode.",
+  "designedForPlatform": "Conçu pour {platform}",
+  "noMatchesFoundForKeyboard": "Aucun résultat trouvé pour '{keyboard}'",
+  "previousPager": "< Précédentes",
+  "nextPager": "Plus >"
+}
