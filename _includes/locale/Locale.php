@@ -38,8 +38,6 @@
      */
     public static function currentLocales() {
       if(count(self::$currentLocales) == 0) {
-        // For pages with no locale set, or if called too early ...?
-        // var_dump(self::$currentLocales);
         Locale::setLocaleFromURL();
       }
       return self::$currentLocales;
@@ -53,15 +51,24 @@
       return self::currentLocales()[0];
     }
 
+    /**
+     * Returns true if the locale determined from the URL is not a known locale,
+     * based on the list in DISPLAY_NAMES. If we are loaded in a context outside
+     * localized content, and where the top-level folder name would be valid
+     * BCP47, e.g. /go/, Locale::invalidLocale() will return true. See root
+     * /.htaccess for list of all non-localized content where this may arise.
+     */
     public static function invalidLocale() {
+      self::currentLocales(); // ensure locale is set
       return self::$invalidLocale;
     }
 
     /**
-     *
+     * Set the current locale based on the first path component
+     * /<locale>/rest/of/path for the current page URL
      */
     private static function setLocaleFromURL() {
-      // First component of the URL is always the
+      // First component of the URL is always the locale
       if(preg_match('/^\\/(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)\\//', $_SERVER['REQUEST_URI'], $matches)) {
         if(!isset(DISPLAY_NAMES[$matches[1]])) {
           // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...

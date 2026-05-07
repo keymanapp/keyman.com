@@ -40,7 +40,7 @@
     Menu::render([]); // we'll be doing client-side os detection now
   Body::render();
 
-  $keyboardsPage = '/' . $head_options['language'] . '/keyboards/';
+  $keyboardsPage = '/' . Locale::pageLocale() . '/keyboards/';
 ?>
 
 <script>
