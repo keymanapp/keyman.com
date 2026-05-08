@@ -45,15 +45,12 @@ END;
 
       $path = '';
       // Replace language if current language in path is valid BCP-47
-      // Note: Validate::validate_bcp47 differs from regex in .htaccess
       if (!empty($parts['path'])) {
         $path = explode("/", $parts['path']);
-        if ($path[1] != null ) {
-           /* TODO: add validation back && class_exists('\\Keyman\\Site\\com\\keyman\\Validation') &&
-            \Keyman\Site\com\keyman\Validation::validate_bcp47($path[1]) != null*/
+        if ($path[1] == Locale::pageLocale()) {
           $path[1] = $language;
         } else {
-          // original URL didn't have a valid BCP-47 so inert it
+          // original URL didn't have a valid BCP-47, so inert new langage
           array_splice($path, 1, 0, $language);
         }
       }
