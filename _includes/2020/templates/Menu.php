@@ -3,7 +3,9 @@
 
   namespace Keyman\Site\com\keyman\templates;
 
+  use Keyman\Site\com\keyman\Locale;
   use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\Validation;
   use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\Common\KeymanHosts;
 
@@ -21,6 +23,8 @@
       $fields->stable_version = KeymanVersion::stable_version;
       $fields->beta_version = KeymanVersion::beta_version;
 
+      $fields->pageLocale = Locale::pageLocale();
+
       echo <<<END
 <body data-device="$fields->device">
 END;
@@ -30,40 +34,47 @@ END;
     }
 
     /**
-     * Generate the URL with query to change the UI language
+     * Modify link of the current URL for a given UI language.
+     * Skip if current URL isn't localized (e.g. _legacy)
      * @param language - language tag to use
+     * @return string - modified URL
      */
     private static function change_ui_language($language): string {
       // Parse the current URI for populating the UI dropdown
       $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
       $parts = parse_url($url);
 
-      if (!empty($parts['query'])) {
-        parse_str($parts['query'], $queryParams);
-      } else {
-        $queryParams = [];
+      $path = '';
+      // Replace language if current language in path is valid BCP-47
+      if (!empty($parts['path'])) {
+        $path = explode("/", $parts['path']);
+        if ($path[1] == Locale::pageLocale()) {
+          $path[1] = $language;
+        } else if (preg_match('/^\/(_legacy)\/.*$/i', $path[1], $matches)) {
+          // original URL didn't have a valid BCP-47, so insert new langage
+          // Skip for certain paths like: _legacy
+          array_splice($path, 1, 0, $language);
+        }
       }
 
-      // Set the language query
-      $queryParams['lang'] = $language;
-      $query = http_build_query($queryParams);
-
-      return $parts['path'] . "?" . $query;
+      // Rebuild the path
+      $newPath = implode("/", $path);
+      if (!empty($parts['query'])) {
+        // Append query
+        $newPath .= "?" . $parts['query'];
+      }
+      return $newPath;
     }
 
     /**
      * Generate links that correspond to the UI options
-     * As UI languages get added, we'll need to update this.
      */
     private static function render_ui_list() {
       echo "<ul>\n                <!-- Just use autonyms -->\n";
-      $linkArray = array(
-        'en' => array(Menu::change_ui_language('en'), 'English'),
-        'de' => array(Menu::change_ui_language('de'), 'Deutsch'),
-        'es' => array(Menu::change_ui_language('es'), 'Español'),
-        'fr' => array(Menu::change_ui_language('fr'), 'Français'),
-        'km' => array(Menu::change_ui_language('km'), 'ខ្មែរ')
-      );
+      $linkArray = array();
+      foreach(DISPLAY_NAMES as $id => $name) {
+        $linkArray[$id] = array(Menu::change_ui_language($id), $name);
+      }
 
       foreach($linkArray as $id) {
 echo <<<END
@@ -75,25 +86,18 @@ END;
 
     /**
      * Render the globe dropdown for changing the UI language
-     * Limitation: Currently only visible on pages that use localized strings
      * @param divID - <div> ID to handle 3 cases:
      * ui-language (default) Desktop globe hover
      * ui-language1 - Desktop globe hover
      * phone - Mobile list
      */
     private static function render_globe_dropdown($divID = "ui-language"): void {
-      global $page_is_using_locale;
-      if (!isset($page_is_using_locale) || !$page_is_using_locale) {
-        // only render on pages that use localized strings
-        return;
-      }
-
       // Phone layout
       $globeClass = '';
       if ($divID === "phone") {
 ?>
 <div class="phone-menu-item">
-            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Keyboard Search UI</h3>
+            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Display in:</h3>
             <?= Menu::render_ui_list(); ?>
         </div>
       <?php
@@ -128,7 +132,7 @@ END;
     <div id="phone-menu-inner">
         <div class="phone-menu-item">
             <h3>Keyboards</h3>
-            <form method="get" action="/keyboards" name="fsearch">
+            <form method="get" action="/<?=$fields->pageLocale?>/keyboards" name="fsearch">
                 <input id="language-search2" type="text" placeholder="Enter language" name="q">
                 <input id="search-submit2" type="image" src="<?php echo Util::cdn("img/search-button.png"); ?>" alt="search button" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
             </form>
@@ -137,45 +141,44 @@ END;
   <div class="phone-menu-item">
             <h3>Products</h3>
             <ul>
-                <li><a href="/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
-                <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
-                <li><a href="/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
-                <li><a href="/keymanweb/">KeymanWeb.com</a></li>
-                <li><a href="/iphone/">Keyman <?=$fields->stable_version?> for iPhone</a></li>
-                <li><a href="/ipad/">Keyman <?=$fields->stable_version?> for iPad</a></li>
-                <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
-                <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/keymanweb/">KeymanWeb.com</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/iphone-and-ipad/">Keyman <?=$fields->stable_version?> for iPhone and iPad</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/bookmarklet/">Keyman Bookmarklet</a></li>
             </ul>
             <h3>Downloads</h3>
             <ul>
-                <li><a href='/downloads/'>Current release versions</a></li>
-                <li><a href='/downloads/pre-release/'>Pre-release versions</a></li>
-                <li><a href="/downloads/archive/">Older versions</a></li>
+                <li><a href='/<?=$fields->pageLocale?>/downloads/'>Current release versions</a></li>
+                <li><a href='/<?=$fields->pageLocale?>/downloads/pre-release/'>Pre-release versions</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/downloads/archive/">Older versions</a></li>
             </ul>
         </div>
         <div class="phone-menu-item">
             <h3>Developer Tools</h3>
             <ul>
-                <li><a href="/developer/">Keyman Developer <?=$fields->stable_version?></a></li>
-                <li><a href="/engine/">Keyman Engine for Desktop</a></li>
-                <li><a href="/engine/">Keyman Engine for Web</a></li>
-                <li><a href="/engine/">Keyman Engine for iOS</a></li>
-                <li><a href="/engine/">Keyman Engine for Android</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/developer/">Keyman Developer <?=$fields->stable_version?></a></li>
+                <li><a href="/<?=$fields->pageLocale?>/engine/">Keyman Engine for Desktop</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/engine/">Keyman Engine for Web</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/engine/">Keyman Engine for iOS</a></li>
+                <li><a href="/<?=$fields->pageLocale?>/engine/">Keyman Engine for Android</a></li>
             </ul>
         </div>
         <div class="phone-menu-item">
             <h3>About</h3>
             <ul>
-              <li><a href="/about/">About Keyman</a></li>
-              <li><a href="/about/team">The team</a></li>
-              <li><a href="/about/get-involved">Get Involved</a></li>
-              <li><a href="/training">Training Events</a></li>
-              <li><a href="/free/">Free on all Platforms</a></li>
-              <li><a href="/ldml/">LDML Support</a></li>
-              <li><a href="/contact/">Contact Us</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/about/">About Keyman</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/about/team">The team</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/about/get-involved">Get Involved</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/training">Training Events</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/free/">Free on all Platforms</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/ldml/">LDML Support</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/contact/">Contact Us</a></li>
               <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
-              <li><a href="/testimonials/">Testimonials</a></li>
-              <li><a href="/search/">Search Site</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/testimonials/">Testimonials</a></li>
+              <li><a href="/<?=$fields->pageLocale?>/search/">Search Site</a></li>
            </ul>
         </div>
         <div class="phone-menu-item">
@@ -200,9 +203,9 @@ END;
         <img id="header-bottom" src="<?php echo Util::cdn("img/headerbar.png"); ?>" alt='Header bottom' />
         <div id="help">
 
-          <span id='free'>Keyman is <a href='/free'>free and open source</a></span>
+          <span id='free'>Keyman is <a href='/<?=$fields->pageLocale?>/free'>free and open source</a></span>
 
-          <form action="/search/" method="get" role="search">
+          <form action="/<?=$fields->pageLocale?>/search/" method="get" role="search">
             <div class="search-wrap">
               <label for="main-q" class="offscreen">Search</label>
               <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
@@ -220,7 +223,7 @@ END;
     <div id="top-menu1">
         <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" alt="Keyman logo" /></a>
         <div id='help1'>
-          <form action="/search/" method="get" role="search">
+          <form action="/<?=$fields->pageLocale?>/search/" method="get" role="search">
             <div class="search-wrap">
               <label for="main-q" class="offscreen">Search</label>
               <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
@@ -239,7 +242,7 @@ END;
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <h4>(2500+ languages)</h4>
-                        <form method="get" action="/keyboards" name="fsearch">
+                        <form method="get" action="/<?=$fields->pageLocale?>/keyboards" name="fsearch">
                             <input id="language-search" type="text" placeholder="Enter language" name="q">
                             <input id="search-submit" type="image" src="<?php echo Util::cdn('img/search-button.png'); ?>" value="Search" onclick="if(document.getElementById('language-search').value==''){return false;}">
                         </form>
@@ -268,19 +271,19 @@ END;
                     <div class="menu-dropdown-inner">
                         <h4>Core Products</h4>
                         <ul>
-                            <li><a href="/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
-                            <li><a href="/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
-                            <li><a href="/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
-                            <li><a href="/iphone-and-ipad/">Keyman <?=$fields->stable_version?> for iPhone and iPad</a></li>
-                            <li><a href="/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
-                            <li><a href="/keymanweb/">KeymanWeb.com</a></li>
-                            <li><a href="/bookmarklet/">Keyman Bookmarklet</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/windows/">Keyman <?=$fields->stable_version?> for Windows</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/mac/">Keyman <?=$fields->stable_version?> for macOS</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/linux/">Keyman <?=$fields->stable_version?> for Linux</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/iphone-and-ipad/">Keyman <?=$fields->stable_version?> for iPhone and iPad</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/android/">Keyman <?=$fields->stable_version?> for Android</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/keymanweb/">KeymanWeb.com</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/bookmarklet/">Keyman Bookmarklet</a></li>
                         </ul>
                         <h4>Downloads</h4>
                         <ul>
-                            <li><a href='/downloads/'>Current release versions</a></li>
-                            <li><a href='/downloads/pre-release/'>Pre-release versions</a></li>
-                            <li><a href="/downloads/archive/">Older versions</a></li>
+                            <li><a href='/<?=$fields->pageLocale?>/downloads/'>Current release versions</a></li>
+                            <li><a href='/<?=$fields->pageLocale?>/downloads/pre-release/'>Pre-release versions</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/downloads/archive/">Older versions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -290,23 +293,23 @@ END;
                 <div class="menu-item-dropdown">
                     <div class="menu-dropdown-inner">
                         <ul>
-                            <li><a href="/about/">About Keyman</a></li>
-                            <li><a href="/about/team">The team</a></li>
-                            <li><a href="/about/get-involved">Get Involved</a></li>
-                            <li><a href="/training">Training Events</a></li>
-                            <li><a href="/free/">Free on all Platforms</a></li>
-                            <li><a href="/ldml/">LDML Support</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/about/">About Keyman</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/about/team">The team</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/about/get-involved">Get Involved</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/training">Training Events</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/free/">Free on all Platforms</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/ldml/">LDML Support</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>">Help and Documentation</a></li>
-                            <li><a href="/contact/">Contact Us</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/contact/">Contact Us</a></li>
                             <li><a href="<?= KeymanHosts::Instance()->blog_keyman_com ?>">Keyman Blog</a></li>
-                            <li><a href="/testimonials/">Testimonials</a></li>
+                            <li><a href="/<?=$fields->pageLocale?>/testimonials/">Testimonials</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="menu-item" id="developer">
                 <div class="menu-item-sub" id="develop">
-                    <a href="/developer/">
+                    <a href="/<?=$fields->pageLocale?>/developer/">
                         <h3>Developer</h3>
                     </a>
                 </div>

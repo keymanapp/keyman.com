@@ -52,9 +52,9 @@ function test_docker_container() {
   readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
     -execdir basename  {} .php ';')
   local baseURL="http://localhost:8053"
-  local ignoreStr=("  --exclude */downloads/releases/*")
+  local ignoreStr=("  --exclude ${baseURL}*/downloads/releases/*")
   for locale in "${ignoresArray[@]}"; do
-    ignoreStr+=" --exclude ${baseURL}/$locale/*"
+    ignoreStr+=" --exclude ${baseURL}/${locale}/*"
   done
   echo "ignoreStr: ${ignoreStr[@]}"
   npx broken-link-checker ${baseURL}/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 ${ignoreStr} | tee blc.log

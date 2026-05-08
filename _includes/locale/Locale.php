@@ -10,10 +10,18 @@
 
   use \Keyman\Site\Common\KeymanHosts;
 
+  // As UI languages get added, we'll need to update this.
+  define('DISPLAY_NAMES', [
+    'en' => 'English',
+    'de' => 'Deutsch',
+    'es' => 'Español',
+    'fr' => 'Français',
+    'km' => 'ខ្មែរ (Khmer)']);
+
   class Locale {
     public const DEFAULT_LOCALE = 'en';
 
-    // array of the support locales 
+    // array of the support locales
     // xx-YY locale as specified in crowdin %locale%
     private static $currentLocales = [];
 
@@ -22,28 +30,75 @@
     // Each locale is an object? with loaded flag and array of strings
     private static $strings = [];
 
+    private static $invalidLocale = false;
+
     /**
      * Return the current locales. Fallback to 'en'
      * @return $currentLocales
      */
     public static function currentLocales() {
+      if(count(self::$currentLocales) == 0) {
+        Locale::setLocaleFromURL();
+      }
       return self::$currentLocales;
+    }
+
+    /**
+     * Return the user-selected page locale, which is always embedded at the
+     * front of the URL path
+     */
+    public static function pageLocale() {
+      return self::currentLocales()[0];
+    }
+
+    /**
+     * Returns true if the locale determined from the URL is not a known locale,
+     * based on the list in DISPLAY_NAMES. If we are loaded in a context outside
+     * localized content, and where the top-level folder name would be valid
+     * BCP47, e.g. /go/, Locale::invalidLocale() will return true. See root
+     * /.htaccess for list of all non-localized content where this may arise.
+     */
+    public static function invalidLocale() {
+      self::currentLocales(); // ensure locale is set
+      return self::$invalidLocale;
+    }
+
+    /**
+     * Set the current locale based on the first path component
+     * /<locale>/rest/of/path for the current page URL
+     */
+    private static function setLocaleFromURL() {
+      // First component of the URL is always the locale
+      if(preg_match('/^\\/(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)\\//', $_SERVER['REQUEST_URI'], $matches)) {
+        if(!isset(DISPLAY_NAMES[$matches[1]])) {
+          // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
+          $pageLocale = Locale::DEFAULT_LOCALE;
+          self::$invalidLocale = true;
+        } else {
+          $pageLocale = $matches[1];
+        }
+      } else {
+        $pageLocale = Locale::DEFAULT_LOCALE;
+      }
+      self::setLocale($pageLocale);
     }
 
     /**
      * Set the current locales, with an array of fallbacks, ending in 'en'.
      * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
      */
-    public static function setLocale($locale) {
+    private static function setLocale($locale) {
       // Clear current locales
-      self::$currentLocales == [];
+      self::$currentLocales = [];
 
       if (!empty($locale)) {
         self::$currentLocales = self::calculateFallbackLocales($locale);
       }
 
-      // Push default fallback locale to the end
-      array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
+      if(!in_array(Locale::DEFAULT_LOCALE, self::$currentLocales)) {
+        // Push default fallback locale to the end
+        array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
+      }
     }
 
     /**
@@ -53,8 +108,8 @@
      */
     public static function loadDomain($domain) {
       self::$strings[$domain] = [];
-      $path = __DIR__ . '/strings/' . $domain . '/*.php';
-      $files = glob(__DIR__ . '/strings/' . $domain . '/*.php');
+      $path = _KEYMANCOM_INCLUDES . '/locale/strings/' . $domain . '/*.php';
+      $files = glob(_KEYMANCOM_INCLUDES . '/locale/strings/' . $domain . '/*.php');
       if ($files == false) {
         return false;
       }
@@ -78,7 +133,7 @@
      */
     public static function loadStrings($domain, $locale) {
       $currentLocaleFilename = sprintf("%s/%s/%s",
-        __DIR__ . '/strings/',
+        _KEYMANCOM_INCLUDES . '/locale/strings/',
         $domain,
         $locale . '.php');
 
@@ -89,12 +144,28 @@
     }
 
     /**
+     * Return an array of javascript locales available for the given domain, in
+     * priority order.
+     */
+    public static function domain_js($domain) {
+      $root = _KEYMANCOM_INCLUDES . "/locale/strings/$domain";
+      $locales = [];
+      foreach (self::currentLocales() as $locale) {
+        if(file_exists("$root/$locale.json")) {
+          array_push($locales, $locale);
+        }
+      }
+
+      return $locales;
+    }
+
+    /**
      * Defines a global variable for page locale strings and also
      * tells locale system that current page uses locales
-     * @param $define - 
+     * @param $define -
      * @param $id - folder containing locale strings, relative to /_includes/locale/strings
      */
-    public static function definePageLocale($define, $id) {
+    public static function definePageScope($define, $id) {
       global $page_is_using_locale;
       $page_is_using_locale = true;
       define($define, $id);
@@ -156,7 +227,7 @@
         }
       }
 
-      // String not found in any localization - 
+      // String not found in any localization -
       if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_DEVELOPMENT) {
         die('string ' . $id . ' is missing in all the l10ns');
       }
@@ -164,13 +235,13 @@
     }
 
     /**
-     * Wrapper to lookup localized string for webpage domain. 
+     * Wrapper to lookup localized string for webpage domain.
      * Formatted string using optional variable args for placeholders
      * should escape like %1\$s
      * @param $domain - the PHP file using the localized strings
      * @param $id - the id for the string
      * @param $args - optional remaining args to the format string
-     */ 
+     */
     public static function m($domain, $id, ...$args) {
       $str = self::getString($domain, $id);
       if (count($args) == 0) {
