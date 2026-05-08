@@ -34,7 +34,8 @@ END;
     }
 
     /**
-     * Modify link of the current URL for a given UI language
+     * Modify link of the current URL for a given UI language.
+     * Skip if current URL isn't localized (e.g. _legacy)
      * @param language - language tag to use
      * @return string - modified URL
      */
@@ -49,8 +50,9 @@ END;
         $path = explode("/", $parts['path']);
         if ($path[1] == Locale::pageLocale()) {
           $path[1] = $language;
-        } else {
-          // original URL didn't have a valid BCP-47, so inert new langage
+        } else if (preg_match('/^\/(_legacy)\/.*$/i', $path[1], $matches)) {
+          // original URL didn't have a valid BCP-47, so insert new langage
+          // Skip for certain paths like: _legacy
           array_splice($path, 1, 0, $language);
         }
       }
