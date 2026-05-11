@@ -14,7 +14,7 @@ import { genTeamMarkdownSegment } from "./team.mjs";
 // Parse CLI input
 const program = new Command();
 program.name("node .")
-  .description("Script to generate https://keyman.com/about/team/index.md")
+  .description("Script to generate https://keyman.com/_content/about/team/index.md")
   .version("0.1.0")
   .option("-o, --output <filename>", "output file", "index.md")
   .option("-g, --github-key <key>", "github api authentication key (https://github.com/settings/tokens)")
@@ -26,7 +26,7 @@ program.parse(process.argv);
 
 async function main() {
 
-  const teamData = JSON.parse(fs.readFileSync('../../about/team/team.json', 'utf-8'));
+  const teamData = JSON.parse(fs.readFileSync('../../_content/about/team/team.json', 'utf-8'));
   const coreTeam = teamData.filter(member => member.level == 'core');
   const formerTeam = teamData.filter(member => member.level == 'core-previous');
   const coreTeamHandles = coreTeam.map(member => member.handle);

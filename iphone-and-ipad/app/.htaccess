@@ -1,3 +1,0 @@
-
-# Redirect /iphone-and-ipad/app to help.keyman.com
-RedirectMatch "/iphone-and-ipad/app/.*" "https://help.keyman.com/products/iphone-and-ipad/"
