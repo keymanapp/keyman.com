@@ -6,6 +6,7 @@
 use Keyman\Site\com\keyman\Util;
 use Keyman\Site\com\keyman\KeymanComSentry;
 use Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\Locale;
 
 // *Don't* use autoloader here because of potential side-effects in older pages
 require_once _KEYMANCOM_INCLUDES . '/2020/Util.php';
@@ -19,9 +20,7 @@ class Head {
       if(!isset($fields->title)) {
         $fields->title = 'Keyman | Type to the world in your language';
       }
-      if(empty($fields->language)) {
-        $fields->language = 'en'; // Default to English
-      }
+
       if(!isset($fields->favicon)) {
         $fields->favicon = Util::cdn("img/favicon.ico");
       }
@@ -31,14 +30,22 @@ class Head {
       if(!isset($fields->js)) {
         $fields->js = [];
       }
+      if(!isset($fields->js_i18n_domains)) {
+        $fields->js_i18n_domains = [];
+      }
+
+      $fields->pageLocale = Locale::pageLocale();
+
+      // Redirect to /en/... if not a supported locale; this needs to be emitted
+      // as a HTTP header before first content byte.
+      if(Locale::invalidLocale()) {
+        if(preg_match('/^\\/[^\/]+\\/(.+)$/', $_SERVER['REQUEST_URI'], $matches)) {
+          header("Location: /" . Locale::DEFAULT_LOCALE . "/" . $matches[1]);
+          return;
+        }
+      }
 ?><!DOCTYPE html>
-<?php
-  if (!empty($fields->language)) {
-    echo "<html lang='$fields->language'>";
-  } else {
-    echo "<html>";
-  }
-?>
+<html lang='<?=$fields->pageLocale?>'>
 <head>
   <meta charset="utf-8">
   <?php
@@ -60,15 +67,27 @@ class Head {
   <link href='https://fonts.googleapis.com/css?family=Cabin:400,400italic,500,600,700,700italic|Source+Sans+Pro:400,700,900,600,300|Noto+Serif:400' rel='stylesheet' type='text/css'>
 
   <?php
+    /* Embed json i18n strings for each domain */
+    foreach($fields->js_i18n_domains as $domain => $locales) {
+      $localization = '';
+      foreach($locales as $locale) {
+        if($localization != '') $localization .= ",\n";
+        $localization .= "{ \"locale\": \"$locale\", \"strings\": " . file_get_contents(_KEYMANCOM_INCLUDES . "/locale/strings/$domain/$locale.json") . "}";
+      }
+      echo "<script id='i18n_$domain' type='application/json'>[\n$localization\n]</script>\n";
+    }
+
     array_unshift($fields->js,
       Util::cdn('js/jquery1-11-1.min.js'),
       Util::cdn('js/bowser.es5.2.9.0.min.js'),
       Util::cdn('js/kmlive.js')
     );
 
-    foreach($fields->js as $jsFile) { ?>
-    <script src='<?=$jsFile?>'></script>
-  <?php } ?>
+    foreach($fields->js as $jsFile) {
+      $jsFileType = str_ends_with($jsFile, '.mjs') ? "type='module'" : "";
+      echo "<script src='$jsFile' $jsFileType></script>\n";
+    }
+  ?>
 </head>
 
 <?php
