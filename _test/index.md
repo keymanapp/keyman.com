@@ -29,7 +29,7 @@ showmenu: false
 
 [keyboard language landing links](language-landing)
 
-[legacy keyboards links](legacy)
+[legacy  app embedded web pages](legacy)
 
 [well-known links](well-known)
 

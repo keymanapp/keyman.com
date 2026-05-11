@@ -33,8 +33,6 @@
   $embed_developer = $embed == 'developer';
 
   if($embed != 'none') {
-    // Poor man's session control because IE embedded in downlevel Windows destroys cookie support by
-    // default, including in existing versions of Keyman.
     $session_query = http_build_query([
       'embed' => $embed,
       'version' => $embed_version
@@ -44,8 +42,4 @@
     $session_query = '';
     $session_query_q = '';
   }
-
-  // We'd like to show the search box. But, we have a bug in the IE embedded dialog
-  // that forces us to show a list of languages and disable input boxes...
-  // $embed_uselist = $embed_win && version_compare($embed_version, '10.0.699.0') < 0;
 ?>
