@@ -33,6 +33,11 @@
   $embed_developer = $embed == 'developer';
 
   if($embed != 'none') {
+    // Set a cookie header for subsequent requests so that we do not get a
+    // locale redirect for embedded keyboard search for Keyman 14.0-18.0. See
+    // /.htaccess for full discussion (line ~32)
+    setcookie('embed_keyboards_no_locale_redirect','1');
+
     $session_query = http_build_query([
       'embed' => $embed,
       'version' => $embed_version

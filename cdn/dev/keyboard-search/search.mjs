@@ -23,6 +23,16 @@ if(typeof window.embed_query == 'undefined') {
   window.embed_query = '';
 }
 
+
+// For embedded mode, use root-level /keyboards, for Keyman 14.0-18.0. See
+// /.htaccess for full discussion (line ~32)
+let page_root;
+if(window.embed && window.embed != 'none') {
+  page_root = `/keyboards`;
+} else {
+  page_root = `/${I18n.pageLocale()}/keyboards`;
+}
+
 var embed_query_q = window.embed_query == '' ? '' : '?'+window.embed_query;
 var embed_query_x = window.embed_query == '' ? '' : '&'+window.embed_query;
 
@@ -40,15 +50,14 @@ function getCurrentPath(q, page, obsolete) {
   obsolete = obsolete ? '&obsolete=1' : '';
   page = page > 1 ? 'page='+page : '';
   var path = '';
-  const base = `/${I18n.pageLocale()}`;
   if(r && r[1].charAt(0) == 'c') {
-    path = `${base}/keyboards/countries/`;
+    path = `${page_root}/countries/`;
   } else if(r && r[1].charAt(0) == 'l') {
-    path = `${base}/keyboards/languages/${r[3]}`;
+    path = `${page_root}/languages/${r[3]}`;
   } else if(q == '') {
-    path = `${base}/keyboards/`
+    path = `${page_root}/`
   } else {
-    path = `${base}/keyboards/?q=${encodeURIComponent(q)}`;
+    path = `${page_root}/?q=${encodeURIComponent(q)}`;
   }
 
   if(page + obsolete == '') {
@@ -294,9 +303,9 @@ function process_response(q, obsolete, res) {
         "</div>");
 
       if(kbd.isDedicatedLandingPage) {
-        $('.title a', k).text(kbd.name).attr('href', `/${I18n.pageLocale()}/keyboards/h/${kbd.id}${embed_query_q}`);
+        $('.title a', k).text(kbd.name).attr('href', `${page_root}/h${kbd.id}${embed_query_q}`);
       } else {
-        $('.title a', k).text(kbd.name).attr('href', '/' + I18n.pageLocale() + '/keyboards/'+kbd.id+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
+        $('.title a', k).text(kbd.name).attr('href', `${page_root}/${kbd.id}`+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
       }
 
       if(kbd.isDedicatedLandingPage) {

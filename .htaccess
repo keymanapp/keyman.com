@@ -28,6 +28,85 @@ ErrorDocument 404 /_includes/errors/404.php
 
 RewriteRule "^_includes/errors/404(.php)?$" "/_includes/errors/404.php" [END]
 
+# ##############################################################################
+#
+# Keyman 14.0 - 18.0 have a dependency on /keyboards which means that we cannot
+# rewrite URLs there when we are in 'embed' mode for those apps. The apps check
+# if the URL starts with /keyboards, and handle those paths internally, while
+# opening other URLs in an external browser.
+#
+# See https://github.com/keymanapp/keyman/issues/15948 for platform-specific
+# dependencies on this behaviour and for v19.0 planned mitigations.
+#
+# These rules are duplicated for the locale-aware versions for web browser
+# visitors later in this file.
+#
+# ##############################################################################
+
+#
+# keyboards Install | Download | Share | bare | .json -->
+#
+
+# /keyboards/install/[id] to /keyboards/install.php
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/install/([^/]+)$" "/_content/keyboards/install.php?id=$1" [END,QSA]
+
+# /keyboards/download/[id] to /keyboards/keyboard.php
+# This formerly redirected to a download, but we no longer need it; keep it for
+# legacy links
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/download/([^/]+)$" "/_content/keyboards/keyboard.php?id=$1" [END,QSA]
+
+# /keyboards/share/[id] to /keyboards/share.php
+# if the keyboard exists in the repo, then share.php will redirect to /keyboards/<id>
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/share/([^/]+)$" "/_content/keyboards/share.php?id=$1" [END,QSA]
+
+# /keyboards/{id}.json to /keyboards/keyboard.json.php
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/(?!keyboard.json)(.*)\.json$" "/_content/keyboards/keyboard.json.php?id=$1" [END]
+
+# /keyboards/{id} to /keyboards/keyboard.php
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/_content/keyboards/keyboard.php?id=$1" [END,QSA]
+
+#
+# keyboards search
+#
+
+# /keyboards/languages to /keyboards/index.php
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/languages/(.*)" "/_content/keyboards/index.php?q=l:id:$1" [END,QSA]
+
+# /keyboards/download to /keyboards/download.php
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/download(.php)?" "/_content/keyboards/download.php" [END,QSA]
+
+# /keyboards/legacy to /keyboards/keyboard.php
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/legacy/(.*)" "/_content/keyboards/keyboard.php?legacy=$1" [END]
+
+# /keyboards/countries to /keyboards/index.php
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:id:$1" [END]
+
+# Root keyboard search to pass embed query?
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards(/)?$" "/_content/keyboards/index.php" [END,QSA]
+
+
+
+
 # ##################################################################
 # Reject special and legacy top-level files without i18n
 # ##################################################################
@@ -64,14 +143,6 @@ RewriteRule "^(_common/assets)/(.+)$" - [END]
 RewriteRule "^(_common|_content|_includes|_scripts|.github|resources|tests)(/.*|$)" - [F,END]
 RewriteRule "^(.editorconfig|.gitattributes|.gitignore|build.sh|composer.json|composer.lock|crowdin.yml|Dockerfile|package-lock.json|package.json|phpunit.xml|README.md|TODO.md)$" - [F,END]
 
-#
-# The following paths are accessible but controlled by sub-folder .htaccess:
-#    _legacy/
-# Thus this rule currently has no effect but will come into play if the
-# _legacy/.htaccess file is removed.
-#
-RewriteRule "^(_legacy)(/.*|$)" - [F,END]
-
 # ##################################################################
 # Handle special and legacy top-level files without i18n
 # ##################################################################
@@ -81,7 +152,6 @@ RewriteRule "^(_legacy)(/.*|$)" - [F,END]
 # but have .php and .md rewrites. They do not have sub-folders.
 #    _common/assets/    (handled above because _common/ itself is excluded)
 #    _control/
-#    _ie_thunk/
 #    _test/
 #
 # The following top-level files and folders do not have .php or .md rewrites
@@ -96,26 +166,26 @@ RewriteRule "^(_legacy)(/.*|$)" - [F,END]
 RewriteRule "^.well-known/apple-app-site-association$" "/.well-known/apple-app-site-association.json" [L]
 
 # Add terminating slash on top-level folders by redirecting
-RewriteCond "$1" ^(_control|_ie_thunk|_test|.well-known|go|cdn)$
+RewriteCond "$1" ^(_control|_test|.well-known|go|cdn)$
 RewriteRule "^([^/]+)$" "$1/" [R,L]
 
 # .php rewrite
-RewriteCond "$1" ^(_control|_ie_thunk|_test)$
+RewriteCond "$1" ^(_control|_test)$
 RewriteCond "%{DOCUMENT_ROOT}/$1/$2.php" -f
 RewriteRule "^([^/]+)/(.+)$" "/$1/$2.php" [END]
 
 # .md rewrite
-RewriteCond "$1" ^(_control|_ie_thunk|_test)$
+RewriteCond "$1" ^(_control|_test)$
 RewriteCond "%{DOCUMENT_ROOT}/$1/$2.md" -f
 RewriteRule "^([^/]+)/(.+)$" "/_includes/includes/md/mdhost.php?file=$1/$2.md" [END]
 
 # .md rewrite for folder; no .php rewrite for folder
-RewriteCond "$1" ^(_control|_ie_thunk|_test)$
+RewriteCond "$1" ^(_control|_test)$
 RewriteCond "%{DOCUMENT_ROOT}/$1/index.md" -f
 RewriteRule "^([^/]+)/$" "/_includes/includes/md/mdhost.php?file=$1/index.md" [END]
 
 # Any existing file in any of those folders or sub folders
-RewriteCond "$1" ^(_control|_ie_thunk|_test|.well-known|go|cdn)$
+RewriteCond "$1" ^(_control|_test|.well-known|go|cdn)$
 RewriteCond "%{DOCUMENT_ROOT}/$1/$2" -f
 RewriteRule "^([^/]+)/(.+)$" - [END]
 
