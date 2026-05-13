@@ -69,7 +69,7 @@
      */
     private static function setLocaleFromURL() {
       // First component of the URL is always the locale
-      if(preg_match('/^\/(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)\//i', $_SERVER['REQUEST_URI'], $matches)) {
+      if(preg_match('/^\/(([a-z]{2,3})(-([A-Z][a-z]{3}))?(-([A-Z]{2}|[0-9]{3}))?)\//', $_SERVER['REQUEST_URI'], $matches)) {
         $fallbackLocales = self::calculateFallbackLocales($matches[1]);
         if (isset($fallbackLocales[0])) {
           $pageLocale = $fallbackLocales[0];
