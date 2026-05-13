@@ -104,6 +104,10 @@ RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
 RewriteCond "%{QUERY_STRING}"   embed
 RewriteRule "^keyboards(/)?$" "/_content/keyboards/index.php" [END,QSA]
 
+# Dedicated landing pages
+RewriteCond "%{HTTP_COOKIE}"    embed_keyboards_no_locale_redirect [OR]
+RewriteCond "%{QUERY_STRING}"   embed
+RewriteRule "^keyboards/h/(.*)$" "/_content/keyboards/h/$1/index.php" [END,QSA]
 
 
 
