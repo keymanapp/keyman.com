@@ -40,7 +40,10 @@
     Menu::render([]); // we'll be doing client-side os detection now
   Body::render();
 
-  $keyboardsPage = '/' . Locale::pageLocale() . '/keyboards/';
+  // For embedded mode, use root-level /keyboards, for Keyman 14.0-18.0.
+  // See .htaccess for full discussion (line ~32)
+  $keyboardsPage = ($embed != 'none') ? '/keyboards' :
+    '/' . Locale::pageLocale() . '/keyboards/';
 ?>
 
 <script>
