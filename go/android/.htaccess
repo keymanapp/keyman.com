@@ -1,8 +1,19 @@
 
-# Links for Android 14.0 onward
+# Links for Android 14.0 - 18.0
 
 # /go/android/X.Y/download-keyboards/languages"
-RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards/languages/(.*)" "/keyboards/languages/$2?embed=android&embed_version=$1" [R,QSA]
+RewriteRule "^(1[4-8]\.[0-9])/download-keyboards/languages/(.*)" "/keyboards/languages/$2?embed=android&embed_version=$1" [R,QSA]
 
 # "/go/android/X.Y/download-keyboards"
-RewriteRule "^([1-9][0-9]\.[0-9])/download-keyboards" "/keyboards?embed=android&embed_version=$1" [R,QSA]
+RewriteRule "^(1[4-8]\.[0-9])/download-keyboards" "/keyboards?embed=android&embed_version=$1" [R,QSA]
+
+# Links for Android 19.0 onward (insert bcp-47 tag)
+
+# /go/android/{bcp-47}/X.Y/download-keyboards/languages"
+RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteRule "^([^/]+)/([1-9][0-9]\.[0-9])/download-keyboards/languages/(.*)" "/$1/keyboards/languages/$3?embed=android&embed_version=$2" [R,QSA]
+
+# /go/android/{bcp-47}/X.Y/download-keyboards"
+
+RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteRule "^([^/]+)/([1-9][0-9]\.[0-9])/download-keyboards" "/$1/keyboards?embed=android&embed_version=$2" [R,QSA]
