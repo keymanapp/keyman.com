@@ -79,9 +79,8 @@
           self::$invalidLocale = true;
         }
       } else {
-        // Invalid locale
         $pageLocale = Locale::DEFAULT_LOCALE;
-        self::$invalidLocale = true;
+        // Don't set invalid locale so pages like /_test/ work
       }
       self::setLocale($pageLocale);
     }
