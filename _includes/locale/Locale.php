@@ -79,7 +79,9 @@
           self::$invalidLocale = true;
         }
       } else {
+        // Invalid locale
         $pageLocale = Locale::DEFAULT_LOCALE;
+        self::$invalidLocale = true;
       }
       self::setLocale($pageLocale);
     }
