@@ -1,3 +1,7 @@
-# Disallow all bots since we don't need anything idexed on the staging site
+# Allow broken-link-checker to run
+User-agent: broken-link-checker
+Allow: /
+
+# Disallow all bots since we don't need anything indexed on the staging site
 User-agent: *
 Disallow: /
