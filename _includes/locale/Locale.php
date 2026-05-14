@@ -63,21 +63,38 @@
     }
 
     /**
+     * Redirect page to specified locale. Default to en
+     * @param $newLocale
+     */
+    public static function redirectLocale($newLocale = Locale::DEFAULT_LOCALE) {
+      if(preg_match('/^\\/[^\/]+\\/(.+)$/', $_SERVER['REQUEST_URI'], $matches)) {
+        header("Location: /" . $newLocale . "/" . $matches[1]);
+        return;
+      }
+    }
+
+    /**
      * Set the current locale based on the first path component
      * /<locale>/rest/of/path for the current page URL
      */
     private static function setLocaleFromURL() {
       // First component of the URL is always the locale
-      if(preg_match('/^\\/(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)\\//', $_SERVER['REQUEST_URI'], $matches)) {
-        if(!isset(DISPLAY_NAMES[$matches[1]])) {
+      if(preg_match('/^\/(([a-z]{2,3})(-([A-Z][a-z]{3}))?(-([A-Z]{2}|[0-9]{3}))?)\//', $_SERVER['REQUEST_URI'], $matches)) {
+        $fallbackLocales = self::calculateFallbackLocales($matches[1]);
+        if (isset($fallbackLocales[0])) {
+          $pageLocale = $fallbackLocales[0];
+          if ($pageLocale != $matches[1]) {
+            // Redirect if using a fallback locale
+            Locale::redirectLocale($pageLocale);
+          };
+        } else {
           // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
           $pageLocale = Locale::DEFAULT_LOCALE;
           self::$invalidLocale = true;
-        } else {
-          $pageLocale = $matches[1];
         }
       } else {
         $pageLocale = Locale::DEFAULT_LOCALE;
+        // Don't set invalidLocale so pages like /_test/ work
       }
       self::setLocale($pageLocale);
     }
@@ -178,7 +195,7 @@
      * @param $locale - the locale to determine fallback locales
      * @return array of fallback locales
      */
-    private static function calculateFallbackLocales($locale) {
+    public static function calculateFallbackLocales($locale) {
       // Start with the given locale
       $fallback = [$locale];
 

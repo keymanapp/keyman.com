@@ -38,7 +38,7 @@ function preprocess_htaccess() {
   local locales localesregex
   locales=($(cat ./_includes/locale/locales.json | grep '"' | cut -d\" -f 2 -))
   localesregex=$(IFS=\| ; echo "${locales[*]}")
-  sed -e "s/@locales/${localesregex}/g" .htaccess.in >> .htaccess
+  sed -e "s/(@locales)/(([a-z]{2,3})(-([A-Z][a-z]{3}))?(-([A-Z]{2}|[0-9]{3}))?)/g" .htaccess.in >> .htaccess
 }
 
 function do_configure() {
