@@ -63,6 +63,17 @@
     }
 
     /**
+     * Redirect page to specified locale. Default to en
+     * @param $newLocale
+     */
+    public static function redirectLocale($newLocale = Locale::DEFAULT_LOCALE) {
+      if(preg_match('/^\\/[^\/]+\\/(.+)$/', $_SERVER['REQUEST_URI'], $matches)) {
+        header("Location: /" . $newLocale . "/" . $matches[1]);
+        return;
+      }
+    }
+
+    /**
      * Set the current locale based on the first path component
      * /<locale>/rest/of/path for the current page URL
      */
@@ -72,6 +83,10 @@
         $fallbackLocales = self::calculateFallbackLocales($matches[1]);
         if (isset($fallbackLocales[0])) {
           $pageLocale = $fallbackLocales[0];
+          if ($pageLocale != $matches[1]) {
+            // Redirect if using a fallback locale
+            Locale::redirectLocale($pageLocale);
+          };
         } else {
           // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
           $pageLocale = Locale::DEFAULT_LOCALE;

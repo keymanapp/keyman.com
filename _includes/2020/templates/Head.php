@@ -39,10 +39,7 @@ class Head {
       // Redirect to /en/... if not a supported locale; this needs to be emitted
       // as a HTTP header before first content byte.
       if(Locale::invalidLocale()) {
-        if(preg_match('/^\\/[^\/]+\\/(.+)$/', $_SERVER['REQUEST_URI'], $matches)) {
-          header("Location: /" . Locale::DEFAULT_LOCALE . "/" . $matches[1]);
-          return;
-        }
+        Locale::redirectLocale();
       }
 ?><!DOCTYPE html>
 <html lang='<?=$fields->pageLocale?>'>
