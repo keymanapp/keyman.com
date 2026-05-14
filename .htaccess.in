@@ -1,5 +1,8 @@
-# This file is used when running with Apache. Adapted from web.config.
-# NOTE: this is not very well tested...
+#
+# This file is compiled down to .htaccess by build.sh. Any references to the
+# string @locales are replaced with a regex of the currently available locale
+# strings (e.g. something like "en|es|km"), from _includes/locale/locales.json.
+#
 
 php_value display_errors off
 php_value display_startup_errors off
@@ -133,6 +136,7 @@ RewriteRule "^(_common/assets)/(.+)$" - [END]
 #    .gitattributes
 #    .gitignore
 #    .htaccess      (this file, not listed explicitly)
+#    .htaccess.in
 #    build.sh
 #    composer.json
 #    composer.lock
@@ -145,7 +149,7 @@ RewriteRule "^(_common/assets)/(.+)$" - [END]
 #    TODO.md
 #
 RewriteRule "^(_common|_content|_includes|_scripts|.github|resources|tests)(/.*|$)" - [F,END]
-RewriteRule "^(.editorconfig|.gitattributes|.gitignore|build.sh|composer.json|composer.lock|crowdin.yml|Dockerfile|package-lock.json|package.json|phpunit.xml|README.md|TODO.md)$" - [F,END]
+RewriteRule "^(.editorconfig|.gitattributes|.gitignore|.htaccess.in|build.sh|composer.json|composer.lock|crowdin.yml|Dockerfile|package-lock.json|package.json|phpunit.xml|README.md|TODO.md)$" - [F,END]
 
 # ##################################################################
 # Handle special and legacy top-level files without i18n
@@ -219,30 +223,25 @@ RewriteRule "^(.+)\.md$" "$1" [R,L]
 #  * add trailing `/` for folders if not present
 # ------------------------------------------------------------------
 
-#
-# Note: we don't test the content of the lang path parameter (?:[^/]+)/
-# here; that is managed exclusively in the i18n section later.
-#
-
 # Redirect folder to folder/ for .php
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2" -d
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.php" -f
-RewriteRule "^([^/]+)/(.+[^/])$" "$1/$2/" [R,L]
+RewriteRule "^(@locales)/(.+[^/])$" "$1/$2/" [R,L]
 
 # Redirect folder to folder/ for .md
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2" -d
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" -f
-RewriteRule "^([^/]+)/(.+[^/])$" "$1/$2/" [R,L]
+RewriteRule "^(@locales)/(.+[^/])$" "$1/$2/" [R,L]
 
 # Redirect file/ to file (.md)
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2" !-d
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
-RewriteRule "^([^/]+)/(.+)/$" "$1/$2" [R,L]
+RewriteRule "^(@locales)/(.+)/$" "$1/$2" [R,L]
 
 # Redirect file/ to file (.php)
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2" !-d
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.php" -f
-RewriteRule "^([^/]+)/(.+)/$" "$1/$2" [R,L]
+RewriteRule "^(@locales)/(.+)/$" "$1/$2" [R,L]
 
 #
 # top-level folders and files
@@ -397,38 +396,33 @@ RewriteRule "^(downloads/releases|keyboards)/(.+)$" "en/$1/$2" [R,L]
 # Rewriting
 # ##################################################################
 
-#
-# Intentionally not using regex from Validation::validate_bcp47 because we only need lang-script-region triplet
-# ^(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)
-# [NC] for case-insensitive
-# Long regex for "BCP-47" codes = $1, rest of URL $2 onward
-#
+# @locales for BCP-47" codes = $1, rest of URL $2 onward
 
 #
 # keyboards Install | Download | Share | bare | .json -->
 #
 
 # /keyboards/install/[id] to /keyboards/install.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/install/([^/]+)$" "/_content/keyboards/install.php?id=$2" [END,QSA]
 
 # /keyboards/download/[id] to /keyboards/keyboard.php
 # This formerly redirected to a download, but we no longer need it; keep it for
 # legacy links
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/download/([^/]+)$" "/_content/keyboards/keyboard.php?id=$2" [END,QSA]
 
 # /keyboards/share/[id] to /keyboards/share.php
 # if the keyboard exists in the repo, then share.php will redirect to /keyboards/<id>
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/share/([^/]+)$" "/_content/keyboards/share.php?id=$2" [END,QSA]
 
 # /keyboards/{id}.json to /keyboards/keyboard.json.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/(?!keyboard.json)(.*)\.json$" "/_content/keyboards/keyboard.json.php?id=$2" [END]
 
 # /keyboards/{id} to /keyboards/keyboard.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/(?!index\.php|install|keyboard|session|share)([^/]+)$" "/_content/keyboards/keyboard.php?id=$2" [END,QSA]
 
 #
@@ -436,23 +430,23 @@ RewriteRule "^([^/]+)/keyboards/(?!index\.php|install|keyboard|session|share)([^
 #
 
 # /keyboards/languages to /keyboards/index.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/languages/(.*)" "/_content/keyboards/index.php?q=l:id:$2" [END,QSA]
 
 # /keyboards/download to /keyboards/download.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/download(.php)?" "/_content/keyboards/download.php" [END,QSA]
 
 # /keyboards/legacy to /keyboards/keyboard.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/legacy/(.*)" "/_content/keyboards/keyboard.php?legacy=$2" [END]
 
 # /keyboards/countries to /keyboards/index.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards/countries/(.*)" "/_content/keyboards/index.php?q=c:id:$2" [END]
 
 # Root keyboard search to pass embed query?
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/keyboards(/)?$" "/_content/keyboards/index.php" [END,QSA]
 
 
@@ -461,10 +455,10 @@ RewriteRule "^([^/]+)/keyboards(/)?$" "/_content/keyboards/index.php" [END,QSA]
 #
 
 # /contact/exception to /contact/exception.php
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/contact/exception(.php)?$" "/_content/contact/exception.php" [END,QSA]
 
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/contact/exception\?id=(.+)$" "/_content/contact/exception?id=$2" [END]
 
 #
@@ -473,16 +467,16 @@ RewriteRule "^([^/]+)/contact/exception\?id=(.+)$" "/_content/contact/exception?
 
 # releases-tier/download
 # note: the tier is currently ignored
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/downloads/releases/(alpha|beta|stable)/(.+)$" "/_content/downloads/releases/_version_downloads.php?tier=$2&version=$3" [END]
 
 # releases-download
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/downloads/releases/(.+)$" "/_content/downloads/releases/_version_downloads.php?version=$2" [END]
 
 # other file types
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2" -f
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/(.+)$" "/_content/$2" [END]
 
 # TODO: do we want en/lao --> en/keyboards/basic_kbdlao? as well as /lao --> ...
@@ -497,32 +491,32 @@ RewriteRule "^([^/]+)/(.+)$" "/_content/$2" [END]
 
 # Rewrite file to file.md
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" -f
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/(.+)$" "/_includes/includes/md/mdhost.php?file=_content/$2.md" [END]
 
 # Rewrite file to file.php
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.php" -f
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2.md" !-f
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/(.+)$" "/_content/$2.php" [END]
 
 # Rewrite folder/ to folder/index.md
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" -f
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/(.+)/$" "/_includes/includes/md/mdhost.php?file=_content/$2/index.md" [END]
 
 # Rewrite folder/ to folder/index.php
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.php" -f
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2/index.md" !-f
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/(.+)/$" "/_content/$2/index.php" [END]
 
 # Root page
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)/$" "/_content/index.php" [END]
 
 # Finally, append the terminating slash for folders, given it is no longer
 # done automatically because we put DirectorySlash off, for the top-level paths only
 RewriteCond "%{DOCUMENT_ROOT}/_content/$2$3" -d
-RewriteCond "$1" ^([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?$ [NC]   # BCP 47 match
+RewriteCond "$1" ^(@locales)$
 RewriteRule "^([^/]+)(.*)([^/])?$" "$1$2$3/" [R,QSA]
