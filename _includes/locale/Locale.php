@@ -72,7 +72,6 @@
         $fallbackLocales = self::calculateFallbackLocales($matches[1]);
         if (isset($fallbackLocales[0])) {
           $pageLocale = $fallbackLocales[0];
-          self::$invalidLocale = false;
         } else {
           // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
           $pageLocale = Locale::DEFAULT_LOCALE;
@@ -80,7 +79,7 @@
         }
       } else {
         $pageLocale = Locale::DEFAULT_LOCALE;
-        // Don't set invalid locale so pages like /_test/ work
+        // Don't set invalidLocale so pages like /_test/ work
       }
       self::setLocale($pageLocale);
     }
