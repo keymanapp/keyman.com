@@ -72,6 +72,7 @@
         $fallbackLocales = self::calculateFallbackLocales($matches[1]);
         if (isset($fallbackLocales[0])) {
           $pageLocale = $fallbackLocales[0];
+          self::$invalidLocale = false;
         } else {
           // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
           $pageLocale = Locale::DEFAULT_LOCALE;
@@ -180,7 +181,7 @@
      * @param $locale - the locale to determine fallback locales
      * @return array of fallback locales
      */
-    private static function calculateFallbackLocales($locale) {
+    public static function calculateFallbackLocales($locale) {
       // Start with the given locale
       $fallback = [$locale];
 
