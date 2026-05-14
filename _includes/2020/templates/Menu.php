@@ -52,9 +52,9 @@ END;
           array_intersect(Locale::calculateFallbackLocales($path[1]), array_keys(DISPLAY_NAMES)) : [];
         if (count($matchingLanguages) > 0) {
           $path[1] = $language;
-        } else if (preg_match('/^(?!_legacy)([^\/]+)$/i', $path[1], $matches)) {
+        } else if (preg_match('/^(?!_legacy|go|mac|web)([^\/]+)$/i', $path[1], $matches)) {
           // original URL didn't have a valid BCP-47, so insert new langage
-          // Skip for certain paths like: _legacy
+          // Skip for certain paths like: _legacy or 2-3 letter paths
           array_splice($path, 1, 0, $language);
         }
       }
