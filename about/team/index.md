@@ -523,6 +523,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/6199709?v=4" alt="dotland" />](https://github.com/dotland "dotland")
 [<img class='contributor-minor' src="https://github.com/DOUCKI56.png?size=240" alt="DOUCKI56" />](https://github.com/DOUCKI56 "DOUCKI56")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/53433504?v=4" alt="DP-Upstate" />](https://github.com/DP-Upstate "DP-Upstate")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/281530597?v=4" alt="DrTMarvinZou" />](https://github.com/DrTMarvinZou "DrTMarvinZou")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/1534119?v=4" alt="dy2288" />](https://github.com/dy2288 "dy2288")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/148839270?v=4" alt="Ehblut" />](https://github.com/Ehblut "Ehblut")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/122399466?v=4" alt="emily-roth" />](https://github.com/emily-roth "emily-roth")
@@ -685,7 +686,6 @@ people who have helped Keyman serve you all better!
 
 <div class="contributors" id="crowdin-minor" markdown="1">
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/14746856/medium/b86f420541b7f40a825230dcd43b30b9.jpeg" alt="aaumsccs" />](https://crowdin.com/profile/aaumsccs "aaumsccs")
-[<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/15964203/medium/50948d769d289fdc93be7569671d8368.jpeg" alt="alexvis" />](https://crowdin.com/profile/alexvis "alexvis")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/14889606/medium/5b8954f9647df4bca760fb055c5cb12e_default.png" alt="Alisa110" />](https://crowdin.com/profile/Alisa110 "Alisa110")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/16848823/medium/456198db20944adfe6414bd5fd097c96_default.png" alt="Almeida463" />](https://crowdin.com/profile/Almeida463 "Almeida463")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/16419704/medium/4d1bc73e2bc01d1d075c21fc955dd4ce_default.png" alt="amadel24" />](https://crowdin.com/profile/amadel24 "amadel24")
@@ -759,6 +759,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/13962625/medium/907539fd79ca32a8a08d400a1aa043f7_default.png" alt="PrinceNorris" />](https://crowdin.com/profile/PrinceNorris "PrinceNorris")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/17484784/medium/220356478951708fe5bdc2177b1317fb_default.png" alt="r.h.od.te" />](https://crowdin.com/profile/r.h.od.te "r.h.od.te")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/15308466/medium/8d05cc53180a1d5a57e81c8e81d35586.png" alt="ramesh-k" />](https://crowdin.com/profile/ramesh-k "ramesh-k")
+[<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/15964203/medium/fff475c6f619cbe85cf40d383f772cb0_default.png" alt="REMOVED_USER" />](https://crowdin.com/profile/REMOVED_USER "REMOVED_USER")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/14854186/medium/67cfbfa4912eca1d1e68e3fcd5f9062b_default.png" alt="REMOVED_USER" />](https://crowdin.com/profile/REMOVED_USER "REMOVED_USER")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/13657317/medium/886a3ed3197aa48cdd16bb3a792ed3d5.jpeg" alt="RomanVolak" />](https://crowdin.com/profile/RomanVolak "RomanVolak")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/15925483/medium/11be56aaae391e8610948a8e833634ef_default.png" alt="saikchan.tm" />](https://crowdin.com/profile/saikchan.tm "saikchan.tm")
