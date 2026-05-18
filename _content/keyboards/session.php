@@ -36,7 +36,10 @@
     // Set a cookie header for subsequent requests so that we do not get a
     // locale redirect for embedded keyboard search for Keyman 14.0-18.0. See
     // /.htaccess for full discussion (line ~32)
-    setcookie('embed_keyboards_no_locale_redirect', '1', 0, '/');
+    //
+    // Note: 'SameSite=None; secure' is required for embedding in Keyman
+    // Configuration for Windows because that uses an iframe to embed the search
+    setcookie('embed_keyboards_no_locale_redirect', '1', ["secure" => true, "samesite" => 'None', 'path' => '/']);
 
     $session_query = http_build_query([
       'embed' => $embed,
