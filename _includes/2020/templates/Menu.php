@@ -50,9 +50,9 @@ END;
         $path = explode("/", $parts['path']);
         if ($path[1] == Locale::pageLocale()) {
           $path[1] = $language;
-        } else if (preg_match('/^\/(_legacy)\/.*$/i', $path[1], $matches)) {
+        } else if (preg_match('/^(?!_test)(.*)$/i', $path[1], $matches)) {
           // original URL didn't have a valid BCP-47, so insert new langage
-          // Skip for certain paths like: _legacy
+          // Skip for certain paths (non-localized pages):
           array_splice($path, 1, 0, $language);
         }
       }
