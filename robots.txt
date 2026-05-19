@@ -1,7 +1,7 @@
-# Allow broken-link-checker to run
-User-agent: broken-link-checker
-Allow: /
+# This bot is too busy (300K+ visits/month across all keyman.com domains)
+User-agent: AhrefsBot
+Disallow: /
 
-# Disallow all bots since we don't need anything indexed on the staging site
-User-agent: *
+# This bot is too busy (300K+ visits/month across all keyman.com domains)
+User-agent: TurnitinBot
 Disallow: /

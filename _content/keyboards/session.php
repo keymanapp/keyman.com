@@ -38,7 +38,8 @@
     // /.htaccess for full discussion (line ~32)
     //
     // Note: 'SameSite=None; secure' is required for embedding in Keyman
-    // Configuration for Windows because that uses an iframe to embed the search
+    // Configuration for Windows because it uses an iframe to embed the search,
+    // and otherwise cookies are blocked
     setcookie('embed_keyboards_no_locale_redirect', '1', ["secure" => true, "samesite" => 'None', 'path' => '/']);
 
     $session_query = http_build_query([
