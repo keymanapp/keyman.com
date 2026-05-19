@@ -13,6 +13,6 @@
     <hr />
   </ul>
   <div class="button-dl9">
-    <a href="/developer/download.php">Download for Free</a>
+    <a href="download">Download for Free</a>
   </div>
 </div>

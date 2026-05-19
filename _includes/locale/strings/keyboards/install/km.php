@@ -4,14 +4,14 @@
  * Keyman is copyright (C) SIL Global. MIT License.
  *
  * Default English strings for keyboards/keyboard-install.php
- * Don't escape $s when uploading source to crowdin because exports will escape \$s to \\$s
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);
 
 return [
   # Page Title
-  "install_page_title" => "%1\$s ក្តារចុច",
+  "install_page_title" => "%1\$s​ ក្ដារចុច",
 
   # {Keyboard} download should start shortly
   "download_start_shortly" => 

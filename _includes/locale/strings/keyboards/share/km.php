@@ -4,7 +4,7 @@
  * Keyman is copyright (C) SIL Global. MIT License.
  *
  * Default English strings for keyboards/keyboard-share.php
- * Don't escape $s when uploading source to crowdin because exports will escape \$s to \\$s
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);

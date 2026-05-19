@@ -89,7 +89,7 @@ return [
   "downloads_since" => "ដំឡើងចាប់តាំងពី %1\$s",
   
   # Date to start counting downloads
-  "date_counting" => "October 2019",
+  "date_counting" => "តុលា​ ២០១៩",
 
   "encoding" => "ការអ៊ីនកូដ",
   

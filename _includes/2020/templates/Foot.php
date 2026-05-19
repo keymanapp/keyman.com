@@ -6,12 +6,14 @@
   use Keyman\Site\Common\ImageRandomizer;
   use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Locale;
 
   class Foot {
     static function render(array $fields = []) {
       $fields = (object)$fields;
       $fields->stable_version = KeymanVersion::stable_version;
       $fields->beta_version = KeymanVersion::beta_version;
+      $fields->pageLocale = Locale::pageLocale();
 ?>
 
       </div>
@@ -42,7 +44,7 @@
             <div id="privacy-policy"><a href="/privacy/">Privacy policy</a></div>
 
             <div id='footer-get-involved'>
-              <a href="/about/get-involved">Get involved</a>
+              <a href="/<?=$fields->pageLocale?>/about/get-involved">Get involved</a>
               <a href='/donate'>Donate</a>
             </div>
         </div>

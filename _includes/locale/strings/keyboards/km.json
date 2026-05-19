@@ -1,0 +1,15 @@
+{
+  "resultOne": "លទ្ធផល",
+  "resultMore": "លទ្ធផល",
+  "pageNumberOfTotalPages": "ទំព័រ​ទី {pageNumber}​ នៃ {totalPages}។",
+  "keyboardSearchTitle": "- ស្វែងរកក្ដារចុច",
+  "obsoleteKeyboards": "ក្ដារចុចបោះបង់ចោល",
+  "monthlyDownloadZero": "គ្មានការទាញយកថ្មីៗ",
+  "monthlyDownloadOne": "ចំនួនទាញយកប្រចាំខែ",
+  "monthlyDownloadMore": "ចំនួនទាញយកទាំងឡាយប្រចាំខែ",
+  "notUnicode": "ចំណាំ៖​ មិនមែនជាក្ដារចុចយូនីកូដ",
+  "designedForPlatform": "រចនាសម្រាប់ {platform}",
+  "noMatchesFoundForKeyboard": "គ្មានឃើញចម្លើយសម្រាប់ {keyboard}",
+  "previousPager": "< មុន",
+  "nextPager": "បន្ទាប់ >"
+}

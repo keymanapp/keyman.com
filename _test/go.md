@@ -64,7 +64,7 @@ showmenu: false
 ## android
 
 ### /go/android/X.Y/download-keyboards/languages
-Royce, Scott, and Darcy attending Colloquium on Fonts for Southeast Asian scripts 
+
 [download-keyboards/languages](/go/android/16.0/download-keyboards/languages/km)
 
 [live: download-keyboards/languages](https://keyman.com/go/android/16.0/download-keyboards/languages/km)

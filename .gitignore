@@ -19,3 +19,6 @@ _common/
 
 # State files
 _control/debug
+
+# .htaccess is generated from .htaccess.in during build.sh build
+.htaccess
