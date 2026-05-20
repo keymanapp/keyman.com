@@ -43,6 +43,15 @@
     }
 
     /**
+     * For places where we are outside our normal i18n framework with the locale
+     * in the path, e.g. /keyboards in embed, we set a locale based on alternate
+     * parameter, and we allow fallback to be applied
+     */
+    public static function setOverrideLocale($locale) {
+      self::setLocale($locale, true);
+    }
+
+    /**
      * Return the user-selected page locale, which is always embedded at the
      * front of the URL path
      */
@@ -79,19 +88,21 @@
       } else {
         $pageLocale = Locale::DEFAULT_LOCALE;
       }
-      self::setLocale($pageLocale);
+      self::setLocale($pageLocale, false);
     }
 
     /**
      * Set the current locales, with an array of fallbacks, ending in 'en'.
-     * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
+     * @param $locale   - the new current locale (xx-YY as specified in crowdin
+     *                    %locale%)
+     * @param $fallback - true if the function should search for fallback
+     *                    locales (other than 'en', which is always added)
      */
-    private static function setLocale($locale) {
-      // Clear current locales
-      self::$currentLocales = [];
-
-      if (!empty($locale)) {
+    private static function setLocale($locale, $fallback) {
+      if ($fallback) {
         self::$currentLocales = self::calculateFallbackLocales($locale);
+      } else {
+        self::$currentLocales =[$locale];
       }
 
       if(!in_array(Locale::DEFAULT_LOCALE, self::$currentLocales)) {
