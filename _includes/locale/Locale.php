@@ -93,7 +93,10 @@
 
     /**
      * Set the current locales, with an array of fallbacks, ending in 'en'.
-     * @param $locale - the new current locale (xx-YY as specified in crowdin %locale%)
+     * @param $locale   - the new current locale (xx-YY as specified in crowdin
+     *                    %locale%)
+     * @param $fallback - true if the function should search for fallback
+     *                    locales (other than 'en', which is always added)
      */
     private static function setLocale($locale, $fallback) {
       if ($fallback) {
