@@ -49,7 +49,7 @@ return [
   "available_on_play_store" => "Keyman សម្រាប់ Android ក៏មាននៅក្នុងកម្មវិធីទាញយក។",
 
   # Keyman for iPhone and iPad
-  "product_ios" => "Keyman សម្រាប់ iPHone and iPad",
+  "product_ios" => "Keyman សម្រាប់ iPhone and iPad",
 
   "available_on_app_store" => "Keyman សម្រាប់ iPhone and iPad អាចរកបាននៅក្នុងកម្មវិធីទាញយក។",
 
