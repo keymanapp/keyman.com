@@ -265,11 +265,7 @@ html {
 	unicode-range: U+1780-17FF, U+19E0-19FF;
 }
 
-/* Khmer */
-:lang(km) {
-	/* The browser will automatically use Busra for Khmer chars and Cabin or Sans-serif for others */
-	font-family: 'Busra','Cabin', sans-serif;
-}
+/* Alphabetically */
 
 /* Amharic */
 :lang(amh).lang-example {
@@ -289,6 +285,12 @@ html {
 /* Lao */
 :lang(lao).lang-example {
 	font-family: LaoWeb;
+}
+
+/* Khmer */
+:lang(km) {
+	/* The browser will automatically use Busra for Khmer chars and Cabin or Sans-serif for others */
+	font-family: Busra, Cabin, sans-serif;
 }
 
 /* Malayalam
