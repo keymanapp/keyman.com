@@ -1,8 +1,11 @@
 <?php
+  use \Keyman\Site\com\keyman\Locale;
+
   if(!isset($_SESSION)) {
     session_set_cookie_params(["SameSite" => "None"]);   // Allow use in iframe, needed for Download Keyboards dialog
     session_set_cookie_params(["Secure" => "true"]);     // None requires Secure to be set
     session_start();
+    $session_started = true;
   }
 
   if(isset($_REQUEST['embed'])) {
@@ -38,8 +41,14 @@
     // /.htaccess for full discussion (line ~32)
     //
     // Note: 'SameSite=None; secure' is required for embedding in Keyman
-    // Configuration for Windows because that uses an iframe to embed the search
+    // Configuration for Windows because it uses an iframe to embed the search,
+    // and otherwise cookies are blocked
     setcookie('embed_keyboards_no_locale_redirect', '1', ["secure" => true, "samesite" => 'None', 'path' => '/']);
+
+    if(!isset($_SESSION['lang'])) {
+      $_SESSION['lang'] = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
+    }
+    Locale::setOverrideLocale($_SESSION['lang']);
 
     $session_query = http_build_query([
       'embed' => $embed,
