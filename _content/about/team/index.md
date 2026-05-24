@@ -665,6 +665,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/165828871?v=4" alt="Tranhaiming" />](https://github.com/Tranhaiming "Tranhaiming")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/91034018?v=4" alt="tycebrown" />](https://github.com/tycebrown "tycebrown")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/72294724?v=4" alt="vadimfedulov101" />](https://github.com/vadimfedulov101 "vadimfedulov101")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/285030902?v=4" alt="Vivian5G56" />](https://github.com/Vivian5G56 "Vivian5G56")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/2664797?v=4" alt="vvasuki" />](https://github.com/vvasuki "vvasuki")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/48564040?v=4" alt="W-omer" />](https://github.com/W-omer "W-omer")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/26724689?v=4" alt="w3techy" />](https://github.com/w3techy "w3techy")
