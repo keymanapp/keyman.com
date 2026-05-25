@@ -50,7 +50,7 @@ return [
   "available_on_play_store" => "Keyman for Android is also available on the Play Store.",
 
   # Keyman for iPhone and iPad
-  "product_ios" => "Keyman for iPHone and iPad",
+  "product_ios" => "Keyman for iPhone and iPad",
 
   "available_on_app_store" => "Keyman for iPhone and iPad can be found on the App Store.",
 
