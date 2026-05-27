@@ -99,7 +99,6 @@ the on screen keyboard.</p>
 <ul>
   <li><a href='keyboards'>Keyman Cloud CDN Keyboard Catalogue</a></li>
   <li><a href='<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/cloud/version/2.0'>How to: retrieve the latest version of KeymanWeb from Keyman Cloud CDN</a></li>
-  <li><a href='index.2.0'>Using older versions of KeymanWeb</a></li>
 </ul>
 
 <br>
