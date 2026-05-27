@@ -104,7 +104,7 @@ relies on font source paths being configured in <a href='<?= KeymanHosts::Instan
 
 <table id='catalogue'>
   <thead>
-    <tr><th rowspan='2'>Name</th><th rowspan='2'>Filename</th><th rowspan='2'>Version</th><th rowspan='2' style='width:100px'>BCP 47 Code</th><th rowspan='2'>Language</th><th colspan='3'>Device Support</th><th>Source</th></tr>
+    <tr><th rowspan='2'>Keyboard Name</th><th rowspan='2'>Filename / Keyboard ID</th><th rowspan='2'>Version</th><th rowspan='2' style='width:100px'>BCP 47 Code</th><th rowspan='2'>Language</th><th colspan='3'>Device Support</th><th>Source</th></tr>
     <tr><th>Desktop</th><th>Phone</th><th>Tablet</th></tr>
   </thead>
   <tbody>
