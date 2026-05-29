@@ -3,6 +3,12 @@
   require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
   use Keyman\Site\Common\KeymanHosts;
 
+  use Keyman\Site\com\keyman\Locale;
+
+  Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
+  $_m_Downloads = function($id, ...$args) { return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); };
+  function _m_Downloads($id, ...$args) {    return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); }
+
   // Required
   head([
     'title' =>'Keyman Pre-release Versions',
@@ -42,8 +48,8 @@
 <p><a href='<?=KeymanHosts::Instance()->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
 
 <?php
-  downloadSection('Keyman for Windows',         'windows', 'keyman-$version.exe', 'beta alpha');
-  downloadSection('Keyman for macOS',           'mac',     'keyman-$version.dmg', 'beta alpha');
+  downloadSection('product_windows',         'windows', 'keyman-$version.exe', 'beta alpha');
+  downloadSection('product_macos',           'mac',     'keyman-$version.dmg', 'beta alpha');
 ?>
 
 <h2 id='linux' class='red underline'>Keyman for Linux</h2>
@@ -60,8 +66,8 @@ sudo add-apt-repository ppa:keymanapp/keyman-alpha
 sudo apt install keyman onboard-keyman</code></pre>
 
 <?php
-  downloadSection('Keyman for Android',         'android', 'keyman-$version.apk', 'beta alpha');
-  //downloadSection('Keyman for iPhone and iPad',    'ios',     'keyman-ios-$version.ipa', 'beta alpha');
+  downloadSection('product_android',         'android', 'keyman-$version.apk', 'beta alpha');
+  //downloadSection('product_ios',    'ios',     'keyman-ios-$version.ipa', 'beta alpha');
 ?>
 
 <p>You can also <a href="https://play.google.com/apps/testing/com.tavultesoft.kmapro">sign up</a> to access pre-release versions through Google Play.</p>
@@ -73,7 +79,7 @@ through <a href="https://developer.apple.com/testflight/testers/">Apple's TestFl
 <?= iosTestFlightTable(); ?>
 
 <?php
-  downloadSection('KeymanWeb',                     'web',     'keymanweb-$version.zip', 'beta alpha');
+  downloadSection('product_keymanweb',                     'web',     'keymanweb-$version.zip', 'beta alpha');
 ?>
 
 <ul>
@@ -82,5 +88,5 @@ through <a href="https://developer.apple.com/testflight/testers/">Apple's TestFl
 </ul>
 
 <?php
-  downloadSection('Keyman Developer',              'developer', array('keymandeveloper-$version.exe', 'kmcomp-$version.zip'), 'beta alpha');
+  downloadSection('product_developer',              'developer', array('keymandeveloper-$version.exe', 'kmcomp-$version.zip'), 'beta alpha');
 ?>

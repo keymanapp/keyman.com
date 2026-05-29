@@ -4,6 +4,11 @@
   require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
   require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Locale;
+
+  Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
+  $_m_Downloads = function($id, ...$args) { return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); };
+  function _m_Downloads($id, ...$args) {    return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); }
 
   if(!isset($_REQUEST['version'])) {
     echo "version parameter is required.";
@@ -119,9 +124,9 @@
 </div>
 
 <?php
-  downloadSection('Keyman for Windows',         'windows',   ['keyman-$version.exe', 'keymandesktop-$version.exe'], $tier);
-  downloadSection('Keyman for macOS',           'mac',     'keyman-$version.dmg', $tier);
-  downloadSection('Keyman for Android',         'android', 'keyman-$version.apk', $tier);
+  downloadSection('product_windows',         'windows',   ['keyman-$version.exe', 'keymandesktop-$version.exe'], $tier);
+  downloadSection('product_macos',           'mac',     'keyman-$version.dmg', $tier);
+  downloadSection('product_android',         'android', 'keyman-$version.apk', $tier);
 ?>
 
 <p>Keyman for Android is also available on the Play Store.</p>
@@ -142,10 +147,10 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre></blockquote>
 <h2 class='red underline large'>Products for Software Developers</h2>
 
 <?php
-  downloadSection('KeymanWeb',                     'web',       'keymanweb-$version.zip',             $tier);
-  downloadSection('Keyman Developer',              'developer', 'keymandeveloper-$version.exe',       $tier);
-  downloadSection('Keyman Engine for Android',     'android',   'keyman-engine-android-$version.zip', $tier, 'android-engine');
-  downloadSection('Keyman Engine for iOS',         'ios',       'keyman-engine-ios-$version.zip',     $tier, 'ios-engine');
+  downloadSection('product_keymanweb',          'web',       'keymanweb-$version.zip',             $tier);
+  downloadSection('product_developer',          'developer', 'keymandeveloper-$version.exe',       $tier);
+  downloadSection('product_engine_android',     'android',   'keyman-engine-android-$version.zip', $tier, 'android-engine');
+  downloadSection('product_engine_ios',         'ios',       'keyman-engine-ios-$version.zip',     $tier, 'ios-engine');
 ?>
 
 <br/>
