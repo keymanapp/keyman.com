@@ -66,7 +66,7 @@
 </ul>
 
 <?php
-  downloadSection('Keyman 11 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
+  downloadSection('product_macos',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 11 for macOS?</h3>
@@ -92,7 +92,7 @@ sudo apt-get install keyman onboard</code></pre></blockquote>
 </ul>
 
 <?php
-  downloadSection('Keyman for Android 11', 'android', 'keyman-$version.apk', 'stable');
+  downloadSection('product_android', 'android', 'keyman-$version.apk', 'stable');
 ?>
 <li>Keyman for Android is available on the Play Store.</li>
 <?= $playstoreTable ?>
@@ -122,7 +122,7 @@ sudo apt-get install keyman onboard</code></pre></blockquote>
 </ul>
 
 <?php
-  downloadSection('KeymanWeb 11', 'web', 'keymanweb-$version.zip', 'stable');
+  downloadSection('product_keymanweb', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <!--h3>What's New in KeymanWeb 11?</h3-->
@@ -131,7 +131,7 @@ sudo apt-get install keyman onboard</code></pre></blockquote>
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-  downloadSection('Keyman Developer 11',    'developer', 'keymandeveloper-$version.exe', 'stable');
+  downloadSection('product_developer',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 11?</h3>

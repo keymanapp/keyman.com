@@ -72,7 +72,7 @@ head([
 <h1 class='red underline'>User Software</h1>
 
 <?php
-downloadSection('Keyman 14 for Windows',   'windows',     'keyman-$version.exe', 'stable');
+downloadSection('product_windows',   'windows',     'keyman-$version.exe', 'stable');
 ?>
 
 <h3>What's New in Keyman 14 for Windows?</h3>
@@ -98,7 +98,7 @@ downloadSection('Keyman 14 for Windows',   'windows',     'keyman-$version.exe',
 
 
 <?php
-downloadSection('Keyman 14 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
+downloadSection('product_macos',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 14 for macOS?</h3>
@@ -144,7 +144,7 @@ sudo apt install keyman onboard-keyman
 </ul>
 
 <?php
-downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stable');
+downloadSection('product_android', 'android', 'keyman-$version.apk', 'stable');
 ?>
 
 <?= $playstoreTable ?>
@@ -188,7 +188,7 @@ downloadSection('Keyman 14 for Android', 'android', 'keyman-$version.apk', 'stab
 
 
 <?php
-downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'stable');
+downloadSection('product_keymanweb', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 14?</h3>
@@ -208,7 +208,7 @@ downloadSection('KeymanWeb 14', 'web', 'keymanweb-$version.zip', 'stable');
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-downloadSection('Keyman Developer 14',    'developer', 'keymandeveloper-$version.exe', 'stable');
+downloadSection('product_developer',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 14?</h3>

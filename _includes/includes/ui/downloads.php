@@ -2,6 +2,8 @@
 
   require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Locale;
+  Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
 
   $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . '/api/version/2.0'));
   //if($versions === NULL || $versions === FALSE) {
@@ -29,7 +31,7 @@
   function downloadSection($product, $platform, $filepattern, $tiers = '', $target = '') {
     if($target == '') $target = $platform;
 
-    echo sprintf("<h2 id='%s' class='red underline'>%s</h2>\n\n", 
+    echo sprintf("<h2 id='%s' class='red underline'>%s</h2>\n\n",
       $target, _m_Downloads($product));
     $tiers = explode(' ',$tiers);
     foreach($tiers as $tier) {

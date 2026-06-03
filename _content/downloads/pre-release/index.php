@@ -6,8 +6,6 @@
   use Keyman\Site\com\keyman\Locale;
 
   Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
-  $_m_Downloads = function($id, ...$args) { return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); };
-  function _m_Downloads($id, ...$args) {    return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); }
 
   // Required
   head([
