@@ -110,18 +110,18 @@ END;
 
       // Desktop layout
 echo <<<END
-          <p>
+          <div class='menu-bar'>
             <div id='$divID' class='$globeClass'>
 END;
 ?>
-              <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
+              <h3><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></h3>
               <div class="menu-item-dropdown">
                 <div class="menu-dropdown-inner">
                   <?= Menu::render_ui_list(); ?>
                 </div>
               </div>
             </div>
-          </p>
+          </div>
 <?php
     }
 
@@ -220,7 +220,7 @@ END;
         </div>
     </div>
     <div id="top-menu-bg"></div>
-    <div id="top-menu1">
+    <div class="menu-bar" id="top-menu1">
         <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" alt="Keyman logo" /></a>
         <div id='help1'>
           <form action="/<?=$fields->pageLocale?>/search/" method="get" role="search">
