@@ -1,14 +1,15 @@
 <?php
-
-/*
- * Keyman is copyright (C) SIL Global. MIT License.
- */
-
+  /*
+  * Keyman is copyright (C) SIL Global. MIT License.
+  */
   declare(strict_types=1);
 
   namespace Keyman\Site\com\keyman;
 
   use \Keyman\Site\Common\KeymanHosts;
+  use \Keyman\Site\com\keyman\Session;
+
+  Session::Start();
 
   function define_display_locales() {
     $_defined_locales = json_decode(file_get_contents(__DIR__ . '/locales.json'), true);
@@ -32,6 +33,14 @@
     private static $invalidLocale = false;
 
     /**
+     * For pages which don't belong in the _content hierarchy, such as 404.php,
+     * we do not want to save the selected locale to the session, because it may
+     * not be correct, and we also want to skip redirection when an invalid
+     * locale is found.
+     */
+    public static $saveLocale = true;
+
+    /**
      * Return the current locales. Fallback to 'en'
      * @return $currentLocales
      */
@@ -40,6 +49,13 @@
         Locale::setLocaleFromURL();
       }
       return self::$currentLocales;
+    }
+
+    /**
+     * Returns an array of available locales, e.g. ["en","de",...]
+     */
+    public static function availableLocales() {
+      return array_keys(DISPLAY_NAMES);
     }
 
     /**
@@ -79,7 +95,9 @@
       // First component of the URL is always the locale
       if(preg_match('/^\\/(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)\\//', $_SERVER['REQUEST_URI'], $matches)) {
         if(!isset(DISPLAY_NAMES[$matches[1]])) {
-          // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
+          // Note: this is an unsupported locale; this should not be possible
+          // with the current .htaccess design for any pages in _content,
+          // because we only accept valid locales for rewriting to those files
           $pageLocale = Locale::DEFAULT_LOCALE;
           self::$invalidLocale = true;
         } else {
@@ -99,15 +117,29 @@
      *                    locales (other than 'en', which is always added)
      */
     private static function setLocale($locale, $fallback) {
+      self::$currentLocales = [];
+
       if ($fallback) {
-        self::$currentLocales = self::calculateFallbackLocales($locale);
+        $locales = self::calculateFallbackLocales($locale);
+        // Only add recognized locales
+        foreach($locales as $l) {
+          if(isset(DISPLAY_NAMES[$l])) {
+            array_push(self::$currentLocales, $l);
+          }
+        }
       } else {
-        self::$currentLocales =[$locale];
+        if(isset(DISPLAY_NAMES[$locale])) {
+          self::$currentLocales = [$locale];
+        }
       }
 
       if(!in_array(Locale::DEFAULT_LOCALE, self::$currentLocales)) {
         // Push default fallback locale to the end
         array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
+      }
+
+      if(self::$saveLocale) {
+        $_SESSION['lang'] = self::$currentLocales[0];
       }
     }
 

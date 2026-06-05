@@ -1,5 +1,39 @@
 <?php
+  /*
+   * Keyman is copyright (C) SIL Global. MIT License.
+   */
+  declare(strict_types=1);
+
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
+
+  // Avoid showing a HTML response for requests where the Accept: header is
+  // missing or does not correspond to a text/html-type, so that the client
+  // doesn't get HTML where it doesn't expect it
+
+  $negotiator = new \Negotiation\Negotiator();
+
+  if(empty($_SERVER['HTTP_ACCEPT'])) {
+    $acceptHeader = 'unknown';
+  } else {
+    $acceptHeader = $_SERVER['HTTP_ACCEPT'];
+  }
+
+  $mediaType = $negotiator->getBest($acceptHeader, ['text/html']);
+  if(!$mediaType) {
+    header('HTTP/1.0 404 Page not found');
+    return;
+  }
+
+  // We need to avoid saving any locale that is calculated on this page because
+  // 404.php requests can arise unexpectedly, and the URL may be anything, so
+  // calculating locale from page url could result in it being reset to
+  // `DEFAULT_LOCALE`. For example, missing images or background requests like
+  // Chrome requesting /.well-known/appspecific/com.chrome.devtools.json when
+  // DevTools is open.
+
+  use Keyman\Site\com\keyman\Locale;
+  Locale::$saveLocale = false;
 
   head([
     'title' => "Page not found",
@@ -16,7 +50,7 @@
       $s = @htmlspecialchars($v, ENT_QUOTES, 'ISO-8859-1');
     return $s;
   }
-  
+
 ?>
 <h1>Page not found</h1>
 
