@@ -338,7 +338,8 @@ RedirectMatch "/connectwithart(/|$)" "https://sites.google.com/sil.org/connectwi
 
 RedirectMatch "^/lt4all(/?)$"          "/ldml/lt4all"
 
-# per-language landing pages
+# per-language permalinks -- no need for i18nized versions
+
 RedirectMatch "^/albanian(/?)$"         "/keyboards/basic_kbdal"
 RedirectMatch "^/ancient-egyptian(/?)$" "/keyboards/hieroglyphic"
 RedirectMatch "^/ancient-hebrew(/?)$"   "/keyboards/galaxie_greek_hebrew_mnemonic"
@@ -378,19 +379,29 @@ RedirectMatch 301 "^/(amharic|burmese|cameroon|ethiopic|eurolatin|greek|ipa|sinh
 
 # ------------------------------------------------------------------
 # i18n redirect --> /file to <lang>/file
+#
+# Uses redirect_locale.php to find appropriate lang to redirect to:
+# * existing session language, if already set,
+# * HTTP Accept-Language header to find a reasonable default
 # ------------------------------------------------------------------
 
 #
-# if $1 is a folder or file in /_content, then redirect to currentlang (en?)
-# e.g. would redirect windows/download --> en/windows/download/
+# if $1 is a folder or file that exists in /_content, then redirect
+# e.g. would redirect windows/download --> <lang>/windows/download/
+#
 RewriteCond "%{DOCUMENT_ROOT}/_content/$1.php" -f [OR]
 RewriteCond "%{DOCUMENT_ROOT}/_content/$1.md" -f [OR]
 RewriteCond "%{DOCUMENT_ROOT}/_content/$1" -d
-RewriteRule "^(.*)$" "en/$1" [R,L]
+RewriteCond "%{REQUEST_METHOD}" GET [OR]
+RewriteCond "%{REQUEST_METHOD}" HEAD
+RewriteRule "^(.*)$" "/go/site/redirect_locale.php" [L]
 
 #
 # Paths involving queries (don't match on file/directory)
-RewriteRule "^(downloads/releases|keyboards)/(.+)$" "en/$1/$2" [R,L]
+# - downloads/releases
+# - keyboards
+#
+RewriteRule "^(downloads/releases|keyboards)/(.+)$" "/go/site/redirect_locale.php" [L]
 
 # ##################################################################
 # Rewriting

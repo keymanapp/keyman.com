@@ -1,12 +1,8 @@
 <?php
   use \Keyman\Site\com\keyman\Locale;
+  use \Keyman\Site\com\keyman\Session;
 
-  if(!isset($_SESSION)) {
-    session_set_cookie_params(["SameSite" => "None"]);   // Allow use in iframe, needed for Download Keyboards dialog
-    session_set_cookie_params(["Secure" => "true"]);     // None requires Secure to be set
-    session_start();
-    $session_started = true;
-  }
+  Session::Start();
 
   if(isset($_REQUEST['embed'])) {
     $embed = $_REQUEST['embed'];

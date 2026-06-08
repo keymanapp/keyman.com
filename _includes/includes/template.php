@@ -1,8 +1,13 @@
 <?php
+  /*
+   * Keyman is copyright (C) SIL Global. MIT License.
+   */
+
   require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
 
   // *Don't* use autoloader here because of potential side-effects in older pages
   require_once _KEYMANCOM_INCLUDES . '/2020/Util.php';
+  require_once _KEYMANCOM_INCLUDES . '/2020/Session.php'; // must be before Locale.php
   require_once _KEYMANCOM_INCLUDES . '/locale/Locale.php';
   require_once _KEYMANCOM_COMMON . '/KeymanVersion.php';
   require_once _KEYMANCOM_INCLUDES . '/2020/templates/Head.php';
