@@ -604,7 +604,18 @@ span.button.disabled{
 
 #help #ui-language {
 	position: relative;
- }
+  width: 40px;
+}
+
+#help .menu-bar {
+	float: right;
+	margin-top: -10px;
+	margin-left: 10px;
+}
+
+#help #ui-language img {
+	margin-left: 0;
+}
 
 /* Search Box */
 
@@ -726,6 +737,7 @@ input[type="search"] {
 
 #help1 form {
 	float: left;
+	margin: 12px 0 38px 0;
 }
 
 #help1 #help1-donate {
@@ -737,10 +749,15 @@ input[type="search"] {
 	padding: 4px 6px;
 	border-radius: 4px;
 	box-shadow: 0px 0px 4px rgba(185, 32, 52, 0.5);
-	margin: 0px 12px 0 0;
+	margin: 12px 12px 38px 0;
 	vertical-align: top;
 	display: inline-block;
 	height: 12px;
+	/* float: right; */
+}
+
+#help1 > a {
+	margin: 12px 0 38px 0;
 }
 
 #help1 .search-wrap {
@@ -749,9 +766,9 @@ input[type="search"] {
 
 #help1 #ui-language1 {
 	width: 28px;
-	margin: 0px 0px 14px 8px;
+	margin: 0px 0px 14px 12px;
 	vertical-align: top;
-	height: 22px;
+	height: 54px;
 }
 
 /* hover menus */
@@ -818,8 +835,15 @@ input[type="search"] {
 	padding: 0px;
 	text-align: left;
 	line-height: 1.8em;
-	width: 260px;
 	margin: 0px 10px;
+}
+
+#top-menu1 .menu-item-dropdown ul li {
+	width: 260px;
+}
+
+#top-menu1 #ui-language1 .menu-item-dropdown ul li {
+	width: auto;
 }
 
 .menu-item-dropdown ul li a {
@@ -840,7 +864,7 @@ input[type="search"] {
 	background: #e2e2e2;
 }
 
-#top-menu1 .menu-item {
+.menu-bar .menu-item {
 	width: 160px;
 	height: 50px;
 	text-align: center;
@@ -848,54 +872,58 @@ input[type="search"] {
 	overflow-y: visible;
 }
 
-#top-menu1 .menu-item:hover,
-#top-menu1 .menu-item img:hover,
-#top-menu1 .menu-item.menu-item-force {
+.menu-bar .menu-item:hover,
+.menu-bar .menu-item img:hover,
+.menu-bar .menu-item.menu-item-force {
 	color: #B92034;
 }
 
-#top-menu1 .menu-item:hover,
-#top-menu1 .menu-item.menu-item-force {
+.menu-bar .menu-item:hover,
+.menu-bar .menu-item.menu-item-force {
 	background: #f2f2f2;
 	box-shadow: 1px 1px 4px #000;
 	position: relative;
 }
 
-#top-menu1 .menu-item:hover .header-triangle img,
-#top-menu1 .menu-item-force .header-triangle img {
+.menu-bar .menu-item:hover .header-triangle img,
+.menu-bar .menu-item-force .header-triangle img {
 	background: url('../img/triangle.png') 17px 0;
 }
 
-#top-menu1 .menu-item a {
+.menu-bar .menu-item a {
 	color: #000;
 	text-decoration: none;
 }
 
-#top-menu1 .menu-item h3 {
+.menu-bar .menu-item h3 {
 	font-weight: 600;
 }
 
-#top-menu1 .header-triangle img {
+.menu-bar .header-triangle img {
 	margin-left: 5px;
 	height: 9px;
 	width: 17px;
 	background: url('../img/triangle.png') 0 0;
 }
 
-#top-menu1 .menu-item-dropdown {
+.menu-bar .menu-item-dropdown {
 	padding: 0px 5px 5px 5px;
 	text-align: left;
 }
 
-#top-menu1 .menu-dropdown-inner {
+.menu-bar .menu-dropdown-inner {
 	left: -5px;
-	width: 280px;
 }
 
-#ui-language .menu-item-dropdown,
+#ui-language .menu-item-dropdown {
+ 	top: 50px;
+  right: -10px;
+	width: 180px;
+}
+
 #ui-language1 .menu-item-dropdown {
-	top: 26px;
-	left: -150px;
+ 	top: 44px;
+  right: -10px;
 	width: 180px;
 }
 
