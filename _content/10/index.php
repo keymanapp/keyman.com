@@ -49,7 +49,7 @@
 
 
 <?php
-  downloadSection('Keyman Desktop 10',    'windows', 'keymandesktop-$version.exe', 'stable');
+  downloadSection('product_windows',    'windows', 'keymandesktop-$version.exe', 'stable');
 ?>
 
 <h3>What's New in Keyman Desktop 10 for Windows?</h3>
@@ -58,7 +58,7 @@
     supports Unicode 11.0 and BCP 47 language identifiers. Desktop 10 also includes additional user interface for Turkish.</p>
 
 <?php
-  downloadSection('Keyman 10 for macOS',   'mac',     'keyman-$version.dmg', 'stable');
+  downloadSection('product_macos',   'mac',     'keyman-$version.dmg', 'stable');
 ?>
 
 <h3>What's New in Keyman 10 for macOS?</h3>
@@ -68,7 +68,7 @@
   and easily install keyboard packages by double-clicking the kmp file.</p>
 
 <?php
-  downloadSection('Keyman for Android 10',            'android', 'keyman-$version.apk', 'stable');
+  downloadSection('product_android',            'android', 'keyman-$version.apk', 'stable');
 ?>
 <p>Keyman for Android is also available on the Play Store.</p>
 <?= $playstoreTable ?>
@@ -92,7 +92,7 @@
   Swift 4.0 app.</p>
 
 <?php
-  downloadSection('KeymanWeb 10', 'web', 'keymanweb-$version.zip', 'stable');
+  downloadSection('product_keymanweb', 'web', 'keymanweb-$version.zip', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 10?</h3>
@@ -104,7 +104,7 @@
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-  downloadSection('Keyman Developer 10',    'developer', 'keymandeveloper-$version.exe', 'stable');
+  downloadSection('product_developer',    'developer', 'keymandeveloper-$version.exe', 'stable');
 ?>
 
 <p><a href="<?= KeymanHosts::Instance()->help_keyman_com ?>/developer/10.0/">Keyman Developer 10</a> allows you to create

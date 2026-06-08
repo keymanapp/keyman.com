@@ -7,12 +7,6 @@
   use Keyman\Site\com\keyman\Locale;
 
   Locale::definePageScope('LOCALE_KEYBOARDS_SHARE', 'keyboards/share');
-  $_m = function($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARDS_SHARE, $id, ...$args);
-  };
-  function _m($id, ...$args) {
-    return Locale::m(LOCALE_KEYBOARDS_SHARE, $id, ...$args);
-  }
 
   if(!isset($_REQUEST['id'])) {
     header('Location: /keyboards');
@@ -47,19 +41,19 @@
   // Keyboard not found, so let's explain.
 
   $head_options = [
-    'title' => $_m('head_title', $id)
+    'title' => $_m_Keyboards_Share('head_title', $id)
   ];
 
   head($head_options);
 ?>
 
-<h1><?= $_m('h1_sharing_keyboard', $id) ?></h1>
+<h1><?= $_m_Keyboards_Share('h1_sharing_keyboard', $id) ?></h1>
 
-<p><?= $_m('line1') ?> <?= $_m('line2') ?> <b class='red'><?=$id?></b>, <?= $_m('line3') ?></p>
+<p><?= $_m_Keyboards_Share('line1') ?> <?= $_m_Keyboards_Share('line2') ?> <b class='red'><?=$id?></b>, <?= $_m_Keyboards_Share('line3') ?></p>
 
-<h2><?= $_m('h2_how_to_get') ?></h2>
+<h2><?= $_m_Keyboards_Share('h2_how_to_get') ?></h2>
 
-<p><?= $_m('how_to_get_1') ?></p>
+<p><?= $_m_Keyboards_Share('how_to_get_1') ?></p>
 
-<p><?= $_m('how_to_get_2') ?> <a href='https://community.software.sil.org/c/keyman'>
-<?= $_m('keyman_forum') ?></a> <?= $_m('how_to_get_3') ?></p>
+<p><?= $_m_Keyboards_Share('how_to_get_2') ?> <a href='https://community.software.sil.org/c/keyman'>
+<?= $_m_Keyboards_Share('keyman_forum') ?></a> <?= $_m_Keyboards_Share('how_to_get_3') ?></p>

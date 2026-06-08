@@ -170,15 +170,44 @@
     }
 
     /**
-     * Defines a global variable for page locale strings and also
-     * tells locale system that current page uses locales
-     * @param $define -
-     * @param $id - folder containing locale strings, relative to /_includes/locale/strings
+     * Defines a global variable for page locale strings and also tells locale
+     * system that current page uses locales. Also defines a global function and
+     * variable for the page scope, so that we can use shorter function calls to
+     * get localized strings in the page code.
+     *
+     * @param $define - a string such as 'LOCALE_DOWNLOADS', which will be
+     *                  defined as a constant for the page scope
+     * @param $id - folder containing locale strings, relative to
+     *              /_includes/locale/strings, such as 'downloads'. This will be
+     *              used as the domain for the page scope, and also used to
+     *              define a global variable and function for the page scope,
+     *              e.g. $_m_Downloads and _m_Downloads()
+     *
+     * Note that subfolders are supported, and the global variable and function
+     * will be defined with underscores, e.g. for id 'keyboards/install', the
+     * global variable and function will be `$_m_Keyboards_Install` and
+     * `_m_Keyboards_Install()`.
      */
     public static function definePageScope($define, $id) {
       global $page_is_using_locale;
       $page_is_using_locale = true;
+      if(defined($define)) {
+        // It is valid to definePageScope repeatedly but the id must match
+        $previousId = constant($define);
+        if($previousId != $id) {
+          trigger_error("constant $define already defined as '$previousId', redefinition as '$id'", E_USER_ERROR);
+        }
+        return;
+      }
       define($define, $id);
+
+      $scope = ucwords(str_replace('/', '_', $id), " \t\r\n\f\v_");
+      $script = <<<EOT
+        global \$_m_$scope;
+        \$_m_$scope = function(\$id, ...\$args) { return \Keyman\Site\com\keyman\Locale::m($define, \$id, ...\$args); };
+        function _m_$scope(\$id, ...\$args) { return \Keyman\Site\com\keyman\Locale::m($define, \$id, ...\$args); }
+EOT;
+      eval($script);
     }
 
     /**
