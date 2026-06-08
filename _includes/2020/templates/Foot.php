@@ -84,6 +84,13 @@
   <div id="jira-feedback-tab"><h4><a href='https://community.software.sil.org/c/keyman'>Support</a></h4></div>
 </div>
 <div id="KeymanWebControl"></div>
+<?php
+      if(!Locale::PageIsInternationalized()) {
+        echo "<script>document.getElementById('locale-not-internationalized').className = 'locale-visible';</script>";
+      } else if(!Locale::PageIsLocalized()) {
+        echo "<script>document.getElementById('locale-not-localized').className = 'locale-visible';</script>";
+      }
+?>
 </body>
 </html>
 <?php

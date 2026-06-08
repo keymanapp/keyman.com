@@ -25,6 +25,8 @@
     // xx-YY locale as specified in crowdin %locale%
     private static $currentLocales = [];
 
+    private static $domains = [];
+
     // strings is an array of domains.
     // Each domain is an array of locales
     // Each locale is an object? with loaded flag and array of strings
@@ -232,6 +234,7 @@
         return;
       }
       define($define, $id);
+      array_push(self::$domains, $id);
 
       $scope = ucwords(str_replace('/', '_', $id), " \t\r\n\f\v_");
       $script = <<<EOT
@@ -241,6 +244,21 @@
 EOT;
       eval($script);
     }
+
+    public static function PageIsInternationalized() {
+      global $page_is_using_locale;
+      return !!$page_is_using_locale;
+    }
+
+    public static function PageIsLocalized() {
+      if(!self::PageIsInternationalized()) return false;
+      if(!array_key_exists(self::$domains[0], self::$strings)) return false;
+      $s = self::$strings[self::$domains[0]];
+      if(!array_key_exists(self::pageLocale(), $s)) return false;
+      $s = $s[self::pageLocale()];
+      return $s->loaded;
+    }
+
 
     /**
      * Given a locale, return an array of fallback locales

@@ -3093,3 +3093,24 @@ ul.beta-link a {
 		padding-left: 8px;
 	}
 }
+
+/* localization */
+
+div#locale-not-localized,
+div#locale-not-internationalized {
+	margin: 8px 0;
+	padding: 16px 16px;
+	background: #B92034;
+	color: white;
+	display: none;
+}
+
+div#locale-not-localized a,
+div#locale-not-internationalized a {
+	color: white;
+}
+
+div.locale-visible#locale-not-localized,
+div.locale-visible#locale-not-internationalized {
+	display: block;
+}
