@@ -3115,3 +3115,15 @@ div.locale-visible#locale-not-localized,
 div.locale-visible#locale-not-internationalized {
 	display: block;
 }
+
+#locale-phone-menu {
+	display: none;
+}
+
+.phone-menu-item h3#locale-phone-menu-title {
+	border-bottom: none;
+}
+
+.locale-menu-visible#locale-phone-menu {
+	display: block;
+}
