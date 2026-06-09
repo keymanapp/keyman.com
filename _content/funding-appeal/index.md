@@ -4,7 +4,7 @@ title: Keep Keyman Free to All
 
 <link rel="stylesheet" href="/cdn/dev/css/funding.css">
 
-## Update 9 July 2026
+## Update 9 June 2026
 
 We are now at 60.31% of our 2026 need. Will you donate the cost of a takeaway coffee a week? Every donation helps!
 
