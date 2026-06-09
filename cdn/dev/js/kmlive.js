@@ -81,6 +81,10 @@ function loaded(){
     $("#phone-menu").toggleClass('menu-visible');
   });
 
+  $('#locale-phone-menu-title').click(function(event) {
+    $("#locale-phone-menu").toggleClass('locale-menu-visible');
+  });
+
   // Downloads
   $('.download-cta-button').click(function(e){
     var platform = $(this).closest('.download-cta-big').attr('id');

@@ -53,6 +53,13 @@
       return self::$currentLocales;
     }
 
+    public static function currentLocaleName() {
+      if(count(self::$currentLocales) == 0) {
+        Locale::setLocaleFromURL();
+      }
+      return DISPLAY_NAMES[self::$currentLocales[0]];
+    }
+
     /**
      * Returns an array of available locales, e.g. ["en","de",...]
      */
