@@ -167,10 +167,6 @@
   function begin_main($addSection2){
     echo '<div class="main">';
     if($addSection2) echo '<div id="section2"><div class="wrapper">';
-    echo <<<END
-    <div id="locale-not-internationalized">This page has not yet been updated for languages other than English. <a href='/about/get-involved'>Can you help make this happen?</a></div>
-    <div id="locale-not-localized">This page is not yet available in your selected language. <a href='https://translate.keyman.com'>Help us translate this page</a></div>
-END;
   }
 
   function foot($args=[]){

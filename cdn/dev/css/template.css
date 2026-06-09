@@ -355,7 +355,7 @@ html {
 
 .main>#section2>.wrapper {
 	background: #f2f2f2;
-	padding-bottom: 30px;
+	/* padding-bottom: 30px; moved to localization divs */
 }
 
 .button {
@@ -3098,11 +3098,12 @@ ul.beta-link a {
 
 div#locale-not-localized,
 div#locale-not-internationalized {
-	margin: 8px 0;
+	margin: 38px 0 0;
 	padding: 16px 16px;
 	background: #B92034;
 	color: white;
 	display: none;
+	clear: both;
 }
 
 div#locale-not-localized a,
