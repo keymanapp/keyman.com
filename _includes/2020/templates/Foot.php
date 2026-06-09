@@ -16,6 +16,9 @@
       $fields->pageLocale = Locale::pageLocale();
 ?>
 
+        <div id="locale-not-internationalized">This page has not yet been updated for languages other than English. <a href='/about/get-involved'>Can you help make this happen?</a></div>
+        <div id="locale-not-localized">This page is not yet available in your selected language. <a href='https://translate.keyman.com'>Help us translate this page</a></div>
+
       </div>
     </div>
 </div>
@@ -84,6 +87,13 @@
   <div id="jira-feedback-tab"><h4><a href='https://community.software.sil.org/c/keyman'>Support</a></h4></div>
 </div>
 <div id="KeymanWebControl"></div>
+<?php
+      if(!Locale::PageIsInternationalized()) {
+        echo "<script>document.getElementById('locale-not-internationalized').className = 'locale-visible';</script>";
+      } else if(!Locale::PageIsLocalized()) {
+        echo "<script>document.getElementById('locale-not-localized').className = 'locale-visible';</script>";
+      }
+?>
 </body>
 </html>
 <?php
