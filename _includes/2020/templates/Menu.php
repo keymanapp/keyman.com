@@ -73,12 +73,12 @@ END;
       echo "<ul>\n                <!-- Just use autonyms -->\n";
       $linkArray = array();
       foreach(DISPLAY_NAMES as $id => $name) {
-        $linkArray[$id] = array(Menu::change_ui_language($id), $name);
+        $linkArray[$id] = array(Menu::change_ui_language($id), $name, $id == Locale::pageLocale() ? 'locale-selected' : '');
       }
 
       foreach($linkArray as $id) {
 echo <<<END
-                <li><a href="{$id[0]}">{$id[1]}</a></li>\n
+                <li class="${id[2]}"><a href="{$id[0]}">{$id[1]}</a></li>\n
 END;
       }
       echo "</ul>";
