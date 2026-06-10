@@ -11,6 +11,8 @@
 
   Session::Start();
 
+  $LOCALE_DEBUG = isset($_REQUEST['LOCALE_DEBUG']);
+
   function define_display_locales() {
     $_defined_locales = json_decode(file_get_contents(__DIR__ . '/locales.json'), true);
     define('DISPLAY_NAMES', $_defined_locales);
@@ -339,6 +341,15 @@ EOT;
      * @param $args - optional remaining args to the format string
      */
     public static function m($domain, $id, ...$args) {
+      global $LOCALE_DEBUG;
+      if($LOCALE_DEBUG) {
+        $result = "◀️$id";
+        foreach($args as $arg) {
+          $result .= "{"."$arg}";
+        }
+        $result .= "▶️";
+        return $result;
+      }
       $str = self::getString($domain, $id);
       if (count($args) == 0) {
         return $str;
