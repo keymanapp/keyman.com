@@ -32,7 +32,7 @@
 </div>
 
 <?php
-  if (!betaTier()) {
+  if (betaTier()) {
     echo "<p>{$_m_Windows('try_beta', $beta_version)}</p>";
   }
 ?>
