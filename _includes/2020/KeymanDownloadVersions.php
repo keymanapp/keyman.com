@@ -4,6 +4,7 @@
   namespace Keyman\Site\com\keyman;
 
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Util;
 
   class KeymanDownloadVersions {
     private static $versions;
@@ -18,7 +19,7 @@
 
     static function getDownloadUrls() {
       if(empty(self::$versions))
-        self::$versions = @json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . '/api/version/2.0'));
+        self::$versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0', 'downloads.keyman.com-api_version_2.0.json'));
       return self::$versions;
     }
 

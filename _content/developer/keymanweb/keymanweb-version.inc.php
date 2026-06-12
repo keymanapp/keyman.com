@@ -2,10 +2,11 @@
 require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
 
 use Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\Util;
 
 function getKeymanWebHref()
 {
-  $json = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com . "/version/web");
+  $json = Util::call_api_keyman_com("/version/web", 'api.keyman.com-version_web.json');
   if ($json) {
     $json = json_decode($json);
   }

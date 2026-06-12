@@ -1,0 +1,697 @@
+{
+    "android": {
+        "alpha": {
+            "version": "19.0.245",
+            "files": {
+                "firstvoices-19.0.245.apk": {
+                    "name": "FirstVoices Keyboards",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "android",
+                    "stability": "alpha",
+                    "file": "firstvoices-19.0.245.apk",
+                    "md5": "f68073a7b0612fd165fa8f19886a6a38",
+                    "type": "apk",
+                    "build": "245",
+                    "size": 15351021
+                },
+                "keyman-19.0.245.apk": {
+                    "name": "Keyman for Android",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "android",
+                    "stability": "alpha",
+                    "file": "keyman-19.0.245.apk",
+                    "md5": "84c0f7405b92b46995f020cb007d2485",
+                    "type": "apk",
+                    "build": "245",
+                    "size": 12358379
+                },
+                "keyman-engine-android-19.0.245.zip": {
+                    "name": "Keyman Engine for Android",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "android",
+                    "stability": "alpha",
+                    "file": "keyman-engine-android-19.0.245.zip",
+                    "md5": "c9f2c6287618a365db807a7952722b4f",
+                    "type": "zip",
+                    "build": "245",
+                    "size": 1917302
+                }
+            }
+        },
+        "beta": {
+            "version": "18.0.234",
+            "files": {
+                "keyman-18.0.234.apk": {
+                    "name": "Keyman for Android",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "android",
+                    "stability": "beta",
+                    "file": "keyman-18.0.234.apk",
+                    "md5": "970275B922D6E82C6A286F7BDB023BEE",
+                    "type": "apk",
+                    "build": "234",
+                    "size": 12523345
+                },
+                "keyman-engine-android-18.0.234.zip": {
+                    "name": "Keyman Engine for Android",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "android",
+                    "stability": "beta",
+                    "file": "keyman-engine-android-18.0.234.zip",
+                    "md5": "AF5F4C9FA85FDA5488257E09024C3E6E",
+                    "type": "zip",
+                    "build": "234",
+                    "size": 1924010
+                }
+            }
+        },
+        "stable": {
+            "version": "18.0.249",
+            "files": {
+                "firstvoices-18.0.249.apk": {
+                    "name": "Firstvoices Keyboards",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "android",
+                    "stability": "stable",
+                    "file": "firstvoices-18.0.249.apk",
+                    "md5": "02C573C2E169316D3417E1655A422E6B",
+                    "type": "apk",
+                    "build": "249",
+                    "size": 15875157
+                },
+                "keyman-18.0.249.apk": {
+                    "name": "Keyman for Android",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "android",
+                    "stability": "stable",
+                    "file": "keyman-18.0.249.apk",
+                    "md5": "782208A25F851AA27D4F046F7740FFB1",
+                    "type": "apk",
+                    "build": "249",
+                    "size": 12856997
+                },
+                "keyman-engine-android-18.0.249.zip": {
+                    "name": "Keyman Engine for Android",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "android",
+                    "stability": "stable",
+                    "file": "keyman-engine-android-18.0.249.zip",
+                    "md5": "9226D940B39C530078FA366777D7EF04",
+                    "type": "zip",
+                    "build": "249",
+                    "size": 1890249
+                }
+            }
+        }
+    },
+    "ios": {
+        "alpha": {
+            "version": "19.0.245",
+            "files": {
+                "keyman-engine-ios-19.0.245.zip": {
+                    "name": "Keyman Engine for iOS",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "ios",
+                    "stability": "alpha",
+                    "file": "keyman-engine-ios-19.0.245.zip",
+                    "md5": "9200f76353bebadaaf3abc3e6ba5e236",
+                    "type": "zip",
+                    "build": "245",
+                    "size": 8056585
+                },
+                "keyman-ios-19.0.245.ipa": {
+                    "name": "Keyman for iPhone and iPad",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "ios",
+                    "stability": "alpha",
+                    "file": "keyman-ios-19.0.245.ipa",
+                    "md5": "9cc5b50c2cf24d27a4232974d30da6bd",
+                    "type": "ipa",
+                    "build": "245",
+                    "size": 12520084
+                }
+            }
+        },
+        "beta": {
+            "version": "18.0.234",
+            "files": {
+                "keyman-engine-ios-18.0.234.zip": {
+                    "name": "Keyman Engine for iOS",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "ios",
+                    "stability": "beta",
+                    "file": "keyman-engine-ios-18.0.234.zip",
+                    "md5": "1c50b782d88d1ec698ab32be098a978e",
+                    "type": "zip",
+                    "build": "234",
+                    "size": 8028188
+                },
+                "keyman-ios-18.0.234.ipa": {
+                    "name": "Keyman for iPhone and iPad",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "ios",
+                    "stability": "beta",
+                    "file": "keyman-ios-18.0.234.ipa",
+                    "md5": "aef8d647104c1cea5d80f2a84c69ae38",
+                    "type": "ipa",
+                    "build": "234",
+                    "size": 10590197
+                }
+            }
+        },
+        "stable": {
+            "version": "18.0.248",
+            "files": {
+                "firstvoices-ios-18.0.248.ipa": {
+                    "name": "FirstVoices Keyboards",
+                    "version": "18.0.248",
+                    "date": "2026-03-12",
+                    "platform": "ios",
+                    "stability": "stable",
+                    "file": "firstvoices-ios-18.0.248.ipa",
+                    "md5": "15a0143290066d72a285179a2484faac",
+                    "type": "ipa",
+                    "build": "248",
+                    "size": 13356956
+                },
+                "keyman-engine-ios-18.0.248.zip": {
+                    "name": "Keyman Engine for iOS",
+                    "version": "18.0.248",
+                    "date": "2026-03-12",
+                    "platform": "ios",
+                    "stability": "stable",
+                    "file": "keyman-engine-ios-18.0.248.zip",
+                    "md5": "521486c8087cc68885f8fc6fd01f175e",
+                    "type": "zip",
+                    "build": "248",
+                    "size": 8040180
+                },
+                "keyman-ios-18.0.248.ipa": {
+                    "name": "Keyman for iPhone and iPad",
+                    "version": "18.0.248",
+                    "date": "2026-03-12",
+                    "platform": "ios",
+                    "stability": "stable",
+                    "file": "keyman-ios-18.0.248.ipa",
+                    "md5": "74a25d8a28d62e844203696a92918689",
+                    "type": "ipa",
+                    "build": "248",
+                    "size": 10596299
+                }
+            }
+        }
+    },
+    "linux": {
+        "alpha": {
+            "version": "19.0.245",
+            "files": {
+                "keyman-19.0.245.tar.xz": {
+                    "name": "Keyman for Linux source tarball",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "linux",
+                    "stability": "alpha",
+                    "file": "keyman-19.0.245.tar.xz",
+                    "md5": "45d608b6f7d11b621d4bb0f5284a6e2d",
+                    "type": "tar.xz",
+                    "build": "245",
+                    "size": 1758760
+                }
+            }
+        },
+        "beta": {
+            "version": "18.0.234",
+            "files": {
+                "keyman-18.0.234.tar.gz": {
+                    "name": "Keyman for Linux",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "linux",
+                    "stability": "beta",
+                    "file": "keyman-18.0.234.tar.gz",
+                    "md5": "f0107463ea0921580c8bdeddc47cedd1",
+                    "type": "tar.gz",
+                    "build": "234",
+                    "size": 6842943
+                }
+            }
+        },
+        "stable": {
+            "version": "18.0.249",
+            "files": {
+                "keyman-18.0.249.tar.gz": {
+                    "name": "Keyman for Linux",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "linux",
+                    "stability": "stable",
+                    "file": "keyman-18.0.249.tar.gz",
+                    "md5": "848fc3c0ec03b3ab867ff6593872cc9a",
+                    "type": "tar.gz",
+                    "build": "249",
+                    "size": 6850245
+                }
+            }
+        }
+    },
+    "mac": {
+        "alpha": {
+            "version": "19.0.245",
+            "files": {
+                "keyman-19.0.245.dmg": {
+                    "name": "Keyman4MacIM",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "mac",
+                    "stability": "alpha",
+                    "file": "keyman-19.0.245.dmg",
+                    "md5": "72f7e4d3c1db532f9079a536d6cab192",
+                    "type": "dmg",
+                    "build": "245",
+                    "size": 11821196
+                }
+            }
+        },
+        "beta": {
+            "version": "18.0.234",
+            "files": {
+                "keyman-18.0.234.dmg": {
+                    "name": "Keyman4MacIM",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "mac",
+                    "stability": "beta",
+                    "file": "keyman-18.0.234.dmg",
+                    "md5": "02da9d1ac908cb0f472db196fa48fcc2",
+                    "type": "dmg",
+                    "build": "234",
+                    "size": 10804825
+                }
+            }
+        },
+        "stable": {
+            "version": "18.0.248",
+            "files": {
+                "keyman-18.0.248.dmg": {
+                    "name": "Keyman4MacIM",
+                    "version": "18.0.248",
+                    "date": "2026-03-12",
+                    "platform": "mac",
+                    "stability": "stable",
+                    "file": "keyman-18.0.248.dmg",
+                    "md5": "8f9bef7003e579a65bdd2546ec507220",
+                    "type": "dmg",
+                    "build": "248",
+                    "size": 11407768
+                }
+            }
+        }
+    },
+    "web": {
+        "alpha": {
+            "version": "19.0.245",
+            "files": {
+                "keymanweb-19.0.245.zip": {
+                    "name": "KeymanWeb",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "web",
+                    "stability": "alpha",
+                    "file": "keymanweb-19.0.245.zip",
+                    "md5": "f4ccf42bd13b536142839a24133f0526",
+                    "type": "zip",
+                    "build": "245",
+                    "size": 2479651
+                }
+            }
+        },
+        "beta": {
+            "version": "18.0.234",
+            "files": {
+                "keymanweb-18.0.234.zip": {
+                    "name": "KeymanWeb",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "web",
+                    "stability": "beta",
+                    "file": "keymanweb-18.0.234.zip",
+                    "md5": "F385F33C0291A0C890309DF1B2701A02",
+                    "type": "zip",
+                    "build": "234",
+                    "size": 2393512
+                }
+            }
+        },
+        "stable": {
+            "version": "18.0.249",
+            "files": {
+                "keymanweb-18.0.249.zip": {
+                    "name": "KeymanWeb",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "web",
+                    "stability": "stable",
+                    "file": "keymanweb-18.0.249.zip",
+                    "md5": "89C037228F976D0694F174F695502AA8",
+                    "type": "zip",
+                    "build": "249",
+                    "size": 2395212
+                }
+            }
+        }
+    },
+    "windows": {
+        "alpha": {
+            "version": "19.0.245",
+            "files": {
+                "firstvoices-19.0.245.exe": {
+                    "name": "FirstVoices Keyboards",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "firstvoices-19.0.245.exe",
+                    "md5": "0e1029c5301f7cb0225754c83f56481a",
+                    "type": "exe",
+                    "build": "245",
+                    "size": 33109320
+                },
+                "firstvoices.msi": {
+                    "name": "FirstVoices Keyboards MSI installer",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "firstvoices.msi",
+                    "md5": "62cb0fcd53ebf5a9597a17dc89a612af",
+                    "type": "msi",
+                    "build": "245",
+                    "size": 25071616
+                },
+                "keyman-19.0.245.exe": {
+                    "name": "Keyman for Windows",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "keyman-19.0.245.exe",
+                    "md5": "480054976d950aee1b1c54622d1f0831",
+                    "type": "exe",
+                    "build": "245",
+                    "size": 94104352
+                },
+                "keymandesktop.msi": {
+                    "name": "Keyman for Windows MSI installer",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "keymandesktop.msi",
+                    "md5": "66d099389acc542053cac21a337839fb",
+                    "type": "msi",
+                    "build": "245",
+                    "size": 93167616
+                },
+                "setup-redist.zip": {
+                    "name": "Keyman for Windows setup bootstrap (unsigned for bundling)",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "setup-redist.zip",
+                    "md5": "9b6d7b175dff8f4d47da547ca531ef8d",
+                    "type": "zip",
+                    "build": "245",
+                    "size": 1450651
+                },
+                "setup.exe": {
+                    "name": "Keyman for Windows setup bootstrap",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "setup.exe",
+                    "md5": "6d7c17b5994f1f7d3ec65dee189eb78b",
+                    "type": "exe",
+                    "build": "245",
+                    "size": 4080576
+                }
+            }
+        },
+        "beta": {
+            "version": "18.0.234",
+            "files": {
+                "firstvoices-18.0.234.exe": {
+                    "name": "FirstVoices Keyboards",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "firstvoices-18.0.234.exe",
+                    "md5": "0D5B08883CBB10CEDD58E96AB9E4E6C5",
+                    "type": "exe",
+                    "build": "234",
+                    "size": 31642488
+                },
+                "firstvoices.msi": {
+                    "name": "FirstVoices Keyboards MSI installer",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "firstvoices.msi",
+                    "md5": "D4985626FE9C7455D108C1F2B07C3370",
+                    "type": "msi",
+                    "build": "234",
+                    "size": 23494656
+                },
+                "keyman-18.0.234.exe": {
+                    "name": "Keyman for Windows",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "keyman-18.0.234.exe",
+                    "md5": "D38AAE63AB846864FD6265E56DD45F61",
+                    "type": "exe",
+                    "build": "234",
+                    "size": 111464824
+                },
+                "keymandesktop.msi": {
+                    "name": "Keyman for Windows MSI installer",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "keymandesktop.msi",
+                    "md5": "5010EBF8180B3419777953CC468D5CC9",
+                    "type": "msi",
+                    "build": "234",
+                    "size": 110620672
+                },
+                "setup-redist.zip": {
+                    "name": "Keyman for Windows setup bootstrap (unsigned for bundling)",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "setup-redist.zip",
+                    "md5": "1CE85D3C5C1CBE304D16B2541C0C5436",
+                    "type": "zip",
+                    "build": "234",
+                    "size": 1436743
+                },
+                "setup.exe": {
+                    "name": "Keyman for Windows setup bootstrap",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "setup.exe",
+                    "md5": "2A1E9ACC14DA08BE5B6F9B730E123149",
+                    "type": "exe",
+                    "build": "234",
+                    "size": 4029320
+                }
+            }
+        },
+        "stable": {
+            "version": "18.0.249",
+            "files": {
+                "firstvoices-18.0.249.exe": {
+                    "name": "FirstVoices Keyboards",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "firstvoices-18.0.249.exe",
+                    "md5": "9BFFB5A054ACBBDEAF08567DF480C119",
+                    "type": "exe",
+                    "build": "249",
+                    "size": 31857840
+                },
+                "firstvoices.msi": {
+                    "name": "FirstVoices Keyboards MSI installer",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "firstvoices.msi",
+                    "md5": "E093E1A06C4133A5FCF904B52AF06F44",
+                    "type": "msi",
+                    "build": "249",
+                    "size": 23756800
+                },
+                "keyman-18.0.249.exe": {
+                    "name": "Keyman for Windows",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "keyman-18.0.249.exe",
+                    "md5": "A5ECDA0BEA89FF7222EC48468978F42B",
+                    "type": "exe",
+                    "build": "249",
+                    "size": 111694496
+                },
+                "keymandesktop.msi": {
+                    "name": "Keyman for Windows MSI installer",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "keymandesktop.msi",
+                    "md5": "E09B0A8B11D3ADCC6E2FD11D52BB1DAE",
+                    "type": "msi",
+                    "build": "249",
+                    "size": 110899200
+                },
+                "setup-redist.zip": {
+                    "name": "Keyman for Windows setup bootstrap (unsigned for bundling)",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "setup-redist.zip",
+                    "md5": "29B4FC59F85BC0FE895420B2796B5C1D",
+                    "type": "zip",
+                    "build": "249",
+                    "size": 1438618
+                },
+                "setup.exe": {
+                    "name": "Keyman for Windows setup bootstrap",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "setup.exe",
+                    "md5": "D06B146CAAD2C9FBA188A3D483BAE167",
+                    "type": "exe",
+                    "build": "249",
+                    "size": 4036728
+                }
+            }
+        }
+    },
+    "developer": {
+        "alpha": {
+            "version": "19.0.245",
+            "files": {
+                "keymandeveloper-19.0.245.exe": {
+                    "name": "Keyman Developer",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "keymandeveloper-19.0.245.exe",
+                    "md5": "573b925d3faac20cf0967c99bc8b6c32",
+                    "type": "exe",
+                    "build": "245",
+                    "size": 121755384
+                },
+                "kmcomp-19.0.245.zip": {
+                    "name": "Keyman Developer Command-Line Compiler",
+                    "version": "19.0.245",
+                    "date": "2026-06-10",
+                    "platform": "win",
+                    "stability": "alpha",
+                    "file": "kmcomp-19.0.245.zip",
+                    "md5": "510b903052fd5128ded68d0c9c8c38d7",
+                    "type": "zip",
+                    "build": "245",
+                    "size": 11309944
+                }
+            }
+        },
+        "beta": {
+            "version": "18.0.234",
+            "files": {
+                "keymandeveloper-18.0.234.exe": {
+                    "name": "Keyman Developer",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "keymandeveloper-18.0.234.exe",
+                    "md5": "7387C7E3BFE59EC7504DBA0C7266788E",
+                    "type": "exe",
+                    "build": "234",
+                    "size": 135195824
+                },
+                "kmcomp-18.0.234.zip": {
+                    "name": "Keyman Developer Command-Line Compiler",
+                    "version": "18.0.234",
+                    "date": "2025-04-22",
+                    "platform": "win",
+                    "stability": "beta",
+                    "file": "kmcomp-18.0.234.zip",
+                    "md5": "327EE45AE3F970F6D8F536AD63646639",
+                    "type": "zip",
+                    "build": "234",
+                    "size": 22829356
+                }
+            }
+        },
+        "stable": {
+            "version": "18.0.249",
+            "files": {
+                "keymandeveloper-18.0.249.exe": {
+                    "name": "Keyman Developer",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "keymandeveloper-18.0.249.exe",
+                    "md5": "E81C3E1245DF543619AF2E6B4D9184D4",
+                    "type": "exe",
+                    "build": "249",
+                    "size": 127093728
+                },
+                "kmcomp-18.0.249.zip": {
+                    "name": "Keyman Developer Command-Line Compiler",
+                    "version": "18.0.249",
+                    "date": "2026-03-27",
+                    "platform": "win",
+                    "stability": "stable",
+                    "file": "kmcomp-18.0.249.zip",
+                    "md5": "C35A22D57C12A26B6DA6A5872C29587B",
+                    "type": "zip",
+                    "build": "249",
+                    "size": 13312199
+                }
+            }
+        }
+    }
+}
