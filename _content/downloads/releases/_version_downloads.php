@@ -32,7 +32,7 @@
   }
 
   // note: we currently ignore the tier parameter
-  $versions = @json_decode(Util::call_downloads_keyman_com("/api/version/2.0?targetVersion=$version"));
+  $versions = @json_decode(Util::call_downloads_keyman_com("/api/version/2.0?targetVersion=$version", 'downloads.keyman.com-api_version_2.0.json'));
 
   if(empty($versions->android))
     $tier = 'unknown';
@@ -47,7 +47,7 @@
   $versionTier = $version . ($tier == 'stable' ? "" : "-$tier");
 
 
-  $versionsData = @json_decode(Util::call_downloads_keyman_com("/api/version/all"));
+  $versionsData = @json_decode(Util::call_downloads_keyman_com("/api/version/all", 'downloads.keyman.com-api_version_all.json'));
   if (!$versionsData) {
     die("Failed to retrieve or parse the API data.");
   }

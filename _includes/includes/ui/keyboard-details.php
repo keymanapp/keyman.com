@@ -193,7 +193,7 @@ END;
       global $_m_Keyboards_Details;
 
       self::$error = "";
-      $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode(self::$id));
+      $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode(self::$id), 'api.keyman.com-keyboard_sil_ipa.json');
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= "The keyboard was not found in the database\n"; //error_get_last()['message'] . "\n";
@@ -256,7 +256,7 @@ END;
 
         self::$downloadCount = 0;
         self::$totalDownloadCount = 0;
-        $s = Util::call_api_keyman_com('/search/2.0?q=k:id:' . rawurlencode(self::$id));
+        $s = Util::call_api_keyman_com('/search/2.0?q=k:id:' . rawurlencode(self::$id), 'api.keyman.com-search_2.0.json');
         if ($s !== FALSE) {
           $s = json_decode($s);
           if(is_object($s) && is_array(($s->keyboards))) {
@@ -630,7 +630,7 @@ END;
                     // TODO(lowpri): we could return this information in the API to avoid multiple
                     // round trip queries but that requires more changes to the API, docs, and
                     // schema.
-                    $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode($name));
+                    $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode($name), 'api.keyman.com-keyboard_sil_ipa.json');
                     if ($s === FALSE) {
                       echo "<span class='keyboard-unavailable' title='" .
                         $_m_Keyboards_Details("keyboard_not_available",

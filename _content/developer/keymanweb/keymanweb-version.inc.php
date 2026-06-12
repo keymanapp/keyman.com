@@ -6,7 +6,7 @@ use Keyman\Site\com\keyman\Util;
 
 function getKeymanWebHref()
 {
-  $json = Util::call_api_keyman_com("/version/web");
+  $json = Util::call_api_keyman_com("/version/web", 'api.keyman.com-version_web.json');
   if ($json) {
     $json = json_decode($json);
   }

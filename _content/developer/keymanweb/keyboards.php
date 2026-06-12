@@ -111,7 +111,7 @@ relies on font source paths being configured in <a href='<?= KeymanHosts::Instan
   <tbody>
 
 <?php
-  $data = Util::call_api_keyman_com('/cloud/4.0/keyboards?languageidtype=bcp47&version='.$stable_version);
+  $data = Util::call_api_keyman_com('/cloud/4.0/keyboards?languageidtype=bcp47&version='.$stable_version, 'api.keyman.com-cloud_4.0_keyboards.json');
   if($data === FALSE) {
     // fallback if API is down, bad news anyway.
     $data = file_get_contents('keyboards.txt');

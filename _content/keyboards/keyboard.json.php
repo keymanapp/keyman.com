@@ -15,7 +15,7 @@
   header('Content-Type: application/json; charset=utf-8');
   header('Access-Control-Allow-Origin: *');
 
-  $kmw = Util::call_api_keyman_com("/cloud/4.0/keyboards/$id?version=$version&languageidtype=bcp47");
+  $kmw = Util::call_api_keyman_com("/cloud/4.0/keyboards/$id?version=$version&languageidtype=bcp47", 'api.keyman.com-cloud_4.0_keyboards_sil_ipa.json');
   if($kmw === FALSE) {
     header('HTTP/1.0 404 Keyboard not found');
     exit;

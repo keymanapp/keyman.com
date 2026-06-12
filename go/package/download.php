@@ -43,7 +43,7 @@
 
       if(empty($version)) {
         // If version isn't provided, we'll query the live api for the version
-        $json = Util::call_api_keyman_com("/$type/" . rawurlencode($id));
+        $json = Util::call_api_keyman_com("/$type/" . rawurlencode($id), ($type == 'keyboard' ? 'api.keyman.com-keyboard_sil_ipa.json' : 'api.keyman.com-model_nrc.en.mtnt.json'));
         if ($json !== FALSE) {
           $json = json_decode($json);
         }

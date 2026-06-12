@@ -6,7 +6,7 @@
   use Keyman\Site\com\keyman\Util;
   Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
 
-  $versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0'));
+  $versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0', 'downloads.keyman.com-api_version_2.0.json'));
 
   function formatSizeUnits($bytes) {
     if ($bytes >= 1073741824) {

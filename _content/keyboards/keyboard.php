@@ -28,7 +28,7 @@
   }
 
   function find_id_by_legacy($legacy) {
-    $s = Util::call_api_keyman_com('/search/?q=k:legacy:'.rawurlencode($legacy));
+    $s = Util::call_api_keyman_com('/search/?q=k:legacy:'.rawurlencode($legacy), 'api.keyman.com-search.json');
     if($s === FALSE) {
       return null;
     }

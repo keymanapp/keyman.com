@@ -27,7 +27,7 @@
     $WINDOWS_VERSION = $_REQUEST['version'];
     $MAC_VERSION = $_REQUEST['version'];
   } else {
-    $versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0'));
+    $versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0', 'downloads.keyman.com-api_version_2.0.json'));
 
     $DEVELOPER_VERSION = $versions->developer->$TIER->version;
     $WINDOWS_VERSION = $versions->windows->$TIER->version;

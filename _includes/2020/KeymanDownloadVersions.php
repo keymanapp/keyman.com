@@ -19,7 +19,7 @@
 
     static function getDownloadUrls() {
       if(empty(self::$versions))
-        self::$versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0'));
+        self::$versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0', 'downloads.keyman.com-api_version_2.0.json'));
       return self::$versions;
     }
 

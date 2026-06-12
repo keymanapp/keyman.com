@@ -375,7 +375,7 @@ END;
 
       // Get Keyboard Metadata
 
-      $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode(self::$id));
+      $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode(self::$id), 'api.keyman.com-keyboard_sil_ipa.json');
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";
@@ -396,7 +396,7 @@ END;
 
       // Get Program Download Versions and URLs
 
-      $s = Util::call_downloads_keyman_com('/api/version/1.0');
+      $s = Util::call_downloads_keyman_com('/api/version/1.0', 'downloads.keyman.com-api_version_1.0.json');
       if ($s === FALSE) {
         // Will fail later in the script
         self::$error .= error_get_last()['message'] . "\n";

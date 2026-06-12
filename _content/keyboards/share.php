@@ -25,7 +25,7 @@
   }
 
   function find_keyboard($id) {
-    $s = Util::call_api_keyman_com('/keyboard/'.$id);
+    $s = Util::call_api_keyman_com('/keyboard/'.$id, 'api.keyman.com-keyboard_sil_ipa.json');
     if($s === FALSE) {
       return null;
     }

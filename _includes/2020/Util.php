@@ -33,11 +33,11 @@
       return "/cdn/dev/{$file}";
     }
 
-    static function call_api_keyman_com($url) {
-      return Util::call_keyman_site(KeymanHosts::Instance()->SERVER_api_keyman_com, $url);
-    }
+    private static function call_keyman_site($site, $url, $testFixture) {
+      if(KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_TEST) {
+        return file_get_contents(__DIR__ . '/../../tests/fixtures/' . $testFixture);
+      }
 
-    static function call_keyman_site($site, $url) {
       // curl library is more reliable than file_get_contents
       $curl_handle=curl_init();
       curl_setopt($curl_handle, CURLOPT_URL, $site . $url);
@@ -48,6 +48,9 @@
       $http_code = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
       curl_close($curl_handle);
       if($http_code >= 200 && $http_code <= 299) {
+        // Can use this to generate fixtures when needed:
+        // $p = parse_url($site . $url);
+        // file_put_contents(__DIR__ . '/../../tests/fixtures/' . $site . '-' . str_replace('/', '_', $p['path']) . '.json', $query);
         return $query;
       } else {
         @trigger_error("request to $site$url failed with $http_code");
@@ -55,8 +58,11 @@
       }
     }
 
-    static function call_downloads_keyman_com($url) {
-      return Util::call_keyman_site(KeymanHosts::Instance()->SERVER_downloads_keyman_com, $url);
+    static function call_api_keyman_com($url, $testFixture) {
+      return Util::call_keyman_site(KeymanHosts::Instance()->SERVER_api_keyman_com, $url, $testFixture);
     }
 
+    static function call_downloads_keyman_com($url, $testFixture) {
+      return Util::call_keyman_site(KeymanHosts::Instance()->SERVER_downloads_keyman_com, $url, $testFixture);
+    }
   }

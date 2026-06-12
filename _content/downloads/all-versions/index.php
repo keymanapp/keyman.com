@@ -15,7 +15,7 @@ head([
 <h2 class="red underline large">Keyman downloads - all versions</h2>
 
 <?php
-$data = @json_decode(Util::call_downloads_keyman_com('/api/version/all'));
+$data = @json_decode(Util::call_downloads_keyman_com('/api/version/all', 'downloads.keyman.com-api_version_all.json'));
 
 if ($data === NULL) {
   die('Error decoding JSON data.');
