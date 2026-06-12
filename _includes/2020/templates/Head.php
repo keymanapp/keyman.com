@@ -68,6 +68,10 @@ class Head {
       echo "<script id='i18n_$domain' type='application/json'>[\n$localization\n]</script>\n";
     }
 
+    echo "<script>\n";
+    KeymanHosts::Instance()->emitJavascriptConst();
+    echo "\n  window.keymanHosts = keymanHosts;\n</script>";
+
     array_unshift($fields->js,
       Util::cdn('js/jquery1-11-1.min.js'),
       Util::cdn('js/bowser.es5.2.9.0.min.js'),
