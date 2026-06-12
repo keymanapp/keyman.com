@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Keyman\Site\com\keyman;
 use Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\Util;
 
 class KeymanWebHost {
   static function getKeymanWebUrlBase() {
-    $json = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com."/version/web");
+    $json = Util::call_api_keyman_com("/version/web");
     if($json) {
       $json = json_decode($json);
     }

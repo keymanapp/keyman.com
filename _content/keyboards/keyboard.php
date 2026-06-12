@@ -4,6 +4,7 @@
   require_once('./session.php');
   require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Util;
 
   if(isset($_REQUEST['legacy'])) {
     $id = find_id_by_legacy(clean_id($_REQUEST['legacy']));
@@ -27,7 +28,7 @@
   }
 
   function find_id_by_legacy($legacy) {
-    $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/search/?q=k:legacy:'.rawurlencode($legacy));
+    $s = Util::call_api_keyman_com('/search/?q=k:legacy:'.rawurlencode($legacy));
     if($s === FALSE) {
       return null;
     }

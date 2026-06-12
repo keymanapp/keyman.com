@@ -21,8 +21,8 @@
           $cdn = false;
         }
       }
-      $use_cdn = KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION || 
-          KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_STAGING || 
+      $use_cdn = KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_PRODUCTION ||
+          KeymanHosts::Instance()->Tier() == KeymanHosts::TIER_STAGING ||
           (isset($_REQUEST['cdn']) && $_REQUEST['cdn'] == 'force');
       if($use_cdn) {
         if($cdn && isset($cdn['/'.$file])) {
@@ -32,4 +32,31 @@
       // TODO: log warning or error to sentry on missing files
       return "/cdn/dev/{$file}";
     }
+
+    static function call_api_keyman_com($url) {
+      return Util::call_keyman_site(KeymanHosts::Instance()->SERVER_api_keyman_com, $url);
+    }
+
+    static function call_keyman_site($site, $url) {
+      // curl library is more reliable than file_get_contents
+      $curl_handle=curl_init();
+      curl_setopt($curl_handle, CURLOPT_URL, $site . $url);
+      curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+      curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($curl_handle, CURLOPT_USERAGENT, 'keyman.com/1.0');
+      $query = @curl_exec($curl_handle);
+      $http_code = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
+      curl_close($curl_handle);
+      if($http_code >= 200 && $http_code <= 299) {
+        return $query;
+      } else {
+        @trigger_error("request to $site$url failed with $http_code");
+        return FALSE;
+      }
+    }
+
+    static function call_downloads_keyman_com($url) {
+      return Util::call_keyman_site(KeymanHosts::Instance()->SERVER_downloads_keyman_com, $url);
+    }
+
   }

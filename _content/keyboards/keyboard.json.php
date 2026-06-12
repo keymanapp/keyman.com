@@ -2,6 +2,7 @@
   require_once _KEYMANCOM_INCLUDES . '/includes/servervars.php';
   require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\Util;
 
   if(!isset($_REQUEST['id'])) {
     header('HTTP/1.0 404 id parameter is required');
@@ -14,7 +15,7 @@
   header('Content-Type: application/json; charset=utf-8');
   header('Access-Control-Allow-Origin: *');
 
-  $kmw = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com . "/cloud/4.0/keyboards/$id?version=$version&languageidtype=bcp47");
+  $kmw = Util::call_api_keyman_com("/cloud/4.0/keyboards/$id?version=$version&languageidtype=bcp47");
   if($kmw === FALSE) {
     header('HTTP/1.0 404 Keyboard not found');
     exit;

@@ -2,6 +2,7 @@
 require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
 require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
 use Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\Util;
 
 // Required
 head([
@@ -14,7 +15,7 @@ head([
 <h2 class="red underline large">Keyman downloads - all versions</h2>
 
 <?php
-$data = json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . '/api/version/all'));
+$data = @json_decode(Util::call_downloads_keyman_com('/api/version/all'));
 
 if ($data === NULL) {
   die('Error decoding JSON data.');
