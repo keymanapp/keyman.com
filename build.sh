@@ -52,44 +52,32 @@ function do_start() {
   start_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME $KEYMAN_CONTAINER_DESC $HOST_KEYMAN_COM $PORT_KEYMAN_COM $BUILDER_CONFIGURATION
 }
 
-function test_docker_container() {
-  # Note: ci.yml replicates these
+source resources/commands.inc.sh
 
+function test_docker_container() {
+  local LINK_RESULT
   echo "TIER_TEST" > tier.txt
-  set +e;
-  set +o pipefail;
+
+  # from commands.inc.sh
+
+  do_test_record_start_time
 
   builder_echo blue "---- PHP unit tests"
-  docker exec $KEYMAN_CONTAINER_DESC sh -c "vendor/bin/phpunit --testdox"
+  do_test_unit_tests "${KEYMAN_CONTAINER_DESC}"
 
-  # Lint .php files for obvious errors
   builder_echo blue "---- Lint PHP files"
-  docker exec $KEYMAN_CONTAINER_DESC sh -c "find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 -d '\\n' php -l"
+  do_test_lint "${KEYMAN_CONTAINER_DESC}"
 
-  # NOTE: link checker runs on host rather than in docker image
   builder_echo blue "---- Testing links"
+  LINK_RESULT=0
+  do_test_links "http://localhost:${PORT_KEYMAN_COM}" || LINK_RESULT=$?
+  builder_echo blue "Done checking links; linkinator exit code: ${LINK_RESULT}"
+  do_test_print_link_report
 
-  # determine non-en locales to ignore along with /downloads/releases
-  readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
-    -execdir basename  {} .php ';')
-  local baseURL="http://localhost:8053"
-  local ignoreStr=("  --exclude ${baseURL}*/downloads/releases/*")
-  for locale in "${ignoresArray[@]}"; do
-    ignoreStr+=" --exclude ${baseURL}/${locale}/*"
-  done
-  echo "ignoreStr: ${ignoreStr[@]}"
-  npx broken-link-checker ${baseURL}/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 ${ignoreStr} | tee blc.log
-  local BLC_RESULT=${PIPESTATUS[0]}
-  echo ----------------------------------------------------------------------
-  echo Link check summary
-  echo ----------------------------------------------------------------------
-  cat blc.log | \
-    grep -E "BROKEN|Getting links from" | \
-    grep -B 1 "BROKEN";
+  do_test_print_container_error_logs "${KEYMAN_CONTAINER_DESC}"
 
-  builder_echo blue "Done checking links"
   rm tier.txt
-  return "${BLC_RESULT}"
+  return "$LINK_RESULT"
 }
 
 builder_run_action configure  do_configure

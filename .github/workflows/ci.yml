@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       KEYMANHOSTS_TIER: TIER_TEST
+      KEYMAN_CONTAINER_DESC: keyman-com-app
 
     steps:
     - name: Checkout
@@ -24,51 +25,63 @@ jobs:
     #
     # Finally, run the tests
     #
+    - name: Test setup
+      shell: bash
+      run: |
+        source ./resources/commands.inc.sh
+        set -e
+        do_test_record_start_time
+
     - name: PHP test
       shell: bash
       run: |
-        docker exec keyman-com-app sh -c "vendor/bin/phpunit --testdox"
+        source ./resources/commands.inc.sh
+        set -e
+        STEP_RESULT=0
+        do_test_unit_tests "$KEYMAN_CONTAINER_DESC" || STEP_RESULT=$?
+        echo "Unit test result: ${STEP_RESULT}"
+        echo "TEST_START_TIME=${TEST_START_TIME}" >> "$GITHUB_ENV"
+        echo "TEST_RESULT=${STEP_RESULT}" >> "$GITHUB_ENV"
 
     - name: Lint
       shell: bash
       run: |
-        ( set +e; set +o pipefail; find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 -d '\n' php -l | grep -v "No syntax errors detected"; exit ${PIPESTATUS[2]} )
+        source ./resources/commands.inc.sh
+        set -e
+        STEP_RESULT=0
+        do_test_lint "$KEYMAN_CONTAINER_DESC" || STEP_RESULT=$?
+        TEST_RESULT=$(( $STEP_RESULT || $TEST_RESULT ))
+        echo "Lint result: ${STEP_RESULT}"
+        echo "TEST_RESULT=${TEST_RESULT}" >> "$GITHUB_ENV"
 
     - name: Check broken links
       shell: bash
       continue-on-error: false
       run: |
-        set +e
-        set +o pipefail
-        readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
-          -execdir basename  {} .php ';')
-        baseURL="http://localhost:8053"
-        ignoreStr=("  --exclude ${baseURL}*downloads/releases/*")
-        for locale in "${ignoresArray[@]}"; do
-          ignoreStr+=" --exclude ${baseURL}/${locale}/*"
-        done
-        echo "ignoreStr: ${ignoreStr[@]}"
-        npx broken-link-checker ${baseURL}/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 ${ignoreStr} | tee blc.log
-        echo "BLC_RESULT=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+        source ./resources/commands.inc.sh
+        set -e
+        STEP_RESULT=0
+        do_test_links "http://localhost:8053" || STEP_RESULT=$?
+        TEST_RESULT=$(( $STEP_RESULT || $TEST_RESULT ))
+        echo "Link check result: ${STEP_RESULT}"
+        echo "TEST_RESULT=${TEST_RESULT}" >> "$GITHUB_ENV"
+
+      # We split the reporting of errors into a separate step for ease of viewing
 
     - name: Report on broken links
       run: |
-        set +e
-        set +o pipefail
-        cat blc.log | \
-          grep -E "BROKEN|Getting links from" | \
-          grep -B 1 "BROKEN";
-        exit "${BLC_RESULT}"
+        source ./resources/commands.inc.sh
+        set -e
+        STEP_RESULT=0
+        do_test_print_link_report || STEP_RESULT=$?
+        TEST_RESULT=$(( $STEP_RESULT || $TEST_RESULT ))
+        echo "Link report result: ${STEP_RESULT}"
+        echo "TEST_RESULT=${TEST_RESULT}" >> "$GITHUB_ENV"
 
     - name: Check PHP errors
       shell: bash
       run: |
-        CONTAINER=`docker container ls -l -q`
-        if docker container logs $CONTAINER 2>&1 | grep -q 'php7'; then
-          echo 'PHP reported errors or warnings:'
-          docker container logs $CONTAINER 2>&1 | grep 'php7'
-          exit 1
-        else
-          echo 'No PHP errors found'
-          exit 0
-        fi
+        source ./resources/commands.inc.sh
+        set -e
+        do_test_print_container_error_logs "$KEYMAN_CONTAINER_DESC" || LINK_RESULT=$?
+        exit "${TEST_RESULT}"
