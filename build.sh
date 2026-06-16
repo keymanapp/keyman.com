@@ -2,7 +2,7 @@
 ## START STANDARD SITE BUILD SCRIPT INCLUDE
 readonly THIS_SCRIPT="$(readlink -f "${BASH_SOURCE[0]}")"
 readonly BOOTSTRAP="$(dirname "$THIS_SCRIPT")/resources/bootstrap.inc.sh"
-readonly BOOTSTRAP_VERSION=v1.0.13
+readonly BOOTSTRAP_VERSION=feat/linkinator-and-central-test-script
 if ! [ -f "$BOOTSTRAP" ] || ! source "$BOOTSTRAP"; then
   curl -H "Cache-Control: no-cache" --fail --silent --show-error -w "curl: Finished attempt to download %{url}" "https://raw.githubusercontent.com/keymanapp/shared-sites/$BOOTSTRAP_VERSION/bootstrap.inc.sh" -o "$BOOTSTRAP.tmp" || exit 1
   source "$BOOTSTRAP.tmp"
@@ -28,6 +28,9 @@ builder_describe \
   start \
   stop \
   test \
+  "--no-unit-test" \
+  "--no-lint" \
+  "--no-link-check" \
   htaccess "rebuild .htaccess from .htaccess.in (for development)"
 
 builder_parse "$@"
@@ -52,45 +55,16 @@ function do_start() {
   start_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME $KEYMAN_CONTAINER_DESC $HOST_KEYMAN_COM $PORT_KEYMAN_COM $BUILDER_CONFIGURATION
 }
 
-function test_docker_container() {
-  # Note: ci.yml replicates these
-
-  echo "TIER_TEST" > tier.txt
-  set +e;
-  set +o pipefail;
-
-  builder_echo blue "---- PHP unit tests"
-  docker exec $KEYMAN_CONTAINER_DESC sh -c "vendor/bin/phpunit --testdox"
-
-  # Lint .php files for obvious errors
-  builder_echo blue "---- Lint PHP files"
-  docker exec $KEYMAN_CONTAINER_DESC sh -c "find . -name '*.php' | grep -v '/vendor/' | xargs -n 1 -d '\\n' php -l"
-
+function do_test_docker_container() {
   # NOTE: link checker runs on host rather than in docker image
-  builder_echo blue "---- Testing links"
+  local ignoreLocales
 
-  # determine non-en locales to ignore along with /downloads/releases
-  readarray -t ignoresArray <<< $(find ./_includes/locale/strings/keyboards/ -maxdepth 1 -name '*.php' ! -name "en.php" \
-    -execdir basename  {} .php ';')
-  local baseURL="http://localhost:8053"
-  local ignoreStr=("  --exclude ${baseURL}*/downloads/releases/*")
-  for locale in "${ignoresArray[@]}"; do
-    ignoreStr+=" --exclude ${baseURL}/${locale}/*"
-  done
-  echo "ignoreStr: ${ignoreStr[@]}"
-  npx broken-link-checker ${baseURL}/_test --recursive --ordered ---host-requests 50 -e --filter-level 3 ${ignoreStr} | tee blc.log
-  local BLC_RESULT=${PIPESTATUS[0]}
-  echo ----------------------------------------------------------------------
-  echo Link check summary
-  echo ----------------------------------------------------------------------
-  cat blc.log | \
-    grep -E "BROKEN|Getting links from" | \
-    grep -B 1 "BROKEN";
+  # determine non-en locales to ignore
+  ignoreLocales="$(jq -r 'keys | map(select(. != "en")) | join("|")' ./_includes/locale/locales.json)"
 
-  builder_echo blue "Done checking links"
-  rm tier.txt
-  return "${BLC_RESULT}"
+  test_docker_container $KEYMAN_CONTAINER_DESC $PORT_KEYMAN_COM "/_test" "/(${ignoreLocales})"  "/en/downloads/releases/"
 }
+
 
 builder_run_action configure  do_configure
 builder_run_action clean      clean_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME
@@ -98,5 +72,5 @@ builder_run_action stop       stop_docker_container  $KEYMAN_IMAGE_NAME $KEYMAN_
 builder_run_action build      build_docker_container $KEYMAN_IMAGE_NAME $KEYMAN_CONTAINER_NAME $BUILDER_CONFIGURATION
 builder_run_action start      do_start
 
-builder_run_action test       test_docker_container
+builder_run_action test       do_test_docker_container
 builder_run_action htaccess   preprocess_htaccess
