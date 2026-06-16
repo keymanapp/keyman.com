@@ -12,6 +12,8 @@
   use Keyman\Site\com\keyman\Locale;
   use Keyman\Site\com\keyman\Session;
 
+  Session::Start();
+
   if(isset($_SESSION['lang'])) {
     // We'll use the user's previously selected language if they've already been
     // browsing the site in the current session
