@@ -1,8 +1,8 @@
 <?php
   declare(strict_types=1);
-
   namespace Keyman\Site\com\keyman\templates;
 
+  require_once(__DIR__ . "/../../autoload.php");
   use Keyman\Site\Common\ImageRandomizer;
   use Keyman\Site\Common\KeymanVersion;
   use Keyman\Site\Common\KeymanHosts;
@@ -17,7 +17,7 @@
 ?>
 
         <div id="locale-not-internationalized">This page has not yet been updated for languages other than English. <a href='/about/get-involved'>Can you help make this happen?</a></div>
-        <div id="locale-not-localized">This page is not yet available in your selected language. <a href='https://translate.keyman.com'>Help us translate this page</a></div>
+        <div id="locale-not-localized">This page is not yet available in your selected language. <a href='https://translate.keyman.com/project/keymancom'>Help us translate this page</a></div>
 
       </div>
     </div>
