@@ -927,6 +927,10 @@ input[type="search"] {
 	width: 180px;
 }
 
+#ui-language .menu-item-dropdown a {
+	font-weight: normal
+}
+
 /* end of hover */
 
 #buy,
@@ -3126,4 +3130,9 @@ div.locale-visible#locale-not-internationalized {
 
 .locale-menu-visible#locale-phone-menu {
 	display: block;
+}
+
+#ui-language .menu-item-dropdown .locale-selected a {
+	font-weight: 900;
+	color: black !important;
 }

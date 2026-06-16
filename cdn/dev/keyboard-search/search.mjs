@@ -100,7 +100,7 @@ function wrapSearch(localCounter, updateHistory) {
     return false;
   }
 
-  var base = location.protocol+'//api.'+location.host; // this works on test sites as well as live, assuming we use the host pattern "keyman.com[.localhost]"
+  var base = window.keymanHosts.api;
   var url = base+'/search/2.0?p='+page+'&q='+encodeURIComponent(stripCommonWords(q));
 
   if(window.embed) {

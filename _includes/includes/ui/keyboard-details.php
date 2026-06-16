@@ -10,6 +10,7 @@
   use \Keyman\Site\com\keyman\KeymanWebHost;
   use \Keyman\Site\Common\KeymanHosts;
   use \Keyman\Site\com\keyman\Locale;
+  use \Keyman\Site\com\keyman\Util;
   use \Keyman\Site\com\keyman;
 
   Locale::definePageScope('LOCALE_KEYBOARDS_DETAILS', 'keyboards/details');
@@ -192,10 +193,10 @@ END;
       global $_m_Keyboards_Details;
 
       self::$error = "";
-      $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com. '/keyboard/' . rawurlencode(self::$id));
+      $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode(self::$id), 'api.keyman.com-keyboard_sil_ipa.json');
       if ($s === FALSE) {
         // Will fail later in the script
-        self::$error .= error_get_last()['message'] . "\n";
+        self::$error .= "The keyboard was not found in the database\n"; //error_get_last()['message'] . "\n";
         self::$title = $_m_Keyboards_Details("failed_to_load_keyboard_package", self::$id);
         header('HTTP/1.0 404 Keyboard not found');
       } else {
@@ -255,7 +256,7 @@ END;
 
         self::$downloadCount = 0;
         self::$totalDownloadCount = 0;
-        $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/search/2.0?q=k:id:' . rawurlencode(self::$id));
+        $s = Util::call_api_keyman_com('/search/2.0?q=k:id:' . rawurlencode(self::$id), 'api.keyman.com-search_2.0.json');
         if ($s !== FALSE) {
           $s = json_decode($s);
           if(is_object($s) && is_array(($s->keyboards))) {
@@ -629,7 +630,7 @@ END;
                     // TODO(lowpri): we could return this information in the API to avoid multiple
                     // round trip queries but that requires more changes to the API, docs, and
                     // schema.
-                    $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/keyboard/' . rawurlencode($name));
+                    $s = Util::call_api_keyman_com('/keyboard/' . rawurlencode($name), 'api.keyman.com-keyboard_sil_ipa.json');
                     if ($s === FALSE) {
                       echo "<span class='keyboard-unavailable' title='" .
                         $_m_Keyboards_Details("keyboard_not_available",

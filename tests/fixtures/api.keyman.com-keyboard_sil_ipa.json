@@ -1,0 +1,65 @@
+{
+    "id": "sil_ipa",
+    "name": "IPA (SIL)",
+    "license": "mit",
+    "authorName": "Martin Hosken, Lorna Evans",
+    "authorEmail": "fonts@sil.org",
+    "description": "<p>The keyboard layout is described in terms of an IPA chart rather than a\nkeyboard. This is because many base characters are typed as a sequence\nof a letter followed by one of &lt;, &gt; or = which are characters used to\nchange a base character to another base character. Diacritics are typed\nas sequences of an appropriate key.</p>",
+    "languages": {
+        "und-latn": {
+            "examples": [],
+            "font": {
+                "family": "Charis",
+                "source": [
+                    "Charis-Regular.ttf"
+                ]
+            },
+            "oskFont": {
+                "family": "Charis",
+                "source": [
+                    "Charis-Regular.ttf"
+                ]
+            },
+            "languageName": "Undetermined",
+            "scriptName": "Latin",
+            "displayName": "Undetermined (Latin)"
+        }
+    },
+    "lastModifiedDate": "2025-06-09T21:19:30.000Z",
+    "packageFilename": "sil_ipa.kmp",
+    "packageFileSize": 3626354,
+    "jsFilename": "sil_ipa.js",
+    "jsFileSize": 88661,
+    "packageIncludes": [
+        "documentation",
+        "welcome",
+        "fonts"
+    ],
+    "version": "2.0.2",
+    "encodings": [
+        "unicode"
+    ],
+    "platformSupport": {
+        "windows": "full",
+        "macos": "full",
+        "linux": "full",
+        "desktopWeb": "full",
+        "ios": "full",
+        "android": "full",
+        "mobileWeb": "full"
+    },
+    "minKeymanVersion": "17.0",
+    "sourcePath": "release/sil/sil_ipa",
+    "helpLink": "https://help.keyman.com/keyboard/sil_ipa",
+    "related": {
+        "ipauni11": {
+            "deprecates": true
+        },
+        "ipauni111": {
+            "deprecates": true
+        },
+        "ipa93_km5": {
+            "deprecates": false
+        }
+    }
+}
