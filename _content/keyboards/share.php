@@ -5,6 +5,7 @@
   require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Locale;
+  use Keyman\Site\com\keyman\Util;
 
   Locale::definePageScope('LOCALE_KEYBOARDS_SHARE', 'keyboards/share');
 
@@ -24,7 +25,7 @@
   }
 
   function find_keyboard($id) {
-    $s = @file_get_contents(KeymanHosts::Instance()->SERVER_api_keyman_com.'/keyboard/'.$id);
+    $s = Util::call_api_keyman_com('/keyboard/'.$id, 'api.keyman.com-keyboard_sil_ipa.json');
     if($s === FALSE) {
       return null;
     }
