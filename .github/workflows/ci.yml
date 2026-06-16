@@ -62,7 +62,7 @@ jobs:
 
         # following two lines match do_test_docker_container in build.sh
         ignoreLocales="$(jq -r 'keys | map(select(. != "en")) | join("|")' ./_includes/locale/locales.json)"
-        do_test_links "http://localhost:${CONTAINER_PORT}" "/_test" "/(${ignoreLocales})"  "/en/downloads/releases/" || LINK_RESULT=$?
+        do_test_links "http://localhost:${CONTAINER_PORT}" "/_test" "/(${ignoreLocales})"  "/en/downloads/releases/"
 
       # We split the reporting of broken links into a separate step for ease of
       # viewing because the broken links are otherwise hidden in a sea of good
