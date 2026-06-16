@@ -92,8 +92,6 @@ jobs:
         # shape of the tags, which is `v#.#.#`. Any other shape we will assume is a test
         # branch.
         cat resources/.bootstrap-required-version | grep -qP '^v\d+\.\d+\.\d+$' || (
-          echo "This branch cannot be merged, because resources/.bootstrap-required-version "
-          echo "references '$(cat resources/.bootstrap-required-version)', which does not"
-          echo "appear to be a published tag -- is it a test branch?"
+          echo "::error file=resources/.bootstrap-required-version,line=1,col=1::This branch cannot be merged, because resources/.bootstrap-required-version references \`$(cat resources/.bootstrap-required-version)\`, which does not appear to be a published tag -- is it a test branch?"
           exit 1
         )
