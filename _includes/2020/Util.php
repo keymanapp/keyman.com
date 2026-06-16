@@ -42,6 +42,7 @@
       $curl_handle=curl_init();
       curl_setopt($curl_handle, CURLOPT_URL, $site . $url);
       curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+      curl_setopt($curl_handle, CURLOPT_TIMEOUT, 60);
       curl_setopt($curl_handle, CURLOPT_TIMEOUT, 15);      
       curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($curl_handle, CURLOPT_USERAGENT, 'keyman.com/1.0');
