@@ -5,10 +5,9 @@
   require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Locale;
+  use Keyman\Site\com\keyman\Util;
 
   Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
-  $_m_Downloads = function($id, ...$args) { return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); };
-  function _m_Downloads($id, ...$args) {    return Locale::m(LOCALE_DOWNLOADS, $id, ...$args); }
 
   if(!isset($_REQUEST['version'])) {
     echo "version parameter is required.";
@@ -33,8 +32,7 @@
   }
 
   // note: we currently ignore the tier parameter
-
-  $versions = @json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . "/api/version/2.0?targetVersion=$version"));
+  $versions = @json_decode(Util::call_downloads_keyman_com("/api/version/2.0?targetVersion=$version", 'downloads.keyman.com-api_version_2.0.json'));
 
   if(empty($versions->android))
     $tier = 'unknown';
@@ -49,8 +47,7 @@
   $versionTier = $version . ($tier == 'stable' ? "" : "-$tier");
 
 
-
-  $versionsData = @json_decode(file_get_contents(KeymanHosts::Instance()->SERVER_downloads_keyman_com . "/api/version/all"));
+  $versionsData = @json_decode(Util::call_downloads_keyman_com("/api/version/all", 'downloads.keyman.com-api_version_all.json'));
   if (!$versionsData) {
     die("Failed to retrieve or parse the API data.");
   }

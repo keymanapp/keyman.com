@@ -9,9 +9,9 @@
     <div class="section section-announcement">
       <div class='wrapper'>
         <div class='content'>
-            <p style='font-size:2em'><a href='/funding-appeal'>Funding appeal &mdash; we need your support</a></p>
-            <p style='font-size:1.25em; color: black; line-height: 1.25em; font-weight: normal'>
-                The Keyman project is facing a major funding crisis. <a href="/funding-appeal">Learn more</a>
+            <p style='font-size:1.4em'>
+              We need your support: can you donate the cost of a takeaway coffee a week?
+              <a href="https://give.sil.org/campaign/724691/donate?c_src=web-coffee">Please consider a donation</a>
             </p>
         </div>
       </div>

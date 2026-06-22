@@ -4,6 +4,13 @@ title: Keep Keyman Free to All
 
 <link rel="stylesheet" href="/cdn/dev/css/funding.css">
 
+## Update 9 June 2026
+
+We are now at 60.31% of our 2026 need. Will you donate the cost of a takeaway coffee a week? Every donation helps!
+
+<div class='donate-link-container'><a class='donate-link' href='https://give.sil.org/campaign/724691/donate?c_src=web-coffee'>Donate now</a></div>
+
+
 ## Update 6 March 2026
 
 We shared that our main partner — who has for years allowed us to offer Keyman free to users — faced funding limitations and could not contribute.

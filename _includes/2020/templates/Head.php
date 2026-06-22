@@ -35,15 +35,6 @@ class Head {
       }
 
       $fields->pageLocale = Locale::pageLocale();
-
-      // Redirect to /en/... if not a supported locale; this needs to be emitted
-      // as a HTTP header before first content byte.
-      if(Locale::invalidLocale()) {
-        if(preg_match('/^\\/[^\/]+\\/(.+)$/', $_SERVER['REQUEST_URI'], $matches)) {
-          header("Location: /" . Locale::DEFAULT_LOCALE . "/" . $matches[1]);
-          return;
-        }
-      }
 ?><!DOCTYPE html>
 <html lang='<?=$fields->pageLocale?>'>
 <head>
@@ -76,6 +67,10 @@ class Head {
       }
       echo "<script id='i18n_$domain' type='application/json'>[\n$localization\n]</script>\n";
     }
+
+    echo "<script>\n";
+    KeymanHosts::Instance()->emitJavascriptConst();
+    echo "\n  window.keymanHosts = keymanHosts;\n</script>";
 
     array_unshift($fields->js,
       Util::cdn('js/jquery1-11-1.min.js'),

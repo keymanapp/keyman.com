@@ -73,12 +73,12 @@ END;
       echo "<ul>\n                <!-- Just use autonyms -->\n";
       $linkArray = array();
       foreach(DISPLAY_NAMES as $id => $name) {
-        $linkArray[$id] = array(Menu::change_ui_language($id), $name);
+        $linkArray[$id] = array(Menu::change_ui_language($id), $name, $id == Locale::pageLocale() ? 'locale-selected' : '');
       }
 
       foreach($linkArray as $id) {
 echo <<<END
-                <li><a href="{$id[0]}">{$id[1]}</a></li>\n
+                <li class="${id[2]}"><a href="{$id[0]}">{$id[1]}</a></li>\n
 END;
       }
       echo "</ul>";
@@ -91,37 +91,47 @@ END;
      * ui-language1 - Desktop globe hover
      * phone - Mobile list
      */
-    private static function render_globe_dropdown($divID = "ui-language"): void {
+    private static function render_phone_globe_dropdown() {
       // Phone layout
-      $globeClass = '';
-      if ($divID === "phone") {
-?>
-<div class="phone-menu-item">
-            <h3><span><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" /></span> Display in:</h3>
-            <?= Menu::render_ui_list(); ?>
-        </div>
-      <?php
-        return;
-      } else if ($divID === "ui-language") {
+      $lang = Locale::currentLocaleName();
+      $img = Util::cdn("img/globe.png");
+      echo <<<END
+        <div class="phone-menu-item"><h3 id='locale-phone-menu-title'><span><img src="$img" alt="Select UI language" /></span> Display in: <a href='#'>$lang</a></h3>
+        <div id='locale-phone-menu'>
+      END;
+      Menu::render_ui_list();
+      echo "</div></div>";
+    }
+
+    /**
+     * Render the globe dropdown for changing the UI language
+     * @param divID - <div> ID to handle 2 cases:
+     * ui-language (default) Desktop globe hover
+     * ui-language1 - Desktop globe hover
+     */
+    private static function render_globe_dropdown($divID = "ui-language"): void {
+      if ($divID === "ui-language") {
         $globeClass = 'menu-item';
       } else if ($divID === "ui-language1") {
         $globeClass = 'help1-globe menu-item';
+      } else {
+        return;
       }
 
       // Desktop layout
 echo <<<END
-          <p>
+          <div class='menu-bar'>
             <div id='$divID' class='$globeClass'>
 END;
 ?>
-              <img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="UI globe dropdown" />
+              <h3><img src="<?php echo Util::cdn("img/globe.png"); ?>" alt="Select UI language" /></h3>
               <div class="menu-item-dropdown">
                 <div class="menu-dropdown-inner">
                   <?= Menu::render_ui_list(); ?>
                 </div>
               </div>
             </div>
-          </p>
+          </div>
 <?php
     }
 
@@ -137,7 +147,7 @@ END;
                 <input id="search-submit2" type="image" src="<?php echo Util::cdn("img/search-button.png"); ?>" alt="search button" value="Search" onclick="if(document.getElementById('language-search2').value==''){return false;}">
             </form>
         </div>
-        <?= Menu::render_globe_dropdown("phone"); ?>
+        <?= Menu::render_phone_globe_dropdown(); ?>
   <div class="phone-menu-item">
             <h3>Products</h3>
             <ul>
@@ -220,7 +230,7 @@ END;
         </div>
     </div>
     <div id="top-menu-bg"></div>
-    <div id="top-menu1">
+    <div class="menu-bar" id="top-menu1">
         <a href="/"><img id="top-menu-icon" src="<?php echo Util::cdn("img/icon1.png"); ?>" alt="Keyman logo" /></a>
         <div id='help1'>
           <form action="/<?=$fields->pageLocale?>/search/" method="get" role="search">

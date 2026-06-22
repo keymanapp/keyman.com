@@ -1,14 +1,17 @@
 <?php
-
-/*
- * Keyman is copyright (C) SIL Global. MIT License.
- */
-
+  /*
+  * Keyman is copyright (C) SIL Global. MIT License.
+  */
   declare(strict_types=1);
 
   namespace Keyman\Site\com\keyman;
 
   use \Keyman\Site\Common\KeymanHosts;
+  use \Keyman\Site\com\keyman\Session;
+
+  Session::Start();
+
+  $LOCALE_DEBUG = isset($_REQUEST['LOCALE_DEBUG']);
 
   function define_display_locales() {
     $_defined_locales = json_decode(file_get_contents(__DIR__ . '/locales.json'), true);
@@ -24,12 +27,22 @@
     // xx-YY locale as specified in crowdin %locale%
     private static $currentLocales = [];
 
+    private static $domains = [];
+
     // strings is an array of domains.
     // Each domain is an array of locales
     // Each locale is an object? with loaded flag and array of strings
     private static $strings = [];
 
     private static $invalidLocale = false;
+
+    /**
+     * For pages which don't belong in the _content hierarchy, such as 404.php,
+     * we do not want to save the selected locale to the session, because it may
+     * not be correct, and we also want to skip redirection when an invalid
+     * locale is found.
+     */
+    public static $saveLocale = true;
 
     /**
      * Return the current locales. Fallback to 'en'
@@ -40,6 +53,20 @@
         Locale::setLocaleFromURL();
       }
       return self::$currentLocales;
+    }
+
+    public static function currentLocaleName() {
+      if(count(self::$currentLocales) == 0) {
+        Locale::setLocaleFromURL();
+      }
+      return DISPLAY_NAMES[self::$currentLocales[0]];
+    }
+
+    /**
+     * Returns an array of available locales, e.g. ["en","de",...]
+     */
+    public static function availableLocales() {
+      return array_keys(DISPLAY_NAMES);
     }
 
     /**
@@ -79,7 +106,9 @@
       // First component of the URL is always the locale
       if(preg_match('/^\\/(([a-z]{2,3})(-([A-Za-z]{4}))?(-([a-z]{2}|[0-9]{3}))?)\\//', $_SERVER['REQUEST_URI'], $matches)) {
         if(!isset(DISPLAY_NAMES[$matches[1]])) {
-          // Note: this is an unsupported locale, so we'll end up redirecting in head.php to /en/...
+          // Note: this is an unsupported locale; this should not be possible
+          // with the current .htaccess design for any pages in _content,
+          // because we only accept valid locales for rewriting to those files
           $pageLocale = Locale::DEFAULT_LOCALE;
           self::$invalidLocale = true;
         } else {
@@ -99,15 +128,29 @@
      *                    locales (other than 'en', which is always added)
      */
     private static function setLocale($locale, $fallback) {
+      self::$currentLocales = [];
+
       if ($fallback) {
-        self::$currentLocales = self::calculateFallbackLocales($locale);
+        $locales = self::calculateFallbackLocales($locale);
+        // Only add recognized locales
+        foreach($locales as $l) {
+          if(isset(DISPLAY_NAMES[$l])) {
+            array_push(self::$currentLocales, $l);
+          }
+        }
       } else {
-        self::$currentLocales =[$locale];
+        if(isset(DISPLAY_NAMES[$locale])) {
+          self::$currentLocales = [$locale];
+        }
       }
 
       if(!in_array(Locale::DEFAULT_LOCALE, self::$currentLocales)) {
         // Push default fallback locale to the end
         array_push(self::$currentLocales, Locale::DEFAULT_LOCALE);
+      }
+
+      if(self::$saveLocale) {
+        $_SESSION['lang'] = self::$currentLocales[0];
       }
     }
 
@@ -170,16 +213,61 @@
     }
 
     /**
-     * Defines a global variable for page locale strings and also
-     * tells locale system that current page uses locales
-     * @param $define -
-     * @param $id - folder containing locale strings, relative to /_includes/locale/strings
+     * Defines a global variable for page locale strings and also tells locale
+     * system that current page uses locales. Also defines a global function and
+     * variable for the page scope, so that we can use shorter function calls to
+     * get localized strings in the page code.
+     *
+     * @param $define - a string such as 'LOCALE_DOWNLOADS', which will be
+     *                  defined as a constant for the page scope
+     * @param $id - folder containing locale strings, relative to
+     *              /_includes/locale/strings, such as 'downloads'. This will be
+     *              used as the domain for the page scope, and also used to
+     *              define a global variable and function for the page scope,
+     *              e.g. $_m_Downloads and _m_Downloads()
+     *
+     * Note that subfolders are supported, and the global variable and function
+     * will be defined with underscores, e.g. for id 'keyboards/install', the
+     * global variable and function will be `$_m_Keyboards_Install` and
+     * `_m_Keyboards_Install()`.
      */
     public static function definePageScope($define, $id) {
       global $page_is_using_locale;
       $page_is_using_locale = true;
+      if(defined($define)) {
+        // It is valid to definePageScope repeatedly but the id must match
+        $previousId = constant($define);
+        if($previousId != $id) {
+          trigger_error("constant $define already defined as '$previousId', redefinition as '$id'", E_USER_ERROR);
+        }
+        return;
+      }
       define($define, $id);
+      array_push(self::$domains, $id);
+
+      $scope = ucwords(str_replace('/', '_', $id), " \t\r\n\f\v_");
+      $script = <<<EOT
+        global \$_m_$scope;
+        \$_m_$scope = function(\$id, ...\$args) { return \Keyman\Site\com\keyman\Locale::m($define, \$id, ...\$args); };
+        function _m_$scope(\$id, ...\$args) { return \Keyman\Site\com\keyman\Locale::m($define, \$id, ...\$args); }
+EOT;
+      eval($script);
     }
+
+    public static function PageIsInternationalized() {
+      global $page_is_using_locale;
+      return !!$page_is_using_locale;
+    }
+
+    public static function PageIsLocalized() {
+      if(!self::PageIsInternationalized()) return false;
+      if(!array_key_exists(self::$domains[0], self::$strings)) return false;
+      $s = self::$strings[self::$domains[0]];
+      if(!array_key_exists(self::pageLocale(), $s)) return false;
+      $s = $s[self::pageLocale()];
+      return $s->loaded;
+    }
+
 
     /**
      * Given a locale, return an array of fallback locales
@@ -253,6 +341,15 @@
      * @param $args - optional remaining args to the format string
      */
     public static function m($domain, $id, ...$args) {
+      global $LOCALE_DEBUG;
+      if($LOCALE_DEBUG) {
+        $result = "◀️$id";
+        foreach($args as $arg) {
+          $result .= "{"."$arg}";
+        }
+        $result .= "▶️";
+        return $result;
+      }
       $str = self::getString($domain, $id);
       if (count($args) == 0) {
         return $str;
