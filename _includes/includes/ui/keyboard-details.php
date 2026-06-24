@@ -56,6 +56,8 @@
     static private $kmpDownloadUrl;
     static private $downloadCount;
     static private $totalDownloadCount;
+    static private $packageStatus;
+    static private $packageStatusExplanation;
 
     static private $deprecatedBy;
 
@@ -271,6 +273,22 @@ END;
             }
           }
         }
+
+        // Package Status
+
+        $status = 'unknown';
+        if(self::$keyboard->sourcePath) {
+          $sourcePath = self::$keyboard->sourcePath;
+          if(preg_match('/^experimental/', $sourcePath)) {
+            $status = 'experimental';
+          } else if(preg_match('/^legacy/', $sourcePath)) {
+            $status = 'legacy';
+          } else if(preg_match('/^release/', $sourcePath)) {
+            $status = 'stable';
+          }
+        }
+        self::$packageStatus = htmlentities($_m_Keyboards_Details("status_$status"));
+        self::$packageStatusExplanation = htmlentities($_m_Keyboards_Details("status_{$status}_explanation"));
       }
     }
 
@@ -593,6 +611,10 @@ END;
 
           <table id='keyboard-details'>
             <tbody>
+            <tr>
+              <th><?= $_m_Keyboards_Details("package_status") ?></th>
+              <td class='dotted-underline' title="<?= self::$packageStatusExplanation ?>"><?= self::$packageStatus ?></td>
+            </tr>
 <?php
               if(isset(self::$keyboard->packageFilename)) {
 ?>
