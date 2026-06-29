@@ -276,20 +276,24 @@ END;
 
         // Package Status
 
-        $status = 'unknown';
-        if(self::$keyboard->sourcePath) {
-          $sourcePath = self::$keyboard->sourcePath;
-          if(preg_match('/^experimental/', $sourcePath)) {
-            $status = 'experimental';
-          } else if(preg_match('/^legacy/', $sourcePath)) {
-            $status = 'legacy';
-          } else if(preg_match('/^release/', $sourcePath)) {
-            $status = 'stable';
-          }
-        }
+        $status = self::GetStatusFromSourcePath(self::$keyboard->sourcePath ?? '');
         self::$packageStatus = htmlentities($_m_Keyboards_Details("status_$status"));
         self::$packageStatusExplanation = htmlentities($_m_Keyboards_Details("status_{$status}_explanation"));
       }
+    }
+
+    private static function GetStatusFromSourcePath($sourcePath) {
+      $status = 'unknown';
+      if(!empty($sourcePath)) {
+        if(preg_match('/^experimental/', $sourcePath)) {
+          $status = 'experimental';
+        } else if(preg_match('/^legacy/', $sourcePath)) {
+          $status = 'legacy';
+        } else if(preg_match('/^release/', $sourcePath)) {
+          $status = 'stable';
+        }
+      }
+      return $status;
     }
 
     private static function array_find($xs, $f) {
