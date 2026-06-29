@@ -285,6 +285,11 @@ h2 a {
   display: inline;
 }
 
+#keyboard-details .dotted-underline {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
 .clear-left {
   clear: left;
 }
