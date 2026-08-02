@@ -602,6 +602,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/73817896?v=4" alt="miketvo" />](https://github.com/miketvo "miketvo")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/51888982?v=4" alt="MLocria" />](https://github.com/MLocria "MLocria")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/25468552?v=4" alt="mondele" />](https://github.com/mondele "mondele")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/26617447?v=4" alt="Monitvilla" />](https://github.com/Monitvilla "Monitvilla")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/89278875?v=4" alt="morocose" />](https://github.com/morocose "morocose")
 [<img class='contributor-minor' src="https://github.com/mujeebcpy.png?size=240" alt="mujeebcpy" />](https://github.com/mujeebcpy "mujeebcpy")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/40431755?v=4" alt="MuratKaribay" />](https://github.com/MuratKaribay "MuratKaribay")
