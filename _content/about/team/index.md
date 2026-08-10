@@ -227,14 +227,6 @@ with 100 or more commits accepted into Keyman repositories.
 
 <div markdown="1">
 
-[![](https://avatars.githubusercontent.com/u/193945261?v=4)](https://github.com/Caliph3ubaidUrRe7man)
-
-[Caliph3ubaidUrRe7man](https://github.com/Caliph3ubaidUrRe7man)
-
-</div>
-
-<div markdown="1">
-
 [![](https://avatars.githubusercontent.com/u/142644166?v=4)](https://github.com/Cathaylaboratory)
 
 [Cathaylaboratory](https://github.com/Cathaylaboratory)
@@ -572,6 +564,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/250732966?v=4" alt="joserosas-silamericas" />](https://github.com/joserosas-silamericas "joserosas-silamericas")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/61866048?v=4" alt="Juanan-Ochoa" />](https://github.com/Juanan-Ochoa "Juanan-Ochoa")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/133781489?v=4" alt="julian-vargo" />](https://github.com/julian-vargo "julian-vargo")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/282577?v=4" alt="juliebaumler" />](https://github.com/juliebaumler "juliebaumler")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/207342763?v=4" alt="JustaRed" />](https://github.com/JustaRed "JustaRed")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/1434631?v=4" alt="kamholz" />](https://github.com/kamholz "kamholz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/207021032?v=4" alt="kasosolav" />](https://github.com/kasosolav "kasosolav")
@@ -609,6 +602,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/73817896?v=4" alt="miketvo" />](https://github.com/miketvo "miketvo")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/51888982?v=4" alt="MLocria" />](https://github.com/MLocria "MLocria")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/25468552?v=4" alt="mondele" />](https://github.com/mondele "mondele")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/26617447?v=4" alt="Monitvilla" />](https://github.com/Monitvilla "Monitvilla")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/89278875?v=4" alt="morocose" />](https://github.com/morocose "morocose")
 [<img class='contributor-minor' src="https://github.com/mujeebcpy.png?size=240" alt="mujeebcpy" />](https://github.com/mujeebcpy "mujeebcpy")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/40431755?v=4" alt="MuratKaribay" />](https://github.com/MuratKaribay "MuratKaribay")
