@@ -23,6 +23,11 @@ all from the same port (default port 80).
 **Recommended:** Use [shared-sites] to control startup and shutdown of all
 keyman.com sites together.
 
+## More documentation
+
+Additional website configuration documentation is available at:
+* https://github.com/keymanapp/keyman/blob/master/docs/websites/README.md
+
 ### Prerequisites
 
 The host machine needs the following apps installed:
