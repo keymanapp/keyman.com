@@ -41,8 +41,10 @@
     // and otherwise cookies are blocked
     setcookie('embed_keyboards_no_locale_redirect', '1', ["secure" => true, "samesite" => 'None', 'path' => '/']);
 
-    if(!isset($_SESSION['lang'])) {
-      $_SESSION['lang'] = isset($_REQUEST['lang']) ? $_REQUEST['lang'] : 'en';
+    if(isset($_REQUEST['lang'])) {
+      $_SESSION['lang'] = $_REQUEST['lang'];
+    } else if(!isset($_SESSION['lang'])) {
+      $_SESSION['lang'] = 'en';
     }
     Locale::setOverrideLocale($_SESSION['lang']);
 
