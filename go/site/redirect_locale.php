@@ -37,6 +37,10 @@
     $lang = Locale::DEFAULT_LOCALE;
   }
 
+  if(empty($lang)) {
+    $lang = Locale::DEFAULT_LOCALE;
+  }
+
   // The url that was originally requested is passed in through the server
   // variable REQUEST_URI by mod_rewrite, including the initial slash (/).
   $url = $_SERVER['REQUEST_URI'];
