@@ -3,7 +3,8 @@
 /*
  * Keyman is copyright (C) SIL Global. MIT License.
  *
- * Spanish strings for keyboards/keyboard-install.php
+ * Default English strings for keyboards/keyboard-install.php
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);
@@ -41,10 +42,10 @@ return [
   # Keyman for {platform} not installed
   "platform_not_installed" =>
     "Si aún no ha instalado %1\$s, instálelo primero antes de instalar el teclado.",
-
+  
   # Download and install Keyman title
   "download_keyman_title" => "Descarga e instala Keyman",
-    
+
   # Install Keyman for {platform}
   "install_keyman" => "Instalar %1\$s",
 

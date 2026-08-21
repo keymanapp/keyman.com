@@ -1,8 +1,10 @@
 <?php
+
 /*
  * Keyman is copyright (C) SIL Global. MIT License.
  *
- * Spanish strings for keyboards/index.php
+ * Default English strings for keyboards/index.php
+ * When exporting strings from crowdin, convert \\$s to \$s
  */
 
 declare(strict_types=1);
@@ -13,7 +15,7 @@ return [
 
   # Page Description
   "page_description" => "Keyman Búsqueda por Teclado",
-  
+
   # Keyboard search bar
   "keyboard_search" => "Búsqueda por teclado:",
   
@@ -49,6 +51,6 @@ return [
   
   # Search box hint (line 3):
   "searchbox_hint_3" => 
-    "Utilice el prefijo %1\$s para buscar una etiqueta de idioma BCP 47, por ejemplo, %2\$s busca Tigrigna (Etiopía)."
+    "Utilice el prefijo %1\$s para buscar una etiqueta de idioma BCP 47, por ejemplo, %2\$s busca Tigrigna (Etiopía).",
 
 ];

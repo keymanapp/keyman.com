@@ -50,7 +50,7 @@ return [
   "available_on_play_store" => "Keyman para Android también está disponible en Play Store.",
 
   # Keyman for iPhone and iPad
-  "product_ios" => "Teclado para iPhone e iPad",
+  "product_ios" => "Keyman para iPhone e iPad",
 
   "available_on_app_store" => "Keyman para iPhone e iPad se puede encontrar en la App Store.",
 
