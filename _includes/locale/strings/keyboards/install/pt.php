@@ -11,64 +11,63 @@ declare(strict_types=1);
 
 return [
   # Page Title
-  "install_page_title" => "Teclado %1\$s",
+  "install_page_title" => "%1\$s teclado",
 
   # {Keyboard} download should start shortly
   "download_start_shortly" => 
-    "La descarga de tu teclado %1\$s debería comenzar en breve. 
-    Si no comienza, haz clic en el botón de abajo para iniciar la descarga.",
+    "Download do %1\$s teclado vai iniciar logo. Caso não inicie, clique no botão abaixo para começar o download.",
 
   # Help on installing keyboard
-  "help_on_installing_keyboard" => "Ayuda para instalar un teclado",
+  "help_on_installing_keyboard" => "Ajuda na instalação do teclado",
 
   # Help on installing Keyman
-  "help_on_installing_keyman" => "Ayuda para instalar Keyman",
+  "help_on_installing_keyman" => "Ajuda na instalação do Keyman",
 
   # Download keyboard
-  "download_keyboard" => "Descargar teclado",
+  "download_keyboard" => "Download do teclado",
 
   # Download just this keyboard...
-  "download_just_keyboard" => "Descarga solo este teclado",
+  "download_just_keyboard" => "Download somente deste teclado",
 
   # ... and then install in the app
-  "and_then_install_in_the_app" => "y luego instálala en la aplicación.",
+  "and_then_install_in_the_app" => "em seguida, instale no app.",
 
   # Install keyboard button 
   "install_keyboard" => "Instalar teclado",
 
   # {keyboard} home
-  "keyboard_home" => "Inicio del teclado %1\$s",
+  "keyboard_home" => "%1\$s teclado inícial",
 
   # Keyman for {platform} not installed
   "platform_not_installed" =>
-    "Si aún no ha instalado %1\$s, instálelo primero antes de instalar el teclado.",
+    "Se você ainda não instalou %1\$s, por favor, instale primeiro antes de instalar o teclado.",
   
   # Download and install Keyman title
-  "download_keyman_title" => "Descarga e instala Keyman",
+  "download_keyman_title" => "Baixar e instalar o Keyman",
 
   # Install Keyman for {platform}
   "install_keyman" => "Instalar %1\$s",
 
   # Keyman for Android
   "with_play_store" => 
-    "Instala Keyman junto con el teclado %1\$s a través de Google Play Store:",
+    "Instalar o Keyman junto com %1\$s teclado através do Google Play Store:",
 
   # Install from Play Store
   "install_from_play_store" => 
-    "Instalar desde Play Store",
+    "Instalar da Play Store",
 
   # Installs Keyman and {keyboard} for {platform}
   "keyman_and_keyboard_for_platform" =>
-    "Instala Keyman y el teclado %1\$s para %2\$s",
+    "Instala o Keyman e %1\$s o teclado para %2\$s",
 
   # Keyman already installed?
-  "already_installed" => "¿Keyman ya instalada?",
+  "already_installed" => "Keyman já está instalado?",
 
   # Downloads {keyboard} for {platform}
   "downloads_keyboard_for_platform" =>
-    "Descargas %1\$s para %2\$s",
+    "Downloads %1\$s para %2\$s",
 
   # {Keyboard} not found
-  "keyboard_not_found" => "No se encontró el teclado %1\$s."
+  "keyboard_not_found" => "O teclado %1\$s não foi encontrado."
 
 ];

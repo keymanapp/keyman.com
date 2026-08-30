@@ -38,6 +38,7 @@ files:
         de: de
         fr: fr
         km: km
+        pt-PT: pt
 
   # PHP files
 
@@ -51,6 +52,7 @@ files:
         de: de
         fr: fr
         km: km
+        pt-PT: pt
 
   - source: /_includes/locale/strings/keyboards/details/en.php
     dest: /keyboards/keyboards-details/en.php
@@ -62,6 +64,7 @@ files:
         de: de
         fr: fr
         km: km
+        pt-PT: pt
 
   - source: /_includes/locale/strings/keyboards/install/en.php
     dest: /keyboards/keyboards-install/en.php
@@ -73,6 +76,7 @@ files:
         de: de
         fr: fr
         km: km
+        pt-PT: pt
 
   - source: /_includes/locale/strings/keyboards/share/en.php
     dest: /keyboards/keyboards-share/en.php
@@ -84,6 +88,7 @@ files:
         de: de
         fr: fr
         km: km
+        pt-PT: pt
 
   # Product Download files
   - source: /_includes/locale/strings/downloads/en.php
@@ -96,6 +101,7 @@ files:
         de: de
         fr: fr
         km: km
+        pt-PT: pt
 
 
   # crowdin parameters descriptions:

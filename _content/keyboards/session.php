@@ -54,6 +54,7 @@
     ]);
     $session_query_q = "?$session_query";
   } else {
+    setcookie('embed_keyboards_no_locale_redirect', '', ["secure" => true, "samesite" => 'None', 'path' => '/']);
     $session_query = '';
     $session_query_q = '';
   }
