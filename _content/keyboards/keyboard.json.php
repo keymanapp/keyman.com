@@ -3,13 +3,19 @@
   require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
   use Keyman\Site\com\keyman\Util;
+  use Keyman\Site\com\keyman\Validation;
 
   if(!isset($_REQUEST['id'])) {
-    header('HTTP/1.0 404 id parameter is required');
+    header('HTTP/1.0 400 id parameter is required');
     exit;
   }
 
-  $id = $_REQUEST['id'];
+  $id = Validation::validate_keyboard_id($_REQUEST['id']);
+  if(empty($id)) {
+    header('HTTP/1.0 400 id parameter is invalid');
+    exit;
+  }
+
   $version = $stable_version;
 
   header('Content-Type: application/json; charset=utf-8');
