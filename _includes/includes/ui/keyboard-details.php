@@ -11,6 +11,7 @@
   use \Keyman\Site\Common\KeymanHosts;
   use \Keyman\Site\com\keyman\Locale;
   use \Keyman\Site\com\keyman\Util;
+  use \Keyman\Site\com\keyman\Validation;
   use \Keyman\Site\com\keyman;
 
   Locale::definePageScope('LOCALE_KEYBOARDS_DETAILS', 'keyboards/details');
@@ -70,7 +71,7 @@
      */
     public static function render_keyboard_details($id, $tier = 'stable', $landingPage = false, $bcp47 = null) {
       self::$id = $id;
-      self::$bcp47 = $bcp47;
+      self::$bcp47 = Validation::validate_bcp47($bcp47);
       self::$tier = self::get_tier_from_request($tier);
       self::$landingPage = $landingPage;
 
@@ -170,7 +171,7 @@ END;
           }
         }
       } else {
-        $lang = self::$bcp47;
+        $lang = rawurlencode(self::$bcp47);
       }
       if (!isset($lang)) $lang = 'en';
       $url = KeymanHosts::Instance()->keymanweb_com ."/#$lang,Keyboard_" . self::GetWebKeyboardId();
