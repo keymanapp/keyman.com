@@ -9,7 +9,7 @@ RedirectMatch "/go/(([1-9][0-9])([.]?)([0-9]))/developer-help-(mobile|packages)(
 
 # download-kmp
 # Modified to match download-package below
-RewriteRule "^keyboard/([^/]+)/download/kmp$" "package/download.php?type=keyboard&id=$1" [END,QSA]
+RewriteRule "^keyboard/([^/]+)/download/kmp$" "package/download.php?type=keyboard&id=$1" [BCTLS,END,QSA]
 
 # download-exe
 RedirectMatch "/go/keyboard/([^/?]+)/download/exe$" "/keyboards/download?id=$1&platform=windows&mode=bundle"
@@ -23,10 +23,10 @@ RedirectMatch "/go/keyboard/([^/?]+)/download/js$" "/keyboards/download?id=$1&pl
 #
 
 # download-model-package
-RewriteRule "^package/download/model/([^/]+)$" "package/download.php?type=model&id=$1" [END,QSA]
+RewriteRule "^package/download/model/([^/]+)$" "package/download.php?type=model&id=$1" [BCTLS,END,QSA]
 
 # download-package
-RewriteRule "^package/download/(keyboard/)?([^/]+)$" "package/download.php?type=keyboard&id=$2" [END,QSA]
+RewriteRule "^package/download/(keyboard/)?([^/]+)$" "package/download.php?type=keyboard&id=$2" [BCTLS,END,QSA]
 
 # keyboard/id/share
 RedirectMatch "/go/keyboard/([^/?]+)/share$" "/keyboards/share/$1"
@@ -36,7 +36,7 @@ RedirectMatch "/go/keyboard/([^/?]+)/share$" "/keyboards/share/$1"
 #
 
 # download-app?url=...
-RewriteRule "^app/download/([^/?]+)/([^/?]+)/(.*)" "app/download.php?product=$1&version=$2&tier=$3" [END,QSA]
+RewriteRule "^app/download/([^/?]+)/([^/?]+)/(.*)" "app/download.php?product=$1&version=$2&tier=$3" [BCTLS,END,QSA]
 
 #
 # Non-app-specific endpoints
