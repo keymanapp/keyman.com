@@ -662,6 +662,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/11654191?v=4" alt="Sethyboy0" />](https://github.com/Sethyboy0 "Sethyboy0")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/16904461?v=4" alt="sewhite" />](https://github.com/sewhite "sewhite")
 [<img class='contributor-minor' src="https://github.com/seyhachhorn-dev.png?size=240" alt="seyhachhorn-dev" />](https://github.com/seyhachhorn-dev "seyhachhorn-dev")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/193145590?v=4" alt="seyiyao" />](https://github.com/seyiyao "seyiyao")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/59408625?v=4" alt="Shavian-info" />](https://github.com/Shavian-info "Shavian-info")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4686809?v=4" alt="showgan" />](https://github.com/showgan "showgan")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/5095331?v=4" alt="Shreeshrii" />](https://github.com/Shreeshrii "Shreeshrii")
