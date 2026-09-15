@@ -78,7 +78,7 @@ END;
 
       foreach($linkArray as $id) {
 echo <<<END
-                <li class="${id[2]}"><a href="{$id[0]}">{$id[1]}</a></li>\n
+                <li class="{$id[2]}"><a href="{$id[0]}">{$id[1]}</a></li>\n
 END;
       }
       echo "</ul>";

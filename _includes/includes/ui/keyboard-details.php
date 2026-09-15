@@ -702,7 +702,7 @@ END;
                         echo
                           "<a href='/keyboards?q=l:id:".htmlspecialchars(rawurlencode($bcp47)).
                           "' title='".htmlspecialchars($bcp47).": ".htmlspecialchars($detail->displayName)."'>" .
-                          (!strcasecmp($bcp47, self::$bcp47) ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
+                          (!strcasecmp($bcp47, self::$bcp47 ?? '') ? "<mark>".htmlspecialchars($detail->languageName)."</mark>" : htmlspecialchars($detail->languageName)).
                           "</a> ";
                       }
                       $n++;
