@@ -29,6 +29,9 @@ builder_describe \
   start \
   stop \
   test \
+  "composer-start  Start a temporary container to maintain composer" \
+  "composer-stop   Stop and cleanup temporary container for maintaining composer" \
+  "--no-cache      Do not use Docker build cache for 'build' step" \
   "--no-unit-test" \
   "--no-lint" \
   "--no-link-check" \
@@ -75,3 +78,6 @@ builder_run_action start      do_start
 
 builder_run_action test       do_test_docker_container
 builder_run_action htaccess   preprocess_htaccess
+
+builder_run_action composer-start   docker_build_and_start_composer_container
+builder_run_action composer-stop    docker_stop_and_cleanup_composer_container

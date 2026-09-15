@@ -53,4 +53,37 @@
       }
       return $default;
     }
+
+    /**
+     * validate_keyboard_id - checks provided $id is in a valid format,
+     * lower-cases, and trims.
+     *
+     * @param string $id - a keyboard id
+     * @param string $default - what to return if it isn't valid
+     * @param boolean $allow_legacy - allow legacy ids
+     * @return string a valid keyboard id (or $default if not valid), does not
+     *                check for existence of the keyboard
+     *
+     * release ids can be a combination of a-z, 0-9, and underscore (_), and
+     * must begin with a letter, per the specification. Legacy ids include all
+     * these, and can also include hyphen (-), dot (.), or space (per the
+     * keyboards repository).
+     */
+    public static function validate_keyboard_id($id, $default = null, $allow_legacy = true) {
+      if($id === null) return $default;
+      $id = trim(strtolower($id));  // cleanup whitespace and casing; all ids are lower case
+      if(!$allow_legacy) {
+        // release ids can be a-z, 0-9, _ (per spec)
+        if(!preg_match('/^[a-z0-9_]+$/', $id)) {
+          return $default;
+        }
+      } else {
+        // legacy ids can be a-z, 0-9, _, -, ., space (per keyboards repository); superset of release ids
+        // Verification: `ls -d legacy/*/* | sed -E 's/legacy\/[a-z]+//' | sed 's#/##g' | sed 's/./&\n/g' | LC_COLLATE=C sort -u | tr -d '\n'
+        if(!preg_match('/^[a-z0-9_. -]+$/', $id)) {
+          return $default;
+        }
+      }
+      return $id;
+    }
   }
