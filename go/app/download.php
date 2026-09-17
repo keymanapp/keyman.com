@@ -30,6 +30,12 @@
     public static function redirect_to_file($url, $product, $version, $tier) {
       if(empty($url)) {
         JsonApiFailure::InvalidParameters("url");
+        return;
+      }
+
+      if(!preg_match("/^https?:\/\/downloads\\.keyman(-staging)?\\.com(\\.localhost)?\//", $url)) {
+        JsonApiFailure::Failure(400, JsonApiFailure::ERROR_InvalidParameters, "url parameter must start with downloads.keyman.com");
+        return;
       }
 
       if(empty($product)) {

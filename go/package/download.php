@@ -35,10 +35,12 @@
 
       if($type !== 'keyboard' && $type !== 'model') {
         JsonApiFailure::InvalidParameters("type");
+        return;
       }
 
       if(empty($id)) {
         JsonApiFailure::InvalidParameters("id, version");
+        return;
       }
 
       if(empty($version)) {
@@ -50,6 +52,7 @@
 
         if(empty($json)) {
           JsonApiFailure::Failure(404, JsonApiFailure::ERROR_NotFound, "$type package with id $id was not found");
+          return;
         }
 
         $version = $json->version;
