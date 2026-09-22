@@ -1,9 +1,10 @@
 <?php
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
   require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
   require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\DownloadUI;
   use Keyman\Site\com\keyman\Locale;
   use Keyman\Site\com\keyman\Util;
 
@@ -121,9 +122,9 @@
 </div>
 
 <?php
-  downloadSection('product_windows',         'windows',   ['keyman-$version.exe', 'keymandesktop-$version.exe'], $tier);
-  downloadSection('product_macos',           'mac',     'keyman-$version.dmg', $tier);
-  downloadSection('product_android',         'android', 'keyman-$version.apk', $tier);
+  DownloadUI::downloadSection('windows', $tier);
+  DownloadUI::downloadSection('mac',     $tier);
+  DownloadUI::downloadSection('android', $tier);
 ?>
 
 <p>Keyman for Android is also available on the Play Store.</p>
@@ -144,10 +145,10 @@ sudo apt-get install keyman ibus-keyman onboard</code></pre></blockquote>
 <h2 class='red underline large'>Products for Software Developers</h2>
 
 <?php
-  downloadSection('product_keymanweb',          'web',       'keymanweb-$version.zip',             $tier);
-  downloadSection('product_developer',          'developer', 'keymandeveloper-$version.exe',       $tier);
-  downloadSection('product_engine_android',     'android',   'keyman-engine-android-$version.zip', $tier, 'android-engine');
-  downloadSection('product_engine_ios',         'ios',       'keyman-engine-ios-$version.zip',     $tier, 'ios-engine');
+  DownloadUI::downloadSection('web',             $tier);
+  DownloadUI::downloadSection('developer',       $tier);
+  DownloadUI::downloadSection('android',         $tier, 'android-engine');
+  DownloadUI::downloadSection('ios',             $tier, 'ios-engine');
 ?>
 
 <br/>
