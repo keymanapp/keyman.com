@@ -34,7 +34,7 @@
       switch($target) {
         case 'android':         return 'keyman-$version.apk';
         case 'android-engine':  return 'keyman-engine-android-$version.zip';
-        case 'developer':       return ['keymandeveloper-$version.exe', 'kmcomp-$version.exe'];
+        case 'developer':       return ['keymandeveloper-$version.exe', 'kmcomp-$version.zip'];
         case 'ios':             return 'keyman-ios-$version.ipa'; // not currently used
         case 'ios-engine':      return 'keyman-engine-ios-$version.zip';
         case 'linux':           return ''; // not currently used
