@@ -54,9 +54,8 @@
     $MAC_VERSION = $versions->mac->$TIER->version;
   }
 
-  // epic/mac-config changes the mac installer from a .dmg to .pkg, in version 19.0.2xx-alpha
-  // TODO: update to actual release version
-  $MAC_FILENAME = version_compare($MAC_VERSION, "19.0.288") >= 0 ? "keyman-$MAC_VERSION.pkg" : "keyman-$MAC_VERSION.dmg";
+  // epic/mac-config changes the mac installer from a .dmg to .pkg, in version 19.0.291-alpha
+  $MAC_FILENAME = version_compare($MAC_VERSION, "19.0.291") >= 0 ? "keyman-$MAC_VERSION.pkg" : "keyman-$MAC_VERSION.dmg";
 
   $packages = [
     "kmcomp" => ["developer", $DEVELOPER_VERSION, "kmcomp-$DEVELOPER_VERSION.zip"],
