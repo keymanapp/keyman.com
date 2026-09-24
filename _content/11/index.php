@@ -1,11 +1,11 @@
 <?php
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
   require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
   require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
 
   require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\DownloadUI;
 
   // Required
   head([
@@ -66,7 +66,7 @@
 </ul>
 
 <?php
-  downloadSection('product_macos',   'mac',     'keyman-$version.dmg', 'stable');
+  DownloadUI::downloadSection('mac', 'stable');
 ?>
 
 <h3>What's New in Keyman 11 for macOS?</h3>
@@ -92,7 +92,7 @@ sudo apt-get install keyman onboard</code></pre></blockquote>
 </ul>
 
 <?php
-  downloadSection('product_android', 'android', 'keyman-$version.apk', 'stable');
+  DownloadUI::downloadSection('android', 'stable');
 ?>
 <li>Keyman for Android is available on the Play Store.</li>
 <?= $playstoreTable ?>
@@ -122,7 +122,7 @@ sudo apt-get install keyman onboard</code></pre></blockquote>
 </ul>
 
 <?php
-  downloadSection('product_keymanweb', 'web', 'keymanweb-$version.zip', 'stable');
+  DownloadUI::downloadSection('web', 'stable');
 ?>
 
 <!--h3>What's New in KeymanWeb 11?</h3-->
@@ -131,7 +131,7 @@ sudo apt-get install keyman onboard</code></pre></blockquote>
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-  downloadSection('product_developer',    'developer', 'keymandeveloper-$version.exe', 'stable');
+  DownloadUI::downloadSection('developer', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 11?</h3>

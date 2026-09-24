@@ -1,8 +1,8 @@
 <?php
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
   require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
+  use Keyman\Site\com\keyman\DownloadUI;
 
   // Required
   head([
@@ -25,7 +25,7 @@
 </p>
 
 <?php
-  downloadLargeCTA('Keyman Developer', 'developer', 'stable', 'keymandeveloper-$version.exe');
+  DownloadUI::downloadLargeCTA('developer', 'stable');
 ?>
 
 <h2 class='red underline'>Keyman Developer Command Line Tools</h2>

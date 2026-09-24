@@ -1,9 +1,10 @@
 <?php
 require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
 require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
 require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
+require_once _KEYMANCOM_INCLUDES . '/autoload.php';
 use \Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\DownloadUI;
 
 // Required
 head([

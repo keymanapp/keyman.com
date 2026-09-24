@@ -1,6 +1,5 @@
 <?php
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
 
   // Required
   head([
