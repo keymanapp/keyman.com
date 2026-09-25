@@ -1,8 +1,9 @@
 <?php
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
   use Keyman\Site\Common\KeymanHosts;
 
+  use Keyman\Site\com\keyman\DownloadUI;
   use Keyman\Site\com\keyman\Locale;
 
   Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
@@ -46,8 +47,8 @@
 <p><a href='<?=KeymanHosts::Instance()->help_keyman_com?>/version-history'>Keyman version history</a> (all products)</p>
 
 <?php
-  downloadSection('product_windows',         'windows', 'keyman-$version.exe', 'beta alpha');
-  downloadSection('product_macos',           'mac',     'keyman-$version.dmg', 'beta alpha');
+  DownloadUI::downloadSection('windows', 'beta alpha');
+  DownloadUI::downloadSection('mac',     'beta alpha');
 ?>
 
 <h2 id='linux' class='red underline'>Keyman for Linux</h2>
@@ -64,8 +65,8 @@ sudo add-apt-repository ppa:keymanapp/keyman-alpha
 sudo apt install keyman onboard-keyman</code></pre>
 
 <?php
-  downloadSection('product_android',         'android', 'keyman-$version.apk', 'beta alpha');
-  //downloadSection('product_ios',    'ios',     'keyman-ios-$version.ipa', 'beta alpha');
+  DownloadUI::downloadSection('android', 'beta alpha');
+  //DownloadUI::downloadSection('ios',     'beta alpha');
 ?>
 
 <p>You can also <a href="https://play.google.com/apps/testing/com.tavultesoft.kmapro">sign up</a> to access pre-release versions through Google Play.</p>
@@ -74,10 +75,10 @@ sudo apt install keyman onboard-keyman</code></pre>
 <p>Please register for the pre-release versions through the links below for Keyman <a href="https://testflight.apple.com/join/9W4XIoxQ">beta</a> or
 <a href="https://testflight.apple.com/join/vnCV2EiH">alpha</a> pre-releases on your iOS device.  This will grant access to the respective app version
 through <a href="https://developer.apple.com/testflight/testers/">Apple's TestFlight app</a>, which facilitates direct installation on iOS devices.</p>
-<?= iosTestFlightTable(); ?>
+<?= DownloadUI::iosTestFlightTable(); ?>
 
 <?php
-  downloadSection('product_keymanweb',                     'web',     'keymanweb-$version.zip', 'beta alpha');
+  DownloadUI::downloadSection('web', 'beta alpha');
 ?>
 
 <ul>
@@ -86,5 +87,5 @@ through <a href="https://developer.apple.com/testflight/testers/">Apple's TestFl
 </ul>
 
 <?php
-  downloadSection('product_developer',              'developer', array('keymandeveloper-$version.exe', 'kmcomp-$version.zip'), 'beta alpha');
+  DownloadUI::downloadSection('developer', 'beta alpha');
 ?>

@@ -1,6 +1,5 @@
 <?php
 require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
 use Keyman\Site\Common\KeymanHosts;
 use Keyman\Site\com\keyman\Util;
 

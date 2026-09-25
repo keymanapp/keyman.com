@@ -1,6 +1,7 @@
 <?php
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
+  use Keyman\Site\com\keyman\DownloadUI;
 
   // Required
   head([
@@ -21,7 +22,7 @@
 <h3 class="red underline">Install directly from keyman.com</h3>
 
 <?php
-  downloadLargeCTA('Keyman for macOS', 'mac', 'stable', 'keyman-$version.dmg');
+  DownloadUI::downloadLargeCTA('mac', 'stable');
 ?>
 
 <h3 class="red underline">Install via Homebrew</h3>

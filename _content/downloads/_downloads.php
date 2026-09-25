@@ -1,7 +1,9 @@
 <?php
-  downloadSection('product_windows',            'windows', 'keyman-$version.exe', 'stable');
-  downloadSection('product_macos',              'mac',     'keyman-$version.dmg', 'stable');
-  downloadSection('product_android',            'android', 'keyman-$version.apk', 'stable');
+  use \Keyman\Site\com\keyman\DownloadUI;
+
+  DownloadUI::downloadSection('windows', 'stable');
+  DownloadUI::downloadSection('mac',     'stable');
+  DownloadUI::downloadSection('android', 'stable');
 ?>
 
 <p><?= _m_Downloads('available_on_play_store') ?></p>
@@ -20,10 +22,10 @@ sudo apt install keyman onboard-keyman</code></pre></blockquote>
 <h2 class='red underline large'><?= _m_Downloads('products_for_software_developers') ?></h2>
 
 <?php
-  downloadSection('product_keymanweb',             'web',       'keymanweb-$version.zip',             'stable');
-  downloadSection('product_developer',             'developer', 'keymandeveloper-$version.exe',       'stable');
-  downloadSection('product_engine_android',        'android',   'keyman-engine-android-$version.zip', 'stable', 'android-engine');
-  downloadSection('product_engine_ios',            'ios',       'keyman-engine-ios-$version.zip',     'stable', 'ios-engine');
+  DownloadUI::downloadSection('web',       'stable');
+  DownloadUI::downloadSection('developer', 'stable');
+  DownloadUI::downloadSection('android',   'stable', 'android-engine');
+  DownloadUI::downloadSection('ios',       'stable', 'ios-engine');
 ?>
 
 <br/>

@@ -1,6 +1,7 @@
 <?php
   require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-  require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
+  require_once _KEYMANCOM_INCLUDES . '/autoload.php';
+  use Keyman\Site\com\keyman\DownloadUI;
 
   // Required
   head([
@@ -45,5 +46,5 @@
 
 <a id='standalone'></a>
 <?php
-  downloadLargeCTA('Keyman for Windows', 'windows', 'stable', 'keyman-$version.exe');
+  DownloadUI::downloadLargeCTA('windows', 'stable');
 ?>

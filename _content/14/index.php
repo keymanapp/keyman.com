@@ -1,11 +1,12 @@
 <?php
 
 require_once _KEYMANCOM_INCLUDES . '/includes/template.php';
-require_once _KEYMANCOM_INCLUDES . '/includes/ui/downloads.php';
 require_once _KEYMANCOM_INCLUDES . '/includes/appstore.php';
 require_once _KEYMANCOM_INCLUDES . '/includes/playstore.php';
+require_once _KEYMANCOM_INCLUDES . '/autoload.php';
 
 use Keyman\Site\Common\KeymanHosts;
+use Keyman\Site\com\keyman\DownloadUI;
 
 // Required
 head([
@@ -72,7 +73,7 @@ head([
 <h1 class='red underline'>User Software</h1>
 
 <?php
-downloadSection('product_windows',   'windows',     'keyman-$version.exe', 'stable');
+DownloadUI::downloadSection('windows', 'stable');
 ?>
 
 <h3>What's New in Keyman 14 for Windows?</h3>
@@ -98,7 +99,7 @@ downloadSection('product_windows',   'windows',     'keyman-$version.exe', 'stab
 
 
 <?php
-downloadSection('product_macos',   'mac',     'keyman-$version.dmg', 'stable');
+DownloadUI::downloadSection('mac', 'stable');
 ?>
 
 <h3>What's New in Keyman 14 for macOS?</h3>
@@ -144,7 +145,7 @@ sudo apt install keyman onboard-keyman
 </ul>
 
 <?php
-downloadSection('product_android', 'android', 'keyman-$version.apk', 'stable');
+DownloadUI::downloadSection('android', 'stable');
 ?>
 
 <?= $playstoreTable ?>
@@ -188,7 +189,7 @@ downloadSection('product_android', 'android', 'keyman-$version.apk', 'stable');
 
 
 <?php
-downloadSection('product_keymanweb', 'web', 'keymanweb-$version.zip', 'stable');
+DownloadUI::downloadSection('web', 'stable');
 ?>
 
 <h3>What's New in KeymanWeb 14?</h3>
@@ -208,7 +209,7 @@ downloadSection('product_keymanweb', 'web', 'keymanweb-$version.zip', 'stable');
 <h1 class='red underline'>Developer Software</h1>
 
 <?php
-downloadSection('product_developer',    'developer', 'keymandeveloper-$version.exe', 'stable');
+DownloadUI::downloadSection('developer', 'stable');
 ?>
 
 <h3>What's new in Keyman Developer 14?</h3>
