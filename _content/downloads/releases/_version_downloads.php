@@ -33,7 +33,8 @@
   }
 
   // note: we currently ignore the tier parameter
-  $versions = @json_decode(Util::call_downloads_keyman_com("/api/version/2.0?targetVersion=$version", 'downloads.keyman.com-api_version_2.0.json'));
+
+  $versions = DownloadUI::setVersion($version);
 
   if(empty($versions->android))
     $tier = 'unknown';
