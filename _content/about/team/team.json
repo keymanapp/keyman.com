@@ -52,7 +52,7 @@
   { "level": "contributor",  "handle": "evertype", "url": "https://evertype.com", "pr": "keymanapp/keyboards#619" },
   { "level": "contributor",  "handle": "seyhachhorn-dev", "pr": "keymanapp/keyman#15827" },
   { "level": "contributor",  "handle": "phyphy-svg", "pr": "keymanapp/keyman#15827" },
-  { "level": "contributor",  "handle": "Facundo Jaureguibehere", "url": "https://github.com/facundojaureguibehere", "pr": "keymanapp/keyboards#4119" },
-  { "level": "contributor",  "handle": "Manuel", "url": "https://github.com/MLocria", "pr": "keymanapp/keyboards#4119" }
+  { "level": "contributor",  "handle": "facundojaureguibehere", "pr": "keymanapp/keyboards#4119" },
+  { "level": "contributor",  "handle": "MLocria", "pr": "keymanapp/keyboards#4119" }
   
 ]
