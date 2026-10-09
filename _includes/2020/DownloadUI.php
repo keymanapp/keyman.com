@@ -7,10 +7,14 @@
   use Keyman\Site\com\keyman\Util;
   Locale::definePageScope('LOCALE_DOWNLOADS', 'downloads');
 
-  global $versions;
-  $versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0', 'downloads.keyman.com-api_version_2.0.json'));
-
   class DownloadUI {
+    private static $versions;
+
+    public static function setVersion($version) {
+      DownloadUI::$versions = @json_decode(Util::call_downloads_keyman_com("/api/version/2.0?targetVersion=$version", 'downloads.keyman.com-api_version_2.0.json'));
+      return DownloadUI::$versions;
+    }
+
     private static function formatSizeUnits($bytes) {
       if ($bytes >= 1073741824) {
         $bytes = number_format($bytes / 1073741824, 2) . ' GB';
@@ -30,7 +34,6 @@
     }
 
     private static function filenamePatterns($target, $tier) {
-      global $versions;
       switch($target) {
         case 'android':         return 'keyman-$version.apk';
         case 'android-engine':  return 'keyman-engine-android-$version.zip';
@@ -89,23 +92,35 @@
       }
     }
 
+    private static function initVersions() {
+      if(empty(DownloadUI::$versions)) {
+        DownloadUI::$versions = @json_decode(Util::call_downloads_keyman_com('/api/version/2.0', 'downloads.keyman.com-api_version_2.0.json'));
+        if(empty(DownloadUI::$versions)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
     private static function downloadLinks($platform, $tier, $filepatterns) {
-      global $versions;
+      if(!DownloadUI::initVersions()) {
+        return false;
+      }
       $product = DownloadUI::productName($platform);
       echo sprintf("<h3>%s</h3>\n<ul>\n", ucFirst(_m_Downloads($tier)));
-      if(!empty($versions->$platform->$tier)) {
+      if(!empty(DownloadUI::$versions->$platform->$tier)) {
         if(!is_array($filepatterns)) $filepatterns = array($filepatterns);
         foreach($filepatterns as $filepattern) {
-          $file = str_replace('$version', $versions->$platform->$tier->version, $filepattern);
+          $file = str_replace('$version', DownloadUI::$versions->$platform->$tier->version, $filepattern);
           $file = str_replace('$tier', $tier, $file);
 
-          if(!empty($versions->$platform->$tier->files->$file)) {
-            $fileData = $versions->$platform->$tier->files->$file;
+          if(!empty(DownloadUI::$versions->$platform->$tier->files->$file)) {
+            $fileData = DownloadUI::$versions->$platform->$tier->files->$file;
             $fileSize = DownloadUI::formatSizeUnits($fileData->size);
             echo sprintf("<li><a href='%s/%s/%s/%s/%s'>%s %s</a> %s</li>\n",
               KeymanHosts::Instance()->downloads_keyman_com ,
               $platform, $tier,
-              $versions->$platform->$tier->version,
+              DownloadUI::$versions->$platform->$tier->version,
               $file, $file, $tier,
               _m_Downloads('released_date_size', $fileData->date, $fileSize));
           }
@@ -117,9 +132,9 @@
     }
 
     public static function downloadLargeCTA($platform, $tier) {
-      global $versions;
-
-      if(empty($versions)) return false;
+      if(!DownloadUI::initVersions()) {
+        return false;
+      }
 
       $found = false;
 
@@ -128,26 +143,27 @@
       // CTA only supports the first download (which will typically be the right one?)
       if(!is_array($filepatterns)) $filepatterns = [$filepatterns];
       foreach($filepatterns as $filepattern) {
-        $file = str_replace('$version', $versions->$platform->$tier->version, $filepattern);
+        $file = str_replace('$version', DownloadUI::$versions->$platform->$tier->version, $filepattern);
         $file = str_replace('$tier', $tier, $file);
 
-        if(empty($versions->$platform->$tier->files->$file)) {
+        if(empty(DownloadUI::$versions->$platform->$tier->files->$file)) {
           continue;
         }
 
         $found = true;
 
-        $fileData = $versions->$platform->$tier->files->$file;
+        $fileData = DownloadUI::$versions->$platform->$tier->files->$file;
         $fileSize = DownloadUI::formatSizeUnits($fileData->size);
         $host = KeymanHosts::Instance()->downloads_keyman_com;
-        $downloadSiteUrl = "$host/$platform/$tier/{$versions->$platform->$tier->version}/$file";
-        $downloadUrl = htmlentities("/go/app/download/$platform/{$versions->$platform->$tier->version}/$tier?url=".
+        $downloadSiteUrl = "$host/$platform/$tier/" . DownloadUI::$versions->$platform->$tier->version . "/$file";
+        $downloadUrl = htmlentities("/go/app/download/$platform/" . DownloadUI::$versions->$platform->$tier->version . "/$tier?url=".
           rawurlencode($downloadSiteUrl));
 
+        $v = DownloadUI::$versions->$platform->$tier->version;
         echo <<<END
-<div class="download-cta-big selected" id="cta-big-Windows" data-url='$downloadUrl' data-version='{$versions->$platform->$tier->version}'>
+<div class="download-cta-big selected" id="cta-big-Windows" data-url='$downloadUrl' data-version='{$v}'>
     <div class="download-stable-email">
-    <h3>$title {$versions->$platform->$tier->version}</h3>
+    <h3>$title {$v}</h3>
     <p>Released: {$fileData->date}</p>
     <p>Size: $fileSize</p>
     </div>

@@ -17,6 +17,8 @@ RedirectMatch "/go/keyboard/([^/?]+)/download/exe$" "/keyboards/download?id=$1&p
 # download-js
 RedirectMatch "/go/keyboard/([^/?]+)/download/js$" "/keyboards/download?id=$1&platform=web&mode=standalone"
 
+# go/app/whatsnew/{product}/{major-version}
+RewriteRule "^app/whatsnew/(android|ios|linux|mac|web|windows|developer)/19.0$" "https://github.com/keymanapp/keyman/pulls?q=is\%3Apr+merged\%3A\%3E2025-02-10+-base\%3Astable-18.0+-base\%3Abeta+-base\%3Astable-17.0+-label\%3Aauto+label\%3A$1\%2F+merged\%3A\%3C2027-01-01" [NE,R]
 
 #
 # go/package/download

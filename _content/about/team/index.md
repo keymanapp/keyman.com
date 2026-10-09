@@ -483,6 +483,7 @@ people who have helped Keyman serve you all better!
 
 
 <div class="contributors" id="github-minor" markdown="1">
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/130848576?v=4" alt="abahziz0" />](https://github.com/abahziz0 "abahziz0")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/56992370?v=4" alt="abhi-deshpande" />](https://github.com/abhi-deshpande "abhi-deshpande")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/25257917?v=4" alt="adinkraalphabet" />](https://github.com/adinkraalphabet "adinkraalphabet")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/76251057?v=4" alt="AgMenos47" />](https://github.com/AgMenos47 "AgMenos47")
@@ -504,6 +505,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/17914487?v=4" alt="billjancewicz" />](https://github.com/billjancewicz "billjancewicz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/236532?v=4" alt="binarybottle" />](https://github.com/binarybottle "binarybottle")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/19643078?v=4" alt="bravogeorge" />](https://github.com/bravogeorge "bravogeorge")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/169553926?v=4" alt="buayism" />](https://github.com/buayism "buayism")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/186960567?v=4" alt="butanial" />](https://github.com/butanial "butanial")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4087431?v=4" alt="cachang" />](https://github.com/cachang "cachang")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/53020872?v=4" alt="caforbes" />](https://github.com/caforbes "caforbes")
@@ -527,6 +529,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/1534119?v=4" alt="dy2288" />](https://github.com/dy2288 "dy2288")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/280653681?v=4" alt="easternpwokarenunicodeteam-web" />](https://github.com/easternpwokarenunicodeteam-web "easternpwokarenunicodeteam-web")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/148839270?v=4" alt="Ehblut" />](https://github.com/Ehblut "Ehblut")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/294518786?v=4" alt="ejschantz" />](https://github.com/ejschantz "ejschantz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/122399466?v=4" alt="emily-roth" />](https://github.com/emily-roth "emily-roth")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/35470921?v=4" alt="emmanuel-ferdman" />](https://github.com/emmanuel-ferdman "emmanuel-ferdman")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/10482921?v=4" alt="ericjding" />](https://github.com/ericjding "ericjding")
@@ -534,6 +537,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://github.com/evangaline-fpcc.png?size=240" alt="evangaline-fpcc" />](https://github.com/evangaline-fpcc "evangaline-fpcc")
 [<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="evertype" />](https://evertype.com "evertype")
 [<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="gaikhuanlung" />](https://community.software.sil.org/u/gaikhuanlung "gaikhuanlung")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/294582347?v=4" alt="geschantz" />](https://github.com/geschantz "geschantz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/117494817?v=4" alt="gichegemi" />](https://github.com/gichegemi "gichegemi")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/58897028?v=4" alt="gregeck" />](https://github.com/gregeck "gregeck")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/14802245?v=4" alt="gsghyd" />](https://github.com/gsghyd "gsghyd")
@@ -574,6 +578,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/7720910?v=4" alt="kelivermore" />](https://github.com/kelivermore "kelivermore")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/7024638?v=4" alt="KenK-3-21" />](https://github.com/KenK-3-21 "KenK-3-21")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/10512134?v=4" alt="kentschroeder" />](https://github.com/kentschroeder "kentschroeder")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/282087509?v=4" alt="kevinnicholas-dev" />](https://github.com/kevinnicholas-dev "kevinnicholas-dev")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/57802249?v=4" alt="KevinPNG" />](https://github.com/KevinPNG "KevinPNG")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/17837758?v=4" alt="khashashin" />](https://github.com/khashashin "khashashin")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/134681786?v=4" alt="kimleangkheng" />](https://github.com/kimleangkheng "kimleangkheng")
@@ -583,7 +588,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/252690929?v=4" alt="kongchanlina" />](https://github.com/kongchanlina "kongchanlina")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/139705783?v=4" alt="kovacshviktor" />](https://github.com/kovacshviktor "kovacshviktor")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/56163492?v=4" alt="laineyhm" />](https://github.com/laineyhm "laineyhm")
-[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/176964202?v=4" alt="Laitei40" />](https://github.com/Laitei40 "Laitei40")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/176964202?v=4" alt="laiteichozah" />](https://github.com/laiteichozah "laiteichozah")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/44616807?v=4" alt="leepartridge" />](https://github.com/leepartridge "leepartridge")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/26881291?v=4" alt="Linsner" />](https://github.com/Linsner "Linsner")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/294515568?v=4" alt="luresun" />](https://github.com/luresun "luresun")
