@@ -536,6 +536,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/54675996?v=4" alt="erros84" />](https://github.com/erros84 "erros84")
 [<img class='contributor-minor' src="https://github.com/evangaline-fpcc.png?size=240" alt="evangaline-fpcc" />](https://github.com/evangaline-fpcc "evangaline-fpcc")
 [<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="evertype" />](https://evertype.com "evertype")
+[<img class='contributor-minor' src="https://github.com/facundojaureguibehere.png?size=240" alt="facundojaureguibehere" />](https://github.com/facundojaureguibehere "facundojaureguibehere")
 [<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="gaikhuanlung" />](https://community.software.sil.org/u/gaikhuanlung "gaikhuanlung")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/294582347?v=4" alt="geschantz" />](https://github.com/geschantz "geschantz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/117494817?v=4" alt="gichegemi" />](https://github.com/gichegemi "gichegemi")
