@@ -75,7 +75,7 @@
 
   <script type="module">
     // Wrapper to call .mjs function
-    import { do_search } from '../../cdn/dev/keyboard-search/search.mjs';
+    import { do_search } from '<?= Util::cdn('keyboard-search/search.mjs') ?>';
     document.getElementById('search-f').onclick = do_search;
   </script>
 
