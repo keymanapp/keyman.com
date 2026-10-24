@@ -303,7 +303,10 @@ function process_response(q, obsolete, res) {
         "</div>");
 
       if(kbd.isDedicatedLandingPage) {
-        $('.title a', k).text(kbd.name).attr('href', `${page_root}/h${encodeURIComponent(kbd.id)}${embed_query_q}`);
+        // note: for kbd.id here, it has an embedded / and comes from
+        // dedicated-landing-pages.js, thus is not user-specified and should not
+        // be re-encoded.
+        $('.title a', k).text(kbd.name).attr('href', `${page_root}/h${kbd.id}${embed_query_q}`);
       } else {
         $('.title a', k).text(kbd.name).attr('href', `${page_root}/${encodeURIComponent(kbd.id)}`+(kbd.match.tag ? '?bcp47='+kbd.match.tag+embed_query_x : embed_query_q));
       }

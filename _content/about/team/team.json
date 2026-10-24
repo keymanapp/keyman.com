@@ -53,6 +53,7 @@
   { "level": "contributor",  "handle": "seyhachhorn-dev", "pr": "keymanapp/keyman#15827" },
   { "level": "contributor",  "handle": "phyphy-svg", "pr": "keymanapp/keyman#15827" },
   { "level": "contributor",  "handle": "facundojaureguibehere", "pr": "keymanapp/keyboards#4119" },
-  { "level": "contributor",  "handle": "MLocria", "pr": "keymanapp/keyboards#4119" }
+  { "level": "contributor",  "handle": "MLocria", "pr": "keymanapp/keyboards#4119" },
+  { "level": "contributor",  "handle": "asnakeberhanu", "pr": "keymanapp/keyboards#4062" }
   
 ]
