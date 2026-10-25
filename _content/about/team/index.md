@@ -483,6 +483,7 @@ people who have helped Keyman serve you all better!
 
 
 <div class="contributors" id="github-minor" markdown="1">
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/75536728?v=4" alt="Aadarshttech" />](https://github.com/Aadarshttech "Aadarshttech")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/130848576?v=4" alt="abahziz0" />](https://github.com/abahziz0 "abahziz0")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/56992370?v=4" alt="abhi-deshpande" />](https://github.com/abhi-deshpande "abhi-deshpande")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/25257917?v=4" alt="adinkraalphabet" />](https://github.com/adinkraalphabet "adinkraalphabet")
@@ -497,6 +498,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4560208?v=4" alt="Anontamon" />](https://github.com/Anontamon "Anontamon")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/311709774?v=4" alt="anuisainyiu-droid" />](https://github.com/anuisainyiu-droid "anuisainyiu-droid")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/15011591?v=4" alt="anvalon" />](https://github.com/anvalon "anvalon")
+[<img class='contributor-minor' src="https://github.com/asnakeberhanu.png?size=240" alt="asnakeberhanu" />](https://github.com/asnakeberhanu "asnakeberhanu")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/8268042?v=4" alt="atabekm" />](https://github.com/atabekm "atabekm")
 [<img class='contributor-minor' src="https://github.com/athinkra.png?size=240" alt="athinkra" />](https://github.com/athinkra "athinkra")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/18376291?v=4" alt="BARQx" />](https://github.com/BARQx "BARQx")
@@ -548,6 +550,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/96712770?v=4" alt="Harshavardhan-Pandurangan" />](https://github.com/Harshavardhan-Pandurangan "Harshavardhan-Pandurangan")
 [<img class='contributor-minor' src="https://github.com/hinditutorpoint.png?size=240" alt="hinditutorpoint" />](https://github.com/hinditutorpoint "hinditutorpoint")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/32862915?v=4" alt="hsabdullahi" />](https://github.com/hsabdullahi "hsabdullahi")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/227388495?v=4" alt="iamsundeepdawadi-tech" />](https://github.com/iamsundeepdawadi-tech "iamsundeepdawadi-tech")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/11741571?v=4" alt="inkeysoftware" />](https://github.com/inkeysoftware "inkeysoftware")
 [<img class='contributor-minor' src="/cdn/dev/img/user.png" alt="Into_Besa" />](https://community.software.sil.org/u/Into_Besa "Into_Besa")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/88164608?v=4" alt="jackrittenberry" />](https://github.com/jackrittenberry "jackrittenberry")
@@ -633,6 +636,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/579519?v=4" alt="novta" />](https://github.com/novta "novta")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/153693839?v=4" alt="okandale" />](https://github.com/okandale "okandale")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/76998333?v=4" alt="OscarEwen" />](https://github.com/OscarEwen "OscarEwen")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/30904570?v=4" alt="paulolemko" />](https://github.com/paulolemko "paulolemko")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/180665176?v=4" alt="PekingSpades" />](https://github.com/PekingSpades "PekingSpades")
 [<img class='contributor-minor' src="https://github.com/phyphy-svg.png?size=240" alt="phyphy-svg" />](https://github.com/phyphy-svg "phyphy-svg")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/1788180?v=4" alt="pierzcham" />](https://github.com/pierzcham "pierzcham")
@@ -703,6 +707,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/250822578?v=4" alt="writingtradition-id" />](https://github.com/writingtradition-id "writingtradition-id")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/49555611?v=4" alt="WseriesY" />](https://github.com/WseriesY "WseriesY")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/66054189?v=4" alt="WX-JO" />](https://github.com/WX-JO "WX-JO")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/8731579?v=4" alt="xadxura" />](https://github.com/xadxura "xadxura")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/29972641?v=4" alt="xavernitsch" />](https://github.com/xavernitsch "xavernitsch")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/61056388?v=4" alt="ydroberts" />](https://github.com/ydroberts "ydroberts")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/270503075?v=4" alt="zagazagaturtur-svg" />](https://github.com/zagazagaturtur-svg "zagazagaturtur-svg")
@@ -781,6 +786,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/14327288/medium/e2315dc2807f4accf5157c35bc435335.jpeg" alt="mlocria" />](https://crowdin.com/profile/mlocria "mlocria")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/13720247/medium/e01249ad9a091fda233cfaec0774c1fc.png" alt="MoaufmKlo" />](https://crowdin.com/profile/MoaufmKlo "MoaufmKlo")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/15926605/medium/2233d18b13a38796455c5ce2557746dd.jpeg" alt="mon99309" />](https://crowdin.com/profile/mon99309 "mon99309")
+[<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/17945601/medium/57fdb636cd1bac9294b5b5c126197f5a.jpeg" alt="MrFlex2013" />](https://crowdin.com/profile/MrFlex2013 "MrFlex2013")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/14394716/medium/5c5cdefba1182bb04dd862ecaa9b9ada_default.png" alt="muhannad.albayk.jaam" />](https://crowdin.com/profile/muhannad.albayk.jaam "muhannad.albayk.jaam")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/14921275/medium/39eb655f444cdcdb3ee3d53ae141573d.png" alt="murmuindrajit527" />](https://crowdin.com/profile/murmuindrajit527 "murmuindrajit527")
 [<img class='contributor-minor' src="https://crowdin-static.cf-downloads.crowdin.com/avatar/16182564/medium/70b8bc9c70c62eeb2bb1ad29549e0c23.jpeg" alt="n_nyny" />](https://crowdin.com/profile/n_nyny "n_nyny")
