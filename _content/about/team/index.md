@@ -508,6 +508,7 @@ people who have helped Keyman serve you all better!
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/17914487?v=4" alt="billjancewicz" />](https://github.com/billjancewicz "billjancewicz")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/236532?v=4" alt="binarybottle" />](https://github.com/binarybottle "binarybottle")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/19643078?v=4" alt="bravogeorge" />](https://github.com/bravogeorge "bravogeorge")
+[<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/119873847?v=4" alt="Brdcie" />](https://github.com/Brdcie "Brdcie")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/169553926?v=4" alt="buayism" />](https://github.com/buayism "buayism")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/186960567?v=4" alt="butanial" />](https://github.com/butanial "butanial")
 [<img class='contributor-minor' src="https://avatars.githubusercontent.com/u/4087431?v=4" alt="cachang" />](https://github.com/cachang "cachang")
