@@ -131,7 +131,7 @@
         _m_Downloads('all_product_releases', _m_Downloads($product), _m_Downloads($tier)));
     }
 
-    public static function downloadLargeCTA($platform, $tier) {
+    public static function downloadLargeCTA($platform, $tier, $useFileNameInsteadOfTitle = false) {
       if(!DownloadUI::initVersions()) {
         return false;
       }
@@ -158,12 +158,12 @@
         $downloadSiteUrl = "$host/$platform/$tier/" . DownloadUI::$versions->$platform->$tier->version . "/$file";
         $downloadUrl = htmlentities("/go/app/download/$platform/" . DownloadUI::$versions->$platform->$tier->version . "/$tier?url=".
           rawurlencode($downloadSiteUrl));
-
+        $fileTitle = $useFileNameInsteadOfTitle ? $fileData->name : $title;
         $v = DownloadUI::$versions->$platform->$tier->version;
         echo <<<END
 <div class="download-cta-big selected" id="cta-big-Windows" data-url='$downloadUrl' data-version='{$v}'>
     <div class="download-stable-email">
-    <h3>$title {$v}</h3>
+    <h3>$fileTitle {$v}</h3>
     <p>Released: {$fileData->date}</p>
     <p>Size: $fileSize</p>
     </div>
